@@ -1,0 +1,18 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769945477
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "research_text": "```json\n{\n    \"ticker\": \"BTC\",\n    \"price_usd\": 78748.39,\n    \"price_change_24h\": 0,\n    \"volume_24h\": 974485339.28,\n    \"market_cap\": 1573738000000,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available from API source\",\n    \"on_chain_activity\": \"Network processed 346,883 transactions across 119 blocks. Block time averaging 11.75 minutes (slightly above the 10-minute target). Hash rate at 838 EH/s indicates strong network security. Estimated on-chain transaction volume of $8.71 billion. Total circulating supply at 19.98 million BTC.\",\n    \"risk_factors\": [\n        \"Block time of 11.75 minutes exceeds optimal 10-minute target, indicating potential mining difficulty adjustment needed\",\n        \"Miners revenue reported at 0 BTC/USD appears to be a data anomaly requiring verification\",\n        \"Limited price change data available for trend analysis\",\n        \"Next difficulty retarget at block 935,423 (835 blocks away) may impact mining profitability\"\n    ],\n    \"key_developments\": [\n        \"Network hash rate at 838 EH/s demonstrates robust mining participation\",\n        \"Total BTC mined: 371.875 BTC from 119 blocks indicates normal block reward distribution\",\n        \"Network difficulty at 141.67 trillion reflects high computational security\",\n        \"Block size totaling 178.66 MB shows moderate network utilization\",\n        \"Approaching 20 million BTC milestone (currently 19.98M of 21M total supply)\"\n    ],\n    \"timestamp\": \"1769945397\"\n}\n```",
+    "timestamp": 1769945494
+  }
+}

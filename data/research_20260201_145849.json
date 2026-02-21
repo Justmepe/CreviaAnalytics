@@ -1,0 +1,44 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "liquidation_volume_24h": 0,
+    "open_interest_btc": 91911.475,
+    "open_interest_eth": 1960634.028,
+    "btc_funding_rate": 3.421e-05,
+    "eth_funding_rate": 1.415e-05,
+    "source": "CoinGecko + Binance",
+    "timestamp": 1769947075
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "research_text": "```json\n{\n    \"ticker\": \"BTC\",\n    \"price_usd\": 78687.85,\n    \"price_change_24h\": 0,\n    \"volume_24h\": 993539547.97,\n    \"market_cap\": 1572000000000,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - CryptoPanic API returned 404 error\",\n    \"on_chain_activity\": \"Network processed 334,108 transactions across 116 blocks with 11.64 minutes average block time. Hash rate at 816.9 EH/s indicates strong network security. Estimated transaction volume of $8.67B demonstrates active on-chain usage. Block size totaling 173.6 MB shows healthy network utilization.\",\n    \"risk_factors\": [\n        \"Miners revenue showing as $0 in data may indicate reporting error or anomaly\",\n        \"Block time of 11.64 minutes is above the 10-minute target, suggesting temporary mining variance\",\n        \"News data unavailable limits sentiment analysis capability\"\n    ],\n    \"key_developments\": [\n        \"Total BTC supply reached 19,983,087.5 BTC (95.2% of 21M max supply)\",\n        \"Network difficulty at 141.67T reflects strong mining competition\",\n        \"Hash rate maintaining high level of 816.9 EH/s ensures network security\",\n        \"Next difficulty retarget scheduled at block 935,423 (835 blocks away)\"\n    ],\n    \"timestamp\": \"1769946657\"\n}\n```\n\n**Note:** Price change data unavailable as only single timestamp provided. Market cap estimated using circulating supply \u00d7 current price. Volume represents reported trade volume from exchanges ($993.5M), significantly lower than on-chain transaction volume ($8.67B).",
+    "timestamp": 1769947087
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "research_text": "```json\n{\n    \"ticker\": \"ETH\",\n    \"price_usd\": null,\n    \"price_change_24h\": null,\n    \"volume_24h\": null,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - API returned 404 error. Unable to assess current market sentiment or recent developments from news sources.\",\n    \"on_chain_activity\": \"On-chain data unavailable - Etherscan API requires authentication key. Cannot provide metrics on network activity, gas fees, transaction volume, or active addresses.\",\n    \"risk_factors\": [\n        \"Data unavailability limits informed decision-making\",\n        \"Unable to verify current network health or usage metrics\",\n        \"No access to recent news or market-moving events\",\n        \"Cannot assess current volatility or trading patterns\"\n    ],\n    \"key_developments\": [\n        \"Insufficient data - API access required for Etherscan analysis\",\n        \"CryptoPanic news feed unavailable - 404 error prevents news aggregation\"\n    ],\n    \"timestamp\": \"1769947089\"\n}\n```\n\n**Analysis Note:** The provided scraped data is insufficient for factual analysis. Both data sources (Etherscan on-chain data and CryptoPanic news) returned errors or require API authentication. Without access to actual price data, transaction metrics, or news feeds, I cannot provide accurate market insights, price information, or meaningful analysis. To generate a proper assessment, valid API keys and successful data retrieval are required.",
+    "timestamp": 1769947097
+  },
+  "SOL": {
+    "ticker": "SOL",
+    "research_text": "```json\n{\n    \"ticker\": \"SOL\",\n    \"price_usd\": null,\n    \"price_change_24h\": null,\n    \"volume_24h\": null,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - API returned 404 error. Unable to assess recent developments or market sentiment from news sources.\",\n    \"on_chain_activity\": \"On-chain data unavailable - limited free sources accessible for SOL network metrics. Cannot provide analysis of transaction volume, active addresses, or network utilization.\",\n    \"risk_factors\": [\n        \"Data unavailability - lack of accessible on-chain metrics limits transparency\",\n        \"News API failure indicates potential monitoring gaps for real-time developments\",\n        \"Insufficient data for proper risk assessment and informed decision-making\"\n    ],\n    \"key_developments\": [\n        \"Unable to identify key developments due to API errors and data source limitations\"\n    ],\n    \"timestamp\": \"1769947099\"\n}\n```\n\n**Analysis Note:** The provided data contains no usable information for SOL analysis. Both the on-chain data source and CryptoPanic news API failed to return data (404 error for news, limited access for on-chain). Without actual scraped data containing price, volume, news, or network metrics, a factual analysis cannot be performed. All numerical fields are set to `null` to reflect the absence of data rather than providing speculative or outdated information.",
+    "timestamp": 1769947107
+  },
+  "BNB": {
+    "ticker": "BNB",
+    "research_text": "```json\n{\n    \"ticker\": \"BNB\",\n    \"price_usd\": 773.41,\n    \"price_change_24h\": 7.38,\n    \"volume_24h\": 3360000000,\n    \"market_cap\": 105520000000,\n    \"sentiment\": \"bullish\",\n    \"news_summary\": \"No recent news data available from CryptoPanic API (404 error). Price showing strong 24h gains of 7.38%.\",\n    \"on_chain_activity\": \"Limited on-chain data available. Treasury holdings stand at 686.07K BNB. Volume to market cap ratio of 3.18% indicates moderate trading activity relative to market size.\",\n    \"risk_factors\": [\n        \"Price down 43.53% from all-time high of $1,370.55 reached in October 2025\",\n        \"Centralized exchange token risk - tied to Binance platform performance and regulatory scrutiny\",\n        \"Recent 24h volatility with price range between $765.69 and $835.90 (9.2% spread)\",\n        \"Limited on-chain transparency compared to fully decentralized projects\"\n    ],\n    \"key_developments\": [\n        \"Strong 24h price performance with 7.38% gain and market cap increase of 7.39%\",\n        \"Trading volume increased 42.54% in 24 hours to $3.36B\",\n        \"All-time high reached recently (October 2025, 4 months ago) at $1,370.55\",\n        \"Fully circulating supply of 136.36M BNB (100% of max supply)\",\n        \"Market cap of $105.52B maintains BNB's position as #4 cryptocurrency\"\n    ],\n    \"timestamp\": \"1769947108\"\n}\n```",
+    "timestamp": 1769947117
+  },
+  "defi": {
+    "sector": "defi",
+    "research_text": "# DeFi Sector Analysis\n\n## Data Availability Issue\n\nThe provided data indicates: **\"DeFi TVL data: API unavailable\"**\n\nSince no actual market data was successfully scraped, I cannot provide factual analysis. However, here's the requested JSON structure with clearly marked placeholder status:\n\n```json\n{\n    \"sector\": \"defi\",\n    \"market_cap\": null,\n    \"change_24h\": null,\n    \"top_assets\": [],\n    \"trends\": [\n        \"Data unavailable - API connection failed\",\n        \"Unable to retrieve current DeFi TVL metrics\",\n        \"No asset-level data accessible\"\n    ],\n    \"sentiment\": \"unknown\",\n    \"risks\": [\n        \"Data source unavailability limits market visibility\",\n        \"Cannot assess current protocol health without TVL data\",\n        \"Market analysis impossible without real-time metrics\"\n    ],\n    \"opportunities\": [\n        \"Recommendation: Establish alternative data sources\",\n        \"Consider using multiple API providers for redundancy\"\n    ],\n    \"timestamp\": \"1769947119\",\n    \"data_status\": \"UNAVAILABLE\",\n    \"note\": \"Analysis cannot be completed - source API returned no data\"\n}\n```\n\n## Required Action\n\nTo provide meaningful DeFi sector analysis, please provide:\n- **TVL (Total Value Locked)** data from DeFiLlama, DeBank, or similar sources\n- **Top protocols** by TVL (Aave, Uniswap, MakerDAO, Lido, etc.)\n- **24-hour volume and price changes**\n- **Current yield rates** for major protocols\n\nWithout actual scraped data, any analysis would be speculation rather than factual reporting.",
+    "timestamp": 1769947129
+  }
+}

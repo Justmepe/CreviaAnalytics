@@ -1,0 +1,3937 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080499,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 0,
+        "display": "N/A"
+      },
+      "volume": {
+        "value": 45311735412.0,
+        "display": "45.31B",
+        "velocity": 0.032551761890547225
+      },
+      "derivatives": {
+        "funding_rate": 0,
+        "funding_display": "0.0000%",
+        "open_interest": 0,
+        "oi_display": "0.00"
+      },
+      "summary": "BTC mark price at $0.00. Funding rate: 0.0000%. Open Interest: 0.00. Volume velocity: 0.033."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "accumulation",
+        "level": "MODERATE",
+        "description": "Organic spot buying without excessive leverage"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: accumulation. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 7,
+      "high_relevance_count": 7,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "XRP News Today: XRP Slides Ahead of Crucial SEC Settlement Vote; BTC at $108k - FXEmpire",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Brazil\u2019s Ambassador to India Addresses BRICS Currency Speculation - Bitcoin.com News",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "markdown",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 7 news items related to BTC. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080494,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+            "published_at": "2026-02-13T19:41:41+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM0ZSdkpzaUxzSzlPdEwxSDhGeFozSHFsNFduam1kRHNIM3ZkRkptU1R5UDE0VzlkREI4ekFBR0FXNm1uMkY3bnlISmJxaUNkU21JeV92TTFmR0tXM0VCMVpnOUdIUXpmT0EyWi1TaW5sTmxhV2xudk1OSDVud0J3VWh5QUt3dUFpbzNpaTlOOHZEdGY3NllZcFVwRHhmMExJLU1fNFZfZi1Kc0JheFlHZllnLUtpQQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "XRP News Today: XRP Slides Ahead of Crucial SEC Settlement Vote; BTC at $108k - FXEmpire",
+            "published_at": "2025-05-29T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"bitcoin SEC lawsuit\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZEJGNUFCeEZFZi1VdW5zUUdDVERhQkRjUjFwYmVxSmRmQUxCLWFOd1hTWXVVWXFKWHF5Vmx2aVNWQUc1TWVyWmwyMGJyTW5tMWFQc255b0Y5UXZNaXRVWEJqMjFYbVpLRVhEZzhlTmxDS2RzMkZEeVVFbEJuZ0dBWkQwajZPenZld0JLLW5JM2VZZ1RKZm5xZEZVR0I5U2h5eU1RdnFmZm5OVHNTQ1JIRWp5bXlEeGc4c1lJczFWUVZyWFU?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Brazil\u2019s Ambassador to India Addresses BRICS Currency Speculation - Bitcoin.com News",
+            "published_at": "2025-07-06T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQc1dxb2gydFFPUkJoUm5iZ0VhMU0tcDctWkxHS3lDalRnOGxsbDZyNFJlR2xSQXNkTU9wVS1kODFhalh3U2xzQ21ZUUctXzRUc1RzbmljQzRFM2Jra0lMX3pUektpSy1TWmxkUlNjMktEV1dyUWFSNXBEc0ZGMGtzMTJmZGRMMm5ReHhvYWhhc3N5NDIy?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to BTC. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771080494
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 0,
+        "funding_rate_percent": 0,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 0,
+        "open_interest_usd": 0,
+        "open_interest_base": 0,
+        "oi_formatted": "0.00",
+        "pressure_signal": "accumulation",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0000%, indicating balanced positioning between longs and shorts. Low leverage and balanced funding suggest organic spot market activity rather than speculation.",
+        "timestamp": 1771080497,
+        "raw_data": {
+          "funding": null,
+          "open_interest": null
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.032551761890547225,
+        "volume_24h": 45311735412.0,
+        "volume_formatted": "45.31B",
+        "market_cap": 1391990257374.0,
+        "market_cap_formatted": "1391.99B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.033, indicating very low turnover with minimal selling. 24h volume represents 3.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771080499,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 69627.0,
+          "total_volume": 45311735412.0,
+          "market_cap": 1391990257374.0,
+          "circulating_supply": 19989203.0,
+          "transaction_count_24h": 611208,
+          "hashrate": 1138730813522.6414
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080502,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 0,
+        "display": "N/A"
+      },
+      "volume": {
+        "value": 20198238603.0,
+        "display": "20.20B",
+        "velocity": 0.08065146789995563
+      },
+      "derivatives": {
+        "funding_rate": 0,
+        "funding_display": "0.0000%",
+        "open_interest": 0,
+        "oi_display": "0.00"
+      },
+      "summary": "ETH mark price at $0.00. Funding rate: 0.0000%. Open Interest: 0.00. Volume velocity: 0.081."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "accumulation",
+        "level": "MODERATE",
+        "description": "Organic spot buying without excessive leverage"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: accumulation. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 8,
+      "high_relevance_count": 8,
+      "dominant_theme": "general",
+      "overall_sentiment": "positive",
+      "top_events": [
+        {
+          "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Ethereum Fusaka Upgrade 2025 Guide & Impact - Phemex",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Ethereum Foundation co-director warns 'Fusaka' upgrade risks slipping, urges teams to dial back \u2018Glamsterdam\u2019 talk - The Block",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "markdown",
+        "sentiment_alignment": "divergent"
+      },
+      "summary": "Found 8 news items related to ETH. 8 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 0,
+      "items": []
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080500,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+            "published_at": "2026-02-13T19:41:41+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM0ZSdkpzaUxzSzlPdEwxSDhGeFozSHFsNFduam1kRHNIM3ZkRkptU1R5UDE0VzlkREI4ekFBR0FXNm1uMkY3bnlISmJxaUNkU21JeV92TTFmR0tXM0VCMVpnOUdIUXpmT0EyWi1TaW5sTmxhV2xudk1OSDVud0J3VWh5QUt3dUFpbzNpaTlOOHZEdGY3NllZcFVwRHhmMExJLU1fNFZfZi1Kc0JheFlHZllnLUtpQQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Fusaka Upgrade 2025 Guide & Impact - Phemex",
+            "published_at": "2025-11-14T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1POWNVZjJDcWxhYl9Hd29pUDRXd2pROVRubURNNXBOd1lsYUxIWllaQzJrYVN0RGxzb0I2X3FxVVB1aHZ5a3RaZlJnVDhWU0tPV3VwVDZoVERTZTNtMU5IaUJEN3drZVZVRmNLUlQ4RnI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Foundation co-director warns 'Fusaka' upgrade risks slipping, urges teams to dial back \u2018Glamsterdam\u2019 talk - The Block",
+            "published_at": "2025-08-08T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQcUlDMVNEMnE0dG5zVDBndWJpTjlHMDVIWklxbFJRM2dTQm9BSEp5T2JZYThSaWstOWszZkttX0pONXlKUU9JRWlsUlZTRmltV3Z6N0ZCempDekozX1F0elUzRU9YRG0zeFVQdXpGUkUxVVdFTmNJYzZRWkswQnZ3V2hUM3BtNm9pUEs3WUZ2c045UjZtTFFKMjEteUJuaGJHTGpaUDN1UjB6bTJaTzRRbFYzVGRQRGNVbS0tTmZZRnNWVUVPU3hicjYzTFhXaDFQRDhEZmRVVGJ1cWNIRXc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Foundation update: Tomasz shares latest network progress - MSN",
+            "published_at": "2026-02-14T14:01:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOZUxDTjM3eEE2Y2pOZ3VvZmxxa1RDN1NQUVJKTy1LT0NSR29xcndxM1hFelZXVzZqMjFZXzFicGFVOVh6bzdlNVQ0YlNKa0ZibHBpQWRycC13TWFQVUktbktJX2lxYzhMVjVqQXpqdFhfNmF3a2E2LXdmcGUtQThicF9sS3gtVlhRSTUzWFJhVnE1NmpYNlNJQ3MtRERIZnBGWHJFdmtBQ05BYURHczU4VzFXcGwwZ2w3d3VuSW45ZWZNam5zU3Zvd0dTX0E1OHQwMXg2M1BzMA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Prediction: Ethereum Will Hit $4,000 in 2026 - The Motley Fool",
+            "published_at": "2026-01-09T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQazJEMHhGdDlQelFrU3Y5RTZPVHlmY1hMVDNoUFFDYll0ZDIyUzJzOWJ2T00wZ2tjdGRxZkUwM3dPWWRTVWdtajVBLXVOcXVqV3ZGWXVfMlNjaGx5TV9sRTlLelpOazJvcDIzWWMtZG9tc1FLVHJXMWVDVXMtZWlDcElnMV94WWVxalFlQg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Time to Rethink Central Bank Money (Part 1) - World Bank Blogs",
+            "published_at": "2026-01-08T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQNUlxV0JEYV9JSVpBZ1dHM1ZlOG9BS0dmR1ZsblZHNFMtX3hkUXlsdlFpSDdfOFFtSVhtT3V3T1FQSjBUY0F3Y0NqelM3YndIcWZ1c3hFNVdJQVRNQlJlWVlUNlRpQjZLWDhNM1kwMFo2MTh6d2xHcnBsdEZDSWJCUGMydWtDdWxUS3JWTkJlSmxuMGEy?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to ETH. 8 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771080500
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": 0,
+        "funding_rate_percent": 0,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 0,
+        "open_interest_usd": 0,
+        "open_interest_base": 0,
+        "oi_formatted": "0.00",
+        "pressure_signal": "accumulation",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at 0.0000%, indicating balanced positioning between longs and shorts. Low leverage and balanced funding suggest organic spot market activity rather than speculation.",
+        "timestamp": 1771080501,
+        "raw_data": {
+          "funding": null,
+          "open_interest": null
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08065146789995563,
+        "volume_24h": 20198238603.0,
+        "volume_formatted": "20.20B",
+        "market_cap": 250438573890.0,
+        "market_cap_formatted": "250.44B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.081, indicating moderate turnover with normal trading activity. 24h volume represents 8.1% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771080502,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 2075.98,
+          "total_volume": 20198238603.0,
+          "market_cap": 250438573890.0,
+          "circulating_supply": 120692467.6142904,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771080502
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771080503
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080506,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.061587365314296164,
+        "category": "Moderate",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 8.01234,
+      "volume": {
+        "value": 1054518859.0,
+        "display": "1.05B"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.062 (Moderate). Price 24h: +8.0%. Volume: 1.05B. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.061587365314296164,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 7,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 7 news items related to DOGE. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080504,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQc0piVGFhczNKUFJDSmxzTHduN1g2S1dUWFZUZDg3QzNvYUIwZFJUZHY0Y0F6b3lRTnhTQ0EtRlRpMy1pejNpWk1YRzRISDdmamM0VXZWQml5TWJpQkpkNHl3NGV5U0RERF9FNmctTzl5ZS04clNXM0ttSkRUcS1DVzMtdUQwZkhFRy1uNUxKS0NZbjNzWkZ1aWZFalJscTJEYnh2aWpoTkozdXYxWGdUYmNqS2NmM2ZXVzkyUTRoZGU3SXZjSG8zY1FZQk1CRkJZNlktb1prYjd4ZnZNcjJUanpmRWhtc00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNc3Z4SU50X2lzWkF0Q21zMk1pcDZvQXR4SzI5cEp2VzJCYjloZGh4MWk2VTUxUHg3ZGNuRUhSTU1LbGVpdmE5UU1WbzRVeUZ0dGR3eWVhV1I2OTNFZU5GaXFuM1F2eDFacGIyeU8zMldWak44QlZqLVVZRDZsV1V5MFlhSEdEMms0OVVyLWxRUy1iYVJPZzlGSWMwRkJCN3lCYTlHSzVIT3BYcnU3YWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to DOGE. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771080504
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.061587365314296164,
+        "volume_24h": 1054518859.0,
+        "volume_formatted": "1.05B",
+        "market_cap": 17122324581.0,
+        "market_cap_formatted": "17.12B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.062, indicating moderate turnover with normal trading activity. 24h volume represents 6.2% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771080505,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.101574,
+          "total_volume": 1054518859.0,
+          "market_cap": 17122324581.0,
+          "circulating_supply": 168726213126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.061587365314296164,
+        "velocity_category": "Moderate",
+        "price_change_24h": 8.01234,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing moderate with a velocity of 0.062. Risk level: LOW. ",
+        "timestamp": 1771080506
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080630,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.039759173692810984,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 5.52635,
+      "volume": {
+        "value": 152890547.0,
+        "display": "152.89M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.040 (Low (Stable Holding)). Price 24h: +5.5%. Volume: 152.89M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.039759173692810984,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 7,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 7 news items related to SHIB. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080508,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQc0piVGFhczNKUFJDSmxzTHduN1g2S1dUWFZUZDg3QzNvYUIwZFJUZHY0Y0F6b3lRTnhTQ0EtRlRpMy1pejNpWk1YRzRISDdmamM0VXZWQml5TWJpQkpkNHl3NGV5U0RERF9FNmctTzl5ZS04clNXM0ttSkRUcS1DVzMtdUQwZkhFRy1uNUxKS0NZbjNzWkZ1aWZFalJscTJEYnh2aWpoTkozdXYxWGdUYmNqS2NmM2ZXVzkyUTRoZGU3SXZjSG8zY1FZQk1CRkJZNlktb1prYjd4ZnZNcjJUanpmRWhtc00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNc3Z4SU50X2lzWkF0Q21zMk1pcDZvQXR4SzI5cEp2VzJCYjloZGh4MWk2VTUxUHg3ZGNuRUhSTU1LbGVpdmE5UU1WbzRVeUZ0dGR3eWVhV1I2OTNFZU5GaXFuM1F2eDFacGIyeU8zMldWak44QlZqLVVZRDZsV1V5MFlhSEdEMms0OVVyLWxRUy1iYVJPZzlGSWMwRkJCN3lCYTlHSzVIT3BYcnU3YWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to SHIB. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771080508
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.039759173692810984,
+        "volume_24h": 152890547.0,
+        "volume_formatted": "152.89M",
+        "market_cap": 3845415606.0,
+        "market_cap_formatted": "3.85B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.040, indicating very low turnover with minimal selling. 24h volume represents 4.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771080629,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.53e-06,
+          "total_volume": 152890547.0,
+          "market_cap": 3845415606.0,
+          "circulating_supply": 589243880917864.1,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.039759173692810984,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 5.52635,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.040. Risk level: LOW. ",
+        "timestamp": 1771080630
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080645,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.20352328517985577,
+        "category": "High (Active Trading)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 7.00637,
+      "volume": {
+        "value": 342319195.0,
+        "display": "342.32M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.204 (High (Active Trading)). Price 24h: +7.0%. Volume: 342.32M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.20352328517985577,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "moderate_distribution",
+        "churn": "High"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: moderate distribution. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 7,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 7 news items related to PEPE. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "MEDIUM",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "moderate_distribution",
+        "stability": "Low"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+      },
+      "summary": "Memecoin risk: MEDIUM. Liquidity risk: MODERATE. MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080643,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQc0piVGFhczNKUFJDSmxzTHduN1g2S1dUWFZUZDg3QzNvYUIwZFJUZHY0Y0F6b3lRTnhTQ0EtRlRpMy1pejNpWk1YRzRISDdmamM0VXZWQml5TWJpQkpkNHl3NGV5U0RERF9FNmctTzl5ZS04clNXM0ttSkRUcS1DVzMtdUQwZkhFRy1uNUxKS0NZbjNzWkZ1aWZFalJscTJEYnh2aWpoTkozdXYxWGdUYmNqS2NmM2ZXVzkyUTRoZGU3SXZjSG8zY1FZQk1CRkJZNlktb1prYjd4ZnZNcjJUanpmRWhtc00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+            "published_at": "2024-04-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSWZBdU04SGRReHp6LTdYQTlPV2RSMWNwUm1zZ2FXdmprYkx5WF9SZnZaOWdhSUVYVUZ3WC1Na2FnektUTGlTeWtxdmdLRnByMEFxYXZQNHQwRGIxMWFqaWFUcjVmWWFVZGxzYVVjUGlGeVhfN0tacGhYMk95WUR5Vnp0cUhDMEV2ckx2Tmw5TFg1STdtZmZGNnZSdVBmaFRsUnNCMFctYzRFWlo0eWF6Z1MyQWdHckEyMGhUeTc0TlN0V2V1OFRxMDVoZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to PEPE. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771080643
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "high",
+        "velocity": 0.20352328517985577,
+        "volume_24h": 342319195.0,
+        "volume_formatted": "342.32M",
+        "market_cap": 1681965750.0,
+        "market_cap_formatted": "1.68B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.204, indicating elevated turnover with active trading. 24h volume represents 20.4% of market cap. Some distribution is occurring.",
+        "timestamp": 1771080644,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4e-06,
+          "total_volume": 342319195.0,
+          "market_cap": 1681965750.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.20352328517985577,
+        "velocity_category": "High (Active Trading)",
+        "price_change_24h": 7.00637,
+        "activity_level": "moderate_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "MEDIUM",
+        "interpretation": "PEPE is showing high (active trading) with a velocity of 0.204. Risk level: MEDIUM. ",
+        "timestamp": 1771080645
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080649,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.103814621918726,
+        "category": "Moderate",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 4.91064,
+      "volume": {
+        "value": 31717811.0,
+        "display": "31.72M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.104 (Moderate). Price 24h: +4.9%. Volume: 31.72M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.103814621918726,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: neutral. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 6,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 6 news items related to FLOKI. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "neutral",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080647,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+            "published_at": "2024-04-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSWZBdU04SGRReHp6LTdYQTlPV2RSMWNwUm1zZ2FXdmprYkx5WF9SZnZaOWdhSUVYVUZ3WC1Na2FnektUTGlTeWtxdmdLRnByMEFxYXZQNHQwRGIxMWFqaWFUcjVmWWFVZGxzYVVjUGlGeVhfN0tacGhYMk95WUR5Vnp0cUhDMEV2ckx2Tmw5TFg1STdtZmZGNnZSdVBmaFRsUnNCMFctYzRFWlo0eWF6Z1MyQWdHckEyMGhUeTc0TlN0V2V1OFRxMDVoZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to FLOKI. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771080647
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.103814621918726,
+        "volume_24h": 31717811.0,
+        "volume_formatted": "31.72M",
+        "market_cap": 305523542.0,
+        "market_cap_formatted": "305.52M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.104, indicating moderate turnover with normal trading activity. 24h volume represents 10.4% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771080648,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.165e-05,
+          "total_volume": 31717811.0,
+          "market_cap": 305523542.0,
+          "circulating_supply": 9655016857029.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.103814621918726,
+        "velocity_category": "Moderate",
+        "price_change_24h": 4.91064,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing moderate with a velocity of 0.104. Risk level: LOW. ",
+        "timestamp": 1771080649
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080773,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 88680130.0,
+        "display": "88.68M",
+        "velocity": 0.013543125090702763,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 4.68522,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 88.68M (velocity: 0.014). Price 24h: +4.7%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 6,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "6 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080650,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Six Wall Street bank chiefs bring in combined pay of $250mn in 2025 - Financial Times",
+            "published_at": "2026-02-14T11:00:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:ft.com markets OR central bank OR economy\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5YOVJEYnpGQmNzM3pQVW1MSEZQeVdpbEVTLV9vbmRpc2szMGM0ZkhJal9YTGF5ZFFjY2s4V3BMekRSeWQ0LUlqRmVfUzZyTUdNR0VLbXN5akEwQlFsM0ttNGRsSmExdmtqZnY3eWdpelI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to XMR. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"The stock market is reflecting fears of an AI apocalypse for white-collar jobs\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771080650
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.013543125090702763,
+        "volume_24h": 88680130.0,
+        "volume_formatted": "88.68M",
+        "market_cap": 6547981312.0,
+        "market_cap_formatted": "6.55B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.014, indicating very low turnover with minimal selling. 24h volume represents 1.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771080772,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 354.91,
+          "total_volume": 88680130.0,
+          "market_cap": 6547981312.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 88680130.0,
+        "volume_formatted": "88.68M",
+        "price_change_24h": 4.68522,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771080773,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080778,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 594166791.0,
+        "display": "594.17M",
+        "velocity": 0.1275887192962999,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 18.20535,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 594.17M (velocity: 0.128). Price 24h: +18.2%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 6,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "6 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080775,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Six Wall Street bank chiefs bring in combined pay of $250mn in 2025 - Financial Times",
+            "published_at": "2026-02-14T11:00:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:ft.com markets OR central bank OR economy\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5YOVJEYnpGQmNzM3pQVW1MSEZQeVdpbEVTLV9vbmRpc2szMGM0ZkhJal9YTGF5ZFFjY2s4V3BMekRSeWQ0LUlqRmVfUzZyTUdNR0VLbXN5akEwQlFsM0ttNGRsSmExdmtqZnY3eWdpelI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to ZEC. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"The stock market is reflecting fears of an AI apocalypse for white-collar jobs\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771080775
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.1275887192962999,
+        "volume_24h": 594166791.0,
+        "volume_formatted": "594.17M",
+        "market_cap": 4656891254.0,
+        "market_cap_formatted": "4.66B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.128, indicating moderate turnover with normal trading activity. 24h volume represents 12.8% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771080777,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 281.92,
+          "total_volume": 594166791.0,
+          "market_cap": 4656891254.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 594166791.0,
+        "volume_formatted": "594.17M",
+        "price_change_24h": 18.20535,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Significant price movement (18.2%) - check for regulatory news or exchange listings/delistings. Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771080778,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080781,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 160372891.0,
+        "display": "160.37M",
+        "velocity": 0.3303964277334224,
+        "status": "ELEVATED"
+      },
+      "price_change_24h": 9.9104,
+      "regulatory_alert": true,
+      "summary": "DASH volume: 160.37M (velocity: 0.330). Price 24h: +9.9%. \u26a0\ufe0f Unusual volume - check regulatory news."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "active_distribution",
+        "interpretation": "Selling in response to regulatory concerns"
+      },
+      "volume_pressure": {
+        "level": "ELEVATED",
+        "regulatory_driven": true
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Likely driving current activity"
+      },
+      "summary": "Holder behavior: active distribution. Regulatory news detected - likely driving activity. Volume pressure: ELEVATED."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 6,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "ELEVATED (Unusual activity - check news)",
+      "summary": "6 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "ELEVATED (Unusual activity - check news)",
+        "recent_events": 1,
+        "description": "Elevated - Unusual activity detected, monitor news closely"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "\u26a0\ufe0f Monitor regulatory news daily - conditions can change rapidly"
+      },
+      "summary": "Regulatory risk: ELEVATED (Unusual activity - check news). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). \u26a0\ufe0f Monitor regulatory news daily - conditions can change rapidly"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080779,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Six Wall Street bank chiefs bring in combined pay of $250mn in 2025 - Financial Times",
+            "published_at": "2026-02-14T11:00:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:ft.com markets OR central bank OR economy\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5YOVJEYnpGQmNzM3pQVW1MSEZQeVdpbEVTLV9vbmRpc2szMGM0ZkhJal9YTGF5ZFFjY2s4V3BMekRSeWQ0LUlqRmVfUzZyTUdNR0VLbXN5akEwQlFsM0ttNGRsSmExdmtqZnY3eWdpelI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to DASH. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"The stock market is reflecting fears of an AI apocalypse for white-collar jobs\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771080779
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "high_turnover",
+        "flow_magnitude": "high",
+        "holder_behavior": "active_distribution",
+        "network_activity": "high",
+        "velocity": 0.3303964277334224,
+        "volume_24h": 160372891.0,
+        "volume_formatted": "160.37M",
+        "market_cap": 485395354.0,
+        "market_cap_formatted": "485.40M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.330, indicating very high turnover with heavy speculative activity. 24h volume represents 33.0% of market cap. Active distribution is underway.",
+        "timestamp": 1771080780,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 38.6,
+          "total_volume": 160372891.0,
+          "market_cap": 485395354.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "ELEVATED (Unusual activity - check news)",
+        "volume_24h": 160372891.0,
+        "volume_formatted": "160.37M",
+        "price_change_24h": 9.9104,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: ELEVATED (Unusual activity - check news). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771080781,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080969,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 0,
+        "display": "$0",
+        "velocity": 0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 0,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: $0 (velocity: 0.000). Price 24h: +0.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: unknown. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 6,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE",
+      "summary": "6 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE. 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080782,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Six Wall Street bank chiefs bring in combined pay of $250mn in 2025 - Financial Times",
+            "published_at": "2026-02-14T11:00:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:ft.com markets OR central bank OR economy\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5YOVJEYnpGQmNzM3pQVW1MSEZQeVdpbEVTLV9vbmRpc2szMGM0ZkhJal9YTGF5ZFFjY2s4V3BMekRSeWQ0LUlqRmVfUzZyTUdNR0VLbXN5akEwQlFsM0ttNGRsSmExdmtqZnY3eWdpelI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to SCRT. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"The stock market is reflecting fears of an AI apocalypse for white-collar jobs\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771080782
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for SCRT.",
+        "timestamp": 1771080968
+      },
+      "privacy_metrics": {
+        "error": "Data unavailable for SCRT"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080989,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1945015032.0,
+        "display": "1.95B"
+      },
+      "price_change_24h": 12.05892,
+      "token_velocity": 0.19026114961151622,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.95B. Price 24h: +12.1%. Token velocity: 0.190. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.19026114961151622,
+        "activity_level": "MODERATE",
+        "holder_behavior": "moderate_distribution"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.190 (MODERATE). Holder behavior: moderate distribution. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 6,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "6 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080980,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Deep Dive into DeFi Newcomer Fluid Disrupting Aave and Curve - Bitget",
+            "published_at": "2024-11-22T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ZOU5PYl9ydkxjYWY1cnk1OWltUk1GbkJUR0tFMFZOOEpUc0prRHFpdWJLdkx2TFZ0T2g3R0t0RXZVeFk0WlJoN1ZRdGVUc1o1ZVU2TG9FV3hMYVZqeGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to AAVE. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"A Deep Dive into DeFi Newcomer Fluid Disrupting Aave and Curve - Bitget\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771080980
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "medium",
+        "velocity": 0.19026114961151622,
+        "volume_24h": 370060796.0,
+        "volume_formatted": "370.06M",
+        "market_cap": 1945015032.0,
+        "market_cap_formatted": "1.95B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.190, indicating elevated turnover with active trading. 24h volume represents 19.0% of market cap. Some distribution is occurring.",
+        "timestamp": 1771080981,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 128.08,
+          "total_volume": 370060796.0,
+          "market_cap": 1945015032.0,
+          "circulating_supply": 15191208.04539769,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1945015032.0,
+        "market_cap_formatted": "1.95B",
+        "price_change_24h": 12.05892,
+        "tvl": 28000273829.0,
+        "tvl_formatted": "28.00B",
+        "tvl_change_24h": 0.8675170093107346,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $28.00B (+0.9% 24h).",
+        "timestamp": 1771080989
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771080993,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2241012953.0,
+        "display": "2.24B"
+      },
+      "price_change_24h": 3.92565,
+      "token_velocity": 0.14852978763661792,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.24B. Price 24h: +3.9%. Token velocity: 0.149. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.14852978763661792,
+        "activity_level": "MODERATE",
+        "holder_behavior": "neutral"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.149 (MODERATE). Holder behavior: neutral. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 5,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "5 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080990,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 5,
+          "high_relevance_count": 5,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 5
+          }
+        },
+        "interpretation": "Found 5 news items related to UNI. 5 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"The stock market is reflecting fears of an AI apocalypse for white-collar jobs\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771080990
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.14852978763661792,
+        "volume_24h": 332857178.0,
+        "volume_formatted": "332.86M",
+        "market_cap": 2241012953.0,
+        "market_cap_formatted": "2.24B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.149, indicating moderate turnover with normal trading activity. 24h volume represents 14.9% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771080991,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.54,
+          "total_volume": 332857178.0,
+          "market_cap": 2241012953.0,
+          "circulating_supply": 633854762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2241012953.0,
+        "market_cap_formatted": "2.24B",
+        "price_change_24h": 3.92565,
+        "tvl": 3158679753.0,
+        "tvl_formatted": "3.16B",
+        "tvl_change_24h": 0.6203596638894532,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.16B (+0.6% 24h).",
+        "timestamp": 1771080993
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771081138,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 380576055.0,
+        "display": "380.58M"
+      },
+      "price_change_24h": 6.86868,
+      "token_velocity": 0.14669545880914658,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 380.58M. Price 24h: +6.9%. Token velocity: 0.147. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.14669545880914658,
+        "activity_level": "MODERATE",
+        "holder_behavior": "neutral"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.147 (MODERATE). Holder behavior: neutral. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 2,
+        "items": [
+          "US Curve outlook: Why US Treasury yields are surging before the Fed - marketpulse.com",
+          "Fed rate-cut optimism has bond investors focusing on duration, steeper yield curve - Reuters"
+        ]
+      },
+      "summary": "8 events: 0 governance, 0 security, 2 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771080994,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "US Curve outlook: Why US Treasury yields are surging before the Fed - marketpulse.com",
+            "published_at": "2025-12-09T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYVcyS1BDc0F6ZFNGNDlNUVg1WTdzVVpnLV9odGhyQVpQQjktYUE2M3JCWF8zLW80WFJoTnA2QUc5VG8wcjc3VGN1N0Rmc05PeDJ1RGNYRmZrRG5vNFkzN3VNeFhtYTZKdzJEY0EtY1VHN1h5Qld2Q2xtLWtIX05lM3hndHNhNy1mM3dFUDBNLU00VlpOb0U0MEhnb3NzSXd5aWJvbFh3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Fed rate-cut optimism has bond investors focusing on duration, steeper yield curve - Reuters",
+            "published_at": "2025-09-16T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPY2NVa1loZ2dxaWFCRHRPT3NsVmJKZDAxS01aVG9RUmlQNi0zM3FuemlUUHNTR0NUc01rSTliNzVDbmpCMGROMl9McWN6VHNXdkJsUnhDUkx3MTFDRHA1dEhIWko5ZTJvU3VWblNoT3lvS04wUUthYnpZaEdOQ2ZhaUFkeFppWkgyMWRzcC1FRlRUZ2ZnNUYxRnJNTkxOdGtKX2NxR2YzQVpMNlhoNDQ4OGxNaDBPQV9fZ2tVWVJPQ0I?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "A Deep Dive into DeFi Newcomer Fluid Disrupting Aave and Curve - Bitget",
+            "published_at": "2024-11-22T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ZOU5PYl9ydkxjYWY1cnk1OWltUk1GbkJUR0tFMFZOOEpUc0prRHFpdWJLdkx2TFZ0T2g3R0t0RXZVeFk0WlJoN1ZRdGVUc1o1ZVU2TG9FV3hMYVZqeGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to CRV. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"US Curve outlook: Why US Treasury yields are surging before the Fed - marketpulse.com\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771080994
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.14669545880914658,
+        "volume_24h": 55828779.0,
+        "volume_formatted": "55.83M",
+        "market_cap": 380576055.0,
+        "market_cap_formatted": "380.58M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.147, indicating moderate turnover with normal trading activity. 24h volume represents 14.7% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771081116,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.258775,
+          "total_volume": 55828779.0,
+          "market_cap": 380576055.0,
+          "circulating_supply": 1476517810.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 380576055.0,
+        "market_cap_formatted": "380.58M",
+        "price_change_24h": 6.86868,
+        "tvl": 1905791155.0,
+        "tvl_formatted": "1.91B",
+        "tvl_change_24h": 0.2450377658074237,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.91B (+0.2% 24h).",
+        "timestamp": 1771081138
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771081142,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 300425265.0,
+        "display": "300.43M"
+      },
+      "price_change_24h": 4.59828,
+      "token_velocity": 0.07650532986964328,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 300.43M. Price 24h: +4.6%. Token velocity: 0.077. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.07650532986964328,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.077 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 5,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "5 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771081140,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "2025 Crypto Compliance Annual Report: Your Crypto Assets Are Flowing Towards These \"Escrow Platforms\" and the Abyss of Online Gambling. - PANews",
+            "published_at": "2026-02-14T12:59:37+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TZl9hRFp1R0w0X2ROejJLbWhXbWRZeXdQQ0JtNEh2SWRjR2dOX1JwalN0dW1IanhpSC1QTUtPd1ZjWTNySGZNQzJSQ3ZJZ2NmWjFaWXp2ZWY4NUYyQTFmRmpvRklJR0tiWnNwOExVZkRONGxYMF9uTndjWXZyYkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Gold, silver rates today: Gold, silver prices rebound after US CPI data release. US dollar, US Fed rate cut in focus - Mint",
+            "published_at": "2026-02-14T12:45:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"US inflation CPI data\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQTA1SVdJdHU2bmFYalJ5V1JXdGpSOW9yRXFyRF96YzFMcHhZVVB4Y2pUTkk5T19NeHloTURMNE42NWwzU3BTNE81bEZneW1XMl9KNWNhbHU5N1BwelR1UGVaQ01hTWJsWHhVVW9MRjB6dWNVU0N3a1J6ZDF3b24zVkk1djFwcjBXb1c2S1JjU3g3ODVGYUZudjAydGRBeTllMlF6SzFVZzhhNWNxUWFmNW1KLXhDbVF5TDVlRERhckYyQzNTakNvWUFXN3lxTmVQQlBuOVFDNXdwdXl4amFFRkwxY1ppSWk0ejJ6djlmblpBV2JmTzhmcnp3MlpaSFZKYnZCX1Fn0gGLAkFVX3lxTE1jcnpfZ0dwZVF4dEpnbnY4LXI3RWYyR1VESjhQUVlZY1NLR2M3Ny1vX214WEl3NVBHZkxxSFl4YjJBa2NvckZFSTgyR0hYVnBpWnZLREtNZGZrYW1qZ3FDTFNwU2xPMGxTV2sxMU54M3BOMTgwdEtFQXVmWW9DdlJIT2FBbEYtODhmLWl2ZDgzUi00Zi10eGxxMlM1RDRqVVRhZWFITTFWXzR3RmVaNUJlVHhCd19YWW1mX1lEcUJvLVBTVWdKWHN0M3IwaDc5Z2xfWWc2SVdCUXlvVWtZWkVraklfRUdoNFpyMEV6UjhabWdjVnVHWVJ5MllxUmtBSHBWRk5tNFprc1M5NA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "How the riptide around AI and stocks could seep into Fed decisions and the housing market",
+            "published_at": "2026-02-14T12:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/how-the-riptide-around-ai-and-stocks-could-seep-into-fed-decisions-and-the-housing-market-fa6509ec?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-54388611",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 5,
+          "high_relevance_count": 5,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 5
+          }
+        },
+        "interpretation": "Found 5 news items related to LDO. 5 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"The stock market is reflecting fears of an AI apocalypse for white-collar jobs\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771081140
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.07650532986964328,
+        "volume_24h": 22984134.0,
+        "volume_formatted": "22.98M",
+        "market_cap": 300425265.0,
+        "market_cap_formatted": "300.43M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.077, indicating moderate turnover with normal trading activity. 24h volume represents 7.7% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771081141,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.355143,
+          "total_volume": 22984134.0,
+          "market_cap": 300425265.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 300425265.0,
+        "market_cap_formatted": "300.43M",
+        "price_change_24h": 4.59828,
+        "tvl": 19756933299.0,
+        "tvl_formatted": "19.76B",
+        "tvl_change_24h": 0.9496165515097499,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $19.76B (+0.9% 24h).",
+        "timestamp": 1771081142
+      }
+    }
+  }
+}

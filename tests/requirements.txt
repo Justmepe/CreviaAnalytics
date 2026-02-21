@@ -1,0 +1,30 @@
+# Crypto Analysis Engine - Dependencies
+
+# Core dependencies
+requests==2.31.0
+pandas==2.0.0
+python-dotenv==1.0.0
+
+# Claude AI integration
+anthropic>=0.30.0
+
+# Web scraping
+beautifulsoup4>=4.12.0
+
+# X/Twitter posting
+tweepy>=4.14.0
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0
+
+# Web API (FastAPI backend)
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.9
+alembic>=1.13.0
+
+# Optional (for enhancements)
+# streamlit>=1.28.0
+# schedule>=1.2.0

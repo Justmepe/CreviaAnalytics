@@ -1,0 +1,3018 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771228964,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68562.8,
+        "display": "$68,562.80"
+      },
+      "volume": {
+        "value": 9117790905.37,
+        "display": "9.12B",
+        "velocity": 0.006656887879987892
+      },
+      "derivatives": {
+        "funding_rate": -0.0032580000000000005,
+        "funding_display": "-0.0033%",
+        "open_interest": 5323605914.332001,
+        "oi_display": "5.32B"
+      },
+      "summary": "BTC mark price at $68,562.80. Funding rate: -0.0033%. Open Interest: 5.32B. Volume velocity: 0.007."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 0,
+      "high_relevance_count": 0,
+      "dominant_theme": "none",
+      "overall_sentiment": "neutral",
+      "top_events": [],
+      "context": {
+        "fear_greed": 12,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "No news events found for BTC in the last 24 hours. This could indicate a quiet period or limited news coverage."
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.312e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771228716,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.312e-05,
+            "mark_price": 68533.0
+          }
+        }
+      },
+      "news": {
+        "events": [],
+        "summary": {
+          "total_events": 0,
+          "high_relevance_count": 0,
+          "dominant_theme": "none",
+          "overall_sentiment": "neutral"
+        },
+        "interpretation": "No news events found for BTC in the last 24 hours. This could indicate a quiet period or limited news coverage.",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771228946
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": -3.258e-05,
+        "funding_rate_percent": -0.0032580000000000005,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68562.8,
+        "open_interest_usd": 5323605914.332001,
+        "open_interest_base": 77645.69,
+        "oi_formatted": "5.32B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at -0.0033%, indicating balanced positioning between longs and shorts. Open interest stands at 5.32B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771228954,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -3.258e-05,
+            "mark_price": 68562.8
+          },
+          "open_interest": {
+            "open_interest_usd": 5323605914.332001,
+            "open_interest": 77645.69
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006656887879987892,
+        "volume_24h": 9117790905.37,
+        "volume_formatted": "9.12B",
+        "market_cap": 1369677703718.0,
+        "market_cap_formatted": "1369.68B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771228964,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68571.8,
+          "total_volume": 9117790905.37,
+          "market_cap": 1369677703718.0,
+          "circulating_supply": 19990131.0,
+          "transaction_count_24h": 598283,
+          "hashrate": 1138730813522.6414
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771228972,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1971.20103101,
+        "display": "$1,971.20"
+      },
+      "volume": {
+        "value": 9262531711.54,
+        "display": "9.26B",
+        "velocity": 0.03892762167800583
+      },
+      "derivatives": {
+        "funding_rate": -0.005933,
+        "funding_display": "-0.0059%",
+        "open_interest": 3579127590.798208,
+        "oi_display": "3.58B"
+      },
+      "summary": "ETH mark price at $1,971.20. Funding rate: -0.0059%. Open Interest: 3.58B. Volume velocity: 0.039."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 0,
+      "high_relevance_count": 0,
+      "dominant_theme": "none",
+      "overall_sentiment": "neutral",
+      "top_events": [],
+      "context": {
+        "fear_greed": 12,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "No news events found for ETH in the last 24 hours. This could indicate a quiet period or limited news coverage."
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -5.933e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771228969,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -5.933e-05,
+            "mark_price": 1971.20963566
+          }
+        }
+      },
+      "news": {
+        "events": [],
+        "summary": {
+          "total_events": 0,
+          "high_relevance_count": 0,
+          "dominant_theme": "none",
+          "overall_sentiment": "neutral"
+        },
+        "interpretation": "No news events found for ETH in the last 24 hours. This could indicate a quiet period or limited news coverage.",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771228969
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -5.933e-05,
+        "funding_rate_percent": -0.005933,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1971.20103101,
+        "open_interest_usd": 3579127590.798208,
+        "open_interest_base": 1815709.07,
+        "oi_formatted": "3.58B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0059%, indicating balanced positioning between longs and shorts. Open interest stands at 3.58B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771228971,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -5.933e-05,
+            "mark_price": 1971.20103101
+          },
+          "open_interest": {
+            "open_interest_usd": 3579127590.798208,
+            "open_interest": 1815709.07
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03892762167800583,
+        "volume_24h": 9262531711.54,
+        "volume_formatted": "9.26B",
+        "market_cap": 237942399568.0,
+        "market_cap_formatted": "237.94B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.039, indicating very low turnover with minimal selling. 24h volume represents 3.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771228972,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1971.13,
+          "total_volume": 9262531711.54,
+          "market_cap": 237942399568.0,
+          "circulating_supply": 120692449.4802243,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771228972
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771228972
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771228983,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.056632962266849246,
+        "category": "Moderate",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -12.097,
+      "volume": {
+        "value": 974986456.20488,
+        "display": "974.99M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.057 (Moderate). Price 24h: -12.1%. Volume: 974.99M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.056632962266849246,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 0,
+      "social_correlation": "Weak correlation",
+      "top_events": [],
+      "summary": "No news events found for DOGE in the last 24 hours. This could indicate a quiet period or limited news coverage."
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.258e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771228975,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.258e-05,
+            "mark_price": 68571.7
+          }
+        }
+      },
+      "news": {
+        "events": [],
+        "summary": {
+          "total_events": 0,
+          "high_relevance_count": 0,
+          "dominant_theme": "none",
+          "overall_sentiment": "neutral"
+        },
+        "interpretation": "No news events found for DOGE in the last 24 hours. This could indicate a quiet period or limited news coverage.",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771228975
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.05663293638588836,
+        "volume_24h": 974986456.20488,
+        "volume_formatted": "974.99M",
+        "market_cap": 17215890936.0,
+        "market_cap_formatted": "17.22B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.057, indicating moderate turnover with normal trading activity. 24h volume represents 5.7% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771228976,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.1021,
+          "total_volume": 974986456.20488,
+          "market_cap": 17215890936.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.056632962266849246,
+        "velocity_category": "Moderate",
+        "price_change_24h": -12.097,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing moderate with a velocity of 0.057. Risk level: LOW. ",
+        "timestamp": 1771228983
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229048,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0025980497438430022,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -5.143,
+      "volume": {
+        "value": 10119107.70261552,
+        "display": "10.12M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.003 (Low (Stable Holding)). Price 24h: -5.1%. Volume: 10.12M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0025980497438430022,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 0,
+      "social_correlation": "Weak correlation",
+      "top_events": [],
+      "summary": "No news events found for SHIB in the last 24 hours. This could indicate a quiet period or limited news coverage."
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.258e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771228983,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.258e-05,
+            "mark_price": 68571.7
+          }
+        }
+      },
+      "news": {
+        "events": [],
+        "summary": {
+          "total_events": 0,
+          "high_relevance_count": 0,
+          "dominant_theme": "none",
+          "overall_sentiment": "neutral"
+        },
+        "interpretation": "No news events found for SHIB in the last 24 hours. This could indicate a quiet period or limited news coverage.",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771228983
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.002595788228492134,
+        "volume_24h": 10119107.70261552,
+        "volume_formatted": "10.12M",
+        "market_cap": 3898279371.0,
+        "market_cap_formatted": "3.90B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.003, indicating very low turnover with minimal selling. 24h volume represents 0.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229046,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.63e-06,
+          "total_volume": 10119107.70261552,
+          "market_cap": 3898279371.0,
+          "circulating_supply": 589243877392245.9,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.0025980497438430022,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -5.143,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.003. Risk level: LOW. ",
+        "timestamp": 1771229048
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229180,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0441244913357015,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -8.18,
+      "volume": {
+        "value": 83092537.532701,
+        "display": "83.09M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.044 (Low (Stable Holding)). Price 24h: -8.2%. Volume: 83.09M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0441244913357015,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 0,
+      "social_correlation": "Weak correlation",
+      "top_events": [],
+      "summary": "No news events found for PEPE in the last 24 hours. This could indicate a quiet period or limited news coverage."
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.264e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229058,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.264e-05,
+            "mark_price": 68604.81360145
+          }
+        }
+      },
+      "news": {
+        "events": [],
+        "summary": {
+          "total_events": 0,
+          "high_relevance_count": 0,
+          "dominant_theme": "none",
+          "overall_sentiment": "neutral"
+        },
+        "interpretation": "No news events found for PEPE in the last 24 hours. This could indicate a quiet period or limited news coverage.",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771229058
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.044180428327184114,
+        "volume_24h": 83092537.532701,
+        "volume_formatted": "83.09M",
+        "market_cap": 1880754458.0,
+        "market_cap_formatted": "1.88B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.044, indicating very low turnover with minimal selling. 24h volume represents 4.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229059,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.49e-06,
+          "total_volume": 83092537.532701,
+          "market_cap": 1880754458.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.0441244913357015,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -8.18,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.044. Risk level: LOW. ",
+        "timestamp": 1771229180
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229183,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.015734068920527085,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -7.879,
+      "volume": {
+        "value": 4830703.51443421,
+        "display": "4.83M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.016 (Low (Stable Holding)). Price 24h: -7.9%. Volume: 4.83M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.015734068920527085,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to FLOKI. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.231e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229181,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.231e-05,
+            "mark_price": 68613.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to FLOKI. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771229181
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.015734068920527085,
+        "volume_24h": 4830703.51443421,
+        "volume_formatted": "4.83M",
+        "market_cap": 307021886.0,
+        "market_cap_formatted": "307.02M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.016, indicating very low turnover with minimal selling. 24h volume represents 1.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229182,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.192e-05,
+          "total_volume": 4830703.51443421,
+          "market_cap": 307021886.0,
+          "circulating_supply": 9654936547021.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.015734068920527085,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -7.879,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.016. Risk level: LOW. ",
+        "timestamp": 1771229183
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229246,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 37844609.44,
+        "display": "37.84M",
+        "velocity": 0.006458236403681345,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -9.796,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 37.84M (velocity: 0.006). Price 24h: -9.8%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 2,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "2 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.231e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229184,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.231e-05,
+            "mark_price": 68613.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to XMR. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771229184
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006458236403681345,
+        "volume_24h": 37844609.44,
+        "volume_formatted": "37.84M",
+        "market_cap": 5859898442.0,
+        "market_cap_formatted": "5.86B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.006, indicating very low turnover with minimal selling. 24h volume represents 0.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229246,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 318.72,
+          "total_volume": 37844609.44,
+          "market_cap": 5859898442.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 37840830.35,
+        "volume_formatted": "37.84M",
+        "price_change_24h": -9.796,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771229246,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229370,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 587800644.67,
+        "display": "587.80M",
+        "velocity": 0.12540563545869665,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -7.862,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 587.80M (velocity: 0.125). Price 24h: -7.9%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 2,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "2 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.239e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229248,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.239e-05,
+            "mark_price": 68629.70858321
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to ZEC. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771229248
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.12540563545869665,
+        "volume_24h": 587800644.67,
+        "volume_formatted": "587.80M",
+        "market_cap": 4687194818.0,
+        "market_cap_formatted": "4.69B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.125, indicating moderate turnover with normal trading activity. 24h volume represents 12.5% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771229369,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 283.81,
+          "total_volume": 587800644.67,
+          "market_cap": 4687194818.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 585629394.23,
+        "volume_formatted": "585.63M",
+        "price_change_24h": -7.862,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771229370,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229503,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 57267231.28,
+        "display": "57.27M",
+        "velocity": 0.12278607663272645,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -9.111,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 57.27M (velocity: 0.123). Price 24h: -9.1%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 4,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "4 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.234e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229382,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.234e-05,
+            "mark_price": 68590.92394928
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Top Solana Projects in 2025: Best DApps, DeFi, NFTs & Staking - Coin Bureau",
+            "published_at": "2025-09-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8tWmJLdnZmbHhtVTJHZkpMaVFuaEpzQ2tPTUhWbWUyeFp6cE1JYklSLW5rOHBCelYxdllXeFdJRVJmeTRSYUJBZ05jX1FmeVVIdEREcnZSM0ZwT0ZXSFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Bear market, consolidation and a renaissance: DeFi in 2024 - ForkLog",
+            "published_at": "2025-01-05T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkdZSlZCcW9WbG5UNE1LRzV1MUk2SUxkLU95WnJwNW1YV1llbUJmYWRhTFNNWFRaTW5vcXhySi1SbkpYTVVCM0ZVaDJEV25yRXpyRW1OcmxzMWx6a3liVkgyb29FOUg1aWltbzl1Z1dzQzA1VWFCbnhoMGR5OXZrZV9jMTdMc3fSAYwBQVVfeXFMUHllalVCcGhjcmVTSXhUTU9fbkR6MDRRNXNSOXNOaVpsZ2lDb2R5WkJGQ3FKTnBXZ1BxYUJzY3p3emJieVdWVFBmV1hZZC1uUVNpTUNHaDdxN3VZTzZDTFdXMXFTY0xrZzFNZHFHYWJFWDlfSDJleENnWngwSGZkTnBzX29fc3JSQUljOHo?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 4 news items related to DASH. 4 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771229382
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.12278607663272645,
+        "volume_24h": 57267231.28,
+        "volume_formatted": "57.27M",
+        "market_cap": 466398413.0,
+        "market_cap_formatted": "466.40M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.123, indicating moderate turnover with normal trading activity. 24h volume represents 12.3% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771229382,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 36.91,
+          "total_volume": 57267231.28,
+          "market_cap": 466398413.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 57268089.07,
+        "volume_formatted": "57.27M",
+        "price_change_24h": -9.111,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771229503,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229506,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1096584.6215,
+        "display": "1.10M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -5.82,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.10M (velocity: 0.000). Price 24h: -5.8%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 4,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "4 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.263e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229505,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.263e-05,
+            "mark_price": 68590.7
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Top Solana Projects in 2025: Best DApps, DeFi, NFTs & Staking - Coin Bureau",
+            "published_at": "2025-09-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8tWmJLdnZmbHhtVTJHZkpMaVFuaEpzQ2tPTUhWbWUyeFp6cE1JYklSLW5rOHBCelYxdllXeFdJRVJmeTRSYUJBZ05jX1FmeVVIdEREcnZSM0ZwT0ZXSFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Bear market, consolidation and a renaissance: DeFi in 2024 - ForkLog",
+            "published_at": "2025-01-05T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkdZSlZCcW9WbG5UNE1LRzV1MUk2SUxkLU95WnJwNW1YV1llbUJmYWRhTFNNWFRaTW5vcXhySi1SbkpYTVVCM0ZVaDJEV25yRXpyRW1OcmxzMWx6a3liVkgyb29FOUg1aWltbzl1Z1dzQzA1VWFCbnhoMGR5OXZrZV9jMTdMc3fSAYwBQVVfeXFMUHllalVCcGhjcmVTSXhUTU9fbkR6MDRRNXNSOXNOaVpsZ2lDb2R5WkJGQ3FKTnBXZ1BxYUJzY3p3emJieVdWVFBmV1hZZC1uUVNpTUNHaDdxN3VZTzZDTFdXMXFTY0xrZzFNZHFHYWJFWDlfSDJleENnWngwSGZkTnBzX29fc3JSQUljOHo?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 4 news items related to SCRT. 4 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771229505
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1096584.6215,
+        "volume_formatted": "1.10M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229505,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.089,
+          "total_volume": 1096584.6215,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1096584.6215,
+        "volume_formatted": "1.10M",
+        "price_change_24h": -5.82,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771229506,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229633,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1927947246.0,
+        "display": "1.93B"
+      },
+      "price_change_24h": -3.045,
+      "token_velocity": 0.03136167112686651,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.93B. Price 24h: -3.0%. Token velocity: 0.031. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03136167112686651,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.031 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 4,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "4 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.263e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229506,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.263e-05,
+            "mark_price": 68590.7
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Top Solana Projects in 2025: Best DApps, DeFi, NFTs & Staking - Coin Bureau",
+            "published_at": "2025-09-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8tWmJLdnZmbHhtVTJHZkpMaVFuaEpzQ2tPTUhWbWUyeFp6cE1JYklSLW5rOHBCelYxdllXeFdJRVJmeTRSYUJBZ05jX1FmeVVIdEREcnZSM0ZwT0ZXSFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Bear market, consolidation and a renaissance: DeFi in 2024 - ForkLog",
+            "published_at": "2025-01-05T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkdZSlZCcW9WbG5UNE1LRzV1MUk2SUxkLU95WnJwNW1YV1llbUJmYWRhTFNNWFRaTW5vcXhySi1SbkpYTVVCM0ZVaDJEV25yRXpyRW1OcmxzMWx6a3liVkgyb29FOUg1aWltbzl1Z1dzQzA1VWFCbnhoMGR5OXZrZV9jMTdMc3fSAYwBQVVfeXFMUHllalVCcGhjcmVTSXhUTU9fbkR6MDRRNXNSOXNOaVpsZ2lDb2R5WkJGQ3FKTnBXZ1BxYUJzY3p3emJieVdWVFBmV1hZZC1uUVNpTUNHaDdxN3VZTzZDTFdXMXFTY0xrZzFNZHFHYWJFWDlfSDJleENnWngwSGZkTnBzX29fc3JSQUljOHo?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 4 news items related to AAVE. 4 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771229506
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03136167112686651,
+        "volume_24h": 60463647.479,
+        "volume_formatted": "60.46M",
+        "market_cap": 1927947246.0,
+        "market_cap_formatted": "1.93B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.031, indicating very low turnover with minimal selling. 24h volume represents 3.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229629,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 126.77,
+          "total_volume": 60463647.479,
+          "market_cap": 1927947246.0,
+          "circulating_supply": 15191429.474184968,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1927947246.0,
+        "market_cap_formatted": "1.93B",
+        "price_change_24h": -3.045,
+        "tvl": 27087810748.0,
+        "tvl_formatted": "27.09B",
+        "tvl_change_24h": -0.3091004768744699,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.09B (-0.3% 24h).",
+        "timestamp": 1771229633
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229756,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2240821721.0,
+        "display": "2.24B"
+      },
+      "price_change_24h": -2.159,
+      "token_velocity": 0.037959037797099256,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.24B. Price 24h: -2.2%. Token velocity: 0.038. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.037959037797099256,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.038 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.288e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229634,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.288e-05,
+            "mark_price": 68531.18131884
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Treasury Secretary Bessent signals US advantage in tariff battle as China's economy crumbles - Fox Business",
+            "published_at": "2025-05-01T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc3lzRnVXV0ZId09wUjJhd1pSTzNXUVAyZXJLalBEdHBDRS1iOEV2OGZIcUFtX0tGYjJWd1E3TDhOSnlMWEFfaXluZGJ4OWxtOFFiY05DYjdRZTdpSUZkMWc1SmFkczQ3WEVfM0Z4X2EyeU9Pa3hZZUJQQ0xtdVFPX1BOY1g0alpKeW1wYjdRMGFkblh1T2lqZjRLRWJPQkt3UFJnZnA5UkI0VUxDRnpuc2xhUVpwZVBoaDE40gHAAUFVX3lxTE1pT19fRkp2RWpPSTM0T3NJcFBnZDlZU3RIXzhBSnpvbU8yZEROdlNWdlFFQlBLdl9kODZKRjczWFVFVVZoVXk2bjAzV2VZZWtCeFlzYTMwZGgtcHNUM3JIT3kya1NLQWZFU3U3bXZjOFJNYzNYbDNiVGNKWWRnVjYwS2xSWF93c1pSYXJyY1pCektHX09hUHU2MHQxY09EamR4V2ZiWWJEZWZJbWItbHRMaXkzUmxmNl9XSmRMdUdOZA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Top Solana Projects in 2025: Best DApps, DeFi, NFTs & Staking - Coin Bureau",
+            "published_at": "2025-09-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8tWmJLdnZmbHhtVTJHZkpMaVFuaEpzQ2tPTUhWbWUyeFp6cE1JYklSLW5rOHBCelYxdllXeFdJRVJmeTRSYUJBZ05jX1FmeVVIdEREcnZSM0ZwT0ZXSFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "China\u2019s Economy Slows Sharply as Trade War Bites - Bloomberg.com",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPcXZLNUNxR2ZsNjM2d2NlRHZvQURtT3hmTkNzWUoxQTM3enBOakdEaGp4S01YRWZDLVRKUlVqSjhxc1dYaUJYSEc0YVV1NzgzNXpiUzBXRWdmbXpyaGJkdEhvT0JVMzZkbTVmTGEtbzZ6S21hbDFySUtha3Y5RmNBYklSLXlxZ0FsUGJWNmEzcXhoRFVsc0JBUmxITUkzQ0FHZGFhSnNwb1ZDUXNrdnpZUw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "China warns countries against striking trade deals with US at its expense - Reuters",
+            "published_at": "2025-04-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQnJqMk5fMDdYeGNqTnZ4NUtpRGFEWTBGYmJiM3BNSFBsbldwQjkyeFhpQkFmbjRmVHBXMmlpX0VzS1U2UlFoWFdhci1POTVRa21CdHJGdjF5NEx4eDROMW00eE0yR3A4NnFzR1dEcWpodGFBTlp0UlEtRkVDQnhMM2YyRm5KMXhpeWZKQXBVU2pRWXF0YVoydmdVYU94N1o2Q2MtMw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Bear market, consolidation and a renaissance: DeFi in 2024 - ForkLog",
+            "published_at": "2025-01-05T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkdZSlZCcW9WbG5UNE1LRzV1MUk2SUxkLU95WnJwNW1YV1llbUJmYWRhTFNNWFRaTW5vcXhySi1SbkpYTVVCM0ZVaDJEV25yRXpyRW1OcmxzMWx6a3liVkgyb29FOUg1aWltbzl1Z1dzQzA1VWFCbnhoMGR5OXZrZV9jMTdMc3fSAYwBQVVfeXFMUHllalVCcGhjcmVTSXhUTU9fbkR6MDRRNXNSOXNOaVpsZ2lDb2R5WkJGQ3FKTnBXZ1BxYUJzY3p3emJieVdWVFBmV1hZZC1uUVNpTUNHaDdxN3VZTzZDTFdXMXFTY0xrZzFNZHFHYWJFWDlfSDJleENnWngwSGZkTnBzX29fc3JSQUljOHo?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 7 news items related to UNI. 7 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Treasury Secretary Bessent signals US advantage in tariff battle as China's economy crumbles - Fox Business\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771229634
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.037959037797099256,
+        "volume_24h": 85059436.404,
+        "volume_formatted": "85.06M",
+        "market_cap": 2240821721.0,
+        "market_cap_formatted": "2.24B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.038, indicating very low turnover with minimal selling. 24h volume represents 3.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229635,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.535,
+          "total_volume": 85059436.404,
+          "market_cap": 2240821721.0,
+          "circulating_supply": 633818762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2240821721.0,
+        "market_cap_formatted": "2.24B",
+        "price_change_24h": -2.159,
+        "tvl": 3063117398.0,
+        "tvl_formatted": "3.06B",
+        "tvl_change_24h": -0.6552087930681544,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.06B (-0.7% 24h).",
+        "timestamp": 1771229756
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229777,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 374389385.0,
+        "display": "374.39M"
+      },
+      "price_change_24h": -4.528,
+      "token_velocity": 0.0850340142763396,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 374.39M. Price 24h: -4.5%. Token velocity: 0.085. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.0850340142763396,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.085 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.44e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229765,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.44e-05,
+            "mark_price": 68533.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Treasury Secretary Bessent signals US advantage in tariff battle as China's economy crumbles - Fox Business",
+            "published_at": "2025-05-01T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc3lzRnVXV0ZId09wUjJhd1pSTzNXUVAyZXJLalBEdHBDRS1iOEV2OGZIcUFtX0tGYjJWd1E3TDhOSnlMWEFfaXluZGJ4OWxtOFFiY05DYjdRZTdpSUZkMWc1SmFkczQ3WEVfM0Z4X2EyeU9Pa3hZZUJQQ0xtdVFPX1BOY1g0alpKeW1wYjdRMGFkblh1T2lqZjRLRWJPQkt3UFJnZnA5UkI0VUxDRnpuc2xhUVpwZVBoaDE40gHAAUFVX3lxTE1pT19fRkp2RWpPSTM0T3NJcFBnZDlZU3RIXzhBSnpvbU8yZEROdlNWdlFFQlBLdl9kODZKRjczWFVFVVZoVXk2bjAzV2VZZWtCeFlzYTMwZGgtcHNUM3JIT3kya1NLQWZFU3U3bXZjOFJNYzNYbDNiVGNKWWRnVjYwS2xSWF93c1pSYXJyY1pCektHX09hUHU2MHQxY09EamR4V2ZiWWJEZWZJbWItbHRMaXkzUmxmNl9XSmRMdUdOZA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Top Solana Projects in 2025: Best DApps, DeFi, NFTs & Staking - Coin Bureau",
+            "published_at": "2025-09-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8tWmJLdnZmbHhtVTJHZkpMaVFuaEpzQ2tPTUhWbWUyeFp6cE1JYklSLW5rOHBCelYxdllXeFdJRVJmeTRSYUJBZ05jX1FmeVVIdEREcnZSM0ZwT0ZXSFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "China\u2019s Economy Slows Sharply as Trade War Bites - Bloomberg.com",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPcXZLNUNxR2ZsNjM2d2NlRHZvQURtT3hmTkNzWUoxQTM3enBOakdEaGp4S01YRWZDLVRKUlVqSjhxc1dYaUJYSEc0YVV1NzgzNXpiUzBXRWdmbXpyaGJkdEhvT0JVMzZkbTVmTGEtbzZ6S21hbDFySUtha3Y5RmNBYklSLXlxZ0FsUGJWNmEzcXhoRFVsc0JBUmxITUkzQ0FHZGFhSnNwb1ZDUXNrdnpZUw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "China warns countries against striking trade deals with US at its expense - Reuters",
+            "published_at": "2025-04-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQnJqMk5fMDdYeGNqTnZ4NUtpRGFEWTBGYmJiM3BNSFBsbldwQjkyeFhpQkFmbjRmVHBXMmlpX0VzS1U2UlFoWFdhci1POTVRa21CdHJGdjF5NEx4eDROMW00eE0yR3A4NnFzR1dEcWpodGFBTlp0UlEtRkVDQnhMM2YyRm5KMXhpeWZKQXBVU2pRWXF0YVoydmdVYU94N1o2Q2MtMw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Bear market, consolidation and a renaissance: DeFi in 2024 - ForkLog",
+            "published_at": "2025-01-05T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkdZSlZCcW9WbG5UNE1LRzV1MUk2SUxkLU95WnJwNW1YV1llbUJmYWRhTFNNWFRaTW5vcXhySi1SbkpYTVVCM0ZVaDJEV25yRXpyRW1OcmxzMWx6a3liVkgyb29FOUg1aWltbzl1Z1dzQzA1VWFCbnhoMGR5OXZrZV9jMTdMc3fSAYwBQVVfeXFMUHllalVCcGhjcmVTSXhUTU9fbkR6MDRRNXNSOXNOaVpsZ2lDb2R5WkJGQ3FKTnBXZ1BxYUJzY3p3emJieVdWVFBmV1hZZC1uUVNpTUNHaDdxN3VZTzZDTFdXMXFTY0xrZzFNZHFHYWJFWDlfSDJleENnWngwSGZkTnBzX29fc3JSQUljOHo?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 7 news items related to CRV. 7 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Treasury Secretary Bessent signals US advantage in tariff battle as China's economy crumbles - Fox Business\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771229765
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.0850340142763396,
+        "volume_24h": 31835832.309,
+        "volume_formatted": "31.84M",
+        "market_cap": 374389385.0,
+        "market_cap_formatted": "374.39M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.085, indicating moderate turnover with normal trading activity. 24h volume represents 8.5% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771229765,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.253,
+          "total_volume": 31835832.309,
+          "market_cap": 374389385.0,
+          "circulating_supply": 1476858861.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 374389385.0,
+        "market_cap_formatted": "374.39M",
+        "price_change_24h": -4.528,
+        "tvl": 1891459655.0,
+        "tvl_formatted": "1.89B",
+        "tvl_change_24h": -0.1372681728437018,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.89B (-0.1% 24h).",
+        "timestamp": 1771229777
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771229899,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 288927426.0,
+        "display": "288.93M"
+      },
+      "price_change_24h": -5.097,
+      "token_velocity": 0.04154317480024753,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 288.93M. Price 24h: -5.1%. Token velocity: 0.042. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04154317480024753,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.042 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.44e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771229777,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.44e-05,
+            "mark_price": 68533.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Treasury Secretary Bessent signals US advantage in tariff battle as China's economy crumbles - Fox Business",
+            "published_at": "2025-05-01T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc3lzRnVXV0ZId09wUjJhd1pSTzNXUVAyZXJLalBEdHBDRS1iOEV2OGZIcUFtX0tGYjJWd1E3TDhOSnlMWEFfaXluZGJ4OWxtOFFiY05DYjdRZTdpSUZkMWc1SmFkczQ3WEVfM0Z4X2EyeU9Pa3hZZUJQQ0xtdVFPX1BOY1g0alpKeW1wYjdRMGFkblh1T2lqZjRLRWJPQkt3UFJnZnA5UkI0VUxDRnpuc2xhUVpwZVBoaDE40gHAAUFVX3lxTE1pT19fRkp2RWpPSTM0T3NJcFBnZDlZU3RIXzhBSnpvbU8yZEROdlNWdlFFQlBLdl9kODZKRjczWFVFVVZoVXk2bjAzV2VZZWtCeFlzYTMwZGgtcHNUM3JIT3kya1NLQWZFU3U3bXZjOFJNYzNYbDNiVGNKWWRnVjYwS2xSWF93c1pSYXJyY1pCektHX09hUHU2MHQxY09EamR4V2ZiWWJEZWZJbWItbHRMaXkzUmxmNl9XSmRMdUdOZA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion - CoinDesk",
+            "published_at": "2026-02-16T08:01:42+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdkRoQjhoaXJQVk4tR2ZCOEJyREtoRlh5Z1lVa183ZDRBYVlrQzd2SUQ3dFhSOEhUbzh6N1EtNF8xVkRRemtlZ1lsWlNDTm9DWjBPQk85NnRTamprSUROWEZQU2tHamxqR0lEb1ZCQnlweTdCY1dMeWk2QlVpOWlvdUs3TmdQZWNZYnNBd2lXYlRHaDZ5QjlyMzhXWnluYzBxb0J0NmRpaU95UDQ3NERrWGZ5RU1vV1pjYk13?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "OKX snags European payments license for stablecoin and crypto card expansion",
+            "published_at": "2026-02-16T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/okx-snags-european-payments-license-for-stablecoin-and-crypto-card-expansion",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/822079d3e47d84223c33092f9de658d3a4cc1f1c-1919x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Top Solana Projects in 2025: Best DApps, DeFi, NFTs & Staking - Coin Bureau",
+            "published_at": "2025-09-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8tWmJLdnZmbHhtVTJHZkpMaVFuaEpzQ2tPTUhWbWUyeFp6cE1JYklSLW5rOHBCelYxdllXeFdJRVJmeTRSYUJBZ05jX1FmeVVIdEREcnZSM0ZwT0ZXSFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "China\u2019s Economy Slows Sharply as Trade War Bites - Bloomberg.com",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPcXZLNUNxR2ZsNjM2d2NlRHZvQURtT3hmTkNzWUoxQTM3enBOakdEaGp4S01YRWZDLVRKUlVqSjhxc1dYaUJYSEc0YVV1NzgzNXpiUzBXRWdmbXpyaGJkdEhvT0JVMzZkbTVmTGEtbzZ6S21hbDFySUtha3Y5RmNBYklSLXlxZ0FsUGJWNmEzcXhoRFVsc0JBUmxITUkzQ0FHZGFhSnNwb1ZDUXNrdnpZUw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "China warns countries against striking trade deals with US at its expense - Reuters",
+            "published_at": "2025-04-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQnJqMk5fMDdYeGNqTnZ4NUtpRGFEWTBGYmJiM3BNSFBsbldwQjkyeFhpQkFmbjRmVHBXMmlpX0VzS1U2UlFoWFdhci1POTVRa21CdHJGdjF5NEx4eDROMW00eE0yR3A4NnFzR1dEcWpodGFBTlp0UlEtRkVDQnhMM2YyRm5KMXhpeWZKQXBVU2pRWXF0YVoydmdVYU94N1o2Q2MtMw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Bear market, consolidation and a renaissance: DeFi in 2024 - ForkLog",
+            "published_at": "2025-01-05T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkdZSlZCcW9WbG5UNE1LRzV1MUk2SUxkLU95WnJwNW1YV1llbUJmYWRhTFNNWFRaTW5vcXhySi1SbkpYTVVCM0ZVaDJEV25yRXpyRW1OcmxzMWx6a3liVkgyb29FOUg1aWltbzl1Z1dzQzA1VWFCbnhoMGR5OXZrZV9jMTdMc3fSAYwBQVVfeXFMUHllalVCcGhjcmVTSXhUTU9fbkR6MDRRNXNSOXNOaVpsZ2lDb2R5WkJGQ3FKTnBXZ1BxYUJzY3p3emJieVdWVFBmV1hZZC1uUVNpTUNHaDdxN3VZTzZDTFdXMXFTY0xrZzFNZHFHYWJFWDlfSDJleENnWngwSGZkTnBzX29fc3JSQUljOHo?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 7 news items related to LDO. 7 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Treasury Secretary Bessent signals US advantage in tariff battle as China's economy crumbles - Fox Business\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771229777
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04154317480024753,
+        "volume_24h": 11984740.7294,
+        "volume_formatted": "11.98M",
+        "market_cap": 288488802.0,
+        "market_cap_formatted": "288.49M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.042, indicating very low turnover with minimal selling. 24h volume represents 4.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771229777,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3407,
+          "total_volume": 11984740.7294,
+          "market_cap": 288488802.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 288927426.0,
+        "market_cap_formatted": "288.93M",
+        "price_change_24h": -5.097,
+        "tvl": 18601723577.0,
+        "tvl_formatted": "18.60B",
+        "tvl_change_24h": -0.530906423367576,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.60B (-0.5% 24h).",
+        "timestamp": 1771229899
+      }
+    }
+  }
+}

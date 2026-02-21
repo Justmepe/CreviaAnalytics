@@ -1,0 +1,129 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769944050
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "price_usd": 45000,
+    "price_change_24h": 2.5,
+    "volume_24h": 28000000000,
+    "market_cap": 850000000000,
+    "sentiment": "bullish",
+    "news_summary": "Recent developments in BTC market",
+    "on_chain_activity": "Network activity for BTC",
+    "risk_factors": [
+      "Market volatility for BTC"
+    ],
+    "key_developments": [
+      "Key development for BTC"
+    ],
+    "timestamp": 1769944052,
+    "note": "Mock data - set ANTHROPIC_API_KEY for real Claude AI research"
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "price_usd": 2400,
+    "price_change_24h": 2.5,
+    "volume_24h": 28000000000,
+    "market_cap": 850000000000,
+    "sentiment": "bullish",
+    "news_summary": "Recent developments in ETH market",
+    "on_chain_activity": "Network activity for ETH",
+    "risk_factors": [
+      "Market volatility for ETH"
+    ],
+    "key_developments": [
+      "Key development for ETH"
+    ],
+    "timestamp": 1769944053,
+    "note": "Mock data - set ANTHROPIC_API_KEY for real Claude AI research"
+  },
+  "defi": {
+    "sector": "defi",
+    "market_cap": 50000000000,
+    "change_24h": 3.2,
+    "top_assets": [
+      {
+        "name": "Defi Asset 1",
+        "ticker": "DEFI1",
+        "price": 1.23,
+        "change_24h": 5.6
+      },
+      {
+        "name": "Defi Asset 2",
+        "ticker": "DEFI2",
+        "price": 4.56,
+        "change_24h": -2.1
+      },
+      {
+        "name": "Defi Asset 3",
+        "ticker": "DEFI3",
+        "price": 0.89,
+        "change_24h": 12.3
+      }
+    ],
+    "trends": [
+      "Defi trend 1",
+      "Defi trend 2"
+    ],
+    "sentiment": "bullish",
+    "risks": [
+      "Defi risk 1",
+      "Defi risk 2"
+    ],
+    "opportunities": [
+      "Defi opportunity 1",
+      "Defi opportunity 2"
+    ],
+    "timestamp": 1769943938,
+    "note": "Mock data - set ANTHROPIC_API_KEY for real Claude AI research"
+  },
+  "privacy": {
+    "sector": "privacy",
+    "market_cap": 50000000000,
+    "change_24h": 3.2,
+    "top_assets": [
+      {
+        "name": "Privacy Asset 1",
+        "ticker": "PRIVACY1",
+        "price": 1.23,
+        "change_24h": 5.6
+      },
+      {
+        "name": "Privacy Asset 2",
+        "ticker": "PRIVACY2",
+        "price": 4.56,
+        "change_24h": -2.1
+      },
+      {
+        "name": "Privacy Asset 3",
+        "ticker": "PRIVACY3",
+        "price": 0.89,
+        "change_24h": 12.3
+      }
+    ],
+    "trends": [
+      "Privacy trend 1",
+      "Privacy trend 2"
+    ],
+    "sentiment": "bullish",
+    "risks": [
+      "Privacy risk 1",
+      "Privacy risk 2"
+    ],
+    "opportunities": [
+      "Privacy opportunity 1",
+      "Privacy opportunity 2"
+    ],
+    "timestamp": 1769944055,
+    "note": "Mock data - set ANTHROPIC_API_KEY for real Claude AI research"
+  }
+}

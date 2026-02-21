@@ -1,0 +1,23 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769942451
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "research_text": "```json\n{\n    \"ticker\": \"BTC\",\n    \"price_usd\": 78748.39,\n    \"price_change_24h\": 0,\n    \"volume_24h\": 974485339.28,\n    \"market_cap\": 1573618000000,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available due to API limitation\",\n    \"on_chain_activity\": \"Network processing 347,554 transactions across 118 blocks with 11.5 minute average block time. Hash rate at 831 EH/s indicates strong mining activity. Estimated daily transaction volume of $8.61B. Total BTC in circulation: 19.98M coins.\",\n    \"risk_factors\": [\n        \"Block time of 11.5 minutes is above the 10-minute target, suggesting potential network congestion\",\n        \"Miners revenue showing as 0 USD/BTC may indicate data anomaly or reporting issue\",\n        \"Next difficulty adjustment at block 935,423 (840 blocks away) with current difficulty at 141.67T\"\n    ],\n    \"key_developments\": [\n        \"Network hash rate at 831 EH/s demonstrates robust mining infrastructure\",\n        \"Current block height: 934,583 with 176.6 MB total blocks size processed\",\n        \"On-chain transaction volume estimated at $8.61B showing active network usage\",\n        \"Trade volume of 12,374.67 BTC ($974.49M) indicates ongoing market activity\"\n    ],\n    \"timestamp\": \"1769942037\"\n}\n```",
+    "timestamp": 1769942466
+  },
+  "defi": {
+    "sector": "defi",
+    "research_text": "```json\n{\n    \"sector\": \"defi\",\n    \"market_cap\": 0,\n    \"change_24h\": 0,\n    \"top_assets\": [],\n    \"trends\": [\n        \"Data unavailable - API connection issues preventing real-time analysis\",\n        \"Unable to retrieve current TVL metrics across DeFi protocols\",\n        \"News sentiment analysis blocked due to missing API credentials\"\n    ],\n    \"sentiment\": \"neutral\",\n    \"risks\": [\n        \"Data infrastructure failure - cannot assess current market conditions\",\n        \"Missing critical API integrations for comprehensive DeFi analysis\",\n        \"Unable to monitor protocol-specific metrics or cross-chain activity\",\n        \"Lack of real-time price feeds prevents accurate asset valuation\"\n    ],\n    \"opportunities\": [\n        \"Restore API connectivity to enable proper DeFi sector monitoring\",\n        \"Implement fallback data sources for redundancy\",\n        \"Establish CryptoPanic API credentials for sentiment analysis\"\n    ],\n    \"timestamp\": \"1769942475\"\n}\n```\n\n**Analysis Summary:**\n\nThe provided data shows **complete unavailability** of DeFi sector information due to technical issues:\n\n1. **TVL Data**: API unavailable - cannot determine total value locked across protocols\n2. **News/Sentiment**: Missing API key prevents sentiment analysis from CryptoPanic\n3. **Asset Data**: No pricing, volume, or performance metrics available\n\n**Critical Note**: This analysis cannot provide factual market insights as no actual market data was successfully scraped. All numeric fields are set to zero/empty, and the assessment reflects infrastructure issues rather than market conditions. Proper DeFi analysis requires functioning data pipelines for TVL tracking, price feeds, and news aggregation.",
+    "timestamp": 1769942486
+  }
+}

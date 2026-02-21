@@ -1,0 +1,3773 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335096,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68073.52732609,
+        "display": "$68,073.53"
+      },
+      "volume": {
+        "value": 9268137258.75,
+        "display": "9.27B",
+        "velocity": 0.006798736384284423
+      },
+      "derivatives": {
+        "funding_rate": 0.00427,
+        "funding_display": "0.0043%",
+        "open_interest": 5294030364.460309,
+        "oi_display": "5.29B"
+      },
+      "summary": "BTC mark price at $68,073.53. Funding rate: 0.0043%. Open Interest: 5.29B. Volume velocity: 0.007."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 4,
+      "high_relevance_count": 4,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Michael Saylor's Strategy purchased $168 million in bitcoin last week",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "markdown",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 4 news items related to BTC. 4 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.308e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771334892,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.308e-05,
+            "mark_price": 68142.4
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Michael Saylor's Strategy purchased $168 million in bitcoin last week",
+            "published_at": "2026-02-17T13:20:02+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/17/michael-saylor-s-strategy-purchased-usd168-million-in-bitcoin-last-week",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/be2481990e55316ea6740925190a484e9d44efba-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 4 news items related to BTC. 4 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771335012
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 4.27e-05,
+        "funding_rate_percent": 0.00427,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68073.52732609,
+        "open_interest_usd": 5294030364.460309,
+        "open_interest_base": 77769.297,
+        "oi_formatted": "5.29B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0043%, indicating balanced positioning between longs and shorts. Open interest stands at 5.29B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771335017,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 4.27e-05,
+            "mark_price": 68073.52732609
+          },
+          "open_interest": {
+            "open_interest_usd": 5294030364.460309,
+            "open_interest": 77769.297
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006798736384284423,
+        "volume_24h": 9268137258.75,
+        "volume_formatted": "9.27B",
+        "market_cap": 1363214682095.0,
+        "market_cap_formatted": "1363.21B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335096,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68078.0,
+          "total_volume": 9268137258.75,
+          "market_cap": 1363214682095.0,
+          "circulating_supply": 19990746.0
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335100,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1982.28,
+        "display": "$1,982.28"
+      },
+      "volume": {
+        "value": 6905748247.43,
+        "display": "6.91B",
+        "velocity": 0.028842739592091247
+      },
+      "derivatives": {
+        "funding_rate": -0.006719,
+        "funding_display": "-0.0067%",
+        "open_interest": 3525168100.64832,
+        "oi_display": "3.53B"
+      },
+      "summary": "ETH mark price at $1,982.28. Funding rate: -0.0067%. Open Interest: 3.53B. Volume velocity: 0.029."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 3,
+      "high_relevance_count": 3,
+      "dominant_theme": "institutional",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 3 news items related to ETH. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 3,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "institutional",
+          "message": "Significant institutional news detected - monitor for ETF flows or large transactions"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -6.719e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771335098,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -6.719e-05,
+            "mark_price": 1982.28
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 3 news items related to ETH. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771335098
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -6.719e-05,
+        "funding_rate_percent": -0.006719,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1982.28,
+        "open_interest_usd": 3525168100.64832,
+        "open_interest_base": 1778340.144,
+        "oi_formatted": "3.53B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0067%, indicating balanced positioning between longs and shorts. Open interest stands at 3.53B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771335099,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -6.719e-05,
+            "mark_price": 1982.28
+          },
+          "open_interest": {
+            "open_interest_usd": 3525168100.64832,
+            "open_interest": 1778340.144
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.028842739592091247,
+        "volume_24h": 6905748247.43,
+        "volume_formatted": "6.91B",
+        "market_cap": 239427611423.0,
+        "market_cap_formatted": "239.43B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.029, indicating very low turnover with minimal selling. 24h volume represents 2.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335100,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1982.28,
+          "total_volume": 6905748247.43,
+          "market_cap": 239427611423.0,
+          "circulating_supply": 120692440.4714584,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771335100
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771335100
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335166,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.03211344194194486,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -0.793,
+      "volume": {
+        "value": 543106903.05192,
+        "display": "543.11M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.032 (Low (Stable Holding)). Price 24h: -0.8%. Volume: 543.11M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.03211344194194486,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 3,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 3 news items related to DOGE. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.273e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335102,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.273e-05,
+            "mark_price": 67996.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 3 news items related to DOGE. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771335102
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03210528555525861,
+        "volume_24h": 543106903.05192,
+        "volume_formatted": "543.11M",
+        "market_cap": 16916432720.0,
+        "market_cap_formatted": "16.92B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.032, indicating very low turnover with minimal selling. 24h volume represents 3.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335103,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10007,
+          "total_volume": 543106903.05192,
+          "market_cap": 16916432720.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.03211344194194486,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -0.793,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.032. Risk level: LOW. ",
+        "timestamp": 1771335166
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335171,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.001908334151882924,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -0.457,
+      "volume": {
+        "value": 7367061.99920077,
+        "display": "7.37M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.002 (Low (Stable Holding)). Price 24h: -0.5%. Volume: 7.37M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.001908334151882924,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 3,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 3 news items related to SHIB. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.28e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335168,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.28e-05,
+            "mark_price": 67979.34323188
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 3 news items related to SHIB. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771335168
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.001908334151882924,
+        "volume_24h": 7367061.99920077,
+        "volume_formatted": "7.37M",
+        "market_cap": 3860467514.0,
+        "market_cap_formatted": "3.86B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.002, indicating very low turnover with minimal selling. 24h volume represents 0.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335169,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.54e-06,
+          "total_volume": 7367061.99920077,
+          "market_cap": 3860467514.0,
+          "circulating_supply": 589243874380800.2,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.001908334151882924,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -0.457,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.002. Risk level: LOW. ",
+        "timestamp": 1771335171
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335294,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.02276220295545439,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -0.225,
+      "volume": {
+        "value": 42571915.02803798,
+        "display": "42.57M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.023 (Low (Stable Holding)). Price 24h: -0.2%. Volume: 42.57M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.02276220295545439,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 3,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 3 news items related to PEPE. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.28e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335171,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.28e-05,
+            "mark_price": 67979.34323188
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 3 news items related to PEPE. 3 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771335171
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.022799570095412777,
+        "volume_24h": 42571915.02803798,
+        "volume_formatted": "42.57M",
+        "market_cap": 1867224463.0,
+        "market_cap_formatted": "1.87B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.023, indicating very low turnover with minimal selling. 24h volume represents 2.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335293,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.44e-06,
+          "total_volume": 42571915.02803798,
+          "market_cap": 1867224463.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.02276220295545439,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -0.225,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.023. Risk level: LOW. ",
+        "timestamp": 1771335294
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335424,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0077083753920020965,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -0.592,
+      "volume": {
+        "value": 2375135.18178374,
+        "display": "2.38M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.008 (Low (Stable Holding)). Price 24h: -0.6%. Volume: 2.38M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0077083753920020965,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 6,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 6 news items related to FLOKI. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.191e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335302,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.191e-05,
+            "mark_price": 67979.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to FLOKI. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771335302
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.007702490881665688,
+        "volume_24h": 2375135.18178374,
+        "volume_formatted": "2.38M",
+        "market_cap": 308359363.0,
+        "market_cap_formatted": "308.36M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.008, indicating very low turnover with minimal selling. 24h volume represents 0.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335303,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.189e-05,
+          "total_volume": 2375135.18178374,
+          "market_cap": 308359363.0,
+          "circulating_supply": 9654936547021.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.0077083753920020965,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -0.592,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.008. Risk level: LOW. ",
+        "timestamp": 1771335424
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335428,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 36470833.63,
+        "display": "36.47M",
+        "velocity": 0.006011721674138221,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 0.046,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 36.47M (velocity: 0.006). Price 24h: +0.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 6,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "6 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.263e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335427,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.263e-05,
+            "mark_price": 68000.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to XMR. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771335427
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006011721674138221,
+        "volume_24h": 36470833.63,
+        "volume_formatted": "36.47M",
+        "market_cap": 6066620447.0,
+        "market_cap_formatted": "6.07B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.006, indicating very low turnover with minimal selling. 24h volume represents 0.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335428,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 328.44,
+          "total_volume": 36470833.63,
+          "market_cap": 6066620447.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 36474267.73,
+        "volume_formatted": "36.47M",
+        "price_change_24h": 0.046,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771335428,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335552,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 424982270.58,
+        "display": "424.98M",
+        "velocity": 0.08864075635266143,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -1.371,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 424.98M (velocity: 0.089). Price 24h: -1.4%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 6,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "6 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.263e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335428,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.263e-05,
+            "mark_price": 68000.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to ZEC. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771335428
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08864075635266143,
+        "volume_24h": 424982270.58,
+        "volume_formatted": "424.98M",
+        "market_cap": 4794434164.0,
+        "market_cap_formatted": "4.79B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.089, indicating moderate turnover with normal trading activity. 24h volume represents 8.9% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771335551,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 289.87,
+          "total_volume": 424982270.58,
+          "market_cap": 4794434164.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 424321733.64,
+        "volume_formatted": "424.32M",
+        "price_change_24h": -1.371,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771335552,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335675,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 34931100.54,
+        "display": "34.93M",
+        "velocity": 0.0736321086401821,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -0.133,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 34.93M (velocity: 0.074). Price 24h: -0.1%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 6,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "6 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.356e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335553,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.356e-05,
+            "mark_price": 68027.20594203
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 6,
+          "high_relevance_count": 6,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 6 news items related to DASH. 6 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771335553
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.0736321086401821,
+        "volume_24h": 34931100.54,
+        "volume_formatted": "34.93M",
+        "market_cap": 474400383.0,
+        "market_cap_formatted": "474.40M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.074, indicating moderate turnover with normal trading activity. 24h volume represents 7.4% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771335614,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 37.63,
+          "total_volume": 34931100.54,
+          "market_cap": 474400383.0,
+          "circulating_supply": 12589463.2390746,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 34803158.81,
+        "volume_formatted": "34.80M",
+        "price_change_24h": -0.133,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771335675,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335745,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 974610.1093,
+        "display": "974.61K",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -0.566,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 974.61K (velocity: 0.000). Price 24h: -0.6%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 7,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "7 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.384e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335684,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.384e-05,
+            "mark_price": 67966.64247826
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "The Bank of Japan's interest rate hike signal is clear; Gao Shi and Ueda held a closed-door meeting. - \u5bcc\u9014\u725b\u725b",
+            "published_at": "2026-02-17T12:49:08+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQmdnNWpQRm5HcVFCMk1wQW1sOTJYN041RWJrbHRTUmZwXzlqTDF5VG5GTGx1M0VvbmZyM2ZQSzdBVE1CSnhYWkxJbUljd2ZCd1k4ZWZsZTlWTFdVNWpsUXM5eklnZ1R4dmhRT1dkd3NTY1l1ek5TQ0t3WnR2UV8tb0JqbWdxQ1JWdnlFbDRhRGRlU3M?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to SCRT. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771335684
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 974610.1093,
+        "volume_formatted": "974.61K",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335684,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0878,
+          "total_volume": 974610.1093,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 974610.1093,
+        "volume_formatted": "974.61K",
+        "price_change_24h": -0.566,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771335745,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335932,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1927474093.0,
+        "display": "1.93B"
+      },
+      "price_change_24h": 0.293,
+      "token_velocity": 0.02885793801445655,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.93B. Price 24h: +0.3%. Token velocity: 0.029. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.02885793801445655,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.029 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.37e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335747,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.37e-05,
+            "mark_price": 67972.05306522
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "The Bank of Japan's interest rate hike signal is clear; Gao Shi and Ueda held a closed-door meeting. - \u5bcc\u9014\u725b\u725b",
+            "published_at": "2026-02-17T12:49:08+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQmdnNWpQRm5HcVFCMk1wQW1sOTJYN041RWJrbHRTUmZwXzlqTDF5VG5GTGx1M0VvbmZyM2ZQSzdBVE1CSnhYWkxJbUljd2ZCd1k4ZWZsZTlWTFdVNWpsUXM5eklnZ1R4dmhRT1dkd3NTY1l1ek5TQ0t3WnR2UV8tb0JqbWdxQ1JWdnlFbDRhRGRlU3M?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to AAVE. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771335747
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.02885793801445655,
+        "volume_24h": 55651817.178,
+        "volume_formatted": "55.65M",
+        "market_cap": 1928475179.0,
+        "market_cap_formatted": "1.93B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.029, indicating very low turnover with minimal selling. 24h volume represents 2.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335748,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 126.84,
+          "total_volume": 55651817.178,
+          "market_cap": 1928475179.0,
+          "circulating_supply": 15191742.84583586,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1927474093.0,
+        "market_cap_formatted": "1.93B",
+        "price_change_24h": 0.293,
+        "tvl": 27021917406.0,
+        "tvl_formatted": "27.02B",
+        "tvl_change_24h": -0.762961130703928,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.02B (-0.8% 24h).",
+        "timestamp": 1771335932
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771335935,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2243167813.0,
+        "display": "2.24B"
+      },
+      "price_change_24h": 0.597,
+      "token_velocity": 0.027183697784272726,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.24B. Price 24h: +0.6%. Token velocity: 0.027. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.027183697784272726,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.027 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.311e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335934,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.311e-05,
+            "mark_price": 67994.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "The Bank of Japan's interest rate hike signal is clear; Gao Shi and Ueda held a closed-door meeting. - \u5bcc\u9014\u725b\u725b",
+            "published_at": "2026-02-17T12:49:08+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQmdnNWpQRm5HcVFCMk1wQW1sOTJYN041RWJrbHRTUmZwXzlqTDF5VG5GTGx1M0VvbmZyM2ZQSzdBVE1CSnhYWkxJbUljd2ZCd1k4ZWZsZTlWTFdVNWpsUXM5eklnZ1R4dmhRT1dkd3NTY1l1ek5TQ0t3WnR2UV8tb0JqbWdxQ1JWdnlFbDRhRGRlU3M?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to UNI. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771335934
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.027183697784272726,
+        "volume_24h": 60977595.908,
+        "volume_formatted": "60.98M",
+        "market_cap": 2243167813.0,
+        "market_cap_formatted": "2.24B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.027, indicating very low turnover with minimal selling. 24h volume represents 2.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771335934,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.539,
+          "total_volume": 60977595.908,
+          "market_cap": 2243167813.0,
+          "circulating_supply": 633794762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2243167813.0,
+        "market_cap_formatted": "2.24B",
+        "price_change_24h": 0.597,
+        "tvl": 3120002084.0,
+        "tvl_formatted": "3.12B",
+        "tvl_change_24h": -0.721856467944091,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.12B (-0.7% 24h).",
+        "timestamp": 1771335935
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771336137,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 373710889.0,
+        "display": "373.71M"
+      },
+      "price_change_24h": -0.395,
+      "token_velocity": 0.07080306756060298,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 373.71M. Price 24h: -0.4%. Token velocity: 0.071. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.07080306756060298,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.071 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.311e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771335936,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.311e-05,
+            "mark_price": 67994.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "The Bank of Japan's interest rate hike signal is clear; Gao Shi and Ueda held a closed-door meeting. - \u5bcc\u9014\u725b\u725b",
+            "published_at": "2026-02-17T12:49:08+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQmdnNWpQRm5HcVFCMk1wQW1sOTJYN041RWJrbHRTUmZwXzlqTDF5VG5GTGx1M0VvbmZyM2ZQSzdBVE1CSnhYWkxJbUljd2ZCd1k4ZWZsZTlWTFdVNWpsUXM5eklnZ1R4dmhRT1dkd3NTY1l1ek5TQ0t3WnR2UV8tb0JqbWdxQ1JWdnlFbDRhRGRlU3M?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to CRV. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771335936
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.07080306756060298,
+        "volume_24h": 26459877.322,
+        "volume_formatted": "26.46M",
+        "market_cap": 373710889.0,
+        "market_cap_formatted": "373.71M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.071, indicating moderate turnover with normal trading activity. 24h volume represents 7.1% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771336118,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.253,
+          "total_volume": 26459877.322,
+          "market_cap": 373710889.0,
+          "circulating_supply": 1477210363.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 373710889.0,
+        "market_cap_formatted": "373.71M",
+        "price_change_24h": -0.395,
+        "tvl": 1885549475.0,
+        "tvl_formatted": "1.89B",
+        "tvl_change_24h": -0.63260372875427,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.89B (-0.6% 24h).",
+        "timestamp": 1771336137
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771336388,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 289753230.0,
+        "display": "289.75M"
+      },
+      "price_change_24h": 0.737,
+      "token_velocity": 0.040296554522669406,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 289.75M. Price 24h: +0.7%. Token velocity: 0.040. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.040296554522669406,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.040 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 9,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "9 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.359e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771336145,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.359e-05,
+            "mark_price": 67996.5
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Markets bet on June Fed cuts as Wall Street splits on 2026 path - Wealth Professional Canada",
+            "published_at": "2026-02-17T13:30:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclc5UUNOTXNpT0ZYbUJBNWNNb3JPLWVhSXlKTGwxcHFLMGJGRTdraG9vVzVUZmhPWlh2cEdLOEQwWEdzWGZMekU2d0s2cEJldHNncFdFNHZ0V21vekRJakxhYnM4ak8zRURvOFpQLUVtTktBOWR1a3dKQ3F5OHptbi01QVlvSERVekNEM1NtQWRIU2RMXzZBemt3ZnRDNFhhbklXTm1KZ2F0STcwa3l4bm1EVWFnc1AwV0NnUGE1UGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Gold price prediction for February 2026: US-Iran talks, Russia-Ukraine meeting, US Federal Reserve details to drive gold rate this month - MSN",
+            "published_at": "2026-02-17T13:30:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQSklicXNXSWZzNFNNNks5SGZnSHpLOGx1NEJBSVFEd3k4d2RhTVBEcEpmV2kyNWdmZ0dCMWpwNzBleTdFQTF4NnhqZ3htYU56MVZZTkR6YWhjSy1hcHk2T2xueTFxLWJtSFVJNGcxNUJPdlpJcndUMDFIeC1EXzhEOVh2NGlDRkxjcVY4NTZaaE9EeExDWjdWUVZENTRtQ1plc3lPeDIxejkzMVpodUNyMnVWdUhfUnpRckhOQjkxYnpYUUZVRzlIaklEd0trRWVnek8zX2xkZmpYOTBnWEhZVm9CS2dFWnZidEdxMWtiaENDVXNsMnRyNzg4bWdxVGNRMVFnQ2NFWElhQy1pYnM4UlROSVNDNlV1d0d2R2RabW1XNi1PaENaaU1nS19HZy1Hbm5hekln?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Canada January CPI +2.3% y/y vs +2.4% expected",
+            "published_at": "2026-02-17T13:30:09+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/canada-january-cpi-23-yy-vs-24-expected-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Stock Market Today: Dow, S&P 500, Nasdaq Set to Open Down; Nvidia, Palantir, Tesla, Coinbase, More Movers - Barron's",
+            "published_at": "2026-02-17T13:09:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQLXRVeXpMVTAxSzdEMngxbUZHOXNqYkRJTU0zWWNDXzZOdWRVeHdWMlV2eDhpWFpGY1NFQ01RR01GVzR2Vl9wSHBMVm5KaS1mSVRTSlZ6aXNDdms5OGlzSFI4U1Y4ZjlLNFpQZ3pWX3d2OXdTYlloZ2lEcDMtWE1RZHJYTjlmUDZwTEZBQWVfYUJxYjl5S2M5WUVPOThaRHN4RGJyZnFETXJRZ0NzcnMzWUtMNlllNWxhalhabWNBLWhtTjFuUnQyT3FONUNVZ1FEeS1IVzRnV1ViNXhBX2JITWhCYXFwRVotVVlJOWF1SkZTNEhsX2haOGt1QTVYWUNqODBoSlZ5X3VvaDc2cWZUVmlvdEpDVGZ1NXFhZFhGOGZKWnpJeUxzbHc1NVk0X0tacHQ0VEFyTkZSaF83cktJYURzTXV2WW1adjVIQ1c4ZUpyYkJURks5MUhyOFNDUDZhRkVfTUo0dmZqSHg5N2tkT0JiZWJUMFJQYVRj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "The Bank of Japan's interest rate hike signal is clear; Gao Shi and Ueda held a closed-door meeting. - \u5bcc\u9014\u725b\u725b",
+            "published_at": "2026-02-17T12:49:08+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQmdnNWpQRm5HcVFCMk1wQW1sOTJYN041RWJrbHRTUmZwXzlqTDF5VG5GTGx1M0VvbmZyM2ZQSzdBVE1CSnhYWkxJbUljd2ZCd1k4ZWZsZTlWTFdVNWpsUXM5eklnZ1R4dmhRT1dkd3NTY1l1ek5TQ0t3WnR2UV8tb0JqbWdxQ1JWdnlFbDRhRGRlU3M?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "China AI Startup Moonshot Seeks $10 Billion Value in New Funding - Bloomberg",
+            "published_at": "2026-02-17T06:14:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMFlwM25PaTBUZFhPdDJvd2ZhaU1VZ2ZDb2tDV1R1S09kbE1JVTM0N2xVdGRwcHJLQ1QtVkRPa2JQU3BndU9GNlFXSFYtTHlDN0U1Q0dlSnNfU2wwMEMtSExHU3NIVE0xTnRoZlF5dFZ2eHFmdGhwZFYySEFhbldVa1VlTkVRWVROYjNidlY2MVBzZG5vME9URmVFeEoxeGZmb3NDanh3VU5nZ3RlVGU0MHNnUTI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Fed trims rates with three dissents, projects one cut in 2026 - Crain's Cleveland Business",
+            "published_at": "2025-12-10T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPczN3QUpMRTlPVE82d1FYb2dIRkdnWThrTEFld3RVX013UzM2T2IxdV9rb0RfZUt6RV9kY0lyMEEzMWFJNDk3U0ZEV2pZZzNDd1RJV0RkRjc2S2dDV25VSlQxSmFYZ1RTbldLZndOa01MTUU1TThlejNQNnp0M1JQWlhad0EzeWUybC1pVjF2Skg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Some BOJ policymakers called for future rate hikes, July minutes show - Reuters",
+            "published_at": "2025-09-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYVFHb1RyaGxJN2F5Vnc3MTNjeDd0OWtMNjlwYlpWekpqWkVHWGJ1N3ZIMkRBb1hodlB4NmpRVE9VVVRIbHlZR1lmcjVFS2xpeVNqMTREX2lnaEJPbDlsbEM4eWRPR3YtU3JDMFRSZjNBbDZIX2J4Ylh3ajhQSURTdjk5dXppQVoyTVJ3eTdhazNXbmZqZlpXakt6N1R0OUVHazhrREJwUkpiT1d2c2M1Vg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 9 news items related to LDO. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771336145
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.040296554522669406,
+        "volume_24h": 11679620.6178,
+        "volume_formatted": "11.68M",
+        "market_cap": 289841669.0,
+        "market_cap_formatted": "289.84M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.040, indicating very low turnover with minimal selling. 24h volume represents 4.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771336146,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3415,
+          "total_volume": 11679620.6178,
+          "market_cap": 289841669.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 289753230.0,
+        "market_cap_formatted": "289.75M",
+        "price_change_24h": 0.737,
+        "tvl": 18647567644.0,
+        "tvl_formatted": "18.65B",
+        "tvl_change_24h": -1.579170377082418,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.65B (-1.6% 24h).",
+        "timestamp": 1771336388
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769946108
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "price_usd": 45000,
+    "price_change_24h": 2.5,
+    "volume_24h": 28000000000,
+    "market_cap": 850000000000,
+    "sentiment": "bullish",
+    "news_summary": "Recent developments in BTC market",
+    "on_chain_activity": "Network activity for BTC",
+    "risk_factors": [
+      "Market volatility for BTC"
+    ],
+    "key_developments": [
+      "Key development for BTC"
+    ],
+    "timestamp": 1769946114,
+    "note": "Mock data - set ANTHROPIC_API_KEY for real Claude AI research"
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "research_text": "```json\n{\n    \"ticker\": \"ETH\",\n    \"price_usd\": null,\n    \"price_change_24h\": null,\n    \"volume_24h\": null,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - API returned 404 error. Unable to provide recent news summary.\",\n    \"on_chain_activity\": \"On-chain data unavailable - API key required for Etherscan access. Cannot provide network activity metrics such as transaction volume, gas fees, or active addresses.\",\n    \"risk_factors\": [\n        \"Data unavailability - lack of API access prevents proper risk assessment\",\n        \"Unable to verify current market conditions or network health\",\n        \"No access to real-time metrics for informed decision-making\"\n    ],\n    \"key_developments\": [\n        \"Insufficient data - API access required for development tracking\",\n        \"News feed unavailable due to API error\"\n    ],\n    \"timestamp\": \"1769946115\"\n}\n```\n\n**Analysis Note:**\n\nThe provided scraped data is insufficient for meaningful cryptocurrency analysis. Both data sources failed:\n\n1. **Etherscan (On-chain data)**: Requires API key - no blockchain metrics available\n2. **CryptoPanic (News)**: Returned 404 error - no news sentiment available\n\n**Recommendation**: To perform accurate ETH analysis, you need to:\n- Obtain a valid Etherscan API key for on-chain data\n- Fix the CryptoPanic API endpoint or verify API access\n- Add a price data source (CoinGecko, CoinMarketCap, or exchange APIs)\n\nWithout actual data, any price predictions or sentiment analysis would be speculation rather than fact-based analysis.",
+    "timestamp": 1769946127
+  },
+  "SOL": {
+    "ticker": "SOL",
+    "research_text": "```json\n{\n    \"ticker\": \"SOL\",\n    \"price_usd\": null,\n    \"price_change_24h\": null,\n    \"volume_24h\": null,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - API returned 404 error. Unable to assess recent developments or market sentiment from news sources.\",\n    \"on_chain_activity\": \"On-chain data unavailable - limited free sources accessible for SOL network metrics. Cannot provide factual analysis of transaction volume, active addresses, or network utilization.\",\n    \"risk_factors\": [\n        \"Data unavailability limits informed decision-making\",\n        \"Unable to verify current market conditions or price movements\",\n        \"Lack of on-chain metrics prevents network health assessment\",\n        \"No news feed access creates information gap for recent events\"\n    ],\n    \"key_developments\": [\n        \"Data collection failure - news API endpoint not functioning (404 error)\",\n        \"On-chain data sources inaccessible for comprehensive analysis\"\n    ],\n    \"timestamp\": \"1769946128\"\n}\n```\n\n**Analysis Note**: The provided scraped data contains no actionable information for SOL analysis. Both the on-chain data source and CryptoPanic news API failed to return usable data. Without access to price, volume, market cap, news sentiment, or network metrics, no factual analysis can be conducted. I've set numeric fields to `null` rather than fabricating data, as you requested FACTUAL information only. To perform proper analysis, alternative data sources would need to be accessed successfully.",
+    "timestamp": 1769946138
+  },
+  "BNB": {
+    "ticker": "BNB",
+    "research_text": "```json\n{\n    \"ticker\": \"BNB\",\n    \"price_usd\": 770.95,\n    \"price_change_24h\": 7.79,\n    \"volume_24h\": 3350000000,\n    \"market_cap\": 105120000000,\n    \"sentiment\": \"bullish\",\n    \"news_summary\": \"No recent news data available from sources. Price showing strong 24-hour gains of 7.79%.\",\n    \"on_chain_activity\": \"Limited on-chain data available. Treasury holdings reported at 686,070 BNB tokens.\",\n    \"risk_factors\": [\n        \"Price down 43.75% from all-time high of $1,370.55 reached on October 13, 2025\",\n        \"Centralized exchange token exposure to regulatory scrutiny\",\n        \"Volume to market cap ratio of 3.18% indicates moderate liquidity concerns\"\n    ],\n    \"key_developments\": [\n        \"Strong 24-hour price recovery with 7.79% gain\",\n        \"Trading volume increased 41.71% in 24 hours to $3.35B\",\n        \"Market cap at $105.12B with fully diluted valuation matching current cap\",\n        \"100% of max supply (136.36M BNB) currently in circulation\"\n    ],\n    \"timestamp\": \"1769946138\"\n}\n```",
+    "timestamp": 1769946146
+  },
+  "defi": {
+    "sector": "defi",
+    "research_text": "# DeFi Sector Analysis\n\n## Data Availability Issue\n\nThe provided data indicates: **\"DeFi TVL data: API unavailable\"**\n\nSince no actual market data was successfully scraped, I cannot provide factual analysis. However, here's the requested JSON structure with clearly marked placeholder/unavailable data:\n\n```json\n{\n    \"sector\": \"defi\",\n    \"market_cap\": null,\n    \"change_24h\": null,\n    \"top_assets\": [],\n    \"trends\": [\n        \"Data unavailable - API connection failed\",\n        \"Unable to assess current DeFi trends without TVL data\"\n    ],\n    \"sentiment\": \"unknown\",\n    \"risks\": [\n        \"Data reliability risk - API unavailable for analysis\",\n        \"Cannot assess market risks without current metrics\"\n    ],\n    \"opportunities\": [\n        \"Analysis cannot be performed without valid data\"\n    ],\n    \"timestamp\": \"1769946149\",\n    \"data_status\": \"UNAVAILABLE\",\n    \"error\": \"API unavailable - no TVL or asset data retrieved\"\n}\n```\n\n## Required Action\n\nTo provide accurate DeFi sector analysis, I need:\n- **Total Value Locked (TVL)** data from protocols\n- **Top DeFi asset prices** and 24h changes\n- **Market capitalization** figures\n- **Volume data** across major protocols\n\nPlease verify the data source API connection or provide alternative scraped data containing actual DeFi metrics for factual analysis.",
+    "timestamp": 1769946158
+  }
+}

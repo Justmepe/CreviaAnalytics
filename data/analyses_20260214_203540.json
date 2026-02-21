@@ -1,0 +1,825 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771090393,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 69817.53421289,
+        "display": "$69,817.53"
+      },
+      "volume": {
+        "value": 8626998406.85,
+        "display": "8.63B",
+        "velocity": 0.006181517533947027
+      },
+      "derivatives": {
+        "funding_rate": 0.000168,
+        "funding_display": "0.0002%",
+        "open_interest": 5533455489.422838,
+        "oi_display": "5.53B"
+      },
+      "summary": "BTC mark price at $69,817.53. Funding rate: 0.0002%. Open Interest: 5.53B. Volume velocity: 0.006."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 4,
+      "high_relevance_count": 4,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Treasury yields edge lower as investors look ahead to key inflation report - MSN",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "US Treasury Yields Fall as Powell Keeps Rate-Cut Bets Alive - Bloomberg.com",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Treasury yields fall after Trump threatens tariff hike on Chinese products - CNBC",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "negative"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 4 news items related to BTC. 4 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Treasury yields edge lower as investors look ahead to key inflation report - MSN\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.7e-07,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771090160,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.7e-07,
+            "mark_price": 69820.4
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Treasury yields edge lower as investors look ahead to key inflation report - MSN",
+            "published_at": "2026-02-12T10:50:47+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQYjhHRjQtVnRrSXh1MUEwNE56akk4dFNMX3pEamZNYjl0eG8wbTFVTEZKd2djTm5ndGNVNHY2cGptbDFhUVNPS25yWmJQZ3NNanZHM0U3SHU1S3hXM21TNUxYWWphRTRYeFpYSS15MDdLSXNJc2JSUXI0eXFNUWlXbUJsN3JjcnkwZVB5dlp6OGxfbVhuanlub0dKYURMUjR4bUcwMVo4czA3R0o0dVI4aldvaFNTVjg3NVZ0WERvV1BHQ1dnZWNPUVdaQkZvT2JSMlhORTJkTzU1QUtJSHNpMDduY094X00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "US Treasury Yields Fall as Powell Keeps Rate-Cut Bets Alive - Bloomberg.com",
+            "published_at": "2025-10-14T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaUkwMWo0Uk9zUk5vNUZvZHJVQnRxUmNWYk1nX2IwX2NRTTdBVDdVV080NW1uYjhOVjVXRXVST1habDEzaGZ0OWQ5Mm9ucjJrbTNNQWR3X2tDU2ZHeTFMLTFvOVBQdVUzcmN2MkRLbHgyUEJXZjIyVnNyelFKdWtuMmZYNlpoQVJLVnR1ckpWYWJEal9TWWxXUVhLQlZGVDVvY1dQREZmb0xSUnFkaEN5X1dHT1U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Treasury yields fall after Trump threatens tariff hike on Chinese products - CNBC",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVUQ2UDV4aVlGX3A3OUVWeFc2OHlmU3l6UUNkS0lXODQ5WDR2alFYNVJ2T1FSVF9sSTBaTVNRSXFiZmNMc0NfWUQyU2lVdlp3a0pYdlUxY0FmeTlZVnh4ZXhxRXhhZzBaSjZuakdJbmtlMGZvcW5vU1czWjcxeWF2OGdmOTNpcE5BU2lTRGoyUjBCVDZUNXBzSjd30gGfAUFVX3lxTE80VTRjaWFSdHBveGxqNzBWZTY3dDNLdk0xaEMyekM2LWVqeVpKajN4cWpZV01wQkc5OHpIdkx1TjJ3TUNFMzgzdmV1WGNVQWJkQ0NINVUzeU5sTXJsclRfTTc2bzl1TExzaGg3OEZ4Y3dNSzBzQjZvVnFMcUJ2Z1FkOW9mTnJfWjhjQ0VhdEg2dWROUHVQR0ZFaFowQ1NzUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Treasury yields are little changed as investors look ahead to key inflation data - CNBC",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWjc4bXctTVlJelBfWVM5NlMxWk56Y2FXY2hJRTM1Z3N3ajRVQ3VXbTMwQ0Z1eE1KSlZHN3JKWV9FTmJvaHpILWVvdElsTC1KSVhuNEFTaDM3TzM2ZVlMSlVXZVJSOU1xZEFwZ3h2NnhrUFpxMjFJXy11ZGFONk9xSHBOWjRyam9OTHpuMWdoc014MzdLRU1TLUsxYWNiUExi0gGmAUFVX3lxTE9sTEpDWWJQSElSUkdhNXVCWm5vUF9MQ24tUk1oRVQ5Zmp0N0JGZmdLUHo2VTd0cFBrSFhrVkRvU2hBUWFKai02ZVBxd0dZRjlIOXpQanF5dDg0d0o0R2VpNXl0blpCb3RJTWVyQzFCb1JJREdmNnN2OXpLc05xOW5BeU92dVJ6MzF6TXhFSGZNc2VJSWRwZGtyMUotR3RwRVlfaUJYdFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 4 news items related to BTC. 4 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Treasury yields edge lower as investors look ahead to key inflation report - MSN\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771090375
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 1.68e-06,
+        "funding_rate_percent": 0.000168,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 69817.53421289,
+        "open_interest_usd": 5533455489.422838,
+        "open_interest_base": 79255.957,
+        "oi_formatted": "5.53B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0002%, indicating balanced positioning between longs and shorts. Open interest stands at 5.53B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771090385,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 1.68e-06,
+            "mark_price": 69817.53421289
+          },
+          "open_interest": {
+            "open_interest_usd": 5533455489.422838,
+            "open_interest": 79255.957
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006181517533947027,
+        "volume_24h": 8626998406.85,
+        "volume_formatted": "8.63B",
+        "market_cap": 1395611734412.0,
+        "market_cap_formatted": "1395.61B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.006, indicating very low turnover with minimal selling. 24h volume represents 0.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771090393,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 69809.6,
+          "total_volume": 8626998406.85,
+          "market_cap": 1395611734412.0,
+          "circulating_supply": 19989271.0,
+          "transaction_count_24h": 581025,
+          "hashrate": 1101190237252.6643
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771090397,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 2085.08417054,
+        "display": "$2,085.08"
+      },
+      "volume": {
+        "value": 5769738288.77,
+        "display": "5.77B",
+        "velocity": 0.02293175479726549
+      },
+      "derivatives": {
+        "funding_rate": -0.0008389999999999999,
+        "funding_display": "-0.0008%",
+        "open_interest": 3701164899.850079,
+        "oi_display": "3.70B"
+      },
+      "summary": "ETH mark price at $2,085.08. Funding rate: -0.0008%. Open Interest: 3.70B. Volume velocity: 0.023."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 5,
+      "high_relevance_count": 5,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Ethereum \u2018blob\u2019 increase strains network, studies find - dlnews.com",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Treasury yields edge lower as investors look ahead to key inflation report - MSN",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "US Treasury Yields Fall as Powell Keeps Rate-Cut Bets Alive - Bloomberg.com",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 5 news items related to ETH. 5 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Ethereum \u2018blob\u2019 increase strains network, studies find - dlnews.com\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -8.39e-06,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771090395,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -8.39e-06,
+            "mark_price": 2085.22774419
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Ethereum \u2018blob\u2019 increase strains network, studies find - dlnews.com",
+            "published_at": "2026-01-26T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNMjBDdUVyOG9EQmhlX3VpRHF3RW43MTd2R0g2QTNNRFVPVXlLcG54dktBOGJsaEFYZS1XV01CYklHWi16MUdMRVFSRDJNNkp0VU80LTY1VkgyUUtSWWQ4WXZQUHhad3JPMS1HdDlMTEY4b2VNS3hVSDhDazE0ZW1pTmZ5WTNnUWUzRG5nODVOMGc5ZFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Treasury yields edge lower as investors look ahead to key inflation report - MSN",
+            "published_at": "2026-02-12T10:50:47+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQYjhHRjQtVnRrSXh1MUEwNE56akk4dFNMX3pEamZNYjl0eG8wbTFVTEZKd2djTm5ndGNVNHY2cGptbDFhUVNPS25yWmJQZ3NNanZHM0U3SHU1S3hXM21TNUxYWWphRTRYeFpYSS15MDdLSXNJc2JSUXI0eXFNUWlXbUJsN3JjcnkwZVB5dlp6OGxfbVhuanlub0dKYURMUjR4bUcwMVo4czA3R0o0dVI4aldvaFNTVjg3NVZ0WERvV1BHQ1dnZWNPUVdaQkZvT2JSMlhORTJkTzU1QUtJSHNpMDduY094X00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "US Treasury Yields Fall as Powell Keeps Rate-Cut Bets Alive - Bloomberg.com",
+            "published_at": "2025-10-14T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaUkwMWo0Uk9zUk5vNUZvZHJVQnRxUmNWYk1nX2IwX2NRTTdBVDdVV080NW1uYjhOVjVXRXVST1habDEzaGZ0OWQ5Mm9ucjJrbTNNQWR3X2tDU2ZHeTFMLTFvOVBQdVUzcmN2MkRLbHgyUEJXZjIyVnNyelFKdWtuMmZYNlpoQVJLVnR1ckpWYWJEal9TWWxXUVhLQlZGVDVvY1dQREZmb0xSUnFkaEN5X1dHT1U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Treasury yields fall after Trump threatens tariff hike on Chinese products - CNBC",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVUQ2UDV4aVlGX3A3OUVWeFc2OHlmU3l6UUNkS0lXODQ5WDR2alFYNVJ2T1FSVF9sSTBaTVNRSXFiZmNMc0NfWUQyU2lVdlp3a0pYdlUxY0FmeTlZVnh4ZXhxRXhhZzBaSjZuakdJbmtlMGZvcW5vU1czWjcxeWF2OGdmOTNpcE5BU2lTRGoyUjBCVDZUNXBzSjd30gGfAUFVX3lxTE80VTRjaWFSdHBveGxqNzBWZTY3dDNLdk0xaEMyekM2LWVqeVpKajN4cWpZV01wQkc5OHpIdkx1TjJ3TUNFMzgzdmV1WGNVQWJkQ0NINVUzeU5sTXJsclRfTTc2bzl1TExzaGg3OEZ4Y3dNSzBzQjZvVnFMcUJ2Z1FkOW9mTnJfWjhjQ0VhdEg2dWROUHVQR0ZFaFowQ1NzUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Treasury yields are little changed as investors look ahead to key inflation data - CNBC",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWjc4bXctTVlJelBfWVM5NlMxWk56Y2FXY2hJRTM1Z3N3ajRVQ3VXbTMwQ0Z1eE1KSlZHN3JKWV9FTmJvaHpILWVvdElsTC1KSVhuNEFTaDM3TzM2ZVlMSlVXZVJSOU1xZEFwZ3h2NnhrUFpxMjFJXy11ZGFONk9xSHBOWjRyam9OTHpuMWdoc014MzdLRU1TLUsxYWNiUExi0gGmAUFVX3lxTE9sTEpDWWJQSElSUkdhNXVCWm5vUF9MQ24tUk1oRVQ5Zmp0N0JGZmdLUHo2VTd0cFBrSFhrVkRvU2hBUWFKai02ZVBxd0dZRjlIOXpQanF5dDg0d0o0R2VpNXl0blpCb3RJTWVyQzFCb1JJREdmNnN2OXpLc05xOW5BeU92dVJ6MzF6TXhFSGZNc2VJSWRwZGtyMUotR3RwRVlfaUJYdFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 5,
+          "high_relevance_count": 5,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 5 news items related to ETH. 5 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Ethereum \u2018blob\u2019 increase strains network, studies find - dlnews.com\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771090395
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -8.39e-06,
+        "funding_rate_percent": -0.0008389999999999999,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 2085.08417054,
+        "open_interest_usd": 3701164899.850079,
+        "open_interest_base": 1775067.382,
+        "oi_formatted": "3.70B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0008%, indicating balanced positioning between longs and shorts. Open interest stands at 3.70B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771090397,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -8.39e-06,
+            "mark_price": 2085.08417054
+          },
+          "open_interest": {
+            "open_interest_usd": 3701164899.850079,
+            "open_interest": 1775067.382
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.02293175479726549,
+        "volume_24h": 5769738288.77,
+        "volume_formatted": "5.77B",
+        "market_cap": 251604743718.0,
+        "market_cap_formatted": "251.60B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.023, indicating very low turnover with minimal selling. 24h volume represents 2.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771090397,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 2085.01,
+          "total_volume": 5769738288.77,
+          "market_cap": 251604743718.0,
+          "circulating_supply": 120692467.6142904,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771090397
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771090397
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771090529,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.027135655637014793,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 9.204,
+      "volume": {
+        "value": 483084697.68866,
+        "display": "483.08M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.027 (Low (Stable Holding)). Price 24h: +9.2%. Volume: 483.08M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.027135655637014793,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 4,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Treasury yields edge lower as investors look ahead to key inflation report - MSN",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "US Treasury Yields Fall as Powell Keeps Rate-Cut Bets Alive - Bloomberg.com",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Treasury yields fall after Trump threatens tariff hike on Chinese products - CNBC",
+          "sentiment": "negative"
+        }
+      ],
+      "summary": "Found 4 news items related to DOGE. 4 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Treasury yields edge lower as investors look ahead to key inflation report - MSN\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.68e-06,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771090399,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.68e-06,
+            "mark_price": 69800.98725362
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Treasury yields edge lower as investors look ahead to key inflation report - MSN",
+            "published_at": "2026-02-12T10:50:47+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQYjhHRjQtVnRrSXh1MUEwNE56akk4dFNMX3pEamZNYjl0eG8wbTFVTEZKd2djTm5ndGNVNHY2cGptbDFhUVNPS25yWmJQZ3NNanZHM0U3SHU1S3hXM21TNUxYWWphRTRYeFpYSS15MDdLSXNJc2JSUXI0eXFNUWlXbUJsN3JjcnkwZVB5dlp6OGxfbVhuanlub0dKYURMUjR4bUcwMVo4czA3R0o0dVI4aldvaFNTVjg3NVZ0WERvV1BHQ1dnZWNPUVdaQkZvT2JSMlhORTJkTzU1QUtJSHNpMDduY094X00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "US Treasury Yields Fall as Powell Keeps Rate-Cut Bets Alive - Bloomberg.com",
+            "published_at": "2025-10-14T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaUkwMWo0Uk9zUk5vNUZvZHJVQnRxUmNWYk1nX2IwX2NRTTdBVDdVV080NW1uYjhOVjVXRXVST1habDEzaGZ0OWQ5Mm9ucjJrbTNNQWR3X2tDU2ZHeTFMLTFvOVBQdVUzcmN2MkRLbHgyUEJXZjIyVnNyelFKdWtuMmZYNlpoQVJLVnR1ckpWYWJEal9TWWxXUVhLQlZGVDVvY1dQREZmb0xSUnFkaEN5X1dHT1U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Treasury yields fall after Trump threatens tariff hike on Chinese products - CNBC",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVUQ2UDV4aVlGX3A3OUVWeFc2OHlmU3l6UUNkS0lXODQ5WDR2alFYNVJ2T1FSVF9sSTBaTVNRSXFiZmNMc0NfWUQyU2lVdlp3a0pYdlUxY0FmeTlZVnh4ZXhxRXhhZzBaSjZuakdJbmtlMGZvcW5vU1czWjcxeWF2OGdmOTNpcE5BU2lTRGoyUjBCVDZUNXBzSjd30gGfAUFVX3lxTE80VTRjaWFSdHBveGxqNzBWZTY3dDNLdk0xaEMyekM2LWVqeVpKajN4cWpZV01wQkc5OHpIdkx1TjJ3TUNFMzgzdmV1WGNVQWJkQ0NINVUzeU5sTXJsclRfTTc2bzl1TExzaGg3OEZ4Y3dNSzBzQjZvVnFMcUJ2Z1FkOW9mTnJfWjhjQ0VhdEg2dWROUHVQR0ZFaFowQ1NzUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Treasury yields are little changed as investors look ahead to key inflation data - CNBC",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWjc4bXctTVlJelBfWVM5NlMxWk56Y2FXY2hJRTM1Z3N3ajRVQ3VXbTMwQ0Z1eE1KSlZHN3JKWV9FTmJvaHpILWVvdElsTC1KSVhuNEFTaDM3TzM2ZVlMSlVXZVJSOU1xZEFwZ3h2NnhrUFpxMjFJXy11ZGFONk9xSHBOWjRyam9OTHpuMWdoc014MzdLRU1TLUsxYWNiUExi0gGmAUFVX3lxTE9sTEpDWWJQSElSUkdhNXVCWm5vUF9MQ24tUk1oRVQ5Zmp0N0JGZmdLUHo2VTd0cFBrSFhrVkRvU2hBUWFKai02ZVBxd0dZRjlIOXpQanF5dDg0d0o0R2VpNXl0blpCb3RJTWVyQzFCb1JJREdmNnN2OXpLc05xOW5BeU92dVJ6MzF6TXhFSGZNc2VJSWRwZGtyMUotR3RwRVlfaUJYdFE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 4 news items related to DOGE. 4 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Treasury yields edge lower as investors look ahead to key inflation report - MSN\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771090399
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.02714864292575927,
+        "volume_24h": 483084697.68866,
+        "volume_formatted": "483.08M",
+        "market_cap": 17794064293.0,
+        "market_cap_formatted": "17.79B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.027, indicating very low turnover with minimal selling. 24h volume represents 2.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771090400,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.1056,
+          "total_volume": 483084697.68866,
+          "market_cap": 17794064293.0,
+          "circulating_supply": 168726213126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.027135655637014793,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 9.204,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.027. Risk level: LOW. ",
+        "timestamp": 1771090529
+      }
+    }
+  }
+}

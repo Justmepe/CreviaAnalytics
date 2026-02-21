@@ -1,0 +1,23 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769942577
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "research_text": "```json\n{\n    \"ticker\": \"BTC\",\n    \"price_usd\": 78748.39,\n    \"price_change_24h\": 0,\n    \"volume_24h\": 974485339.28,\n    \"market_cap\": 1573548000000,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available due to API access error. Analysis based solely on on-chain metrics.\",\n    \"on_chain_activity\": \"Network processing 347,554 transactions across 118 blocks with 11.50 minute average block time (slightly above 10min target). Hash rate at 831 EH/s indicates strong network security. Estimated transaction volume at $8.61B. Next difficulty adjustment at block 935,423 (840 blocks away).\",\n    \"risk_factors\": [\n        \"Block time averaging 11.50 minutes suggests potential minor network congestion above optimal 10-minute target\",\n        \"Miners revenue showing as 0 in data may indicate reporting anomaly requiring verification\",\n        \"Limited price movement data available - no 24h change metrics for trend analysis\",\n        \"Current difficulty at 141.67T represents high mining competition\"\n    ],\n    \"key_developments\": [\n        \"Total BTC supply at 19,983,071.875 BTC (95.2% of 21M max supply mined)\",\n        \"Network hash rate stable at 831 EH/s demonstrating robust mining participation\",\n        \"Block height at 934,583 with 118 blocks mined in observation period\",\n        \"On-chain transaction volume of 109,390 BTC ($8.61B USD equivalent)\",\n        \"Average block size of 1.50 MB indicating healthy transaction throughput\"\n    ],\n    \"timestamp\": \"1769942457\"\n}\n```",
+    "timestamp": 1769942594
+  },
+  "defi": {
+    "sector": "defi",
+    "research_text": "```json\n{\n    \"sector\": \"defi\",\n    \"market_cap\": 0,\n    \"change_24h\": 0,\n    \"top_assets\": [],\n    \"trends\": [\n        \"Data unavailable - API endpoints not accessible\",\n        \"Unable to retrieve current TVL metrics\",\n        \"News sentiment analysis unavailable due to missing API credentials\"\n    ],\n    \"sentiment\": \"neutral\",\n    \"risks\": [\n        \"Data source unavailability limits market visibility\",\n        \"Unable to assess current protocol health without TVL data\",\n        \"Missing real-time sentiment indicators from news feeds\",\n        \"Cannot verify asset performance or market movements\"\n    ],\n    \"opportunities\": [\n        \"Establish reliable data sources for DeFi TVL tracking\",\n        \"Configure API credentials for comprehensive market analysis\",\n        \"Implement alternative data collection methods\"\n    ],\n    \"timestamp\": \"1769942601\"\n}\n```\n\n**Analysis Note:**\n\nThe scraped data shows complete unavailability of both primary data sources:\n- **DeFi TVL API**: Not accessible\n- **CryptoPanic News API**: Missing authentication credentials\n\nWithout factual data, I cannot provide:\n- Current market capitalization figures\n- 24-hour price changes\n- Top asset rankings or performance metrics\n- Verified market trends\n- Evidence-based sentiment analysis\n\nThis analysis reflects only the data availability status. For accurate DeFi sector analysis, functional API access to TVL aggregators (like DeFiLlama) and news sentiment sources is required.",
+    "timestamp": 1769942609
+  }
+}

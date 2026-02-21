@@ -1,0 +1,18 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769942764
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "research_text": "```json\n{\n    \"ticker\": \"BTC\",\n    \"price_usd\": 78748.39,\n    \"price_change_24h\": null,\n    \"volume_24h\": 974485339.28,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available due to API error (status 404)\",\n    \"on_chain_activity\": \"Network processed 347,554 transactions across 118 blocks with an average block time of 11.50 minutes. Hash rate stands at 831 EH/s with difficulty at 141.67T. Estimated transaction volume reached $8.61B. Total BTC sent: 941,259 BTC. Current blockchain size: 176.6 GB.\",\n    \"risk_factors\": [\n        \"Block time of 11.50 minutes is above the 10-minute target, indicating potential network congestion\",\n        \"Miners revenue showing as 0 USD and 0 BTC - possible data anomaly or reporting issue\",\n        \"Total fees showing negative value (-368.75 BTC) - data integrity concern\",\n        \"News API unavailable limiting sentiment analysis capability\"\n    ],\n    \"key_developments\": [\n        \"Total Bitcoin mined: 368.75 BTC in recent period (118 blocks)\",\n        \"Total BTC in circulation: 19,983,071.875 BTC (approaching 21M cap)\",\n        \"Next difficulty retarget at block 935,423 (840 blocks away)\",\n        \"Network hash rate maintaining high security at 831 EH/s\"\n    ],\n    \"timestamp\": \"1769942457\"\n}\n```",
+    "timestamp": 1769942776
+  }
+}

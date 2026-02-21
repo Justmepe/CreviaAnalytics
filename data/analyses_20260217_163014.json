@@ -1,0 +1,827 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771334813,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68192.6,
+        "display": "$68,192.60"
+      },
+      "volume": {
+        "value": 9527004691.01,
+        "display": "9.53B",
+        "velocity": 0.006999998727812761
+      },
+      "derivatives": {
+        "funding_rate": 0.004429,
+        "funding_display": "0.0044%",
+        "open_interest": 5304360913.6518,
+        "oi_display": "5.30B"
+      },
+      "summary": "BTC mark price at $68,192.60. Funding rate: 0.0044%. Open Interest: 5.30B. Volume velocity: 0.007."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 2,
+      "high_relevance_count": 2,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Michael Saylor's Strategy purchased $168 million in bitcoin last week",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "markdown",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 2 news items related to BTC. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.239e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771334555,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.239e-05,
+            "mark_price": 68069.9
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Michael Saylor's Strategy purchased $168 million in bitcoin last week",
+            "published_at": "2026-02-17T13:20:02+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/17/michael-saylor-s-strategy-purchased-usd168-million-in-bitcoin-last-week",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/be2481990e55316ea6740925190a484e9d44efba-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to BTC. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771334795
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 4.429e-05,
+        "funding_rate_percent": 0.004429,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68192.6,
+        "open_interest_usd": 5304360913.6518,
+        "open_interest_base": 77784.993,
+        "oi_formatted": "5.30B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0044%, indicating balanced positioning between longs and shorts. Open interest stands at 5.30B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771334803,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 4.429e-05,
+            "mark_price": 68192.6
+          },
+          "open_interest": {
+            "open_interest_usd": 5304360913.6518,
+            "open_interest": 77784.993
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006999998727812761,
+        "volume_24h": 9527004691.01,
+        "volume_formatted": "9.53B",
+        "market_cap": 1361000917494.0,
+        "market_cap_formatted": "1361.00B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771334813,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68200.0,
+          "total_volume": 9527004691.01,
+          "market_cap": 1361000917494.0,
+          "circulating_supply": 19990746.0,
+          "transaction_count_24h": 681820,
+          "hashrate": 1157501101657.63
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771334819,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1984.00005426,
+        "display": "$1,984.00"
+      },
+      "volume": {
+        "value": 7105806294.25,
+        "display": "7.11B",
+        "velocity": 0.029726443555427428
+      },
+      "derivatives": {
+        "funding_rate": -0.006742,
+        "funding_display": "-0.0067%",
+        "open_interest": 3528225777.5807047,
+        "oi_display": "3.53B"
+      },
+      "summary": "ETH mark price at $1,984.00. Funding rate: -0.0067%. Open Interest: 3.53B. Volume velocity: 0.030."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 1,
+      "high_relevance_count": 1,
+      "dominant_theme": "institutional",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 1 news items related to ETH. 1 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 3,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "institutional",
+          "message": "Significant institutional news detected - monitor for ETF flows or large transactions"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -6.742e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771334816,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -6.742e-05,
+            "mark_price": 1984.20144961
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 1
+          }
+        },
+        "interpretation": "Found 1 news items related to ETH. 1 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771334816
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -6.742e-05,
+        "funding_rate_percent": -0.006742,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1984.00005426,
+        "open_interest_usd": 3528225777.5807047,
+        "open_interest_base": 1778339.557,
+        "oi_formatted": "3.53B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0067%, indicating balanced positioning between longs and shorts. Open interest stands at 3.53B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771334818,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -6.742e-05,
+            "mark_price": 1984.00005426
+          },
+          "open_interest": {
+            "open_interest_usd": 3528225777.5807047,
+            "open_interest": 1778339.557
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.029726443555427428,
+        "volume_24h": 7105806294.25,
+        "volume_formatted": "7.11B",
+        "market_cap": 239039906708.0,
+        "market_cap_formatted": "239.04B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.030, indicating very low turnover with minimal selling. 24h volume represents 3.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771334819,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1984.3,
+          "total_volume": 7105806294.25,
+          "market_cap": 239039906708.0,
+          "circulating_supply": 120692440.4714584,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771334819
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771334819
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771334828,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.03302793613552743,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -0.831,
+      "volume": {
+        "value": 557514013.24922,
+        "display": "557.51M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.033 (Low (Stable Holding)). Price 24h: -0.8%. Volume: 557.51M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.03302793613552743,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 1,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 1 news items related to DOGE. 1 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.361e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771334821,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.361e-05,
+            "mark_price": 68188.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 1
+          }
+        },
+        "interpretation": "Found 1 news items related to DOGE. 1 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771334821
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03302750688240724,
+        "volume_24h": 557514013.24922,
+        "volume_formatted": "557.51M",
+        "market_cap": 16880293606.0,
+        "market_cap_formatted": "16.88B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.033, indicating very low turnover with minimal selling. 24h volume represents 3.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771334822,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10032,
+          "total_volume": 557514013.24922,
+          "market_cap": 16880293606.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.03302793613552743,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -0.831,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.033. Risk level: LOW. ",
+        "timestamp": 1771334828
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771334955,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0019624855817330583,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0.0,
+      "volume": {
+        "value": 7614912.69520658,
+        "display": "7.61M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.002 (Low (Stable Holding)). Price 24h: +0.0%. Volume: 7.61M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0019624855817330583,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 1,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 1 news items related to SHIB. 1 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.361e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771334828,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.361e-05,
+            "mark_price": 68188.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin",
+            "published_at": "2026-02-17T13:13:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rb2Zwd1Bfdl9xalJrUEg5X3NBTTBsU1N0SUE5dWNBazQwckVSdGFCb0ZuckRSQ1hnWWY0eGpvUjl4X3ZwNjlYN3JFd0ZhYUgxMWhIV3J2aTN2UUs4MUdPcFdHeGFqVl8zWlpQOGtjdUNPdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 1
+          }
+        },
+        "interpretation": "Found 1 news items related to SHIB. 1 of these are highly relevant. The dominant theme is Institutional activity. News sentiment is mixed or neutral. Most significant: \"Altcoin ETF Race Heats Up, Filings Pile Up Despite Choppy Flows - DailyCoin\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771334828
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.001971683122334927,
+        "volume_24h": 7614912.69520658,
+        "volume_formatted": "7.61M",
+        "market_cap": 3862138195.0,
+        "market_cap_formatted": "3.86B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.002, indicating very low turnover with minimal selling. 24h volume represents 0.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771334951,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.56e-06,
+          "total_volume": 7614912.69520658,
+          "market_cap": 3862138195.0,
+          "circulating_supply": 589243874380800.2,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.0019624855817330583,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 0.0,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.002. Risk level: LOW. ",
+        "timestamp": 1771334955
+      }
+    }
+  }
+}

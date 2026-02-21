@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Cache
+data/cache/*
+!data/cache/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Browser session storage — NEVER commit, contains auth cookies
+x_browser_session/
+x_browser_session_backup/
+substack_browser_session/
+twitter_auth/
+
+# Env files — contain real credentials
+.env
+.env.txt
+.env.local
+.env.*.local
+
+# Claude Code session files
+.claude/
+
+# Temp / debug output files
+nul
+error.txt
+output.txt
+final_status.txt
+*.png
+test_screenshots/
+
+# Generated thread/analysis output files
+x_thread_*.txt
+output/
+
+# Next.js
+web/.next/
+web/out/
+web/node_modules/
+
+# Logs
+*.log
+logs/
+
+# Playwright
+playwright-report/
+test-results/

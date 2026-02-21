@@ -1,0 +1,4211 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582338,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68153.87907246,
+        "display": "$68,153.88"
+      },
+      "volume": {
+        "value": 10906740764.92,
+        "display": "10.91B",
+        "velocity": 0.007994820650180168
+      },
+      "derivatives": {
+        "funding_rate": -0.003361,
+        "funding_display": "-0.0034%",
+        "open_interest": 5570741730.384288,
+        "oi_display": "5.57B"
+      },
+      "summary": "BTC mark price at $68,153.88. Funding rate: -0.0034%. Open Interest: 5.57B. Volume velocity: 0.008."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 4,
+      "high_relevance_count": 4,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Metaplanet CEO rejects claims it hid details of Bitcoin trades",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 7,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 4 news items related to BTC. 4 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.992e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582050,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.992e-05,
+            "mark_price": 68142.88537681
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News",
+            "published_at": "2026-02-20T10:00:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxORnhjNlN1TU9seXZBQ1QwUjVIVUxYYURCSXlLQ0psX2RWTmhwUnk4NGpFNkpyc3RGRVcyTlpqTEcwVGdSYzJnOW9TaERfM2dtd09JdjJyZUZTdzRMZDlfQkZIYndQS0VHN2NoRk5vTmZ0Vm1JamtRM09EaHd1SFE2WmlHdjFzaXhkQjR1UU5IaVM5YTNfZ0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Metaplanet CEO rejects claims it hid details of Bitcoin trades",
+            "published_at": "2026-02-20T09:51:22+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/metaplanet-ceo-denies-misleading-investors-bitcoin-disclosures?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzdhM2EtZmY4YS03Y2FmLWJmOTUtOWU3Y2U4ODM0OGZiLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 4 news items related to BTC. 4 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771582322
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": -3.361e-05,
+        "funding_rate_percent": -0.003361,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68153.87907246,
+        "open_interest_usd": 5570741730.384288,
+        "open_interest_base": 81737.706,
+        "oi_formatted": "5.57B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at -0.0034%, indicating balanced positioning between longs and shorts. Open interest stands at 5.57B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771582330,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -3.361e-05,
+            "mark_price": 68153.87907246
+          },
+          "open_interest": {
+            "open_interest_usd": 5570741730.384288,
+            "open_interest": 81737.706
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.007994820650180168,
+        "volume_24h": 10906740764.92,
+        "volume_formatted": "10.91B",
+        "market_cap": 1364225820960.0,
+        "market_cap_formatted": "1364.23B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.008, indicating very low turnover with minimal selling. 24h volume represents 0.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582338,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68148.0,
+          "total_volume": 10906740764.92,
+          "market_cap": 1364225820960.0,
+          "circulating_supply": 19992221.0,
+          "transaction_count_24h": 408464,
+          "hashrate": 976219352403.109
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582344,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1967.18974419,
+        "display": "$1,967.19"
+      },
+      "volume": {
+        "value": 8577171472.43,
+        "display": "8.58B",
+        "velocity": 0.03614017004211742
+      },
+      "derivatives": {
+        "funding_rate": -0.006677,
+        "funding_display": "-0.0067%",
+        "open_interest": 3480551293.054445,
+        "oi_display": "3.48B"
+      },
+      "summary": "ETH mark price at $1,967.19. Funding rate: -0.0067%. Open Interest: 3.48B. Volume velocity: 0.036."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 3,
+      "high_relevance_count": 3,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 7,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 3 news items related to ETH. 3 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -6.677e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582341,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -6.677e-05,
+            "mark_price": 1967.353
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News",
+            "published_at": "2026-02-20T10:00:25+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxORnhjNlN1TU9seXZBQ1QwUjVIVUxYYURCSXlLQ0psX2RWTmhwUnk4NGpFNkpyc3RGRVcyTlpqTEcwVGdSYzJnOW9TaERfM2dtd09JdjJyZUZTdzRMZDlfQkZIYndQS0VHN2NoRk5vTmZ0Vm1JamtRM09EaHd1SFE2WmlHdjFzaXhkQjR1UU5IaVM5YTNfZ0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 3 news items related to ETH. 3 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Vitalik Buterin Reveals Ethereum\u2019s Plan to Fight Censorship - Live Bitcoin News\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771582341
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -6.677e-05,
+        "funding_rate_percent": -0.006677,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1967.18974419,
+        "open_interest_usd": 3480551293.054445,
+        "open_interest_base": 1769301.26,
+        "oi_formatted": "3.48B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0067%, indicating balanced positioning between longs and shorts. Open interest stands at 3.48B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771582343,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -6.677e-05,
+            "mark_price": 1967.18974419
+          },
+          "open_interest": {
+            "open_interest_usd": 3480551293.054445,
+            "open_interest": 1769301.26
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03614017004211742,
+        "volume_24h": 8577171472.43,
+        "volume_formatted": "8.58B",
+        "market_cap": 237330689436.0,
+        "market_cap_formatted": "237.33B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.036, indicating very low turnover with minimal selling. 24h volume represents 3.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582344,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1966.94,
+          "total_volume": 8577171472.43,
+          "market_cap": 237330689436.0,
+          "circulating_supply": 120692388.3199713,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771582344
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771582344
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582473,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.025784597283542026,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 1.486,
+      "volume": {
+        "value": 431590625.28353,
+        "display": "431.59M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.026 (Low (Stable Holding)). Price 24h: +1.5%. Volume: 431.59M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.025784597283542026,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to DOGE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.361e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582345,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.361e-05,
+            "mark_price": 68140.2
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to DOGE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771582345
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.025782575685753456,
+        "volume_24h": 431590625.28353,
+        "volume_formatted": "431.59M",
+        "market_cap": 16739624099.0,
+        "market_cap_formatted": "16.74B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.026, indicating very low turnover with minimal selling. 24h volume represents 2.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582347,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.09906,
+          "total_volume": 431590625.28353,
+          "market_cap": 16739624099.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.025784597283542026,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 1.486,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.026. Risk level: LOW. ",
+        "timestamp": 1771582473
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582490,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0025439834663089846,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 1.445,
+      "volume": {
+        "value": 9463116.64050704,
+        "display": "9.46M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.003 (Low (Stable Holding)). Price 24h: +1.4%. Volume: 9.46M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0025439834663089846,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to SHIB. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.442e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582485,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.442e-05,
+            "mark_price": 68137.4
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to SHIB. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771582485
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0025439834663089846,
+        "volume_24h": 9463116.64050704,
+        "volume_formatted": "9.46M",
+        "market_cap": 3719802729.0,
+        "market_cap_formatted": "3.72B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.003, indicating very low turnover with minimal selling. 24h volume represents 0.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582488,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.32e-06,
+          "total_volume": 9463116.64050704,
+          "market_cap": 3719802729.0,
+          "circulating_supply": 589243868948690.5,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.0025439834663089846,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 1.445,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.003. Risk level: LOW. ",
+        "timestamp": 1771582490
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582612,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.015655791350502872,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0.713,
+      "volume": {
+        "value": 27930995.15077529,
+        "display": "27.93M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.016 (Low (Stable Holding)). Price 24h: +0.7%. Volume: 27.93M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.015655791350502872,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to PEPE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.442e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582490,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.442e-05,
+            "mark_price": 68137.4
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to PEPE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771582490
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.01568618640487681,
+        "volume_24h": 27930995.15077529,
+        "volume_formatted": "27.93M",
+        "market_cap": 1780610942.0,
+        "market_cap_formatted": "1.78B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.016, indicating very low turnover with minimal selling. 24h volume represents 1.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582611,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.24e-06,
+          "total_volume": 27930995.15077529,
+          "market_cap": 1780610942.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.015655791350502872,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 0.713,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.016. Risk level: LOW. ",
+        "timestamp": 1771582612
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582676,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.009586578797049033,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0.694,
+      "volume": {
+        "value": 2809664.72114892,
+        "display": "2.81M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.010 (Low (Stable Holding)). Price 24h: +0.7%. Volume: 2.81M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.009586578797049033,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 17,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 17 news items related to FLOKI. 17 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.556e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582614,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.556e-05,
+            "mark_price": 68155.2
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+            "published_at": "2025-08-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9jRDg3S3ZCWWgzV3dsbFFNcDhLazhDZG56OExQS2YydU5IalptaWo5SjcxaVlWU0lTbnZ1U2FiTUpUVHk4M2lmOWF5Nnc0X0JCYlNaSnZiSWR1TlRLU05adDZEODlqaFdMTUdEeGk1dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Central Banks Buy 166t Gold as BRICS Pushes De-Dollarization Forward - Watcher Guru",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZmNUb1RvRkZIRWxIekpwZGp4Vml4aG9XX19uYnNlOVJFYlB1OGJqeWlLV0dZLXl1dkJNdjFobmd1UDZWUUQwZ3hIcW9vMW12cFlWaGVZVUp6NmRtOWg0Q1Q1VHB0WlU4Nkt5b0tpTjFTU1hRTGhRYVAxeE1xak90VlpWam1EX2l6eWpNYjROREJYZmY0SGt0VGdR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Lula: BRICS to keep exploring dollar alternatives - Ag\u00eancia Brasil",
+            "published_at": "2025-07-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlZBZ21Kek1jYlh5OV84U1dJdVhyMks5TEVwYWtsSnJfY2NwMEdZQ1E0ZHpTWlZZNTc4ajhZRUZnWVBjalplaEFZeXBZQ0ljVzByTGlUdVNoU1JYSDZTQmlUWU1yaldVbUpOQmt3YVN5SjlhTjFMR3B3ZlFZanRSWmM4UmpGcEV2WHdzUXAyZWFDODh0dHRlTmU2VDJkWGFtOWhSQTJObmxUZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "BRICS Currency May Still Be On the Horizon: Expert Says - Watcher Guru",
+            "published_at": "2025-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN3EyWHl1UmppdG1CU1drVXNTbFoxdVMtSmR1ZVhkRjc4aGlXNmJiS3Rya1hhUmE3Uk82amY0Szcwd1JBcW9RUGgtWVJLSjhyTnVsLUdZQURJVFVhcW83RnFkRG01bTN1ZW9HYVpHRnFhemVZX2E0MkxNQXVyZUY0OVUyVVRMVnM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "India\u2019s Strategic Approach to BRICS Common Currency: Benefits, Risks - BizzBuzz",
+            "published_at": "2024-12-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1QwWmpUREJpOXR0NmFHVXRueFZPalFIV0M5Q0pxaHlTdnlsTkxwNHQ0TVh3NUpOdHdxNmMtM0ZmNlJmZklmeGtUUzVDYjdpZ19OUnBEdTN3NzJsVkdUYjIycVJWUFlFT3RZQjJjYnZrTFR3Uy1qQ3NXOTVmajNNd1BmYlpUNHRLdnlNdmpzSi1LakVVYk9hX3U0MzFfNzhnRThLNmxhWFNrVEpL?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Trump's 100% tariff threat on BRICS depends on whether U.S. laws would permit it, says ex-RBI governor - The Hindu",
+            "published_at": "2024-12-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQjd6Nk1CM1RVNGc3T0pLUTNZYk9HM3l2M2NpLTF4X1FjRWNDYk0wT1NMUmRILWVnb09CWGl6SENoZjNscnc3eFMyYzQyUklLN3dZTk1wajRVZDFOaTM3STBOSEZCTWd6SUNYN2gxMGJqSWFuS3FHZkZ5blBvSnlUZFE0ekNYRXo1ZVFjWFpkYmJPSG1xMWU3Vkdxb2oyVG1qUlh6YTJrMHZwRERzdjhrbzdhSjU0ajVQY3NtZjJ0QXlmUWF1cWI4cW8tU0VjZnFMT0VyR0daWnlqUXVkc3RJWEJpMk1ZMWdBX2RuZzlhWk7SAfcBQVVfeXFMTVRTYzFVcDFzd0hCR19Gc2dKSlFOWjZ2azZQQ2Y4ZmthUXZMU3p4aERSckRjZzZoSldaNFZ3ZXBnRVU3RU8wM1U0ZWRISV9mZWlkQUZ1dDlXR3U2ZDVtOURDTnRxaFota2tvMjFBWkxtdU1KSDFfc1hCdWxQeFpZZHZqZ1dKM3Rpd2p5dm9ZOXhQZ0tTUmIzQ2NRVUUtTUJDTHFILXFpcW5IMUtrTHBHYnJjNDBWYWM4eTd0QU80NWZlQjEzTXBsRW1nUHgtcjMwZmpWSkFlR01DTnFtbTQyUHR3TDNuUnRlOWVaZmwwcE1VblBhQXBXUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Donald Trump warns Brics it will lose access to US if it dumps dollar - The Times of India",
+            "published_at": "2024-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbk5FM3duYjNiemtqb1NBemQxUjUxNUxrWl9Rd0w1LW15elEwaWk2UENTUW9mUUhTWFBick96b1IxQnZ0eUZmdzJMeFlJS1p1UmlHQXZXMG9ock9jZHEzbmVNZEt1endlRmVBclV4YVZ0Ql8tdWpBdk1idG1Ib1EtS2RXM1JPRmtmYmZOX203NFFPY19rTFo5a191dEJoUnhnOVBiZzZNMjcxT0ZfS3JYVzE3dGtGYlVtSnBqUTBhSFZmdnVLZFBWaUUyWW1qOUNCV0xQZ205MNIB3AFBVV95cUxOVFhrQkpDT3FkaGluRV93Q0lwTndMOFduUEpGeHFqcjMzekdGak9ZX0QwTEdacjFEaTEtWlBqcl9xaExZY0VJV21HX3A0dkExYllxdlZxcm9feUUtRENER1M5VEZLb0FncWFDY3VEWnhtVkN4N2hMekhiYy13cmN6SkQ5dDJuV1Q1MVdDdjd6NDVXNWl5Mml0dnI2bGRZNjd4NEVYT3dyOVlpSEU5bThCSmdtdmxSTXRqcEN1clFyRWJOWERvOHZzQlhGU3BXYmpnc3RHWHo0dzNLaHJM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Crypto Takes Center Stage at BRICS Summit Amid De-Dollarization Efforts - CCN.com",
+            "published_at": "2024-10-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2s0TmVqLVAyeTJsTmhjaDVfLTFnd2lCeVEtQ0NWNkRGSGlEeEFGS0JEdFhZbFBCX1pVSGt4M25zNE1vOHNwWHE0dk5MY3IzYVFsV2ZDTFQ1UTFfVm00ZWd6eHdKVkpQYlpPRzlCaDQ5bTdLT1dLMUZIS1V6VVlIUnpBYw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 17,
+          "high_relevance_count": 17,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 17 news items related to FLOKI. 17 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771582614
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.009586578797049033,
+        "volume_24h": 2809664.72114892,
+        "volume_formatted": "2.81M",
+        "market_cap": 293083151.0,
+        "market_cap_formatted": "293.08M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.010, indicating very low turnover with minimal selling. 24h volume represents 1.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582615,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.047e-05,
+          "total_volume": 2809664.72114892,
+          "market_cap": 293083151.0,
+          "circulating_supply": 9654906270894.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.009586578797049033,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 0.694,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.010. Risk level: LOW. ",
+        "timestamp": 1771582676
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582679,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 27530347.95,
+        "display": "27.53M",
+        "velocity": 0.004423464342136495,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 3.672,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 27.53M (velocity: 0.004). Price 24h: +3.7%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 17,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "17 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.556e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582678,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.556e-05,
+            "mark_price": 68184.9
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+            "published_at": "2025-08-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9jRDg3S3ZCWWgzV3dsbFFNcDhLazhDZG56OExQS2YydU5IalptaWo5SjcxaVlWU0lTbnZ1U2FiTUpUVHk4M2lmOWF5Nnc0X0JCYlNaSnZiSWR1TlRLU05adDZEODlqaFdMTUdEeGk1dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Central Banks Buy 166t Gold as BRICS Pushes De-Dollarization Forward - Watcher Guru",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZmNUb1RvRkZIRWxIekpwZGp4Vml4aG9XX19uYnNlOVJFYlB1OGJqeWlLV0dZLXl1dkJNdjFobmd1UDZWUUQwZ3hIcW9vMW12cFlWaGVZVUp6NmRtOWg0Q1Q1VHB0WlU4Nkt5b0tpTjFTU1hRTGhRYVAxeE1xak90VlpWam1EX2l6eWpNYjROREJYZmY0SGt0VGdR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Lula: BRICS to keep exploring dollar alternatives - Ag\u00eancia Brasil",
+            "published_at": "2025-07-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlZBZ21Kek1jYlh5OV84U1dJdVhyMks5TEVwYWtsSnJfY2NwMEdZQ1E0ZHpTWlZZNTc4ajhZRUZnWVBjalplaEFZeXBZQ0ljVzByTGlUdVNoU1JYSDZTQmlUWU1yaldVbUpOQmt3YVN5SjlhTjFMR3B3ZlFZanRSWmM4UmpGcEV2WHdzUXAyZWFDODh0dHRlTmU2VDJkWGFtOWhSQTJObmxUZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "BRICS Currency May Still Be On the Horizon: Expert Says - Watcher Guru",
+            "published_at": "2025-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN3EyWHl1UmppdG1CU1drVXNTbFoxdVMtSmR1ZVhkRjc4aGlXNmJiS3Rya1hhUmE3Uk82amY0Szcwd1JBcW9RUGgtWVJLSjhyTnVsLUdZQURJVFVhcW83RnFkRG01bTN1ZW9HYVpHRnFhemVZX2E0MkxNQXVyZUY0OVUyVVRMVnM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "India\u2019s Strategic Approach to BRICS Common Currency: Benefits, Risks - BizzBuzz",
+            "published_at": "2024-12-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1QwWmpUREJpOXR0NmFHVXRueFZPalFIV0M5Q0pxaHlTdnlsTkxwNHQ0TVh3NUpOdHdxNmMtM0ZmNlJmZklmeGtUUzVDYjdpZ19OUnBEdTN3NzJsVkdUYjIycVJWUFlFT3RZQjJjYnZrTFR3Uy1qQ3NXOTVmajNNd1BmYlpUNHRLdnlNdmpzSi1LakVVYk9hX3U0MzFfNzhnRThLNmxhWFNrVEpL?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Trump's 100% tariff threat on BRICS depends on whether U.S. laws would permit it, says ex-RBI governor - The Hindu",
+            "published_at": "2024-12-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQjd6Nk1CM1RVNGc3T0pLUTNZYk9HM3l2M2NpLTF4X1FjRWNDYk0wT1NMUmRILWVnb09CWGl6SENoZjNscnc3eFMyYzQyUklLN3dZTk1wajRVZDFOaTM3STBOSEZCTWd6SUNYN2gxMGJqSWFuS3FHZkZ5blBvSnlUZFE0ekNYRXo1ZVFjWFpkYmJPSG1xMWU3Vkdxb2oyVG1qUlh6YTJrMHZwRERzdjhrbzdhSjU0ajVQY3NtZjJ0QXlmUWF1cWI4cW8tU0VjZnFMT0VyR0daWnlqUXVkc3RJWEJpMk1ZMWdBX2RuZzlhWk7SAfcBQVVfeXFMTVRTYzFVcDFzd0hCR19Gc2dKSlFOWjZ2azZQQ2Y4ZmthUXZMU3p4aERSckRjZzZoSldaNFZ3ZXBnRVU3RU8wM1U0ZWRISV9mZWlkQUZ1dDlXR3U2ZDVtOURDTnRxaFota2tvMjFBWkxtdU1KSDFfc1hCdWxQeFpZZHZqZ1dKM3Rpd2p5dm9ZOXhQZ0tTUmIzQ2NRVUUtTUJDTHFILXFpcW5IMUtrTHBHYnJjNDBWYWM4eTd0QU80NWZlQjEzTXBsRW1nUHgtcjMwZmpWSkFlR01DTnFtbTQyUHR3TDNuUnRlOWVaZmwwcE1VblBhQXBXUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Donald Trump warns Brics it will lose access to US if it dumps dollar - The Times of India",
+            "published_at": "2024-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbk5FM3duYjNiemtqb1NBemQxUjUxNUxrWl9Rd0w1LW15elEwaWk2UENTUW9mUUhTWFBick96b1IxQnZ0eUZmdzJMeFlJS1p1UmlHQXZXMG9ock9jZHEzbmVNZEt1endlRmVBclV4YVZ0Ql8tdWpBdk1idG1Ib1EtS2RXM1JPRmtmYmZOX203NFFPY19rTFo5a191dEJoUnhnOVBiZzZNMjcxT0ZfS3JYVzE3dGtGYlVtSnBqUTBhSFZmdnVLZFBWaUUyWW1qOUNCV0xQZ205MNIB3AFBVV95cUxOVFhrQkpDT3FkaGluRV93Q0lwTndMOFduUEpGeHFqcjMzekdGak9ZX0QwTEdacjFEaTEtWlBqcl9xaExZY0VJV21HX3A0dkExYllxdlZxcm9feUUtRENER1M5VEZLb0FncWFDY3VEWnhtVkN4N2hMekhiYy13cmN6SkQ5dDJuV1Q1MVdDdjd6NDVXNWl5Mml0dnI2bGRZNjd4NEVYT3dyOVlpSEU5bThCSmdtdmxSTXRqcEN1clFyRWJOWERvOHZzQlhGU3BXYmpnc3RHWHo0dzNLaHJM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Crypto Takes Center Stage at BRICS Summit Amid De-Dollarization Efforts - CCN.com",
+            "published_at": "2024-10-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2s0TmVqLVAyeTJsTmhjaDVfLTFnd2lCeVEtQ0NWNkRGSGlEeEFGS0JEdFhZbFBCX1pVSGt4M25zNE1vOHNwWHE0dk5MY3IzYVFsV2ZDTFQ1UTFfVm00ZWd6eHdKVkpQYlpPRzlCaDQ5bTdLT1dLMUZIS1V6VVlIUnpBYw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 17,
+          "high_relevance_count": 17,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 17 news items related to XMR. 17 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771582678
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.004423464342136495,
+        "volume_24h": 27530347.95,
+        "volume_formatted": "27.53M",
+        "market_cap": 6223707443.0,
+        "market_cap_formatted": "6.22B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.004, indicating very low turnover with minimal selling. 24h volume represents 0.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582678,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 337.95,
+          "total_volume": 27530347.95,
+          "market_cap": 6223707443.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 27530347.95,
+        "volume_formatted": "27.53M",
+        "price_change_24h": 3.672,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771582679,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582803,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 284434204.06,
+        "display": "284.43M",
+        "velocity": 0.06545217545235532,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 2.34,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 284.43M (velocity: 0.065). Price 24h: +2.3%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 17,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "17 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.556e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582679,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.556e-05,
+            "mark_price": 68184.9
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+            "published_at": "2025-08-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9jRDg3S3ZCWWgzV3dsbFFNcDhLazhDZG56OExQS2YydU5IalptaWo5SjcxaVlWU0lTbnZ1U2FiTUpUVHk4M2lmOWF5Nnc0X0JCYlNaSnZiSWR1TlRLU05adDZEODlqaFdMTUdEeGk1dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Central Banks Buy 166t Gold as BRICS Pushes De-Dollarization Forward - Watcher Guru",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZmNUb1RvRkZIRWxIekpwZGp4Vml4aG9XX19uYnNlOVJFYlB1OGJqeWlLV0dZLXl1dkJNdjFobmd1UDZWUUQwZ3hIcW9vMW12cFlWaGVZVUp6NmRtOWg0Q1Q1VHB0WlU4Nkt5b0tpTjFTU1hRTGhRYVAxeE1xak90VlpWam1EX2l6eWpNYjROREJYZmY0SGt0VGdR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Lula: BRICS to keep exploring dollar alternatives - Ag\u00eancia Brasil",
+            "published_at": "2025-07-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlZBZ21Kek1jYlh5OV84U1dJdVhyMks5TEVwYWtsSnJfY2NwMEdZQ1E0ZHpTWlZZNTc4ajhZRUZnWVBjalplaEFZeXBZQ0ljVzByTGlUdVNoU1JYSDZTQmlUWU1yaldVbUpOQmt3YVN5SjlhTjFMR3B3ZlFZanRSWmM4UmpGcEV2WHdzUXAyZWFDODh0dHRlTmU2VDJkWGFtOWhSQTJObmxUZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "BRICS Currency May Still Be On the Horizon: Expert Says - Watcher Guru",
+            "published_at": "2025-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN3EyWHl1UmppdG1CU1drVXNTbFoxdVMtSmR1ZVhkRjc4aGlXNmJiS3Rya1hhUmE3Uk82amY0Szcwd1JBcW9RUGgtWVJLSjhyTnVsLUdZQURJVFVhcW83RnFkRG01bTN1ZW9HYVpHRnFhemVZX2E0MkxNQXVyZUY0OVUyVVRMVnM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "India\u2019s Strategic Approach to BRICS Common Currency: Benefits, Risks - BizzBuzz",
+            "published_at": "2024-12-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1QwWmpUREJpOXR0NmFHVXRueFZPalFIV0M5Q0pxaHlTdnlsTkxwNHQ0TVh3NUpOdHdxNmMtM0ZmNlJmZklmeGtUUzVDYjdpZ19OUnBEdTN3NzJsVkdUYjIycVJWUFlFT3RZQjJjYnZrTFR3Uy1qQ3NXOTVmajNNd1BmYlpUNHRLdnlNdmpzSi1LakVVYk9hX3U0MzFfNzhnRThLNmxhWFNrVEpL?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Trump's 100% tariff threat on BRICS depends on whether U.S. laws would permit it, says ex-RBI governor - The Hindu",
+            "published_at": "2024-12-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQjd6Nk1CM1RVNGc3T0pLUTNZYk9HM3l2M2NpLTF4X1FjRWNDYk0wT1NMUmRILWVnb09CWGl6SENoZjNscnc3eFMyYzQyUklLN3dZTk1wajRVZDFOaTM3STBOSEZCTWd6SUNYN2gxMGJqSWFuS3FHZkZ5blBvSnlUZFE0ekNYRXo1ZVFjWFpkYmJPSG1xMWU3Vkdxb2oyVG1qUlh6YTJrMHZwRERzdjhrbzdhSjU0ajVQY3NtZjJ0QXlmUWF1cWI4cW8tU0VjZnFMT0VyR0daWnlqUXVkc3RJWEJpMk1ZMWdBX2RuZzlhWk7SAfcBQVVfeXFMTVRTYzFVcDFzd0hCR19Gc2dKSlFOWjZ2azZQQ2Y4ZmthUXZMU3p4aERSckRjZzZoSldaNFZ3ZXBnRVU3RU8wM1U0ZWRISV9mZWlkQUZ1dDlXR3U2ZDVtOURDTnRxaFota2tvMjFBWkxtdU1KSDFfc1hCdWxQeFpZZHZqZ1dKM3Rpd2p5dm9ZOXhQZ0tTUmIzQ2NRVUUtTUJDTHFILXFpcW5IMUtrTHBHYnJjNDBWYWM4eTd0QU80NWZlQjEzTXBsRW1nUHgtcjMwZmpWSkFlR01DTnFtbTQyUHR3TDNuUnRlOWVaZmwwcE1VblBhQXBXUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Donald Trump warns Brics it will lose access to US if it dumps dollar - The Times of India",
+            "published_at": "2024-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbk5FM3duYjNiemtqb1NBemQxUjUxNUxrWl9Rd0w1LW15elEwaWk2UENTUW9mUUhTWFBick96b1IxQnZ0eUZmdzJMeFlJS1p1UmlHQXZXMG9ock9jZHEzbmVNZEt1endlRmVBclV4YVZ0Ql8tdWpBdk1idG1Ib1EtS2RXM1JPRmtmYmZOX203NFFPY19rTFo5a191dEJoUnhnOVBiZzZNMjcxT0ZfS3JYVzE3dGtGYlVtSnBqUTBhSFZmdnVLZFBWaUUyWW1qOUNCV0xQZ205MNIB3AFBVV95cUxOVFhrQkpDT3FkaGluRV93Q0lwTndMOFduUEpGeHFqcjMzekdGak9ZX0QwTEdacjFEaTEtWlBqcl9xaExZY0VJV21HX3A0dkExYllxdlZxcm9feUUtRENER1M5VEZLb0FncWFDY3VEWnhtVkN4N2hMekhiYy13cmN6SkQ5dDJuV1Q1MVdDdjd6NDVXNWl5Mml0dnI2bGRZNjd4NEVYT3dyOVlpSEU5bThCSmdtdmxSTXRqcEN1clFyRWJOWERvOHZzQlhGU3BXYmpnc3RHWHo0dzNLaHJM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Crypto Takes Center Stage at BRICS Summit Amid De-Dollarization Efforts - CCN.com",
+            "published_at": "2024-10-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2s0TmVqLVAyeTJsTmhjaDVfLTFnd2lCeVEtQ0NWNkRGSGlEeEFGS0JEdFhZbFBCX1pVSGt4M25zNE1vOHNwWHE0dk5MY3IzYVFsV2ZDTFQ1UTFfVm00ZWd6eHdKVkpQYlpPRzlCaDQ5bTdLT1dLMUZIS1V6VVlIUnpBYw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 17,
+          "high_relevance_count": 17,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 17 news items related to ZEC. 17 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771582679
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.06545217545235532,
+        "volume_24h": 284434204.06,
+        "volume_formatted": "284.43M",
+        "market_cap": 4345679912.0,
+        "market_cap_formatted": "4.35B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.065, indicating moderate turnover with normal trading activity. 24h volume represents 6.5% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771582681,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 262.9,
+          "total_volume": 284434204.06,
+          "market_cap": 4345679912.0,
+          "circulating_supply": 16562139.2280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 284434204.06,
+        "volume_formatted": "284.43M",
+        "price_change_24h": 2.34,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771582803,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582813,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 28306342.85,
+        "display": "28.31M",
+        "velocity": 0.06601351512519085,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -3.218,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 28.31M (velocity: 0.066). Price 24h: -3.2%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 17,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "17 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.677e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582811,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.677e-05,
+            "mark_price": 68183.13108696
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+            "published_at": "2025-08-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9jRDg3S3ZCWWgzV3dsbFFNcDhLazhDZG56OExQS2YydU5IalptaWo5SjcxaVlWU0lTbnZ1U2FiTUpUVHk4M2lmOWF5Nnc0X0JCYlNaSnZiSWR1TlRLU05adDZEODlqaFdMTUdEeGk1dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Central Banks Buy 166t Gold as BRICS Pushes De-Dollarization Forward - Watcher Guru",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZmNUb1RvRkZIRWxIekpwZGp4Vml4aG9XX19uYnNlOVJFYlB1OGJqeWlLV0dZLXl1dkJNdjFobmd1UDZWUUQwZ3hIcW9vMW12cFlWaGVZVUp6NmRtOWg0Q1Q1VHB0WlU4Nkt5b0tpTjFTU1hRTGhRYVAxeE1xak90VlpWam1EX2l6eWpNYjROREJYZmY0SGt0VGdR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Lula: BRICS to keep exploring dollar alternatives - Ag\u00eancia Brasil",
+            "published_at": "2025-07-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlZBZ21Kek1jYlh5OV84U1dJdVhyMks5TEVwYWtsSnJfY2NwMEdZQ1E0ZHpTWlZZNTc4ajhZRUZnWVBjalplaEFZeXBZQ0ljVzByTGlUdVNoU1JYSDZTQmlUWU1yaldVbUpOQmt3YVN5SjlhTjFMR3B3ZlFZanRSWmM4UmpGcEV2WHdzUXAyZWFDODh0dHRlTmU2VDJkWGFtOWhSQTJObmxUZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "BRICS Currency May Still Be On the Horizon: Expert Says - Watcher Guru",
+            "published_at": "2025-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN3EyWHl1UmppdG1CU1drVXNTbFoxdVMtSmR1ZVhkRjc4aGlXNmJiS3Rya1hhUmE3Uk82amY0Szcwd1JBcW9RUGgtWVJLSjhyTnVsLUdZQURJVFVhcW83RnFkRG01bTN1ZW9HYVpHRnFhemVZX2E0MkxNQXVyZUY0OVUyVVRMVnM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "India\u2019s Strategic Approach to BRICS Common Currency: Benefits, Risks - BizzBuzz",
+            "published_at": "2024-12-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1QwWmpUREJpOXR0NmFHVXRueFZPalFIV0M5Q0pxaHlTdnlsTkxwNHQ0TVh3NUpOdHdxNmMtM0ZmNlJmZklmeGtUUzVDYjdpZ19OUnBEdTN3NzJsVkdUYjIycVJWUFlFT3RZQjJjYnZrTFR3Uy1qQ3NXOTVmajNNd1BmYlpUNHRLdnlNdmpzSi1LakVVYk9hX3U0MzFfNzhnRThLNmxhWFNrVEpL?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Trump's 100% tariff threat on BRICS depends on whether U.S. laws would permit it, says ex-RBI governor - The Hindu",
+            "published_at": "2024-12-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQjd6Nk1CM1RVNGc3T0pLUTNZYk9HM3l2M2NpLTF4X1FjRWNDYk0wT1NMUmRILWVnb09CWGl6SENoZjNscnc3eFMyYzQyUklLN3dZTk1wajRVZDFOaTM3STBOSEZCTWd6SUNYN2gxMGJqSWFuS3FHZkZ5blBvSnlUZFE0ekNYRXo1ZVFjWFpkYmJPSG1xMWU3Vkdxb2oyVG1qUlh6YTJrMHZwRERzdjhrbzdhSjU0ajVQY3NtZjJ0QXlmUWF1cWI4cW8tU0VjZnFMT0VyR0daWnlqUXVkc3RJWEJpMk1ZMWdBX2RuZzlhWk7SAfcBQVVfeXFMTVRTYzFVcDFzd0hCR19Gc2dKSlFOWjZ2azZQQ2Y4ZmthUXZMU3p4aERSckRjZzZoSldaNFZ3ZXBnRVU3RU8wM1U0ZWRISV9mZWlkQUZ1dDlXR3U2ZDVtOURDTnRxaFota2tvMjFBWkxtdU1KSDFfc1hCdWxQeFpZZHZqZ1dKM3Rpd2p5dm9ZOXhQZ0tTUmIzQ2NRVUUtTUJDTHFILXFpcW5IMUtrTHBHYnJjNDBWYWM4eTd0QU80NWZlQjEzTXBsRW1nUHgtcjMwZmpWSkFlR01DTnFtbTQyUHR3TDNuUnRlOWVaZmwwcE1VblBhQXBXUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Donald Trump warns Brics it will lose access to US if it dumps dollar - The Times of India",
+            "published_at": "2024-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbk5FM3duYjNiemtqb1NBemQxUjUxNUxrWl9Rd0w1LW15elEwaWk2UENTUW9mUUhTWFBick96b1IxQnZ0eUZmdzJMeFlJS1p1UmlHQXZXMG9ock9jZHEzbmVNZEt1endlRmVBclV4YVZ0Ql8tdWpBdk1idG1Ib1EtS2RXM1JPRmtmYmZOX203NFFPY19rTFo5a191dEJoUnhnOVBiZzZNMjcxT0ZfS3JYVzE3dGtGYlVtSnBqUTBhSFZmdnVLZFBWaUUyWW1qOUNCV0xQZ205MNIB3AFBVV95cUxOVFhrQkpDT3FkaGluRV93Q0lwTndMOFduUEpGeHFqcjMzekdGak9ZX0QwTEdacjFEaTEtWlBqcl9xaExZY0VJV21HX3A0dkExYllxdlZxcm9feUUtRENER1M5VEZLb0FncWFDY3VEWnhtVkN4N2hMekhiYy13cmN6SkQ5dDJuV1Q1MVdDdjd6NDVXNWl5Mml0dnI2bGRZNjd4NEVYT3dyOVlpSEU5bThCSmdtdmxSTXRqcEN1clFyRWJOWERvOHZzQlhGU3BXYmpnc3RHWHo0dzNLaHJM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Crypto Takes Center Stage at BRICS Summit Amid De-Dollarization Efforts - CCN.com",
+            "published_at": "2024-10-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2s0TmVqLVAyeTJsTmhjaDVfLTFnd2lCeVEtQ0NWNkRGSGlEeEFGS0JEdFhZbFBCX1pVSGt4M25zNE1vOHNwWHE0dk5MY3IzYVFsV2ZDTFQ1UTFfVm00ZWd6eHdKVkpQYlpPRzlCaDQ5bTdLT1dLMUZIS1V6VVlIUnpBYw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 17,
+          "high_relevance_count": 17,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 17 news items related to DASH. 17 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771582811
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.06601351512519085,
+        "volume_24h": 28306342.85,
+        "volume_formatted": "28.31M",
+        "market_cap": 428796176.0,
+        "market_cap_formatted": "428.80M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.066, indicating moderate turnover with normal trading activity. 24h volume represents 6.6% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771582812,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 33.98,
+          "total_volume": 28306342.85,
+          "market_cap": 428796176.0,
+          "circulating_supply": 12592956.50785548,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 28306342.85,
+        "volume_formatted": "28.31M",
+        "price_change_24h": -3.218,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771582813,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771582996,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 643683.3368,
+        "display": "643.68K",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 2.678,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 643.68K (velocity: 0.000). Price 24h: +2.7%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 17,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "17 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.677e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582813,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.677e-05,
+            "mark_price": 68183.13108696
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+            "published_at": "2025-08-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9jRDg3S3ZCWWgzV3dsbFFNcDhLazhDZG56OExQS2YydU5IalptaWo5SjcxaVlWU0lTbnZ1U2FiTUpUVHk4M2lmOWF5Nnc0X0JCYlNaSnZiSWR1TlRLU05adDZEODlqaFdMTUdEeGk1dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Central Banks Buy 166t Gold as BRICS Pushes De-Dollarization Forward - Watcher Guru",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZmNUb1RvRkZIRWxIekpwZGp4Vml4aG9XX19uYnNlOVJFYlB1OGJqeWlLV0dZLXl1dkJNdjFobmd1UDZWUUQwZ3hIcW9vMW12cFlWaGVZVUp6NmRtOWg0Q1Q1VHB0WlU4Nkt5b0tpTjFTU1hRTGhRYVAxeE1xak90VlpWam1EX2l6eWpNYjROREJYZmY0SGt0VGdR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Lula: BRICS to keep exploring dollar alternatives - Ag\u00eancia Brasil",
+            "published_at": "2025-07-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlZBZ21Kek1jYlh5OV84U1dJdVhyMks5TEVwYWtsSnJfY2NwMEdZQ1E0ZHpTWlZZNTc4ajhZRUZnWVBjalplaEFZeXBZQ0ljVzByTGlUdVNoU1JYSDZTQmlUWU1yaldVbUpOQmt3YVN5SjlhTjFMR3B3ZlFZanRSWmM4UmpGcEV2WHdzUXAyZWFDODh0dHRlTmU2VDJkWGFtOWhSQTJObmxUZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "BRICS Currency May Still Be On the Horizon: Expert Says - Watcher Guru",
+            "published_at": "2025-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN3EyWHl1UmppdG1CU1drVXNTbFoxdVMtSmR1ZVhkRjc4aGlXNmJiS3Rya1hhUmE3Uk82amY0Szcwd1JBcW9RUGgtWVJLSjhyTnVsLUdZQURJVFVhcW83RnFkRG01bTN1ZW9HYVpHRnFhemVZX2E0MkxNQXVyZUY0OVUyVVRMVnM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "India\u2019s Strategic Approach to BRICS Common Currency: Benefits, Risks - BizzBuzz",
+            "published_at": "2024-12-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1QwWmpUREJpOXR0NmFHVXRueFZPalFIV0M5Q0pxaHlTdnlsTkxwNHQ0TVh3NUpOdHdxNmMtM0ZmNlJmZklmeGtUUzVDYjdpZ19OUnBEdTN3NzJsVkdUYjIycVJWUFlFT3RZQjJjYnZrTFR3Uy1qQ3NXOTVmajNNd1BmYlpUNHRLdnlNdmpzSi1LakVVYk9hX3U0MzFfNzhnRThLNmxhWFNrVEpL?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Trump's 100% tariff threat on BRICS depends on whether U.S. laws would permit it, says ex-RBI governor - The Hindu",
+            "published_at": "2024-12-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQjd6Nk1CM1RVNGc3T0pLUTNZYk9HM3l2M2NpLTF4X1FjRWNDYk0wT1NMUmRILWVnb09CWGl6SENoZjNscnc3eFMyYzQyUklLN3dZTk1wajRVZDFOaTM3STBOSEZCTWd6SUNYN2gxMGJqSWFuS3FHZkZ5blBvSnlUZFE0ekNYRXo1ZVFjWFpkYmJPSG1xMWU3Vkdxb2oyVG1qUlh6YTJrMHZwRERzdjhrbzdhSjU0ajVQY3NtZjJ0QXlmUWF1cWI4cW8tU0VjZnFMT0VyR0daWnlqUXVkc3RJWEJpMk1ZMWdBX2RuZzlhWk7SAfcBQVVfeXFMTVRTYzFVcDFzd0hCR19Gc2dKSlFOWjZ2azZQQ2Y4ZmthUXZMU3p4aERSckRjZzZoSldaNFZ3ZXBnRVU3RU8wM1U0ZWRISV9mZWlkQUZ1dDlXR3U2ZDVtOURDTnRxaFota2tvMjFBWkxtdU1KSDFfc1hCdWxQeFpZZHZqZ1dKM3Rpd2p5dm9ZOXhQZ0tTUmIzQ2NRVUUtTUJDTHFILXFpcW5IMUtrTHBHYnJjNDBWYWM4eTd0QU80NWZlQjEzTXBsRW1nUHgtcjMwZmpWSkFlR01DTnFtbTQyUHR3TDNuUnRlOWVaZmwwcE1VblBhQXBXUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Donald Trump warns Brics it will lose access to US if it dumps dollar - The Times of India",
+            "published_at": "2024-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbk5FM3duYjNiemtqb1NBemQxUjUxNUxrWl9Rd0w1LW15elEwaWk2UENTUW9mUUhTWFBick96b1IxQnZ0eUZmdzJMeFlJS1p1UmlHQXZXMG9ock9jZHEzbmVNZEt1endlRmVBclV4YVZ0Ql8tdWpBdk1idG1Ib1EtS2RXM1JPRmtmYmZOX203NFFPY19rTFo5a191dEJoUnhnOVBiZzZNMjcxT0ZfS3JYVzE3dGtGYlVtSnBqUTBhSFZmdnVLZFBWaUUyWW1qOUNCV0xQZ205MNIB3AFBVV95cUxOVFhrQkpDT3FkaGluRV93Q0lwTndMOFduUEpGeHFqcjMzekdGak9ZX0QwTEdacjFEaTEtWlBqcl9xaExZY0VJV21HX3A0dkExYllxdlZxcm9feUUtRENER1M5VEZLb0FncWFDY3VEWnhtVkN4N2hMekhiYy13cmN6SkQ5dDJuV1Q1MVdDdjd6NDVXNWl5Mml0dnI2bGRZNjd4NEVYT3dyOVlpSEU5bThCSmdtdmxSTXRqcEN1clFyRWJOWERvOHZzQlhGU3BXYmpnc3RHWHo0dzNLaHJM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Crypto Takes Center Stage at BRICS Summit Amid De-Dollarization Efforts - CCN.com",
+            "published_at": "2024-10-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2s0TmVqLVAyeTJsTmhjaDVfLTFnd2lCeVEtQ0NWNkRGSGlEeEFGS0JEdFhZbFBCX1pVSGt4M25zNE1vOHNwWHE0dk5MY3IzYVFsV2ZDTFQ1UTFfVm00ZWd6eHdKVkpQYlpPRzlCaDQ5bTdLT1dLMUZIS1V6VVlIUnpBYw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 17,
+          "high_relevance_count": 17,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 17 news items related to SCRT. 17 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771582813
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 643683.3368,
+        "volume_formatted": "643.68K",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582875,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0882,
+          "total_volume": 643683.3368,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 644159.7338,
+        "volume_formatted": "644.16K",
+        "price_change_24h": 2.678,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771582996,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771583007,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1906346011.0,
+        "display": "1.91B"
+      },
+      "price_change_24h": 2.778,
+      "token_velocity": 0.030603219129877048,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.91B. Price 24h: +2.8%. Token velocity: 0.031. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.030603219129877048,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.031 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 15,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "15 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.75e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771582998,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.75e-05,
+            "mark_price": 68146.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+            "published_at": "2025-08-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9jRDg3S3ZCWWgzV3dsbFFNcDhLazhDZG56OExQS2YydU5IalptaWo5SjcxaVlWU0lTbnZ1U2FiTUpUVHk4M2lmOWF5Nnc0X0JCYlNaSnZiSWR1TlRLU05adDZEODlqaFdMTUdEeGk1dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Central Banks Buy 166t Gold as BRICS Pushes De-Dollarization Forward - Watcher Guru",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZmNUb1RvRkZIRWxIekpwZGp4Vml4aG9XX19uYnNlOVJFYlB1OGJqeWlLV0dZLXl1dkJNdjFobmd1UDZWUUQwZ3hIcW9vMW12cFlWaGVZVUp6NmRtOWg0Q1Q1VHB0WlU4Nkt5b0tpTjFTU1hRTGhRYVAxeE1xak90VlpWam1EX2l6eWpNYjROREJYZmY0SGt0VGdR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Lula: BRICS to keep exploring dollar alternatives - Ag\u00eancia Brasil",
+            "published_at": "2025-07-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlZBZ21Kek1jYlh5OV84U1dJdVhyMks5TEVwYWtsSnJfY2NwMEdZQ1E0ZHpTWlZZNTc4ajhZRUZnWVBjalplaEFZeXBZQ0ljVzByTGlUdVNoU1JYSDZTQmlUWU1yaldVbUpOQmt3YVN5SjlhTjFMR3B3ZlFZanRSWmM4UmpGcEV2WHdzUXAyZWFDODh0dHRlTmU2VDJkWGFtOWhSQTJObmxUZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "BRICS Currency May Still Be On the Horizon: Expert Says - Watcher Guru",
+            "published_at": "2025-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN3EyWHl1UmppdG1CU1drVXNTbFoxdVMtSmR1ZVhkRjc4aGlXNmJiS3Rya1hhUmE3Uk82amY0Szcwd1JBcW9RUGgtWVJLSjhyTnVsLUdZQURJVFVhcW83RnFkRG01bTN1ZW9HYVpHRnFhemVZX2E0MkxNQXVyZUY0OVUyVVRMVnM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "India\u2019s Strategic Approach to BRICS Common Currency: Benefits, Risks - BizzBuzz",
+            "published_at": "2024-12-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1QwWmpUREJpOXR0NmFHVXRueFZPalFIV0M5Q0pxaHlTdnlsTkxwNHQ0TVh3NUpOdHdxNmMtM0ZmNlJmZklmeGtUUzVDYjdpZ19OUnBEdTN3NzJsVkdUYjIycVJWUFlFT3RZQjJjYnZrTFR3Uy1qQ3NXOTVmajNNd1BmYlpUNHRLdnlNdmpzSi1LakVVYk9hX3U0MzFfNzhnRThLNmxhWFNrVEpL?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Trump's 100% tariff threat on BRICS depends on whether U.S. laws would permit it, says ex-RBI governor - The Hindu",
+            "published_at": "2024-12-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQjd6Nk1CM1RVNGc3T0pLUTNZYk9HM3l2M2NpLTF4X1FjRWNDYk0wT1NMUmRILWVnb09CWGl6SENoZjNscnc3eFMyYzQyUklLN3dZTk1wajRVZDFOaTM3STBOSEZCTWd6SUNYN2gxMGJqSWFuS3FHZkZ5blBvSnlUZFE0ekNYRXo1ZVFjWFpkYmJPSG1xMWU3Vkdxb2oyVG1qUlh6YTJrMHZwRERzdjhrbzdhSjU0ajVQY3NtZjJ0QXlmUWF1cWI4cW8tU0VjZnFMT0VyR0daWnlqUXVkc3RJWEJpMk1ZMWdBX2RuZzlhWk7SAfcBQVVfeXFMTVRTYzFVcDFzd0hCR19Gc2dKSlFOWjZ2azZQQ2Y4ZmthUXZMU3p4aERSckRjZzZoSldaNFZ3ZXBnRVU3RU8wM1U0ZWRISV9mZWlkQUZ1dDlXR3U2ZDVtOURDTnRxaFota2tvMjFBWkxtdU1KSDFfc1hCdWxQeFpZZHZqZ1dKM3Rpd2p5dm9ZOXhQZ0tTUmIzQ2NRVUUtTUJDTHFILXFpcW5IMUtrTHBHYnJjNDBWYWM4eTd0QU80NWZlQjEzTXBsRW1nUHgtcjMwZmpWSkFlR01DTnFtbTQyUHR3TDNuUnRlOWVaZmwwcE1VblBhQXBXUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Donald Trump warns Brics it will lose access to US if it dumps dollar - The Times of India",
+            "published_at": "2024-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbk5FM3duYjNiemtqb1NBemQxUjUxNUxrWl9Rd0w1LW15elEwaWk2UENTUW9mUUhTWFBick96b1IxQnZ0eUZmdzJMeFlJS1p1UmlHQXZXMG9ock9jZHEzbmVNZEt1endlRmVBclV4YVZ0Ql8tdWpBdk1idG1Ib1EtS2RXM1JPRmtmYmZOX203NFFPY19rTFo5a191dEJoUnhnOVBiZzZNMjcxT0ZfS3JYVzE3dGtGYlVtSnBqUTBhSFZmdnVLZFBWaUUyWW1qOUNCV0xQZ205MNIB3AFBVV95cUxOVFhrQkpDT3FkaGluRV93Q0lwTndMOFduUEpGeHFqcjMzekdGak9ZX0QwTEdacjFEaTEtWlBqcl9xaExZY0VJV21HX3A0dkExYllxdlZxcm9feUUtRENER1M5VEZLb0FncWFDY3VEWnhtVkN4N2hMekhiYy13cmN6SkQ5dDJuV1Q1MVdDdjd6NDVXNWl5Mml0dnI2bGRZNjd4NEVYT3dyOVlpSEU5bThCSmdtdmxSTXRqcEN1clFyRWJOWERvOHZzQlhGU3BXYmpnc3RHWHo0dzNLaHJM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Crypto Takes Center Stage at BRICS Summit Amid De-Dollarization Efforts - CCN.com",
+            "published_at": "2024-10-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2s0TmVqLVAyeTJsTmhjaDVfLTFnd2lCeVEtQ0NWNkRGSGlEeEFGS0JEdFhZbFBCX1pVSGt4M25zNE1vOHNwWHE0dk5MY3IzYVFsV2ZDTFQ1UTFfVm00ZWd6eHdKVkpQYlpPRzlCaDQ5bTdLT1dLMUZIS1V6VVlIUnpBYw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 15,
+          "high_relevance_count": 15,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 13
+          }
+        },
+        "interpretation": "Found 15 news items related to AAVE. 15 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771582998
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.030603219129877048,
+        "volume_24h": 58340324.712,
+        "volume_formatted": "58.34M",
+        "market_cap": 1906346011.0,
+        "market_cap_formatted": "1.91B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.031, indicating very low turnover with minimal selling. 24h volume represents 3.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771582999,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 125.81,
+          "total_volume": 58340324.712,
+          "market_cap": 1906346011.0,
+          "circulating_supply": 15190036.272228852,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1906346011.0,
+        "market_cap_formatted": "1.91B",
+        "price_change_24h": 2.778,
+        "tvl": 27083146326.0,
+        "tvl_formatted": "27.08B",
+        "tvl_change_24h": 1.0171303353789418,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.08B (+1.0% 24h).",
+        "timestamp": 1771583007
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771583142,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2181542936.0,
+        "display": "2.18B"
+      },
+      "price_change_24h": 0.704,
+      "token_velocity": 0.025425456939069842,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.18B. Price 24h: +0.7%. Token velocity: 0.025. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.025425456939069842,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.025 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 15,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "15 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.75e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771583007,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.75e-05,
+            "mark_price": 68146.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Traders in Wall Street and NYSE React to BRICS Currency - Watcher Guru",
+            "published_at": "2025-08-25T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9jRDg3S3ZCWWgzV3dsbFFNcDhLazhDZG56OExQS2YydU5IalptaWo5SjcxaVlWU0lTbnZ1U2FiTUpUVHk4M2lmOWF5Nnc0X0JCYlNaSnZiSWR1TlRLU05adDZEODlqaFdMTUdEeGk1dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Central Banks Buy 166t Gold as BRICS Pushes De-Dollarization Forward - Watcher Guru",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZmNUb1RvRkZIRWxIekpwZGp4Vml4aG9XX19uYnNlOVJFYlB1OGJqeWlLV0dZLXl1dkJNdjFobmd1UDZWUUQwZ3hIcW9vMW12cFlWaGVZVUp6NmRtOWg0Q1Q1VHB0WlU4Nkt5b0tpTjFTU1hRTGhRYVAxeE1xak90VlpWam1EX2l6eWpNYjROREJYZmY0SGt0VGdR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Lula: BRICS to keep exploring dollar alternatives - Ag\u00eancia Brasil",
+            "published_at": "2025-07-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlZBZ21Kek1jYlh5OV84U1dJdVhyMks5TEVwYWtsSnJfY2NwMEdZQ1E0ZHpTWlZZNTc4ajhZRUZnWVBjalplaEFZeXBZQ0ljVzByTGlUdVNoU1JYSDZTQmlUWU1yaldVbUpOQmt3YVN5SjlhTjFMR3B3ZlFZanRSWmM4UmpGcEV2WHdzUXAyZWFDODh0dHRlTmU2VDJkWGFtOWhSQTJObmxUZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "BRICS Currency May Still Be On the Horizon: Expert Says - Watcher Guru",
+            "published_at": "2025-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN3EyWHl1UmppdG1CU1drVXNTbFoxdVMtSmR1ZVhkRjc4aGlXNmJiS3Rya1hhUmE3Uk82amY0Szcwd1JBcW9RUGgtWVJLSjhyTnVsLUdZQURJVFVhcW83RnFkRG01bTN1ZW9HYVpHRnFhemVZX2E0MkxNQXVyZUY0OVUyVVRMVnM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "India\u2019s Strategic Approach to BRICS Common Currency: Benefits, Risks - BizzBuzz",
+            "published_at": "2024-12-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1QwWmpUREJpOXR0NmFHVXRueFZPalFIV0M5Q0pxaHlTdnlsTkxwNHQ0TVh3NUpOdHdxNmMtM0ZmNlJmZklmeGtUUzVDYjdpZ19OUnBEdTN3NzJsVkdUYjIycVJWUFlFT3RZQjJjYnZrTFR3Uy1qQ3NXOTVmajNNd1BmYlpUNHRLdnlNdmpzSi1LakVVYk9hX3U0MzFfNzhnRThLNmxhWFNrVEpL?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Trump's 100% tariff threat on BRICS depends on whether U.S. laws would permit it, says ex-RBI governor - The Hindu",
+            "published_at": "2024-12-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQjd6Nk1CM1RVNGc3T0pLUTNZYk9HM3l2M2NpLTF4X1FjRWNDYk0wT1NMUmRILWVnb09CWGl6SENoZjNscnc3eFMyYzQyUklLN3dZTk1wajRVZDFOaTM3STBOSEZCTWd6SUNYN2gxMGJqSWFuS3FHZkZ5blBvSnlUZFE0ekNYRXo1ZVFjWFpkYmJPSG1xMWU3Vkdxb2oyVG1qUlh6YTJrMHZwRERzdjhrbzdhSjU0ajVQY3NtZjJ0QXlmUWF1cWI4cW8tU0VjZnFMT0VyR0daWnlqUXVkc3RJWEJpMk1ZMWdBX2RuZzlhWk7SAfcBQVVfeXFMTVRTYzFVcDFzd0hCR19Gc2dKSlFOWjZ2azZQQ2Y4ZmthUXZMU3p4aERSckRjZzZoSldaNFZ3ZXBnRVU3RU8wM1U0ZWRISV9mZWlkQUZ1dDlXR3U2ZDVtOURDTnRxaFota2tvMjFBWkxtdU1KSDFfc1hCdWxQeFpZZHZqZ1dKM3Rpd2p5dm9ZOXhQZ0tTUmIzQ2NRVUUtTUJDTHFILXFpcW5IMUtrTHBHYnJjNDBWYWM4eTd0QU80NWZlQjEzTXBsRW1nUHgtcjMwZmpWSkFlR01DTnFtbTQyUHR3TDNuUnRlOWVaZmwwcE1VblBhQXBXUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Donald Trump warns Brics it will lose access to US if it dumps dollar - The Times of India",
+            "published_at": "2024-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbk5FM3duYjNiemtqb1NBemQxUjUxNUxrWl9Rd0w1LW15elEwaWk2UENTUW9mUUhTWFBick96b1IxQnZ0eUZmdzJMeFlJS1p1UmlHQXZXMG9ock9jZHEzbmVNZEt1endlRmVBclV4YVZ0Ql8tdWpBdk1idG1Ib1EtS2RXM1JPRmtmYmZOX203NFFPY19rTFo5a191dEJoUnhnOVBiZzZNMjcxT0ZfS3JYVzE3dGtGYlVtSnBqUTBhSFZmdnVLZFBWaUUyWW1qOUNCV0xQZ205MNIB3AFBVV95cUxOVFhrQkpDT3FkaGluRV93Q0lwTndMOFduUEpGeHFqcjMzekdGak9ZX0QwTEdacjFEaTEtWlBqcl9xaExZY0VJV21HX3A0dkExYllxdlZxcm9feUUtRENER1M5VEZLb0FncWFDY3VEWnhtVkN4N2hMekhiYy13cmN6SkQ5dDJuV1Q1MVdDdjd6NDVXNWl5Mml0dnI2bGRZNjd4NEVYT3dyOVlpSEU5bThCSmdtdmxSTXRqcEN1clFyRWJOWERvOHZzQlhGU3BXYmpnc3RHWHo0dzNLaHJM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Crypto Takes Center Stage at BRICS Summit Amid De-Dollarization Efforts - CCN.com",
+            "published_at": "2024-10-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2s0TmVqLVAyeTJsTmhjaDVfLTFnd2lCeVEtQ0NWNkRGSGlEeEFGS0JEdFhZbFBCX1pVSGt4M25zNE1vOHNwWHE0dk5MY3IzYVFsV2ZDTFQ1UTFfVm00ZWd6eHdKVkpQYlpPRzlCaDQ5bTdLT1dLMUZIS1V6VVlIUnpBYw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 15,
+          "high_relevance_count": 15,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 13
+          }
+        },
+        "interpretation": "Found 15 news items related to UNI. 15 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771583007
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.025425456939069842,
+        "volume_24h": 55466725.98,
+        "volume_formatted": "55.47M",
+        "market_cap": 2181542936.0,
+        "market_cap_formatted": "2.18B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.025, indicating very low turnover with minimal selling. 24h volume represents 2.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771583128,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.439,
+          "total_volume": 55466725.98,
+          "market_cap": 2181542936.0,
+          "circulating_supply": 633732762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2181542936.0,
+        "market_cap_formatted": "2.18B",
+        "price_change_24h": 0.704,
+        "tvl": 3082937460.0,
+        "tvl_formatted": "3.08B",
+        "tvl_change_24h": 0.4188590429893159,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.08B (+0.4% 24h).",
+        "timestamp": 1771583142
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771583283,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 361191464.0,
+        "display": "361.19M"
+      },
+      "price_change_24h": 1.24,
+      "token_velocity": 0.09027843081031395,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 361.19M. Price 24h: +1.2%. Token velocity: 0.090. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.09027843081031395,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.090 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 11,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "New Draft Text Narrows Stablecoin Yield Debate in Washington - Blockonomi"
+        ]
+      },
+      "summary": "11 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.816e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771583150,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.816e-05,
+            "mark_price": 68104.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Stalling growth, falling oil prices, and the civilian sector sacrificed - Meduza",
+            "published_at": "2025-12-30T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSUJ1UWxjTldpdWEybi1NZEJOeE0xYzJVOWpPaE5uVldnQU4zdU5QRUpTOFM5Qjcxcmp4OFEzd3FzUVdlUW1NNXJpN2ZVeDI0NWg4dTBzS1ZTczBDYXhmM0JSU1FFVzlvUEpjYTd1U25MNk42R19qdmhydTRRS0hRSnhtdDFvS3lNZDZtdXFzUWpPMkM2emJhNGtiQUNma2U2RHF0V2d1ZkUyWlQtSEHSAbMBQVVfeXFMTjIzUHpVYmMtVVNSQjlBR0h6UGU4blZrVDUyNU9JM09HRW5DM1p2RTRRaTBPS1pWX0J4NmNYQ0FFcWk5M3dUc0l2V2VveFdaV1Jmal9JWEJPVFc5MExnMXZ2Yi1MU3VqUUJrRU5tQ3M5WlcxSTdQNlpnRldjRm9MSkhIT1RVb2VZX0gyY1NhaDlOX0dvWjFzSHRmczk4UUpLRTdHQTc2d0ZleU1KeFNDRlI3XzQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "New Draft Text Narrows Stablecoin Yield Debate in Washington - Blockonomi",
+            "published_at": "2026-02-20T06:33:53+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNRUVXeGdKbE5rblp2WlJHOENOdlhCREtPSC1GME8tS1I1UkdBNUlKRGFiNzQ3YzNqUVlIX25OUTg4cDNvZENpbGZzQW0ydjdWMjBSU2Y4ak5na0JzU0hoS1hMeDBPeUlIWjlUSUI1LTFaejVKS3hoWGtXV3J1ZDV4MDJ2Y1BpVUY4ZzEwMA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "New Sanctions On Russian Oil Hit Indian, Turkish Refineries. Enter China? - Radio Free Europe/Radio Liberty",
+            "published_at": "2026-01-18T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTUtITWZfa0dFZURBRVIwT2JHcE9VZVNYQXVsbEg1clRPcDE2bThvVzZmQjZmekRLRFUzTTJuU2NiU0IyVWFpck1PdUg0NlVENHdQcUk3Q3l6U09KYmF3bGJDRWxGY2U1VHlzUkJ4UlJ5LUI1a2JsN3ZkRU9sWE1wblFGSDNjb09jdVM0bdIBjwFBVV95cUxObVZTQXYwamFQRURpay01WjJyN1F6enVGYkYyRjY5SVRBSUo5NjZ6MV9rbXVlRDlNTkZ2LW02XzRtakUxYURLR3VJak95RVdvLXJNMWlmSU5LOU1NQ3U2eUpqeW5RZ3BacGRSQ1lwVWRUay12NnFjMUttT3BrOWRwX1VhMUZrSHJQT3g1dmdSTQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Giannis Alafouzos, the Shadow Fleet Transporting Russian Oil, and the EU Commission\u2019s Response - tovima.com",
+            "published_at": "2026-01-12T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOaUdNLTBTRTVNRzk3SjNmQklxNkxUTG9JVXlWSGN4TDlxcWlYSi01TjVRNXdGbHZ3YkhnTWJOVUl5OXc0aWUzVTd5WS1Sd1V0N2FJUEp3VlFWc0hqUHRET0ZvZFllNjUxQk1WSjZMNHEwOHp3cEpNd3RELVRydXBuckxNbi1TRmdLa1hLc1lPaXRnODVhcmMwU0RiZjNXWmtvdGVHQTBMSXFNdVZiWlczaWRMUFVJX3hOTGZnRXgtTEJpRmRFNjVpTWJDN19vb0FycmfSAdcBQVVfeXFMT2MtWWppcjBERDRiazV2Zkxzc3RtcHlmOElJcDh0VDFYTmIwQ3MwWDZsQWtiLTVzcmY2azZxenhQUUlWSlpycGExdWxYRzRrX2tYbllXZENiUWhsZmdyYkFFVUVZY2VFaEM4QUk4aTY1bE55N2tBTFZsVjNzd2xfbkpQVEhNbU1oQmVSRVdnU1YxSDRacWN5cWhFMElqZ2h5UEJMLUdYYUU0SzdJbGJhU0JWejdublVWdE9CN2stRkh5T05XN0VYRjNoZTMzVXBMMGJ4SU0tQ00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Russia Sanctions Bill: How may it impact gold, silver, Indian stock market? Explained - Mint",
+            "published_at": "2026-01-08T07:41:52+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPRkZFLXJ5eDRVbElzTTB2Z2pYaWZGdFM1VUVfNU1HVjNBaV9EUTVnN2VoSHBzaDZGYldaRnlrS21xMnNLamF6UnVsck0tNGMzcC01T09XMFNFRERmbUdXcXM0TmRCbThWWG1TNk1kdFJKWkpKbEFHT3RvMXRKNHhYY3ZQVnN5UEtNLVp5c0hIRWVybFVSMzVVb0xIQ21YVHNkandqeUw4a0xldHN5bEtnY0JEWHk2bWpvcjZnaFFTQk4wQUp2bndqZm52ME9FWEdDbG42ZU1SSld5a1VocWJxQV9nTV8xOEVyd2NCNXdn0gHzAUFVX3lxTE51UFM2VVRxQ2k3Y0dkZTFucmNVTHV0OUY0Y1FRa0kydGtwVEc1LUFTdTdLOVlxWFFETzU4bU0wNEIyb3doVWdEeEhzWDREY25VbThoUmUtWFdnNnJ2c0ZOcUhDOWNITGNIc01idUtDMEdmYng5WVJDNmk4VHQ2Qk9ONjJBNTBRa01iVnp0T05QWmNVMWZqRk9ySElDaU5pZEF2bThLMEd2azRJb3BMdDNueUc2elEwRnB1S3U5QjFIbGdOMGN3a0Y1ZWp3VFY0aFduVVpxLV9mMUpXanQwU1p5enp1X1M3MG9mYURDaGxsT1BjTQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Oil barrels toward its worst annual performance since the pandemic as Russia feels the pain - Business Insider",
+            "published_at": "2025-12-30T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcGJDdFNoUGViNkIwb1ZKQl9RVFFRM0lGdFp1YmtlTUhuVlZ6MHBDQV9tTTJpZDgyQm0yc0U4VlhhakI3MFhkdW92UUdTTHdaM0VkMXdrVnFRZW1IVkZtaGZpUEk4RW1EMXgtdUh6QWhHS3BCMFdfQnNrVDhFcGJkOFoxUlRrSWY2czZVSmY3cnRhSVpPZGs5RXZDb3NaM2RLYjFhdlh3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Russia and China Unfazed by Sanctions in Booming LNG Trade - Crude Oil Prices Today | OilPrice.com",
+            "published_at": "2025-12-22T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeWpnd0llbE0zTEpZajN6dE9ETWpSVmxMNFVHOUstN1pfNldLdmwxU1o4ZFprSEJpTFN4MEI2M0lHM0ZpQTdGTlY3WXMxaThoSTZ0WHdXTG92NDVSa2E1VUNGUzlqSXNrZVozOEZtV0pYdDR6Y3liS29OVW12R1RocUM4RHJFWjBYdVBYRllyM3RHcWlzTVY3bmZtcEpnV2dtdy1fZkhNZ2VMeGhoZjR0WUxXRHPSAboBQVVfeXFMUHBwN1lKcDV6dUVLWWhrYWJYdzQ1MmRURG9ZUTFxTHZocDV2dHlKQnJoQmZIcXRXSnY3S1VvdFVNQWExUVQ5cTRQVTR5MHVuZmkteVQtNXluWTJXVlFrTjY0WmJlMEpjRkdORkFqWkhHUWp4Si1HR3BUYlhzOHNpUEtZLS1QaUJMbXh5UXRFR29sWkNaa2dEcHBkVE1PTmQtV2oxMTN5NC1BcjZRQUx1RnZyWkIyRmpoSVh3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Russia's Oil and Gas Revenues Hit Hard by Sanctions and Falling Prices, Down 34% in November - UNITED24 Media",
+            "published_at": "2025-12-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRE1Hd1dTS0xacHczWDNHWlNPN19fWmtFTXR4dW5uR1Vjb2YtdlN2akRjbXVJTm1kOWllYy1LVGt1MUdxRVI2WWk1NDJvanlaS2xrdDcxV3AwLUV1WFExUEJ6b096ejBvSFZTTnU5a3l4SkswTXZSMDFDRWdyUDNYVE9WeW82QnExOVlzUUhodlp1YU0zMkRCS3FfUVNNY05MbFhya3ZIYkRfV2pKaWNXcGtHS19ZRWF4VFB2QWRUUFg4T2xKd1JBaGIzMlF0UQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 11,
+          "high_relevance_count": 11,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 10
+          }
+        },
+        "interpretation": "Found 11 news items related to CRV. 11 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Stalling growth, falling oil prices, and the civilian sector sacrificed - Meduza\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771583150
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.09027843081031395,
+        "volume_24h": 32607798.592,
+        "volume_formatted": "32.61M",
+        "market_cap": 361191464.0,
+        "market_cap_formatted": "361.19M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.090, indicating moderate turnover with normal trading activity. 24h volume represents 9.0% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771583151,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.245,
+          "total_volume": 32607798.592,
+          "market_cap": 361191464.0,
+          "circulating_supply": 1478039489.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 361191464.0,
+        "market_cap_formatted": "361.19M",
+        "price_change_24h": 1.24,
+        "tvl": 1897711224.0,
+        "tvl_formatted": "1.90B",
+        "tvl_change_24h": 0.5343410208406504,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.90B (+0.5% 24h).",
+        "timestamp": 1771583283
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771583287,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 279290177.0,
+        "display": "279.29M"
+      },
+      "price_change_24h": 0.951,
+      "token_velocity": 0.03786923326021595,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 279.29M. Price 24h: +1.0%. Token velocity: 0.038. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03786923326021595,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.038 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 11,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "New Draft Text Narrows Stablecoin Yield Debate in Washington - Blockonomi"
+        ]
+      },
+      "summary": "11 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.962e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771583285,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.962e-05,
+            "mark_price": 68256.7
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Stalling growth, falling oil prices, and the civilian sector sacrificed - Meduza",
+            "published_at": "2025-12-30T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSUJ1UWxjTldpdWEybi1NZEJOeE0xYzJVOWpPaE5uVldnQU4zdU5QRUpTOFM5Qjcxcmp4OFEzd3FzUVdlUW1NNXJpN2ZVeDI0NWg4dTBzS1ZTczBDYXhmM0JSU1FFVzlvUEpjYTd1U25MNk42R19qdmhydTRRS0hRSnhtdDFvS3lNZDZtdXFzUWpPMkM2emJhNGtiQUNma2U2RHF0V2d1ZkUyWlQtSEHSAbMBQVVfeXFMTjIzUHpVYmMtVVNSQjlBR0h6UGU4blZrVDUyNU9JM09HRW5DM1p2RTRRaTBPS1pWX0J4NmNYQ0FFcWk5M3dUc0l2V2VveFdaV1Jmal9JWEJPVFc5MExnMXZ2Yi1MU3VqUUJrRU5tQ3M5WlcxSTdQNlpnRldjRm9MSkhIT1RVb2VZX0gyY1NhaDlOX0dvWjFzSHRmczk4UUpLRTdHQTc2d0ZleU1KeFNDRlI3XzQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "What De-Dollarization? US Dollar Bulldozes BRICS Currencies - Watcher Guru",
+            "published_at": "2024-04-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQTURlMFl2NHhqakxEWkdrOWM2YWRCTzFQbnNxUGhVNzVOS2FrZHB1cWlMeks4OGc4ZHZhVHQtZGIwel9HcnoxM0UxZTJIZjlQUWVFeGZUbW85aXN4RDg3R3JQR1NsekxYRm9ZNU9UbWhSSVlnZUNkRWRtM3FBVmIzN2prUnE5d1RlalNGQw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Germany\u2019s central bank backs stablecoins, CBDC amid US tension - CoinGeek",
+            "published_at": "2026-02-20T10:03:19+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbzZlWkFnZ1NKVXcwWWhybmhqclZheFJ6aGNCeDkyU00zeW40UXdBYTZVb0ZEZUdjR0p1RlJhWXJrMFRpSHNsTGpmbGZ5cTBUZ2VaekZUQzFyTmJWQ3hheTlCUE90dEhEOVJGQXBSTGZNR0RNb213SlZNd2x6OUlKTUcyX0laNlNP?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "China Snaps Up Distressed Russian Oil Cargoes Shunned by India - Bloomberg.com",
+            "published_at": "2026-02-20T08:24:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXFtMTZhZEJTbGVFX3UwU29iUGloV1JfWTd5Vm45ZUpMNHdxa3VzdVlLbFE5SFg0TTA0THc1MWloWTQ3Zlc0UDlyczZWVVlNQjlXekJCR0lqVENucExLV1BUX2RWaWJaTXRIUjRCU29pdl8wdTI5MHBQZ1FwWV8xbTBWanpxR045YUlBZmRMUGdlRTIxZDNfWDU2T2wwUGNabnpPYU9PTWxEYTVoeXZyejZ5Yw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "New Draft Text Narrows Stablecoin Yield Debate in Washington - Blockonomi",
+            "published_at": "2026-02-20T06:33:53+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNRUVXeGdKbE5rblp2WlJHOENOdlhCREtPSC1GME8tS1I1UkdBNUlKRGFiNzQ3YzNqUVlIX25OUTg4cDNvZENpbGZzQW0ydjdWMjBSU2Y4ak5na0JzU0hoS1hMeDBPeUlIWjlUSUI1LTFaejVKS3hoWGtXV3J1ZDV4MDJ2Y1BpVUY4ZzEwMA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "New Sanctions On Russian Oil Hit Indian, Turkish Refineries. Enter China? - Radio Free Europe/Radio Liberty",
+            "published_at": "2026-01-18T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTUtITWZfa0dFZURBRVIwT2JHcE9VZVNYQXVsbEg1clRPcDE2bThvVzZmQjZmekRLRFUzTTJuU2NiU0IyVWFpck1PdUg0NlVENHdQcUk3Q3l6U09KYmF3bGJDRWxGY2U1VHlzUkJ4UlJ5LUI1a2JsN3ZkRU9sWE1wblFGSDNjb09jdVM0bdIBjwFBVV95cUxObVZTQXYwamFQRURpay01WjJyN1F6enVGYkYyRjY5SVRBSUo5NjZ6MV9rbXVlRDlNTkZ2LW02XzRtakUxYURLR3VJak95RVdvLXJNMWlmSU5LOU1NQ3U2eUpqeW5RZ3BacGRSQ1lwVWRUay12NnFjMUttT3BrOWRwX1VhMUZrSHJQT3g1dmdSTQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Giannis Alafouzos, the Shadow Fleet Transporting Russian Oil, and the EU Commission\u2019s Response - tovima.com",
+            "published_at": "2026-01-12T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOaUdNLTBTRTVNRzk3SjNmQklxNkxUTG9JVXlWSGN4TDlxcWlYSi01TjVRNXdGbHZ3YkhnTWJOVUl5OXc0aWUzVTd5WS1Sd1V0N2FJUEp3VlFWc0hqUHRET0ZvZFllNjUxQk1WSjZMNHEwOHp3cEpNd3RELVRydXBuckxNbi1TRmdLa1hLc1lPaXRnODVhcmMwU0RiZjNXWmtvdGVHQTBMSXFNdVZiWlczaWRMUFVJX3hOTGZnRXgtTEJpRmRFNjVpTWJDN19vb0FycmfSAdcBQVVfeXFMT2MtWWppcjBERDRiazV2Zkxzc3RtcHlmOElJcDh0VDFYTmIwQ3MwWDZsQWtiLTVzcmY2azZxenhQUUlWSlpycGExdWxYRzRrX2tYbllXZENiUWhsZmdyYkFFVUVZY2VFaEM4QUk4aTY1bE55N2tBTFZsVjNzd2xfbkpQVEhNbU1oQmVSRVdnU1YxSDRacWN5cWhFMElqZ2h5UEJMLUdYYUU0SzdJbGJhU0JWejdublVWdE9CN2stRkh5T05XN0VYRjNoZTMzVXBMMGJ4SU0tQ00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Russia Sanctions Bill: How may it impact gold, silver, Indian stock market? Explained - Mint",
+            "published_at": "2026-01-08T07:41:52+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPRkZFLXJ5eDRVbElzTTB2Z2pYaWZGdFM1VUVfNU1HVjNBaV9EUTVnN2VoSHBzaDZGYldaRnlrS21xMnNLamF6UnVsck0tNGMzcC01T09XMFNFRERmbUdXcXM0TmRCbThWWG1TNk1kdFJKWkpKbEFHT3RvMXRKNHhYY3ZQVnN5UEtNLVp5c0hIRWVybFVSMzVVb0xIQ21YVHNkandqeUw4a0xldHN5bEtnY0JEWHk2bWpvcjZnaFFTQk4wQUp2bndqZm52ME9FWEdDbG42ZU1SSld5a1VocWJxQV9nTV8xOEVyd2NCNXdn0gHzAUFVX3lxTE51UFM2VVRxQ2k3Y0dkZTFucmNVTHV0OUY0Y1FRa0kydGtwVEc1LUFTdTdLOVlxWFFETzU4bU0wNEIyb3doVWdEeEhzWDREY25VbThoUmUtWFdnNnJ2c0ZOcUhDOWNITGNIc01idUtDMEdmYng5WVJDNmk4VHQ2Qk9ONjJBNTBRa01iVnp0T05QWmNVMWZqRk9ySElDaU5pZEF2bThLMEd2azRJb3BMdDNueUc2elEwRnB1S3U5QjFIbGdOMGN3a0Y1ZWp3VFY0aFduVVpxLV9mMUpXanQwU1p5enp1X1M3MG9mYURDaGxsT1BjTQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Oil barrels toward its worst annual performance since the pandemic as Russia feels the pain - Business Insider",
+            "published_at": "2025-12-30T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcGJDdFNoUGViNkIwb1ZKQl9RVFFRM0lGdFp1YmtlTUhuVlZ6MHBDQV9tTTJpZDgyQm0yc0U4VlhhakI3MFhkdW92UUdTTHdaM0VkMXdrVnFRZW1IVkZtaGZpUEk4RW1EMXgtdUh6QWhHS3BCMFdfQnNrVDhFcGJkOFoxUlRrSWY2czZVSmY3cnRhSVpPZGs5RXZDb3NaM2RLYjFhdlh3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Russia and China Unfazed by Sanctions in Booming LNG Trade - Crude Oil Prices Today | OilPrice.com",
+            "published_at": "2025-12-22T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeWpnd0llbE0zTEpZajN6dE9ETWpSVmxMNFVHOUstN1pfNldLdmwxU1o4ZFprSEJpTFN4MEI2M0lHM0ZpQTdGTlY3WXMxaThoSTZ0WHdXTG92NDVSa2E1VUNGUzlqSXNrZVozOEZtV0pYdDR6Y3liS29OVW12R1RocUM4RHJFWjBYdVBYRllyM3RHcWlzTVY3bmZtcEpnV2dtdy1fZkhNZ2VMeGhoZjR0WUxXRHPSAboBQVVfeXFMUHBwN1lKcDV6dUVLWWhrYWJYdzQ1MmRURG9ZUTFxTHZocDV2dHlKQnJoQmZIcXRXSnY3S1VvdFVNQWExUVQ5cTRQVTR5MHVuZmkteVQtNXluWTJXVlFrTjY0WmJlMEpjRkdORkFqWkhHUWp4Si1HR3BUYlhzOHNpUEtZLS1QaUJMbXh5UXRFR29sWkNaa2dEcHBkVE1PTmQtV2oxMTN5NC1BcjZRQUx1RnZyWkIyRmpoSVh3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 11,
+          "high_relevance_count": 11,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 10
+          }
+        },
+        "interpretation": "Found 11 news items related to LDO. 11 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Stalling growth, falling oil prices, and the civilian sector sacrificed - Meduza\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771583285
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03786923326021595,
+        "volume_24h": 10576504.8601,
+        "volume_formatted": "10.58M",
+        "market_cap": 279290177.0,
+        "market_cap_formatted": "279.29M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.038, indicating very low turnover with minimal selling. 24h volume represents 3.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771583286,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3291,
+          "total_volume": 10576504.8601,
+          "market_cap": 279290177.0,
+          "circulating_supply": 849166802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 279290177.0,
+        "market_cap_formatted": "279.29M",
+        "price_change_24h": 0.951,
+        "tvl": 18561732040.0,
+        "tvl_formatted": "18.56B",
+        "tvl_change_24h": 0.4995080933677504,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.56B (+0.5% 24h).",
+        "timestamp": 1771583287
+      }
+    }
+  }
+}

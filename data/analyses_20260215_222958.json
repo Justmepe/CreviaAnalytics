@@ -1,0 +1,4527 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771182811,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68208.4352029,
+        "display": "$68,208.44"
+      },
+      "volume": {
+        "value": 10330651756.98,
+        "display": "10.33B",
+        "velocity": 0.0075823183144208915
+      },
+      "derivatives": {
+        "funding_rate": 0.0009069999999999999,
+        "funding_display": "0.0009%",
+        "open_interest": 5238696072.429887,
+        "oi_display": "5.24B"
+      },
+      "summary": "BTC mark price at $68,208.44. Funding rate: 0.0009%. Open Interest: 5.24B. Volume velocity: 0.008."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 13,
+      "high_relevance_count": 13,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "In bitcoin crash, ETF flows are down but they aren't signaling 'crypto winter' investor panic",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "negative"
+        },
+        {
+          "title": "SEC Charges Bitcoin Miner for Duping Investors Out of $48.5 Million - Bitcoin Magazine",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "SEC vs Ripple: XRP Lawsuit Wrapping up as Negotiations Reach Final Stage\u2014Report - Bitcoin.com News",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "negative"
+        }
+      ],
+      "context": {
+        "fear_greed": 8,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 13 news items related to BTC. 13 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"In bitcoin crash, ETF flows are down but they aren't signaling 'crypto winter' investor panic\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 9.07e-06,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771182807,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 9.07e-06,
+            "mark_price": 68254.39333583
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "In bitcoin crash, ETF flows are down but they aren't signaling 'crypto winter' investor panic",
+            "published_at": "2026-02-15T14:59:25+00:00",
+            "time_ago": "Recently",
+            "source": "Finance",
+            "url": "https://www.cnbc.com/2026/02/15/bitcoin-price-crash-crypto-winter-investors-etf-flows.html",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "SEC Charges Bitcoin Miner for Duping Investors Out of $48.5 Million - Bitcoin Magazine",
+            "published_at": "2025-12-18T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"bitcoin SEC lawsuit\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOLUZhOEFnNmxQYWxQSzExd3FVU1lueDhuN0hFWHRRMmhCWTJYVnR1cWU1UzExVGwtVDRTQ0p2WENoaWlSTkV3UERDUHBSVVR4WWR3X0lvUzB1M1NMMHdxTHFCU3RGSUZ2cEc0NVdWc2RyZnYxU1ZaNDJvMndIWXpWUVBQLUZ5TkxOMVoyaXNfMkxyTXJrR1hmRnE0MFhhNmNC?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "SEC vs Ripple: XRP Lawsuit Wrapping up as Negotiations Reach Final Stage\u2014Report - Bitcoin.com News",
+            "published_at": "2025-03-12T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"bitcoin SEC lawsuit\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPbVdKZVlsTWNpRHJ0d0VlZnBWY0R4bnlFRFdMSW5tRno3SVYzTGJvdUw4ZTN2S0ZOcTVqcDBLdkhBdnhIMWJYNTJuY0x1MG9OSmNFZDVJcEd0UlhCbnJqUXk5SFA0emRkQm9vRkRjZ2xaOXVMN2Vja0lHd3VXcVZ0QWc2YWhEOHlGQ3plenpxemVtZEVyX2lRTHdUTThmVVozeGhMb3FCdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Takes Step Towards Quantum Fix as Experts Diverge on Urgency of Threat",
+            "published_at": "2026-02-15T16:17:16+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358068/bitcoin-quantum-fix-experts-diverge-urgency-threat",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/Bitcoin-decrypt-style-24-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "BlackRock's digital assets head: Leverage-driven volatility threatens bitcoin\u2019s narrative",
+            "published_at": "2026-02-15T14:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/13/blackrock-s-head-of-digital-assets-warns-leverage-driven-volatility-risks-undermine-bitcoin-s-institutional-narrative",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/429fa0eb924ea14f34828dab37f2f4372114220d-5000x3333.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "XRP is outrunning bitcoin and ether after investors piled into the recent crash",
+            "published_at": "2026-02-15T13:39:18+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/15/xrp-is-outrunning-bitcoin-and-ether-after-investors-piled-into-the-recent-crash",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/3417765811c38a57181abae66a079871b878e500-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Wall Street remains bullish on bitcoin while offshore traders retreat",
+            "published_at": "2026-02-15T12:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/15/wall-street-remains-bullish-on-bitcoin-while-offshore-traders-retreat",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/0ce20daadee6a2147c8807b254e696396e6f268d-1920x1080.png?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Brazilian President Lula Proposes BRICS Develop New Trade Currency - Bitcoin.com News",
+            "published_at": "2025-07-06T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQMV83LWtMdXZQOUZraGd2aEJOWS1VTEdrUmNQXzQtOW0wTDZlTjNBQkt5eUU3ZGtaMzE2TTNZSFNEU1pOVzQ2QnItS0pMTXV1aTVHYVdVZ2JlX1lwSEdjdW9CTUhyeGUtcXdSLU1aYkRQd2V0REZCVElTazdaMGI0RkhzOUc3cnNjbWpwRmlhMXJ4Z0MzWjNv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 13,
+          "high_relevance_count": 13,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 5,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 13 news items related to BTC. 13 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"In bitcoin crash, ETF flows are down but they aren't signaling 'crypto winter' investor panic\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771182807
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 9.07e-06,
+        "funding_rate_percent": 0.0009069999999999999,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68208.4352029,
+        "open_interest_usd": 5238696072.429887,
+        "open_interest_base": 76804.226,
+        "oi_formatted": "5.24B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0009%, indicating balanced positioning between longs and shorts. Open interest stands at 5.24B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771182810,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 9.07e-06,
+            "mark_price": 68208.4352029
+          },
+          "open_interest": {
+            "open_interest_usd": 5238696072.429887,
+            "open_interest": 76804.226
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0075823183144208915,
+        "volume_24h": 10330651756.98,
+        "volume_formatted": "10.33B",
+        "market_cap": 1362466112420.0,
+        "market_cap_formatted": "1362.47B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.008, indicating very low turnover with minimal selling. 24h volume represents 0.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771182811,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68206.0,
+          "total_volume": 10330651756.98,
+          "market_cap": 1362466112420.0,
+          "circulating_supply": 19989903.0,
+          "transaction_count_24h": 673131,
+          "hashrate": 1207555203350.9329
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771182814,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1937.27210078,
+        "display": "$1,937.27"
+      },
+      "volume": {
+        "value": 9718793501.91,
+        "display": "9.72B",
+        "velocity": 0.041444937059105125
+      },
+      "derivatives": {
+        "funding_rate": -0.004654,
+        "funding_display": "-0.0047%",
+        "open_interest": 3479654732.557505,
+        "oi_display": "3.48B"
+      },
+      "summary": "ETH mark price at $1,937.27. Funding rate: -0.0047%. Open Interest: 3.48B. Volume velocity: 0.041."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 12,
+      "high_relevance_count": 12,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Ethereum Mainnet Revenue Plunges 99% Post-Dencun Upgrade - CoinMarketCap",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Ethereum Developers Set Key Target for Upcoming Hegota Upgrade - Coinspeaker",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Ethereum's Fusaka Upgrade, Grayscale Chainlink Trust: Crypto Week Ahead - CoinDesk",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        }
+      ],
+      "context": {
+        "fear_greed": 8,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 12 news items related to ETH. 12 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Ethereum Mainnet Revenue Plunges 99% Post-Dencun Upgrade - CoinMarketCap\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.654e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771182811,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.654e-05,
+            "mark_price": 1938.3048316
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Ethereum Mainnet Revenue Plunges 99% Post-Dencun Upgrade - CoinMarketCap",
+            "published_at": "2026-02-14T03:53:58+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZzllQ0hHRTZJVjNPTTZjMmxGRHZtbXhCcWRyaVpPZGlpUFdwMDk0UnJpbTJBX20zd3ZNMl9DalhTOG1ZU1dwbURQd25XbHBydUFiSmh3eWRnTFJDRU5zY3R6UUVZd3RHb1hPMUhzdFBLY2xjblVVOXN4NDVrY2lJWW9DcHFvTXRYUWpfaGxyTC1Gb29LNDVLQ1phQ2dCVE9lOWlpY0trWQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Developers Set Key Target for Upcoming Hegota Upgrade - Coinspeaker",
+            "published_at": "2026-01-28T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSjYxa1g2U2FiNkRiWERpa0hIMFRQbzQ0SmFORTBIMFJPTllEd251RDN2cEJTVi0zbGluUGVxbGxlZEEyUlIxUS1pTWh5Y2hsQjlxSVJGU2QxVW9tVUtndkRBazVBWnBGSGE1WkdGLUM5cG5vN0xaZmExcjgyNGRlbzg1UkdicGpMSzBfRWlMVHBLRFhKSkHSAZsBQVVfeXFMUDl5RUhnUjVIRTJlNTB2WDZYMWhlR1o1Xy1pT3J2WjltM3lpZ2k2aEJaalNBdDhzVUp2VnhaU3lmajRrcWZyMy1KMHp2VUNLcGZqMElKVmpPY0JBMWlac1U0bkpJdk1Ta0l0eHJTNjZKZFFqREVYZWxkZldQRnJPdEpOOE9ncWpCNjd6d3IwbG9USG9lZV91TjVISlU?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical",
+              "development"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum's Fusaka Upgrade, Grayscale Chainlink Trust: Crypto Week Ahead - CoinDesk",
+            "published_at": "2025-12-01T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWjMtOTFEenc0UmNUc2doWEwtMW5qQk5uMDVrOHE0cDlrcWlIX0xXMTlIYWtsOVJhRVRPLXl5bEIzeU40bTRuQW9NRlYyRzdvd2FyS05yNXJQZ0phTXpzOWoxdVZYbkJJeUpZME9DZnZVNzV6TTRHMUc1Rk5RTll2N1FvU0hsQ0ZNYkhsWGtscHJyS2JiNk5QbHJFVnFGMXhkeHcwM3I3ajFYLTNFaFZuNGZCVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical",
+              "institutional"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "SEC is investigating whether Coinbase misstated user numbers: Report - thestreet.com",
+            "published_at": "2025-05-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"bitcoin SEC lawsuit\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQOGxWSTI3eG1pc3ZWdUtSOUFTaF9xSHo3QUtvQnhxbXR4eE94U2k3TzJGYzE0bVBBTzFaWlpaYWdwUmhCTUdCbnpwcTRwTElIMlhyR1ctODNGdC0yWXhLR0JWNlZiSDJnaTlveXJxTXVTSXFXTzlJLVpNLTFpQk5nRVBuVi1rSzB4RkYyc1Y0b0w4bWRpNzlPUEhrM0xDLUJfSTZBb1p4UHlHWXM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Polymarket investor Vitalik Buterin says prediction markets need to stop catering to \u2018dumb opinions\u2019",
+            "published_at": "2026-02-15T11:33:47-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/389984/polymarket-investor-vitalik-buterin-says-prediction-markets-need-to-stop-catering-to-dumb-opinions?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2024/10/20241001_Vitalik_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Bitcoin Takes Step Towards Quantum Fix as Experts Diverge on Urgency of Threat",
+            "published_at": "2026-02-15T16:17:16+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358068/bitcoin-quantum-fix-experts-diverge-urgency-threat",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/Bitcoin-decrypt-style-24-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "XRP is outrunning bitcoin and ether after investors piled into the recent crash",
+            "published_at": "2026-02-15T13:39:18+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/15/xrp-is-outrunning-bitcoin-and-ether-after-investors-piled-into-the-recent-crash",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/3417765811c38a57181abae66a079871b878e500-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Record DeFi TVL in Q3 May Mask 22% Drop in DApp Wallets as Ethereum Remains Top Network - Bitget",
+            "published_at": "2025-10-09T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA3VmpkOFJSWW5TbHNkUGtNUmlMWlplYk9rZVg1Y08xSTJ1dlZJUEIzeTY3TVZZU2U3WXEwQ1NiTjVkLUFSY2hRMWdEQTc5T3hEcnpZOW5RSnBtYmV0Z0HSAWNBVV95cUxPLWxHUFBvNlMtcjhmckRZbV9GOU9mT2RzSXFnTjlZQ2JoLXFBMUpoWmZyU1lmRlVUcEJsYWp2WmU0YkZ0clJkYUZfaWNnTTBQeWVXTUtQb2pPd3A0bExwWVh5SkE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical",
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "GameSquare Embarks on $100 Million Ethereum Treasury Strategy - The Esports Advocate",
+            "published_at": "2025-07-08T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM3RNamhReHR6WWRMa3hUTGEwS3VoamtnVDVwN2NCcWN4YUdoRWNMOC1samxBV1FMSldQaG9xQ1VlV1ViRGhMSW1Ka3FDMTBBcUllTFJlei1XRWRGYzQtMWNBd1N3bERoNkZMV1c4YVpNT1JwdDFGMG84dTljaGt4aUpmUGZVZHI0NTZ5MFZ1TV9NSDR4SG5tbm5QeTB2UQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "USDC Usage on Ethereum Hits New All-Time High - Binance",
+            "published_at": "2025-05-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBqZV9VZUF4ZUV2TzZ1MVc3QjdXeDdwZElBZ2llS09VZTNYZEM4VF94OVVVXzRnNVUwTVlMdnFOQXBZSm85TkxwU3BoOGRPRy14V09FVFZLc3N2ZDVkSkJSUEV6cw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 12,
+          "high_relevance_count": 12,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 3,
+            "negative": 3,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 12 news items related to ETH. 12 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Ethereum Mainnet Revenue Plunges 99% Post-Dencun Upgrade - CoinMarketCap\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771182811
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -4.654e-05,
+        "funding_rate_percent": -0.004654,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1937.27210078,
+        "open_interest_usd": 3479654732.557505,
+        "open_interest_base": 1796162.104,
+        "oi_formatted": "3.48B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0047%, indicating balanced positioning between longs and shorts. Open interest stands at 3.48B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771182813,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -4.654e-05,
+            "mark_price": 1937.27210078
+          },
+          "open_interest": {
+            "open_interest_usd": 3479654732.557505,
+            "open_interest": 1796162.104
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.041444937059105125,
+        "volume_24h": 9718793501.91,
+        "volume_formatted": "9.72B",
+        "market_cap": 234498932597.0,
+        "market_cap_formatted": "234.50B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.041, indicating very low turnover with minimal selling. 24h volume represents 4.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771182814,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1937.54,
+          "total_volume": 9718793501.91,
+          "market_cap": 234498932597.0,
+          "circulating_supply": 120692457.8999966,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771182815
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771182816
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771182939,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.08014810569750472,
+        "category": "Moderate",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -3.456,
+      "volume": {
+        "value": 1404090135.08445,
+        "display": "1.40B"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.080 (Moderate). Price 24h: -3.5%. Volume: 1.40B. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.08014810569750472,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 9,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news",
+          "sentiment": "positive"
+        },
+        {
+          "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 9 news items related to DOGE. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 9.07e-06,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771182816,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 9.07e-06,
+            "mark_price": 68254.39333583
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg",
+            "published_at": "2026-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUXRlSEM2OXYycklMS1ZCOWlncmZFWDJ0cVcteklqQWthU3dlNFFncGZyOUdHUm01QUhRc1liVEphWDB0QzVZTTN0OTN3UE9ocXZBaERIU1NLc3l5dWFQMGpXVU1tOFNOb1dEeWRCVG51OXpVZWlCU2NFUDhmWFptRVlVd0tOV1VfeGxSMHhFenRjNDM0UmtNTDZZWG90ZmEyZXNfSTM3eEVwZzUwdDZCSGIxdzJubVRpZEUwUg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news",
+            "published_at": "2025-05-09T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUENHcGJfak5jdUZKQkM0WndYaE5mSHJ6NEp3YnN4UnRIYUhleHYzN085R0NEWGZVQTF4Z042bU4zcHFCRi1oMUMwYmV6elh3bUpfbUY4dXJuNTJrNDZtbXRncmVIY3JlUkdzM0VNbWRYZWFYbTBzcnJka0dOMUF1eXN6RmpHeXEwLXpRSl9WVld4dTZSbDRN?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 9 news items related to DOGE. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771182816
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08014698255283223,
+        "volume_24h": 1404090135.08445,
+        "volume_formatted": "1.40B",
+        "market_cap": 17518939458.0,
+        "market_cap_formatted": "17.52B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.080, indicating moderate turnover with normal trading activity. 24h volume represents 8.0% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771182817,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10366,
+          "total_volume": 1404090135.08445,
+          "market_cap": 17518939458.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.08014810569750472,
+        "velocity_category": "Moderate",
+        "price_change_24h": -3.456,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing moderate with a velocity of 0.080. Risk level: LOW. ",
+        "timestamp": 1771182939
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771182944,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.004337564133161784,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -5.556,
+      "volume": {
+        "value": 16498537.90278309,
+        "display": "16.50M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.004 (Low (Stable Holding)). Price 24h: -5.6%. Volume: 16.50M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.004337564133161784,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news",
+          "sentiment": "positive"
+        },
+        {
+          "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to SHIB. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 9.4e-06,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771182940,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 9.4e-06,
+            "mark_price": 68193.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news",
+            "published_at": "2025-05-09T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUENHcGJfak5jdUZKQkM0WndYaE5mSHJ6NEp3YnN4UnRIYUhleHYzN085R0NEWGZVQTF4Z042bU4zcHFCRi1oMUMwYmV6elh3bUpfbUY4dXJuNTJrNDZtbXRncmVIY3JlUkdzM0VNbWRYZWFYbTBzcnJka0dOMUF1eXN6RmpHeXEwLXpRSl9WVld4dTZSbDRN?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 8 news items related to SHIB. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771182940
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0043377123734525905,
+        "volume_24h": 16498537.90278309,
+        "volume_formatted": "16.50M",
+        "market_cap": 3803511271.0,
+        "market_cap_formatted": "3.80B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.004, indicating very low turnover with minimal selling. 24h volume represents 0.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771182942,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.47e-06,
+          "total_volume": 16498537.90278309,
+          "market_cap": 3803511271.0,
+          "circulating_supply": 589243877392245.9,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.004337564133161784,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -5.556,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.004. Risk level: LOW. ",
+        "timestamp": 1771182944
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183067,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.07177024950236958,
+        "category": "Moderate",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -4.329,
+      "volume": {
+        "value": 132873539.3997677,
+        "display": "132.87M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.072 (Moderate). Price 24h: -4.3%. Volume: 132.87M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.07177024950236958,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 9,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news",
+          "sentiment": "positive"
+        },
+        {
+          "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 9 news items related to PEPE. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 9.4e-06,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771182944,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 9.4e-06,
+            "mark_price": 68193.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg",
+            "published_at": "2026-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUXRlSEM2OXYycklMS1ZCOWlncmZFWDJ0cVcteklqQWthU3dlNFFncGZyOUdHUm01QUhRc1liVEphWDB0QzVZTTN0OTN3UE9ocXZBaERIU1NLc3l5dWFQMGpXVU1tOFNOb1dEeWRCVG51OXpVZWlCU2NFUDhmWFptRVlVd0tOV1VfeGxSMHhFenRjNDM0UmtNTDZZWG90ZmEyZXNfSTM3eEVwZzUwdDZCSGIxdzJubVRpZEUwUg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Is the meme coin rally back? Dogecoin, Shiba Inu and Pepe see double-digit gains - crypto.news",
+            "published_at": "2025-05-09T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUENHcGJfak5jdUZKQkM0WndYaE5mSHJ6NEp3YnN4UnRIYUhleHYzN085R0NEWGZVQTF4Z042bU4zcHFCRi1oMUMwYmV6elh3bUpfbUY4dXJuNTJrNDZtbXRncmVIY3JlUkdzM0VNbWRYZWFYbTBzcnJka0dOMUF1eXN6RmpHeXEwLXpRSl9WVld4dTZSbDRN?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 9 news items related to PEPE. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771182944
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.07146900062540497,
+        "volume_24h": 132873539.3997677,
+        "volume_formatted": "132.87M",
+        "market_cap": 1859177241.0,
+        "market_cap_formatted": "1.86B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.071, indicating moderate turnover with normal trading activity. 24h volume represents 7.1% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771183066,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.44e-06,
+          "total_volume": 132873539.3997677,
+          "market_cap": 1859177241.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.07177024950236958,
+        "velocity_category": "Moderate",
+        "price_change_24h": -4.329,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing moderate with a velocity of 0.072. Risk level: LOW. ",
+        "timestamp": 1771183067
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183191,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.029228252587306172,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -8.419,
+      "volume": {
+        "value": 8840820.26998006,
+        "display": "8.84M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.029 (Low (Stable Holding)). Price 24h: -8.4%. Volume: 8.84M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.029228252587306172,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to FLOKI. 8 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.275e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183068,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.275e-05,
+            "mark_price": 68160.80042029
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg",
+            "published_at": "2026-01-02T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUXRlSEM2OXYycklMS1ZCOWlncmZFWDJ0cVcteklqQWthU3dlNFFncGZyOUdHUm01QUhRc1liVEphWDB0QzVZTTN0OTN3UE9ocXZBaERIU1NLc3l5dWFQMGpXVU1tOFNOb1dEeWRCVG51OXpVZWlCU2NFUDhmWFptRVlVd0tOV1VfeGxSMHhFenRjNDM0UmtNTDZZWG90ZmEyZXNfSTM3eEVwZzUwdDZCSGIxdzJubVRpZEUwUg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to FLOKI. 8 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Best Meme Coins To Invest In As New Bull Run Begins: Dogecoin, Pepe, Floki and Two Surprise Picks - CryptoDnes.bg\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771183068
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.029230405407977816,
+        "volume_24h": 8840820.26998006,
+        "volume_formatted": "8.84M",
+        "market_cap": 302452879.0,
+        "market_cap_formatted": "302.45M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.029, indicating very low turnover with minimal selling. 24h volume represents 2.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771183069,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.133e-05,
+          "total_volume": 8840820.26998006,
+          "market_cap": 302452879.0,
+          "circulating_supply": 9654936547021.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.029228252587306172,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -8.419,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.029. Risk level: LOW. ",
+        "timestamp": 1771183191
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183200,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 44197825.85,
+        "display": "44.20M",
+        "velocity": 0.007161254179110077,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -4.642,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 44.20M (velocity: 0.007). Price 24h: -4.6%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider"
+        ]
+      },
+      "exchange_events": {
+        "count": 1,
+        "items": [
+          "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News"
+        ],
+        "risk_level": "HIGH"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "8 events found. 2 regulatory, 1 exchange-related. \u26a0\ufe0f Exchange delisting risk detected."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.401e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183199,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.401e-05,
+            "mark_price": 68099.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Privacy Coins Monero, Dash and Dusk Defy Crypto Market Slump - Decrypt",
+            "published_at": "2026-01-19T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"monero privacy coin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPenMxeEtsa3BYT29jSGlIVVpORGU5cHNxWXlJemJVZ2ZkeDFjdE01SVhyQ3Mxd0VtV290cUIzMXRuam1qa2NqZklKYzAtbXUtSW1fUk9ITVo4dUM2cVZvcDFBenhDa2t6QmYzRkVWQVNidU1aRXhXN3lzbTRZUjh4VkRxZUN5N2lHOHRwOUpn0gGWAUFVX3lxTE5NckhBWXZyTGwyQXFQTFRCdFdHQ2RNa3IyS0RDMlg4bkVSY1lwTzNYQVZ0UkRxTEQ1NDZWcFRTQXk2Z0FIUDZGTGZQanhmdXlGMUxRMGFNTkpoQlRoSUJtalBlazVnNUhkakloYlJsS3lmbGhpWjAwbXBSYjNYc3UwTm95YjhmaTVrRGYyLWM1elJ3bXh4dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to XMR. 8 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Privacy Coins Monero, Dash and Dusk Defy Crypto Market Slump - Decrypt\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771183199
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.007161254179110077,
+        "volume_24h": 44197825.85,
+        "volume_formatted": "44.20M",
+        "market_cap": 6171799624.0,
+        "market_cap_formatted": "6.17B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771183199,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 334.46,
+          "total_volume": 44197825.85,
+          "market_cap": 6171799624.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 44197809.8,
+        "volume_formatted": "44.20M",
+        "price_change_24h": -4.642,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771183200,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183324,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 910808972.6,
+        "display": "910.81M",
+        "velocity": 0.18767198099516744,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -1.158,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 910.81M (velocity: 0.188). Price 24h: -1.2%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "moderate_distribution",
+        "interpretation": "Selling in response to regulatory concerns"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: moderate distribution. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider"
+        ]
+      },
+      "exchange_events": {
+        "count": 1,
+        "items": [
+          "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News"
+        ],
+        "risk_level": "HIGH"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "8 events found. 2 regulatory, 1 exchange-related. \u26a0\ufe0f Exchange delisting risk detected."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.401e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183200,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.401e-05,
+            "mark_price": 68099.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Gold Today, February 15: China Leverage Spurs Crash Risk After Record - Meyka",
+            "published_at": "2026-02-15T15:38:29+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVFlCcjg0UWtkM21tWVppRnFYcjZnZHhqTTgzc1N6YmF5a2Q5djZqby1kQ1ZKekZoaVdmd3k3RDBoeE51YlQ1TGM5bjI4SmJYU2ppN1AxLWVycWRyUkJnUWswc1dkNkotS1J3SVQyNjZ0eFRpZzRjamhQc3ZRYmRmUTE0YXZoRFZKcTVGc3J3TngxV0lwZEdxWGstWFI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 8 news items related to ZEC. 8 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Hong Kong is trying to build up its crypto regulations: State of Crypto\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771183200
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "medium",
+        "velocity": 0.18767198099516744,
+        "volume_24h": 910808972.6,
+        "volume_formatted": "910.81M",
+        "market_cap": 4853196347.0,
+        "market_cap_formatted": "4.85B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.188, indicating elevated turnover with active trading. 24h volume represents 18.8% of market cap. Some distribution is occurring.",
+        "timestamp": 1771183202,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 293.75,
+          "total_volume": 910808972.6,
+          "market_cap": 4853196347.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 910808972.6,
+        "volume_formatted": "910.81M",
+        "price_change_24h": -1.158,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771183324,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183327,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 87467565.34,
+        "display": "87.47M",
+        "velocity": 0.18805017001717816,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -6.012,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 87.47M (velocity: 0.188). Price 24h: -6.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "moderate_distribution",
+        "interpretation": "Selling in response to regulatory concerns"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: moderate distribution. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider"
+        ]
+      },
+      "exchange_events": {
+        "count": 1,
+        "items": [
+          "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News"
+        ],
+        "risk_level": "HIGH"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "8 events found. 2 regulatory, 1 exchange-related. \u26a0\ufe0f Exchange delisting risk detected."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.53e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183326,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.53e-05,
+            "mark_price": 68268.27466667
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Privacy Coins Monero, Dash and Dusk Defy Crypto Market Slump - Decrypt",
+            "published_at": "2026-01-19T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"monero privacy coin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPenMxeEtsa3BYT29jSGlIVVpORGU5cHNxWXlJemJVZ2ZkeDFjdE01SVhyQ3Mxd0VtV290cUIzMXRuam1qa2NqZklKYzAtbXUtSW1fUk9ITVo4dUM2cVZvcDFBenhDa2t6QmYzRkVWQVNidU1aRXhXN3lzbTRZUjh4VkRxZUN5N2lHOHRwOUpn0gGWAUFVX3lxTE5NckhBWXZyTGwyQXFQTFRCdFdHQ2RNa3IyS0RDMlg4bkVSY1lwTzNYQVZ0UkRxTEQ1NDZWcFRTQXk2Z0FIUDZGTGZQanhmdXlGMUxRMGFNTkpoQlRoSUJtalBlazVnNUhkakloYlJsS3lmbGhpWjAwbXBSYjNYc3UwTm95YjhmaTVrRGYyLWM1elJ3bXh4dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to DASH. 8 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Privacy Coins Monero, Dash and Dusk Defy Crypto Market Slump - Decrypt\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771183326
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "medium",
+        "velocity": 0.18805017001717816,
+        "volume_24h": 87467565.34,
+        "volume_formatted": "87.47M",
+        "market_cap": 465128882.0,
+        "market_cap_formatted": "465.13M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.188, indicating elevated turnover with active trading. 24h volume represents 18.8% of market cap. Some distribution is occurring.",
+        "timestamp": 1771183326,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 37.06,
+          "total_volume": 87467565.34,
+          "market_cap": 465128882.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 87431693.96,
+        "volume_formatted": "87.43M",
+        "price_change_24h": -6.012,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771183327,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183450,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1222208.882,
+        "display": "1.22M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -8.108,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.22M (velocity: 0.000). Price 24h: -8.1%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+          "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider"
+        ]
+      },
+      "exchange_events": {
+        "count": 1,
+        "items": [
+          "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News"
+        ],
+        "risk_level": "HIGH"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "8 events found. 2 regulatory, 1 exchange-related. \u26a0\ufe0f Exchange delisting risk detected."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.53e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183327,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.53e-05,
+            "mark_price": 68268.27466667
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Gold Today, February 15: China Leverage Spurs Crash Risk After Record - Meyka",
+            "published_at": "2026-02-15T15:38:29+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVFlCcjg0UWtkM21tWVppRnFYcjZnZHhqTTgzc1N6YmF5a2Q5djZqby1kQ1ZKekZoaVdmd3k3RDBoeE51YlQ1TGM5bjI4SmJYU2ppN1AxLWVycWRyUkJnUWswc1dkNkotS1J3SVQyNjZ0eFRpZzRjamhQc3ZRYmRmUTE0YXZoRFZKcTVGc3J3TngxV0lwZEdxWGstWFI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 8 news items related to SCRT. 8 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Hong Kong is trying to build up its crypto regulations: State of Crypto\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771183327
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1222208.882,
+        "volume_formatted": "1.22M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771183450,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0879,
+          "total_volume": 1222208.882,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1224230.1032,
+        "volume_formatted": "1.22M",
+        "price_change_24h": -8.108,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771183450,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183577,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1882818940.0,
+        "display": "1.88B"
+      },
+      "price_change_24h": -3.894,
+      "token_velocity": 0.04074257057133704,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.88B. Price 24h: -3.9%. Token velocity: 0.041. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04074257057133704,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.041 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "8 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.793e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183452,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.793e-05,
+            "mark_price": 68422.6695202
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Aave Price Prediction 2026-2030 - 99Bitcoins",
+            "published_at": "2025-03-05T10:49:20+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1FRERwWlRXV0ZueHktalBJT2hSX1dpRUJfekY5aUFKT3YtNnVNZEVJcGRPSld2NEZoclB5RUhhc1RMa0tjd1FLWElZSTFGNkxBTkI1MnVrbWxjUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to AAVE. 8 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Aave Price Prediction 2026-2030 - 99Bitcoins\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771183452
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04074257057133704,
+        "volume_24h": 76710883.536,
+        "volume_formatted": "76.71M",
+        "market_cap": 1882818940.0,
+        "market_cap_formatted": "1.88B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.041, indicating very low turnover with minimal selling. 24h volume represents 4.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771183453,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 124.4,
+          "total_volume": 76710883.536,
+          "market_cap": 1882818940.0,
+          "circulating_supply": 15191414.357665714,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1882818940.0,
+        "market_cap_formatted": "1.88B",
+        "price_change_24h": -3.894,
+        "tvl": 27048387151.0,
+        "tvl_formatted": "27.05B",
+        "tvl_change_24h": -2.4124558318609117,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.05B (-2.4% 24h).",
+        "timestamp": 1771183577
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183597,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2167304064.0,
+        "display": "2.17B"
+      },
+      "price_change_24h": -6.509,
+      "token_velocity": 0.04808978709182174,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.17B. Price 24h: -6.5%. Token velocity: 0.048. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04808978709182174,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.048 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "8 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.96e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183584,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.96e-05,
+            "mark_price": 68468.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Kevin O\u2019Leary wins $2.8 million defamation judgment against crypto influencer Ben \u2018BitBoy\u2019 Armstrong",
+            "published_at": "2026-02-15T14:22:05-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/389986/kevin-oleary-wins-2-8-million-defamation-judgment-against-crypto-influencer-ben-bitboy-armstrong?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/04/20250424_Law_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 8 news items related to UNI. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Kevin O\u2019Leary wins $2.8 million defamation judgment against crypto influencer Ben \u2018BitBoy\u2019 Armstrong\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771183584
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04808978709182174,
+        "volume_24h": 104225191.001,
+        "volume_formatted": "104.23M",
+        "market_cap": 2167304064.0,
+        "market_cap_formatted": "2.17B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.048, indicating very low turnover with minimal selling. 24h volume represents 4.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771183584,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.433,
+          "total_volume": 104225191.001,
+          "market_cap": 2167304064.0,
+          "circulating_supply": 633830762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2167304064.0,
+        "market_cap_formatted": "2.17B",
+        "price_change_24h": -6.509,
+        "tvl": 3077627363.0,
+        "tvl_formatted": "3.08B",
+        "tvl_change_24h": -2.007439170806167,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.08B (-2.0% 24h).",
+        "timestamp": 1771183597
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183734,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 367074987.0,
+        "display": "367.07M"
+      },
+      "price_change_24h": -6.391,
+      "token_velocity": 0.10402906766022715,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 367.07M. Price 24h: -6.4%. Token velocity: 0.104. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.10402906766022715,
+        "activity_level": "MODERATE",
+        "holder_behavior": "neutral"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.104 (MODERATE). Holder behavior: neutral. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 9,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Understanding the \u201cSwoosh\u201d-Shaped Yield Curve for Treasuries - Federal Reserve Bank of St. Louis"
+        ]
+      },
+      "summary": "9 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.96e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183597,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 1.96e-05,
+            "mark_price": 68468.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Understanding the \u201cSwoosh\u201d-Shaped Yield Curve for Treasuries - Federal Reserve Bank of St. Louis",
+            "published_at": "2025-10-09T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZFVhWDdYR3dCeE16YWRrR2Z0U2hWaDRZbUFrX0k5YmJ5eHpwbDdrSHh3blZPRC05RC11d0RCZFJ1SUFabVZON1NhNG5FMGJ5dDZKT2xpWHNqcEY2c0JZRE9VcFphdnF6SXZETmpHOVZodmJ3SkJsV1N3cDdGd3ZMODBwWXVLTWY3c1M1UTRBVTRjUUhxQ09lUE4tZXdkUUhlT3dF?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Kevin O\u2019Leary wins $2.8 million defamation judgment against crypto influencer Ben \u2018BitBoy\u2019 Armstrong",
+            "published_at": "2026-02-15T14:22:05-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/389986/kevin-oleary-wins-2-8-million-defamation-judgment-against-crypto-influencer-ben-bitboy-armstrong?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/04/20250424_Law_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 9 news items related to CRV. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Understanding the \u201cSwoosh\u201d-Shaped Yield Curve for Treasuries - Federal Reserve Bank of St. Louis\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771183597
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.10402906766022715,
+        "volume_24h": 38186468.659,
+        "volume_formatted": "38.19M",
+        "market_cap": 367074987.0,
+        "market_cap_formatted": "367.07M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.104, indicating moderate turnover with normal trading activity. 24h volume represents 10.4% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771183719,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.248,
+          "total_volume": 38186468.659,
+          "market_cap": 367074987.0,
+          "circulating_supply": 1476751919.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 367074987.0,
+        "market_cap_formatted": "367.07M",
+        "price_change_24h": -6.391,
+        "tvl": 1888675802.0,
+        "tvl_formatted": "1.89B",
+        "tvl_change_24h": -1.4942877953400786,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.89B (-1.5% 24h).",
+        "timestamp": 1771183734
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771183798,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 285034816.0,
+        "display": "285.03M"
+      },
+      "price_change_24h": -7.143,
+      "token_velocity": 0.050918126487356906,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 285.03M. Price 24h: -7.1%. Token velocity: 0.051. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.050918126487356906,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.051 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "8 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 8,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 2.155e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771183736,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 8 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 8,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 2.155e-05,
+            "mark_price": 68496.0329058
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Kevin O\u2019Leary wins $2.8 million defamation judgment against crypto influencer Ben \u2018BitBoy\u2019 Armstrong",
+            "published_at": "2026-02-15T14:22:05-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/389986/kevin-oleary-wins-2-8-million-defamation-judgment-against-crypto-influencer-ben-bitboy-armstrong?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/04/20250424_Law_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Hong Kong is trying to build up its crypto regulations: State of Crypto",
+            "published_at": "2026-02-15T19:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/policy/2026/02/16/hong-kong-is-trying-to-build-up-its-crypto-regulations-state-of-crypto",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/68521e937f5b61ca43f1cd14e054db38a9b1ff33-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Michael Saylor signals another Bitcoin buy amid market rout",
+            "published_at": "2026-02-15T18:55:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/michael-saylor-signals-strategy-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZmOTctOTNhYS03YTA1LTg1NGQtZjVmNmVmNTQ5OGNm.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Coinbase CEO: Stablecoin Rewards Ban Would Be 'More Profitable' for the Exchange - Bitcoin.com News",
+            "published_at": "2026-02-15T18:02:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNME5iaGM4RDNSVGhkVDM2STZWREQzOU1veTgzYXZWY2xOeVVGU0tmY0puUU9yQm9iTXFDWFZUekhSenJDM2RUamxRMFlMM1FzT0VFOV9fWjA4M0lHNHB4QlcxT056bnFJUnJ5VmcyZnBPNUJ6TzM1aWkzUm0wc0xBN2VjUE5EM3pqaTg4di1qdGc0Ql9JZmhpdzlacm5xX2NxSUdMTGNB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Her Divorce Was Ugly. Crypto Became a Lifeline",
+            "published_at": "2026-02-15T18:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358087/her-divorce-ugly-crypto-lifeline",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/money-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "UAE, Hong Kong Step Up Debt Market Connectivity Talks, Add Stablecoin Regulation Focus - Crowdfund Insider",
+            "published_at": "2026-02-15T17:16:26+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYmY3eEtSSWREQWkyb05VcWJoTGZySHJLZmN3NHBSUHNWeG9nTWUzMmFLRF9YbDhmYmR4ZWFHZEhYNFlNT1daeG1VeFhmTXIzaUdSSEFxTldVWWpycTVtU3Z4MzB4M3VDbURBLXg4dnRYQTlrUXdBeVRJdEVDcGxxMmZ2Vm5ibUZDWExjekF5YzdaTnVLWTBRMEhJRlFaN1JrODFaak05UDUzZGkySGpmbnFKNlhiVUpYYlZQMUw1OG52RHF3STgyWmt5Y20yZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+            "published_at": "2026-02-15T17:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-80060137",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Interest rate hike sooner? RBNZ expected to bring OCR rise forward as inflation risk grows - NZ Herald",
+            "published_at": "2026-02-15T16:01:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZUh6WTlLUDdjU29YZHYxbTlKSnE1SlJEaFFKRGZYM0ZPOU5MU25SRW0wNk1pNmJfc2J0elNoVC1rOUJJOUVxQzN5Y1JmcnNjZENWTkhUMUdQWFZYdm5seDJ3T1FBYUZjY1JGRC0zLXlFQVV6SUx5dy15NENQX0lucFU3YmdrUUd1V1lOM2tpS2paazBOeW1BS28tTHpjNktRSDdvU2M0cUhLVGpwTV9pQjRfVmdBVThyY3F2VW1HQ3ZjYVNIWTBXNVpRLVA4QjQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 8 news items related to LDO. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Kevin O\u2019Leary wins $2.8 million defamation judgment against crypto influencer Ben \u2018BitBoy\u2019 Armstrong\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771183736
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.050918126487356906,
+        "volume_24h": 14461668.4203,
+        "volume_formatted": "14.46M",
+        "market_cap": 284018078.0,
+        "market_cap_formatted": "284.02M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.051, indicating moderate turnover with normal trading activity. 24h volume represents 5.1% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771183736,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3367,
+          "total_volume": 14461668.4203,
+          "market_cap": 284018078.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 285034816.0,
+        "market_cap_formatted": "285.03M",
+        "price_change_24h": -7.143,
+        "tvl": 18579147039.0,
+        "tvl_formatted": "18.58B",
+        "tvl_change_24h": -6.574155158746365,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.58B (-6.6% 24h).",
+        "timestamp": 1771183798
+      }
+    }
+  }
+}

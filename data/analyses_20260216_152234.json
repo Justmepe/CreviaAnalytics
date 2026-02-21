@@ -1,0 +1,4469 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771243686,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68880.7,
+        "display": "$68,880.70"
+      },
+      "volume": {
+        "value": 8951705038.96,
+        "display": "8.95B",
+        "velocity": 0.00650746489984745
+      },
+      "derivatives": {
+        "funding_rate": -0.0017929999999999999,
+        "funding_display": "-0.0018%",
+        "open_interest": 5337974456.5966,
+        "oi_display": "5.34B"
+      },
+      "summary": "BTC mark price at $68,880.70. Funding rate: -0.0018%. Open Interest: 5.34B. Volume velocity: 0.007."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 11,
+      "high_relevance_count": 11,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "$75K or bearish 'regime shift?' Five things to know in Bitcoin this week",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "negative"
+        },
+        {
+          "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 12,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 11 news items related to BTC. 11 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.793e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771243677,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.793e-05,
+            "mark_price": 68876.5
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position",
+            "published_at": "2026-02-16T04:32:41-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/389996/harvard-bitcoin-ether-etf-holdings?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2023/08/20230726_BitcoinVEthereum_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "$75K or bearish 'regime shift?' Five things to know in Bitcoin this week",
+            "published_at": "2026-02-16T10:41:38+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/75k-or-bearish-regime-shift-five-things-to-know-in-bitcoin-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YjAyZGUtMzhjZi03OWFlLWEwMjAtNmY5N2RjOTFmZTdk.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Stop Talking About Gold, Bitcoin Is Not a Safe Haven Asset - BlockBeats",
+            "published_at": "2026-02-16T10:10:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"gold price safe haven\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ibkRmWWhNSWplczJmSERjS1o0UEdFSk1QRV9BNWRhSDRqNVc1QU5uVjUxanczT1Q3a2NGWUtSejRoR1FkN2FoUWFnbXp3ZU5wd3Fabw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Willy Woo warns quantum risk is eroding Bitcoin\u2019s edge over gold",
+            "published_at": "2026-02-16T09:42:50+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/willy-woo-bitcoin-quantum-risk-gold-lost-coins-post-quantum-upgrade?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzNmNDEtNzU1MS03ZjlhLTgyNmUtNjUxNmU5NTA1YmEwLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Strategy says it can survive even if bitcoin drops to $8,000 and will 'equitize' debt",
+            "published_at": "2026-02-16T09:08:37+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/strategy-says-it-can-survive-even-if-bitcoin-drops-to-usd8-000-and-will-equitize-debt",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/28ee13d93bd9b44fa7fd6e10b0452bde47d4ddcd-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "What Bitcoin traders are focused on as Fed rate decision looms - dlnews.com",
+            "published_at": "2026-01-27T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"federal reserve interest rate decision\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZUZoUHh5N29DYS1mdi1YTm9hZGk4YVV3N21kUGJjSzhGY05fQmJvcFdHOEJwRVA3aWs1ek5zNXYxYTdDUVdoNTZkc0x5OGNoOFVkUDBHdjIxNkoyRDFZX3JsYy15Y3V1aGo3b1NBb2lGdDBWOHdQTVBkWENIWDE1ckhJdm5nVXpnUlFfWnFnVzBlVEVIZ2wwQ185cUwya1U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitlayer: Opening Bitcoin\u2019s Next Chapter in Decentralized Finance - Binance",
+            "published_at": "2025-08-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1LRHczTlF6dDd4amZoUmRWX0JrUTRnQ0swMmlJVWpaelBDR3hsZXZ3Ym1YQ3g5Qmx5WHVRazF0elRBV25MNmxMU0RxcHdzeDgxb0xPUVVYRUVsQWF3YkR4c09GQV9EZzg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 11,
+          "high_relevance_count": 11,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 3,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 11 news items related to BTC. 11 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771243677
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": -1.793e-05,
+        "funding_rate_percent": -0.0017929999999999999,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68880.7,
+        "open_interest_usd": 5337974456.5966,
+        "open_interest_base": 77495.938,
+        "oi_formatted": "5.34B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at -0.0018%, indicating balanced positioning between longs and shorts. Open interest stands at 5.34B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771243680,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -1.793e-05,
+            "mark_price": 68880.7
+          },
+          "open_interest": {
+            "open_interest_usd": 5337974456.5966,
+            "open_interest": 77495.938
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.00650746489984745,
+        "volume_24h": 8951705038.96,
+        "volume_formatted": "8.95B",
+        "market_cap": 1375605581702.0,
+        "market_cap_formatted": "1375.61B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771243686,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68880.6,
+          "total_volume": 8951705038.96,
+          "market_cap": 1375605581702.0,
+          "circulating_supply": 19990259.0,
+          "transaction_count_24h": 504718,
+          "hashrate": 1026109084712.7096
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771243688,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1976.15,
+        "display": "$1,976.15"
+      },
+      "volume": {
+        "value": 9380900217.88,
+        "display": "9.38B",
+        "velocity": 0.039341247332589147
+      },
+      "derivatives": {
+        "funding_rate": -0.008043999999999999,
+        "funding_display": "-0.0080%",
+        "open_interest": 3547974996.8822503,
+        "oi_display": "3.55B"
+      },
+      "summary": "ETH mark price at $1,976.15. Funding rate: -0.0080%. Open Interest: 3.55B. Volume velocity: 0.039."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 7,
+      "high_relevance_count": 7,
+      "dominant_theme": "institutional",
+      "overall_sentiment": "positive",
+      "top_events": [
+        {
+          "title": "Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Ethereum price forms rare pattern ahead of Fusaka upgrade - crypto.news",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 12,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "divergent"
+      },
+      "summary": "Found 7 news items related to ETH. 7 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 3,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "institutional",
+          "message": "Significant institutional news detected - monitor for ETF flows or large transactions"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -8.044e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771243686,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -8.044e-05,
+            "mark_price": 1974.53
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position",
+            "published_at": "2026-02-16T04:32:41-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/389996/harvard-bitcoin-ether-etf-holdings?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2023/08/20230726_BitcoinVEthereum_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum price forms rare pattern ahead of Fusaka upgrade - crypto.news",
+            "published_at": "2025-11-30T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdUFWdUNkbFV2QVlkMERkbm8xODhEUldPZmd0aWFtOGd6Mm5ZQlc4cVVnNW93SG54WXpNdUVjN1dzTVdXNzFuenZVYkZsQUFhRmc4SHRSTmRscHo0Sy1mckxYQTlfS0w3VXBRd0FOSDEtZXZWS2l1bFp3VnZOY2xnWVVsOGg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical",
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Why Ethereum Leads as the Top Choice for Institutional Investors - Analytics Insight",
+            "published_at": "2026-02-16T10:07:16+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYlcxNGVZUk9DOVB2TXpORHIyTFdJZzRCWGE0UElDZ1BTRjBCTlR3Y2swUjFqQ3RTb2ZGUEFkUXBVRExOeTZaUXZpVTVDY0VMcnlYckoyY0xjNjV2VlU2YWdCQkFlRHc5Q2k0SUJ5OEhxaTZVamFyQ29SMDJBOWVESUpKb0tmUjJzV2tYQkt4SVNfLTV0dEhVVnBYVWNIeFIzc2R5T1AxTm1KZUNpYXU3T3JfdTN1ZGpHTHh4dlFBSTZQY3hMQUZtbXhn0gHXAUFVX3lxTE1OSWk3cGViLUZYWENrVXQteXpzMmlkSzlWVWJIU0ZmOFJJYnVSMU9HMjhqM2JTSjlyNk1lSW84Yk9ZanQyekNSSnUwc3pQNFcyOXpEMGRNUjY2WTdFdExNb2FjMDhkYjlGNE5vWU1OcjRIdXl1NFlKU3Q1SkE1Nmw0clp0akprbnhzTTh2YWJna2hsS093cEJTM21TVVAtNllITjZ3cE5kbHlUZjhkVmk2bXFyMnBkX3hpSFo4TUQ3TEhWQXFmelB4Wng2YUZtOVY5N3UtbVpZ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 6
+          }
+        },
+        "interpretation": "Found 7 news items related to ETH. 7 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771243686
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -8.044e-05,
+        "funding_rate_percent": -0.008043999999999999,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1976.15,
+        "open_interest_usd": 3547974996.8822503,
+        "open_interest_base": 1795397.615,
+        "oi_formatted": "3.55B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0080%, indicating balanced positioning between longs and shorts. Open interest stands at 3.55B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771243688,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -8.044e-05,
+            "mark_price": 1976.15
+          },
+          "open_interest": {
+            "open_interest_usd": 3547974996.8822503,
+            "open_interest": 1795397.615
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.039341247332589147,
+        "volume_24h": 9380900217.88,
+        "volume_formatted": "9.38B",
+        "market_cap": 238449486326.0,
+        "market_cap_formatted": "238.45B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.039, indicating very low turnover with minimal selling. 24h volume represents 3.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771243688,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1975.93,
+          "total_volume": 9380900217.88,
+          "market_cap": 238449486326.0,
+          "circulating_supply": 120692449.4802243,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771243688
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771243688
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771243756,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.050746900509687026,
+        "category": "Moderate",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -9.343,
+      "volume": {
+        "value": 871308750.25645,
+        "display": "871.31M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.051 (Moderate). Price 24h: -9.3%. Volume: 871.31M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.050746900509687026,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 7,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 7 news items related to DOGE. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.793e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771243688,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.793e-05,
+            "mark_price": 68876.5
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to DOGE. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771243688
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.050746900509687026,
+        "volume_24h": 871308750.25645,
+        "volume_formatted": "871.31M",
+        "market_cap": 17169693942.0,
+        "market_cap_formatted": "17.17B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.051, indicating moderate turnover with normal trading activity. 24h volume represents 5.1% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771243691,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10169,
+          "total_volume": 871308750.25645,
+          "market_cap": 17169693942.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.050746900509687026,
+        "velocity_category": "Moderate",
+        "price_change_24h": -9.343,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing moderate with a velocity of 0.051. Risk level: LOW. ",
+        "timestamp": 1771243756
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771243825,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.002482493722483737,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -2.806,
+      "volume": {
+        "value": 9603413.16295111,
+        "display": "9.60M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.002 (Low (Stable Holding)). Price 24h: -2.8%. Volume: 9.60M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.002482493722483737,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to SHIB. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.781e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771243759,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.781e-05,
+            "mark_price": 68950.84927862
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to SHIB. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771243759
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.002482493722483737,
+        "volume_24h": 9603413.16295111,
+        "volume_formatted": "9.60M",
+        "market_cap": 3868454158.0,
+        "market_cap_formatted": "3.87B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.002, indicating very low turnover with minimal selling. 24h volume represents 0.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771243763,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.58e-06,
+          "total_volume": 9603413.16295111,
+          "market_cap": 3868454158.0,
+          "circulating_supply": 589243877392245.9,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.002482493722483737,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -2.806,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.002. Risk level: LOW. ",
+        "timestamp": 1771243825
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771243949,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.03898566498441279,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -3.433,
+      "volume": {
+        "value": 73731922.56147799,
+        "display": "73.73M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.039 (Low (Stable Holding)). Price 24h: -3.4%. Volume: 73.73M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.03898566498441279,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to PEPE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.737e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771243827,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.737e-05,
+            "mark_price": 68947.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to PEPE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771243827
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.038985722764489125,
+        "volume_24h": 73731922.56147799,
+        "volume_formatted": "73.73M",
+        "market_cap": 1891254473.0,
+        "market_cap_formatted": "1.89B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.039, indicating very low turnover with minimal selling. 24h volume represents 3.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771243828,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.5e-06,
+          "total_volume": 73731922.56147799,
+          "market_cap": 1891254473.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.03898566498441279,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -3.433,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.039. Risk level: LOW. ",
+        "timestamp": 1771243949
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771243953,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.01380605703579724,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -3.718,
+      "volume": {
+        "value": 4270896.9238317,
+        "display": "4.27M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.014 (Low (Stable Holding)). Price 24h: -3.7%. Volume: 4.27M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.01380605703579724,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to FLOKI. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.73e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771243951,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.73e-05,
+            "mark_price": 68898.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to FLOKI. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771243951
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.01380605703579724,
+        "volume_24h": 4270896.9238317,
+        "volume_formatted": "4.27M",
+        "market_cap": 309349506.0,
+        "market_cap_formatted": "309.35M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.014, indicating very low turnover with minimal selling. 24h volume represents 1.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771243952,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.211e-05,
+          "total_volume": 4270896.9238317,
+          "market_cap": 309349506.0,
+          "circulating_supply": 9654936547021.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.01380605703579724,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -3.718,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.014. Risk level: LOW. ",
+        "timestamp": 1771243953
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244016,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 38933752.5,
+        "display": "38.93M",
+        "velocity": 0.00640128244660863,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -5.598,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 38.93M (velocity: 0.006). Price 24h: -5.6%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "8 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.73e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771243953,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.73e-05,
+            "mark_price": 68898.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to XMR. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771243953
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.00640128244660863,
+        "volume_24h": 38933752.5,
+        "volume_formatted": "38.93M",
+        "market_cap": 6082180067.0,
+        "market_cap_formatted": "6.08B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.006, indicating very low turnover with minimal selling. 24h volume represents 0.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771244015,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 329.43,
+          "total_volume": 38933752.5,
+          "market_cap": 6082180067.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 38925225.78,
+        "volume_formatted": "38.93M",
+        "price_change_24h": -5.598,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771244016,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244145,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 553432590.78,
+        "display": "553.43M",
+        "velocity": 0.11320600341363257,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -2.963,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 553.43M (velocity: 0.113). Price 24h: -3.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "8 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.761e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771244024,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.761e-05,
+            "mark_price": 68865.9
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to ZEC. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771244024
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.11320600341363257,
+        "volume_24h": 553432590.78,
+        "volume_formatted": "553.43M",
+        "market_cap": 4888721217.0,
+        "market_cap_formatted": "4.89B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.113, indicating moderate turnover with normal trading activity. 24h volume represents 11.3% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771244024,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 296.01,
+          "total_volume": 553432590.78,
+          "market_cap": 4888721217.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 553432590.78,
+        "volume_formatted": "553.43M",
+        "price_change_24h": -2.963,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771244145,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244148,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 50414106.04,
+        "display": "50.41M",
+        "velocity": 0.10605688993294841,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -3.857,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 50.41M (velocity: 0.106). Price 24h: -3.9%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "8 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.77e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771244147,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.77e-05,
+            "mark_price": 68867.532009
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to DASH. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771244147
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.10605688993294841,
+        "volume_24h": 50414106.04,
+        "volume_formatted": "50.41M",
+        "market_cap": 475349655.0,
+        "market_cap_formatted": "475.35M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.106, indicating moderate turnover with normal trading activity. 24h volume represents 10.6% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771244147,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 37.64,
+          "total_volume": 50414106.04,
+          "market_cap": 475349655.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 50414106.04,
+        "volume_formatted": "50.41M",
+        "price_change_24h": -3.857,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771244148,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244271,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1072542.3083,
+        "display": "1.07M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -6.009,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.07M (velocity: 0.000). Price 24h: -6.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "8 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.77e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771244148,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.77e-05,
+            "mark_price": 68867.532009
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Crypto funds log fourth week of outflows at $173M as BTC dips below $70K",
+            "published_at": "2026-02-16T09:59:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-4-week-outflows-173-million-btc-below-70k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YzYtNDliOS03MWY5LWFmNjMtNGZkYTc1YTkxMjExLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to SCRT. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771244148
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1072542.3083,
+        "volume_formatted": "1.07M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771244271,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0877,
+          "total_volume": 1072542.3083,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1071642.6003,
+        "volume_formatted": "1.07M",
+        "price_change_24h": -6.009,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771244271,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244400,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1921618072.0,
+        "display": "1.92B"
+      },
+      "price_change_24h": -2.015,
+      "token_velocity": 0.03090890557361494,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.92B. Price 24h: -2.0%. Token velocity: 0.031. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03090890557361494,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.031 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 9,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "9 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.784e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771244273,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.784e-05,
+            "mark_price": 68818.4
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say",
+            "published_at": "2026-02-16T07:10:19-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390032/bitcoin-etf-outflows-and-crowded-shorts-leave-market-primed-for-volatility-analysts-say?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/12/20251229_Bitcoin_News_4-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Hive, Riot earnings reports, Fed rate-decision minutes: Crypto Week Ahead",
+            "published_at": "2026-02-16T12:09:14+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/14/hive-riot-earnings-reports-fed-rate-decision-minutes-crypto-week-ahead",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/aa140510763159a9c00f0230ff84f4f675e733d6-1920x1080.png?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 9 news items related to AAVE. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771244273
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03090890557361494,
+        "volume_24h": 59395111.536,
+        "volume_formatted": "59.40M",
+        "market_cap": 1921618072.0,
+        "market_cap_formatted": "1.92B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.031, indicating very low turnover with minimal selling. 24h volume represents 3.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771244274,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 125.97,
+          "total_volume": 59395111.536,
+          "market_cap": 1921618072.0,
+          "circulating_supply": 15191432.670695562,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1921618072.0,
+        "market_cap_formatted": "1.92B",
+        "price_change_24h": -2.015,
+        "tvl": 27247059726.0,
+        "tvl_formatted": "27.25B",
+        "tvl_change_24h": 0.2769813594411723,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.25B (+0.3% 24h).",
+        "timestamp": 1771244400
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244410,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2214475679.0,
+        "display": "2.21B"
+      },
+      "price_change_24h": -2.351,
+      "token_velocity": 0.037237572553173205,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.21B. Price 24h: -2.4%. Token velocity: 0.037. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.037237572553173205,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.037 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 9,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "9 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.81e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771244408,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.81e-05,
+            "mark_price": 68809.13005072
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say",
+            "published_at": "2026-02-16T07:10:19-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390032/bitcoin-etf-outflows-and-crowded-shorts-leave-market-primed-for-volatility-analysts-say?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/12/20251229_Bitcoin_News_4-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Hive, Riot earnings reports, Fed rate-decision minutes: Crypto Week Ahead",
+            "published_at": "2026-02-16T12:09:14+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/14/hive-riot-earnings-reports-fed-rate-decision-minutes-crypto-week-ahead",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/aa140510763159a9c00f0230ff84f4f675e733d6-1920x1080.png?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 9 news items related to UNI. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771244408
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.037237572553173205,
+        "volume_24h": 82461698.764,
+        "volume_formatted": "82.46M",
+        "market_cap": 2214475679.0,
+        "market_cap_formatted": "2.21B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.037, indicating very low turnover with minimal selling. 24h volume represents 3.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771244409,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.489,
+          "total_volume": 82461698.764,
+          "market_cap": 2214475679.0,
+          "circulating_supply": 633818762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2214475679.0,
+        "market_cap_formatted": "2.21B",
+        "price_change_24h": -2.351,
+        "tvl": 3083873684.0,
+        "tvl_formatted": "3.08B",
+        "tvl_change_24h": 0.017971053139412507,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.08B (+0.0% 24h).",
+        "timestamp": 1771244410
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244548,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 376197978.0,
+        "display": "376.20M"
+      },
+      "price_change_24h": -0.781,
+      "token_velocity": 0.08263931136280589,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 376.20M. Price 24h: -0.8%. Token velocity: 0.083. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.08263931136280589,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.083 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 10,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Japan Yield Curve Twist-Steepens on Fiscal Concerns, BOJ Outlook - Bloomberg.com"
+        ]
+      },
+      "summary": "10 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.81e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771244410,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.81e-05,
+            "mark_price": 68809.13005072
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say",
+            "published_at": "2026-02-16T07:10:19-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390032/bitcoin-etf-outflows-and-crowded-shorts-leave-market-primed-for-volatility-analysts-say?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/12/20251229_Bitcoin_News_4-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "EUR/USD still caught meandering after post-payrolls drop last week",
+            "published_at": "2026-02-16T09:35:12+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/eurusd-still-caught-meandering-after-post-payrolls-drop-last-week-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Japan Yield Curve Twist-Steepens on Fiscal Concerns, BOJ Outlook - Bloomberg.com",
+            "published_at": "2026-02-16T07:48:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNcG9PRVNrY3FsZk05LXliNVFFVDBGZm82TkdxX2lLUmZpODVxMlA0alp4bllPLUx3OVhBaVB0aEJ2LUtaUXV5SVpuZUVibldzeXVrbGFCLUQxNHFubkU0MVpEclZnQnktVER1clZXVXZsV0t3dldPSEZGSDg0Tm9yQXRhU29sTURsUlJ5NC1yWVZ2Y2huN2VRaHFxUU1UdjNkM1BISWpqODlpQm5iSlA3LU5ySHM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Hive, Riot earnings reports, Fed rate-decision minutes: Crypto Week Ahead",
+            "published_at": "2026-02-16T12:09:14+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/14/hive-riot-earnings-reports-fed-rate-decision-minutes-crypto-week-ahead",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/aa140510763159a9c00f0230ff84f4f675e733d6-1920x1080.png?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 10,
+          "high_relevance_count": 10,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 10 news items related to CRV. 10 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771244410
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08263931136280589,
+        "volume_24h": 31088741.838,
+        "volume_formatted": "31.09M",
+        "market_cap": 376197978.0,
+        "market_cap_formatted": "376.20M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.083, indicating moderate turnover with normal trading activity. 24h volume represents 8.3% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771244412,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.254,
+          "total_volume": 31088741.838,
+          "market_cap": 376197978.0,
+          "circulating_supply": 1476931361.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 376197978.0,
+        "market_cap_formatted": "376.20M",
+        "price_change_24h": -0.781,
+        "tvl": 1895490684.0,
+        "tvl_formatted": "1.90B",
+        "tvl_change_24h": 0.07555665106960023,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.90B (+0.1% 24h).",
+        "timestamp": 1771244548
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771244554,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 287121960.0,
+        "display": "287.12M"
+      },
+      "price_change_24h": -4.574,
+      "token_velocity": 0.044673950260370195,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 287.12M. Price 24h: -4.6%. Token velocity: 0.045. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.044673950260370195,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.045 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "8 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -1.8e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771244549,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -1.8e-05,
+            "mark_price": 68891.48962319
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say",
+            "published_at": "2026-02-16T07:10:19-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390032/bitcoin-etf-outflows-and-crowded-shorts-leave-market-primed-for-volatility-analysts-say?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/12/20251229_Bitcoin_News_4-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Oil prices in the spotlight ahead of the second round of US-Iran nuclear talks in Geneva",
+            "published_at": "2026-02-16T10:28:55+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-prices-in-the-spotlight-ahead-of-the-second-round-of-us-iran-nuclear-talks-in-geneva-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Hive, Riot earnings reports, Fed rate-decision minutes: Crypto Week Ahead",
+            "published_at": "2026-02-16T12:09:14+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/14/hive-riot-earnings-reports-fed-rate-decision-minutes-crypto-week-ahead",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/aa140510763159a9c00f0230ff84f4f675e733d6-1920x1080.png?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "NZDUSD stays rangebound ahead of the RBNZ decision: traders expect no change to the OCR",
+            "published_at": "2026-02-16T11:47:18+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/nzdusd-stays-rangebound-ahead-of-the-rbnz-decision-traders-expect-no-change-to-the-ocr-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Binance denies report on Iran-linked sanctions breaches and investigator firings",
+            "published_at": "2026-02-16T11:09:48+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/binance-denies-iran-sanctions-report-fortune?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY1YWItMzI3Yy03OTRkLTlmOTgtYjQ0ZjJmMTNiMDFjLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Animoca Granted Dubai License Amid Stricter Crypto Oversight",
+            "published_at": "2026-02-16T10:57:46+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358149/animoca-granted-dubai-license-amid-stricter-crypto-oversight",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/UAE-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Crypto Traders Rotate Into Select Altcoins as Bitcoin Stalls",
+            "published_at": "2026-02-16T10:37:23+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358144/crypto-traders-rotate-into-select-altcoins-as-bitcoin-stalls",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/crypto-trading-decrypt-style-03-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to LDO. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771244549
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.044673950260370195,
+        "volume_24h": 12826872.1597,
+        "volume_formatted": "12.83M",
+        "market_cap": 287121960.0,
+        "market_cap_formatted": "287.12M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.045, indicating very low turnover with minimal selling. 24h volume represents 4.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771244550,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.338,
+          "total_volume": 12826872.1597,
+          "market_cap": 287121960.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 287121960.0,
+        "market_cap_formatted": "287.12M",
+        "price_change_24h": -4.574,
+        "tvl": 18660859570.0,
+        "tvl_formatted": "18.66B",
+        "tvl_change_24h": -0.21468821933313376,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.66B (-0.2% 24h).",
+        "timestamp": 1771244554
+      }
+    }
+  }
+}

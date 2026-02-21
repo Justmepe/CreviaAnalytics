@@ -1,0 +1,1657 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1769946205,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 78792.9,
+        "display": "$78,792.90"
+      },
+      "volume": {
+        "value": 83697401540,
+        "display": "83.70B",
+        "velocity": 0.05321854836881995
+      },
+      "derivatives": {
+        "funding_rate": 0.0013,
+        "funding_display": "0.0013%",
+        "open_interest": 7249958658.4218,
+        "oi_display": "7.25B"
+      },
+      "summary": "BTC mark price at $78,792.90. Funding rate: 0.0013%. Open Interest: 7.25B. Volume velocity: 0.053."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 13,
+      "high_relevance_count": 13,
+      "dominant_theme": "institutional",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "BTC drops below $80,000 following $1.6 billion in monthly ETF outflows, third-worst month on record",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "negative"
+        },
+        {
+          "title": "Bitcoin ETFs Shed $817M as BTC Hits Nine-Month Low",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Bitcoin slides below $83K as Wall Street pulls over $1B from crypto ETFs after Fed pause",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 14,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 13 news items related to BTC. 13 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is negative, which may create selling pressure. Most significant: \"BTC drops below $80,000 following $1.6 billion in monthly ETF outflows, third-worst month on record\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "institutional",
+          "message": "Significant institutional news detected - monitor for ETF flows or large transactions"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.335e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1769946159,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear",
+            "timestamp": 1769904000,
+            "time_until_update": 44229
+          },
+          "btc_funding": {
+            "symbol": "BTCUSDT",
+            "funding_rate": 1.335e-05,
+            "funding_time": 1769961600,
+            "mark_price": 78756.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "BTC drops below $80,000 following $1.6 billion in monthly ETF outflows, third-worst month on record",
+            "published_at": "2026-01-31T14:12:43-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/387923/btc-drops-below-80000-following-1-6-billion-in-monthly-etf-outflows-third-worst-month-on-record?utm_source=rss&utm_medium=rss",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin ETFs Shed $817M as BTC Hits Nine-Month Low",
+            "published_at": "2026-01-30T11:24:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/356458/bitcoin-etfs-shed-817m-as-btc-hits-nine-month-low",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin slides below $83K as Wall Street pulls over $1B from crypto ETFs after Fed pause",
+            "published_at": "2026-01-30T06:24:08-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/387811/bitcoin-slides-below-83k-as-wall-street-pulls-over-1b-from-crypto-etfs-after-fed-pause?utm_source=rss&utm_medium=rss",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Japan Lights Up Markets With Proposed Dual BTC\u2013XRP and Gold-Crypto ETFs - CryptoRank",
+            "published_at": "2026-01-27T11:05:18+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWEIyUG1yVlMtY19ZOUlFUWVuYnBNRnRxeWlUQm90R1JBUDRqclVzYTNSWWxJc1JfYzQ4QnhScFVJbWFBQ0x5QjVnMy1zVzI0bm1Rby1lY2lqUFlyWHlPZzF5bFIzVV9lZTZjRDN1c05NSHR2eGxKX3l4NGZ3SS1HRFZTUnYxTnVtZTFlbkVIbUlrSzEyb29zVkNxVlpxUlVnRWdMWXFVWXpjXzJYXzUw?oc=5",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin crashes below $76K Strategy cost basis in $2B liquidation event",
+            "published_at": "2026-01-31T19:10:40+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitcoin-crashes-76k-strategy-cost-basis-2b-liquidation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin vs. gold: BTC is a 'better opportunity' than in 2017, data says",
+            "published_at": "2026-01-31T14:17:05+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitcoin-vs-gold-btc-better-opportunity-than-2017?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin options turn bearish as BTC flirts with drop below $80K",
+            "published_at": "2026-01-31T02:21:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitcoin-options-turn-bearish-as-btc-flirts-with-drop-below-80k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Mining Profits Hit 14-Month Low After Winter Storm Rocks Miners: CryptoQuant",
+            "published_at": "2026-01-30T22:02:19+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/356530/bitcoin-mining-profits-14-month-low-winter-storm-disrupts-miners-cryptoquant",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin futures imbalance may spark liquidation revenge rally to $90K",
+            "published_at": "2026-01-30T20:14:44+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitcoin-futures-imbalance-may-spark-liquidation-revenge-rally-to-dollar90k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Price predictions 1/30: BTC, ETH, BNB, XRP, SOL, DOGE, ADA, BCH, HYPE, XMR",
+            "published_at": "2026-01-30T18:46:50+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/price-predictions-1-30-btc-eth-bnb-xrp-sol-doge-ada-bch-hype-xmr?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 13,
+          "high_relevance_count": 13,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 3,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 13 news items related to BTC. 13 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is negative, which may create selling pressure. Most significant: \"BTC drops below $80,000 following $1.6 billion in monthly ETF outflows, third-worst month on record\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1769946196
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 1.3e-05,
+        "funding_rate_percent": 0.0013,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 78792.9,
+        "open_interest_usd": 7249958658.4218,
+        "open_interest_base": 92012.842,
+        "oi_formatted": "7.25B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0013%, indicating balanced positioning between longs and shorts. Open interest stands at 7.25B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1769946198,
+        "raw_data": {
+          "funding": {
+            "symbol": "BTCUSDT",
+            "funding_rate": 1.3e-05,
+            "funding_time": 1769961600,
+            "mark_price": 78792.9
+          },
+          "open_interest": {
+            "symbol": "BTCUSDT",
+            "open_interest": 92012.842,
+            "open_interest_usd": 7249958658.4218,
+            "timestamp": 1769946206
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.05321854836881995,
+        "volume_24h": 83697401540,
+        "volume_formatted": "83.70B",
+        "market_cap": 1572711096138,
+        "market_cap_formatted": "1572.71B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.053, indicating moderate turnover with normal trading activity. 24h volume represents 5.3% of market cap. Holders are largely holding positions.",
+        "timestamp": 1769946205,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "categories": [
+            "Smart Contract Platform",
+            "Layer 1 (L1)",
+            "FTX Holdings",
+            "Proof of Work (PoW)",
+            "Bitcoin Ecosystem",
+            "GMCI 30 Index",
+            "GMCI Index",
+            "Coinbase 50 Index"
+          ],
+          "current_price": 78700,
+          "market_cap": 1572711096138,
+          "total_volume": 83697401540,
+          "price_change_24h": -4193.14903297327,
+          "price_change_percentage_24h": -5.05848,
+          "market_cap_rank": 1,
+          "circulating_supply": 19982656.0,
+          "total_supply": 19982656.0,
+          "ath": 126080,
+          "atl": 67.81
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1769946216,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 2418.67292983,
+        "display": "$2,418.67"
+      },
+      "volume": {
+        "value": 53380965272,
+        "display": "53.38B",
+        "velocity": 0.1837106171896734
+      },
+      "derivatives": {
+        "funding_rate": -0.003052,
+        "funding_display": "-0.0031%",
+        "open_interest": 4769565330.044041,
+        "oi_display": "4.77B"
+      },
+      "summary": "ETH mark price at $2,418.67. Funding rate: -0.0031%. Open Interest: 4.77B. Volume velocity: 0.184."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 18,
+      "high_relevance_count": 18,
+      "dominant_theme": "general",
+      "overall_sentiment": "positive",
+      "top_events": [
+        {
+          "title": "Ethereum\u2019s Pivotal Year: Navigating Tech Upgrades and Regulatory Shifts - AD HOC NEWS",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "$1.82B pulled from spot Bitcoin and Ether ETFs amid metals rally",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Vitalik Buterin commits roughly $45 million in ETH to open-source security and privacy projects",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 14,
+        "market_phase": "markdown",
+        "sentiment_alignment": "divergent"
+      },
+      "summary": "Found 18 news items related to ETH. 18 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Ethereum\u2019s Pivotal Year: Navigating Tech Upgrades and Regulatory Shifts - AD HOC NEWS\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Moderate",
+        "description": "Network activity: medium, Holder behavior: moderate distribution"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "moderate_distribution",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.3e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1769946205,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear",
+            "timestamp": 1769904000,
+            "time_until_update": 44229
+          },
+          "btc_funding": {
+            "symbol": "BTCUSDT",
+            "funding_rate": 1.3e-05,
+            "funding_time": 1769961600,
+            "mark_price": 78808.2
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Ethereum\u2019s Pivotal Year: Navigating Tech Upgrades and Regulatory Shifts - AD HOC NEWS",
+            "published_at": "2026-01-31T21:31:05+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMHJMdFY4bUhWdlM5ZkxxOVRER2hOMzlNS3Jkb1RzR096OTgwNFBtMmtGeTJnN0gxRzNvQkxwS0s0NS1HS2ZLaHZSaHpROW1BQl9TRTNNY1NhcEJnOVdpaTVWN0JHZFZQUXJUejBoNXQ0ZjN4SENQcTB1c05PM0w5ZG5YYTQwdlB5bU5qaVB2eHRjeFFkSi12TXg3ZlVlZC1SUEZyQmdXSVVxNk1FQ014eExYYnJaYkxtcHZPdV90LVNodw?oc=5",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "$1.82B pulled from spot Bitcoin and Ether ETFs amid metals rally",
+            "published_at": "2026-01-31T08:59:36+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/crypto-etf-bitcoin-ether-outflows-metals-sentiment-down?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Vitalik Buterin commits roughly $45 million in ETH to open-source security and privacy projects",
+            "published_at": "2026-01-30T05:07:27-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/387804/vitalik-buterin-commits-roughly-45-million-in-eth-to-open-source-security-and-privacy-projects?utm_source=rss&utm_medium=rss",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "security"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Single trader just lost $220 million as ether plunged 10%",
+            "published_at": "2026-02-01T07:06:54+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/01/single-trader-just-lost-usd220-million-as-ether-plunged-10",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Tom Lee\u2019s BitMine sits on $6 billion loss from ether bets",
+            "published_at": "2026-02-01T06:54:37+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/01/bitmine-s-ether-bet-is-now-usd6-billion-in-paper-loss",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Infamous \u2018Hyperunit whale\u2019 exits entire ETH position for $250 million loss, left with $53 in account: Arkham",
+            "published_at": "2026-01-31T16:51:48-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/387927/infamous-hyperunit-whale-exits-entire-eth-position-for-250-million-loss-left-with-53-in-account-arkham?utm_source=rss&utm_medium=rss",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Crypto Crash: Liquidations Top $2.5 Billion as Bitcoin, Ethereum and XRP Prices Plummet",
+            "published_at": "2026-01-31T20:35:16+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/356557/crypto-crash-liquidations-2-5-billion-bitcoin-ethereum-xrp-plummet",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "BitMine Immersion faces $6B paper loss as Ether sell-off deepens",
+            "published_at": "2026-01-31T19:08:19+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitmine-immersion-technologies-ether-losses-crypto-liquidation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "ETH, SOL and DOGE slide 7% as $850 million bullish bets end up liquidated",
+            "published_at": "2026-01-31T15:41:04+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/01/31/eth-sol-and-doge-slide-7-as-usd850-million-bullish-bets-end-up-liquidated",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Active Solana addresses spike 115%, four in 10 merchants take Bitcoin: Month in Charts",
+            "published_at": "2026-01-31T12:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/active-solana-addresses-spike-115-four-in-ten-merchants-take-bitcoin-month-in-charts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 4,
+            "negative": 1,
+            "neutral": 13
+          }
+        },
+        "interpretation": "Found 18 news items related to ETH. 18 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Ethereum\u2019s Pivotal Year: Navigating Tech Upgrades and Regulatory Shifts - AD HOC NEWS\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1769946205
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -3.052e-05,
+        "funding_rate_percent": -0.003052,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 2418.67292983,
+        "open_interest_usd": 4769565330.044041,
+        "open_interest_base": 1971685.068,
+        "oi_formatted": "4.77B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0031%, indicating balanced positioning between longs and shorts. Open interest stands at 4.77B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1769946208,
+        "raw_data": {
+          "funding": {
+            "symbol": "ETHUSDT",
+            "funding_rate": -3.052e-05,
+            "funding_time": 1769961600,
+            "mark_price": 2418.67292983
+          },
+          "open_interest": {
+            "symbol": "ETHUSDT",
+            "open_interest": 1971685.068,
+            "open_interest_usd": 4769565330.044041,
+            "timestamp": 1769946216
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "medium",
+        "velocity": 0.1837106171896734,
+        "volume_24h": 53380965272,
+        "volume_formatted": "53.38B",
+        "market_cap": 290570932092,
+        "market_cap_formatted": "290.57B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.184, indicating elevated turnover with active trading. 24h volume represents 18.4% of market cap. Some distribution is occurring.",
+        "timestamp": 1769946216,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "categories": [
+            "Smart Contract Platform",
+            "Layer 1 (L1)",
+            "Ethereum Ecosystem",
+            "FTX Holdings",
+            "Multicoin Capital Portfolio",
+            "Proof of Stake (PoS)",
+            "Alameda Research Portfolio",
+            "Andreessen Horowitz (a16z) Portfolio",
+            "GMCI Layer 1 Index",
+            "GMCI 30 Index",
+            "Delphi Ventures Portfolio",
+            "Galaxy Digital Portfolio",
+            "GMCI Index",
+            "World Liberty Financial Portfolio",
+            "Coinbase 50 Index"
+          ],
+          "current_price": 2407.47,
+          "market_cap": 290570932092,
+          "total_volume": 53380965272,
+          "price_change_24h": -232.562940499826,
+          "price_change_percentage_24h": -8.8091,
+          "market_cap_rank": 2,
+          "circulating_supply": 120693814.879476,
+          "total_supply": 120693814.879476,
+          "ath": 4946.05,
+          "atl": 0.432979
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1769946216
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1769946216
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1769946240,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.15916876129373764,
+        "category": "High (Active Trading)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -5.73938,
+      "volume": {
+        "value": 2829272135,
+        "display": "2.83B"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.159 (High (Active Trading)). Price 24h: -5.7%. Volume: 2.83B. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.15916876129373764,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "moderate_distribution",
+        "churn": "High"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: moderate distribution. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 5,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Grayscale XRP and Dogecoin ETFs to debut November 24 following SEC green light - dlnews.com",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Dogecoin ETFs\u2014and More\u2014Could Land Soon if the SEC OKs New Rules - Investopedia",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "ETH, SOL and DOGE slide 7% as $850 million bullish bets end up liquidated",
+          "sentiment": "positive"
+        }
+      ],
+      "summary": "Found 5 news items related to DOGE. 5 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Grayscale XRP and Dogecoin ETFs to debut November 24 following SEC green light - dlnews.com\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "MEDIUM",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "moderate_distribution",
+        "stability": "Low"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+      },
+      "summary": "Memecoin risk: MEDIUM. Liquidity risk: MODERATE. MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.3e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1769946216,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear",
+            "timestamp": 1769904000,
+            "time_until_update": 44229
+          },
+          "btc_funding": {
+            "symbol": "BTCUSDT",
+            "funding_rate": 1.3e-05,
+            "funding_time": 1769961600,
+            "mark_price": 78830.04555797
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Grayscale XRP and Dogecoin ETFs to debut November 24 following SEC green light - dlnews.com",
+            "published_at": "2025-11-23T14:43:49+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbDI4UTI1WS1sSWxIQndxN3QwZnhMcWpGM3pLRDZ4ak1mNTdXeWk4ZmNaY0VYdkdOX0FWYzNRelRlZ1hyclRISHRycjdkellpaVV5R0ROQTVhc1duN2dxWW00RHB0V1RYbHFCSW1KX0RJQlRySEc0a3M1Z1NqV2J2RndpT3YxZVExRi1DV2pBWjFtb05aSUdz?oc=5",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Dogecoin ETFs\u2014and More\u2014Could Land Soon if the SEC OKs New Rules - Investopedia",
+            "published_at": "2025-08-29T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeXFRRE5ET1RuSUJFbWJpZ3Uza0VEN0hIc3FLZC12RnZyX2JyN19PYTltRGVza0ZVeXp5Q000MlJQZ0JRMVp4ZmZMT2lfT0tibXdOZWdreEdlT3ZGcGdjVG9iZDZqdlNyWE1GMXNMaEZXZTVfSm54VnJOMldma0l2aHY5RmlvRm5kYzVxb2wzd2FwQ2VUZkdjb1BYTklrQVByaFV3?oc=5",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "ETH, SOL and DOGE slide 7% as $850 million bullish bets end up liquidated",
+            "published_at": "2026-01-31T15:41:04+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/01/31/eth-sol-and-doge-slide-7-as-usd850-million-bullish-bets-end-up-liquidated",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Price predictions 1/30: BTC, ETH, BNB, XRP, SOL, DOGE, ADA, BCH, HYPE, XMR",
+            "published_at": "2026-01-30T18:46:50+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/price-predictions-1-30-btc-eth-bnb-xrp-sol-doge-ada-bch-hype-xmr?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Dogecoin, XRP and Cardano Hit Lowest Prices Since 2024 as Altcoins Fall Harder Than Bitcoin",
+            "published_at": "2026-01-29T20:32:52+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/356359/dogecoin-xrp-cardano-lowest-prices-since-2024-altcoins-fall-harder-bitcoin",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 5,
+          "high_relevance_count": 5,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 5 news items related to DOGE. 5 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Grayscale XRP and Dogecoin ETFs to debut November 24 following SEC green light - dlnews.com\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1769946216
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "medium",
+        "velocity": 0.15916876129373764,
+        "volume_24h": 2829272135,
+        "volume_formatted": "2.83B",
+        "market_cap": 17775297816,
+        "market_cap_formatted": "17.78B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.159, indicating elevated turnover with active trading. 24h volume represents 15.9% of market cap. Some distribution is occurring.",
+        "timestamp": 1769946228,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "categories": [
+            "Smart Contract Platform",
+            "Meme",
+            "Dog-Themed",
+            "Elon Musk-Inspired",
+            "Proof of Work (PoW)",
+            "GMCI Meme Index",
+            "GMCI 30 Index",
+            "GMCI Index",
+            "Coinbase 50 Index",
+            "4chan-Themed"
+          ],
+          "current_price": 0.105436,
+          "market_cap": 17775297816,
+          "total_volume": 2829272135,
+          "price_change_24h": -0.0064198097418966,
+          "price_change_percentage_24h": -5.73938,
+          "market_cap_rank": 10,
+          "circulating_supply": 168544713126.5791,
+          "total_supply": 168558223126.579,
+          "ath": 0.731578,
+          "atl": 8.69e-05
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.15916876129373764,
+        "velocity_category": "High (Active Trading)",
+        "price_change_24h": -5.73938,
+        "activity_level": "moderate_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "MEDIUM",
+        "interpretation": "DOGE is showing high (active trading) with a velocity of 0.159. Risk level: MEDIUM. ",
+        "timestamp": 1769946240
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1769946264,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.06370119681449049,
+        "category": "Moderate",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -3.61383,
+      "volume": {
+        "value": 254952022,
+        "display": "254.95M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.064 (Moderate). Price 24h: -3.6%. Volume: 254.95M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.06370119681449049,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 0,
+      "social_correlation": "Weak correlation",
+      "top_events": [],
+      "summary": "No news events found for SHIB in the last 24 hours. This could indicate a quiet period or limited news coverage."
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.324e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1769946241,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear",
+            "timestamp": 1769904000,
+            "time_until_update": 44229
+          },
+          "btc_funding": {
+            "symbol": "BTCUSDT",
+            "funding_rate": 1.324e-05,
+            "funding_time": 1769961600,
+            "mark_price": 78830.74521014
+          }
+        }
+      },
+      "news": {
+        "events": [],
+        "summary": {
+          "total_events": 0,
+          "high_relevance_count": 0,
+          "dominant_theme": "none",
+          "overall_sentiment": "neutral"
+        },
+        "interpretation": "No news events found for SHIB in the last 24 hours. This could indicate a quiet period or limited news coverage.",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1769946241
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.06370119681449049,
+        "volume_24h": 254952022,
+        "volume_formatted": "254.95M",
+        "market_cap": 4002311334,
+        "market_cap_formatted": "4.00B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.064, indicating moderate turnover with normal trading activity. 24h volume represents 6.4% of market cap. Holders are largely holding positions.",
+        "timestamp": 1769946252,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "id": "shiba-inu",
+          "symbol": "SHIB",
+          "name": "Shiba Inu",
+          "categories": [
+            "Meme",
+            "Ethereum Ecosystem",
+            "Animoca Brands Portfolio",
+            "Dog-Themed",
+            "GMCI Meme Index",
+            "GMCI 30 Index",
+            "GMCI Index",
+            "Coinbase 50 Index"
+          ],
+          "current_price": 6.79e-06,
+          "market_cap": 4002311334,
+          "total_volume": 254952022,
+          "price_change_24h": -2.54707418566e-07,
+          "price_change_percentage_24h": -3.61383,
+          "market_cap_rank": 38,
+          "circulating_supply": 589243913797680.1,
+          "total_supply": 589500445146648.1,
+          "ath": 8.616e-05,
+          "atl": 5.6366e-11
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.06370119681449049,
+        "velocity_category": "Moderate",
+        "price_change_24h": -3.61383,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing moderate with a velocity of 0.064. Risk level: LOW. ",
+        "timestamp": 1769946264
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1769946288,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 199246718,
+        "display": "199.25M",
+        "velocity": 0.024704425045079595,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -10.46889,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 199.25M (velocity: 0.025). Price 24h: -10.5%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 1,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "1 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.324e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1769946264,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear",
+            "timestamp": 1769904000,
+            "time_until_update": 44229
+          },
+          "btc_funding": {
+            "symbol": "BTCUSDT",
+            "funding_rate": 1.324e-05,
+            "funding_time": 1769961600,
+            "mark_price": 78806.671
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Price predictions 1/30: BTC, ETH, BNB, XRP, SOL, DOGE, ADA, BCH, HYPE, XMR",
+            "published_at": "2026-01-30T18:46:50+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/price-predictions-1-30-btc-eth-bnb-xrp-sol-doge-ada-bch-hype-xmr?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "market",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 1
+          }
+        },
+        "interpretation": "Found 1 news items related to XMR. 1 of these are highly relevant. The dominant theme is Market movements. News sentiment is mixed or neutral. Most significant: \"Price predictions 1/30: BTC, ETH, BNB, XRP, SOL, DOGE, ADA, BCH, HYPE, XMR\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1769946264
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.024704425045079595,
+        "volume_24h": 199246718,
+        "volume_formatted": "199.25M",
+        "market_cap": 8065223847,
+        "market_cap_formatted": "8.07B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.025, indicating very low turnover with minimal selling. 24h volume represents 2.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1769946276,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "categories": [
+            "Smart Contract Platform",
+            "Privacy Coins",
+            "Layer 1 (L1)",
+            "Proof of Work (PoW)",
+            "Galaxy Digital Portfolio"
+          ],
+          "current_price": 437.44,
+          "market_cap": 8065223847,
+          "total_volume": 199246718,
+          "price_change_24h": -51.1493897663631,
+          "price_change_percentage_24h": -10.46889,
+          "market_cap_rank": 21,
+          "circulating_supply": 18446744.07370955,
+          "total_supply": 18446744.07370955,
+          "ath": 797.73,
+          "atl": 0.216177
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 199246718,
+        "volume_formatted": "199.25M",
+        "price_change_24h": -10.46889,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1769946288,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1769946312,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1925219710,
+        "display": "1.93B"
+      },
+      "price_change_24h": -5.94128,
+      "token_velocity": 0.2824648024198755,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.93B. Price 24h: -5.9%. Token velocity: 0.282. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.2824648024198755,
+        "activity_level": "HIGH",
+        "holder_behavior": "active_distribution"
+      },
+      "protocol_pressure": {
+        "level": "MODERATE (Active Trading)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.282 (HIGH). Holder behavior: active distribution. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 0,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "0 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 1.324e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1769946288,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear",
+            "timestamp": 1769904000,
+            "time_until_update": 44229
+          },
+          "btc_funding": {
+            "symbol": "BTCUSDT",
+            "funding_rate": 1.324e-05,
+            "funding_time": 1769961600,
+            "mark_price": 78803.63711594
+          }
+        }
+      },
+      "news": {
+        "events": [],
+        "summary": {
+          "total_events": 0,
+          "high_relevance_count": 0,
+          "dominant_theme": "none",
+          "overall_sentiment": "neutral"
+        },
+        "interpretation": "No news events found for AAVE in the last 24 hours. This could indicate a quiet period or limited news coverage.",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1769946288
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "active_distribution",
+        "network_activity": "high",
+        "velocity": 0.2824648024198755,
+        "volume_24h": 543806805,
+        "volume_formatted": "543.81M",
+        "market_cap": 1925219710,
+        "market_cap_formatted": "1.93B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.282, indicating elevated turnover with active trading. 24h volume represents 28.2% of market cap. Active distribution is underway.",
+        "timestamp": 1769946300,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "id": "aave",
+          "symbol": "AAVE",
+          "name": "Aave",
+          "categories": [
+            "Decentralized Finance (DeFi)",
+            "Yield Farming",
+            "BNB Chain Ecosystem",
+            "Lending/Borrowing Protocols",
+            "Avalanche Ecosystem",
+            "Polygon Ecosystem",
+            "Near Protocol Ecosystem",
+            "Fantom Ecosystem",
+            "Harmony Ecosystem",
+            "Arbitrum Ecosystem",
+            "Ethereum Ecosystem",
+            "Optimism Ecosystem",
+            "Base Ecosystem",
+            "Index Coop Defi Index",
+            "Stablecoin Issuer",
+            "Energi Ecosystem",
+            "Sora Ecosystem",
+            "Huobi ECO Chain Ecosystem",
+            "GMCI DeFi Index",
+            "Blockchain Capital Portfolio",
+            "GMCI Index",
+            "World Liberty Financial Portfolio",
+            "Coinbase 50 Index",
+            "Hydration Ecosystem",
+            "Governance"
+          ],
+          "current_price": 126.85,
+          "market_cap": 1925219710,
+          "total_volume": 543806805,
+          "price_change_24h": -8.0124976705505,
+          "price_change_percentage_24h": -5.94128,
+          "market_cap_rank": 54,
+          "circulating_supply": 15187222.640376352,
+          "total_supply": 16000000.0,
+          "ath": 661.69,
+          "atl": 26.02
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1925219710,
+        "market_cap_formatted": "1.93B",
+        "price_change_24h": -5.94128,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration.",
+        "timestamp": 1769946312,
+        "note": "Full DeFi analysis requires DeFiLlama API for TVL data"
+      }
+    }
+  }
+}

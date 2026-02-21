@@ -1,0 +1,57 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "liquidation_volume_24h": 0,
+    "open_interest_btc": 91934.894,
+    "open_interest_eth": 1960136.829,
+    "btc_funding_rate": 3.421e-05,
+    "eth_funding_rate": 1.415e-05,
+    "source": "CoinGecko + Binance",
+    "timestamp": 1769946670
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "price_usd": 45000,
+    "price_change_24h": 2.5,
+    "volume_24h": 28000000000,
+    "market_cap": 850000000000,
+    "sentiment": "bullish",
+    "news_summary": "Recent developments in BTC market",
+    "on_chain_activity": "Network activity for BTC",
+    "risk_factors": [
+      "Market volatility for BTC"
+    ],
+    "key_developments": [
+      "Key development for BTC"
+    ],
+    "timestamp": 1769946682,
+    "note": "Mock data - set ANTHROPIC_API_KEY for real Claude AI research"
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "research_text": "```json\n{\n    \"ticker\": \"ETH\",\n    \"price_usd\": null,\n    \"price_change_24h\": null,\n    \"volume_24h\": null,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - CryptoPanic API returned 404 error. Unable to assess recent developments or market sentiment from news sources.\",\n    \"on_chain_activity\": \"On-chain data unavailable - Etherscan API requires authentication key for detailed network metrics including transaction volume, gas fees, and active addresses.\",\n    \"risk_factors\": [\n        \"Data unavailability - Cannot assess current market conditions without API access\",\n        \"Incomplete analysis - Missing critical price, volume, and on-chain metrics\",\n        \"No news verification - Unable to confirm recent developments or regulatory changes\"\n    ],\n    \"key_developments\": [\n        \"Data collection failure - API authentication required for Etherscan\",\n        \"News feed unavailable - CryptoPanic service returned 404 error\"\n    ],\n    \"timestamp\": \"1769946683\"\n}\n```\n\n**Analysis Note:**\n\nThe provided scraped data is insufficient for meaningful cryptocurrency analysis. Both data sources failed:\n\n1. **Etherscan**: Requires API key authentication - no on-chain data retrieved\n2. **CryptoPanic**: 404 error - no news data available\n\n**Recommendation**: To provide accurate ETH analysis, please supply:\n- Valid API credentials for Etherscan\n- Working news feed source or alternative API\n- Price data from exchanges (Coinbase, Binance, etc.)\n\nWithout actual data, any price predictions or sentiment analysis would be speculation rather than factual analysis.",
+    "timestamp": 1769946692
+  },
+  "SOL": {
+    "ticker": "SOL",
+    "research_text": "```json\n{\n    \"ticker\": \"SOL\",\n    \"price_usd\": null,\n    \"price_change_24h\": null,\n    \"volume_24h\": null,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - API returned 404 error. Unable to assess recent developments or market sentiment from news sources.\",\n    \"on_chain_activity\": \"Limited on-chain data available from free sources. Unable to provide specific metrics on transaction volume, active addresses, or network utilization.\",\n    \"risk_factors\": [\n        \"Data unavailability limits informed decision-making\",\n        \"Unable to verify current market conditions or price movements\",\n        \"Lack of on-chain metrics prevents network health assessment\",\n        \"No news data available to identify emerging risks or developments\"\n    ],\n    \"key_developments\": [\n        \"Insufficient data available for analysis\"\n    ],\n    \"timestamp\": \"1769946693\"\n}\n```\n\n**Analysis Note:**\n\nThe provided scraped data is insufficient for meaningful cryptocurrency analysis. Both critical data sources failed:\n- **On-chain data**: Limited/unavailable from free sources\n- **News API**: Returned 404 error (endpoint not found or access denied)\n\n**Recommendation**: To perform proper analysis, you would need:\n1. Valid API access to CryptoPanic or alternative news sources\n2. On-chain data from Solana explorers (Solscan, Solana Beach) or paid analytics platforms\n3. Price/market data from exchanges or aggregators (CoinGecko, CoinMarketCap)\n\nWithout actual data, any price figures, sentiment assessments, or market analysis would be speculative rather than factual.",
+    "timestamp": 1769946703
+  },
+  "BNB": {
+    "ticker": "BNB",
+    "research_text": "```json\n{\n    \"ticker\": \"BNB\",\n    \"price_usd\": 773.98,\n    \"price_change_24h\": 7.38,\n    \"volume_24h\": 3360000000,\n    \"market_cap\": 105550000000,\n    \"sentiment\": \"bullish\",\n    \"news_summary\": \"No recent news data available from sources. Price showing strong 24h recovery with 7.38% gain.\",\n    \"on_chain_activity\": \"Limited on-chain data available. Treasury holdings reported at 686,070 BNB tokens.\",\n    \"risk_factors\": [\n        \"Price down 43.52% from all-time high of $1,370.55 reached in October 2025\",\n        \"Relatively high volume-to-market cap ratio of 3.18% indicates elevated volatility\",\n        \"Centralized exchange token exposure to regulatory scrutiny\",\n        \"Recent price range volatility between $765.69 and $835.90 in 24h period\"\n    ],\n    \"key_developments\": [\n        \"Strong 24h price recovery of 7.38% with increased trading volume of $3.36B (up 42.39%)\",\n        \"Fixed total and circulating supply of 136.36M BNB with 100% circulation\",\n        \"Market cap at $105.55B maintaining position as #4 cryptocurrency\",\n        \"Treasury holdings represent approximately 0.5% of total supply at 686,070 BNB\"\n    ],\n    \"timestamp\": \"1769946703\"\n}\n```",
+    "timestamp": 1769946710
+  },
+  "defi": {
+    "sector": "defi",
+    "research_text": "# DeFi Sector Analysis\n\n## Data Availability Issue\n\nThe provided raw data indicates: **\"DeFi TVL data: API unavailable\"**\n\nSince no actual market data was successfully scraped, I cannot provide factual analysis. However, here's the requested JSON structure with clearly marked placeholder/unavailable data:\n\n```json\n{\n    \"sector\": \"defi\",\n    \"market_cap\": null,\n    \"change_24h\": null,\n    \"top_assets\": [],\n    \"trends\": [\n        \"Data unavailable - API access issue\",\n        \"Unable to determine current DeFi trends without TVL data\"\n    ],\n    \"sentiment\": \"unknown\",\n    \"risks\": [\n        \"Data source unavailable - cannot perform current risk assessment\",\n        \"API dependency creates information gaps for real-time analysis\"\n    ],\n    \"opportunities\": [\n        \"Unable to identify opportunities without current market data\"\n    ],\n    \"timestamp\": \"1769946712\",\n    \"data_status\": \"UNAVAILABLE - API ERROR\"\n}\n```\n\n## Important Notice\n\n\u26a0\ufe0f **No factual analysis can be provided** because:\n- The DeFi TVL API returned no data\n- No asset prices, volumes, or metrics were retrieved\n- No top assets can be identified or analyzed\n- Market trends cannot be determined from missing data\n\n**Recommendation:** Retry data collection with alternative DeFi data sources (DefiLlama, DeFi Pulse, The Graph, or individual protocol APIs) to enable factual sector analysis.",
+    "timestamp": 1769946723
+  }
+}

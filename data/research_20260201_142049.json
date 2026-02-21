@@ -1,0 +1,28 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769944817
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "research_text": "```json\n{\n    \"ticker\": \"BTC\",\n    \"price_usd\": 78748.39,\n    \"price_change_24h\": 0,\n    \"volume_24h\": 974485339.28,\n    \"market_cap\": 1573482000000,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - API returned 404 error\",\n    \"on_chain_activity\": \"Network processing 348,942 transactions across 119 blocks. Block time averaging 11.51 minutes (slightly above 10-min target). Hash rate at 838 EH/s indicates strong network security. Estimated transaction volume of $9.07B. Total circulating supply at 19.98M BTC.\",\n    \"risk_factors\": [\n        \"Block time of 11.51 minutes is 15% slower than target, indicating potential mining difficulty adjustment needed\",\n        \"Miners revenue showing as $0 in data, which appears to be a data anomaly requiring verification\",\n        \"News data unavailable for sentiment analysis\",\n        \"Next difficulty retarget at block 935,423 (837 blocks away)\"\n    ],\n    \"key_developments\": [\n        \"Network hash rate at 838 EH/s demonstrates robust mining participation\",\n        \"Total of 19.98M BTC mined (95% of maximum 21M supply)\",\n        \"Current mining difficulty at 141.67 trillion\",\n        \"Average block size of 1.50 MB indicating moderate network utilization\"\n    ],\n    \"timestamp\": \"1769944557\"\n}\n```",
+    "timestamp": 1769944828
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "research_text": "```json\n{\n    \"ticker\": \"ETH\",\n    \"price_usd\": null,\n    \"price_change_24h\": null,\n    \"volume_24h\": null,\n    \"market_cap\": null,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available - API returned 404 error. Unable to assess recent developments or market sentiment from news sources.\",\n    \"on_chain_activity\": \"On-chain data unavailable - Etherscan API requires authentication key. Cannot provide metrics on network transactions, gas fees, active addresses, or smart contract activity.\",\n    \"risk_factors\": [\n        \"Data unavailability - Missing critical market and on-chain metrics\",\n        \"Unable to verify current network health or transaction activity\",\n        \"No accessible news sources to assess market sentiment or emerging risks\"\n    ],\n    \"key_developments\": [\n        \"Data collection failure - API authentication required for Etherscan\",\n        \"CryptoPanic news feed unavailable (404 error)\"\n    ],\n    \"timestamp\": \"1769944829\"\n}\n```\n\n**Analysis Note:** The provided scraped data contains no usable information for ETH analysis. Both data sources failed:\n- **Etherscan**: Requires API key for on-chain data access\n- **CryptoPanic**: Returned 404 error (resource not found)\n\nWithout functional data sources, I cannot provide factual price, volume, market cap, sentiment analysis, or on-chain metrics. A proper analysis requires working API credentials and accessible data endpoints.",
+    "timestamp": 1769944837
+  },
+  "defi": {
+    "sector": "defi",
+    "research_text": "# DeFi Sector Analysis\n\n## Data Availability Issue\n\nThe provided raw data indicates: **\"DeFi TVL data: API unavailable\"**\n\nSince no actual market data was successfully scraped, I cannot provide factual analysis. However, here is the requested JSON structure with clearly marked placeholder/unavailable data:\n\n```json\n{\n    \"sector\": \"defi\",\n    \"market_cap\": null,\n    \"change_24h\": null,\n    \"top_assets\": [],\n    \"trends\": [\n        \"Data unavailable - API connection failed\",\n        \"Unable to analyze current DeFi trends without live data\"\n    ],\n    \"sentiment\": \"unknown\",\n    \"risks\": [\n        \"Data source unavailable - cannot perform reliable analysis\",\n        \"API connectivity issues preventing real-time monitoring\"\n    ],\n    \"opportunities\": [\n        \"Recommend establishing alternative data sources\",\n        \"Consider multiple API providers for redundancy\"\n    ],\n    \"timestamp\": \"1769944840\",\n    \"data_status\": \"UNAVAILABLE\",\n    \"error\": \"API unavailable - no TVL or asset data retrieved\"\n}\n```\n\n## Recommendation\n\nTo provide accurate DeFi sector analysis, please:\n1. **Verify API endpoint** functionality\n2. **Provide alternative data sources** (DeFiLlama, CoinGecko, DeBank, etc.)\n3. **Share actual scraped data** including TVL, top protocols, and asset metrics\n\nI cannot fabricate market data or prices without factual source information.",
+    "timestamp": 1769944849
+  }
+}

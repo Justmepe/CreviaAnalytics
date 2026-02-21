@@ -1,0 +1,768 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1770192377,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 76292.53225362,
+        "display": "$76,292.53"
+      },
+      "volume": {
+        "value": 22963255196.9,
+        "display": "22.96B",
+        "velocity": 0.015071758482544191
+      },
+      "derivatives": {
+        "funding_rate": 0.003396,
+        "funding_display": "0.0034%",
+        "open_interest": 6823555562.71326,
+        "oi_display": "6.82B"
+      },
+      "summary": "BTC mark price at $76,292.53. Funding rate: 0.0034%. Open Interest: 6.82B. Volume velocity: 0.015."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 19,
+      "high_relevance_count": 19,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "ETF that feasts on carnage in bitcoin-holder Strategy hits record high",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Bitcoin's 'RSI' screams oversold. Here is what it means",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 14,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 19 news items related to BTC. 19 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 3.537e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1770192230,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 3.537e-05,
+            "mark_price": 76320.94105072
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows",
+            "published_at": "2026-02-04T07:16:12+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/bitcoin-etf-outflows-deepen-as-ether-and-xrp-funds-quietly-attract-inflows",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/af0566a2ed6670673a190b8ff3a72c11b5ab0c81-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "ETF that feasts on carnage in bitcoin-holder Strategy hits record high",
+            "published_at": "2026-02-04T06:14:08+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/etf-that-feasts-on-carnage-in-bitcoin-holder-strategy-hits-record-high",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/8fc95bdca22d7c2aedeffba9d869a310a85f90e8-1280x960.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin's 'RSI' screams oversold. Here is what it means",
+            "published_at": "2026-02-04T07:56:55+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/bitcoin-s-rsi-screams-oversold-here-is-what-it-means",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/b1b854b3b88b40537788a866880c7d166d538236-1280x960.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Ether and majors rise as bitcoin rebounds to $76,000 but the bounce may not last",
+            "published_at": "2026-02-04T05:40:42+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/ether-and-majors-rise-as-bitcoin-rebounds-to-usd76-000-but-the-bounce-may-not-last",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f3c4b359de99d04f5c48e6993dedba6a0884c57b-720x406.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "'Big Short' Michael Burry flags \u201cdeath spiral\u201d after silver liquidations beat bitcoin",
+            "published_at": "2026-02-04T05:08:01+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/big-short-michael-burry-flags-death-spiral-after-silver-liquidations-beat-bitcoin",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/a5a787f5c7a78157e7fa862292d11ad6a0c995ee-1024x663.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Risks Further Slide as Momentum Weakens Below Key Support",
+            "published_at": "2026-02-04T03:20:47+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/356871/bitcoin-risks-further-slide-momentum-weakens-key-support",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/09/Bitcoin-decrypt-style-24-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Ark Invest scoops up more Bitmine, Circle shares as crypto slump continues",
+            "published_at": "2026-02-03T21:43:20-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/388358/ark-invest-more-bitmine-circle?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2023/01/20230118_ArkInvest-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Alleged Bitcoin Ransom Note Sent to TMZ in Case Involving 'Today' Show Host's Missing Mother",
+            "published_at": "2026-02-04T01:33:00+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/356867/alleged-bitcoin-ransom-note-tmz-guthrie-missing-mother",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/crime_hacker-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Michael Burry Warns of Cascading Effects From Bitcoin Plunge - Bloomberg.com",
+            "published_at": "2026-02-04T00:19:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNRkl6eHFMZ01WcGsxaXJzclg4MFh3SHctWHVDMVFSZ3hPcmtpWHFDSGd4a0lFcmJRX2RyVXZ1a3o3NHpZTmlScHFtTE9TVGJCZGxMN1NCRjFXb0N3RXAtc2gzbENxZUVVb05obXhxMDNkTXE0dzEzdkJHZGVVeDBjUUN3Um9mYlVwbjFLMWpKbElOXzNzY090UWZ2Zk9hRXNYUEt0SkdGR284ZllzZklMRA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "\u2018Big Short\u2019 investor Michael Burry warns bitcoin plunge could trigger $1 billion gold, silver sell-off",
+            "published_at": "2026-02-03T23:16:54+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/03/the-big-short-investor-michael-burry-warns-bitcoin-plunge-could-trigger-usd1b-gold-silver-sell-off",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/e6e7c351cd50744cc1385ea08d2216c75a22b3f7-3000x2042.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 19,
+          "high_relevance_count": 19,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 2,
+            "neutral": 16
+          }
+        },
+        "interpretation": "Found 19 news items related to BTC. 19 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1770192372
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 3.396e-05,
+        "funding_rate_percent": 0.003396,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 76292.53225362,
+        "open_interest_usd": 6823555562.71326,
+        "open_interest_base": 89439.364,
+        "oi_formatted": "6.82B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0034%, indicating balanced positioning between longs and shorts. Open interest stands at 6.82B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1770192374,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 3.396e-05,
+            "mark_price": 76292.53225362
+          },
+          "open_interest": {
+            "open_interest_usd": 6823555562.71326,
+            "open_interest": 89439.364
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.015071758482544191,
+        "volume_24h": 22963255196.9,
+        "volume_formatted": "22.96B",
+        "market_cap": 1523594955658.0,
+        "market_cap_formatted": "1523.59B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.015, indicating very low turnover with minimal selling. 24h volume represents 1.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1770192377,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 76281.4,
+          "total_volume": 22963255196.9,
+          "market_cap": 1523594955658.0,
+          "circulating_supply": 19982656.0,
+          "transaction_count_24h": 442302,
+          "hashrate": 978888014652.8137
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1770192380,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 2274.92,
+        "display": "$2,274.92"
+      },
+      "volume": {
+        "value": 23556070237.64,
+        "display": "23.56B",
+        "velocity": 0.08580457187246461
+      },
+      "derivatives": {
+        "funding_rate": 0.0020740000000000003,
+        "funding_display": "0.0021%",
+        "open_interest": 4500123293.19128,
+        "oi_display": "4.50B"
+      },
+      "summary": "ETH mark price at $2,274.92. Funding rate: 0.0021%. Open Interest: 4.50B. Volume velocity: 0.086."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 17,
+      "high_relevance_count": 17,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Ethereum developers begin debate over Hegota \u2014 yet another upgrade - dlnews.com",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Bitwise to acquire crypto staking company Chorus One: Report",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 14,
+        "market_phase": "markdown",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 17 news items related to ETH. 17 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 0,
+      "items": []
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 14,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 2.074e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1770192378,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 14 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 14,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 2.074e-05,
+            "mark_price": 2275.00992636
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows",
+            "published_at": "2026-02-04T07:16:12+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/bitcoin-etf-outflows-deepen-as-ether-and-xrp-funds-quietly-attract-inflows",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/af0566a2ed6670673a190b8ff3a72c11b5ab0c81-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum developers begin debate over Hegota \u2014 yet another upgrade - dlnews.com",
+            "published_at": "2026-02-03T20:19:43+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOTkpSM2dxeHZ1NlFRcWhPYTk0WDZ5VlE0Q0h0R2dBd240Q2dfZWRCeWRGWGxEd0VDd0t3R1JWZHY3VWpEOE50RFNiaXVnd0RDQTRON1RoaUFkeDNVekRmQ0ttLTJIdlJrMGFjMEJhQzFNSGZuTWNoeHZhMzI5NlIyVlBZdVlreUlseGR6OA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical",
+              "development"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Bitwise to acquire crypto staking company Chorus One: Report",
+            "published_at": "2026-02-04T07:47:32+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitwise-acquire-chorus-one-crypto-staking-demand-surges?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzI3N2QtYTFmMy03MzI3LTkzZjgtY2EyY2VlMjY1OWU5LmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Tether Slashes Equity Raise From $20B To $5B After Investor Pushback - Yellow.com",
+            "published_at": "2026-02-04T07:17:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZWV2ZFotTE42U2dxcGdGN0kycWRaSU5Vb2dwRklXRWxkU1g4ZEppRXhJcmZMZGRSc3hNV3JzRExWMFZIWkdMaWNabzVTVkFJNm45S05EQU15U0x2cEFZN2p4VEE3TE05b2hiZFRiRkhwT2VDcGwyY25lLXN2MkFhVGFzS3lPRm56T1k3cU9xT2JGRndKMkJCUmFNZUpCejlKTnhMdA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ether and majors rise as bitcoin rebounds to $76,000 but the bounce may not last",
+            "published_at": "2026-02-04T05:40:42+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/ether-and-majors-rise-as-bitcoin-rebounds-to-usd76-000-but-the-bounce-may-not-last",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f3c4b359de99d04f5c48e6993dedba6a0884c57b-720x406.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Decisive moment for gold as the recovery continues",
+            "published_at": "2026-02-04T04:50:49+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/decisive-moment-for-gold-as-the-recovery-continues-20260204/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Stablecoin \u2018dust\u2019 txs on Ethereum triple post-Fusaka: Coin Metrics",
+            "published_at": "2026-02-04T04:39:59+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/ethereum-post-fusaka-dust-attacks-overstated-making-only-11-of-txs-research?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzI2ODYtNjRjOC03YjkzLWE4MzUtNzY0YjE0ZTIyMzA0LmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Tom Lee says BitMine\u2019s $6 billion ether paper loss is \u201cby design\"",
+            "published_at": "2026-02-04T04:39:45+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/04/tom-lee-says-bitmine-s-usd6-billion-ether-paper-loss-is-by-design",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/86f52fd7839d4e6369eec2343dcd2ef548ed1b2f-1920x1080.png?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Vitalik Buterin tempers vision for ETH L2s, pushes native rollups",
+            "published_at": "2026-02-04T02:37:39+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/ethereum-scaling-pivot-l2s-mainnet-vitalik-buterin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzI2MWEtZDUwNC03YWE1LTlhMDQtYzFhOWFmNGM3YTBhLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Chase cut my credit-card limit due to lower usage. Will this affect my credit score and lead other banks to do the same?",
+            "published_at": "2026-02-04T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/i-didnt-find-out-until-after-it-was-done-chase-cut-my-credit-card-limit-due-to-low-usage-could-this-affect-my-credit-717075bd?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-66546051",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 17,
+          "high_relevance_count": 17,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 17 news items related to ETH. 17 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Bitcoin ETF outflows deepen as ether and XRP funds quietly attract inflows\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1770192378
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": 2.074e-05,
+        "funding_rate_percent": 0.0020740000000000003,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 2274.92,
+        "open_interest_usd": 4500123293.19128,
+        "open_interest_base": 1978145.7340000002,
+        "oi_formatted": "4.50B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at 0.0021%, indicating balanced positioning between longs and shorts. Open interest stands at 4.50B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1770192380,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 2.074e-05,
+            "mark_price": 2274.92
+          },
+          "open_interest": {
+            "open_interest_usd": 4500123293.19128,
+            "open_interest": 1978145.7340000002
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08580457187246461,
+        "volume_24h": 23556070237.64,
+        "volume_formatted": "23.56B",
+        "market_cap": 274531644685.0,
+        "market_cap_formatted": "274.53B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.086, indicating moderate turnover with normal trading activity. 24h volume represents 8.6% of market cap. Holders are largely holding positions.",
+        "timestamp": 1770192380,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 2274.92,
+          "total_volume": 23556070237.64,
+          "market_cap": 274531644685.0,
+          "circulating_supply": 120693577.4928935,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1770192380
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1770192380
+  }
+}

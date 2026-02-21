@@ -1,0 +1,4502 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654109,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 0,
+        "display": "N/A"
+      },
+      "volume": {
+        "value": 0,
+        "display": "$0",
+        "velocity": 0
+      },
+      "derivatives": {
+        "funding_rate": 0,
+        "funding_display": "0.0000%",
+        "open_interest": 0,
+        "oi_display": "0.00"
+      },
+      "summary": "BTC mark price at $0.00. Funding rate: 0.0000%. Open Interest: 0.00. Volume velocity: 0.000."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "neutral",
+        "crowd_level": "quiet",
+        "description": "Neutral environment with quiet crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "accumulation",
+        "level": "MODERATE",
+        "description": "Organic spot buying without excessive leverage"
+      },
+      "summary": "Market is neutral with quiet positioning. Leverage intensity: low. Pressure signal: accumulation. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 20,
+      "high_relevance_count": 20,
+      "dominant_theme": "general",
+      "overall_sentiment": "positive",
+      "top_events": [
+        {
+          "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Bitcoin's bull catalyst could be AI stocks becoming 'silly big': Lyn Alden",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Not a ponzi but a real risk Saylor Strategy",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "negative"
+        }
+      ],
+      "context": {
+        "fear_greed": 50,
+        "market_phase": "markup",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 20 news items related to BTC. 20 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Moderate",
+        "description": "Network activity: unknown, Holder behavior: unknown"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market quiet - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markup",
+        "holder_behavior": "unknown",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markup. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 0,
+      "items": []
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654108,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin's bull catalyst could be AI stocks becoming 'silly big': Lyn Alden",
+            "published_at": "2026-02-21T02:21:04+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitcoin-price-catalyst-ai-stocks-peak-economist-lyn-alden?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YWZhN2EtYzVjNi03Zjc4LTg4OTUtMGE5MmFjNTBiOTE2.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Not a ponzi but a real risk Saylor Strategy",
+            "published_at": "2026-02-21T02:15:33+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raexcl/not_a_ponzi_but_a_real_risk_saylor_strategy/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Supreme Court Kills Trump Tariffs As Bitcoin Stalls at $68K!",
+            "published_at": "2026-02-20T23:26:43+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1rab3tb/supreme_court_kills_trump_tariffs_as_bitcoin/",
+            "image_url": "https://external-preview.redd.it/DSwg30CYyUPWSN9MbpcZeOPqOzKWCeTG0cfh8oqerBk.jpeg?width=640&crop=smart&auto=webp&s=1b398f44bb127f1a24202936bf088f94c9e39b0f",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Supreme Court Kills Trump Tariffs As Bitcoin Pumps to $68K!",
+            "published_at": "2026-02-20T23:06:12+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raalai/supreme_court_kills_trump_tariffs_as_bitcoin/",
+            "image_url": "https://external-preview.redd.it/DSwg30CYyUPWSN9MbpcZeOPqOzKWCeTG0cfh8oqerBk.jpeg?width=640&crop=smart&auto=webp&s=1b398f44bb127f1a24202936bf088f94c9e39b0f",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Btc psyop by the elites to give money to the smart people",
+            "published_at": "2026-02-20T22:28:20+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1ra9n5h/btc_psyop_by_the_elites_to_give_money_to_the/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin shrugs off Trump's new tariffs, nears $68,000 as altcoins lead modest bounce",
+            "published_at": "2026-02-20T21:20:51+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/20/bitcoin-shrugs-off-trump-s-new-tariffs-nears-usd68-000-as-altcoins-lead-modest-bounce",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/5d38e8dc7d5b8d1ef052496b111782887f8e1edc-1910x1142.png?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Nakamoto Inc. ($NAKA) Completes Acquisition of BTC Inc. and UTXO Management",
+            "published_at": "2026-02-20T21:17:44+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/news/nakamoto-inc-naka-completes-acquisition-of-btc-inc-and-utxo-management",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/download-2026-02-20T145532.739.jpeg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Rally To $70K Possible As Bears At Risk Of $600M Liquidation",
+            "published_at": "2026-02-20T21:14:14+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1ra7ql4/bitcoin_rally_to_70k_possible_as_bears_at_risk_of/",
+            "image_url": "https://external-preview.redd.it/P48vdRlsxXRMPiSEZ6-esZKYH7MDCV06BuuS0ECBhPU.jpeg?width=640&crop=smart&auto=webp&s=f7b82a8187d2d630cedfe8aa00ec36ec20476be5",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin whales participate in V-shaped accumulation, offsetting 230K BTC sell-off",
+            "published_at": "2026-02-20T21:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/bitcoin-whales-participate-in-v-shaped-accumulation-offsetting-230k-btc-sell-off?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzdiYmItZjQ1NC03ODA5LTk1M2UtZGQzYTMyMjM0ZmE3LmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 2,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 20 news items related to BTC. 20 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771654108
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 0,
+        "funding_rate_percent": 0,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 0,
+        "open_interest_usd": 0,
+        "open_interest_base": 0,
+        "oi_formatted": "0.00",
+        "pressure_signal": "accumulation",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0000%, indicating balanced positioning between longs and shorts. Low leverage and balanced funding suggest organic spot market activity rather than speculation.",
+        "timestamp": 1771654108,
+        "raw_data": {
+          "funding": null,
+          "open_interest": null
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for BTC.",
+        "timestamp": 1771654109
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654114,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 0,
+        "display": "N/A"
+      },
+      "volume": {
+        "value": 0,
+        "display": "$0",
+        "velocity": 0
+      },
+      "derivatives": {
+        "funding_rate": 0,
+        "funding_display": "0.0000%",
+        "open_interest": 0,
+        "oi_display": "0.00"
+      },
+      "summary": "ETH mark price at $0.00. Funding rate: 0.0000%. Open Interest: 0.00. Volume velocity: 0.000."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "neutral",
+        "crowd_level": "quiet",
+        "description": "Neutral environment with quiet crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "accumulation",
+        "level": "MODERATE",
+        "description": "Organic spot buying without excessive leverage"
+      },
+      "summary": "Market is neutral with quiet positioning. Leverage intensity: low. Pressure signal: accumulation. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 18,
+      "high_relevance_count": 18,
+      "dominant_theme": "general",
+      "overall_sentiment": "positive",
+      "top_events": [
+        {
+          "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Ethereum Price Forecast: Vitalik Buterin hints at cypherpunk 'Bolt-On' upgrade for L1 - FXStreet",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        },
+        {
+          "title": "Vitalik Buterin is building a \u2018cypherpunk principled non-ugly Ethereum\u2019 as devs officially add FOCIL to upgrade roadmap",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        }
+      ],
+      "context": {
+        "fear_greed": 50,
+        "market_phase": "markup",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 18 news items related to ETH. 18 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Moderate",
+        "description": "Network activity: unknown, Holder behavior: unknown"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market quiet - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markup",
+        "holder_behavior": "unknown",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markup. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 0,
+      "items": []
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654113,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Price Forecast: Vitalik Buterin hints at cypherpunk 'Bolt-On' upgrade for L1 - FXStreet",
+            "published_at": "2026-02-21T01:06:59+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNSXlhenhmVVB0N0lyczV0N2MwMGl6NS14d2F3NFFROENGY3cxdm01WXdQWTZUVkZqY0doQlNzcGZDS2Y5UWNwLWZEd1dtaE43NUhjY3doRkFXd3ZQYUJiQmlnWDdxRkRJbzA1X0E5QVY0alNPTVMzQzNOeXNLc3NmVVRHVUQzLVlrYTV4UEloUFVySF9ZdDBoX1lYYVBaNzFTWnZTS2RzclllTGlGcE1BbTZnRC1iR1Y0OHQ4cUgtZ1B6bWtuZ3dWSl9sc2h2TGFBX3NlTUVhaDgxd9IB3wFBVV95cUxNWk5EdlhGcXBPX0loYmFFdWE1eXd2VHY0SlNTeEZWa2M2TnM3MmhPMXl6Z0loX1N4RklzNm42eXpsSVkxcmpwSGNpTHRiYi1zcHlqUllwUTNSSFJIY0g2MUIyYy1qd3RSMVBUWHo2WXo2QUsxODdJTFQzeUI0N3A0S2VWcDhPX3ExYTQxNy0yRm1SMUotOFNQa0lXa3hwdHNZVHVQWENzMkc4MWtteUxuZmE5elNSMTVsZUw5cXIzcS1YdDhBdVRiRnBOemZFa3I1eVF1S3hmbmo4dmlVQTdV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical",
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Vitalik Buterin is building a \u2018cypherpunk principled non-ugly Ethereum\u2019 as devs officially add FOCIL to upgrade roadmap",
+            "published_at": "2026-02-20T15:41:03-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390682/vitalik-buterin-is-building-a-cypherpunk-principled-non-ugly-ethereum-as-devs-officially-add-focil-to-upgrade-roadmap?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2024/10/20241001_Vitalik_News_3-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Vitalik Buterin is building a 'cypherpunk principled non-ugly Ethereum' as devs officially add FOCIL to upgrade roadmap - The Block",
+            "published_at": "2026-02-20T20:41:03+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPQ3h5SUZKczFWeTVIY25kYlZHWW1EZTl2bFNQVFA0ZDlfRUdUT1Z6dW5uTm9SdTJTLTc5Ti00VjdfcjF2SGdTd1BUZWJNcWZKNE5oR3FET2dvdFJTeDlCUHptNi1QQmFUMXZqS19vTFMzZ05fVlpURm1Gb0RtbUZpdDU1ZnhPNjZabmZEVENIeXF1VTJEMFpRUXpLSXBYVXRDNUd5a2JpLWloalhiUVBpYWZTV0VkNUN0WktVR1dqS3A0b2JwSmc4ZGZxNFdGYkgtUThqNWF3d05XYlRVOUVmYkZSWEQzU1ZC?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Fusaka Upgrade Fuels Record Address Poisoning on Ethereum - thedefiant.io",
+            "published_at": "2026-02-20T20:02:11+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZUtOQUotOW9ScDY4RGd5ZlVXcVd3YTlMYVNtNUQxV1F4R2c0NS1FTlg3Q29YS0xHN1BXcXc0QzVHQzgzWmwzS2U4MHdQdWxhajlBVTZ6NHZmRV80M0N4QjdNVU1oMmFCQVFaZzBDakpvMFFxWnYwYWstbEpaNlk4TW05MWlrb1dPZHd0a0QyWF9NZHRNaVZqZ3hLdWs?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "\u2018This is wrong,\u2019 Vitalik Buterin slams Web4 vision of superintelligent AI",
+            "published_at": "2026-02-21T03:03:32+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1rafxye/this_is_wrong_vitalik_buterin_slams_web4_vision/",
+            "image_url": "https://external-preview.redd.it/4QPRYIZGvFs8YXxVrOGF7ya3VhvGFBdzL4Vl-S9yMKI.png?width=320&crop=smart&auto=webp&s=961afda2a4abd756df66f30041ea0a558d5505f1",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "A Year Into Trump's 2nd Term: When Does Accountability For The Deep State Begin?",
+            "published_at": "2026-02-21T02:45:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/political/year-trumps-2nd-term-when-does-accountability-deep-state-begin",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/images%20%281%29_31.jpg?itok=Wzgfjk5C",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Washington Post Editorial Board Brutally Mocks Mamdani",
+            "published_at": "2026-02-21T02:20:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/political/washington-post-editorial-board-brutally-mocks-mamdani",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/fd92326bff52b03a1cc487969d50c7ad_80.jpg?itok=KUDPK60-",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Daily Crypto Discussion - February 21, 2026 (GMT+0)",
+            "published_at": "2026-02-21T01:00:17+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1radaig/daily_crypto_discussion_february_21_2026_gmt0/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Btc psyop by the elites to give money to the smart people",
+            "published_at": "2026-02-20T22:28:20+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1ra9n5h/btc_psyop_by_the_elites_to_give_money_to_the/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 6,
+            "negative": 0,
+            "neutral": 12
+          }
+        },
+        "interpretation": "Found 18 news items related to ETH. 18 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771654113
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": 0,
+        "funding_rate_percent": 0,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 0,
+        "open_interest_usd": 0,
+        "open_interest_base": 0,
+        "oi_formatted": "0.00",
+        "pressure_signal": "accumulation",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at 0.0000%, indicating balanced positioning between longs and shorts. Low leverage and balanced funding suggest organic spot market activity rather than speculation.",
+        "timestamp": 1771654113,
+        "raw_data": {
+          "funding": null,
+          "open_interest": null
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for ETH.",
+        "timestamp": 1771654114
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771654114
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771654114
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654118,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0,
+        "category": "Unknown",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0,
+      "volume": {
+        "value": 0,
+        "display": "$0"
+      },
+      "speculation_level": "unknown",
+      "summary": "DOGE velocity: 0.000 (Unknown). Price 24h: +0.0%. Volume: $0. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "neutral",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: unknown. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 20,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "SEC Crypto ETF: From Hashdex Approval to Solana, XRP & Dogecoin Filings - CoinDCX",
+          "sentiment": "positive"
+        },
+        {
+          "title": "Bloomberg analyst tips 11 September launch for US spot Dogecoin ETF - ForkLog",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Dogecoin development group behind MyDoge wallet submits ZK upgrade proposal - The Block",
+          "sentiment": "positive"
+        }
+      ],
+      "summary": "Found 20 news items related to DOGE. 20 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"SEC Crypto ETF: From Hashdex Approval to Solana, XRP & Dogecoin Filings - CoinDCX\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "MEDIUM",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "unknown",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+      },
+      "summary": "Memecoin risk: MEDIUM. Liquidity risk: MODERATE. MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654118,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "SEC Crypto ETF: From Hashdex Approval to Solana, XRP & Dogecoin Filings - CoinDCX",
+            "published_at": "2025-09-30T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBtRWxYY3d4RjFSZ3ZLX2FNSm1YbEEyRDRkTVRUc0J2RzR6LVc1dHFZSlpGZTdpOGNLd2dJU0FORWszZXJsQzRRSUN2TURGakpZNno1Q1hhdHhxUjQ3VGtEVzcyYVBOVU1TYVF3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Bloomberg analyst tips 11 September launch for US spot Dogecoin ETF - ForkLog",
+            "published_at": "2025-09-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNM1N5aFBISWloeEhibDhERmlfZUxaR1I2aHVUa0NVYzExUTY3VDhhd0pwNHJNOFh1VDRNWVo2SV9JbjYzOUlzWk9VeEdVaS1RbzBEOWYyVXY1YjROV1JTUFgyc1BoOFY0OXotN3ZQSy1MbGdoX3hlNUlHYWV3cFRpUkM1bHAzWHVEV2JQdThTYWIzejhMZEHSAZsBQVVfeXFMTmRSRzVMMzNiWTFmaUkycHp3bEdUZ2J4YWpOUXFZT3RBS0RYTV90U1d6T3ZsRTF6TV9tQ2U4cThyNFRLb05mbF9ESUdQT1VadGRiYTJBZUFYUlBibU9MV1FkWmt1anBDYzNYVWVBcXd1bnJjalp2MkFsYm5RSVJLLUN1ZG9pVmZEajJGUkFEOTFjRnlRRFV6cmluZDg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical",
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Dogecoin development group behind MyDoge wallet submits ZK upgrade proposal - The Block",
+            "published_at": "2025-07-22T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSzlEWGw3VEc5NF9TZFJ5X1hNZUZ2cldOSEJKZ2dQSGR5UWxkUFJ0d0tLUDV2OEp3UkczV1MyVlo1aVg2VkJSZmJIcnU4UjhBNWJQWU45aVVZaDU0ZEg3VDdpNTZpVXRZQzVNN1BXZ1BuYzMzbXlqcDE5MVpiNXdHMW90U213VHM1c29rT2Z5OEJENno3amdwT0hvR1lrZDM0TzU1LUZfYXdTUmlxVl9SeQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "SEC Punts on XRP, Dogecoin ETF Decisions - Decrypt",
+            "published_at": "2025-05-20T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBVcWg4ZWN6NGgzaDVkc3RmUnRQYWdJb2VyaGcxYklaUkZ3UjViSWdSM2dNNFFrN3hkQk92M3FrcmJ0SFhIQlY1MHI5eWFrajRPeXRpMGRtMFNNeXVKM3VZTDRmT3o0UDFzOTBjU1pqUE8tM0XSAXtBVV95cUxOMTAzMDRXZ1FDaE90SzA3dFQ0RFZfVDhzZUl0RHl2QTdyMkRwVDIwTnJzMmMwVFJrRDNvMml0WmRZd1B5QTZkUnI3ZzVwdVo2VV9XQ0J4VUJWN2RuaVlBSlkycGdCSkZoUHNocnVHTWR0aDZjbFRFUXdVT2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Dogecoin ETF More Likely Than Avalanche, Cardano and Polkadot, Says Analyst - thedefiant.io",
+            "published_at": "2025-05-01T20:20:50+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPMFpudWtaVFpjWU9oSFp2d0xtX1dzM2JqbHhNcXBpeVlwUFZNNjRhQTNkVTR1elpfSU5IYUFKaXZPV3NsV1RMNm1uZDZDREJOQkJvdmZ4Mi1BNDZtN01qM3RJSl9jOWVjRUZkblI2c053MmFPWFJqbHdZd3dLdHZHNDVpR0o?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Ripple, Solana, Litecoin, Doge ETFs Highly Likely To Receive SEC Nod in 2025 - CCN.com",
+            "published_at": "2025-02-11T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONmg3OFVxcTlCVVdSS2VkZzY0WFZaZlhEMUVoLVMzMkpwcXM2TWtLdkhRbmwtWG5KYzBCQ1lONUxMWGJlRVVjNmwxNlo0TDZXQk4wSUxCUTdyb1pNWldIaG1LQWdLVlhEaTJqVHRmRFRzdkZ6Z3Z3NXJzYVJ4ZkZsMHhBcGVTQm1xcURBTDZ5RF9TQQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "A Year Into Trump's 2nd Term: When Does Accountability For The Deep State Begin?",
+            "published_at": "2026-02-21T02:45:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/political/year-trumps-2nd-term-when-does-accountability-deep-state-begin",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/images%20%281%29_31.jpg?itok=Wzgfjk5C",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Meme Coin Outlook: Where DOGE, SHIB, and PEPE Are Headed Next - Pintu",
+            "published_at": "2026-02-14T08:49:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZ3ZZdS1IMTZDc2NQSi10RlJXd3pZS3A2b3U5cmoySVNmbGRuNnlhTW5MWF9UanNPT29iOTJXS0loZHVvTkl5N0VGYUJtc3JDVEl6Z21oaW9NejFRRDFLenBzNjB5eGE1eC1oeWpwSUFES25mQ0tobTcxbzZwRGlwY1BkQndQdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Dogecoin, PEPE rocket as much as 25% as 2026 starts with a bang for memecoins - CoinDesk",
+            "published_at": "2026-01-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPR0RwNmh2M2l3NEcyTHlPWmVwZXpPM1p3ckRSZm1aUklfZHhVTUphUHJfZVRaY0VMYTRvQkRKdWJtMDVnMEdwVXlIeGFjMlY4QU9DUTlPTjFVOWpTSHFtUmZvVk9qYUpkZ0ZBM0xLa05XeVFlRFpRNm5pdjJLdUw3S0t5azRHZUVvWHE3eWwzV21fWXJPbGU5X25sRzZsTWJBTWdzLUdWc19rQ1doQnV3X09BUVlrN3MyUUxWSnRXbVptdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Best Meme Coin to Buy Now: Why Traders Say Layer Brett Could Be the Next Shiba Inu or Dogecoin - openPR.com",
+            "published_at": "2025-10-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZlN4SlFaMlJVNGVEaUdlOERGRDV1SnJhR0V4cm1tbkVFYVJoc2ZGUERXRFo1N2JlemFKNkR3U3o5dTlqYkNmWTBJQzk0aUZ2TmQySmt0Yzc3SGRwdzdsaVNQaFczQjZQanRtUzlHYUJ1MnNzNGtfeEQwT3BoVmpsZU5sSlpac3NZeDJhZGhabF9qRjdhSjJEbHloQ0xTZ00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 2,
+            "negative": 0,
+            "neutral": 18
+          }
+        },
+        "interpretation": "Found 20 news items related to DOGE. 20 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"SEC Crypto ETF: From Hashdex Approval to Solana, XRP & Dogecoin Filings - CoinDCX\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771654118
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for DOGE.",
+        "timestamp": 1771654118
+      },
+      "memecoin_metrics": {
+        "error": "Data unavailable for DOGE"
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654123,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0,
+        "category": "Unknown",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0,
+      "volume": {
+        "value": 0,
+        "display": "$0"
+      },
+      "speculation_level": "unknown",
+      "summary": "SHIB velocity: 0.000 (Unknown). Price 24h: +0.0%. Volume: $0. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "neutral",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: unknown. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 20,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Trillion-Dollar Legacy Asset Manager Enters Crypto Space with ETF Covering XRP, Solana, Cardano, Shiba Inu - ZyCrypto",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "XRP, SHIB, HBAR Among 15 to Get Faster Crypto ETF Approval Under SEC\u2019s New Rule - CoinGape",
+          "sentiment": "positive"
+        },
+        {
+          "title": "Meme Coin Outlook: Where DOGE, SHIB, and PEPE Are Headed Next - Pintu",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 20 news items related to SHIB. 20 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trillion-Dollar Legacy Asset Manager Enters Crypto Space with ETF Covering XRP, Solana, Cardano, Shiba Inu - ZyCrypto\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "MEDIUM",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "unknown",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+      },
+      "summary": "Memecoin risk: MEDIUM. Liquidity risk: MODERATE. MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654123,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trillion-Dollar Legacy Asset Manager Enters Crypto Space with ETF Covering XRP, Solana, Cardano, Shiba Inu - ZyCrypto",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOXBsOXkwM0owU2dfemZNOU1MT0laSlZGM28wWHFRZXBDczRwVzFTZ2dGeWlfbThuVHJyekY3ZzVNbjBwY01sb2lxQUxWX0VoMUIwbGpMdUJoUzFZbU90aXFhT2FVZVNyNHN6NmxFbDdpQlZxTktUUkFvLUF4MUZiMzh4bmV5d2xtUnlSLURDRS04R2MxZmxVMGZoTWJVSFdHNVFJR0VEVDdEc1RFMjE0WTF4TFVFcXJ3SFZvUkdDd1hvYm_SAcgBQVVfeXFMTjdxUkc3cVZZdUdwWjJ1b3ZLaC1pSmkxay16eG5xM0htWWxMQ2V0VDFWZVRUOFhUVmVaZW1kR3ZTOW9mcDd3a3cwQWhHaE1xMUEwRlUxSWx2U2lxS19nRHAxZC1ZSUVVVHRmc1ZQekE1RHcyQ0o3YU5Wd2JOMFFBaWlHSFJkWFQxLUNfUjZoWko5UmI1eWt0Uk1YeE9oQ2JxMUNGSXlaTnVrbjNMY2VPa1RhTllzcTIwR0txblZCeVJqcy1jTm5LVE0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "XRP, SHIB, HBAR Among 15 to Get Faster Crypto ETF Approval Under SEC\u2019s New Rule - CoinGape",
+            "published_at": "2025-09-18T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWTNBYjJZUk9IVW96R3cySTQ1Yms5QmpXYXJNcFA4aS1xeDdYR3R6czljdGJGVWZBUEV5WkxscFhJOTBrOWhld3hwdlVpejNBcThOMkxVYm5YckRlQkg0YW1YN3k0WmlUT3V5SHQwS2duUDVSTDdLME1VSHBKSXlJX1I0alRkNWh5VkVwSm5aTEc1cnY4amlxTDBVaDllQdIBowFBVV95cUxOaUNnd0NiYVZIYUpNbDJ2UW43RGRFZWp1ZC03WjB3ZG5LRVdmQWFoOHRCV0VQWFVPazVzN1lMSTlqWGFIQ2ZQUElKTHlCdmFUMzh1Z1VYM0hQSnlRTUN0QUhUd1IzRmZibXNzNm1hWlgzdDAyU19xeldWRjhmMFEzZU5WdmNDY0htX0xQdHNaWGJmT3h5NnB5ODlKYnN3aWM1Q2NJ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Meme Coin Outlook: Where DOGE, SHIB, and PEPE Are Headed Next - Pintu",
+            "published_at": "2026-02-14T08:49:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZ3ZZdS1IMTZDc2NQSi10RlJXd3pZS3A2b3U5cmoySVNmbGRuNnlhTW5MWF9UanNPT29iOTJXS0loZHVvTkl5N0VGYUJtc3JDVEl6Z21oaW9NejFRRDFLenBzNjB5eGE1eC1oeWpwSUFES25mQ0tobTcxbzZwRGlwY1BkQndQdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Best Meme Coins to Buy: Shiba Inu Accumulation Surge Fuels Price Rally Forecasts - CryptoDnes.bg",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPZFVvVDVPUjB3VnFtY2hINmsxRHZSejlFcW9ZdUc5V3lSSHZSLVUwazI3d05KT3hYX3k4NTN4UFg3SFBzZDJNMnNRZlVqSXVSUjBaOFN0U0c1RFNzSFBybmV5Z3YwMzBhMzBMTlN6OHFoeVByTXJpT2tEOVBIVXh4MkhyRlItTXRLVGREWXc4cDRiRTN6Q21wbEVEcUptZlZ1cThOMVRtNFc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Best Meme Coin to Buy Now: Why Traders Say Layer Brett Could Be the Next Shiba Inu or Dogecoin - openPR.com",
+            "published_at": "2025-10-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZlN4SlFaMlJVNGVEaUdlOERGRDV1SnJhR0V4cm1tbkVFYVJoc2ZGUERXRFo1N2JlemFKNkR3U3o5dTlqYkNmWTBJQzk0aUZ2TmQySmt0Yzc3SGRwdzdsaVNQaFczQjZQanRtUzlHYUJ1MnNzNGtfeEQwT3BoVmpsZU5sSlpac3NZeDJhZGhabF9qRjdhSjJEbHloQ0xTZ00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Fast-Rising Meme Coin with Top 10 Potential Named a Better Bull Run Buy Over Dogecoin (DOGE) and Shiba Inu (SHIB) - Analytics Insight",
+            "published_at": "2025-10-12T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPS1BJR29udEZmV1RmZmRRYm1HT3ZfVUFiTDNXNVpOYmVEdHp0Unl6TVFGUm9YaFpsTm1SLU9vc2hPMEI1ZkpZRTJCak96TGVkRmNlTVhFS0VNVmVVcWNWZXFRVGZ6dVRwZG5oMFZ5RWdiS1JyOU9YeDlPS0tLSXpxSXRiaE1lcUlndG1BTS1yVzFzX21DVjBLMFlZc0NZT0ppLXBwLVljd3pkWXBnVTdWLVoxbXNvclppbW9FQU5XaWRHenl4UzNPZzR0cklRYzVUOG1yc3F1QXJyMDNPT25PRjY2b0k0NVpqd0xWbmlTNWhCRjFWbWhJQXFxNS1sU3liR2dRZDlB0gGTAkFVX3lxTFAwUkU2d29FUWpnZzVTUkY5elBONGNacUpPRGdpSW9zSWdVQ2FSNS1yT2lpR0pQN3NYdjI2b1V4MzJQWGFUUkJBLTJKYmNPdkV6MWxEWkxUUVE5Z0JyY1RUZS0ta0VKVFQxMGhhYUZTa1pNWXBORVFmZ1lISElDMnloVEhSMHpzU1Y5cWUxbld6c3F3SjFUX3VXU0ljOG9ESzVlMGJOZDZtVEJINjBwNWdtTWRicEZuVTNKa2RSNkNrZ3o4aTFwc2VUNVRTTW82WGF0dkU3dXhET3JSMk1VMkdDMTlGdG5yQ0lJVjdVdm00WWg3bGJXNjRvME5PbkJRZmg3Qkk1bU9zRjZBaG9PVlR5d1Jr?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Shiba Inu News: AlphaPepe & Dogecoin Tipped as the Best Crypto to Buy Now at the Start of Q4 - BlockchainReporter",
+            "published_at": "2025-10-05T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOM1BSNlNucjhZRWt3a01rVlVsaU1rM0w5eUhHU2JnTE1jNHFEU0h0blhOU3ZMVUlBV1dMcTJrckQ0eWViTlY4NXlmUm05N2VlVmQ3VUhoZTZyb0dUOWY5RmFMT3QtbV93RWppaURveWRkdU9wSVpTSUs4RWNfOFJRaGdDMnJoWnNuT1dpRGMycE1CcVpiVnJzem1SRE44ZWpkWXJKRzZaUDNyZDhyNjlCRXNkYlFENi1xNUVIU0lB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Top 3 Meme Coins to Watch in 2025: Ozak AI, Shiba Inu (SHIB), and Dogecoin (DOGE) - Bitcoinsensus",
+            "published_at": "2025-10-01T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNd0JadnhoeGJrdy1YczJudDl3a21wWVFqa2c2M05reldmendnQUQ3eGhUVHpzeXFwb0hzY082WlA3dzlfdVVHc0VieUExYWZsUFZzOGF5aDBKUXZFX1NETExYVzBsSmNYb3dqaXQxSjFrcndfUUowcWQyT1ZBY0xDNHhoUDkwUmtBS21RNElfWkdhLWJiOW9lLV9BQXp5emphNExDWHg1c1ZUSm5yMGVpT0Z2eExiVzh0clE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Dogecoin, Bonk, Pengu, Shiba Inu and Layer Brett: Which Meme Are Traders Eyeing For Q4? - DailyCoin",
+            "published_at": "2025-09-22T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNRWpWM2l0UHB4aXNNbllTLS1ZbnZNdHpDNUdHUWxyci1rRnBnUlNaQkMtMXBrZGNOcE1tZFNXWGhZdGEtZURJNmthbzJwSDlzdEdQdFByd0tuVzZtQnJuV3JnQ2pXU2hDMzYtZTdLMUpaYnRENDducDJXWXEyWUJwSlYtZFpjYlR0QzhKa3ExTDZFNzRaSlg5V2lrLXE4VGRMdGdoQWhjM2k?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "SHIBA vs DOGE: Which Meme Coin is the Better Buy Right Now? - Investing Haven",
+            "published_at": "2025-05-26T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUHZLSERvR19UQUlaVms3aUZlS25RakU4SnoxTTVZcTY5bVBaT1FBcGx5SlNwX2Y1cGVwSDgwRnZQX1VyTXNHQ21LVDJ4X0YteVppVUhiVkRiY1l0dVNRZDNuOTNSb3R5RWJ1OS05UlVFSXdHMzdsUjJBQl91VlluZEp2QlE2dTY0c2RBWmR4WDY5Q3RGaXJqbHJLRDQ5WWZONGdNTXo0M2tOUy1DU3c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 3,
+            "negative": 0,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 20 news items related to SHIB. 20 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trillion-Dollar Legacy Asset Manager Enters Crypto Space with ETF Covering XRP, Solana, Cardano, Shiba Inu - ZyCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771654123
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for SHIB.",
+        "timestamp": 1771654123
+      },
+      "memecoin_metrics": {
+        "error": "Data unavailable for SHIB"
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654128,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0,
+        "category": "Unknown",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0,
+      "volume": {
+        "value": 0,
+        "display": "$0"
+      },
+      "speculation_level": "unknown",
+      "summary": "PEPE velocity: 0.000 (Unknown). Price 24h: +0.0%. Volume: $0. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "neutral",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: unknown. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 18,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+          "sentiment": "positive"
+        },
+        {
+          "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Outlook: Where DOGE, SHIB, and PEPE Are Headed Next - Pintu",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 18 news items related to PEPE. 18 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "MEDIUM",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "unknown",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+      },
+      "summary": "Memecoin risk: MEDIUM. Liquidity risk: MODERATE. MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654128,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Meme Coin Outlook: Where DOGE, SHIB, and PEPE Are Headed Next - Pintu",
+            "published_at": "2026-02-14T08:49:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZ3ZZdS1IMTZDc2NQSi10RlJXd3pZS3A2b3U5cmoySVNmbGRuNnlhTW5MWF9UanNPT29iOTJXS0loZHVvTkl5N0VGYUJtc3JDVEl6Z21oaW9NejFRRDFLenBzNjB5eGE1eC1oeWpwSUFES25mQ0tobTcxbzZwRGlwY1BkQndQdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Dogecoin, PEPE rocket as much as 25% as 2026 starts with a bang for memecoins - CoinDesk",
+            "published_at": "2026-01-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPR0RwNmh2M2l3NEcyTHlPWmVwZXpPM1p3ckRSZm1aUklfZHhVTUphUHJfZVRaY0VMYTRvQkRKdWJtMDVnMEdwVXlIeGFjMlY4QU9DUTlPTjFVOWpTSHFtUmZvVk9qYUpkZ0ZBM0xLa05XeVFlRFpRNm5pdjJLdUw3S0t5azRHZUVvWHE3eWwzV21fWXJPbGU5X25sRzZsTWJBTWdzLUdWc19rQ1doQnV3X09BUVlrN3MyUUxWSnRXbVptdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Shiba Inu News: AlphaPepe & Dogecoin Tipped as the Best Crypto to Buy Now at the Start of Q4 - BlockchainReporter",
+            "published_at": "2025-10-05T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOM1BSNlNucjhZRWt3a01rVlVsaU1rM0w5eUhHU2JnTE1jNHFEU0h0blhOU3ZMVUlBV1dMcTJrckQ0eWViTlY4NXlmUm05N2VlVmQ3VUhoZTZyb0dUOWY5RmFMT3QtbV93RWppaURveWRkdU9wSVpTSUs4RWNfOFJRaGdDMnJoWnNuT1dpRGMycE1CcVpiVnJzem1SRE44ZWpkWXJKRzZaUDNyZDhyNjlCRXNkYlFENi1xNUVIU0lB?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "PEPE, BONK, FLOKI Price Prediction 2025: Why RTX Has Stronger Shot at 10,000% Gains Over Meme Coins - CaptainAltcoin",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOY05IczhwSFFGNUtGX3Z5M2tER0YxWlkyaGI5VU5DdUZ0VFJaX2xjTFlKTkVwbk16YzB0d0tyOWwyQ3g2SFpDVzhCZ3NVQkZxaHo1SFpkbm9zWXNrczI3VURNRHgzbXEteXRYT0VFM0FIR1Q1VkxTXzBsQXZUYTVveUpsR3oxTmZ0YlBPSXNuSlNLX3I1U3RfcF9BXzEteDVWRks0b1VOM1hUeEZsYVAxMFc0cXo4Z0dWOWxpY0E4OA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Pepe Price Prediction \u2013 Could $PEPE Flip Shiba Inu and Dogecoin? - The Cryptonomist",
+            "published_at": "2025-05-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQUDZVei1MSVRQbENwQnpLeVN6V185bjJsNG5lTWs1Tk5CVVFjV3BDSGQyUFBaQVNobDlfU3RMMTFHV290YkFxMzk3S09XZzI0NGtxODZ0d2ZmbWNSQ2hHdnFuTmQ4T3ZjVDA4T0RYcERtOWtOS3VqVFo2QlRwN002LXBxZWhONEN2R0VDSkgxM19fem5IY3l4ZDlrOFI4am50?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Pepe, Dogwifhat, Pengu and Floki Inu Fell Over 35% Last Month; Money Rotated From Memes to DeFi T... - Binance",
+            "published_at": "2025-02-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9wVmQxMFZSN21STDQ4RG1KbXZCdVRDdE11VDIzcktIaVZzc19FYUlpVHFnNXJHWUp6M0Y1S3BJcUhsa3VwNmpycUt5QS1yYmdJQnJfUDN4Y25WVFRhVlJVQWxKRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Shiba Inu, PEPE, and FLOKI Face a New Rival for Top Meme Coin Gains! 700% Growth on Presale Stage | - Bitcoinist.com",
+            "published_at": "2024-11-26T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVEVqeTRfejdwVE01N3dJdEUxekhjQ1lpOFNKOHhYRzJZTDdVc3RYUVo0b3hET2hHUnF1aFloaVFrS1Q1NC02WXBaa1lCYW4xM1VfWTB2WjFDZnN2bllRQ3pzYnZvLWlqR2dJdUdZYWM0b2VFSEIyZ0FVTmtQbUtJSmZZanY0VDBRczdOUTFuS1NBYy15alV1Rk93QmpITFZxWldCdGQ1ZlJaM1REMDFpRnNvSUN3YlY30gG-AUFVX3lxTE9QWU5zWVhpSzN6TjhraXhuaDRuN0RCM2dEdWw1djlNRGJaa05iWXFaTUZ2UGNkSjZNLXhJdUZPZTVNYU9hUnhYZS03T2N2SXVkN1ZZMXdDTDVneml2QU50S3k1a3FvR3NXdmVJRngzaWFJRVgxUkxQdVBwZGVJRHR6LUlsVzZpY3BqcU1pTXNITk8tYVlhSzZ6cDJIRGhIWVh3THcyOXk3Y1JSYWhPcV9zTTJEdEVETFI5WkswYUE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "SHIB vs PEPE, DOGE vs WIF: Who Wins the Meme Coin Race? - CryptoRank",
+            "published_at": "2024-03-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPREwwYmFXYTd6dmxYMno3T1c1ZVBVT184UXZ3SDNrWXMyV3FWQVA0RHhEWWs1UlVjUXVlZDY3cUJpSVpOOTY1c3F5ZHZMN0w5dG1MVUMzR08xeExFV3hBakRkTkhpdndPODZfMEZWaHB1bFY5XzlETHV5OFVxcTZnem5zeExNaW93c3padm9oWHphQlZI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 3,
+            "negative": 1,
+            "neutral": 14
+          }
+        },
+        "interpretation": "Found 18 news items related to PEPE. 18 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771654128
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for PEPE.",
+        "timestamp": 1771654128
+      },
+      "memecoin_metrics": {
+        "error": "Data unavailable for PEPE"
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654133,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0,
+        "category": "Unknown",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0,
+      "volume": {
+        "value": 0,
+        "display": "$0"
+      },
+      "speculation_level": "unknown",
+      "summary": "FLOKI velocity: 0.000 (Unknown). Price 24h: +0.0%. Volume: $0. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "neutral",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: unknown. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 20,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+          "sentiment": "positive"
+        },
+        {
+          "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 20 news items related to FLOKI. 20 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "MEDIUM",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "unknown",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+      },
+      "summary": "Memecoin risk: MEDIUM. Liquidity risk: MODERATE. MEDIUM RISK - Speculative asset, appropriate position sizing critical"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654133,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "FDA Dropping Requirement For 2 Studies For New Drug Approvals",
+            "published_at": "2026-02-21T01:05:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/medical/fda-dropping-requirement-2-studies-new-drug-approvals",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28103%29_1.jpg?itok=jSTyHB7r",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "PEPE, BONK, FLOKI Price Prediction 2025: Why RTX Has Stronger Shot at 10,000% Gains Over Meme Coins - CaptainAltcoin",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOY05IczhwSFFGNUtGX3Z5M2tER0YxWlkyaGI5VU5DdUZ0VFJaX2xjTFlKTkVwbk16YzB0d0tyOWwyQ3g2SFpDVzhCZ3NVQkZxaHo1SFpkbm9zWXNrczI3VURNRHgzbXEteXRYT0VFM0FIR1Q1VkxTXzBsQXZUYTVveUpsR3oxTmZ0YlBPSXNuSlNLX3I1U3RfcF9BXzEteDVWRks0b1VOM1hUeEZsYVAxMFc0cXo4Z0dWOWxpY0E4OA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Pepe, Dogwifhat, Pengu and Floki Inu Fell Over 35% Last Month; Money Rotated From Memes to DeFi T... - Binance",
+            "published_at": "2025-02-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9wVmQxMFZSN21STDQ4RG1KbXZCdVRDdE11VDIzcktIaVZzc19FYUlpVHFnNXJHWUp6M0Y1S3BJcUhsa3VwNmpycUt5QS1yYmdJQnJfUDN4Y25WVFRhVlJVQWxKRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Shiba Inu, PEPE, and FLOKI Face a New Rival for Top Meme Coin Gains! 700% Growth on Presale Stage | - Bitcoinist.com",
+            "published_at": "2024-11-26T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVEVqeTRfejdwVE01N3dJdEUxekhjQ1lpOFNKOHhYRzJZTDdVc3RYUVo0b3hET2hHUnF1aFloaVFrS1Q1NC02WXBaa1lCYW4xM1VfWTB2WjFDZnN2bllRQ3pzYnZvLWlqR2dJdUdZYWM0b2VFSEIyZ0FVTmtQbUtJSmZZanY0VDBRczdOUTFuS1NBYy15alV1Rk93QmpITFZxWldCdGQ1ZlJaM1REMDFpRnNvSUN3YlY30gG-AUFVX3lxTE9QWU5zWVhpSzN6TjhraXhuaDRuN0RCM2dEdWw1djlNRGJaa05iWXFaTUZ2UGNkSjZNLXhJdUZPZTVNYU9hUnhYZS03T2N2SXVkN1ZZMXdDTDVneml2QU50S3k1a3FvR3NXdmVJRngzaWFJRVgxUkxQdVBwZGVJRHR6LUlsVzZpY3BqcU1pTXNITk8tYVlhSzZ6cDJIRGhIWVh3THcyOXk3Y1JSYWhPcV9zTTJEdEVETFI5WkswYUE?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Meme Coins Roar Back as Floki and Pepe Pump on Major Support From Big Players - CaptainAltcoin",
+            "published_at": "2023-12-04T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbWdsWE9tZ2tlWlBJTi15NWRyNjdfc1cyV01mM0liMDBhNzlpdG0tOHcySEoxYWREVTFnX3ZrQmU0YVVoTUhQZWhtYWNibXY4cUZveENOZzVsQWxzVlpET1VZcGxIeDVLZDlYejhkRUxCbXJXOFFlLWRoZDQwRVliMFN0SVcxNGQ3UmhldFN2RUJGSGF6U3lMcXJqRnBYcEoxWkJ1Mi1mMGU?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 3,
+            "negative": 2,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 20 news items related to FLOKI. 20 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771654133
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for FLOKI.",
+        "timestamp": 1771654133
+      },
+      "memecoin_metrics": {
+        "error": "Data unavailable for FLOKI"
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654138,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 0,
+        "display": "$0",
+        "velocity": 0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 0,
+      "regulatory_alert": false,
+      "summary": "XMR volume: $0 (velocity: 0.000). Price 24h: +0.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "neutral",
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: unknown. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 20,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+          "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE",
+      "summary": "20 events found. 2 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE. 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654138,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "FDA Dropping Requirement For 2 Studies For New Drug Approvals",
+            "published_at": "2026-02-21T01:05:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/medical/fda-dropping-requirement-2-studies-new-drug-approvals",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28103%29_1.jpg?itok=jSTyHB7r",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Monero in 2025: Persistent Use and Emerging Network-Layer Insights | TRM Blog",
+            "published_at": "2026-02-20T15:03:27+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1r9xovn/monero_in_2025_persistent_use_and_emerging/",
+            "image_url": "https://external-preview.redd.it/OrFBNKeU3KAKsiqr3eZPtva4fVYfDdHrIXfvUGo1cb8.png?width=640&crop=smart&auto=webp&s=1900d43373319913dd89137762bac22782a1935e",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Monero Price Analysis 2026: From $800 Peak to Regulatory Support Test - Bitget",
+            "published_at": "2026-02-17T09:48:29+00:00",
+            "time_ago": "Recently",
+            "source": "\"monero privacy coin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE81QVNZWEpoN3NDS3J5Y3VRZ2hPRWhMY2J2Z3g1SHNIS1NURWtGQWx4QjlralgxRENCNXdXT3kwRG5NUTRUc0d4cFF0RUU4SGZmenFVYTk1UW9kWnVVOVHSAWNBVV95cUxNWTlnV3NkZHI4SGVSTTdMc1dlVlNDRXppcmo5d3E3WVhEUThjWjNrcUs3WVZUQTdNLTBNSjNqczNDeTZ4TkR4ZDZsNndYb1ZLLVR2MWZ6REdmWF9CVXhEUWlFcTA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Monero Users\u2019 XMR to Be Converted to BTC as Privacy Coins Shunned in Europe - CCN.com",
+            "published_at": "2024-04-12T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"monero privacy coin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNdFc4Z2JXMjFLVjBLZTJ2MUVBVWpaek1mMlhkVG5ZcXYyVjAxWWZpLTU1OGd3MGh2bGJlZ1hnMmZ5UUpOa1Fyd1ZFb3IyWkFvWmZJalZ1SzNfRXVuMFdDVjNNNVU2MXVsRURsNVo3NmNCRDYzZjdIUVRwdFBCNEU5LTUwdG1Sb0hr?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN",
+            "published_at": "2026-02-21T03:59:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPb2pUZ21mR0Y0bTloT2hQclZfN05MM2Y5bm1MZjhaT192OG55c3Y0V2NiR291dVFrMkRPZy1RdVNiRnFXNC1nQmg4YkRrZTJDN29WekRHcUhTRGJFMzZIWmZxd3NHOUhHcGpicjFSenVLSzN4bGlmUkJNY3NXUnZuU1phUFhydGwtTGJWZXBvRmZMcWstY1c0RF9rNEx2MnJWR05EaW0zRHFNRU1xcWtlM203U2hjM0ZZZEt4anpXLVhaNkpPR0VLTUFFY2xXXzlqbE9iUTVFSTdMdHFERHN2VA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 2,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 20 news items related to XMR. 20 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771654138
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for XMR.",
+        "timestamp": 1771654138
+      },
+      "privacy_metrics": {
+        "error": "Data unavailable for XMR"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654143,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 0,
+        "display": "$0",
+        "velocity": 0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 0,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: $0 (velocity: 0.000). Price 24h: +0.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "neutral",
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: unknown. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 20,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+          "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE",
+      "summary": "20 events found. 2 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE. 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654143,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "FDA Dropping Requirement For 2 Studies For New Drug Approvals",
+            "published_at": "2026-02-21T01:05:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/medical/fda-dropping-requirement-2-studies-new-drug-approvals",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28103%29_1.jpg?itok=jSTyHB7r",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "From Germany To Brazil: The \"Social Media Ban\"-Craze Continues",
+            "published_at": "2026-02-20T22:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/geopolitical/germany-brazil-social-media-ban-craze-continues",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/adobestock-padlocked-phone-socia.jpg?itok=KybRhmTc",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Privacy blockchain Dash to integrate Zcash shielded pool, plans RWA rollout - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
+            "published_at": "2026-02-19T22:01:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"zcash dash privacy crypto\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPM2ZDeE1vR0R1SWlvZVpwM204OURnMDdrYlJ6anJyR1F1NDdWdHRUSEpNXzRtbTd5N1VpdTMzMHBoeVBXdkRPckZqT29yWURyeGNaNF9xZUtlYkhHTnRTclJHbk93bkNfdDFqemFIaTZYWV8yOTBmb2tGNGxscWx6R2lOekRkTmpfdzdfcTZkcVVmM1VnTXZZWkJEWlJwQ1kwalVLaFB6UmU?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN",
+            "published_at": "2026-02-21T03:59:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPb2pUZ21mR0Y0bTloT2hQclZfN05MM2Y5bm1MZjhaT192OG55c3Y0V2NiR291dVFrMkRPZy1RdVNiRnFXNC1nQmg4YkRrZTJDN29WekRHcUhTRGJFMzZIWmZxd3NHOUhHcGpicjFSenVLSzN4bGlmUkJNY3NXUnZuU1phUFhydGwtTGJWZXBvRmZMcWstY1c0RF9rNEx2MnJWR05EaW0zRHFNRU1xcWtlM203U2hjM0ZZZEt4anpXLVhaNkpPR0VLTUFFY2xXXzlqbE9iUTVFSTdMdHFERHN2VA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Riyadh Seeks To Replace Israel With Syria For EU Fiber-Optic Cable Route",
+            "published_at": "2026-02-21T03:35:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/technology/riyadh-seeks-replace-israel-syria-greece-fiber-optic-cable-route",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/mbsfile_2.jpg?itok=4tf4Drsx",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 2,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 20 news items related to ZEC. 20 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771654143
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for ZEC.",
+        "timestamp": 1771654143
+      },
+      "privacy_metrics": {
+        "error": "Data unavailable for ZEC"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654148,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 0,
+        "display": "$0",
+        "velocity": 0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 0,
+      "regulatory_alert": false,
+      "summary": "DASH volume: $0 (velocity: 0.000). Price 24h: +0.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "neutral",
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: unknown. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 15,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "Why Kim Kardashian was charged by the SEC, and how other celebrities might avoid crypto trouble - NBC News",
+          "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE",
+      "summary": "15 events found. 2 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE. 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654148,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A dash of \u2018schmuck insurance\u2019 could help Netflix win Warner Bros - Financial Times",
+            "published_at": "2026-02-20T10:36:43+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:ft.com markets OR central bank OR economy\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5OY1ROSms5QkN6ZUs4cXUtcUQ3V3dFV0lPMDNIdGpCSXhyMkpaMURwNUxranNDb3BZTmRoYW13a0FSY2h3anh4Yy0xRWtoQkV2NlhVWVhyU1k3a0ExcTM3ZnNtbkhsUWZaNXJ1YjJPY0g?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Why Kim Kardashian was charged by the SEC, and how other celebrities might avoid crypto trouble - NBC News",
+            "published_at": "2022-10-03T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"bitcoin SEC lawsuit\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNWdvVEJOaWw5czFtQVJ1RTcyOC1tbDJLNGtLd2Q5VmkwY2ZsMFNRaDFkUU9vNUxLc1drNng2Z19ETkFkcjFqVWlKRnZUS1AtbUJTTU5uY3ZCU2dCZk8zWWZjbEdpbnJoQ0RTR3FSRm1VRlk0alZqc2FDcjNRY3dXaHlUZGY5cHE5QVJDZDY5aEh3NmkxWGxVRFZqcHJsS2Zz?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "With Shaky Reasoning, Trump Weighs Limited Initial Strike On Iran To Force A Deal",
+            "published_at": "2026-02-20T12:45:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/geopolitical/shaky-reasoning-trump-weighs-limited-initial-strike-iran-force-deal",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Screen%20Shot%202026-02-20%20at%201.58.52%20AM_0.jpeg?itok=76LL0HMr",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Privacy blockchain Dash to integrate Zcash shielded pool, plans RWA rollout - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
+            "published_at": "2026-02-19T22:01:28+00:00",
+            "time_ago": "Recently",
+            "source": "\"zcash dash privacy crypto\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPM2ZDeE1vR0R1SWlvZVpwM204OURnMDdrYlJ6anJyR1F1NDdWdHRUSEpNXzRtbTd5N1VpdTMzMHBoeVBXdkRPckZqT29yWURyeGNaNF9xZUtlYkhHTnRTclJHbk93bkNfdDFqemFIaTZYWV8yOTBmb2tGNGxscWx6R2lOekRkTmpfdzdfcTZkcVVmM1VnTXZZWkJEWlJwQ1kwalVLaFB6UmU?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "The Yen's Fluctuation and Its Geopolitical Ripple Effects: A New Normal in Indo-Pacific - 9DashLine",
+            "published_at": "2024-09-24T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Japan yen intervention central bank\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaHRCVWxHSlVwVWNEUkZkZHZnR0sxSHlkWklZUmNvOVVmRjB2b3VTYWJJS2pFb0lWSnNXSk9GTjJaRHhzS25oLVlsTkdGR3RfSmRMbHFjQldZRGVHcFFxTVM0S05LQlZDeTFFRW5hZHQwVEFZdEs3NVQ5R1M5cnJKYmxsOVhsM0JEQW5Wc3R1QlItRDNUWTFnZjlOdEZhbmEycUZ3UGlBaXJlZTdMNklZNE9OVlFYMEVSSnk0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN",
+            "published_at": "2026-02-21T03:59:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPb2pUZ21mR0Y0bTloT2hQclZfN05MM2Y5bm1MZjhaT192OG55c3Y0V2NiR291dVFrMkRPZy1RdVNiRnFXNC1nQmg4YkRrZTJDN29WekRHcUhTRGJFMzZIWmZxd3NHOUhHcGpicjFSenVLSzN4bGlmUkJNY3NXUnZuU1phUFhydGwtTGJWZXBvRmZMcWstY1c0RF9rNEx2MnJWR05EaW0zRHFNRU1xcWtlM203U2hjM0ZZZEt4anpXLVhaNkpPR0VLTUFFY2xXXzlqbE9iUTVFSTdMdHFERHN2VA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Riyadh Seeks To Replace Israel With Syria For EU Fiber-Optic Cable Route",
+            "published_at": "2026-02-21T03:35:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/technology/riyadh-seeks-replace-israel-syria-greece-fiber-optic-cable-route",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/mbsfile_2.jpg?itok=4tf4Drsx",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 15,
+          "high_relevance_count": 15,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 13
+          }
+        },
+        "interpretation": "Found 15 news items related to DASH. 15 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"A dash of \u2018schmuck insurance\u2019 could help Netflix win Warner Bros - Financial Times\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771654148
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for DASH.",
+        "timestamp": 1771654148
+      },
+      "privacy_metrics": {
+        "error": "Data unavailable for DASH"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654153,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 0,
+        "display": "$0",
+        "velocity": 0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 0,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: $0 (velocity: 0.000). Price 24h: +0.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "neutral",
+      "holder_dynamics": {
+        "behavior": "unknown",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: unknown. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 20,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+          "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE",
+      "summary": "20 events found. 2 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE. 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654153,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "FDA Dropping Requirement For 2 Studies For New Drug Approvals",
+            "published_at": "2026-02-21T01:05:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/medical/fda-dropping-requirement-2-studies-new-drug-approvals",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28103%29_1.jpg?itok=jSTyHB7r",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN",
+            "published_at": "2026-02-21T03:59:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPb2pUZ21mR0Y0bTloT2hQclZfN05MM2Y5bm1MZjhaT192OG55c3Y0V2NiR291dVFrMkRPZy1RdVNiRnFXNC1nQmg4YkRrZTJDN29WekRHcUhTRGJFMzZIWmZxd3NHOUhHcGpicjFSenVLSzN4bGlmUkJNY3NXUnZuU1phUFhydGwtTGJWZXBvRmZMcWstY1c0RF9rNEx2MnJWR05EaW0zRHFNRU1xcWtlM203U2hjM0ZZZEt4anpXLVhaNkpPR0VLTUFFY2xXXzlqbE9iUTVFSTdMdHFERHN2VA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Riyadh Seeks To Replace Israel With Syria For EU Fiber-Optic Cable Route",
+            "published_at": "2026-02-21T03:35:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/technology/riyadh-seeks-replace-israel-syria-greece-fiber-optic-cable-route",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/mbsfile_2.jpg?itok=4tf4Drsx",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Iranian Starlink Black Market Prices Soar As War Risks Rise",
+            "published_at": "2026-02-21T03:10:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/technology/iranian-starlink-black-market-prices-soar-war-risks-rise",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2026-02-20_11-54-59.png?itok=-vqmYGFc",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Trump to travel to China next month, with US tariffs in focus, World News - AsiaOne",
+            "published_at": "2026-02-21T02:59:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZzdzZ3ZiLXh2TklBMEk3LWlTbU1Cb0Y2dUhFcVVqOXZET1c3cWRTTjExbk1YY1hta1NTZHNMT1loS3Q4cWRFbXpWSFFrY1NCalhJQUx3RjJGcTR1YV9rZm9iaDZEM2pZbkJvRDVrTzRFRV8td2J1NXhsNXFGTnlKLUZPYTN3aFN6?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 2,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 20 news items related to SCRT. 20 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771654153
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for SCRT.",
+        "timestamp": 1771654153
+      },
+      "privacy_metrics": {
+        "error": "Data unavailable for SCRT"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654158,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 0,
+        "display": "$0"
+      },
+      "price_change_24h": 0,
+      "token_velocity": 0,
+      "protocol_size": "Micro (High Risk)",
+      "summary": "AAVE market cap: $0. Price 24h: +0.0%. Token velocity: 0.000. Protocol size: Micro (High Risk)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "neutral",
+        "impact": "Favorable for DeFi"
+      },
+      "token_dynamics": {
+        "velocity": 0,
+        "activity_level": "MODERATE",
+        "holder_behavior": "unknown"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: neutral. Token velocity: 0.000 (MODERATE). Holder behavior: unknown. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 19,
+      "governance_activity": {
+        "count": 2,
+        "items": [
+          "Core technical contributor to cease involvement with Aave DAO",
+          "BGD Labs to cease Aave contributions after four years as governance tensions grow"
+        ],
+        "level": "MODERATE"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 2,
+        "items": [
+          "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+          "Aave\u2019s parabolic rise near $50 billion TVL signals institutional embrace of DeFi lending - The Block"
+        ]
+      },
+      "summary": "19 events: 2 governance, 0 security, 2 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM",
+        "market_cap_category": "Micro (High Risk)",
+        "description": "MEDIUM - Micro (High Risk) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "HIGH (Small protocol, limited liquidity)",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "Small protocol - higher risk, monitor TVL and usage metrics"
+      },
+      "summary": "Protocol risk: MEDIUM. Smart contract risk: ONGOING. Small protocol - higher risk, monitor TVL and usage metrics"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654158,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Core technical contributor to cease involvement with Aave DAO",
+            "published_at": "2026-02-20T17:17:56+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/aave-core-contributor-bgd-cease?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzdiYjUtOGZlZS03NTgwLWIyYWUtNTc5ZDQyOWQ1MDM1LmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "The Daily: Ripple CEO sees 90% chance of crypto bill passing by end of April, BGD Labs to stop contributing to Aave, and more",
+            "published_at": "2026-02-20T12:14:13-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390662/the-daily-ripple-ceo-sees-90-chance-of-crypto-bill-passing-by-end-of-april-bgd-labs-to-stop-contributing-to-aave-and-more?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2019/06/Brad-Garlinghouse-getty-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "BGD Labs to cease Aave contributions after four years as governance tensions grow",
+            "published_at": "2026-02-20T08:26:09-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390629/bgd-labs-to-cease-aave-contributions-after-four-years-as-governance-tensions-grow?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/12/20251229_Aave_News_2-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Aave\u2019s parabolic rise near $50 billion TVL signals institutional embrace of DeFi lending - The Block",
+            "published_at": "2025-08-12T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOckNPT2hyM0M2eFJXMUYtVmFGU2xLOEZ2YmNLWFFIXzJ6WXFSbExjLVZzekJLekdnMG5HUlNxMndoMklBb3BQbnYzZ3NSaUFIdUVlRlZCNFBiYWhNVHNLMElJdkpuY19GV2FuM0t4VzJFWkd1dWtWbHR0czl4WFcxZHRib1hpWFJPamJnOENuUmFPSkF2azB5R2RncC03R2dJRkJDSmRHN0VjclprOTExcDFhZlVHZWV5UkZ5YUMwOEVKWXFPRlB3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "What is Aave? - ForkLog",
+            "published_at": "2021-08-03T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBoVlNxaXVraW9VV1cyLVB3WjJhem81N2VkWEZod3QzOTlqWkUtNmc2Z3lDaFRybHNXYXEzMk4tdzNoRXNXZmlnenRkX1XSAVJBVV95cUxOSU9kTVNiSU1xV2VHVjhtQlZ2Q0dVY3hlelFkWXlOdWtfQlJ4eUpuOHJvbERTRzJZVzVoamlJc1pFcTRKY01KZldOTlFjRDExaGRR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 19,
+          "high_relevance_count": 19,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 19 news items related to AAVE. 19 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771654158
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for AAVE.",
+        "timestamp": 1771654158
+      },
+      "defi_metrics": {
+        "error": "Data unavailable for AAVE"
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654163,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 0,
+        "display": "$0"
+      },
+      "price_change_24h": 0,
+      "token_velocity": 0,
+      "protocol_size": "Micro (High Risk)",
+      "summary": "UNI market cap: $0. Price 24h: +0.0%. Token velocity: 0.000. Protocol size: Micro (High Risk)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "neutral",
+        "impact": "Favorable for DeFi"
+      },
+      "token_dynamics": {
+        "velocity": 0,
+        "activity_level": "MODERATE",
+        "holder_behavior": "unknown"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: neutral. Token velocity: 0.000 (MODERATE). Holder behavior: unknown. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 20,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 2,
+        "items": [
+          "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+          "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN"
+        ]
+      },
+      "summary": "20 events: 0 governance, 0 security, 2 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM",
+        "market_cap_category": "Micro (High Risk)",
+        "description": "MEDIUM - Micro (High Risk) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "HIGH (Small protocol, limited liquidity)",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "Small protocol - higher risk, monitor TVL and usage metrics"
+      },
+      "summary": "Protocol risk: MEDIUM. Smart contract risk: ONGOING. Small protocol - higher risk, monitor TVL and usage metrics"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654163,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "FDA Dropping Requirement For 2 Studies For New Drug Approvals",
+            "published_at": "2026-02-21T01:05:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/medical/fda-dropping-requirement-2-studies-new-drug-approvals",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28103%29_1.jpg?itok=jSTyHB7r",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Trader Loses Six Figures Due to Fake Uniswap Ad on Google",
+            "published_at": "2026-02-20T21:45:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1ra8k35/trader_loses_six_figures_due_to_fake_uniswap_ad/",
+            "image_url": "https://external-preview.redd.it/l_6rXDF4p0bZRvU9dHfL5lPswIJUWLfYRjSva0H8uEo.jpeg?width=640&crop=smart&auto=webp&s=0b38d436fed997f712b36b07ba79789839c0addb",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Bancor sues Uniswap for infringement: Is the free and open spirit of the crypto world gone? - PANews",
+            "published_at": "2025-05-20T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBqUFJCZm5YaUh6bWRCUTBoWVlxdmVCb1lqVEFHb3c5VVFSRWc5YW5hOXVveDNNak5NODc3RmZKRTAwaVZxclRaTHQtdWNOcUJmUGxRWEZNN1dTdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN",
+            "published_at": "2026-02-21T03:59:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPb2pUZ21mR0Y0bTloT2hQclZfN05MM2Y5bm1MZjhaT192OG55c3Y0V2NiR291dVFrMkRPZy1RdVNiRnFXNC1nQmg4YkRrZTJDN29WekRHcUhTRGJFMzZIWmZxd3NHOUhHcGpicjFSenVLSzN4bGlmUkJNY3NXUnZuU1phUFhydGwtTGJWZXBvRmZMcWstY1c0RF9rNEx2MnJWR05EaW0zRHFNRU1xcWtlM203U2hjM0ZZZEt4anpXLVhaNkpPR0VLTUFFY2xXXzlqbE9iUTVFSTdMdHFERHN2VA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Riyadh Seeks To Replace Israel With Syria For EU Fiber-Optic Cable Route",
+            "published_at": "2026-02-21T03:35:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/technology/riyadh-seeks-replace-israel-syria-greece-fiber-optic-cable-route",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/mbsfile_2.jpg?itok=4tf4Drsx",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 2,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 20 news items related to UNI. 20 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771654163
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for UNI.",
+        "timestamp": 1771654163
+      },
+      "defi_metrics": {
+        "error": "Data unavailable for UNI"
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654168,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 0,
+        "display": "$0"
+      },
+      "price_change_24h": 0,
+      "token_velocity": 0,
+      "protocol_size": "Micro (High Risk)",
+      "summary": "CRV market cap: $0. Price 24h: +0.0%. Token velocity: 0.000. Protocol size: Micro (High Risk)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "neutral",
+        "impact": "Favorable for DeFi"
+      },
+      "token_dynamics": {
+        "velocity": 0,
+        "activity_level": "MODERATE",
+        "holder_behavior": "unknown"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: neutral. Token velocity: 0.000 (MODERATE). Holder behavior: unknown. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 20,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 3,
+        "items": [
+          "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+          "Investors ramp up bets on steeper yield curve under Warsh-led Fed - Reuters"
+        ]
+      },
+      "summary": "20 events: 0 governance, 0 security, 3 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM",
+        "market_cap_category": "Micro (High Risk)",
+        "description": "MEDIUM - Micro (High Risk) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "HIGH (Small protocol, limited liquidity)",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "Small protocol - higher risk, monitor TVL and usage metrics"
+      },
+      "summary": "Protocol risk: MEDIUM. Smart contract risk: ONGOING. Small protocol - higher risk, monitor TVL and usage metrics"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654168,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "FDA Dropping Requirement For 2 Studies For New Drug Approvals",
+            "published_at": "2026-02-21T01:05:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/medical/fda-dropping-requirement-2-studies-new-drug-approvals",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28103%29_1.jpg?itok=jSTyHB7r",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Futures Drop As Iran Tensions Rise, Data Deluge Looms",
+            "published_at": "2026-02-20T13:29:01+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/futures-drop-iran-tensions-rise-data-deluge-looms",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/ES%202026-02-20_8-20-22.jpg?itok=yGMhQaTY",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Investors ramp up bets on steeper yield curve under Warsh-led Fed - Reuters",
+            "published_at": "2026-02-04T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY0xFSmg1ZThTbG85WmZ5aGVaVzZyX1I3YnVPYmhiS2FPOVB0MERRUDVkV1h5c0hqZ05JQlVGbWZYZE1EZl93WEN5SEJ1VkxVcHl6VGtXam1jMlRZNnVyemc4UnVIZUtVVTAzblRGSVNQcHFRWjBEVDRZNWdqNS1iWV9ZODhMNTNRMU5YNzFZQnVvXzBHRmdYRkhha0E2WjRqcXhsd3VYd0FKNGJreEJ3eU1LMXRiZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "US Government Sold $766 Billion of Treasuries this Week. Yield Curve Steepened as 30-Year Treasury Yield Rose to 4.87% - Wolf Street",
+            "published_at": "2026-01-31T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOc0hKeGZ3dGU1Z0xPeHFlNHB4X2hCR2Jic0pJX1VrSGhaZFJoVkFEYUpVVGRVZU9yaVZCbFdPNFhGVVhUd1VhOTNuVnc4dkVYaHlDREptcWpKWEtDd25DNFpNV05xZVNUWTNZR1BTSzdia3pvMVlJN19WMkRMNVJhV0xtNERVMjZGV2tOOGo0M05YNUZjVzNoTkNfaFpDazlZT2hpVjREQk42Q3ZkS2J2OFgta0tTS0IwdjdkUlM4RG4wVUR3aVRpYWRfNFpBQ3FvRXRITElPSUxhTTVxUjVhSjhQbnQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Navigating the curve \u2013 The allure and risks of long-dated US Treasuries - bondvigilantes.com",
+            "published_at": "2025-11-18T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQaW5QVHNFUjU5TVU1MVBEeW1ha2FjUHBsMFFCVWZ2ZVdiTGpmOHo5SnVfVkZsaGFBQWs1S3pTeWlGQ3JzV1RHd2ZqSjVFUWNMMzBsQ0VIS1diSHRYTnRDTnNaX2dFVDFsNl9VaWNZMUVXZlpCYVVEMmoxLTR4UXU0Tll6Y0NtanN1ZG9teFhYdzBMS0doMlVreEdsWDBuUUFqdk00NDdMNGRTM2xCbUI4?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 4,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 20 news items related to CRV. 20 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771654168
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for CRV.",
+        "timestamp": 1771654168
+      },
+      "defi_metrics": {
+        "error": "Data unavailable for CRV"
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771654173,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 0,
+        "display": "$0"
+      },
+      "price_change_24h": 0,
+      "token_velocity": 0,
+      "protocol_size": "Micro (High Risk)",
+      "summary": "LDO market cap: $0. Price 24h: +0.0%. Token velocity: 0.000. Protocol size: Micro (High Risk)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "neutral",
+        "impact": "Favorable for DeFi"
+      },
+      "token_dynamics": {
+        "velocity": 0,
+        "activity_level": "MODERATE",
+        "holder_behavior": "unknown"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: neutral. Token velocity: 0.000 (MODERATE). Holder behavior: unknown. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 17,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 2,
+        "items": [
+          "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+          "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN"
+        ]
+      },
+      "summary": "17 events: 0 governance, 0 security, 2 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM",
+        "market_cap_category": "Micro (High Risk)",
+        "description": "MEDIUM - Micro (High Risk) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "HIGH (Small protocol, limited liquidity)",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM",
+        "recommendation": "Small protocol - higher risk, monitor TVL and usage metrics"
+      },
+      "summary": "Protocol risk: MEDIUM. Smart contract risk: ONGOING. Small protocol - higher risk, monitor TVL and usage metrics"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "neutral",
+        "crowd_level": "quiet",
+        "leverage_intensity": "low",
+        "fear_greed_index": 50,
+        "fear_greed_classification": "Neutral",
+        "btc_funding_rate": 0,
+        "funding_signal": "neutral",
+        "market_phase": "markup",
+        "timestamp": 1771654173,
+        "interpretation": "The market sentiment is relatively balanced, without strong directional bias.The Fear & Greed Index is at 50 (Neutral), reflecting neutral sentiment. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": null,
+          "btc_funding": null
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "\"We Saw It. We Passed\": Blue Owl Fails To Secure Third Party Funding For $4 Billion Data Center",
+            "published_at": "2026-02-20T18:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/we-saw-it-we-passed-blue-owl-fails-secure-third-party-funding-4-billion-data-center",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/lancaster%20data%20center.jpg?itok=mSGLy0zy",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "A Single ETH Upgrade Can Add Billions to Vitalik Buterin\u2019s Net Worth - InteractiveCrypto",
+            "published_at": "2026-02-21T04:05:56+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2dKSjhSRkp6SjF6UDBZeTRGbjhvcVNqX1RqMmlhLUQ5cThxZHJVLWFIOFhBc0UySTlmUmhDRWpNaG92YnpIY3M5bzZ2UUJFbS12aFNqS2NZOTE3VGRKRG1pZG43U3A4bGRJMjdvZ01kOUhvdmVieDZteE53a19ybXQzcklvNldTQ2ZjWGlIZ2NjVFAwRzN1RENiejFpd3YtelYxM3RfeDZmc051OVR1dE8xUEZsdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "SEC Issues 2% Stablecoin Capital Guidance, Softening Regulatory Pressure on Institutional Exposure - Bitcoin.com News",
+            "published_at": "2026-02-21T02:38:07+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUldKMnRIX0dhWUZhMFlRX0JBdzNWMlo2anZRNzM2SVl0dXVybHQ2dE92V0ptR1M4ZU4tc3VyblZGLWhKWkVzd1p2djM4ay02R1gtNmR6Vld2MTFabFhsemJ0OGQtak5FMWNINF9DRHZMUVRVYnNEU3pZRGxwNTY0enItYjFyUHI1Q0V3NmRuT0ZhbEVuRlBuZVB4LTlDS2U3UWprUzdBVHpJc2NwTmhUemVEWXFEMUhYbEJITUtpRQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "SEC significantly eases stablecoin regulation\u2026opens the door for broker-dealers",
+            "published_at": "2026-02-21T02:02:29+00:00",
+            "time_ago": "Recently",
+            "source": "Cryptocurrency News & Discussion",
+            "url": "https://www.reddit.com/r/CryptoCurrency/comments/1raen5s/sec_significantly_eases_stablecoin/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Trump to Release the UFO Files. There\u2019s Somehow an ETF for That - Bloomberg.com",
+            "published_at": "2026-02-21T01:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYy1zbENveHFUTTlpc2F4cWg4c2w1d1dlY0FxOFA3MENURnBLcGdmWHd2dm1pY012c2Q4NFlaMUttdXNpUUNSdndwSTZ2VGJuUzA5NFVVNkM1WnFxVEFlc3VxeXgyV05DTkdzeVBmdDVRaHpwMnp3TGFibjBaemtiQ21hRlA0emFFTjdoMk1BSjJXVUdpOUFxRWcweVhjVTkyLTV0YkNXLUkwc2hacjBLdWxaSFBKRFdCT2ZV?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Nvidia Favors $30 Billion OpenAI Investment, Retreating From Prior $100 Billion Commitment",
+            "published_at": "2026-02-20T14:55:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/ai/new-openai-funding-round-could-top-100-billion-pushing-valuation-north-850-billion",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2026-02-19_09-50-15.png?itok=DYB8BpvA",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "What De-Dollarization? US Dollar Bulldozes BRICS Currencies - Watcher Guru",
+            "published_at": "2024-04-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQTURlMFl2NHhqakxEWkdrOWM2YWRCTzFQbnNxUGhVNzVOS2FrZHB1cWlMeks4OGc4ZHZhVHQtZGIwel9HcnoxM0UxZTJIZjlQUWVFeGZUbW85aXN4RDg3R3JQR1NsekxYRm9ZNU9UbWhSSVlnZUNkRWRtM3FBVmIzN2prUnE5d1RlalNGQw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Is It Time To Reopen The Franklin Child Prostitution Case After Epstein Revelations?",
+            "published_at": "2026-02-21T04:25:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/markets/its-time-reopen-franklin-child-prostitution-case-after-epstein-revelations",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Baphomet1.jpg?itok=UA6pyNTk",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "10-year Treasury yields rise after high court rebukes Trump's tariffs - MSN",
+            "published_at": "2026-02-21T03:59:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPb2pUZ21mR0Y0bTloT2hQclZfN05MM2Y5bm1MZjhaT192OG55c3Y0V2NiR291dVFrMkRPZy1RdVNiRnFXNC1nQmg4YkRrZTJDN29WekRHcUhTRGJFMzZIWmZxd3NHOUhHcGpicjFSenVLSzN4bGlmUkJNY3NXUnZuU1phUFhydGwtTGJWZXBvRmZMcWstY1c0RF9rNEx2MnJWR05EaW0zRHFNRU1xcWtlM203U2hjM0ZZZEt4anpXLVhaNkpPR0VLTUFFY2xXXzlqbE9iUTVFSTdMdHFERHN2VA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Riyadh Seeks To Replace Israel With Syria For EU Fiber-Optic Cable Route",
+            "published_at": "2026-02-21T03:35:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/technology/riyadh-seeks-replace-israel-syria-greece-fiber-optic-cable-route",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/mbsfile_2.jpg?itok=4tf4Drsx",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 17,
+          "high_relevance_count": 17,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 1,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 17 news items related to LDO. 17 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"\"We Saw It. We Passed\": Blue Owl Fails To Secure Third Party Funding For $4 Billion Data Center\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771654173
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "unknown",
+        "flow_magnitude": "unknown",
+        "holder_behavior": "unknown",
+        "network_activity": "unknown",
+        "velocity": 0,
+        "interpretation": "On-chain data unavailable for LDO.",
+        "timestamp": 1771654173
+      },
+      "defi_metrics": {
+        "error": "Data unavailable for LDO"
+      }
+    }
+  }
+}

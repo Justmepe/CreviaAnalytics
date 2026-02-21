@@ -1,0 +1,3672 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071433,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 70283.37012319,
+        "display": "$70,283.37"
+      },
+      "volume": {
+        "value": 11904834037.43,
+        "display": "11.90B",
+        "velocity": 0.008461959239653713
+      },
+      "derivatives": {
+        "funding_rate": -0.002854,
+        "funding_display": "-0.0029%",
+        "open_interest": 5525342534.292639,
+        "oi_display": "5.53B"
+      },
+      "summary": "BTC mark price at $70,283.37. Funding rate: -0.0029%. Open Interest: 5.53B. Volume velocity: 0.008."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 2,
+      "high_relevance_count": 2,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 2 news items related to BTC. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.803e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071208,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.803e-05,
+            "mark_price": 70365.4
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to BTC. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771071418
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": -2.854e-05,
+        "funding_rate_percent": -0.002854,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 70283.37012319,
+        "open_interest_usd": 5525342534.292639,
+        "open_interest_base": 78615.219,
+        "oi_formatted": "5.53B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at -0.0029%, indicating balanced positioning between longs and shorts. Open interest stands at 5.53B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771071423,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -2.854e-05,
+            "mark_price": 70283.37012319
+          },
+          "open_interest": {
+            "open_interest_usd": 5525342534.292639,
+            "open_interest": 78615.219
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.008461959239653713,
+        "volume_24h": 11904834037.43,
+        "volume_formatted": "11.90B",
+        "market_cap": 1406864970661.0,
+        "market_cap_formatted": "1406.86B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.008, indicating very low turnover with minimal selling. 24h volume represents 0.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771071433,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 70280.5,
+          "total_volume": 11904834037.43,
+          "market_cap": 1406864970661.0,
+          "circulating_supply": 19989159.0,
+          "transaction_count_24h": 578784,
+          "hashrate": 1088676711829.3384
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071437,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 2092.78,
+        "display": "$2,092.78"
+      },
+      "volume": {
+        "value": 8821936303.51,
+        "display": "8.82B",
+        "velocity": 0.03488277508254051
+      },
+      "derivatives": {
+        "funding_rate": -0.002396,
+        "funding_display": "-0.0024%",
+        "open_interest": 3723240364.34006,
+        "oi_display": "3.72B"
+      },
+      "summary": "ETH mark price at $2,092.78. Funding rate: -0.0024%. Open Interest: 3.72B. Volume velocity: 0.035."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 2,
+      "high_relevance_count": 2,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 2 news items related to ETH. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.396e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071435,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.396e-05,
+            "mark_price": 2092.8
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to ETH. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771071435
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -2.396e-05,
+        "funding_rate_percent": -0.002396,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 2092.78,
+        "open_interest_usd": 3723240364.34006,
+        "open_interest_base": 1779088.277,
+        "oi_formatted": "3.72B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0024%, indicating balanced positioning between longs and shorts. Open interest stands at 3.72B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771071436,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -2.396e-05,
+            "mark_price": 2092.78
+          },
+          "open_interest": {
+            "open_interest_usd": 3723240364.34006,
+            "open_interest": 1779088.277
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03488277508254051,
+        "volume_24h": 8821936303.51,
+        "volume_formatted": "8.82B",
+        "market_cap": 252902364638.0,
+        "market_cap_formatted": "252.90B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.035, indicating very low turnover with minimal selling. 24h volume represents 3.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771071437,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 2092.48,
+          "total_volume": 8821936303.51,
+          "market_cap": 252902364638.0,
+          "circulating_supply": 120692467.6142904,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771071437
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771071437
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071564,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 7.006,
+      "volume": {
+        "value": 450504587.01164,
+        "display": "450.50M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.000 (Low (Stable Holding)). Price 24h: +7.0%. Volume: 450.50M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to DOGE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.854e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071439,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.854e-05,
+            "mark_price": 70280.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to DOGE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771071439
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.02662986552001108,
+        "volume_24h": 450504587.01164,
+        "volume_formatted": "450.50M",
+        "market_cap": 16917268571.0,
+        "market_cap_formatted": "16.92B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.027, indicating very low turnover with minimal selling. 24h volume represents 2.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771071440,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.09989,
+          "total_volume": 450504587.01164,
+          "market_cap": 16917268571.0,
+          "circulating_supply": 168726213126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.0,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 7.006,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.000. Risk level: LOW. ",
+        "timestamp": 1771071564
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071589,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0021393845891369764,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 7.389,
+      "volume": {
+        "value": 8252334.91484763,
+        "display": "8.25M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.002 (Low (Stable Holding)). Price 24h: +7.4%. Volume: 8.25M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0021393845891369764,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to SHIB. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.02e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071576,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.02e-05,
+            "mark_price": 70313.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to SHIB. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771071576
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 8252334.91484763,
+        "volume_formatted": "8.25M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771071582,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.55e-06,
+          "total_volume": 8252334.91484763,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.0021393845891369764,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 7.389,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.002. Risk level: LOW. ",
+        "timestamp": 1771071589
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071594,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.019290481454869307,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 7.357,
+      "volume": {
+        "value": 32051918.90196881,
+        "display": "32.05M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.019 (Low (Stable Holding)). Price 24h: +7.4%. Volume: 32.05M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.019290481454869307,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to PEPE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.02e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071590,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.02e-05,
+            "mark_price": 70313.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to PEPE. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771071590
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.019290463168863157,
+        "volume_24h": 32051918.90196881,
+        "volume_formatted": "32.05M",
+        "market_cap": 1661542215.0,
+        "market_cap_formatted": "1.66B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.019, indicating very low turnover with minimal selling. 24h volume represents 1.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771071593,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.93e-06,
+          "total_volume": 32051918.90196881,
+          "market_cap": 1661542215.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.019290481454869307,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 7.357,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.019. Risk level: LOW. ",
+        "timestamp": 1771071594
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071719,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.009650766178023492,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 6.461,
+      "volume": {
+        "value": 2939166.75856294,
+        "display": "2.94M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.010 (Low (Stable Holding)). Price 24h: +6.5%. Volume: 2.94M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.009650766178023492,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 2,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 2 news items related to FLOKI. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.02e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071594,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.02e-05,
+            "mark_price": 70313.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 2,
+          "high_relevance_count": 2,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 2 news items related to FLOKI. 2 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771071594
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.009650847766602653,
+        "volume_24h": 2939166.75856294,
+        "volume_formatted": "2.94M",
+        "market_cap": 304550111.0,
+        "market_cap_formatted": "304.55M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.010, indicating very low turnover with minimal selling. 24h volume represents 1.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771071597,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.147e-05,
+          "total_volume": 2939166.75856294,
+          "market_cap": 304550111.0,
+          "circulating_supply": 9655016857029.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.009650766178023492,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 6.461,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.010. Risk level: LOW. ",
+        "timestamp": 1771071719
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071723,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 46745303.47,
+        "display": "46.75M",
+        "velocity": 0.007101013211468939,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 4.487,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 46.75M (velocity: 0.007). Price 24h: +4.5%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 4,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "4 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.239e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071721,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.239e-05,
+            "mark_price": 70403.54515
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "China's shipments to U.S. plunge 33% in August as overall exports growth hits a 6-month low - CNBC",
+            "published_at": "2025-09-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSmdzR2xFZEl0MDRjQ21aeGRUS3hJTm0xWDVQQ0RMNzBzTGEyQXVoVDVqc29lZ0JXSV9Xcm84REZ0QzFld2JUcWFRTE9WVlEwRTlCTE00Vlh5OVAwNlUwYVdMdHpXRldST3lhS0U1bHVyM2pzVHR1T2VXNVM1NzQtdFpoRlJzODM1R1Y4WTk3VF8wX0FSeHVKd0hxZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 4 news items related to XMR. 4 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Big manufacturing economies struggle as US tariffs hit order books - Reuters\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771071721
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.007101013211468939,
+        "volume_24h": 46745303.47,
+        "volume_formatted": "46.75M",
+        "market_cap": 6582906140.0,
+        "market_cap_formatted": "6.58B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771071722,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 357.89,
+          "total_volume": 46745303.47,
+          "market_cap": 6582906140.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 46745303.47,
+        "volume_formatted": "46.75M",
+        "price_change_24h": 4.487,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771071723,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071907,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 714377189.92,
+        "display": "714.38M",
+        "velocity": 0.15384261294378276,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 20.618,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 714.38M (velocity: 0.154). Price 24h: +20.6%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "moderate_distribution",
+        "interpretation": "Selling in response to regulatory concerns"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: moderate distribution. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 4,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "4 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.239e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071723,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.239e-05,
+            "mark_price": 70403.54515
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "China's shipments to U.S. plunge 33% in August as overall exports growth hits a 6-month low - CNBC",
+            "published_at": "2025-09-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSmdzR2xFZEl0MDRjQ21aeGRUS3hJTm0xWDVQQ0RMNzBzTGEyQXVoVDVqc29lZ0JXSV9Xcm84REZ0QzFld2JUcWFRTE9WVlEwRTlCTE00Vlh5OVAwNlUwYVdMdHpXRldST3lhS0U1bHVyM2pzVHR1T2VXNVM1NzQtdFpoRlJzODM1R1Y4WTk3VF8wX0FSeHVKd0hxZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 4 news items related to ZEC. 4 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Big manufacturing economies struggle as US tariffs hit order books - Reuters\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771071723
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "medium",
+        "velocity": 0.15384261294378276,
+        "volume_24h": 714377189.92,
+        "volume_formatted": "714.38M",
+        "market_cap": 4643558610.0,
+        "market_cap_formatted": "4.64B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.154, indicating elevated turnover with active trading. 24h volume represents 15.4% of market cap. Some distribution is occurring.",
+        "timestamp": 1771071785,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 280.98,
+          "total_volume": 714377189.92,
+          "market_cap": 4643558610.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 714486869.84,
+        "volume_formatted": "714.49M",
+        "price_change_24h": 20.618,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Significant price movement (20.6%) - check for regulatory news or exchange listings/delistings. Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771071907,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771071918,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 100422438.95,
+        "display": "100.42M",
+        "velocity": 0.2039535687885098,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 13.023,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 100.42M (velocity: 0.204). Price 24h: +13.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "moderate_distribution",
+        "interpretation": "Selling in response to regulatory concerns"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": true
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Likely driving current activity"
+      },
+      "summary": "Holder behavior: moderate distribution. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+          "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "8 events found. 2 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.249e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071917,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.249e-05,
+            "mark_price": 70368.2
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVXVtZzljOE16by1rRWFwWVdmMlhpMTE2NmFpVXo0NjdoMEpYcGgxMXhIS2R2QWU5Z0FMNDhKX1FQeElRclFHNk80N0FqSDlLazVaOE1mRGtqbkZWYXdKUWhjbnF0Yk1lQnpwTlN5SWZhNWpHS0s5cC1LaUdWWEgwOWttSjJDdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Fade the Fed, global rates are heading higher - Reuters",
+            "published_at": "2025-12-11T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQLWVJU0lhTldlUl9YajhEMi1vdTAyclh4M3VRd0Roc05raG4tUUFoQ2dWX2VzT3U4U0NaaWJOeVAxN3ZxWUZ6N18xZ0xlSFNsbnNLelBINkRtUUJNb2VHLXNweS1CRmJBVmFzaXVaaWxwYnRUTHdfdHNZajROS0hXUlBhTEJzaktFR255Z3ZWM0U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "China's shipments to U.S. plunge 33% in August as overall exports growth hits a 6-month low - CNBC",
+            "published_at": "2025-09-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSmdzR2xFZEl0MDRjQ21aeGRUS3hJTm0xWDVQQ0RMNzBzTGEyQXVoVDVqc29lZ0JXSV9Xcm84REZ0QzFld2JUcWFRTE9WVlEwRTlCTE00Vlh5OVAwNlUwYVdMdHpXRldST3lhS0U1bHVyM2pzVHR1T2VXNVM1NzQtdFpoRlJzODM1R1Y4WTk3VF8wX0FSeHVKd0hxZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Trump\u2019s plan to cut off Russian oil funds could raise prices for everyone - CNN",
+            "published_at": "2025-07-17T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaHZ5UW0wRHU0UEY4b1ZIUTVHNWUyazQwdDh4VHR6eVg1Wl9aU1NPVnRUcGZNalhBRXVnU3h3MlhQbWpidWplYVZVSmJVT3FBQ1V2amtIQUZmOHppa21ERHlfcXNLYkJEaUFUVFBTUHNzbUdyOHN6eUFhdkFHSmZ5WW9ObUU3a2x6UG43dk90a1pTNXFDV204?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Multi-decade highs in DXY continues to push Gold lower - FOREX.com",
+            "published_at": "2025-04-15T10:31:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"US dollar index DXY forex\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYnY1eDRTTDNrSmdiVl9TUEloX1N2b3AxOGt0dUU1bUdKZ1pmWUZ3X0N2OVZUYm91LTZEOUNDYkJULWQycmR0LURGY2w5VlA3S3dFMWFEazdSU09EalN0MzlhcjZVSWJJdkxJVk90VlF6MVI4bmhKOEgxT0Rtc21BTm9adk5UeE1kYTh1aEsyYkFad00zcWpxOGFjeDVUUWQ4SFRJ0gGvAUFVX3lxTE0xX2hwY09mcGVDc1UzWmtXNEkxT2V2cktQdTBIUnF0ZTZydmF6WEpZc2N0R2R0YS1MT3lEYklYRFlNcTB4Z0dYLWo2OFpwOTNBSXc0Z2x5RWhZZHpYdHh4YXpIcVhlZXktQUFCT2FwZ1hLR1VJMzFwcXNFRFJtRE9RN04yX2RqNlhlOHUyM2FPbnZNLUU0Y0xJV3A2MWxsM3EwQUxxV3JXNzdfTktrYU0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to DASH. 8 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771071917
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "high",
+        "velocity": 0.2039535687885098,
+        "volume_24h": 100422438.95,
+        "volume_formatted": "100.42M",
+        "market_cap": 492378925.0,
+        "market_cap_formatted": "492.38M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.204, indicating elevated turnover with active trading. 24h volume represents 20.4% of market cap. Some distribution is occurring.",
+        "timestamp": 1771071917,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 38.88,
+          "total_volume": 100422438.95,
+          "market_cap": 492378925.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 100422438.95,
+        "volume_formatted": "100.42M",
+        "price_change_24h": 13.023,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771071918,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771072041,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1048903.4597,
+        "display": "1.05M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 8.636,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.05M (velocity: 0.000). Price 24h: +8.6%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 2,
+        "items": [
+          "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+          "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "8 events found. 2 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 2,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 2 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.249e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771071918,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.249e-05,
+            "mark_price": 70368.2
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVXVtZzljOE16by1rRWFwWVdmMlhpMTE2NmFpVXo0NjdoMEpYcGgxMXhIS2R2QWU5Z0FMNDhKX1FQeElRclFHNk80N0FqSDlLazVaOE1mRGtqbkZWYXdKUWhjbnF0Yk1lQnpwTlN5SWZhNWpHS0s5cC1LaUdWWEgwOWttSjJDdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Fade the Fed, global rates are heading higher - Reuters",
+            "published_at": "2025-12-11T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQLWVJU0lhTldlUl9YajhEMi1vdTAyclh4M3VRd0Roc05raG4tUUFoQ2dWX2VzT3U4U0NaaWJOeVAxN3ZxWUZ6N18xZ0xlSFNsbnNLelBINkRtUUJNb2VHLXNweS1CRmJBVmFzaXVaaWxwYnRUTHdfdHNZajROS0hXUlBhTEJzaktFR255Z3ZWM0U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "China's shipments to U.S. plunge 33% in August as overall exports growth hits a 6-month low - CNBC",
+            "published_at": "2025-09-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSmdzR2xFZEl0MDRjQ21aeGRUS3hJTm0xWDVQQ0RMNzBzTGEyQXVoVDVqc29lZ0JXSV9Xcm84REZ0QzFld2JUcWFRTE9WVlEwRTlCTE00Vlh5OVAwNlUwYVdMdHpXRldST3lhS0U1bHVyM2pzVHR1T2VXNVM1NzQtdFpoRlJzODM1R1Y4WTk3VF8wX0FSeHVKd0hxZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Trump\u2019s plan to cut off Russian oil funds could raise prices for everyone - CNN",
+            "published_at": "2025-07-17T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaHZ5UW0wRHU0UEY4b1ZIUTVHNWUyazQwdDh4VHR6eVg1Wl9aU1NPVnRUcGZNalhBRXVnU3h3MlhQbWpidWplYVZVSmJVT3FBQ1V2amtIQUZmOHppa21ERHlfcXNLYkJEaUFUVFBTUHNzbUdyOHN6eUFhdkFHSmZ5WW9ObUU3a2x6UG43dk90a1pTNXFDV204?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Multi-decade highs in DXY continues to push Gold lower - FOREX.com",
+            "published_at": "2025-04-15T10:31:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"US dollar index DXY forex\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYnY1eDRTTDNrSmdiVl9TUEloX1N2b3AxOGt0dUU1bUdKZ1pmWUZ3X0N2OVZUYm91LTZEOUNDYkJULWQycmR0LURGY2w5VlA3S3dFMWFEazdSU09EalN0MzlhcjZVSWJJdkxJVk90VlF6MVI4bmhKOEgxT0Rtc21BTm9adk5UeE1kYTh1aEsyYkFad00zcWpxOGFjeDVUUWQ4SFRJ0gGvAUFVX3lxTE0xX2hwY09mcGVDc1UzWmtXNEkxT2V2cktQdTBIUnF0ZTZydmF6WEpZc2N0R2R0YS1MT3lEYklYRFlNcTB4Z0dYLWo2OFpwOTNBSXc0Z2x5RWhZZHpYdHh4YXpIcVhlZXktQUFCT2FwZ1hLR1VJMzFwcXNFRFJtRE9RN04yX2RqNlhlOHUyM2FPbnZNLUU0Y0xJV3A2MWxsM3EwQUxxV3JXNzdfTktrYU0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to SCRT. 8 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771071918
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1048903.4597,
+        "volume_formatted": "1.05M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771072041,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0955,
+          "total_volume": 1048903.4597,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1048669.7069,
+        "volume_formatted": "1.05M",
+        "price_change_24h": 8.636,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771072041,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771072168,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1945801774.0,
+        "display": "1.95B"
+      },
+      "price_change_24h": 13.704,
+      "token_velocity": 0.05186289773420671,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.95B. Price 24h: +13.7%. Token velocity: 0.052. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.05186289773420671,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.052 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com"
+        ]
+      },
+      "summary": "8 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.255e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771072043,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.255e-05,
+            "mark_price": 70372.29715142
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVXVtZzljOE16by1rRWFwWVdmMlhpMTE2NmFpVXo0NjdoMEpYcGgxMXhIS2R2QWU5Z0FMNDhKX1FQeElRclFHNk80N0FqSDlLazVaOE1mRGtqbkZWYXdKUWhjbnF0Yk1lQnpwTlN5SWZhNWpHS0s5cC1LaUdWWEgwOWttSjJDdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Fade the Fed, global rates are heading higher - Reuters",
+            "published_at": "2025-12-11T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQLWVJU0lhTldlUl9YajhEMi1vdTAyclh4M3VRd0Roc05raG4tUUFoQ2dWX2VzT3U4U0NaaWJOeVAxN3ZxWUZ6N18xZ0xlSFNsbnNLelBINkRtUUJNb2VHLXNweS1CRmJBVmFzaXVaaWxwYnRUTHdfdHNZajROS0hXUlBhTEJzaktFR255Z3ZWM0U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "China's shipments to U.S. plunge 33% in August as overall exports growth hits a 6-month low - CNBC",
+            "published_at": "2025-09-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSmdzR2xFZEl0MDRjQ21aeGRUS3hJTm0xWDVQQ0RMNzBzTGEyQXVoVDVqc29lZ0JXSV9Xcm84REZ0QzFld2JUcWFRTE9WVlEwRTlCTE00Vlh5OVAwNlUwYVdMdHpXRldST3lhS0U1bHVyM2pzVHR1T2VXNVM1NzQtdFpoRlJzODM1R1Y4WTk3VF8wX0FSeHVKd0hxZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Trump\u2019s plan to cut off Russian oil funds could raise prices for everyone - CNN",
+            "published_at": "2025-07-17T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaHZ5UW0wRHU0UEY4b1ZIUTVHNWUyazQwdDh4VHR6eVg1Wl9aU1NPVnRUcGZNalhBRXVnU3h3MlhQbWpidWplYVZVSmJVT3FBQ1V2amtIQUZmOHppa21ERHlfcXNLYkJEaUFUVFBTUHNzbUdyOHN6eUFhdkFHSmZ5WW9ObUU3a2x6UG43dk90a1pTNXFDV204?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Multi-decade highs in DXY continues to push Gold lower - FOREX.com",
+            "published_at": "2025-04-15T10:31:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"US dollar index DXY forex\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYnY1eDRTTDNrSmdiVl9TUEloX1N2b3AxOGt0dUU1bUdKZ1pmWUZ3X0N2OVZUYm91LTZEOUNDYkJULWQycmR0LURGY2w5VlA3S3dFMWFEazdSU09EalN0MzlhcjZVSWJJdkxJVk90VlF6MVI4bmhKOEgxT0Rtc21BTm9adk5UeE1kYTh1aEsyYkFad00zcWpxOGFjeDVUUWQ4SFRJ0gGvAUFVX3lxTE0xX2hwY09mcGVDc1UzWmtXNEkxT2V2cktQdTBIUnF0ZTZydmF6WEpZc2N0R2R0YS1MT3lEYklYRFlNcTB4Z0dYLWo2OFpwOTNBSXc0Z2x5RWhZZHpYdHh4YXpIcVhlZXktQUFCT2FwZ1hLR1VJMzFwcXNFRFJtRE9RN04yX2RqNlhlOHUyM2FPbnZNLUU0Y0xJV3A2MWxsM3EwQUxxV3JXNzdfTktrYU0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to AAVE. 8 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771072043
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.05186289773420671,
+        "volume_24h": 100914918.416,
+        "volume_formatted": "100.91M",
+        "market_cap": 1945801774.0,
+        "market_cap_formatted": "1.95B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.052, indicating moderate turnover with normal trading activity. 24h volume represents 5.2% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771072044,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 127.85,
+          "total_volume": 100914918.416,
+          "market_cap": 1945801774.0,
+          "circulating_supply": 15191208.04539769,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1945801774.0,
+        "market_cap_formatted": "1.95B",
+        "price_change_24h": 13.704,
+        "tvl": 28018126891.0,
+        "tvl_formatted": "28.02B",
+        "tvl_change_24h": 0.9318304530274237,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $28.02B (+0.9% 24h).",
+        "timestamp": 1771072168
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771072186,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2220935730.0,
+        "display": "2.22B"
+      },
+      "price_change_24h": 5.047,
+      "token_velocity": 0.05135586880039973,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.22B. Price 24h: +5.0%. Token velocity: 0.051. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.05135586880039973,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.051 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 10,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com"
+        ]
+      },
+      "summary": "10 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.327e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771072170,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.327e-05,
+            "mark_price": 70315.32818116
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVXVtZzljOE16by1rRWFwWVdmMlhpMTE2NmFpVXo0NjdoMEpYcGgxMXhIS2R2QWU5Z0FMNDhKX1FQeElRclFHNk80N0FqSDlLazVaOE1mRGtqbkZWYXdKUWhjbnF0Yk1lQnpwTlN5SWZhNWpHS0s5cC1LaUdWWEgwOWttSjJDdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Canada, China slash EV, canola tariffs in reset of ties - Reuters",
+            "published_at": "2026-01-17T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUTlnV3kyNm5OUGFsRUpJckFhNEd1X25DaTBwM20yb0EwT05SNnRCNnctWDQyTzBfMFdxMU9lbXZ5ZHQ4X0hTa3k2R0dlVUJSOFFCdVZjRDktME9JT3hSME5La0F1VUVNTDMxemZtNHM1SzBGWkprM1hEZnVJZ3ZYbllQWEdDWEhyeUJCaXVaZHRIdlAtMEVzQUMxWnVnNFlCYndzTEl4eThLNVRiN2gyb0dR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Fade the Fed, global rates are heading higher - Reuters",
+            "published_at": "2025-12-11T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQLWVJU0lhTldlUl9YajhEMi1vdTAyclh4M3VRd0Roc05raG4tUUFoQ2dWX2VzT3U4U0NaaWJOeVAxN3ZxWUZ6N18xZ0xlSFNsbnNLelBINkRtUUJNb2VHLXNweS1CRmJBVmFzaXVaaWxwYnRUTHdfdHNZajROS0hXUlBhTEJzaktFR255Z3ZWM0U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Despite tariffs, US merchandise imports increased and exports held steady in the first half of 2025 - Peterson Institute for International Economics",
+            "published_at": "2025-10-20T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcmNsb3M0ZkMxQnhvbHZ2UFl0OTJaeE1CQmtsRXM3LXN1NlFZXzFyTW9oZ3ItUDZJWThwR3dVYTcxZTQ0NEFCY1BuQV9KUnRFZE1qNG95MkU5aHhVRWowOVVodlVOVm5tcVZlbDZ3cER4VkZKSGx0cmphZ3dQTmFRblREZGhOME5hc2VfY2N5Tlp2cFU5Nk1nRVVOVG9acFhDejVuZnF1SUlnRDM4bjZnWExpN3hzVk0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "China's shipments to U.S. plunge 33% in August as overall exports growth hits a 6-month low - CNBC",
+            "published_at": "2025-09-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSmdzR2xFZEl0MDRjQ21aeGRUS3hJTm0xWDVQQ0RMNzBzTGEyQXVoVDVqc29lZ0JXSV9Xcm84REZ0QzFld2JUcWFRTE9WVlEwRTlCTE00Vlh5OVAwNlUwYVdMdHpXRldST3lhS0U1bHVyM2pzVHR1T2VXNVM1NzQtdFpoRlJzODM1R1Y4WTk3VF8wX0FSeHVKd0hxZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Trump\u2019s plan to cut off Russian oil funds could raise prices for everyone - CNN",
+            "published_at": "2025-07-17T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaHZ5UW0wRHU0UEY4b1ZIUTVHNWUyazQwdDh4VHR6eVg1Wl9aU1NPVnRUcGZNalhBRXVnU3h3MlhQbWpidWplYVZVSmJVT3FBQ1V2amtIQUZmOHppa21ERHlfcXNLYkJEaUFUVFBTUHNzbUdyOHN6eUFhdkFHSmZ5WW9ObUU3a2x6UG43dk90a1pTNXFDV204?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Multi-decade highs in DXY continues to push Gold lower - FOREX.com",
+            "published_at": "2025-04-15T10:31:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"US dollar index DXY forex\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYnY1eDRTTDNrSmdiVl9TUEloX1N2b3AxOGt0dUU1bUdKZ1pmWUZ3X0N2OVZUYm91LTZEOUNDYkJULWQycmR0LURGY2w5VlA3S3dFMWFEazdSU09EalN0MzlhcjZVSWJJdkxJVk90VlF6MVI4bmhKOEgxT0Rtc21BTm9adk5UeE1kYTh1aEsyYkFad00zcWpxOGFjeDVUUWQ4SFRJ0gGvAUFVX3lxTE0xX2hwY09mcGVDc1UzWmtXNEkxT2V2cktQdTBIUnF0ZTZydmF6WEpZc2N0R2R0YS1MT3lEYklYRFlNcTB4Z0dYLWo2OFpwOTNBSXc0Z2x5RWhZZHpYdHh4YXpIcVhlZXktQUFCT2FwZ1hLR1VJMzFwcXNFRFJtRE9RN04yX2RqNlhlOHUyM2FPbnZNLUU0Y0xJV3A2MWxsM3EwQUxxV3JXNzdfTktrYU0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 10,
+          "high_relevance_count": 10,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 10 news items related to UNI. 10 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771072170
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.05135586880039973,
+        "volume_24h": 114058083.964,
+        "volume_formatted": "114.06M",
+        "market_cap": 2220935730.0,
+        "market_cap_formatted": "2.22B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.051, indicating moderate turnover with normal trading activity. 24h volume represents 5.1% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771072170,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.498,
+          "total_volume": 114058083.964,
+          "market_cap": 2220935730.0,
+          "circulating_supply": 633858762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2220935730.0,
+        "market_cap_formatted": "2.22B",
+        "price_change_24h": 5.047,
+        "tvl": 0,
+        "tvl_formatted": "N/A",
+        "tvl_change_24h": 0,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration.",
+        "timestamp": 1771072186
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771072333,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 380297978.0,
+        "display": "380.30M"
+      },
+      "price_change_24h": 6.667,
+      "token_velocity": 0.10815143244332474,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 380.30M. Price 24h: +6.7%. Token velocity: 0.108. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.10815143244332474,
+        "activity_level": "MODERATE",
+        "holder_behavior": "neutral"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.108 (MODERATE). Holder behavior: neutral. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 10,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com"
+        ]
+      },
+      "summary": "10 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.327e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771072186,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.327e-05,
+            "mark_price": 70315.32818116
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVXVtZzljOE16by1rRWFwWVdmMlhpMTE2NmFpVXo0NjdoMEpYcGgxMXhIS2R2QWU5Z0FMNDhKX1FQeElRclFHNk80N0FqSDlLazVaOE1mRGtqbkZWYXdKUWhjbnF0Yk1lQnpwTlN5SWZhNWpHS0s5cC1LaUdWWEgwOWttSjJDdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Canada, China slash EV, canola tariffs in reset of ties - Reuters",
+            "published_at": "2026-01-17T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUTlnV3kyNm5OUGFsRUpJckFhNEd1X25DaTBwM20yb0EwT05SNnRCNnctWDQyTzBfMFdxMU9lbXZ5ZHQ4X0hTa3k2R0dlVUJSOFFCdVZjRDktME9JT3hSME5La0F1VUVNTDMxemZtNHM1SzBGWkprM1hEZnVJZ3ZYbllQWEdDWEhyeUJCaXVaZHRIdlAtMEVzQUMxWnVnNFlCYndzTEl4eThLNVRiN2gyb0dR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Fade the Fed, global rates are heading higher - Reuters",
+            "published_at": "2025-12-11T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQLWVJU0lhTldlUl9YajhEMi1vdTAyclh4M3VRd0Roc05raG4tUUFoQ2dWX2VzT3U4U0NaaWJOeVAxN3ZxWUZ6N18xZ0xlSFNsbnNLelBINkRtUUJNb2VHLXNweS1CRmJBVmFzaXVaaWxwYnRUTHdfdHNZajROS0hXUlBhTEJzaktFR255Z3ZWM0U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Despite tariffs, US merchandise imports increased and exports held steady in the first half of 2025 - Peterson Institute for International Economics",
+            "published_at": "2025-10-20T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcmNsb3M0ZkMxQnhvbHZ2UFl0OTJaeE1CQmtsRXM3LXN1NlFZXzFyTW9oZ3ItUDZJWThwR3dVYTcxZTQ0NEFCY1BuQV9KUnRFZE1qNG95MkU5aHhVRWowOVVodlVOVm5tcVZlbDZ3cER4VkZKSGx0cmphZ3dQTmFRblREZGhOME5hc2VfY2N5Tlp2cFU5Nk1nRVVOVG9acFhDejVuZnF1SUlnRDM4bjZnWExpN3hzVk0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "China's shipments to U.S. plunge 33% in August as overall exports growth hits a 6-month low - CNBC",
+            "published_at": "2025-09-07T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSmdzR2xFZEl0MDRjQ21aeGRUS3hJTm0xWDVQQ0RMNzBzTGEyQXVoVDVqc29lZ0JXSV9Xcm84REZ0QzFld2JUcWFRTE9WVlEwRTlCTE00Vlh5OVAwNlUwYVdMdHpXRldST3lhS0U1bHVyM2pzVHR1T2VXNVM1NzQtdFpoRlJzODM1R1Y4WTk3VF8wX0FSeHVKd0hxZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Trump\u2019s plan to cut off Russian oil funds could raise prices for everyone - CNN",
+            "published_at": "2025-07-17T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaHZ5UW0wRHU0UEY4b1ZIUTVHNWUyazQwdDh4VHR6eVg1Wl9aU1NPVnRUcGZNalhBRXVnU3h3MlhQbWpidWplYVZVSmJVT3FBQ1V2amtIQUZmOHppa21ERHlfcXNLYkJEaUFUVFBTUHNzbUdyOHN6eUFhdkFHSmZ5WW9ObUU3a2x6UG43dk90a1pTNXFDV204?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Multi-decade highs in DXY continues to push Gold lower - FOREX.com",
+            "published_at": "2025-04-15T10:31:10+00:00",
+            "time_ago": "Recently",
+            "source": "\"US dollar index DXY forex\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYnY1eDRTTDNrSmdiVl9TUEloX1N2b3AxOGt0dUU1bUdKZ1pmWUZ3X0N2OVZUYm91LTZEOUNDYkJULWQycmR0LURGY2w5VlA3S3dFMWFEazdSU09EalN0MzlhcjZVSWJJdkxJVk90VlF6MVI4bmhKOEgxT0Rtc21BTm9adk5UeE1kYTh1aEsyYkFad00zcWpxOGFjeDVUUWQ4SFRJ0gGvAUFVX3lxTE0xX2hwY09mcGVDc1UzWmtXNEkxT2V2cktQdTBIUnF0ZTZydmF6WEpZc2N0R2R0YS1MT3lEYklYRFlNcTB4Z0dYLWo2OFpwOTNBSXc0Z2x5RWhZZHpYdHh4YXpIcVhlZXktQUFCT2FwZ1hLR1VJMzFwcXNFRFJtRE9RN04yX2RqNlhlOHUyM2FPbnZNLUU0Y0xJV3A2MWxsM3EwQUxxV3JXNzdfTktrYU0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Jerome Powell Calls for Appropriate DeFi Regulation Following Reports of Significant Structural Issues - Coinspeaker",
+            "published_at": "2022-09-28T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"defi regulation TVL\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QdIBZkFVX3lxTE1Xb01wQ3I4SmlXX00tRUNTVVdYQThmWjRyZnNNcFlzTWhqZXltendtTkdwbVd2UTliTXlfRHlSemdDeGNhME5BaXZRX1JBWVMtY2NyMXVaZndYU1hTaGVzQUFkQm91QQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 10,
+          "high_relevance_count": 10,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 10 news items related to CRV. 10 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771072186
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.10815143244332474,
+        "volume_24h": 41129771.076,
+        "volume_formatted": "41.13M",
+        "market_cap": 380297978.0,
+        "market_cap_formatted": "380.30M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.108, indicating moderate turnover with normal trading activity. 24h volume represents 10.8% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771072307,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.257,
+          "total_volume": 41129771.076,
+          "market_cap": 380297978.0,
+          "circulating_supply": 1476493925.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 380297978.0,
+        "market_cap_formatted": "380.30M",
+        "price_change_24h": 6.667,
+        "tvl": 1912322896.0,
+        "tvl_formatted": "1.91B",
+        "tvl_change_24h": 0.588608792204318,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.91B (+0.6% 24h).",
+        "timestamp": 1771072333
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771072345,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 301883517.0,
+        "display": "301.88M"
+      },
+      "price_change_24h": 5.714,
+      "token_velocity": 0.04400999750310978,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 301.88M. Price 24h: +5.7%. Token velocity: 0.044. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04400999750310978,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.044 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com"
+        ]
+      },
+      "summary": "7 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.335e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771072343,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.335e-05,
+            "mark_price": 70244.52197151
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times",
+            "published_at": "2025-10-23T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"Russia sanctions oil price\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVXVtZzljOE16by1rRWFwWVdmMlhpMTE2NmFpVXo0NjdoMEpYcGgxMXhIS2R2QWU5Z0FMNDhKX1FQeElRclFHNk80N0FqSDlLazVaOE1mRGtqbkZWYXdKUWhjbnF0Yk1lQnpwTlN5SWZhNWpHS0s5cC1LaUdWWEgwOWttSjJDdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Key Takeaways From Fed Decision to Hold Rates Steady - Bloomberg.com",
+            "published_at": "2026-01-28T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"federal reserve interest rate decision\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTzJfVXhoYXQ2bUxyMUxCcHUzSXNldXF0UlFEU3lQM1NHVkRNYTc2aG1aT3BKN21tNTZOZEx6NjhOemNmS1A1em9MSnREMEVaaEF1c1QwWS12eUplUlFVQWpnX18zMkU3d0paWFU0OEdESkJDUjBQNGh1MEZtZjZOZlR6cmZ4YTBESHgxNVRRazZ1SGVna0JTUGhaX0xOSUlNang0YWZn?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Canada, China slash EV, canola tariffs in reset of ties - Reuters",
+            "published_at": "2026-01-17T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUTlnV3kyNm5OUGFsRUpJckFhNEd1X25DaTBwM20yb0EwT05SNnRCNnctWDQyTzBfMFdxMU9lbXZ5ZHQ4X0hTa3k2R0dlVUJSOFFCdVZjRDktME9JT3hSME5La0F1VUVNTDMxemZtNHM1SzBGWkprM1hEZnVJZ3ZYbllQWEdDWEhyeUJCaXVaZHRIdlAtMEVzQUMxWnVnNFlCYndzTEl4eThLNVRiN2gyb0dR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Fade the Fed, global rates are heading higher - Reuters",
+            "published_at": "2025-12-11T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQLWVJU0lhTldlUl9YajhEMi1vdTAyclh4M3VRd0Roc05raG4tUUFoQ2dWX2VzT3U4U0NaaWJOeVAxN3ZxWUZ6N18xZ0xlSFNsbnNLelBINkRtUUJNb2VHLXNweS1CRmJBVmFzaXVaaWxwYnRUTHdfdHNZajROS0hXUlBhTEJzaktFR255Z3ZWM0U?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Big manufacturing economies struggle as US tariffs hit order books - Reuters",
+            "published_at": "2025-11-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYkM0ZDBXcVhyZS1IRzBCNUd1U0ZmMUxwNXdkR3U1VE5KS010THJPWDVLZHl4V0l1QUVWbnRUVGlLbElWaVB5MTQ2OUc3WEJhRVpVUDI3TTVaa0UtbFNWTC1lbTh3T0tpSm56ME1ZZVVzdThkZS05YXdUMlFtelJWQlprRzFySk5fR242ejk5ejRkektDb0xlZF82dlZKMG85dExaV2t5ZTdBOGZhYUx4VmFUUQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Despite tariffs, US merchandise imports increased and exports held steady in the first half of 2025 - Peterson Institute for International Economics",
+            "published_at": "2025-10-20T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"China economy trade tariffs\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcmNsb3M0ZkMxQnhvbHZ2UFl0OTJaeE1CQmtsRXM3LXN1NlFZXzFyTW9oZ3ItUDZJWThwR3dVYTcxZTQ0NEFCY1BuQV9KUnRFZE1qNG95MkU5aHhVRWowOVVodlVOVm5tcVZlbDZ3cER4VkZKSGx0cmphZ3dQTmFRblREZGhOME5hc2VfY2N5Tlp2cFU5Nk1nRVVOVG9acFhDejVuZnF1SUlnRDM4bjZnWExpN3hzVk0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "DeFi Yield Trackers: How to Find the Best Returns Without Getting Rekt - CCN.com",
+            "published_at": "2025-10-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uS2ppN1h3NEJZanZlSmVGanlmc1lBN0RVRUJWQV9ETEI3ZHotelJsb0o1ZkVPZm9iM0ppNnpTRTdiMjZoWDJ4MmNZUjVqR2hTWlkxUmxHUVVNY0QzdGI5d2NxTmhXcWREdTFjSFl0a0gwNjBFT1BLdThOcw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to LDO. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Trump\u2019s Sanctions on Russian Oil Sector Ratchet Up Economic War - The New York Times\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771072343
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04400999750310978,
+        "volume_24h": 13285892.8294,
+        "volume_formatted": "13.29M",
+        "market_cap": 301883517.0,
+        "market_cap_formatted": "301.88M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.044, indicating very low turnover with minimal selling. 24h volume represents 4.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771072343,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3551,
+          "total_volume": 13285892.8294,
+          "market_cap": 301883517.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 301883517.0,
+        "market_cap_formatted": "301.88M",
+        "price_change_24h": 5.714,
+        "tvl": 19845023908.0,
+        "tvl_formatted": "19.85B",
+        "tvl_change_24h": 1.3997224999257967,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $19.85B (+1.4% 24h).",
+        "timestamp": 1771072345
+      }
+    }
+  }
+}

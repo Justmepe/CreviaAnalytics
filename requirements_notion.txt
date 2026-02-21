@@ -1,0 +1,13 @@
+# Notion Integration Dependencies
+# Add these to your requirements.txt file
+
+# Official Notion Python SDK
+notion-client>=2.0.0
+
+# Already in your project (but listed for reference):
+# - python-dotenv (for .env configuration)
+# - requests (for HTTP)
+# - aiohttp (for async operations, optional)
+
+# These are all you need for full Notion integration!
+# The notion-client handles all Notion API interactions.

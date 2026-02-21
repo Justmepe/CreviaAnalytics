@@ -1,0 +1,4436 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771085620,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 69424.7,
+        "display": "$69,684.73",
+        "price_change_24h": 0.489
+      },
+      "volume": {
+        "value": 9190295152.62,
+        "display": "9.19B",
+        "velocity": 0.006598818003956244
+      },
+      "derivatives": {
+        "funding_rate": -0.002903,
+        "funding_display": "-0.0029%",
+        "open_interest": 5589225810.875683,
+        "oi_display": "5.59B"
+      },
+      "summary": "BTC mark price at $69,684.73. Funding rate: -0.0029%. Open Interest: 5.59B. Volume velocity: 0.007."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 8,
+      "high_relevance_count": 8,
+      "dominant_theme": "general",
+      "overall_sentiment": "neutral",
+      "top_events": [
+        {
+          "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "XRP News Today: XRP Slides Ahead of Crucial SEC Settlement Vote; BTC at $108k - FXEmpire",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "neutral"
+      },
+      "summary": "Found 8 news items related to BTC. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.903e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771085615,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.903e-05,
+            "mark_price": 69684.79182609
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+            "published_at": "2026-02-13T19:41:41+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM0ZSdkpzaUxzSzlPdEwxSDhGeFozSHFsNFduam1kRHNIM3ZkRkptU1R5UDE0VzlkREI4ekFBR0FXNm1uMkY3bnlISmJxaUNkU21JeV92TTFmR0tXM0VCMVpnOUdIUXpmT0EyWi1TaW5sTmxhV2xudk1OSDVud0J3VWh5QUt3dUFpbzNpaTlOOHZEdGY3NllZcFVwRHhmMExJLU1fNFZfZi1Kc0JheFlHZllnLUtpQQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "XRP News Today: XRP Slides Ahead of Crucial SEC Settlement Vote; BTC at $108k - FXEmpire",
+            "published_at": "2025-05-29T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"bitcoin SEC lawsuit\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZEJGNUFCeEZFZi1VdW5zUUdDVERhQkRjUjFwYmVxSmRmQUxCLWFOd1hTWXVVWXFKWHF5Vmx2aVNWQUc1TWVyWmwyMGJyTW5tMWFQc255b0Y5UXZNaXRVWEJqMjFYbVpLRVhEZzhlTmxDS2RzMkZEeVVFbEJuZ0dBWkQwajZPenZld0JLLW5JM2VZZ1RKZm5xZEZVR0I5U2h5eU1RdnFmZm5OVHNTQ1JIRWp5bXlEeGc4c1lJczFWUVZyWFU?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Brazil\u2019s Ambassador to India Addresses BRICS Currency Speculation - Bitcoin.com News",
+            "published_at": "2025-07-06T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"BRICS currency dollar\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQc1dxb2gydFFPUkJoUm5iZ0VhMU0tcDctWkxHS3lDalRnOGxsbDZyNFJlR2xSQXNkTU9wVS1kODFhalh3U2xzQ21ZUUctXzRUc1RzbmljQzRFM2Jra0lMX3pUektpSy1TWmxkUlNjMktEV1dyUWFSNXBEc0ZGMGtzMTJmZGRMMm5ReHhvYWhhc3N5NDIy?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to BTC. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771085615
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": -2.903e-05,
+        "funding_rate_percent": -0.002903,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 69684.72769565,
+        "open_interest_usd": 5589225810.875683,
+        "open_interest_base": 80207.328,
+        "oi_formatted": "5.59B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at -0.0029%, indicating balanced positioning between longs and shorts. Open interest stands at 5.59B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771085618,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -2.903e-05,
+            "mark_price": 69684.72769565
+          },
+          "open_interest": {
+            "open_interest_usd": 5589225810.875683,
+            "open_interest": 80207.328
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006598818003956244,
+        "volume_24h": 9190295152.62,
+        "volume_formatted": "9.19B",
+        "market_cap": 1392718384885.0,
+        "market_cap_formatted": "1392.72B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771085619,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 69675.1,
+          "total_volume": 9190295152.62,
+          "market_cap": 1392718384885.0,
+          "circulating_supply": 19989259.0,
+          "transaction_count_24h": 584212,
+          "hashrate": 1101190237252.6643
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771085623,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 2071.68,
+        "display": "$2,081.43",
+        "price_change_24h": 0.768
+      },
+      "volume": {
+        "value": 6224395185.23,
+        "display": "6.22B",
+        "velocity": 0.02477393671441702
+      },
+      "derivatives": {
+        "funding_rate": -0.002128,
+        "funding_display": "-0.0021%",
+        "open_interest": 3720938247.000941,
+        "oi_display": "3.72B"
+      },
+      "summary": "ETH mark price at $2,081.43. Funding rate: -0.0021%. Open Interest: 3.72B. Volume velocity: 0.025."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 11,
+      "high_relevance_count": 11,
+      "dominant_theme": "general",
+      "overall_sentiment": "positive",
+      "top_events": [
+        {
+          "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Ethereum Fusaka Upgrade 2025 Guide & Impact - Phemex",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        }
+      ],
+      "context": {
+        "fear_greed": 9,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "divergent"
+      },
+      "summary": "Found 11 news items related to ETH. 11 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.128e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771085621,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.128e-05,
+            "mark_price": 2081.54107752
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Trump\u2019s Truth Social Files For Bitcoin, Ethereum, Cronos Crypto ETFs Amid Institutional Outflows - CoinGape",
+            "published_at": "2026-02-13T19:41:41+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM0ZSdkpzaUxzSzlPdEwxSDhGeFozSHFsNFduam1kRHNIM3ZkRkptU1R5UDE0VzlkREI4ekFBR0FXNm1uMkY3bnlISmJxaUNkU21JeV92TTFmR0tXM0VCMVpnOUdIUXpmT0EyWi1TaW5sTmxhV2xudk1OSDVud0J3VWh5QUt3dUFpbzNpaTlOOHZEdGY3NllZcFVwRHhmMExJLU1fNFZfZi1Kc0JheFlHZllnLUtpQQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Fusaka Upgrade 2025 Guide & Impact - Phemex",
+            "published_at": "2025-11-14T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1POWNVZjJDcWxhYl9Hd29pUDRXd2pROVRubURNNXBOd1lsYUxIWllaQzJrYVN0RGxzb0I2X3FxVVB1aHZ5a3RaZlJnVDhWU0tPV3VwVDZoVERTZTNtMU5IaUJEN3drZVZVRmNLUlQ4RnI?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Foundation co-director warns 'Fusaka' upgrade risks slipping, urges teams to dial back \u2018Glamsterdam\u2019 talk - The Block",
+            "published_at": "2025-08-08T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQcUlDMVNEMnE0dG5zVDBndWJpTjlHMDVIWklxbFJRM2dTQm9BSEp5T2JZYThSaWstOWszZkttX0pONXlKUU9JRWlsUlZTRmltV3Z6N0ZCempDekozX1F0elUzRU9YRG0zeFVQdXpGUkUxVVdFTmNJYzZRWkswQnZ3V2hUM3BtNm9pUEs3WUZ2c045UjZtTFFKMjEteUJuaGJHTGpaUDN1UjB6bTJaTzRRbFYzVGRQRGNVbS0tTmZZRnNWVUVPU3hicjYzTFhXaDFQRDhEZmRVVGJ1cWNIRXc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum Foundation update: Tomasz shares latest network progress - MSN",
+            "published_at": "2026-02-14T14:01:14+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOZUxDTjM3eEE2Y2pOZ3VvZmxxa1RDN1NQUVJKTy1LT0NSR29xcndxM1hFelZXVzZqMjFZXzFicGFVOVh6bzdlNVQ0YlNKa0ZibHBpQWRycC13TWFQVUktbktJX2lxYzhMVjVqQXpqdFhfNmF3a2E2LXdmcGUtQThicF9sS3gtVlhRSTUzWFJhVnE1NmpYNlNJQ3MtRERIZnBGWHJFdmtBQ05BYURHczU4VzFXcGwwZ2w3d3VuSW45ZWZNam5zU3Zvd0dTX0E1OHQwMXg2M1BzMA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical",
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Prediction: Ethereum Will Hit $4,000 in 2026 - The Motley Fool",
+            "published_at": "2026-01-09T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQazJEMHhGdDlQelFrU3Y5RTZPVHlmY1hMVDNoUFFDYll0ZDIyUzJzOWJ2T00wZ2tjdGRxZkUwM3dPWWRTVWdtajVBLXVOcXVqV3ZGWXVfMlNjaGx5TV9sRTlLelpOazJvcDIzWWMtZG9tc1FLVHJXMWVDVXMtZWlDcElnMV94WWVxalFlQg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Time to Rethink Central Bank Money (Part 1) - World Bank Blogs",
+            "published_at": "2026-01-08T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQNUlxV0JEYV9JSVpBZ1dHM1ZlOG9BS0dmR1ZsblZHNFMtX3hkUXlsdlFpSDdfOFFtSVhtT3V3T1FQSjBUY0F3Y0NqelM3YndIcWZ1c3hFNVdJQVRNQlJlWVlUNlRpQjZLWDhNM1kwMFo2MTh6d2xHcnBsdEZDSWJCUGMydWtDdWxUS3JWTkJlSmxuMGEy?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 11,
+          "high_relevance_count": 11,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 10
+          }
+        },
+        "interpretation": "Found 11 news items related to ETH. 11 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771085621
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -2.128e-05,
+        "funding_rate_percent": -0.002128,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 2081.42944961,
+        "open_interest_usd": 3720938247.000941,
+        "open_interest_base": 1787684.059,
+        "oi_formatted": "3.72B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0021%, indicating balanced positioning between longs and shorts. Open interest stands at 3.72B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771085622,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -2.128e-05,
+            "mark_price": 2081.42944961
+          },
+          "open_interest": {
+            "open_interest_usd": 3720938247.000941,
+            "open_interest": 1787684.059
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.02477393671441702,
+        "volume_24h": 6224395185.23,
+        "volume_formatted": "6.22B",
+        "market_cap": 251247722838.0,
+        "market_cap_formatted": "251.25B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.025, indicating very low turnover with minimal selling. 24h volume represents 2.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771085623,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 2081.51,
+          "total_volume": 6224395185.23,
+          "market_cap": 251247722838.0,
+          "circulating_supply": 120692467.6142904,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771085623,
+    "snapshot": {
+      "price": {
+        "mark_price": 87.26,
+        "price_change_24h": 3.943
+      }
+    }
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771085623,
+    "snapshot": {
+      "price": {
+        "mark_price": 631.19,
+        "price_change_24h": 2.539
+      }
+    }
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771085747,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.025569561157790688,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 8.17,
+      "volume": {
+        "value": 447138756.5659,
+        "display": "447.14M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.026 (Low (Stable Holding)). Price 24h: +8.2%. Volume: 447.14M. Speculation: moderate.",
+      "price": {
+        "mark_price": 0.10309,
+        "price_change_24h": 7.162
+      }
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.025569561157790688,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to DOGE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.903e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771085623,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.903e-05,
+            "mark_price": 69684.79182609
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQc0piVGFhczNKUFJDSmxzTHduN1g2S1dUWFZUZDg3QzNvYUIwZFJUZHY0Y0F6b3lRTnhTQ0EtRlRpMy1pejNpWk1YRzRISDdmamM0VXZWQml5TWJpQkpkNHl3NGV5U0RERF9FNmctTzl5ZS04clNXM0ttSkRUcS1DVzMtdUQwZkhFRy1uNUxKS0NZbjNzWkZ1aWZFalJscTJEYnh2aWpoTkozdXYxWGdUYmNqS2NmM2ZXVzkyUTRoZGU3SXZjSG8zY1FZQk1CRkJZNlktb1prYjd4ZnZNcjJUanpmRWhtc00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNc3Z4SU50X2lzWkF0Q21zMk1pcDZvQXR4SzI5cEp2VzJCYjloZGh4MWk2VTUxUHg3ZGNuRUhSTU1LbGVpdmE5UU1WbzRVeUZ0dGR3eWVhV1I2OTNFZU5GaXFuM1F2eDFacGIyeU8zMldWak44QlZqLVVZRDZsV1V5MFlhSEdEMms0OVVyLWxRUy1iYVJPZzlGSWMwRkJCN3lCYTlHSzVIT3BYcnU3YWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to DOGE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771085623
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.025568673759775357,
+        "volume_24h": 447138756.5659,
+        "volume_formatted": "447.14M",
+        "market_cap": 17487757119.0,
+        "market_cap_formatted": "17.49B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.026, indicating very low turnover with minimal selling. 24h volume represents 2.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771085626,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10361,
+          "total_volume": 447138756.5659,
+          "market_cap": 17487757119.0,
+          "circulating_supply": 168726213126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.025569561157790688,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 8.17,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.026. Risk level: LOW. ",
+        "timestamp": 1771085747
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771085763,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.001893583762829434,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 5.547,
+      "volume": {
+        "value": 7432986.02650579,
+        "display": "7.43M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.002 (Low (Stable Holding)). Price 24h: +5.5%. Volume: 7.43M. Speculation: moderate.",
+      "price": {
+        "mark_price": 6.65e-06,
+        "price_change_24h": 5.36182
+      }
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.001893583762829434,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to SHIB. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.876e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771085757,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.876e-05,
+            "mark_price": 69598.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQc0piVGFhczNKUFJDSmxzTHduN1g2S1dUWFZUZDg3QzNvYUIwZFJUZHY0Y0F6b3lRTnhTQ0EtRlRpMy1pejNpWk1YRzRISDdmamM0VXZWQml5TWJpQkpkNHl3NGV5U0RERF9FNmctTzl5ZS04clNXM0ttSkRUcS1DVzMtdUQwZkhFRy1uNUxKS0NZbjNzWkZ1aWZFalJscTJEYnh2aWpoTkozdXYxWGdUYmNqS2NmM2ZXVzkyUTRoZGU3SXZjSG8zY1FZQk1CRkJZNlktb1prYjd4ZnZNcjJUanpmRWhtc00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Forget Dogecoin and Shiba Inu, crypto gurus are backing LBRETT as the next 100x meme coin - Latest news from Azerbaijan",
+            "published_at": "2025-08-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNc3Z4SU50X2lzWkF0Q21zMk1pcDZvQXR4SzI5cEp2VzJCYjloZGh4MWk2VTUxUHg3ZGNuRUhSTU1LbGVpdmE5UU1WbzRVeUZ0dGR3eWVhV1I2OTNFZU5GaXFuM1F2eDFacGIyeU8zMldWak44QlZqLVVZRDZsV1V5MFlhSEdEMms0OVVyLWxRUy1iYVJPZzlGSWMwRkJCN3lCYTlHSzVIT3BYcnU3YWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to SHIB. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771085757
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.001893694091963543,
+        "volume_24h": 7432986.02650579,
+        "volume_formatted": "7.43M",
+        "market_cap": 3925125002.0,
+        "market_cap_formatted": "3.93B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.002, indicating very low turnover with minimal selling. 24h volume represents 0.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771085760,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.65e-06,
+          "total_volume": 7432986.02650579,
+          "market_cap": 3925125002.0,
+          "circulating_supply": 589243880917864.1,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.001893583762829434,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 5.547,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.002. Risk level: LOW. ",
+        "timestamp": 1771085763
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771085887,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.023093472846619587,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 12.169,
+      "volume": {
+        "value": 40711833.20549545,
+        "display": "40.71M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.023 (Low (Stable Holding)). Price 24h: +12.2%. Volume: 40.71M. Speculation: moderate.",
+      "price": {
+        "mark_price": 4.25e-06,
+        "price_change_24h": 12.3313
+      }
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.023093472846619587,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to PEPE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.876e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771085763,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.876e-05,
+            "mark_price": 69598.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Meme Coin Outlook: Dogecoin and PEPE Face Challenges While Newcomer Seeks to Mirror Shiba Inu\u2019s 2021 Rise - Tribune India",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQc0piVGFhczNKUFJDSmxzTHduN1g2S1dUWFZUZDg3QzNvYUIwZFJUZHY0Y0F6b3lRTnhTQ0EtRlRpMy1pejNpWk1YRzRISDdmamM0VXZWQml5TWJpQkpkNHl3NGV5U0RERF9FNmctTzl5ZS04clNXM0ttSkRUcS1DVzMtdUQwZkhFRy1uNUxKS0NZbjNzWkZ1aWZFalJscTJEYnh2aWpoTkozdXYxWGdUYmNqS2NmM2ZXVzkyUTRoZGU3SXZjSG8zY1FZQk1CRkJZNlktb1prYjd4ZnZNcjJUanpmRWhtc00?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+            "published_at": "2024-04-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSWZBdU04SGRReHp6LTdYQTlPV2RSMWNwUm1zZ2FXdmprYkx5WF9SZnZaOWdhSUVYVUZ3WC1Na2FnektUTGlTeWtxdmdLRnByMEFxYXZQNHQwRGIxMWFqaWFUcjVmWWFVZGxzYVVjUGlGeVhfN0tacGhYMk95WUR5Vnp0cUhDMEV2ckx2Tmw5TFg1STdtZmZGNnZSdVBmaFRsUnNCMFctYzRFWlo0eWF6Z1MyQWdHckEyMGhUeTc0TlN0V2V1OFRxMDVoZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to PEPE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771085763
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.023092563882111634,
+        "volume_24h": 40711833.20549545,
+        "volume_formatted": "40.71M",
+        "market_cap": 1762984544.0,
+        "market_cap_formatted": "1.76B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.023, indicating very low turnover with minimal selling. 24h volume represents 2.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771085764,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.23e-06,
+          "total_volume": 40711833.20549545,
+          "market_cap": 1762984544.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.023093472846619587,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 12.169,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.023. Risk level: LOW. ",
+        "timestamp": 1771085887
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771085890,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.010007778446506342,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 5.907,
+      "volume": {
+        "value": 3142051.16402098,
+        "display": "3.14M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.010 (Low (Stable Holding)). Price 24h: +5.9%. Volume: 3.14M. Speculation: moderate.",
+      "price": {
+        "mark_price": 3.26e-05,
+        "price_change_24h": 6.08826
+      }
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.010007778446506342,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to FLOKI. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.924e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771085888,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.924e-05,
+            "mark_price": 69491.79896377
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "$MEDA presale sees large influx of Crypto investors; Can this new Meme Token outrun FLOKI and PEPE - Cyprus Mail",
+            "published_at": "2024-04-10T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"pepe floki crypto meme token\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSWZBdU04SGRReHp6LTdYQTlPV2RSMWNwUm1zZ2FXdmprYkx5WF9SZnZaOWdhSUVYVUZ3WC1Na2FnektUTGlTeWtxdmdLRnByMEFxYXZQNHQwRGIxMWFqaWFUcjVmWWFVZGxzYVVjUGlGeVhfN0tacGhYMk95WUR5Vnp0cUhDMEV2ckx2Tmw5TFg1STdtZmZGNnZSdVBmaFRsUnNCMFctYzRFWlo0eWF6Z1MyQWdHckEyMGhUeTc0TlN0V2V1OFRxMDVoZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to FLOKI. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771085888
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.010007465390351217,
+        "volume_24h": 3142051.16402098,
+        "volume_formatted": "3.14M",
+        "market_cap": 313970725.0,
+        "market_cap_formatted": "313.97M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.010, indicating very low turnover with minimal selling. 24h volume represents 1.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771085889,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.264e-05,
+          "total_volume": 3142051.16402098,
+          "market_cap": 313970725.0,
+          "circulating_supply": 9655016857029.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.010007778446506342,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 5.907,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.010. Risk level: LOW. ",
+        "timestamp": 1771085890
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086013,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 43442819.92,
+        "display": "43.44M",
+        "velocity": 0.006650956516520687,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 1.893,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 43.44M (velocity: 0.007). Price 24h: +1.9%. Normal activity.",
+      "price": {
+        "mark_price": 352.87,
+        "price_change_24h": 0.57
+      }
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "8 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.924e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771085890,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.924e-05,
+            "mark_price": 69491.79896377
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to XMR. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771085890
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006650956516520687,
+        "volume_24h": 43442819.92,
+        "volume_formatted": "43.44M",
+        "market_cap": 6531815358.0,
+        "market_cap_formatted": "6.53B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771086012,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 354.46,
+          "total_volume": 43442819.92,
+          "market_cap": 6531815358.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 43429499.58,
+        "volume_formatted": "43.43M",
+        "price_change_24h": 1.893,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771086013,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086136,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 699081006.42,
+        "display": "699.08M",
+        "velocity": 0.14856660851734316,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 12.731,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 699.08M (velocity: 0.149). Price 24h: +12.7%. Normal activity.",
+      "price": {
+        "mark_price": 283.17,
+        "price_change_24h": 12.454
+      }
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "8 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.918e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771086014,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.918e-05,
+            "mark_price": 69393.70541304
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Crypto investors who don\u2019t fill out this new tax form the right way could overpay on their taxes",
+            "published_at": "2026-02-14T13:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/crypto-investors-who-dont-fill-out-this-new-tax-form-the-right-way-could-overpay-on-their-taxes-4ccc7727?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-01267465",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to ZEC. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771086014
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.14856660851734316,
+        "volume_24h": 699081006.42,
+        "volume_formatted": "699.08M",
+        "market_cap": 4705505587.0,
+        "market_cap_formatted": "4.71B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.149, indicating moderate turnover with normal trading activity. 24h volume represents 14.9% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771086015,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 284.59,
+          "total_volume": 699081006.42,
+          "market_cap": 4705505587.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 699081006.42,
+        "volume_formatted": "699.08M",
+        "price_change_24h": 12.731,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771086136,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086146,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 103522602.96,
+        "display": "103.52M",
+        "velocity": 0.21379667619169004,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 6.273,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 103.52M (velocity: 0.214). Price 24h: +6.3%. Normal activity.",
+      "price": {
+        "mark_price": 38.31,
+        "price_change_24h": 6.446
+      }
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "moderate_distribution",
+        "interpretation": "Profit-taking or delisting concerns"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: moderate distribution. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 7,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "7 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.992e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771086145,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.992e-05,
+            "mark_price": 69345.89425787
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to DASH. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771086145
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "moderate_activity",
+        "flow_magnitude": "medium",
+        "holder_behavior": "moderate_distribution",
+        "network_activity": "high",
+        "velocity": 0.21379667619169004,
+        "volume_24h": 103522602.96,
+        "volume_formatted": "103.52M",
+        "market_cap": 484210535.0,
+        "market_cap_formatted": "484.21M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.214, indicating elevated turnover with active trading. 24h volume represents 21.4% of market cap. Some distribution is occurring.",
+        "timestamp": 1771086146,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 38.29,
+          "total_volume": 103522602.96,
+          "market_cap": 484210535.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 103522602.96,
+        "volume_formatted": "103.52M",
+        "price_change_24h": 6.273,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771086146,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086270,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1023023.7211,
+        "display": "1.02M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 3.85,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.02M (velocity: 0.000). Price 24h: +3.9%. Normal activity.",
+      "price": {
+        "mark_price": 0.0949,
+        "price_change_24h": 4.286
+      }
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 7,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "7 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.992e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771086146,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.992e-05,
+            "mark_price": 69345.89425787
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to SCRT. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771086146
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1023023.7211,
+        "volume_formatted": "1.02M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771086269,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0943,
+          "total_volume": 1023023.7211,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1026146.957,
+        "volume_formatted": "1.03M",
+        "price_change_24h": 3.85,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771086270,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086397,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1955365458.0,
+        "display": "1.96B"
+      },
+      "price_change_24h": 9.019,
+      "token_velocity": 0.04704951440080108,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.96B. Price 24h: +9.0%. Token velocity: 0.047. Protocol size: Medium (Established).",
+      "price": {
+        "mark_price": 128.46,
+        "price_change_24h": 8.524
+      }
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04704951440080108,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.047 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "8 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.974e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771086271,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.974e-05,
+            "mark_price": 69333.8
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "A Deep Dive into DeFi Newcomer Fluid Disrupting Aave and Curve - Bitget",
+            "published_at": "2024-11-22T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ZOU5PYl9ydkxjYWY1cnk1OWltUk1GbkJUR0tFMFZOOEpUc0prRHFpdWJLdkx2TFZ0T2g3R0t0RXZVeFk0WlJoN1ZRdGVUc1o1ZVU2TG9FV3hMYVZqeGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to AAVE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771086271
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04704951440080108,
+        "volume_24h": 91998995.275,
+        "volume_formatted": "92.00M",
+        "market_cap": 1955365458.0,
+        "market_cap_formatted": "1.96B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.047, indicating very low turnover with minimal selling. 24h volume represents 4.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771086272,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 128.25,
+          "total_volume": 91998995.275,
+          "market_cap": 1955365458.0,
+          "circulating_supply": 15191208.04539769,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1955365458.0,
+        "market_cap_formatted": "1.96B",
+        "price_change_24h": 9.019,
+        "tvl": 27943620913.0,
+        "tvl_formatted": "27.94B",
+        "tvl_change_24h": 0.6634318991737549,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.94B (+0.7% 24h).",
+        "timestamp": 1771086397
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086400,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2260840911.0,
+        "display": "2.26B"
+      },
+      "price_change_24h": 3.457,
+      "token_velocity": 0.04285441317679694,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.26B. Price 24h: +3.5%. Token velocity: 0.043. Protocol size: Medium (Established).",
+      "price": {
+        "mark_price": 3.561,
+        "price_change_24h": 3.068
+      }
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04285441317679694,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.043 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.942e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771086399,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.942e-05,
+            "mark_price": 69438.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to UNI. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771086399
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04285441317679694,
+        "volume_24h": 96887010.527,
+        "volume_formatted": "96.89M",
+        "market_cap": 2260840911.0,
+        "market_cap_formatted": "2.26B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.043, indicating very low turnover with minimal selling. 24h volume represents 4.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771086399,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.561,
+          "total_volume": 96887010.527,
+          "market_cap": 2260840911.0,
+          "circulating_supply": 633854762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2260840911.0,
+        "market_cap_formatted": "2.26B",
+        "price_change_24h": 3.457,
+        "tvl": 3161986505.0,
+        "tvl_formatted": "3.16B",
+        "tvl_change_24h": 0.7256968938645002,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.16B (+0.7% 24h).",
+        "timestamp": 1771086400
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086472,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 387557692.0,
+        "display": "387.56M"
+      },
+      "price_change_24h": 5.2,
+      "token_velocity": 0.10820684406387683,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 387.56M. Price 24h: +5.2%. Token velocity: 0.108. Protocol size: Small (Emerging).",
+      "price": {
+        "mark_price": 0.262,
+        "price_change_24h": 5.221
+      }
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.10820684406387683,
+        "activity_level": "MODERATE",
+        "holder_behavior": "neutral"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Normal protocol token dynamics"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.108 (MODERATE). Holder behavior: neutral. Normal protocol token dynamics"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 10,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 2,
+        "items": [
+          "US Curve outlook: Why US Treasury yields are surging before the Fed - marketpulse.com",
+          "Fed rate-cut optimism has bond investors focusing on duration, steeper yield curve - Reuters"
+        ]
+      },
+      "summary": "10 events: 0 governance, 0 security, 2 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.942e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771086400,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.942e-05,
+            "mark_price": 69438.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "US Curve outlook: Why US Treasury yields are surging before the Fed - marketpulse.com",
+            "published_at": "2025-12-09T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"US treasury yields\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYVcyS1BDc0F6ZFNGNDlNUVg1WTdzVVpnLV9odGhyQVpQQjktYUE2M3JCWF8zLW80WFJoTnA2QUc5VG8wcjc3VGN1N0Rmc05PeDJ1RGNYRmZrRG5vNFkzN3VNeFhtYTZKdzJEY0EtY1VHN1h5Qld2Q2xtLWtIX05lM3hndHNhNy1mM3dFUDBNLU00VlpOb0U0MEhnb3NzSXd5aWJvbFh3?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Fed rate-cut optimism has bond investors focusing on duration, steeper yield curve - Reuters",
+            "published_at": "2025-09-16T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"fed rate cut OR rate hike\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPY2NVa1loZ2dxaWFCRHRPT3NsVmJKZDAxS01aVG9RUmlQNi0zM3FuemlUUHNTR0NUc01rSTliNzVDbmpCMGROMl9McWN6VHNXdkJsUnhDUkx3MTFDRHA1dEhIWko5ZTJvU3VWblNoT3lvS04wUUthYnpZaEdOQ2ZhaUFkeFppWkgyMWRzcC1FRlRUZ2ZnNUYxRnJNTkxOdGtKX2NxR2YzQVpMNlhoNDQ4OGxNaDBPQV9fZ2tVWVJPQ0I?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "A Deep Dive into DeFi Newcomer Fluid Disrupting Aave and Curve - Bitget",
+            "published_at": "2024-11-22T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ZOU5PYl9ydkxjYWY1cnk1OWltUk1GbkJUR0tFMFZOOEpUc0prRHFpdWJLdkx2TFZ0T2g3R0t0RXZVeFk0WlJoN1ZRdGVUc1o1ZVU2TG9FV3hMYVZqeGc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 10,
+          "high_relevance_count": 10,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 10
+          }
+        },
+        "interpretation": "Found 10 news items related to CRV. 10 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771086400
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.10820684406387683,
+        "volume_24h": 41936394.744,
+        "volume_formatted": "41.94M",
+        "market_cap": 387557692.0,
+        "market_cap_formatted": "387.56M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.108, indicating moderate turnover with normal trading activity. 24h volume represents 10.8% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771086463,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.263,
+          "total_volume": 41936394.744,
+          "market_cap": 387557692.0,
+          "circulating_supply": 1476530294.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 387557692.0,
+        "market_cap_formatted": "387.56M",
+        "price_change_24h": 5.2,
+        "tvl": 1910813210.0,
+        "tvl_formatted": "1.91B",
+        "tvl_change_24h": 0.5091989735117181,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.91B (+0.5% 24h).",
+        "timestamp": 1771086472
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771086482,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 300850850.0,
+        "display": "300.85M"
+      },
+      "price_change_24h": 1.371,
+      "token_velocity": 0.03959174042951848,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 300.85M. Price 24h: +1.4%. Token velocity: 0.040. Protocol size: Small (Emerging).",
+      "price": {
+        "mark_price": 0.355,
+        "price_change_24h": 1.371
+      }
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03959174042951848,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.040 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 7,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "7 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 9,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.855e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771086481,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 9 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 9,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.855e-05,
+            "mark_price": 69415.48255072
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News",
+            "published_at": "2026-02-14T15:31:38+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdEdPQ1RCRGNVTkJka2tBZzJHblBoN3BXcGZIRTVQOWJJc2hZWlhQOXphdTltNGJqQ29FVG5WQVVyc3JLMXZycXg0bUxXVnFWaDBjMDUxV2RGU2FhUGZIR0VCT0V4Rmp2WDNseGM3SHpOWkhyTERFV2FsaDg3LUw4NUtXQkEwcUwwM3pQRXRTVzQtcGNIUHFv?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Bitcoin Is Down Bad, But Hasn't Yet Hit Its 'Ultimate Bear Market Bottom': Analysts",
+            "published_at": "2026-02-14T16:11:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358083/bitcoin-down-bad-hasnt-hit-ultimate-bear-market-bottom",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/02/bitcoin-crack-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Galaxy\u2019s Steve Kurz sees \u2018great convergence\u2019 driving crypto\u2019s long-term outlook",
+            "published_at": "2026-02-14T16:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/14/galaxy-s-steve-kurz-sees-great-convergence-driving-crypto-s-long-term-outlook",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/dbdfd992b876c4cd7efbd3bc76dbb4eac2240899-1241x650.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Newsquawk Week Ahead: US PCE and GDP, FOMC Minutes, RBNZ, Flash PMIs, UK and Canada CPI",
+            "published_at": "2026-02-14T15:29:27+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/newsquawk-week-ahead-us-pce-and-gdp-fomc-minutes-rbnz-flash-pmis-uk-and-canada-cpi-20260214/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "More companies than usual are beating Wall Street\u2019s expectations. Why that hasn\u2019t really helped investors.",
+            "published_at": "2026-02-14T15:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/more-companies-than-usual-are-beating-wall-streets-expectations-why-that-hasnt-really-helped-investors-bf905449?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-40945616",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Russia Eyes National Stablecoin as Sanctions Tighten - Coinpaper",
+            "published_at": "2026-02-14T14:52:04+00:00",
+            "time_ago": "Recently",
+            "source": "\"stablecoin regulation\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbHUyNHk2cjN1b19LRWdGbWpRY0Y0WkI3MmZoajFXSEc4M1psTVJnRG15MHJxbjJMX3g0Ynh2Z2ZDQlRsQ1FzczNEMGcxZWdPUzUydEpFNGtEZmNHcUFOTnF4X3dkbE1vZ2Rhc1hLQ0pfVGt2cGRqb3RkLWZMdTlpejlsdWFsekk?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "The stock market is reflecting fears of an AI apocalypse for white-collar jobs",
+            "published_at": "2026-02-14T13:30:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/the-stock-market-is-reflecting-fears-of-an-ai-apocalypse-for-white-collar-jobs-c845c508?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-90683525",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 7,
+          "high_relevance_count": 7,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 7 news items related to LDO. 7 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Truth Social Pushes Into Crypto ETFs With BTC, ETH and CRO Exposure - Bitcoin.com News\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771086481
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03959174042951848,
+        "volume_24h": 11911208.7612,
+        "volume_formatted": "11.91M",
+        "market_cap": 300850850.0,
+        "market_cap_formatted": "300.85M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.040, indicating very low turnover with minimal selling. 24h volume represents 4.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771086481,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.355,
+          "total_volume": 11911208.7612,
+          "market_cap": 300850850.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 300850850.0,
+        "market_cap_formatted": "300.85M",
+        "price_change_24h": 1.371,
+        "tvl": 19901014785.0,
+        "tvl_formatted": "19.90B",
+        "tvl_change_24h": 1.6858123235837446,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $19.90B (+1.7% 24h).",
+        "timestamp": 1771086482
+      }
+    }
+  }
+}

@@ -1,0 +1,4647 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260476,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 67866.82712319,
+        "display": "$67,866.83"
+      },
+      "volume": {
+        "value": 10975838233.43,
+        "display": "10.98B",
+        "velocity": 0.008096276952368992
+      },
+      "derivatives": {
+        "funding_rate": -0.004236,
+        "funding_display": "-0.0042%",
+        "open_interest": 5205268434.338231,
+        "oi_display": "5.21B"
+      },
+      "summary": "BTC mark price at $67,866.83. Funding rate: -0.0042%. Open Interest: 5.21B. Volume velocity: 0.008."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 14,
+      "high_relevance_count": 14,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Trump Family-Backed American Bitcoin Keeps Stacking Bitcoin, Holdings Pass 6,000 BTC",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 12,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 14 news items related to BTC. 14 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.236e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260460,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.236e-05,
+            "mark_price": 67868.55356522
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin ETF outflows and crowded shorts leave market primed for volatility, analysts say",
+            "published_at": "2026-02-16T07:10:19-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390032/bitcoin-etf-outflows-and-crowded-shorts-leave-market-primed-for-volatility-analysts-say?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/12/20251229_Bitcoin_News_4-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Trump Family-Backed American Bitcoin Keeps Stacking Bitcoin, Holdings Pass 6,000 BTC",
+            "published_at": "2026-02-16T16:20:25+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/news/american-bitcoin-keeps-stacking-bitcoin",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2025/12/American-Bitcoin-Adds-416-BTC-Holdings-Near-4800-ProCap-Hits-5000-Bitcoin-Club.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Harvard cuts bitcoin exposure by 20%, adds new ether position",
+            "published_at": "2026-02-16T14:34:40+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/16/harvard-cuts-bitcoin-exposure-by-20-adds-new-ether-position",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/ea78fc4d1dde75cfae243ab6d46bafa1e5064046-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Ray Dalio\u2019s world order warning revives case for Bitcoin as neutral money",
+            "published_at": "2026-02-16T14:26:33+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/dalio-collapse-world-order-permissionless-money?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY2YWUtZjcwNC03ZTg1LTg5N2YtMmI0Nzk0OGFmYjAzLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Harvard Trims Bitcoin Position by 21% in Q4 Portfolio Shift",
+            "published_at": "2026-02-16T14:23:38+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/news/harvard-trims-bitcoin-position",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/Harvard-Trims-Bitcoin-Position-by-21-in-Q4-Portfolio-Shift.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin could fall to $10,000 as U.S. recession risk builds, Mike McGlone Says",
+            "published_at": "2026-02-16T14:06:25+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/bitcoin-s-slide-may-signal-broader-market-trouble-and-a-u-s-recession-mike-mcglone-says",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/eb8e054740c0a4d774ae47de1582a9dbea3f59b0-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Metaplanet posts $619 million net loss on bitcoin valuation as holdings climb to 35,102 BTC",
+            "published_at": "2026-02-16T08:59:14-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/390048/metaplanet-posts-619-million-net-loss-on-bitcoin-valuation-as-holdings-climb-to-35102-btc?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2025/04/20250401_MetaPlanet_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Metaplanet revenue jumps 738% as Bitcoin generates 95% of sales",
+            "published_at": "2026-02-16T12:10:52+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/metaplanet-revenue-jumps-738-percent-bitcoin-generates-95-percent-revenue?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzMxYjUtN2UxZS03ODQ1LWEzZWEtMWM2ODUwNjMxOTY0LmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "$75K or bearish 'regime shift?' Five things to know in Bitcoin this week",
+            "published_at": "2026-02-16T10:41:38+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/75k-or-bearish-regime-shift-five-things-to-know-in-bitcoin-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTIvMDE5YjAyZGUtMzhjZi03OWFlLWEwMjAtNmY5N2RjOTFmZTdk.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 14,
+          "high_relevance_count": 14,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 3,
+            "neutral": 11
+          }
+        },
+        "interpretation": "Found 14 news items related to BTC. 14 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771260460
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": -4.236e-05,
+        "funding_rate_percent": -0.004236,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 67866.82712319,
+        "open_interest_usd": 5205268434.338231,
+        "open_interest_base": 76698.273,
+        "oi_formatted": "5.21B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at -0.0042%, indicating balanced positioning between longs and shorts. Open interest stands at 5.21B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771260465,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -4.236e-05,
+            "mark_price": 67866.82712319
+          },
+          "open_interest": {
+            "open_interest_usd": 5205268434.338231,
+            "open_interest": 76698.273
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.008096276952368992,
+        "volume_24h": 10975838233.43,
+        "volume_formatted": "10.98B",
+        "market_cap": 1355664868927.0,
+        "market_cap_formatted": "1355.66B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.008, indicating very low turnover with minimal selling. 24h volume represents 0.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260476,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 67860.7,
+          "total_volume": 10975838233.43,
+          "market_cap": 1355664868927.0,
+          "circulating_supply": 19990343.0,
+          "transaction_count_24h": 524380,
+          "hashrate": 1051136135559.3611
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260478,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1971.69368992,
+        "display": "$1,971.69"
+      },
+      "volume": {
+        "value": 10215740368.47,
+        "display": "10.22B",
+        "velocity": 0.04294599166206019
+      },
+      "derivatives": {
+        "funding_rate": -0.0033510000000000002,
+        "funding_display": "-0.0034%",
+        "open_interest": 3443323157.1343517,
+        "oi_display": "3.44B"
+      },
+      "summary": "ETH mark price at $1,971.69. Funding rate: -0.0034%. Open Interest: 3.44B. Volume velocity: 0.043."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 12,
+      "high_relevance_count": 12,
+      "dominant_theme": "institutional",
+      "overall_sentiment": "positive",
+      "top_events": [
+        {
+          "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Ethereum price forms rare pattern ahead of Fusaka upgrade - crypto.news",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "positive"
+        }
+      ],
+      "context": {
+        "fear_greed": 12,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "divergent"
+      },
+      "summary": "Found 12 news items related to ETH. 12 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 3,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "institutional",
+          "message": "Significant institutional news detected - monitor for ETF flows or large transactions"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -3.351e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260476,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -3.351e-05,
+            "mark_price": 1971.81
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Harvard trims bitcoin ETF holdings by 21%, builds $87 million ether position",
+            "published_at": "2026-02-16T04:32:41-05:00",
+            "time_ago": "Recently",
+            "source": "The Block",
+            "url": "https://www.theblock.co/post/389996/harvard-bitcoin-ether-etf-holdings?utm_source=rss&utm_medium=rss",
+            "image_url": "https://www.tbstat.com/wp/uploads/2023/08/20230726_BitcoinVEthereum_News-800x450.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum price forms rare pattern ahead of Fusaka upgrade - crypto.news",
+            "published_at": "2025-11-30T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdUFWdUNkbFV2QVlkMERkbm8xODhEUldPZmd0aWFtOGd6Mm5ZQlc4cVVnNW93SG54WXpNdUVjN1dzTVdXNzFuenZVYkZsQUFhRmc4SHRSTmRscHo0Sy1mckxYQTlfS0w3VXBRd0FOSDEtZXZWS2l1bFp3VnZOY2xnWVVsOGg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "technical",
+              "market"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Harvard cuts bitcoin exposure by 20%, adds new ether position",
+            "published_at": "2026-02-16T14:34:40+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/business/2026/02/16/harvard-cuts-bitcoin-exposure-by-20-adds-new-ether-position",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/ea78fc4d1dde75cfae243ab6d46bafa1e5064046-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Harvard Trims Bitcoin Position by 21% in Q4 Portfolio Shift",
+            "published_at": "2026-02-16T14:23:38+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/news/harvard-trims-bitcoin-position",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/Harvard-Trims-Bitcoin-Position-by-21-in-Q4-Portfolio-Shift.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Hegseth reportedly considering severe penalty on Anthropic as negotiations stall",
+            "published_at": "2026-02-16T13:58:00+00:00",
+            "time_ago": "Recently",
+            "source": "MarketWatch.com - Top Stories",
+            "url": "https://www.marketwatch.com/story/hegseth-reportedly-considering-severe-penalty-on-anthropic-as-negotiations-stall-16dae92f?mod=mw_rss_topstories",
+            "image_url": "https://images.mktw.net/im-26499524",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ether steadies after $540 million sell wave to outperform wider crypto market",
+            "published_at": "2026-02-16T10:50:31+00:00",
+            "time_ago": "Recently",
+            "source": "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+            "url": "https://www.coindesk.com/markets/2026/02/16/ether-steadies-after-usd540-million-sell-wave-to-outperform-crypto-market",
+            "image_url": "https://cdn.sanity.io/images/s3y3vcno/production/f4abc03e3b22e6867a5d7ef4ca855e84f39bc71c-1920x1080.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Brokers Forced to Rethink Funding Playbook as India Curbs Loans - Bloomberg.com",
+            "published_at": "2026-02-16T10:10:17+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQdUhKX2RBY2Nrd1Q0ZnVrc2xTZzhRWGRLSk42LVRyXzlrTHI4aVFPdk91UFMyb25id0VWRFFXQ1FhTHFwTkYwWnBoa1NHdUdqb2Y0SkZ2QndNRnBxcjRPWU5PZGt4Wm01OEI5akdWVUg2NnRVU2d5ZGVOZjB4RklnQm5razUxR0NZS24tb0RYR1dhazVtblBuWmYtVlZIYnY1VmxHTVJwS1JXa1Y3eUQ4OE5VSDc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Why Ethereum Leads as the Top Choice for Institutional Investors - Analytics Insight",
+            "published_at": "2026-02-16T10:07:16+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYlcxNGVZUk9DOVB2TXpORHIyTFdJZzRCWGE0UElDZ1BTRjBCTlR3Y2swUjFqQ3RTb2ZGUEFkUXBVRExOeTZaUXZpVTVDY0VMcnlYckoyY0xjNjV2VlU2YWdCQkFlRHc5Q2k0SUJ5OEhxaTZVamFyQ29SMDJBOWVESUpKb0tmUjJzV2tYQkt4SVNfLTV0dEhVVnBYVWNIeFIzc2R5T1AxTm1KZUNpYXU3T3JfdTN1ZGpHTHh4dlFBSTZQY3hMQUZtbXhn0gHXAUFVX3lxTE1OSWk3cGViLUZYWENrVXQteXpzMmlkSzlWVWJIU0ZmOFJJYnVSMU9HMjhqM2JTSjlyNk1lSW84Yk9ZanQyekNSSnUwc3pQNFcyOXpEMGRNUjY2WTdFdExNb2FjMDhkYjlGNE5vWU1OcjRIdXl1NFlKU3Q1SkE1Nmw0clp0akprbnhzTTh2YWJna2hsS093cEJTM21TVVAtNllITjZ3cE5kbHlUZjhkVmk2bXFyMnBkX3hpSFo4TUQ3TEhWQXFmelB4Wng2YUZtOVY5N3UtbVpZ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 12,
+          "high_relevance_count": 12,
+          "dominant_theme": "institutional",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 2,
+            "negative": 0,
+            "neutral": 10
+          }
+        },
+        "interpretation": "Found 12 news items related to ETH. 12 of these are highly relevant. The dominant theme is Institutional activity. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771260476
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -3.351e-05,
+        "funding_rate_percent": -0.0033510000000000002,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1971.69368992,
+        "open_interest_usd": 3443323157.1343517,
+        "open_interest_base": 1746378.342,
+        "oi_formatted": "3.44B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0034%, indicating balanced positioning between longs and shorts. Open interest stands at 3.44B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771260477,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -3.351e-05,
+            "mark_price": 1971.69368992
+          },
+          "open_interest": {
+            "open_interest_usd": 3443323157.1343517,
+            "open_interest": 1746378.342
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04294599166206019,
+        "volume_24h": 10215740368.47,
+        "volume_formatted": "10.22B",
+        "market_cap": 237874129182.0,
+        "market_cap_formatted": "237.87B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.043, indicating very low turnover with minimal selling. 24h volume represents 4.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260478,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1971.72,
+          "total_volume": 10215740368.47,
+          "market_cap": 237874129182.0,
+          "circulating_supply": 120692449.4802243,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771260478
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771260478
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260490,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.048676967060414196,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -5.869,
+      "volume": {
+        "value": 824698340.52781,
+        "display": "824.70M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.049 (Low (Stable Holding)). Price 24h: -5.9%. Volume: 824.70M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.048676967060414196,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 9,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Massacre: Why Dogecoin and Shiba Inu Could Drop 50% This Week - Coinpaper",
+          "sentiment": "negative"
+        }
+      ],
+      "summary": "Found 9 news items related to DOGE. 9 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.236e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260479,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.236e-05,
+            "mark_price": 67868.55356522
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Meme Coin Massacre: Why Dogecoin and Shiba Inu Could Drop 50% This Week - Coinpaper",
+            "published_at": "2025-10-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOemI1UC1OOU1wTXlEekM0S05WU0tINWtpMkx3N1dUQkxBSElvQVZHMVdESlFDTURWSGlpVUViVThuVy1uQjhVdldOalg2Z0JpaUhnbEJoRnF1RWtxMC1pOXA5XzhaWU1Ca0FNNmhLQ2hJMFpkT184RkljNDVDNi1odUtVUUh6eHRxZ2ZYOXdST3JQNVhnTkx6V1lYTkI0dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Dogecoin, Shiba Inu & Layer Brett Among Trending Meme Coins in 2025 - DailyCoin",
+            "published_at": "2025-09-16T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUlhoTmVnSEVnRmtpaVBKY3hHcnJCcGI3RVVqSy1mV3hOaXhLdS1DTlVLWEdpZ0Rwcy1ycFQtb0U3QXVaUUVya3FMcWJqY1pvakNnVUpfdVdVdm0zQ0RkNkMxeExSNVFDR285VUo2T21yUkF2V1dia2lXU1VITW1aSmNJWHZPQkk5b3RZRzN3UEM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 9 news items related to DOGE. 9 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771260479
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.048679523473364864,
+        "volume_24h": 824698340.52781,
+        "volume_formatted": "824.70M",
+        "market_cap": 16941380722.0,
+        "market_cap_formatted": "16.94B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.049, indicating very low turnover with minimal selling. 24h volume represents 4.9% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260481,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10093,
+          "total_volume": 824698340.52781,
+          "market_cap": 16941380722.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.048676967060414196,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -5.869,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.049. Risk level: LOW. ",
+        "timestamp": 1771260490
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260559,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.002627919897108563,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -1.364,
+      "volume": {
+        "value": 10051280.11061702,
+        "display": "10.05M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.003 (Low (Stable Holding)). Price 24h: -1.4%. Volume: 10.05M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.002627919897108563,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 9,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Massacre: Why Dogecoin and Shiba Inu Could Drop 50% This Week - Coinpaper",
+          "sentiment": "negative"
+        }
+      ],
+      "summary": "Found 9 news items related to SHIB. 9 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.236e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260490,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.236e-05,
+            "mark_price": 67868.55356522
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Meme Coin Massacre: Why Dogecoin and Shiba Inu Could Drop 50% This Week - Coinpaper",
+            "published_at": "2025-10-21T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOemI1UC1OOU1wTXlEekM0S05WU0tINWtpMkx3N1dUQkxBSElvQVZHMVdESlFDTURWSGlpVUViVThuVy1uQjhVdldOalg2Z0JpaUhnbEJoRnF1RWtxMC1pOXA5XzhaWU1Ca0FNNmhLQ2hJMFpkT184RkljNDVDNi1odUtVUUh6eHRxZ2ZYOXdST3JQNVhnTkx6V1lYTkI0dw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Dogecoin, Shiba Inu & Layer Brett Among Trending Meme Coins in 2025 - DailyCoin",
+            "published_at": "2025-09-16T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUlhoTmVnSEVnRmtpaVBKY3hHcnJCcGI3RVVqSy1mV3hOaXhLdS1DTlVLWEdpZ0Rwcy1ycFQtb0U3QXVaUUVya3FMcWJqY1pvakNnVUpfdVdVdm0zQ0RkNkMxeExSNVFDR285VUo2T21yUkF2V1dia2lXU1VITW1aSmNJWHZPQkk5b3RZRzN3UEM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 9 news items related to SHIB. 9 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771260490
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0026260104249084177,
+        "volume_24h": 10051280.11061702,
+        "volume_formatted": "10.05M",
+        "market_cap": 3827585761.0,
+        "market_cap_formatted": "3.83B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.003, indicating very low turnover with minimal selling. 24h volume represents 0.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260553,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.5e-06,
+          "total_volume": 10051280.11061702,
+          "market_cap": 3827585761.0,
+          "circulating_supply": 589243874380800.2,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.002627919897108563,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -1.364,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.003. Risk level: LOW. ",
+        "timestamp": 1771260559
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260631,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.04124489217383057,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -3.688,
+      "volume": {
+        "value": 76764305.96097563,
+        "display": "76.76M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.041 (Low (Stable Holding)). Price 24h: -3.7%. Volume: 76.76M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.04124489217383057,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to PEPE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.234e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260564,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.234e-05,
+            "mark_price": 67928.96897101
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "+700%: cryptos to circumvent sanctions and the urgent need to act - Delano.lu",
+            "published_at": "2026-02-16T14:21:27+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto sanctions\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOU0Q1Uy1PdDZqNTlqXzFvZVdRWFNoMG1id1ZxbktnVmtOQmc3ajBQYU1sdllFTXFVTjJqTm9fbmp5YWNQT2MtMUdCOTRvenNOb3ZyTWNFLXAxTkRib2lpSHJuOS1wMzMwMXFBMm1TUmRwVjlZWWt2WUNXeXlYWndvYWtCdExQY0xUQ0ZyVnA1QkRTZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to PEPE. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771260564
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04123480277964889,
+        "volume_24h": 76764305.96097563,
+        "volume_formatted": "76.76M",
+        "market_cap": 1861638732.0,
+        "market_cap_formatted": "1.86B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.041, indicating very low turnover with minimal selling. 24h volume represents 4.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260628,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.45e-06,
+          "total_volume": 76764305.96097563,
+          "market_cap": 1861638732.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.04124489217383057,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -3.688,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.041. Risk level: LOW. ",
+        "timestamp": 1771260631
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260696,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.013788455609525036,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -1.732,
+      "volume": {
+        "value": 4222714.25464793,
+        "display": "4.22M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.014 (Low (Stable Holding)). Price 24h: -1.7%. Volume: 4.22M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.013788455609525036,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 8,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 8 news items related to FLOKI. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.249e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260634,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.249e-05,
+            "mark_price": 67835.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to FLOKI. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771260634
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.013795747332545637,
+        "volume_24h": 4222714.25464793,
+        "volume_formatted": "4.22M",
+        "market_cap": 306088112.0,
+        "market_cap_formatted": "306.09M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.014, indicating very low turnover with minimal selling. 24h volume represents 1.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260635,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.177e-05,
+          "total_volume": 4222714.25464793,
+          "market_cap": 306088112.0,
+          "circulating_supply": 9654936547021.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.013788455609525036,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -1.732,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.014. Risk level: LOW. ",
+        "timestamp": 1771260696
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260699,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 39713492.9,
+        "display": "39.71M",
+        "velocity": 0.006577378875319171,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -2.646,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 39.71M (velocity: 0.007). Price 24h: -2.6%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 8,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "8 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.304e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260697,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.304e-05,
+            "mark_price": 67870.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 8 news items related to XMR. 8 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771260697
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.006577378875319171,
+        "volume_24h": 39713492.9,
+        "volume_formatted": "39.71M",
+        "market_cap": 6037890420.0,
+        "market_cap_formatted": "6.04B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260698,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 328.24,
+          "total_volume": 39713492.9,
+          "market_cap": 6037890420.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 39713562.82,
+        "volume_formatted": "39.71M",
+        "price_change_24h": -2.646,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771260699,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260822,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 590794124.06,
+        "display": "590.79M",
+        "velocity": 0.12375563475739396,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -1.343,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 590.79M (velocity: 0.124). Price 24h: -1.3%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 9,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product"
+        ]
+      },
+      "exchange_events": {
+        "count": 1,
+        "items": [
+          "Binance Will Not \u2018Delist\u2019 Zcash, Dash, \u2018Privacy\u2019 Coins in Europe - CryptoRank"
+        ],
+        "risk_level": "HIGH"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "9 events found. 1 regulatory, 1 exchange-related. \u26a0\ufe0f Exchange delisting risk detected."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "HIGH (Active delisting events)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: HIGH (Active delisting events). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.304e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260699,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.304e-05,
+            "mark_price": 67870.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Binance Will Not \u2018Delist\u2019 Zcash, Dash, \u2018Privacy\u2019 Coins in Europe - CryptoRank",
+            "published_at": "2024-02-01T10:12:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"zcash dash privacy crypto\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQ0tfX3pIaEdEc3otcS1iVGVMS1ZjR1Q3bGtmTXJYNnBtOGJnejJsdkVDRVhRVWRuNmhIOUJRc2RPSnNIX1dqcV9oRUtqNVgxRHJaUUc1QW9RMGEwdU9CVWU1MWJFMGJXclU5T21NTWFzSVdQaTZ4ZjJxMXFvdU9oSENBS0U1S0pIbVVwZDJKNVJvX0lvZEZYX1l6b1Y?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 9 news items related to ZEC. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771260699
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.12375563475739396,
+        "volume_24h": 590794124.06,
+        "volume_formatted": "590.79M",
+        "market_cap": 4773876561.0,
+        "market_cap_formatted": "4.77B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.124, indicating moderate turnover with normal trading activity. 24h volume represents 12.4% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771260821,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 288.02,
+          "total_volume": 590794124.06,
+          "market_cap": 4773876561.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 590854701.26,
+        "volume_formatted": "590.85M",
+        "price_change_24h": -1.343,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771260822,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260953,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 47712458.51,
+        "display": "47.71M",
+        "velocity": 0.10076480199586729,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 0.0,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 47.71M (velocity: 0.101). Price 24h: +0.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 9,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product"
+        ]
+      },
+      "exchange_events": {
+        "count": 1,
+        "items": [
+          "Binance Will Not \u2018Delist\u2019 Zcash, Dash, \u2018Privacy\u2019 Coins in Europe - CryptoRank"
+        ],
+        "risk_level": "HIGH"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "9 events found. 1 regulatory, 1 exchange-related. \u26a0\ufe0f Exchange delisting risk detected."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "HIGH (Active delisting events)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 1 recent regulatory events. Delisting risk: HIGH (Active delisting events). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.298e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260831,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.298e-05,
+            "mark_price": 67827.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "DASH Price Prediction: What's Next for Privacy Coins? - OneSafe",
+            "published_at": "2025-10-13T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"zcash dash privacy crypto\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZ3hRZWRFaTB3RUtBYUFOWG5taW1MVFc5X21FMXpVY2tzeXB6SjJqVEtkNTYzVlVrNzhNbjE0LTlIdi1WMEFWMWtCd2pLNE16OTVGSGNHT1JiN1QxNzk1ZHNNYTZFWmJKR3FHRE5KUWV0M2VsM3hVY1NEZHZIQjdGVkc1ZTJMU0hQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Binance Will Not \u2018Delist\u2019 Zcash, Dash, \u2018Privacy\u2019 Coins in Europe - CryptoRank",
+            "published_at": "2024-02-01T10:12:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"zcash dash privacy crypto\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQ0tfX3pIaEdEc3otcS1iVGVMS1ZjR1Q3bGtmTXJYNnBtOGJnejJsdkVDRVhRVWRuNmhIOUJRc2RPSnNIX1dqcV9oRUtqNVgxRHJaUUc1QW9RMGEwdU9CVWU1MWJFMGJXclU5T21NTWFzSVdQaTZ4ZjJxMXFvdU9oSENBS0U1S0pIbVVwZDJKNVJvX0lvZEZYX1l6b1Y?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 9
+          }
+        },
+        "interpretation": "Found 9 news items related to DASH. 9 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771260831
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.10076480199586729,
+        "volume_24h": 47712458.51,
+        "volume_formatted": "47.71M",
+        "market_cap": 473503223.0,
+        "market_cap_formatted": "473.50M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.101, indicating moderate turnover with normal trading activity. 24h volume represents 10.1% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771260832,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 37.53,
+          "total_volume": 47712458.51,
+          "market_cap": 473503223.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 47712448.41,
+        "volume_formatted": "47.71M",
+        "price_change_24h": 0.0,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771260953,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771260956,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1258946.0579,
+        "display": "1.26M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -2.905,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.26M (velocity: 0.000). Price 24h: -2.9%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 9,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "9 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.326e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260955,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.326e-05,
+            "mark_price": 67803.40113768
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Payjoin Foundation Gains 501(c)(3) Status, Enabling Tax-Deductible Donations for Bitcoin Privacy Development",
+            "published_at": "2026-02-16T16:49:49+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/business/payjoin-foundation-gains-501c3-status-enabling-tax-deductible-donations-for-bitcoin-privacy-development",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/tn-3.webp",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 9 news items related to SCRT. 9 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771260955
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1258946.0579,
+        "volume_formatted": "1.26M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771260956,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0869,
+          "total_volume": 1258946.0579,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1258946.0579,
+        "volume_formatted": "1.26M",
+        "price_change_24h": -2.905,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771260956,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771261032,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1892025045.0,
+        "display": "1.89B"
+      },
+      "price_change_24h": -1.494,
+      "token_velocity": 0.03268989172339418,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.89B. Price 24h: -1.5%. Token velocity: 0.033. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03268989172339418,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.033 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 11,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Aave Labs to launch high-yield savings app with 'insurance-backed protection' for deposits up to $1 million - The Block"
+        ]
+      },
+      "summary": "11 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.326e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771260957,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.326e-05,
+            "mark_price": 67803.40113768
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania",
+            "published_at": "2026-02-16T10:27:31+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRkwyazlwdzdUVXVuWnR0VzlpZE1saU1YSFhTQWtPUm5CNUlUVTRyYlF3MEJreTNTalI1aGFJLUFXdGtuZkV3cXRYa3VCcUlqZV9JaUJOVzZLVGdNM2padjZnSHRQVFBGSEJGeHRYWlQ4YnBsOHBQVl95d0ppUThkWDhjVQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Aave Founder Projects $50T Abundance Asset Market by 2050 - CoinMarketCap",
+            "published_at": "2026-02-16T13:34:41+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaENnaHhZWEFtaGxkWlh2THJ1ZTNGYjV3Y0xoYThxUXJTbUI5b0ZWN1I3TzVqN0puaG5WcEx5SWRuQ0hUelB5Nlg2RWt5U3Q3NVk5Z3NHbWZwazhlbFIyYTZoa0xoUXJxWEN4b3pJX251c21ib0phWk9EVzVNcEZPQ0RmRWwwdy1vaE1kTGJ3Q0l4YzNyWkNFNVJOXzhkY2RVUEJWVmdmNA?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Aave Labs to launch high-yield savings app with 'insurance-backed protection' for deposits up to $1 million - The Block",
+            "published_at": "2025-11-17T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMEZhbm43TGpJNEwtQmZ3Mks5YjZYcXVCbGtidl9Gd2libVdjd0piNzNONUJTbW0zRzc0Mm9hVjliTG4yWlBxS0tiQV93QWFnZFE4WE1ObDlWYnQ5OUU2VGxkV2kwRW9vUmVpTjh1Vzd3ZVF4VzRJdWxjbVpjVVNhWC12dWlVS2hGODB6VFk3RDN2SW1sdmotOHpzNWpzOXA0UVNrVHVJVTA1SUF5dUNFSEFvS0hXdw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Payjoin Foundation Gains 501(c)(3) Status, Enabling Tax-Deductible Donations for Bitcoin Privacy Development",
+            "published_at": "2026-02-16T16:49:49+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/business/payjoin-foundation-gains-501c3-status-enabling-tax-deductible-donations-for-bitcoin-privacy-development",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/tn-3.webp",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 11,
+          "high_relevance_count": 11,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 10
+          }
+        },
+        "interpretation": "Found 11 news items related to AAVE. 11 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Grayscale Files AAVE ETF as Coinbase Named Custodian - Coinfomania\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771260957
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03268989172339418,
+        "volume_24h": 61850093.859,
+        "volume_formatted": "61.85M",
+        "market_cap": 1892025045.0,
+        "market_cap_formatted": "1.89B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.033, indicating very low turnover with minimal selling. 24h volume represents 3.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771261019,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 124.63,
+          "total_volume": 61850093.859,
+          "market_cap": 1892025045.0,
+          "circulating_supply": 15191432.670695562,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1892025045.0,
+        "market_cap_formatted": "1.89B",
+        "price_change_24h": -1.494,
+        "tvl": 26959214932.0,
+        "tvl_formatted": "26.96B",
+        "tvl_change_24h": -0.7823699002034437,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $26.96B (-0.8% 24h).",
+        "timestamp": 1771261032
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771261158,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2210923681.0,
+        "display": "2.21B"
+      },
+      "price_change_24h": -0.229,
+      "token_velocity": 0.03645368529273795,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.21B. Price 24h: -0.2%. Token velocity: 0.036. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03645368529273795,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.036 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 9,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io"
+        ]
+      },
+      "summary": "9 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.329e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771261034,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.329e-05,
+            "mark_price": 67805.8
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Payjoin Foundation Gains 501(c)(3) Status, Enabling Tax-Deductible Donations for Bitcoin Privacy Development",
+            "published_at": "2026-02-16T16:49:49+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/business/payjoin-foundation-gains-501c3-status-enabling-tax-deductible-donations-for-bitcoin-privacy-development",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/tn-3.webp",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Tether Investment, Web3 Debate, Buck Yield, SwissBorg Lock - StealthEX.io",
+            "published_at": "2026-02-16T14:33:33+00:00",
+            "time_ago": "Recently",
+            "source": "\"decentralized finance yield\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcE80SG4tZHRuOGxWeXpNWW9PVjdGS2laZlFZc2R1S3UyNHNBQmxoOVpfR0VSSjVWV1R1dGg1ZDM0Q3VuMWxlNnRtZC1DZnM2QVByYWFqbGJNdlpYd3BMRTBIbE9qaExXQ3BUR3dyYTFpYXRqV3p1UHhzeUVXa0FOaHpiUlJSSzJVV0E?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 9,
+          "high_relevance_count": 9,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 8
+          }
+        },
+        "interpretation": "Found 9 news items related to UNI. 9 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771261034
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03645368529273795,
+        "volume_24h": 80504943.927,
+        "volume_formatted": "80.50M",
+        "market_cap": 2208417154.0,
+        "market_cap_formatted": "2.21B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.036, indicating very low turnover with minimal selling. 24h volume represents 3.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771261035,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.488,
+          "total_volume": 80504943.927,
+          "market_cap": 2208417154.0,
+          "circulating_supply": 633814762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2210923681.0,
+        "market_cap_formatted": "2.21B",
+        "price_change_24h": -0.229,
+        "tvl": 3075572231.0,
+        "tvl_formatted": "3.08B",
+        "tvl_change_24h": -0.25126646140626996,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.08B (-0.3% 24h).",
+        "timestamp": 1771261158
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771261184,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 371705220.0,
+        "display": "371.71M"
+      },
+      "price_change_24h": 0.0,
+      "token_velocity": 0.09080415466320327,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 371.71M. Price 24h: +0.0%. Token velocity: 0.091. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.09080415466320327,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.091 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 10,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Japan Yield Curve Twist-Steepens on Fiscal Concerns, BOJ Outlook - Bloomberg.com"
+        ]
+      },
+      "summary": "10 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.358e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771261169,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.358e-05,
+            "mark_price": 67831.69246377
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "EUR/USD still caught meandering after post-payrolls drop last week",
+            "published_at": "2026-02-16T09:35:12+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/eurusd-still-caught-meandering-after-post-payrolls-drop-last-week-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Japan Yield Curve Twist-Steepens on Fiscal Concerns, BOJ Outlook - Bloomberg.com",
+            "published_at": "2026-02-16T07:48:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"site:bloomberg.com economy OR fed OR markets\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNcG9PRVNrY3FsZk05LXliNVFFVDBGZm82TkdxX2lLUmZpODVxMlA0alp4bllPLUx3OVhBaVB0aEJ2LUtaUXV5SVpuZUVibldzeXVrbGFCLUQxNHFubkU0MVpEclZnQnktVER1clZXVXZsV0t3dldPSEZGSDg0Tm9yQXRhU29sTURsUlJ5NC1yWVZ2Y2huN2VRaHFxUU1UdjNkM1BISWpqODlpQm5iSlA3LU5ySHM?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Payjoin Foundation Gains 501(c)(3) Status, Enabling Tax-Deductible Donations for Bitcoin Privacy Development",
+            "published_at": "2026-02-16T16:49:49+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/business/payjoin-foundation-gains-501c3-status-enabling-tax-deductible-donations-for-bitcoin-privacy-development",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/tn-3.webp",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 10,
+          "high_relevance_count": 10,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 2,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 10 news items related to CRV. 10 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771261169
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.09080415466320327,
+        "volume_24h": 33752378.286,
+        "volume_formatted": "33.75M",
+        "market_cap": 371705220.0,
+        "market_cap_formatted": "371.71M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.091, indicating moderate turnover with normal trading activity. 24h volume represents 9.1% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771261170,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.252,
+          "total_volume": 33752378.286,
+          "market_cap": 371705220.0,
+          "circulating_supply": 1477076798.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 371705220.0,
+        "market_cap_formatted": "371.71M",
+        "price_change_24h": 0.0,
+        "tvl": 1890885443.0,
+        "tvl_formatted": "1.89B",
+        "tvl_change_24h": -0.1675846423577899,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.89B (-0.2% 24h).",
+        "timestamp": 1771261184
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771261307,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 286589110.0,
+        "display": "286.59M"
+      },
+      "price_change_24h": -1.14,
+      "token_velocity": 0.04797779501321596,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 286.59M. Price 24h: -1.1%. Token velocity: 0.048. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04797779501321596,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.048 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 8,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "8 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 12,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -4.358e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771261184,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 12 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 12,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -4.358e-05,
+            "mark_price": 67831.69246377
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing",
+            "published_at": "2026-02-16T16:31:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358162/harvard-cuts-bitcoin-etf-stake-adds-ethereum-exposure-in-q4-filing",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Nexo Taps Bakkt For US Return Three Years After SEC Settlement Over Lending Product",
+            "published_at": "2026-02-16T15:01:02+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358078/nexo-us-return-after-sec-settlement",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/05/bitcoin-america-decrypt-style-02-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Payjoin Foundation Gains 501(c)(3) Status, Enabling Tax-Deductible Donations for Bitcoin Privacy Development",
+            "published_at": "2026-02-16T16:49:49+00:00",
+            "time_ago": "Recently",
+            "source": "Bitcoin Magazine",
+            "url": "https://bitcoinmagazine.com/business/payjoin-foundation-gains-501c3-status-enabling-tax-deductible-donations-for-bitcoin-privacy-development",
+            "image_url": "https://bitcoinmagazine.com/wp-content/uploads/2026/02/tn-3.webp",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "positive",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Bitcoin 'Boom-Bust' Era Is Over as Institutions Take the Lead: WisdomTree",
+            "published_at": "2026-02-16T16:40:48+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358152/bitcoin-boom-bust-era-over-institutions-take-lead-wisdomtree",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/01/bitcoin-ethereum-decrypt-style-new-01-1-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "EU Moves to Ban All Crypto Transactions with Russian Entities: Report",
+            "published_at": "2026-02-16T16:03:26+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358159/eu-moves-to-ban-all-crypto-transactions-with-russian-entities-report",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/07/russia-moscow-red-square-kremlin-decrypt-style-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "U.S. Crypto Funds Shed $403M Amid Price Weakness: CoinShares",
+            "published_at": "2026-02-16T15:38:05+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358156/u-s-crypto-funds-shed-403m-amid-price-weakness-coinshares",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/06/Chart4_red-gID_7.png",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "institutional",
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Solana\u2019s RWA ecosystem hits $1.66B \u2013 Is this SOL\u2019s turning point? - AMBCrypto",
+            "published_at": "2026-02-16T15:20:22+00:00",
+            "time_ago": "Recently",
+            "source": "\"solana ecosystem news\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWjBxcWlYWEhpUWtYQ3ItLVZLak9UanpfXzRIWWVocVI3YXVvdGpLQVpENHZWRENobFNSQ3oyX0tsY2I1cFBpT29UeVRndENFUndFdDFvb2Z4ZzRQc0xXdzBKZzFhUHNVazloendOSzhLdEczeWNjZGFXTmdpejltZ3pJcVVpR0VPRHfSAY8BQVVfeXFMTUxfR0lwVmlibktMdGdPR3BnZmVWYkZCSlZSVklkRTd2RnJsNjNoaWNwVmtqQkw3TEg3VWpGMlpiWUpMOE9wYUdZcWtEMjJQM2ZPQUxMR2hVTGxoU3dHbXN5d29tQW1rYU9NRUxKZEk3Nkdkam1malpNQ2F0ZUxRemNleWVGN19oRFpjUmFEdW8?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Watch: China's most-watched TV program of the year features impressive humanoid robots",
+            "published_at": "2026-02-16T15:03:52+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/watch-chinas-most-watched-tv-program-of-the-year-features-impressive-humanoid-robots-20260216/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 8,
+          "high_relevance_count": 8,
+          "dominant_theme": "general",
+          "overall_sentiment": "positive",
+          "sentiment_breakdown": {
+            "positive": 1,
+            "negative": 0,
+            "neutral": 7
+          }
+        },
+        "interpretation": "Found 8 news items related to LDO. 8 of these are highly relevant. Overall news sentiment is positive, which may support bullish price action. Most significant: \"Harvard Cuts Bitcoin ETF Stake, Adds Ethereum Exposure in Q4 Filing\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771261184
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04797779501321596,
+        "volume_24h": 13749913.5726,
+        "volume_formatted": "13.75M",
+        "market_cap": 286589110.0,
+        "market_cap_formatted": "286.59M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.048, indicating very low turnover with minimal selling. 24h volume represents 4.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771261306,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3378,
+          "total_volume": 13749913.5726,
+          "market_cap": 286589110.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 286589110.0,
+        "market_cap_formatted": "286.59M",
+        "price_change_24h": -1.14,
+        "tvl": 18678231033.0,
+        "tvl_formatted": "18.68B",
+        "tvl_change_24h": -0.12179770456134727,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.68B (-0.1% 24h).",
+        "timestamp": 1771261307
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "global": {
+    "total_market_cap": 0,
+    "total_volume_24h": 0,
+    "btc_dominance": 0,
+    "eth_dominance": 0,
+    "market_cap_change_24h": 0,
+    "active_cryptocurrencies": 0,
+    "fear_greed_equivalent": 50,
+    "alt_season_index": 100,
+    "timestamp": 1769942652
+  },
+  "BTC": {
+    "ticker": "BTC",
+    "research_text": "```json\n{\n    \"ticker\": \"BTC\",\n    \"price_usd\": 78748.39,\n    \"price_change_24h\": 0,\n    \"volume_24h\": 974485339.28,\n    \"market_cap\": 1573588000000,\n    \"sentiment\": \"neutral\",\n    \"news_summary\": \"No news data available due to API error. Analysis based solely on on-chain metrics.\",\n    \"on_chain_activity\": \"Network processing 347,554 transactions across 118 blocks. Block time averaging 11.5 minutes, slightly above the 10-minute target. Hash rate at 831 EH/s indicates strong network security. Estimated daily transaction volume at $8.61 billion. Next difficulty adjustment at block 935,423 (840 blocks away).\",\n    \"risk_factors\": [\n        \"Block time running 15% slower than target (11.5 min vs 10 min) may indicate mining pressure\",\n        \"Limited data points prevent trend analysis and price movement assessment\",\n        \"Miners revenue showing as 0 BTC/USD suggests potential data anomaly requiring verification\",\n        \"Total fees showing negative value (-368.75 BTC) indicates data quality issue\"\n    ],\n    \"key_developments\": [\n        \"Total Bitcoin supply: 19,983,071.875 BTC (95.2% of 21M max supply mined)\",\n        \"Network difficulty at 141.67 trillion, reflecting high mining competition\",\n        \"Average block size: 1.50 MB (176.6 MB total / 118 blocks)\",\n        \"Network has mined 934,583 total blocks since genesis\"\n    ],\n    \"timestamp\": \"1769942457\"\n}\n```\n\n**Data Quality Notes:**\n- Several fields show anomalies (negative fees, zero miner revenue) suggesting data collection issues\n- Price change unavailable without historical comparison data\n- Market cap calculated as: 19,983,071.875 BTC \u00d7 $78,748.39\n- Sentiment marked neutral due to insufficient directional data",
+    "timestamp": 1769942669
+  },
+  "defi": {
+    "sector": "defi",
+    "research_text": "# DeFi Sector Analysis\n\n## Data Availability Issue\n\nThe provided data shows that both primary data sources are currently unavailable:\n- **DeFi TVL data**: API unavailable\n- **CryptoPanic news feed**: Configuration error\n\n## Structured Analysis Output\n\nSince no actual market data was successfully scraped, I cannot provide factual current metrics. However, here is the requested JSON structure with clearly marked unavailable data:\n\n```json\n{\n    \"sector\": \"defi\",\n    \"market_cap\": null,\n    \"change_24h\": null,\n    \"top_assets\": [\n        {\n            \"name\": \"Data Unavailable\",\n            \"ticker\": \"N/A\",\n            \"price\": null,\n            \"change_24h\": null,\n            \"note\": \"API unavailable - no current data\"\n        }\n    ],\n    \"trends\": [\n        \"Unable to determine current trends - data sources unavailable\",\n        \"TVL API connection failed\",\n        \"News sentiment feed misconfigured\"\n    ],\n    \"sentiment\": \"unknown\",\n    \"risks\": [\n        \"Data infrastructure failure indicates monitoring gaps\",\n        \"Unable to track real-time market movements\",\n        \"Missing critical DeFi protocol metrics\"\n    ],\n    \"opportunities\": [\n        \"Cannot assess opportunities without current market data\"\n    ],\n    \"timestamp\": \"1769942672\",\n    \"data_quality\": \"INSUFFICIENT\",\n    \"error_status\": \"Both primary data sources failed - TVL API unavailable and CryptoPanic API key missing\"\n}\n```\n\n## Recommendation\n\n**Action Required**: To provide meaningful DeFi sector analysis, please:\n1. Restore DeFi TVL API connectivity\n2. Configure CryptoPanic API key properly\n3. Re-run data collection with functional data sources\n\nWithout actual market data, any analysis would be speculative rather than factual.",
+    "timestamp": 1769942682
+  }
+}

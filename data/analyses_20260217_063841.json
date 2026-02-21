@@ -1,0 +1,4839 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771298537,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68731.165,
+        "display": "$68,731.16"
+      },
+      "volume": {
+        "value": 10500466615.09,
+        "display": "10.50B",
+        "velocity": 0.007648563640973436
+      },
+      "derivatives": {
+        "funding_rate": 0.005395,
+        "funding_display": "0.0054%",
+        "open_interest": 5211345870.734554,
+        "oi_display": "5.21B"
+      },
+      "summary": "BTC mark price at $68,731.16. Funding rate: 0.0054%. Open Interest: 5.21B. Volume velocity: 0.008."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 18,
+      "high_relevance_count": 18,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+          "relevance": "direct",
+          "score": 0.95,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Forex Today: US Dollar Holds Steady as Markets Brace for Crucial FOMC Minutes, UK CPI, and US PCE Data - Bitcoin world",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 18 news items related to BTC. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.395e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298533,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.395e-05,
+            "mark_price": 68731.53108696
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Forex Today: US Dollar Holds Steady as Markets Brace for Crucial FOMC Minutes, UK CPI, and US PCE Data - Bitcoin world",
+            "published_at": "2026-02-16T21:20:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"US dollar index DXY forex\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1XcDRVNHhTNnhXTUdkVHpLajNUblFpM3l1RUJFcUFLMHhZYllvWHVqcHdEUFZPS0xNOGx3cXN1ZW02VHhqdk0xYzBEQThPanByVXFQNmZEbXJhcTdMZVRhTkwxVzZXZnVyUlFsOFdqbw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to BTC. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771298533
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 5.395e-05,
+        "funding_rate_percent": 0.005395,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68731.165,
+        "open_interest_usd": 5211345870.734554,
+        "open_interest_base": 75822.167,
+        "oi_formatted": "5.21B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0054%, indicating balanced positioning between longs and shorts. Open interest stands at 5.21B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771298535,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 5.395e-05,
+            "mark_price": 68731.165
+          },
+          "open_interest": {
+            "open_interest_usd": 5211345870.734554,
+            "open_interest": 75822.167
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.007648563640973436,
+        "volume_24h": 10500466615.09,
+        "volume_formatted": "10.50B",
+        "market_cap": 1372867783807.0,
+        "market_cap_formatted": "1372.87B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.008, indicating very low turnover with minimal selling. 24h volume represents 0.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771298537,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68726.4,
+          "total_volume": 10500466615.09,
+          "market_cap": 1372867783807.0,
+          "circulating_supply": 19990596.0,
+          "transaction_count_24h": 526190,
+          "hashrate": 1082419949117.6755
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771298539,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1993.80929457,
+        "display": "$1,993.81"
+      },
+      "volume": {
+        "value": 8330130872.85,
+        "display": "8.33B",
+        "velocity": 0.0346586474534701
+      },
+      "derivatives": {
+        "funding_rate": 0.004346,
+        "funding_display": "0.0043%",
+        "open_interest": 3518269558.828949,
+        "oi_display": "3.52B"
+      },
+      "summary": "ETH mark price at $1,993.81. Funding rate: 0.0043%. Open Interest: 3.52B. Volume velocity: 0.035."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 15,
+      "high_relevance_count": 15,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "US dollar positioning hits record underweight in Bank of America survey",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "negative"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 15 news items related to ETH. 15 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Oil steady as Iran drills near Strait of Hormuz ahead of US talks\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.346e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298537,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.346e-05,
+            "mark_price": 1993.74523256
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ethereum's ENS identity system scraps planned rollup amid Vitalik's warning about layer-2 networks - CoinDesk",
+            "published_at": "2026-02-05T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOTZ6Q3kwNUtuZFBZbFNnbWFoaTZjRGNkbUNjaVJwc3BzRjQwS2piMmpobTNQMFFvM216NDNEUDFmNTktZUpfYzdjeFlEOVRTNVRkek5ZOEQ4dzBiREdxS0wtMmZBa25WQjRnTlhZTUJUY1FCNm84c1hiVkdPMWNWeFNuUGh4OGd6RzNNWlZ5WFFTV0F3RmpaZ0l2UVdmc08xUHlhYTZySzJXcjNULWo1NE5YS1FESTVMUVpvNk5Yc1dHcm1VeGhvQWgxZ1ZNUXFVNFhCMVFR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "technical"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "ETH News: Ethereum and Solana set the stage for 2026\u2019s DeFi reboot - CoinDesk",
+            "published_at": "2026-01-03T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"ethereum upgrade\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMlAxbUxTLW9IaVZMenl4d1h4d180WHRZNGcxLUtseUdNSVYySDZoN3ZNNkhfekpuaUphMnFKTW4tZW1wdThXRUZ0WUhNOVF3TDhzQ2hsMVBYTURhblJsRnh6dm9MR0xXVjdEbWczN2pkaWlTUUo3UWgxeE15NHRwVVpRN1hFdllmZjBlMlUza2I2akFYWWxlT2hEUjVLQQ?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 15,
+          "high_relevance_count": 15,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 13
+          }
+        },
+        "interpretation": "Found 15 news items related to ETH. 15 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Oil steady as Iran drills near Strait of Hormuz ahead of US talks\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771298537
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": 4.346e-05,
+        "funding_rate_percent": 0.004346,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1993.80929457,
+        "open_interest_usd": 3518269558.828949,
+        "open_interest_base": 1764596.829,
+        "oi_formatted": "3.52B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at 0.0043%, indicating balanced positioning between longs and shorts. Open interest stands at 3.52B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771298538,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 4.346e-05,
+            "mark_price": 1993.80929457
+          },
+          "open_interest": {
+            "open_interest_usd": 3518269558.828949,
+            "open_interest": 1764596.829
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0346586474534701,
+        "volume_24h": 8330130872.85,
+        "volume_formatted": "8.33B",
+        "market_cap": 240347834809.0,
+        "market_cap_formatted": "240.35B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.035, indicating very low turnover with minimal selling. 24h volume represents 3.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771298539,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1993.7,
+          "total_volume": 8330130872.85,
+          "market_cap": 240347834809.0,
+          "circulating_supply": 120692440.4714584,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771298539
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771298539
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771298724,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.03945922795045171,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -1.03,
+      "volume": {
+        "value": 670432343.67345,
+        "display": "670.43M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.039 (Low (Stable Holding)). Price 24h: -1.0%. Volume: 670.43M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.03945922795045171,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 18,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Meltdown: Dogecoin, Shiba Inu, PEPE Worst Hit After Shibarium Attack - The Coin Republic",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 18 news items related to DOGE. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.395e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298539,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.395e-05,
+            "mark_price": 68731.53108696
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Meme Coin Meltdown: Dogecoin, Shiba Inu, PEPE Worst Hit After Shibarium Attack - The Coin Republic",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYTJDVHRTSWlaNk5rNDc2UmVRNnYtOXlKLXlIN0NPSy1yOFQtWG1rV1RmMXJUMDVrLVB5cDJublBrMUQ0S3VXV29ENHdNb1lwN2pPSzZNR3k2ZFMzdGNxMjVEVElrLVQ1MlhNR2lIcGZkcndOQmRYWE9TVlZKYXlQTWRmVXNGMFRIYmIyeTlfeWVUc0JRVjBCZF9vZkpfRFdtNmh6UDRiMjVHS3lkUjlaQkpyYUVYZ3NsNDhN0gHAAUFVX3lxTE5TY29fNllMSEIteUxCMXhOSFlPZVNUSEQtMm9rbVRGZDE2bkJsOEVENTdlTEVCQ1hYUzJEWUlMdXFib3pfVEN4d05YRDYxVV9IVUdhZHNBWVpBX3FSWm94dFlqQV9xUDFPSzdkU0t2Y0o3eXlJNk9YMXZ0dlU3YjZfX2ZqbVcxdWJ6N05RUmZhZDFNMzNTbjRNV2RuRjZoMTBzM0VXb3I4UVpLOTNHazN1aTU3QnQzMzlCYkRvc0lDVg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to DOGE. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771298539
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03950362525091653,
+        "volume_24h": 670432343.67345,
+        "volume_formatted": "670.43M",
+        "market_cap": 16971413115.0,
+        "market_cap_formatted": "16.97B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.040, indicating very low turnover with minimal selling. 24h volume represents 4.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771298542,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10089,
+          "total_volume": 670432343.67345,
+          "market_cap": 16971413115.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.03945922795045171,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -1.03,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.039. Risk level: LOW. ",
+        "timestamp": 1771298724
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771298728,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0022888952733978152,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -0.152,
+      "volume": {
+        "value": 8835664.22003408,
+        "display": "8.84M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.002 (Low (Stable Holding)). Price 24h: -0.2%. Volume: 8.84M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0022888952733978152,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 18,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Meltdown: Dogecoin, Shiba Inu, PEPE Worst Hit After Shibarium Attack - The Coin Republic",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Shiba Inu Price Prediction: Millionaire Crypto Trader Predicts Parabolic Meme Coin Boom \u2013 $1 Just the Start for SHIB? - Cryptonews",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 18 news items related to SHIB. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.337e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298725,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.337e-05,
+            "mark_price": 68570.9
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Meme Coin Meltdown: Dogecoin, Shiba Inu, PEPE Worst Hit After Shibarium Attack - The Coin Republic",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYTJDVHRTSWlaNk5rNDc2UmVRNnYtOXlKLXlIN0NPSy1yOFQtWG1rV1RmMXJUMDVrLVB5cDJublBrMUQ0S3VXV29ENHdNb1lwN2pPSzZNR3k2ZFMzdGNxMjVEVElrLVQ1MlhNR2lIcGZkcndOQmRYWE9TVlZKYXlQTWRmVXNGMFRIYmIyeTlfeWVUc0JRVjBCZF9vZkpfRFdtNmh6UDRiMjVHS3lkUjlaQkpyYUVYZ3NsNDhN0gHAAUFVX3lxTE5TY29fNllMSEIteUxCMXhOSFlPZVNUSEQtMm9rbVRGZDE2bkJsOEVENTdlTEVCQ1hYUzJEWUlMdXFib3pfVEN4d05YRDYxVV9IVUdhZHNBWVpBX3FSWm94dFlqQV9xUDFPSzdkU0t2Y0o3eXlJNk9YMXZ0dlU3YjZfX2ZqbVcxdWJ6N05RUmZhZDFNMzNTbjRNV2RuRjZoMTBzM0VXb3I4UVpLOTNHazN1aTU3QnQzMzlCYkRvc0lDVg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Shiba Inu Price Prediction: Millionaire Crypto Trader Predicts Parabolic Meme Coin Boom \u2013 $1 Just the Start for SHIB? - Cryptonews",
+            "published_at": "2025-09-11T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTVQ5aHZGb2tBR2hpMmRZVkZiaWN4Q0ZWQ2pWOHJkZnc0Q2J0MkZQUXZ5N1d3aTY0dWdRTGswQXFva3hPelZRb3YxWGwzVldzLWx4amVBT0ZoSmZFVlFYSlRuUlR6bllTNGlfTkFLZk5pOGVwRDJSQUVhQXhMWk1VaFNVdFFiQnlQd1VjUW80RnM3RDZLSVlHRFltMHFUNWs1cXVNR0I5ejJhSWtiUXZzRlBTczRteFJld2lFTzJWaXdiZVFBcFMxRVNURGJINnV6UW5BVWhHTC0?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "market"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to SHIB. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771298725
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0022888952733978152,
+        "volume_24h": 8835664.22003408,
+        "volume_formatted": "8.84M",
+        "market_cap": 3860230882.0,
+        "market_cap_formatted": "3.86B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.002, indicating very low turnover with minimal selling. 24h volume represents 0.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771298727,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.56e-06,
+          "total_volume": 8835664.22003408,
+          "market_cap": 3860230882.0,
+          "circulating_supply": 589243874380800.2,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.0022888952733978152,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -0.152,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.002. Risk level: LOW. ",
+        "timestamp": 1771298728
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771298851,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.029582279364986537,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 1.131,
+      "volume": {
+        "value": 55669135.1586845,
+        "display": "55.67M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.030 (Low (Stable Holding)). Price 24h: +1.1%. Volume: 55.67M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.029582279364986537,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 18,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Meme Coin Meltdown: Dogecoin, Shiba Inu, PEPE Worst Hit After Shibarium Attack - The Coin Republic",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 18 news items related to PEPE. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.337e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298728,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.337e-05,
+            "mark_price": 68570.9
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Meme Coin Meltdown: Dogecoin, Shiba Inu, PEPE Worst Hit After Shibarium Attack - The Coin Republic",
+            "published_at": "2025-09-15T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"memecoin dogecoin shiba inu\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYTJDVHRTSWlaNk5rNDc2UmVRNnYtOXlKLXlIN0NPSy1yOFQtWG1rV1RmMXJUMDVrLVB5cDJublBrMUQ0S3VXV29ENHdNb1lwN2pPSzZNR3k2ZFMzdGNxMjVEVElrLVQ1MlhNR2lIcGZkcndOQmRYWE9TVlZKYXlQTWRmVXNGMFRIYmIyeTlfeWVUc0JRVjBCZF9vZkpfRFdtNmh6UDRiMjVHS3lkUjlaQkpyYUVYZ3NsNDhN0gHAAUFVX3lxTE5TY29fNllMSEIteUxCMXhOSFlPZVNUSEQtMm9rbVRGZDE2bkJsOEVENTdlTEVCQ1hYUzJEWUlMdXFib3pfVEN4d05YRDYxVV9IVUdhZHNBWVpBX3FSWm94dFlqQV9xUDFPSzdkU0t2Y0o3eXlJNk9YMXZ0dlU3YjZfX2ZqbVcxdWJ6N05RUmZhZDFNMzNTbjRNV2RuRjZoMTBzM0VXb3I4UVpLOTNHazN1aTU3QnQzMzlCYkRvc0lDVg?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "PEPE"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to PEPE. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771298728
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.029676594687025465,
+        "volume_24h": 55669135.1586845,
+        "volume_formatted": "55.67M",
+        "market_cap": 1875859941.0,
+        "market_cap_formatted": "1.88B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.030, indicating very low turnover with minimal selling. 24h volume represents 3.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771298850,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.46e-06,
+          "total_volume": 55669135.1586845,
+          "market_cap": 1875859941.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.029582279364986537,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 1.131,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.030. Risk level: LOW. ",
+        "timestamp": 1771298851
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771298982,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.011011020640542334,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 1.608,
+      "volume": {
+        "value": 3427675.74737477,
+        "display": "3.43M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.011 (Low (Stable Holding)). Price 24h: +1.6%. Volume: 3.43M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.011011020640542334,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 18,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 18 news items related to FLOKI. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.206e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298860,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.206e-05,
+            "mark_price": 68603.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to FLOKI. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771298860
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.011016863741878165,
+        "volume_24h": 3427675.74737477,
+        "volume_formatted": "3.43M",
+        "market_cap": 311129903.0,
+        "market_cap_formatted": "311.13M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.011, indicating very low turnover with minimal selling. 24h volume represents 1.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771298861,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.223e-05,
+          "total_volume": 3427675.74737477,
+          "market_cap": 311129903.0,
+          "circulating_supply": 9654936547021.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.011011020640542334,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 1.608,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.011. Risk level: LOW. ",
+        "timestamp": 1771298982
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771298985,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 37524145.58,
+        "display": "37.52M",
+        "velocity": 0.005944041226487105,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 7.332,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 37.52M (velocity: 0.006). Price 24h: +7.3%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 18,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "18 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.236e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298984,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.236e-05,
+            "mark_price": 68629.07032609
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to XMR. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771298984
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.005944041226487105,
+        "volume_24h": 37524145.58,
+        "volume_formatted": "37.52M",
+        "market_cap": 6312901299.0,
+        "market_cap_formatted": "6.31B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.006, indicating very low turnover with minimal selling. 24h volume represents 0.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771298984,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 344.62,
+          "total_volume": 37524145.58,
+          "market_cap": 6312901299.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 37524145.58,
+        "volume_formatted": "37.52M",
+        "price_change_24h": 7.332,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771298985,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771299048,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 486959559.08,
+        "display": "486.96M",
+        "velocity": 0.10041164215987032,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 1.177,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 486.96M (velocity: 0.100). Price 24h: +1.2%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 18,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "18 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.236e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771298985,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.236e-05,
+            "mark_price": 68629.07032609
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to ZEC. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771298985
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.10041164215987032,
+        "volume_24h": 486959559.08,
+        "volume_formatted": "486.96M",
+        "market_cap": 4849632459.0,
+        "market_cap_formatted": "4.85B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.100, indicating moderate turnover with normal trading activity. 24h volume represents 10.0% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771299047,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 294.97,
+          "total_volume": 486959559.08,
+          "market_cap": 4849632459.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 487243476.22,
+        "volume_formatted": "487.24M",
+        "price_change_24h": 1.177,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771299048,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771299111,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 40915548.25,
+        "display": "40.92M",
+        "velocity": 0.08460965244172927,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 3.752,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 40.92M (velocity: 0.085). Price 24h: +3.8%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 18,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "18 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.24e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771299050,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.24e-05,
+            "mark_price": 68603.1
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to DASH. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771299050
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08460965244172927,
+        "volume_24h": 40915548.25,
+        "volume_formatted": "40.92M",
+        "market_cap": 483580148.0,
+        "market_cap_formatted": "483.58M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.085, indicating moderate turnover with normal trading activity. 24h volume represents 8.5% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771299051,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 38.7,
+          "total_volume": 40915548.25,
+          "market_cap": 483580148.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 40915789.62,
+        "volume_formatted": "40.92M",
+        "price_change_24h": 3.752,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771299111,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771299115,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1232164.226,
+        "display": "1.23M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -2.344,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.23M (velocity: 0.000). Price 24h: -2.3%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": false,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. No immediate regulatory triggers. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 18,
+      "regulatory_events": {
+        "count": 0,
+        "items": []
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "18 events found. 0 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 0,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 0 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.237e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771299113,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.237e-05,
+            "mark_price": 68550.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to SCRT. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771299113
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1232164.226,
+        "volume_formatted": "1.23M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771299114,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0874,
+          "total_volume": 1232164.226,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1232205.351,
+        "volume_formatted": "1.23M",
+        "price_change_24h": -2.344,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771299115,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771299240,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1929047907.0,
+        "display": "1.93B"
+      },
+      "price_change_24h": 0.819,
+      "token_velocity": 0.02801250227892863,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.93B. Price 24h: +0.8%. Token velocity: 0.028. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.02801250227892863,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.028 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 18,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "18 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.237e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771299115,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.237e-05,
+            "mark_price": 68550.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to AAVE. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771299115
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.02801250227892863,
+        "volume_24h": 54037458.891,
+        "volume_formatted": "54.04M",
+        "market_cap": 1929047907.0,
+        "market_cap_formatted": "1.93B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.028, indicating very low turnover with minimal selling. 24h volume represents 2.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771299117,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 126.85,
+          "total_volume": 54037458.891,
+          "market_cap": 1929047907.0,
+          "circulating_supply": 15191735.977164716,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1929047907.0,
+        "market_cap_formatted": "1.93B",
+        "price_change_24h": 0.819,
+        "tvl": 27245348219.0,
+        "tvl_formatted": "27.25B",
+        "tvl_change_24h": 0.059334408586909186,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.25B (+0.1% 24h).",
+        "timestamp": 1771299240
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771299263,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2273542266.0,
+        "display": "2.27B"
+      },
+      "price_change_24h": 2.077,
+      "token_velocity": 0.03230916604873006,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.27B. Price 24h: +2.1%. Token velocity: 0.032. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03230916604873006,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.032 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 18,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "18 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.249e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771299247,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.249e-05,
+            "mark_price": 68597.5
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to UNI. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771299247
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03230916604873006,
+        "volume_24h": 73456254.591,
+        "volume_formatted": "73.46M",
+        "market_cap": 2273542266.0,
+        "market_cap_formatted": "2.27B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.032, indicating very low turnover with minimal selling. 24h volume represents 3.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771299247,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.587,
+          "total_volume": 73456254.591,
+          "market_cap": 2273542266.0,
+          "circulating_supply": 633802762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2273542266.0,
+        "market_cap_formatted": "2.27B",
+        "price_change_24h": 2.077,
+        "tvl": 3097216704.0,
+        "tvl_formatted": "3.10B",
+        "tvl_change_24h": -0.2372106175612549,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.10B (-0.2% 24h).",
+        "timestamp": 1771299263
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771299398,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 375336305.0,
+        "display": "375.34M"
+      },
+      "price_change_24h": 1.195,
+      "token_velocity": 0.08608437000518775,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 375.34M. Price 24h: +1.2%. Token velocity: 0.086. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.08608437000518775,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.086 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 18,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "18 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.249e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771299263,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.249e-05,
+            "mark_price": 68597.5
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to CRV. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771299263
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08608437000518775,
+        "volume_24h": 32310589.356,
+        "volume_formatted": "32.31M",
+        "market_cap": 375336305.0,
+        "market_cap_formatted": "375.34M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.086, indicating moderate turnover with normal trading activity. 24h volume represents 8.6% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771299384,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.253,
+          "total_volume": 32310589.356,
+          "market_cap": 375336305.0,
+          "circulating_supply": 1477186997.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 375336305.0,
+        "market_cap_formatted": "375.34M",
+        "price_change_24h": 1.195,
+        "tvl": 1892766117.0,
+        "tvl_formatted": "1.89B",
+        "tvl_change_24h": -0.25229075639817977,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.89B (-0.3% 24h).",
+        "timestamp": 1771299398
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771299521,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 291373206.0,
+        "display": "291.37M"
+      },
+      "price_change_24h": 1.539,
+      "token_velocity": 0.04583191359640667,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 291.37M. Price 24h: +1.5%. Token velocity: 0.046. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04583191359640667,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.046 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 18,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 0,
+        "items": []
+      },
+      "summary": "18 events: 0 governance, 0 security, 0 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 5.333e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771299399,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 5.333e-05,
+            "mark_price": 68520.56704348
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news",
+            "published_at": "2026-01-25T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GbmdDS3gteEQxcEk3UHF4NlI1R2txWFAtbEl4a21SNzRNV0lZZ0F6bXZHM3JtaGFDVnN6b1M4NnV2RHNMNXJzRENwZ2NFbTloWWRoZTB1TExoSlAtWTAtdXNzLUozYmFQWU04WndUczhJUjdOd2c?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Crypto phishers are sending letters to Trezor, Ledger users again",
+            "published_at": "2026-02-17T03:22:34+00:00",
+            "time_ago": "Recently",
+            "source": "Cointelegraph.com News",
+            "url": "https://cointelegraph.com/news/scammers-send-physical-letters-trezor-ledger-users-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+            "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjYtMDIvMDE5YzY5NDMtNjIyMy03NGZjLWI1ZTUtZjZiMTk5YmI1NTVkLmpwZw==.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Philippines' Digital Bank Maya Looks to US Market for Up to $1B IPO",
+            "published_at": "2026-02-17T03:17:07+00:00",
+            "time_ago": "Recently",
+            "source": "Decrypt",
+            "url": "https://decrypt.co/358255/philippines-digital-bank-maya-us-1b-ipo",
+            "image_url": "https://cdn.decrypt.co/wp-content/uploads/2025/08/Manilla-gID_7.jpg",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "India central bank finalises easier foreign borrowing rules for corporates",
+            "published_at": "2026-02-17T02:47:33+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/stock-market-update/india-central-bank-finalises-easier-foreign-borrowing-rules-for-corporates-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Oil steady as Iran drills near Strait of Hormuz ahead of US talks",
+            "published_at": "2026-02-17T02:22:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/commodities/oil-steady-as-iran-drills-near-strait-of-hormuz-ahead-of-us-talks-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "US dollar positioning hits record underweight in Bank of America survey",
+            "published_at": "2026-02-17T01:30:14+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/forex/us-dollar-positioning-hits-record-underweight-in-bank-of-america-survey-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Bundesbank pushes Euro CBDC as stablecoin market set to hit $500B by 2028 - Cryptopolitan",
+            "published_at": "2026-02-17T01:11:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BaVdrMnpraXhMa2lYcXZIcjBTNU9wU0EwRjdKUVVFdlRvcVBBN2hSV0tKUjdZdzJDNmJ2X3Rjb3FnbVlFblFqMEdFSWJzVlJIU1FpX2tPS0pEai1XdWQyZkN3TjZlR0JtcWc?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Reminder, China, Singapore &  Hong Kong markets are all closed today, Tuesday, February 17",
+            "published_at": "2026-02-17T01:04:59+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/news/reminder-china-singapore-hong-kong-markets-are-all-closed-today-tuesday-february-17-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 18,
+          "high_relevance_count": 18,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 17
+          }
+        },
+        "interpretation": "Found 18 news items related to LDO. 18 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Japan regulators expected to approve spot crypto ETFs by 2028 - crypto.news\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771299399
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04583191359640667,
+        "volume_24h": 13354191.6017,
+        "volume_formatted": "13.35M",
+        "market_cap": 291373206.0,
+        "market_cap_formatted": "291.37M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.046, indicating very low turnover with minimal selling. 24h volume represents 4.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771299400,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3431,
+          "total_volume": 13354191.6017,
+          "market_cap": 291373206.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 291373206.0,
+        "market_cap_formatted": "291.37M",
+        "price_change_24h": 1.539,
+        "tvl": 18876144105.0,
+        "tvl_formatted": "18.88B",
+        "tvl_change_24h": -0.3727564708092879,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.88B (-0.4% 24h).",
+        "timestamp": 1771299521
+      }
+    }
+  }
+}

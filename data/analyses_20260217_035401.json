@@ -1,0 +1,3068 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771288729,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68873.4,
+        "display": "$68,873.40"
+      },
+      "volume": {
+        "value": 10205099576.21,
+        "display": "10.21B",
+        "velocity": 0.0074142891932801125
+      },
+      "derivatives": {
+        "funding_rate": 0.0063549999999999995,
+        "funding_display": "0.0064%",
+        "open_interest": 5218528082.344199,
+        "oi_display": "5.22B"
+      },
+      "summary": "BTC mark price at $68,873.40. Funding rate: 0.0064%. Open Interest: 5.22B. Volume velocity: 0.007."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 1,
+      "high_relevance_count": 1,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "negative"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 1 news items related to BTC. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.323e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771288588,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.323e-05,
+            "mark_price": 68846.10587681
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 0
+          }
+        },
+        "interpretation": "Found 1 news items related to BTC. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771288721
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": 6.355e-05,
+        "funding_rate_percent": 0.0063549999999999995,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68873.4,
+        "open_interest_usd": 5218528082.344199,
+        "open_interest_base": 75769.863,
+        "oi_formatted": "5.22B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at 0.0064%, indicating balanced positioning between longs and shorts. Open interest stands at 5.22B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771288725,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 6.355e-05,
+            "mark_price": 68873.4
+          },
+          "open_interest": {
+            "open_interest_usd": 5218528082.344199,
+            "open_interest": 75769.863
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0074142891932801125,
+        "volume_24h": 10205099576.21,
+        "volume_formatted": "10.21B",
+        "market_cap": 1376409701615.0,
+        "market_cap_formatted": "1376.41B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.007, indicating very low turnover with minimal selling. 24h volume represents 0.7% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771288729,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68874.6,
+          "total_volume": 10205099576.21,
+          "market_cap": 1376409701615.0,
+          "circulating_supply": 19990543.0,
+          "transaction_count_24h": 536123,
+          "hashrate": 1107446999964.327
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771288733,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 2000.37,
+        "display": "$2,000.37"
+      },
+      "volume": {
+        "value": 8231462022.61,
+        "display": "8.23B",
+        "velocity": 0.03414069673339859
+      },
+      "derivatives": {
+        "funding_rate": 0.004927,
+        "funding_display": "0.0049%",
+        "open_interest": 3518324503.64079,
+        "oi_display": "3.52B"
+      },
+      "summary": "ETH mark price at $2,000.37. Funding rate: 0.0049%. Open Interest: 3.52B. Volume velocity: 0.034."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 1,
+      "high_relevance_count": 1,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "negative"
+        }
+      ],
+      "context": {
+        "fear_greed": 10,
+        "market_phase": "markdown",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 1 news items related to ETH. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "markdown",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Normal market conditions - standard risk management applies"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: markdown. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 1,
+      "items": [
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 4.927e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771288730,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 4.927e-05,
+            "mark_price": 2000.37
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 0
+          }
+        },
+        "interpretation": "Found 1 news items related to ETH. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771288730
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": 4.927e-05,
+        "funding_rate_percent": 0.004927,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 2000.37,
+        "open_interest_usd": 3518324503.64079,
+        "open_interest_base": 1758836.867,
+        "oi_formatted": "3.52B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at 0.0049%, indicating balanced positioning between longs and shorts. Open interest stands at 3.52B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771288732,
+        "raw_data": {
+          "funding": {
+            "funding_rate": 4.927e-05,
+            "mark_price": 2000.37
+          },
+          "open_interest": {
+            "open_interest_usd": 3518324503.64079,
+            "open_interest": 1758836.867
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03414069673339859,
+        "volume_24h": 8231462022.61,
+        "volume_formatted": "8.23B",
+        "market_cap": 241104101855.0,
+        "market_cap_formatted": "241.10B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.034, indicating very low turnover with minimal selling. 24h volume represents 3.4% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771288733,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 2000.37,
+          "total_volume": 8231462022.61,
+          "market_cap": 241104101855.0,
+          "circulating_supply": 120692449.4802243,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771288733
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771288733
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771288739,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.04004337427944522,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -1.649,
+      "volume": {
+        "value": 680548596.0128,
+        "display": "680.55M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.040 (Low (Stable Holding)). Price 24h: -1.6%. Volume: 680.55M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.04004337427944522,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 1,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+          "sentiment": "negative"
+        }
+      ],
+      "summary": "Found 1 news items related to DOGE. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.355e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771288734,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.355e-05,
+            "mark_price": 68882.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 0
+          }
+        },
+        "interpretation": "Found 1 news items related to DOGE. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771288734
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.040046341380128844,
+        "volume_24h": 680548596.0128,
+        "volume_formatted": "680.55M",
+        "market_cap": 16994026734.0,
+        "market_cap_formatted": "16.99B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.040, indicating very low turnover with minimal selling. 24h volume represents 4.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771288736,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.10083,
+          "total_volume": 680548596.0128,
+          "market_cap": 16994026734.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.04004337427944522,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -1.649,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.040. Risk level: LOW. ",
+        "timestamp": 1771288739
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771288862,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.0023783883737344943,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": -0.152,
+      "volume": {
+        "value": 9219376.17661188,
+        "display": "9.22M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.002 (Low (Stable Holding)). Price 24h: -0.2%. Volume: 9.22M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.0023783883737344943,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 1,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+          "sentiment": "negative"
+        }
+      ],
+      "summary": "Found 1 news items related to SHIB. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.355e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771288739,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.355e-05,
+            "mark_price": 68882.3
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 0
+          }
+        },
+        "interpretation": "Found 1 news items related to SHIB. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771288739
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.0023826425263288858,
+        "volume_24h": 9219376.17661188,
+        "volume_formatted": "9.22M",
+        "market_cap": 3869391264.0,
+        "market_cap_formatted": "3.87B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.002, indicating very low turnover with minimal selling. 24h volume represents 0.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771288861,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.57e-06,
+          "total_volume": 9219376.17661188,
+          "market_cap": 3869391264.0,
+          "circulating_supply": 589243874380800.2,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.0023783883737344943,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": -0.152,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.002. Risk level: LOW. ",
+        "timestamp": 1771288862
+      }
+    }
+  },
+  "PEPE": {
+    "ticker": "PEPE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771288985,
+    "snapshot": {
+      "title": "PEPE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.03200889348756724,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0.449,
+      "volume": {
+        "value": 59943580.9718804,
+        "display": "59.94M"
+      },
+      "speculation_level": "moderate",
+      "summary": "PEPE velocity: 0.032 (Low (Stable Holding)). Price 24h: +0.4%. Volume: 59.94M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.03200889348756724,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 1,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+          "sentiment": "negative"
+        }
+      ],
+      "summary": "Found 1 news items related to PEPE. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.408e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771288863,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.408e-05,
+            "mark_price": 68926.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "PEPE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 1,
+          "high_relevance_count": 1,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 0
+          }
+        },
+        "interpretation": "Found 1 news items related to PEPE. 1 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike\"",
+        "timeframe_hours": 24,
+        "ticker": "PEPE",
+        "timestamp": 1771288863
+      },
+      "onchain": {
+        "ticker": "PEPE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03201057901060943,
+        "volume_24h": 59943580.9718804,
+        "volume_formatted": "59.94M",
+        "market_cap": 1872617829.0,
+        "market_cap_formatted": "1.87B",
+        "interpretation": "PEPE has a volume/market cap velocity of 0.032, indicating very low turnover with minimal selling. 24h volume represents 3.2% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771288864,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 4.47e-06,
+          "total_volume": 59943580.9718804,
+          "market_cap": 1872617829.0,
+          "circulating_supply": 420690000000000.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "PEPE",
+        "velocity": 0.03200889348756724,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 0.449,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "PEPE is showing low (stable holding) with a velocity of 0.032. Risk level: LOW. ",
+        "timestamp": 1771288985
+      }
+    }
+  },
+  "FLOKI": {
+    "ticker": "FLOKI",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771288997,
+    "snapshot": {
+      "title": "FLOKI Memecoin Snapshot",
+      "velocity": {
+        "value": 0.011425791599146346,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 0.312,
+      "volume": {
+        "value": 3545962.2820433,
+        "display": "3.55M"
+      },
+      "speculation_level": "moderate",
+      "summary": "FLOKI velocity: 0.011 (Low (Stable Holding)). Price 24h: +0.3%. Volume: 3.55M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.011425791599146346,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 3,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+          "sentiment": "negative"
+        },
+        {
+          "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 3 news items related to FLOKI. 3 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.459e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771288994,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.459e-05,
+            "mark_price": 68857.72473188
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "FLOKI"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "FLOKI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 3 news items related to FLOKI. 3 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "FLOKI",
+        "timestamp": 1771288994
+      },
+      "onchain": {
+        "ticker": "FLOKI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.011425791599146346,
+        "volume_24h": 3545962.2820433,
+        "volume_formatted": "3.55M",
+        "market_cap": 310347187.0,
+        "market_cap_formatted": "310.35M",
+        "interpretation": "FLOKI has a volume/market cap velocity of 0.011, indicating very low turnover with minimal selling. 24h volume represents 1.1% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771288995,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.212e-05,
+          "total_volume": 3545962.2820433,
+          "market_cap": 310347187.0,
+          "circulating_supply": 9654936547021.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "FLOKI",
+        "velocity": 0.011425791599146346,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 0.312,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "FLOKI is showing low (stable holding) with a velocity of 0.011. Risk level: LOW. ",
+        "timestamp": 1771288997
+      }
+    }
+  },
+  "XMR": {
+    "ticker": "XMR",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289119,
+    "snapshot": {
+      "title": "XMR Privacy Coin Snapshot",
+      "volume": {
+        "value": 37029523.45,
+        "display": "37.03M",
+        "velocity": 0.00611966747083195,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -0.421,
+      "regulatory_alert": false,
+      "summary": "XMR volume: 37.03M (velocity: 0.006). Price 24h: -0.4%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 3,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "3 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.459e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771288998,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.459e-05,
+            "mark_price": 68857.72473188
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "XMR"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "XMR"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 3 news items related to XMR. 3 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "XMR",
+        "timestamp": 1771288998
+      },
+      "onchain": {
+        "ticker": "XMR",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.00611966747083195,
+        "volume_24h": 37029523.45,
+        "volume_formatted": "37.03M",
+        "market_cap": 6050904502.0,
+        "market_cap_formatted": "6.05B",
+        "interpretation": "XMR has a volume/market cap velocity of 0.006, indicating very low turnover with minimal selling. 24h volume represents 0.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771289119,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 327.89,
+          "total_volume": 37029523.45,
+          "market_cap": 6050904502.0,
+          "circulating_supply": 18446744.07370955,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "XMR",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 37033667.5,
+        "volume_formatted": "37.03M",
+        "price_change_24h": -0.421,
+        "interpretation": "XMR is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771289119,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "ZEC": {
+    "ticker": "ZEC",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289243,
+    "snapshot": {
+      "title": "ZEC Privacy Coin Snapshot",
+      "volume": {
+        "value": 531689665.93,
+        "display": "531.69M",
+        "velocity": 0.10969624613562988,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -2.077,
+      "regulatory_alert": false,
+      "summary": "ZEC volume: 531.69M (velocity: 0.110). Price 24h: -2.1%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "neutral",
+        "interpretation": "Normal holder behavior"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: neutral. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 3,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "MODERATE (Ongoing regulatory scrutiny)",
+      "summary": "3 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "MODERATE (Ongoing regulatory scrutiny)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: MODERATE (Ongoing regulatory scrutiny). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.441e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771289121,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.441e-05,
+            "mark_price": 68848.75967391
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "ZEC"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ZEC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 3 news items related to ZEC. 3 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "ZEC",
+        "timestamp": 1771289121
+      },
+      "onchain": {
+        "ticker": "ZEC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "neutral",
+        "network_activity": "medium",
+        "velocity": 0.10969624613562988,
+        "volume_24h": 531689665.93,
+        "volume_formatted": "531.69M",
+        "market_cap": 4846926715.0,
+        "market_cap_formatted": "4.85B",
+        "interpretation": "ZEC has a volume/market cap velocity of 0.110, indicating moderate turnover with normal trading activity. 24h volume represents 11.0% of market cap. Holder behavior appears balanced.",
+        "timestamp": 1771289122,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 293.26,
+          "total_volume": 531689665.93,
+          "market_cap": 4846926715.0,
+          "circulating_supply": 16511426.7280448,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "ZEC",
+        "regulatory_risk": "MODERATE (Ongoing regulatory scrutiny)",
+        "volume_24h": 531691200.32,
+        "volume_formatted": "531.69M",
+        "price_change_24h": -2.077,
+        "interpretation": "ZEC is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: MODERATE (Ongoing regulatory scrutiny). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771289243,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289246,
+    "snapshot": {
+      "title": "DASH Privacy Coin Snapshot",
+      "volume": {
+        "value": 41378240.02,
+        "display": "41.38M",
+        "velocity": 0.08606077452766932,
+        "status": "NORMAL"
+      },
+      "price_change_24h": 1.354,
+      "regulatory_alert": false,
+      "summary": "DASH volume: 41.38M (velocity: 0.086). Price 24h: +1.4%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 3,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "3 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.498e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771289245,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.498e-05,
+            "mark_price": 68894.99247101
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "DASH"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DASH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 3 news items related to DASH. 3 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "DASH",
+        "timestamp": 1771289245
+      },
+      "onchain": {
+        "ticker": "DASH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08606077452766932,
+        "volume_24h": 41378240.02,
+        "volume_formatted": "41.38M",
+        "market_cap": 480802552.0,
+        "market_cap_formatted": "480.80M",
+        "interpretation": "DASH has a volume/market cap velocity of 0.086, indicating moderate turnover with normal trading activity. 24h volume represents 8.6% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771289245,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 38.17,
+          "total_volume": 41378240.02,
+          "market_cap": 480802552.0,
+          "circulating_supply": 12586777.39486718,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "DASH",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 41378240.02,
+        "volume_formatted": "41.38M",
+        "price_change_24h": 1.354,
+        "interpretation": "DASH is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771289246,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "SCRT": {
+    "ticker": "SCRT",
+    "asset_type": "PRIVACY",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289369,
+    "snapshot": {
+      "title": "SCRT Privacy Coin Snapshot",
+      "volume": {
+        "value": 1231182.5757,
+        "display": "1.23M",
+        "velocity": 0.0,
+        "status": "NORMAL"
+      },
+      "price_change_24h": -1.993,
+      "regulatory_alert": false,
+      "summary": "SCRT volume: 1.23M (velocity: 0.000). Price 24h: -2.0%. Normal activity."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "global_environment": "risk-off",
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "interpretation": "Strong conviction despite regulatory pressure"
+      },
+      "volume_pressure": {
+        "level": "NORMAL",
+        "regulatory_driven": false
+      },
+      "regulatory_pressure": {
+        "detected": true,
+        "impact": "Background concern"
+      },
+      "summary": "Holder behavior: strong holding. Regulatory news detected - likely driving activity. Volume pressure: NORMAL."
+    },
+    "events": {
+      "title": "Events & Regulatory Context",
+      "total_events": 3,
+      "regulatory_events": {
+        "count": 1,
+        "items": [
+          "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block"
+        ]
+      },
+      "exchange_events": {
+        "count": 0,
+        "items": [],
+        "risk_level": "NORMAL"
+      },
+      "regulatory_risk_level": "HIGH (Small cap + regulatory pressure)",
+      "summary": "3 events found. 1 regulatory, 0 exchange-related. No immediate delisting threats."
+    },
+    "risks": {
+      "title": "Privacy Coin Risk Assessment",
+      "regulatory_risk": {
+        "level": "HIGH (Small cap + regulatory pressure)",
+        "recent_events": 1,
+        "description": "Ongoing regulatory scrutiny (standard for privacy coins)"
+      },
+      "delisting_risk": {
+        "level": "MODERATE (Background risk)",
+        "factors": [
+          "Ongoing regulatory pressure",
+          "Recent regulatory developments",
+          "Limited exchange availability",
+          "Jurisdictional bans possible"
+        ]
+      },
+      "jurisdictional_risk": {
+        "level": "ONGOING",
+        "description": "Privacy coins face regulatory scrutiny in multiple jurisdictions"
+      },
+      "liquidity_risk": {
+        "level": "ELEVATED",
+        "description": "Delisting events can severely impact liquidity"
+      },
+      "overall_assessment": {
+        "primary_risk": "Regulatory & Exchange Availability",
+        "recommendation": "Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+      },
+      "summary": "Regulatory risk: HIGH (Small cap + regulatory pressure). 1 recent regulatory events. Delisting risk: MODERATE (Background risk). Standard privacy coin risk - monitor for regulatory developments and exchange announcements"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.498e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771289246,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.498e-05,
+            "mark_price": 68894.99247101
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "SCRT"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SCRT"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 3,
+          "high_relevance_count": 3,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 2
+          }
+        },
+        "interpretation": "Found 3 news items related to SCRT. 3 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "SCRT",
+        "timestamp": 1771289246
+      },
+      "onchain": {
+        "ticker": "SCRT",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "medium",
+        "velocity": 0.0,
+        "volume_24h": 1231182.5757,
+        "volume_formatted": "1.23M",
+        "market_cap": 0.0,
+        "market_cap_formatted": "0.00",
+        "interpretation": "SCRT has a volume/market cap velocity of 0.000, indicating very low turnover with minimal selling. 24h volume represents 0.0% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771289369,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.0884,
+          "total_volume": 1231182.5757,
+          "market_cap": 0.0,
+          "circulating_supply": 0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "privacy_metrics": {
+        "asset_type": "PRIVACY",
+        "ticker": "SCRT",
+        "regulatory_risk": "HIGH (Small cap + regulatory pressure)",
+        "volume_24h": 1232019.2382,
+        "volume_formatted": "1.23M",
+        "price_change_24h": -1.993,
+        "interpretation": "SCRT is a privacy-focused cryptocurrency facing ongoing regulatory scrutiny. Regulatory risk level: HIGH (Small cap + regulatory pressure). Key risks: exchange delisting, regulatory actions, jurisdictional bans. Monitor news closely as privacy coins are regulatory targets.",
+        "timestamp": 1771289369,
+        "note": "Monitor regulatory news closely for privacy coins"
+      }
+    }
+  },
+  "AAVE": {
+    "ticker": "AAVE",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289500,
+    "snapshot": {
+      "title": "AAVE DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 1928369883.0,
+        "display": "1.93B"
+      },
+      "price_change_24h": 1.387,
+      "token_velocity": 0.027841771074268537,
+      "protocol_size": "Medium (Established)",
+      "summary": "AAVE market cap: 1.93B. Price 24h: +1.4%. Token velocity: 0.028. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.027841771074268537,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.028 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 4,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Top Yield Farming Coins by Market Cap - CoinGecko"
+        ]
+      },
+      "summary": "4 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.542e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771289376,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.542e-05,
+            "mark_price": 69021.55619565
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "AAVE"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "AAVE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 4 news items related to AAVE. 4 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "AAVE",
+        "timestamp": 1771289376
+      },
+      "onchain": {
+        "ticker": "AAVE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.027841771074268537,
+        "volume_24h": 53689232.829,
+        "volume_formatted": "53.69M",
+        "market_cap": 1928369883.0,
+        "market_cap_formatted": "1.93B",
+        "interpretation": "AAVE has a volume/market cap velocity of 0.028, indicating very low turnover with minimal selling. 24h volume represents 2.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771289377,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 127.22,
+          "total_volume": 53689232.829,
+          "market_cap": 1928369883.0,
+          "circulating_supply": 15191735.977164716,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "AAVE",
+        "market_cap": 1928369883.0,
+        "market_cap_formatted": "1.93B",
+        "price_change_24h": 1.387,
+        "tvl": 27229629307.0,
+        "tvl_formatted": "27.23B",
+        "tvl_change_24h": 0.002301365964962195,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "AAVE is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $27.23B (+0.0% 24h).",
+        "timestamp": 1771289500
+      }
+    }
+  },
+  "UNI": {
+    "ticker": "UNI",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289504,
+    "snapshot": {
+      "title": "UNI DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 2294209092.0,
+        "display": "2.29B"
+      },
+      "price_change_24h": 3.351,
+      "token_velocity": 0.03321700087526285,
+      "protocol_size": "Medium (Established)",
+      "summary": "UNI market cap: 2.29B. Price 24h: +3.4%. Token velocity: 0.033. Protocol size: Medium (Established)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.03321700087526285,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.033 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 4,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Top Yield Farming Coins by Market Cap - CoinGecko"
+        ]
+      },
+      "summary": "4 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "LOW-MEDIUM (Established protocol)",
+        "market_cap_category": "Medium (Established)",
+        "description": "LOW-MEDIUM (Established protocol) - Medium (Established) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW-MEDIUM (Established protocol)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: LOW-MEDIUM (Established protocol). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.677e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771289502,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.677e-05,
+            "mark_price": 68987.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "UNI"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "UNI"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 4 news items related to UNI. 4 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "UNI",
+        "timestamp": 1771289502
+      },
+      "onchain": {
+        "ticker": "UNI",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03321700087526285,
+        "volume_24h": 76206745.417,
+        "volume_formatted": "76.21M",
+        "market_cap": 2294209092.0,
+        "market_cap_formatted": "2.29B",
+        "interpretation": "UNI has a volume/market cap velocity of 0.033, indicating very low turnover with minimal selling. 24h volume represents 3.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771289503,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 3.608,
+          "total_volume": 76206745.417,
+          "market_cap": 2294209092.0,
+          "circulating_supply": 633806762.0380214,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "UNI",
+        "market_cap": 2294209092.0,
+        "market_cap_formatted": "2.29B",
+        "price_change_24h": 3.351,
+        "tvl": 3101353098.0,
+        "tvl_formatted": "3.10B",
+        "tvl_change_24h": 0.5660443169001882,
+        "defi_risk": "LOW-MEDIUM (Established protocol)",
+        "interpretation": "UNI is a DeFi protocol token. Risk level: LOW-MEDIUM (Established protocol). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $3.10B (+0.6% 24h).",
+        "timestamp": 1771289504
+      }
+    }
+  },
+  "CRV": {
+    "ticker": "CRV",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289637,
+    "snapshot": {
+      "title": "CRV DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 378235902.0,
+        "display": "378.24M"
+      },
+      "price_change_24h": 1.594,
+      "token_velocity": 0.08569121331057568,
+      "protocol_size": "Small (Emerging)",
+      "summary": "CRV market cap: 378.24M. Price 24h: +1.6%. Token velocity: 0.086. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.08569121331057568,
+        "activity_level": "MODERATE",
+        "holder_behavior": "holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.086 (MODERATE). Holder behavior: holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 4,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Top Yield Farming Coins by Market Cap - CoinGecko"
+        ]
+      },
+      "summary": "4 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.677e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771289504,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.677e-05,
+            "mark_price": 68987.6
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "CRV"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "CRV"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 4,
+          "high_relevance_count": 4,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 3
+          }
+        },
+        "interpretation": "Found 4 news items related to CRV. 4 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "CRV",
+        "timestamp": 1771289504
+      },
+      "onchain": {
+        "ticker": "CRV",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "holding",
+        "network_activity": "low",
+        "velocity": 0.08569121331057568,
+        "volume_24h": 32411493.36,
+        "volume_formatted": "32.41M",
+        "market_cap": 378235902.0,
+        "market_cap_formatted": "378.24M",
+        "interpretation": "CRV has a volume/market cap velocity of 0.086, indicating moderate turnover with normal trading activity. 24h volume represents 8.6% of market cap. Holders are largely holding positions.",
+        "timestamp": 1771289626,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.255,
+          "total_volume": 32411493.36,
+          "market_cap": 378235902.0,
+          "circulating_supply": 1477169395.0,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "CRV",
+        "market_cap": 378235902.0,
+        "market_cap_formatted": "378.24M",
+        "price_change_24h": 1.594,
+        "tvl": 1893572551.0,
+        "tvl_formatted": "1.89B",
+        "tvl_change_24h": -0.0257143439957525,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "CRV is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $1.89B (-0.0% 24h).",
+        "timestamp": 1771289637
+      }
+    }
+  },
+  "LDO": {
+    "ticker": "LDO",
+    "asset_type": "DEFI",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771289641,
+    "snapshot": {
+      "title": "LDO DeFi Protocol Snapshot",
+      "market_cap": {
+        "value": 292866718.0,
+        "display": "292.87M"
+      },
+      "price_change_24h": 1.233,
+      "token_velocity": 0.04455683331384893,
+      "protocol_size": "Small (Emerging)",
+      "summary": "LDO market cap: 292.87M. Price 24h: +1.2%. Token velocity: 0.045. Protocol size: Small (Emerging)."
+    },
+    "pressure": {
+      "title": "Protocol Activity & Pressure",
+      "defi_environment": {
+        "global_risk_sentiment": "risk-off",
+        "impact": "DeFi sensitive to risk-off moves"
+      },
+      "token_dynamics": {
+        "velocity": 0.04455683331384893,
+        "activity_level": "MODERATE",
+        "holder_behavior": "strong_holding"
+      },
+      "protocol_pressure": {
+        "level": "LOW (Stable)",
+        "interpretation": "Token holders showing conviction"
+      },
+      "summary": "Global sentiment: risk-off. Token velocity: 0.045 (MODERATE). Holder behavior: strong holding. Token holders showing conviction"
+    },
+    "events": {
+      "title": "Protocol Events & Developments",
+      "total_events": 5,
+      "governance_activity": {
+        "count": 0,
+        "items": [],
+        "level": "LOW"
+      },
+      "security_events": {
+        "count": 0,
+        "items": [],
+        "alert": false
+      },
+      "protocol_updates": {
+        "count": 1,
+        "items": [
+          "Top Yield Farming Coins by Market Cap - CoinGecko"
+        ]
+      },
+      "summary": "5 events: 0 governance, 0 security, 1 protocol updates. No security concerns."
+    },
+    "risks": {
+      "title": "DeFi Protocol Risk Assessment",
+      "protocol_risk": {
+        "level": "MEDIUM (Smaller protocols carry higher risk)",
+        "market_cap_category": "Small (Emerging)",
+        "description": "MEDIUM (Smaller protocols carry higher risk) - Small (Emerging) protocol with standard DeFi risks"
+      },
+      "smart_contract_risk": {
+        "level": "ONGOING",
+        "recent_events": false,
+        "description": "Standard smart contract risk"
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "factors": [
+          "Smaller protocol - liquidity can be limited",
+          "Token liquidity tied to protocol usage",
+          "TVL changes can impact token value"
+        ]
+      },
+      "governance_risk": {
+        "level": "STANDARD",
+        "description": "Protocol subject to governance decisions that can affect tokenomics"
+      },
+      "metrics_to_monitor": {
+        "critical": [
+          "TVL changes",
+          "Yield/APY shifts",
+          "Security audits",
+          "Governance proposals"
+        ],
+        "note": "Full analysis requires DeFiLlama integration for TVL data"
+      },
+      "overall_assessment": {
+        "risk_level": "MEDIUM (Smaller protocols carry higher risk)",
+        "recommendation": "Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+      },
+      "summary": "Protocol risk: MEDIUM (Smaller protocols carry higher risk). Smart contract risk: ONGOING. Standard DeFi risks - monitor TVL, yields, governance, and security audits"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 10,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": 6.694e-05,
+        "funding_signal": "neutral",
+        "market_phase": "markdown",
+        "timestamp": 1771289638,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 10 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 10,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": 6.694e-05,
+            "mark_price": 68952.96922464
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block",
+            "published_at": "2026-01-06T08:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"crypto ETF approval\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNU2thV1U1aVpyblJ0dGVUSEppYTJNc0F5bjVMRlFUUHQ0dFV4a1Fpck5uejJmUmNFdm10a0owTHNGMmtTOGg2OFFyWkxybFZvTHBUUzFuMTRqLTRhN2d4bFhxVUo2WGJVTUJKbC1BYXNSb2IxbElSSzNYRjFnUXRsWUZ6M25ZS1VLd3dzWnNR?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.95,
+            "categories": [
+              "regulation",
+              "institutional"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "BOJ likely to raise rates 25bp April, former board member says. Gradual move toward 1.25%",
+            "published_at": "2026-02-17T00:42:23+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/boj-likely-to-raise-rates-25bp-april-former-board-member-says-gradual-move-toward-125-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "RBA minutes show inflation risks \u2018shifted materially\u2019 behind February rate hike",
+            "published_at": "2026-02-17T00:33:56+00:00",
+            "time_ago": "Recently",
+            "source": "Investinglive RSS Breaking News Feed",
+            "url": "https://investinglive.com/centralbank/rba-minutes-show-inflation-risks-shifted-materially-behind-february-rate-hike-20260217/",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "negative",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "EU may change CBDC to counter U.S. stablecoins - American Banker",
+            "published_at": "2025-08-27T07:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "\"central bank digital currency\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQa3lsRDNrRlVyV0FZcTBjenhFcVk4RXZsSTc4TXdSREhCZmY1X0tjME5hTVhrME5HS05wMU1tQjY2YzE3cWI1QWdWcm83anVQX3hQYUk2S2ZWbzNLbWQ5d3R1ZVRTRlBJel9tOUgtcmJXMWxHb3A1eWNTUTFjdUZuZEpFTmJIY084RktKWktPb1Y0ek83Unhj?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          },
+          {
+            "title": "Top Yield Farming Coins by Market Cap - CoinGecko",
+            "published_at": "2021-01-30T17:18:13+00:00",
+            "time_ago": "Recently",
+            "source": "\"aave uniswap curve lending\" - Google News",
+            "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CZmtEMVZoM1RSVmp3YUlzMUxRcTNfQjNTdlVxcnlmY3ozSGg3ZWZsaGFRTHVvb3g2TVVxaDk0VmdzUGhDYWpLbnRIVmV6NFVzQ3VKUm5LS0NfVjVURVg1dHlCZw?oc=5",
+            "image_url": null,
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "LDO"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 5,
+          "high_relevance_count": 5,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 4
+          }
+        },
+        "interpretation": "Found 5 news items related to LDO. 5 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Morgan Stanley files with SEC for spot Bitcoin and Solana ETFs - The Block\"",
+        "timeframe_hours": 24,
+        "ticker": "LDO",
+        "timestamp": 1771289638
+      },
+      "onchain": {
+        "ticker": "LDO",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.04455683331384893,
+        "volume_24h": 13049213.5371,
+        "volume_formatted": "13.05M",
+        "market_cap": 292866718.0,
+        "market_cap_formatted": "292.87M",
+        "interpretation": "LDO has a volume/market cap velocity of 0.045, indicating very low turnover with minimal selling. 24h volume represents 4.5% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771289639,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.3449,
+          "total_volume": 13049213.5371,
+          "market_cap": 292866718.0,
+          "circulating_supply": 848066802.5927889,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "defi_metrics": {
+        "asset_type": "DEFI",
+        "ticker": "LDO",
+        "market_cap": 292866718.0,
+        "market_cap_formatted": "292.87M",
+        "price_change_24h": 1.233,
+        "tvl": 18946769414.0,
+        "tvl_formatted": "18.95B",
+        "tvl_change_24h": 0.0,
+        "defi_risk": "MEDIUM (Smaller protocols carry higher risk)",
+        "interpretation": "LDO is a DeFi protocol token. Risk level: MEDIUM (Smaller protocols carry higher risk). Key metrics to monitor: TVL (Total Value Locked), protocol revenue, active users, governance activity. Full analysis requires DeFiLlama integration. TVL: $18.95B (+0.0% 24h).",
+        "timestamp": 1771289641
+      }
+    }
+  }
+}

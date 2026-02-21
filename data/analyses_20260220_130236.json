@@ -1,0 +1,1456 @@
+{
+  "BTC": {
+    "ticker": "BTC",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771581582,
+    "snapshot": {
+      "title": "BTC 24h Snapshot",
+      "price": {
+        "mark_price": 68172.9478913,
+        "display": "$68,172.95"
+      },
+      "volume": {
+        "value": 10857242318.67,
+        "display": "10.86B",
+        "velocity": 0.007970035780146283
+      },
+      "derivatives": {
+        "funding_rate": -0.002576,
+        "funding_display": "-0.0026%",
+        "open_interest": 5579884816.864151,
+        "oi_display": "5.58B"
+      },
+      "summary": "BTC mark price at $68,172.95. Funding rate: -0.0026%. Open Interest: 5.58B. Volume velocity: 0.008."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 20,
+      "high_relevance_count": 20,
+      "dominant_theme": "development",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "v28.4rc1: Bitcoin Core 28.4 release candidate 1",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Bitcoin Core 29.3",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "v29.3rc2: Bitcoin Core 29.3 release candidate 2",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 7,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 20 news items related to BTC. 20 of these are highly relevant. The dominant theme is Development progress. Overall news sentiment is negative, which may create selling pressure. Most significant: \"v28.4rc1: Bitcoin Core 28.4 release candidate 1\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.33e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771581232,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.33e-05,
+            "mark_price": 68124.92141304
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "v28.4rc1: Bitcoin Core 28.4 release candidate 1",
+            "published_at": "2026-02-20T12:54:49.589861",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v28.4rc1",
+            "image_url": "https://avatars.githubusercontent.com/u/863730?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Core 29.3",
+            "published_at": "2026-02-20T12:54:49.821112",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v29.3",
+            "image_url": "https://avatars.githubusercontent.com/u/8421793?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "v29.3rc2: Bitcoin Core 29.3 release candidate 2",
+            "published_at": "2026-02-20T12:54:49.943329",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v29.3rc2",
+            "image_url": "https://avatars.githubusercontent.com/u/8421793?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "v29.3rc1: Bitcoin Core 29.3 release candidate 1",
+            "published_at": "2026-02-20T12:54:50.050646",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v29.3rc1",
+            "image_url": "https://avatars.githubusercontent.com/u/8421793?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Core 30.2",
+            "published_at": "2026-02-20T12:54:50.205942",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v30.2",
+            "image_url": "https://avatars.githubusercontent.com/u/863730?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "v30.2rc1: Bitcoin Core 30.2 release candidate 1",
+            "published_at": "2026-02-20T12:54:50.296554",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v30.2rc1",
+            "image_url": "https://avatars.githubusercontent.com/u/863730?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Core 30.1",
+            "published_at": "2026-02-20T12:54:50.426211",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v30.1",
+            "image_url": "https://avatars.githubusercontent.com/u/863730?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "v30.1rc1: Bitcoin Core 30.1 release candidate 1",
+            "published_at": "2026-02-20T12:54:50.572071",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v30.1rc1",
+            "image_url": "https://avatars.githubusercontent.com/u/863730?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "Bitcoin Core 28.3",
+            "published_at": "2026-02-20T12:54:50.697703",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v28.3",
+            "image_url": "https://avatars.githubusercontent.com/u/863730?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          },
+          {
+            "title": "v28.3rc2: Bitcoin Core 28.3 release candidate 2",
+            "published_at": "2026-02-20T12:54:50.794474",
+            "time_ago": "Recently",
+            "source": "Release notes from bitcoin",
+            "url": "https://github.com/bitcoin/bitcoin/releases/tag/v28.3rc2",
+            "image_url": "https://avatars.githubusercontent.com/u/863730?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "development"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "BTC"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 20,
+          "high_relevance_count": 20,
+          "dominant_theme": "development",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 2,
+            "neutral": 18
+          }
+        },
+        "interpretation": "Found 20 news items related to BTC. 20 of these are highly relevant. The dominant theme is Development progress. Overall news sentiment is negative, which may create selling pressure. Most significant: \"v28.4rc1: Bitcoin Core 28.4 release candidate 1\"",
+        "timeframe_hours": 24,
+        "ticker": "BTC",
+        "timestamp": 1771581566
+      },
+      "derivatives": {
+        "ticker": "BTC",
+        "funding_rate": -2.576e-05,
+        "funding_rate_percent": -0.002576,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 68172.9478913,
+        "open_interest_usd": 5579884816.864151,
+        "open_interest_base": 81848.959,
+        "oi_formatted": "5.58B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for BTC are neutral at -0.0026%, indicating balanced positioning between longs and shorts. Open interest stands at 5.58B, representing significant leverage in the market. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771581574,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -2.576e-05,
+            "mark_price": 68172.9478913
+          },
+          "open_interest": {
+            "open_interest_usd": 5579884816.864151,
+            "open_interest": 81848.959
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "BTC",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.007970035780146283,
+        "volume_24h": 10857242318.67,
+        "volume_formatted": "10.86B",
+        "market_cap": 1362257663349.0,
+        "market_cap_formatted": "1362.26B",
+        "interpretation": "BTC has a volume/market cap velocity of 0.008, indicating very low turnover with minimal selling. 24h volume represents 0.8% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771581582,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 68168.7,
+          "total_volume": 10857242318.67,
+          "market_cap": 1362257663349.0,
+          "circulating_supply": 19992221.0,
+          "transaction_count_24h": 413638,
+          "hashrate": 983397435876.6613
+        }
+      }
+    }
+  },
+  "ETH": {
+    "ticker": "ETH",
+    "asset_type": "MAJORS",
+    "active_pillars": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771581598,
+    "snapshot": {
+      "title": "ETH 24h Snapshot",
+      "price": {
+        "mark_price": 1966.87062016,
+        "display": "$1,966.87"
+      },
+      "volume": {
+        "value": 8613385725.1,
+        "display": "8.61B",
+        "velocity": 0.03626384911402961
+      },
+      "derivatives": {
+        "funding_rate": -0.0060810000000000005,
+        "funding_display": "-0.0061%",
+        "open_interest": 3483079537.1194706,
+        "oi_display": "3.48B"
+      },
+      "summary": "ETH mark price at $1,966.87. Funding rate: -0.0061%. Open Interest: 3.48B. Volume velocity: 0.036."
+    },
+    "pressure": {
+      "title": "Market Pressure Analysis",
+      "environment": {
+        "type": "risk-off",
+        "crowd_level": "moderate",
+        "description": "Risk Off environment with moderate crowd level"
+      },
+      "leverage": {
+        "intensity": "low",
+        "risk": "Low",
+        "signal": "neutral"
+      },
+      "pressure_signal": {
+        "type": "neutral",
+        "level": "MODERATE",
+        "description": "Balanced market without extreme positioning"
+      },
+      "summary": "Market is risk-off with moderate positioning. Leverage intensity: low. Pressure signal: neutral. Overall pressure: MODERATE."
+    },
+    "events": {
+      "title": "Event & Context Mapping",
+      "event_count": 19,
+      "high_relevance_count": 19,
+      "dominant_theme": "general",
+      "overall_sentiment": "negative",
+      "top_events": [
+        {
+          "title": "Eezo-Inlaid Circuitry (v1.17.0)",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Shield Focusing Module (v1.16.9)",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Moisture Filters (v1.16.8)",
+          "relevance": "direct",
+          "score": 0.85,
+          "sentiment": "neutral"
+        }
+      ],
+      "context": {
+        "fear_greed": 7,
+        "market_phase": "accumulation",
+        "sentiment_alignment": "aligned"
+      },
+      "summary": "Found 19 news items related to ETH. 19 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Eezo-Inlaid Circuitry (v1.17.0)\""
+    },
+    "risks": {
+      "title": "Risk & Conditions Summary",
+      "leverage_risk": {
+        "level": "Low",
+        "description": "Leverage risk is low"
+      },
+      "liquidity_risk": {
+        "level": "Low (Stable)",
+        "description": "Network activity: low, Holder behavior: strong holding"
+      },
+      "event_risk": {
+        "level": "Normal",
+        "description": "Market moderate - normal event sensitivity"
+      },
+      "structural_risk": {
+        "level": "LOW",
+        "description": "Low risk - stable market structure"
+      },
+      "market_conditions": {
+        "phase": "accumulation",
+        "holder_behavior": "strong_holding",
+        "recommendation": "Early-stage conditions - potential for sustained moves"
+      },
+      "summary": "Overall risk: LOW. Leverage risk: Low. Market phase: accumulation. Conditions: Low risk - stable market structure"
+    },
+    "insights": {
+      "count": 2,
+      "items": [
+        {
+          "type": "macro_alignment",
+          "message": "Risk-off sentiment with negative funding suggests macro-driven selling pressure"
+        },
+        {
+          "type": "holder_conviction",
+          "message": "Strong holder conviction despite fearful sentiment - potential accumulation phase"
+        }
+      ]
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -6.081e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771581595,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -6.081e-05,
+            "mark_price": 1966.91
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Eezo-Inlaid Circuitry (v1.17.0)",
+            "published_at": "2026-02-20T12:54:52.963697",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.0",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Shield Focusing Module (v1.16.9)",
+            "published_at": "2026-02-20T12:54:53.050505",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.9",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Moisture Filters (v1.16.8)",
+            "published_at": "2026-02-20T12:54:53.143579",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.8",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Ballistic Drift Stabilizer (v1.16.7)",
+            "published_at": "2026-02-20T12:54:53.240416",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.7",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Leather Wrapping (v1.16.6)",
+            "published_at": "2026-02-20T12:54:53.324546",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.6",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Coolant Cells (v1.16.5)",
+            "published_at": "2026-02-20T12:54:53.456470",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.5",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Bioelectric Infusers (v1.16.4)",
+            "published_at": "2026-02-20T12:54:53.555482",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.4",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "Impact Restrictors (v1.16.3)",
+            "published_at": "2026-02-20T12:54:53.642996",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.3",
+            "image_url": "https://avatars.githubusercontent.com/u/3272758?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "v1.7.0-alpha.0",
+            "published_at": "2026-02-20T12:54:55.914905",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.7.0-alpha.0",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          },
+          {
+            "title": "v1.6.0-beta.2",
+            "published_at": "2026-02-20T12:54:56.099286",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.6.0-beta.2",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "ETH"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 19,
+          "high_relevance_count": 19,
+          "dominant_theme": "general",
+          "overall_sentiment": "negative",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 18
+          }
+        },
+        "interpretation": "Found 19 news items related to ETH. 19 of these are highly relevant. Overall news sentiment is negative, which may create selling pressure. Most significant: \"Eezo-Inlaid Circuitry (v1.17.0)\"",
+        "timeframe_hours": 24,
+        "ticker": "ETH",
+        "timestamp": 1771581595
+      },
+      "derivatives": {
+        "ticker": "ETH",
+        "funding_rate": -6.081e-05,
+        "funding_rate_percent": -0.0060810000000000005,
+        "funding_analysis": {
+          "risk_level": "Low",
+          "signal": "neutral",
+          "description": "Balanced positioning"
+        },
+        "mark_price": 1966.87062016,
+        "open_interest_usd": 3483079537.1194706,
+        "open_interest_base": 1770873.743,
+        "oi_formatted": "3.48B",
+        "pressure_signal": "neutral",
+        "leverage_risk": "Low",
+        "interpretation": "Funding rates for ETH are neutral at -0.0061%, indicating balanced positioning between longs and shorts. Open interest stands at 3.48B, at moderate levels. Current positioning appears balanced without extreme leverage or crowding.",
+        "timestamp": 1771581597,
+        "raw_data": {
+          "funding": {
+            "funding_rate": -6.081e-05,
+            "mark_price": 1966.87062016
+          },
+          "open_interest": {
+            "open_interest_usd": 3483079537.1194706,
+            "open_interest": 1770873.743
+          }
+        }
+      },
+      "onchain": {
+        "ticker": "ETH",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.03626384911402961,
+        "volume_24h": 8613385725.1,
+        "volume_formatted": "8.61B",
+        "market_cap": 237519897516.0,
+        "market_cap_formatted": "237.52B",
+        "interpretation": "ETH has a volume/market cap velocity of 0.036, indicating very low turnover with minimal selling. 24h volume represents 3.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771581598,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 1966.82,
+          "total_volume": 8613385725.1,
+          "market_cap": 237519897516.0,
+          "circulating_supply": 120692388.3199713,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      }
+    }
+  },
+  "SOL": {
+    "error": "SOL is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771581598
+  },
+  "BNB": {
+    "error": "BNB is not a major asset. Use BTC or ETH.",
+    "timestamp": 1771581598
+  },
+  "DOGE": {
+    "ticker": "DOGE",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771581605,
+    "snapshot": {
+      "title": "DOGE Memecoin Snapshot",
+      "velocity": {
+        "value": 0.025721737006601044,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 1.724,
+      "volume": {
+        "value": 430462321.95915,
+        "display": "430.46M"
+      },
+      "speculation_level": "moderate",
+      "summary": "DOGE velocity: 0.026 (Low (Stable Holding)). Price 24h: +1.7%. Volume: 430.46M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.025721737006601044,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 15,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Medical Groups Sue FTC Over Probe Into Gender Dysphoria Treatments",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Eezo-Inlaid Circuitry (v1.17.0)",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Shield Focusing Module (v1.16.9)",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 15 news items related to DOGE. 15 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Medical Groups Sue FTC Over Probe Into Gender Dysphoria Treatments\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.576e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771581598,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.576e-05,
+            "mark_price": 68175.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Medical Groups Sue FTC Over Probe Into Gender Dysphoria Treatments",
+            "published_at": "2026-02-19T22:00:00+00:00",
+            "time_ago": "Recently",
+            "source": "ZeroHedge News",
+            "url": "https://www.zerohedge.com/political/medical-groups-sue-ftc-over-probe-gender-dysphoria-treatments",
+            "image_url": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%2894%29_1.jpg?itok=IZkP4sv2",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Eezo-Inlaid Circuitry (v1.17.0)",
+            "published_at": "2026-02-20T12:54:52.963697",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.0",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Shield Focusing Module (v1.16.9)",
+            "published_at": "2026-02-20T12:54:53.050505",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.9",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Moisture Filters (v1.16.8)",
+            "published_at": "2026-02-20T12:54:53.143579",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.8",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Ballistic Drift Stabilizer (v1.16.7)",
+            "published_at": "2026-02-20T12:54:53.240416",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.7",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "Leather Wrapping (v1.16.6)",
+            "published_at": "2026-02-20T12:54:53.324546",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.6",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "v1.7.0-alpha.2",
+            "published_at": "2026-02-20T12:54:55.791510",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.7.0-alpha.2",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "v1.7.0-alpha.1",
+            "published_at": "2026-02-20T12:54:55.853450",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.7.0-alpha.1",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "v1.6.0-beta.2",
+            "published_at": "2026-02-20T12:54:56.099286",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.6.0-beta.2",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          },
+          {
+            "title": "v1.6.0-beta.1",
+            "published_at": "2026-02-20T12:54:56.161018",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.6.0-beta.1",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "DOGE"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 15,
+          "high_relevance_count": 15,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 15 news items related to DOGE. 15 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Medical Groups Sue FTC Over Probe Into Gender Dysphoria Treatments\"",
+        "timeframe_hours": 24,
+        "ticker": "DOGE",
+        "timestamp": 1771581598
+      },
+      "onchain": {
+        "ticker": "DOGE",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.025721195102461798,
+        "volume_24h": 430462321.95915,
+        "volume_formatted": "430.46M",
+        "market_cap": 16735704552.0,
+        "market_cap_formatted": "16.74B",
+        "interpretation": "DOGE has a volume/market cap velocity of 0.026, indicating very low turnover with minimal selling. 24h volume represents 2.6% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771581601,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 0.09912,
+          "total_volume": 430462321.95915,
+          "market_cap": 16735704552.0,
+          "circulating_supply": 168752253126.579,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "DOGE",
+        "velocity": 0.025721737006601044,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 1.724,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "DOGE is showing low (stable holding) with a velocity of 0.026. Risk level: LOW. ",
+        "timestamp": 1771581605
+      }
+    }
+  },
+  "SHIB": {
+    "ticker": "SHIB",
+    "asset_type": "MEMECOIN",
+    "active_pillars": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "timeframe_hours": 24,
+    "timestamp": 1771581730,
+    "snapshot": {
+      "title": "SHIB Memecoin Snapshot",
+      "velocity": {
+        "value": 0.002556104756472696,
+        "category": "Low (Stable Holding)",
+        "interpretation": "Moderate"
+      },
+      "price_change_24h": 1.122,
+      "volume": {
+        "value": 9506420.78843065,
+        "display": "9.51M"
+      },
+      "speculation_level": "moderate",
+      "summary": "SHIB velocity: 0.003 (Low (Stable Holding)). Price 24h: +1.1%. Volume: 9.51M. Speculation: moderate."
+    },
+    "pressure": {
+      "title": "Speculation Pressure Analysis",
+      "global_environment": "risk-off",
+      "velocity_pressure": {
+        "level": "MODERATE",
+        "value": 0.002556104756472696,
+        "interpretation": "Normal trading"
+      },
+      "holder_dynamics": {
+        "behavior": "strong_holding",
+        "churn": "Low"
+      },
+      "pump_dump_risk": {
+        "detected": false,
+        "indicators": [
+          "Normal trading patterns"
+        ]
+      },
+      "summary": "Velocity pressure: MODERATE. Holder behavior: strong holding. Normal memecoin volatility."
+    },
+    "events": {
+      "title": "Events & Social Momentum",
+      "news_count": 15,
+      "social_correlation": "Weak correlation",
+      "top_events": [
+        {
+          "title": "Eezo-Inlaid Circuitry (v1.17.0)",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Shield Focusing Module (v1.16.9)",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Moisture Filters (v1.16.8)",
+          "sentiment": "neutral"
+        }
+      ],
+      "summary": "Found 15 news items related to SHIB. 15 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Eezo-Inlaid Circuitry (v1.17.0)\""
+    },
+    "risks": {
+      "title": "Memecoin Risk Assessment",
+      "speculation_risk": {
+        "level": "LOW",
+        "factors": [
+          "No fundamental value backing",
+          "Sentiment-driven price action"
+        ]
+      },
+      "liquidity_risk": {
+        "level": "MODERATE",
+        "warning": "Monitor liquidity closely"
+      },
+      "holder_risk": {
+        "behavior": "strong_holding",
+        "stability": "Moderate"
+      },
+      "overall_assessment": {
+        "risk_level": "LOW",
+        "recommendation": "Typical memecoin risk - speculative by nature"
+      },
+      "summary": "Memecoin risk: LOW. Liquidity risk: MODERATE. Typical memecoin risk - speculative by nature"
+    },
+    "pillar_data": {
+      "sentiment": {
+        "environment": "risk-off",
+        "crowd_level": "moderate",
+        "leverage_intensity": "low",
+        "fear_greed_index": 7,
+        "fear_greed_classification": "Extreme Fear",
+        "btc_funding_rate": -2.576e-05,
+        "funding_signal": "neutral",
+        "market_phase": "accumulation",
+        "timestamp": 1771581605,
+        "interpretation": "The market is in a risk-off environment with investors showing caution and defensive positioning.The Fear & Greed Index is at 7 (Extreme Fear), indicating extreme fear in the market. Funding rates are neutral, suggesting balanced positioning.",
+        "raw_data": {
+          "fear_greed": {
+            "value": 7,
+            "value_classification": "Extreme Fear"
+          },
+          "btc_funding": {
+            "funding_rate": -2.576e-05,
+            "mark_price": 68175.0
+          }
+        }
+      },
+      "news": {
+        "events": [
+          {
+            "title": "Eezo-Inlaid Circuitry (v1.17.0)",
+            "published_at": "2026-02-20T12:54:52.963697",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.0",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Shield Focusing Module (v1.16.9)",
+            "published_at": "2026-02-20T12:54:53.050505",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.9",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Moisture Filters (v1.16.8)",
+            "published_at": "2026-02-20T12:54:53.143579",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.8",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Ballistic Drift Stabilizer (v1.16.7)",
+            "published_at": "2026-02-20T12:54:53.240416",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.7",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "Leather Wrapping (v1.16.6)",
+            "published_at": "2026-02-20T12:54:53.324546",
+            "time_ago": "Recently",
+            "source": "Release notes from go-ethereum",
+            "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.6",
+            "image_url": "https://avatars.githubusercontent.com/u/6915?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "v1.7.0-alpha.2",
+            "published_at": "2026-02-20T12:54:55.791510",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.7.0-alpha.2",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "v1.7.0-alpha.1",
+            "published_at": "2026-02-20T12:54:55.853450",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.7.0-alpha.1",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "v1.6.0-beta.2",
+            "published_at": "2026-02-20T12:54:56.099286",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.6.0-beta.2",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "v1.6.0-beta.1",
+            "published_at": "2026-02-20T12:54:56.161018",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.6.0-beta.1",
+            "image_url": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          },
+          {
+            "title": "v1.6.0-beta.0",
+            "published_at": "2026-02-20T12:54:56.225603",
+            "time_ago": "Recently",
+            "source": "Release notes from consensus-specs",
+            "url": "https://github.com/ethereum/consensus-specs/releases/tag/v1.6.0-beta.0",
+            "image_url": "https://avatars.githubusercontent.com/u/95511699?s=60&v=4",
+            "relevance": "direct",
+            "relevance_score": 0.85,
+            "categories": [
+              "general"
+            ],
+            "sentiment": "neutral",
+            "currencies": [
+              "SHIB"
+            ]
+          }
+        ],
+        "summary": {
+          "total_events": 15,
+          "high_relevance_count": 15,
+          "dominant_theme": "general",
+          "overall_sentiment": "neutral",
+          "sentiment_breakdown": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 15
+          }
+        },
+        "interpretation": "Found 15 news items related to SHIB. 15 of these are highly relevant. News sentiment is mixed or neutral. Most significant: \"Eezo-Inlaid Circuitry (v1.17.0)\"",
+        "timeframe_hours": 24,
+        "ticker": "SHIB",
+        "timestamp": 1771581605
+      },
+      "onchain": {
+        "ticker": "SHIB",
+        "exchange_flow": "low_activity",
+        "flow_magnitude": "low",
+        "holder_behavior": "strong_holding",
+        "network_activity": "low",
+        "velocity": 0.00255586375725808,
+        "volume_24h": 9506420.78843065,
+        "volume_formatted": "9.51M",
+        "market_cap": 3719455218.0,
+        "market_cap_formatted": "3.72B",
+        "interpretation": "SHIB has a volume/market cap velocity of 0.003, indicating very low turnover with minimal selling. 24h volume represents 0.3% of market cap. Holders appear to be in strong accumulation mode.",
+        "timestamp": 1771581728,
+        "note": "Full on-chain analysis requires Glassnode or similar APIs",
+        "raw_data": {
+          "current_price": 6.32e-06,
+          "total_volume": 9506420.78843065,
+          "market_cap": 3719455218.0,
+          "circulating_supply": 589243868948690.5,
+          "transaction_count_24h": 0,
+          "hashrate": 0.0
+        }
+      },
+      "memecoin_metrics": {
+        "asset_type": "MEMECOIN",
+        "ticker": "SHIB",
+        "velocity": 0.002556104756472696,
+        "velocity_category": "Low (Stable Holding)",
+        "price_change_24h": 1.122,
+        "activity_level": "low_activity",
+        "speculation_intensity": "moderate",
+        "memecoin_risk": "LOW",
+        "interpretation": "SHIB is showing low (stable holding) with a velocity of 0.003. Risk level: LOW. ",
+        "timestamp": 1771581730
+      }
+    }
+  }
+}
