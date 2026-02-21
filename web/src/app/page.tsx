@@ -49,6 +49,92 @@ function getBtcDominanceContext(dom: number | null | undefined): { context: stri
   };
 }
 
+// Set NEXT_PUBLIC_DEMO_VIDEO_URL in Vercel env vars once video is ready.
+// Supports YouTube (youtube.com/watch?v=ID) and Loom (loom.com/share/ID) URLs.
+function getEmbedUrl(url: string): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    if (u.hostname.includes('youtube.com') || u.hostname.includes('youtu.be')) {
+      const videoId = u.searchParams.get('v') || u.pathname.split('/').pop();
+      return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+    }
+    if (u.hostname.includes('loom.com')) {
+      const videoId = u.pathname.split('/').pop();
+      return `https://www.loom.com/embed/${videoId}`;
+    }
+  } catch {
+    // invalid URL
+  }
+  return null;
+}
+
+function DemoVideoSection() {
+  const rawUrl = process.env.NEXT_PUBLIC_DEMO_VIDEO_URL || '';
+  const embedUrl = getEmbedUrl(rawUrl);
+
+  return (
+    <section className="border-b border-zinc-800 bg-zinc-950">
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold uppercase tracking-widest text-emerald-500 mb-3">
+            See it in action
+          </p>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            Crypto intelligence that actually tells you what to do
+          </h2>
+          <p className="mt-3 text-zinc-400 max-w-2xl mx-auto">
+            Watch how Crevia detects market regimes, surfaces smart money signals, and generates
+            trade setups in real time — no noise, just signal.
+          </p>
+        </div>
+
+        {embedUrl ? (
+          <div className="relative mx-auto overflow-hidden rounded-2xl border border-zinc-700 shadow-2xl shadow-emerald-950/20"
+               style={{ paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              src={embedUrl}
+              className="absolute inset-0 h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          /* Placeholder shown until NEXT_PUBLIC_DEMO_VIDEO_URL is set */
+          <div className="relative mx-auto overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-900/50"
+               style={{ paddingBottom: '56.25%', height: 0 }}>
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
+              {/* Mock screen lines */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden">
+                <div className="flex h-full flex-col gap-2 p-6">
+                  {Array.from({ length: 8 }).map((_, i) => (
+                    <div key={i} className="h-4 rounded bg-emerald-500" style={{ width: `${60 + (i % 4) * 10}%`, opacity: 0.3 + (i % 3) * 0.2 }} />
+                  ))}
+                </div>
+              </div>
+              {/* Play icon */}
+              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-2 border-emerald-500/50 bg-emerald-500/10">
+                <svg className="h-7 w-7 text-emerald-400 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <p className="relative z-10 text-sm font-medium text-zinc-400">Demo video coming soon</p>
+              <p className="relative z-10 text-xs text-zinc-600">
+                Follow{' '}
+                <a href="https://x.com/CreviaAnalytics" target="_blank" rel="noopener noreferrer"
+                   className="text-emerald-500 hover:text-emerald-400">
+                  @CreviaAnalytics
+                </a>
+                {' '}for a preview
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 export default async function HomePage() {
   let snapshot = null;
   let prices: Awaited<ReturnType<typeof getLatestPrices>> = [];
@@ -99,21 +185,24 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/analysis"
+                href="/waitlist"
                 className="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
               >
-                View Analysis
+                Get Early Access →
               </Link>
               <Link
-                href="/pricing"
+                href="/tools/risk-calculator"
                 className="rounded-lg border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-300 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
               >
-                Get Pro Access
+                Try Risk Calculator Free
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Demo Video Section */}
+      <DemoVideoSection />
 
       {/* Market Regime Indicator — Hero intelligence component */}
       {regime && <MarketRegimeIndicator regime={regime} />}

@@ -118,10 +118,10 @@ export default function Navbar() {
                 Sign In
               </Link>
               <Link
-                href="/pricing"
+                href="/waitlist"
                 className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
               >
-                Get Pro
+                Join Waitlist
               </Link>
             </>
           )}
@@ -178,11 +178,11 @@ export default function Navbar() {
                 Sign In
               </Link>
               <Link
-                href="/pricing"
+                href="/waitlist"
                 onClick={() => setMobileOpen(false)}
                 className="mt-1 block rounded-lg bg-emerald-500 px-3 py-2 text-center text-sm font-semibold text-zinc-950"
               >
-                Get Pro
+                Join Waitlist
               </Link>
             </>
           )}
