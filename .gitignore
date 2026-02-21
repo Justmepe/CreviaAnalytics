@@ -13,8 +13,9 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+# lib/ and lib64/ are Python venv dirs — exclude at root level only, not web/src/lib/
+/lib/
+/lib64/
 parts/
 sdist/
 var/
