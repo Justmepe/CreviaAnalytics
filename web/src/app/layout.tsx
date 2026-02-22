@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import LiveMarketBar from "@/components/layout/LiveMarketBar";
@@ -41,7 +42,10 @@ export default function RootLayout({
         <AuthProvider>
           <Navbar />
           <LiveMarketBar />
-          <main className="min-h-screen">{children}</main>
+          {/* Suspense wrapper aligns server/client tree for async App Router pages */}
+          <main className="min-h-screen">
+            <Suspense>{children}</Suspense>
+          </main>
           <Footer />
         </AuthProvider>
       </body>
