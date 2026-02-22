@@ -81,9 +81,8 @@ export default function RiskCalculator() {
   const [warnings, setWarnings] = useState<Warning[]>([]);
   const [context, setContext] = useState<MarketContext | null>(null);
   const [showGate, setShowGate] = useState(false);
-  const [gateVisible, setGateVisible] = useState(false);
 
-  // Check localStorage on mount (client-only)
+  // Check localStorage on mount — gate only shows on return visits, not mid-session
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY) === '1') {
       setShowGate(true);
@@ -149,13 +148,8 @@ export default function RiskCalculator() {
       dailyFundingCost: dailyFunding ? Math.round(dailyFunding * 100) / 100 : null,
     });
 
-    // Mark as used — next visit will show the gate
-    if (localStorage.getItem(STORAGE_KEY) !== '1') {
-      localStorage.setItem(STORAGE_KEY, '1');
-    } else {
-      // Already used before — show gate after they see this result
-      setGateVisible(true);
-    }
+    // Mark as used after first calculation — gate will appear on their NEXT visit
+    localStorage.setItem(STORAGE_KEY, '1');
 
     // Generate warnings based on market context
     const w: Warning[] = [];
@@ -303,8 +297,8 @@ export default function RiskCalculator() {
         {/* Calculation Results */}
         {result && (
           <div className="relative rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 sm:p-6 overflow-hidden">
-            {(showGate || gateVisible) && (
-              <WaitlistGate onDismiss={() => { setShowGate(false); setGateVisible(false); }} />
+            {showGate && (
+              <WaitlistGate onDismiss={() => setShowGate(false)} />
             )}
             <h3 className="text-lg font-bold text-white mb-4">Results</h3>
             <div className="grid grid-cols-2 gap-3">
