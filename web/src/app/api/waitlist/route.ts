@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
         subject: "You're on the CreviaCockpit waitlist 🎉",
         html: `
           <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:32px 24px;background:#09090b;color:#e4e4e7;border-radius:12px">
-            <div style="width:40px;height:40px;background:#10b981;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#09090b;margin-bottom:24px;font-size:14px">CA</div>
+            <div style="width:40px;height:40px;background:#10b981;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#09090b;margin-bottom:24px;font-size:14px">CC</div>
             <h2 style="color:#ffffff;margin:0 0 12px">Hey ${firstName}, you're on the list!</h2>
             <p style="color:#a1a1aa;line-height:1.6;margin:0 0 20px">
               You've secured early access to <strong style="color:#10b981">CreviaCockpit</strong> —
