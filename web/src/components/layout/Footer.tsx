@@ -10,11 +10,11 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center">
               <Image
-                src="/logo.jpeg"
+                src="/logo-full.jpeg"
                 alt="CreviaCockpit"
-                width={140}
-                height={44}
-                className="h-11 w-auto object-contain"
+                width={376}
+                height={450}
+                className="h-20 w-auto object-contain"
               />
             </div>
             <p className="mt-3 text-sm text-zinc-500">
