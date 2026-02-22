@@ -176,12 +176,12 @@ export default async function HomePage() {
               Live market intelligence
             </div>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Intelligent Crypto{' '}
-              <span className="text-emerald-400">Market Intelligence</span>
+              Crypto Intelligence That{' '}
+              <span className="text-emerald-400">Actually Tells You What to Do</span>
             </h1>
             <p className="mt-5 text-lg text-zinc-400 sm:text-xl">
-              Stop guessing. Get regime detection, contextual analysis, and actionable trade intelligence
-              for 16+ assets. Know what the market means, not just what it shows.
+              Real-time regime detection, AI trade setups, and risk-aware position sizing for 16+ assets.
+              Pro members see live intelligence. Free preview shows analysis delayed 6 hours.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -266,7 +266,15 @@ export default async function HomePage() {
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-white">Latest Analysis</h2>
+              <div className="flex items-center gap-3">
+                <h2 className="text-xl font-bold text-white">Latest Analysis</h2>
+                <span className="inline-flex items-center gap-1 rounded-full border border-zinc-700 bg-zinc-800/60 px-2 py-0.5 text-xs text-zinc-500">
+                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
+                  </svg>
+                  Free preview · 6h delay
+                </span>
+              </div>
               <Link href="/analysis" className="text-sm font-medium text-emerald-400 hover:text-emerald-300">
                 View all &rarr;
               </Link>
@@ -278,8 +286,11 @@ export default async function HomePage() {
                 ))
               ) : (
                 <div className="col-span-2 rounded-xl border border-zinc-800 bg-zinc-900/30 p-10 text-center">
-                  <p className="text-zinc-500">No analysis published yet. Start the engine to generate content.</p>
-                  <p className="mt-2 text-sm text-zinc-600">Run: <code className="rounded bg-zinc-800 px-2 py-0.5 text-emerald-400">python main.py</code></p>
+                  <p className="text-zinc-500">Analysis is published multiple times daily.</p>
+                  <p className="mt-2 text-sm text-zinc-600">
+                    Join the waitlist for real-time access.{' '}
+                    <Link href="/waitlist" className="text-emerald-400 hover:text-emerald-300">Get early access →</Link>
+                  </p>
                 </div>
               )}
             </div>
@@ -287,7 +298,13 @@ export default async function HomePage() {
 
           <div>
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-white">Asset Prices</h2>
+              <div className="flex items-center gap-3">
+                <h2 className="text-xl font-bold text-white">Asset Prices</h2>
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-xs text-emerald-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse inline-block" />
+                  Live
+                </span>
+              </div>
               <Link href="/market" className="text-sm font-medium text-emerald-400 hover:text-emerald-300">
                 Dashboard &rarr;
               </Link>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 
 interface MarketContext {
   regime: { name: string; confidence: number; color: string; trader_action: string } | null;
@@ -27,6 +28,46 @@ interface Warning {
 }
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const STORAGE_KEY = 'rc_used';
+
+function WaitlistGate({ onDismiss }: { onDismiss: () => void }) {
+  return (
+    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-xl bg-zinc-950/90 backdrop-blur-sm p-6 text-center">
+      <div className="max-w-xs">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10 mx-auto">
+          <svg className="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-white mb-2">Unlock Unlimited Access</h3>
+        <p className="text-sm text-zinc-400 mb-5">
+          You&apos;ve used your free calculation. Join the waitlist to get unlimited risk calculations,
+          real-time market context warnings, and Pro access during beta.
+        </p>
+        <div className="flex flex-col gap-2">
+          <Link
+            href="/waitlist"
+            className="rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
+          >
+            Join Waitlist — It&apos;s Free →
+          </Link>
+          <Link
+            href="/auth/login"
+            className="rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-white transition-colors"
+          >
+            Already have access? Sign in
+          </Link>
+          <button
+            onClick={onDismiss}
+            className="mt-1 text-xs text-zinc-600 hover:text-zinc-500 transition-colors"
+          >
+            Continue without saving results
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function RiskCalculator() {
   const [entry, setEntry] = useState('');
@@ -39,6 +80,15 @@ export default function RiskCalculator() {
   const [result, setResult] = useState<CalcResult | null>(null);
   const [warnings, setWarnings] = useState<Warning[]>([]);
   const [context, setContext] = useState<MarketContext | null>(null);
+  const [showGate, setShowGate] = useState(false);
+  const [gateVisible, setGateVisible] = useState(false);
+
+  // Check localStorage on mount (client-only)
+  useEffect(() => {
+    if (localStorage.getItem(STORAGE_KEY) === '1') {
+      setShowGate(true);
+    }
+  }, []);
 
   // Fetch market context on mount
   useEffect(() => {
@@ -60,16 +110,16 @@ export default function RiskCalculator() {
       return;
     }
 
-    // Position size based on risk
+    // Position size based on capital × leverage (margin-based approach)
     const stopDistance = Math.abs(e - sl);
     if (stopDistance === 0) return;
 
-    const positionSize = risk / stopDistance;
-    const notional = positionSize * e;
+    const notional = risk * lev;               // total position value in USD
+    const positionSize = notional / e;          // units of asset controlled
     const profitDistance = direction === 'long' ? tp - e : e - tp;
     const rr = profitDistance / stopDistance;
-    const maxLoss = risk;
-    const potentialGain = risk * rr;
+    const maxLoss = positionSize * stopDistance; // P&L at stop (can exceed margin if wide stop)
+    const potentialGain = positionSize * profitDistance; // P&L at TP
 
     // Liquidation price (simplified for perpetual futures)
     let liqPrice: number | null = null;
@@ -92,12 +142,20 @@ export default function RiskCalculator() {
     setResult({
       positionSize: Math.round(positionSize * 10000) / 10000,
       riskReward: Math.round(rr * 100) / 100,
-      maxLoss,
+      maxLoss: Math.round(maxLoss * 100) / 100,
       potentialGain: Math.round(potentialGain * 100) / 100,
       notionalValue: Math.round(notional * 100) / 100,
       liquidationPrice: liqPrice ? Math.round(liqPrice * 100) / 100 : null,
       dailyFundingCost: dailyFunding ? Math.round(dailyFunding * 100) / 100 : null,
     });
+
+    // Mark as used — next visit will show the gate
+    if (localStorage.getItem(STORAGE_KEY) !== '1') {
+      localStorage.setItem(STORAGE_KEY, '1');
+    } else {
+      // Already used before — show gate after they see this result
+      setGateVisible(true);
+    }
 
     // Generate warnings based on market context
     const w: Warning[] = [];
@@ -200,7 +258,7 @@ export default function RiskCalculator() {
             { label: 'Stop Loss', value: stopLoss, set: setStopLoss, prefix: '$' },
             { label: 'Take Profit', value: takeProfit, set: setTakeProfit, prefix: '$' },
             { label: 'Leverage', value: leverage, set: setLeverage, suffix: 'x' },
-            { label: 'Risk Amount', value: riskAmount, set: setRiskAmount, prefix: '$' },
+            { label: 'Capital (Margin)', value: riskAmount, set: setRiskAmount, prefix: '$' },
           ].map((field) => (
             <div key={field.label}>
               <label className="block text-xs text-zinc-500 mb-1">{field.label}</label>
@@ -244,14 +302,17 @@ export default function RiskCalculator() {
       <div className="space-y-4">
         {/* Calculation Results */}
         {result && (
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 sm:p-6">
+          <div className="relative rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 sm:p-6 overflow-hidden">
+            {(showGate || gateVisible) && (
+              <WaitlistGate onDismiss={() => { setShowGate(false); setGateVisible(false); }} />
+            )}
             <h3 className="text-lg font-bold text-white mb-4">Results</h3>
             <div className="grid grid-cols-2 gap-3">
               {[
                 { label: 'Position Size', value: `${result.positionSize}` },
                 { label: 'Risk/Reward', value: `${result.riskReward}:1`, highlight: result.riskReward >= 2 },
-                { label: 'Max Loss', value: `$${result.maxLoss}`, negative: true },
-                { label: 'Potential Gain', value: `$${result.potentialGain}`, positive: true },
+                { label: 'Loss at Stop', value: `$${result.maxLoss}`, negative: true },
+                { label: 'Gain at Target', value: `$${result.potentialGain}`, positive: true },
                 { label: 'Notional Value', value: `$${result.notionalValue.toLocaleString()}` },
                 ...(result.liquidationPrice ? [{ label: 'Liquidation Price', value: `$${result.liquidationPrice.toLocaleString()}`, negative: true }] : []),
                 ...(result.dailyFundingCost ? [{ label: 'Daily Funding Cost', value: `$${result.dailyFundingCost}` }] : []),
