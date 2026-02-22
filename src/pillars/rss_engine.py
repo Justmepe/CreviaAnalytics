@@ -88,6 +88,18 @@ GLOBAL_FINANCE_FEEDS = [
         'description': 'Stock market correlation, investor sentiment'
     },
     {
+        'url': 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114',
+        'name': 'CNBC Crypto',
+        'category': 'crypto_core',
+        'description': 'CNBC dedicated crypto/blockchain coverage'
+    },
+    {
+        'url': 'https://feeds.foxbusiness.com/foxbusiness/latest',
+        'name': 'Fox Business',
+        'category': 'global_finance',
+        'description': 'US business & finance news, Fed coverage, market moves'
+    },
+    {
         'url': 'https://finance.yahoo.com/news/rssindex',
         'name': 'Yahoo Finance',
         'category': 'global_finance',

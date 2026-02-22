@@ -187,3 +187,34 @@ export interface CorrelationSnapshot {
   data_points: number | null;
   captured_at: string | null;
 }
+
+// --- Portfolio Sync ---
+
+export interface ExchangeKey {
+  id: number;
+  exchange: string;
+  label: string | null;
+  api_key_masked: string;
+  is_active: boolean;
+  last_synced: string | null;
+  created_at: string;
+}
+
+export interface PortfolioHolding {
+  asset: string;
+  free: number;
+  locked: number;
+  total: number;
+  price_usd: number;
+  usd_value: number;
+}
+
+export interface PortfolioSummary {
+  exchange: string;
+  key_id: number;
+  label: string | null;
+  total_usd: number;
+  holdings: PortfolioHolding[];
+  synced_at: string;
+  error?: string | null;
+}

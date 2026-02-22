@@ -10,6 +10,24 @@ from sqlalchemy.sql import func
 from api.database import Base
 
 
+class ExchangeApiKey(Base):
+    __tablename__ = 'exchange_api_keys'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
+    exchange = Column(String(20), nullable=False)  # 'binance', 'bybit', 'okx'
+    label = Column(String(100))  # optional user-defined label
+    api_key_enc = Column(String(512), nullable=False)    # encrypted
+    api_secret_enc = Column(String(512), nullable=False)  # encrypted
+    is_active = Column(Boolean, default=True)
+    last_synced = Column(DateTime(timezone=True))
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        Index('idx_exchange_keys_user', 'user_id'),
+    )
+
+
 class User(Base):
     __tablename__ = 'users'
 

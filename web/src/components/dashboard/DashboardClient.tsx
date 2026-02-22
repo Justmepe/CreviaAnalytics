@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
-import { getPortfolioStats, getJournalEntries, timeAgo } from '@/lib/api';
-import type { PortfolioStats, JournalEntry, MarketRegime, TradeSetup, ContentPost } from '@/types';
+import { getPortfolioStats, getJournalEntries, syncPortfolio, timeAgo } from '@/lib/api';
+import type { PortfolioStats, JournalEntry, MarketRegime, TradeSetup, ContentPost, PortfolioSummary } from '@/types';
 
 interface DashboardClientProps {
   regime: MarketRegime | null;
@@ -47,6 +47,133 @@ const TYPE_BADGE: Record<string, { label: string; color: string }> = {
   news_tweet: { label: 'News',   color: 'bg-amber-500/20 text-amber-400' },
   risk_alert: { label: 'Alert',  color: 'bg-red-500/20 text-red-400' },
 };
+
+const EXCHANGE_ICON: Record<string, string> = { binance: 'B', bybit: 'Y', okx: 'O' };
+const EXCHANGE_COLOR: Record<string, string> = {
+  binance: 'text-yellow-400',
+  bybit: 'text-orange-400',
+  okx: 'text-blue-400',
+};
+
+function ExchangePortfolioWidget() {
+  const [summaries, setSummaries] = useState<PortfolioSummary[] | null>(null);
+  const [syncing, setSyncing] = useState(false);
+  const [error, setError] = useState('');
+
+  const doSync = useCallback(async () => {
+    setSyncing(true);
+    setError('');
+    try {
+      const data = await syncPortfolio();
+      setSummaries(data);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : 'Sync failed');
+    } finally {
+      setSyncing(false);
+    }
+  }, []);
+
+  const totalUSD = summaries?.reduce((acc, s) => acc + s.total_usd, 0) ?? 0;
+
+  return (
+    <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 mb-4">
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h2 className="text-sm font-semibold text-zinc-400">Exchange Portfolio</h2>
+          {summaries && totalUSD > 0 && (
+            <div className="text-xl font-bold text-white mt-0.5">
+              ${totalUSD.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              <span className="text-xs font-normal text-zinc-500 ml-2">total</span>
+            </div>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <Link href="/account" className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
+            Manage Keys →
+          </Link>
+          <button
+            onClick={doSync}
+            disabled={syncing}
+            className="rounded-lg bg-zinc-800 border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:bg-zinc-700 disabled:opacity-50 transition-colors"
+          >
+            {syncing ? 'Syncing...' : '↻ Sync'}
+          </button>
+        </div>
+      </div>
+
+      {error && (
+        <div className="rounded-lg bg-red-500/10 border border-red-500/30 px-3 py-2 text-xs text-red-400 mb-3">
+          {error}
+        </div>
+      )}
+
+      {summaries === null ? (
+        <div className="rounded-lg border border-dashed border-zinc-700 p-4 text-center">
+          <p className="text-sm text-zinc-500">Connect your exchange to see live balances.</p>
+          <p className="text-xs text-zinc-600 mt-1">
+            Add read-only API keys in{' '}
+            <Link href="/account" className="text-zinc-400 hover:text-white underline">Account Settings</Link>.
+          </p>
+        </div>
+      ) : summaries.length === 0 ? (
+        <div className="rounded-lg border border-dashed border-zinc-700 p-4 text-center">
+          <p className="text-sm text-zinc-500">No exchanges connected yet.</p>
+          <Link href="/account" className="text-xs text-emerald-400 hover:text-emerald-300 mt-1 inline-block">
+            Connect Exchange →
+          </Link>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {summaries.map(summary => (
+            <div key={summary.key_id}>
+              {/* Exchange header */}
+              <div className="flex items-center gap-2 mb-2">
+                <div className={`h-5 w-5 rounded text-xs font-black flex items-center justify-center bg-zinc-800 ${EXCHANGE_COLOR[summary.exchange] || 'text-zinc-400'}`}>
+                  {EXCHANGE_ICON[summary.exchange] || summary.exchange.charAt(0).toUpperCase()}
+                </div>
+                <span className="text-xs font-semibold text-zinc-300 capitalize">{summary.exchange}</span>
+                {summary.label && <span className="text-xs text-zinc-600">— {summary.label}</span>}
+                <span className="ml-auto text-xs font-bold text-zinc-200">
+                  ${summary.total_usd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </span>
+              </div>
+
+              {summary.error ? (
+                <div className="text-xs text-red-400 pl-7">{summary.error}</div>
+              ) : summary.holdings.length === 0 ? (
+                <div className="text-xs text-zinc-600 pl-7">No non-dust balances found.</div>
+              ) : (
+                <div className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-3 pl-7">
+                  {summary.holdings.slice(0, 6).map(h => (
+                    <div key={h.asset} className="flex items-center justify-between rounded-lg bg-zinc-800/50 px-2.5 py-1.5">
+                      <div>
+                        <div className="text-xs font-bold text-white">{h.asset}</div>
+                        <div className="text-xs text-zinc-600 font-mono">{h.total.toFixed(h.total < 0.01 ? 6 : 4)}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs font-semibold text-zinc-300">
+                          ${h.usd_value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        </div>
+                        {h.price_usd > 0 && (
+                          <div className="text-xs text-zinc-600">${h.price_usd.toLocaleString()}</div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                  {summary.holdings.length > 6 && (
+                    <div className="flex items-center justify-center rounded-lg bg-zinc-800/30 px-2.5 py-1.5 text-xs text-zinc-600">
+                      +{summary.holdings.length - 6} more
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function DashboardClient({
   regime, setups, recentContent, btcPrice, ethPrice, marketCap, fearGreed, fearGreedLabel
@@ -251,6 +378,9 @@ export default function DashboardClient({
             )}
           </div>
         </div>
+
+        {/* ── Row 2.5: Exchange Portfolio ── */}
+        <ExchangePortfolioWidget />
 
         {/* ── Row 3: Latest Trade Setups + Quick Tools ── */}
         <div className="grid gap-4 lg:grid-cols-3 mb-4">

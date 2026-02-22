@@ -38,6 +38,7 @@ class TradeSetupGenerator:
         regime: Optional[Dict[str, Any]] = None,
         derivatives: Optional[Dict[str, Any]] = None,
         smart_money: Optional[Dict[str, Any]] = None,
+        ta_context: Optional[Dict[str, Any]] = None,
     ) -> Optional[Dict[str, Any]]:
         """
         Generate a trade setup for the given asset.
@@ -55,7 +56,7 @@ class TradeSetupGenerator:
         if not self._enabled:
             return None
 
-        prompt = self._build_prompt(ticker, price_data, regime, derivatives, smart_money)
+        prompt = self._build_prompt(ticker, price_data, regime, derivatives, smart_money, ta_context)
 
         try:
             client = anthropic.Anthropic(api_key=self._api_key)
@@ -72,6 +73,10 @@ class TradeSetupGenerator:
             if setup:
                 setup['generated_at'] = datetime.now(timezone.utc).isoformat()
                 setup['regime_at_creation'] = regime.get('regime', 'NEUTRAL') if regime else 'UNKNOWN'
+                if ta_context:
+                    setup['ta_quality'] = ta_context.get('setup_quality', 0)
+                    setup['ta_htf'] = ta_context.get('htf', '')
+                    setup['ta_direction'] = ta_context.get('direction', '')
             return setup
 
         except Exception as e:
@@ -80,8 +85,9 @@ class TradeSetupGenerator:
 
     def _build_prompt(self, ticker: str, price_data: dict,
                       regime: Optional[dict], derivatives: Optional[dict],
-                      smart_money: Optional[dict]) -> str:
-        """Build the Claude prompt with market context."""
+                      smart_money: Optional[dict],
+                      ta_context: Optional[dict] = None) -> str:
+        """Build the Claude prompt with market context and optional TA analysis."""
         price = price_data.get('price_usd', 0)
         change_24h = price_data.get('price_change_24h', 0)
         high_24h = price_data.get('high_24h', price * 1.02)
@@ -108,24 +114,38 @@ class TradeSetupGenerator:
                 total_liq = derivatives['total_liquidations_24h']
                 long_liq = derivatives.get('liquidations_24h_long', 0.0) or 0.0
                 short_liq = derivatives.get('liquidations_24h_short', 0.0) or 0.0
-                
+
                 if long_liq > 0 or short_liq > 0:
-                    # Long/short data available
                     context_parts.append(f"24h Liquidations: ${total_liq/1e6:.1f}M (Longs: ${long_liq/1e6:.1f}M / Shorts: ${short_liq/1e6:.1f}M)")
                 else:
-                    # Data unavailable for split
-                    context_parts.append(f"24h Liquidations: ${total_liq/1e6:.1f}M (long/short split unavailable - WebSocket not connected)")
+                    context_parts.append(f"24h Liquidations: ${total_liq/1e6:.1f}M (long/short split unavailable)")
 
         if smart_money:
             context_parts.append(f"Smart Money Sentiment: {smart_money.get('net_sentiment', 'NEUTRAL')}")
 
+        # TA section — inject real structure/zone/filter data when available
+        ta_section = self._build_ta_section(ta_context) if ta_context else ""
+
         context = "\n".join(context_parts)
+
+        direction_rule = ""
+        if ta_context and ta_context.get('direction') not in (None, 'UNKNOWN'):
+            ta_dir = ta_context['direction']
+            direction_rule = (
+                f"- Technical structure is {ta_dir} — strongly prefer a {ta_dir} setup "
+                f"unless regime or derivatives data contradicts it clearly."
+            )
+        else:
+            direction_rule = (
+                "- If the regime is RISK_OFF or DISTRIBUTION, prefer SHORT or conservative entries\n"
+                "- If the regime is RISK_ON or ACCUMULATION, prefer LONG setups"
+            )
 
         return f"""You are a professional crypto trading analyst. Generate a trade setup based on this market data.
 
 MARKET DATA:
 {context}
-
+{ta_section}
 Generate a JSON trade setup with this exact structure (no markdown, just raw JSON):
 {{
   "asset": "{ticker}",
@@ -147,14 +167,58 @@ Generate a JSON trade setup with this exact structure (no markdown, just raw JSO
 }}
 
 Rules:
-- Base direction on regime and market conditions
-- Entry zones should be realistic relative to current price
-- Stop loss should account for volatility and support/resistance
-- Take profits should have realistic R/R ratios
-- Confidence should reflect how aligned the setup is with market conditions
+- Entry zones must be grounded in the technical levels above (zones, key levels) — never arbitrary
+- Stop loss must be placed beyond the nearest invalidation level (zone protection price or last swing)
+- Take profits must align with structural targets (opposing zones, key swing highs/lows)
+- Confidence = (TA quality score / 100) as a base; adjust up/down for regime + derivatives alignment
 - Be specific with price levels, not vague
-- If the regime is RISK_OFF or DISTRIBUTION, prefer SHORT or conservative entries
-- If the regime is RISK_ON or ACCUMULATION, prefer LONG setups"""
+{direction_rule}"""
+
+    def _build_ta_section(self, ta: dict) -> str:
+        """Format TA context into a readable prompt section."""
+        lines: List[str] = ["\nTECHNICAL ANALYSIS:"]
+
+        # Structure
+        struct = ta.get('structure', {})
+        if struct.get('available'):
+            lines.append(f"  Trend ({ta.get('htf', '')}): {struct.get('trend')} | ADX: {struct.get('adx')} | Health: {struct.get('health')}")
+            kl = struct.get('key_levels', {})
+            if kl.get('last_HH'):
+                lines.append(f"  Key Levels: HH=${kl['last_HH']:,.2f}  HL=${kl.get('last_HL', 0) or 0:,.2f}  "
+                             f"LH=${kl.get('last_LH', 0) or 0:,.2f}  LL=${kl.get('last_LL', 0) or 0:,.2f}")
+            if struct.get('choch_is_fresh'):
+                lines.append(f"  *** FRESH CHoCH ({struct.get('choch_direction', '').upper()}) — {struct.get('choch_bars_ago')} bars ago ***")
+            if struct.get('macro_trend'):
+                lines.append(f"  Macro Trend: {struct['macro_trend']} (confidence {struct.get('macro_confidence', 0)*100:.0f}%)")
+
+        # Zones
+        zones = ta.get('zones', {})
+        bd = zones.get('best_demand')
+        bs = zones.get('best_supply')
+        if bd:
+            lines.append(f"  Best Demand Zone: ${bd['price_bottom']:,.2f}–${bd['price_top']:,.2f} "
+                        f"(quality={bd['quality_score']:.0f}/100, {bd['location_label']}, {bd['status']})")
+        if bs:
+            lines.append(f"  Best Supply Zone: ${bs['price_bottom']:,.2f}–${bs['price_top']:,.2f} "
+                        f"(quality={bs['quality_score']:.0f}/100, {bs['location_label']}, {bs['status']})")
+        lines.append(f"  Active Zones: {zones.get('active_count', 0)} | Broken: {zones.get('broken_count', 0)}")
+
+        # Entry filters
+        ef = ta.get('entry_filters', {})
+        if ef:
+            lines.append(f"  Entry Alignment ({ta.get('ltf', '')}): {ef.get('filters_passed', 0)}/{ef.get('filters_total', 5)} filters "
+                        f"({ef.get('alignment_score', 0)}%) | RSI: {ef.get('rsi', 50):.0f}")
+            vwap_info = ef.get('vwap', {})
+            if vwap_info.get('vwap'):
+                lines.append(f"  VWAP: ${vwap_info['vwap']:,.2f} ({vwap_info.get('note', '')})")
+            adx_info = ef.get('adx', {})
+            if adx_info:
+                lines.append(f"  ADX: {adx_info.get('adx', 0)} ({adx_info.get('health', '')})")
+
+        # Overall quality
+        lines.append(f"  Setup Quality Score: {ta.get('setup_quality', 0)}/100")
+
+        return "\n".join(lines) + "\n"
 
     def _parse_response(self, text: str, ticker: str, price_data: dict) -> Optional[Dict[str, Any]]:
         """Parse Claude's JSON response into a structured setup."""

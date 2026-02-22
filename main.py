@@ -25,6 +25,7 @@ from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, List, Optional
 from dotenv import load_dotenv
+import asyncio
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -71,6 +72,7 @@ from src.intelligence.correlation_engine import CorrelationEngine
 from src.intelligence.smart_money_tracker import SmartMoneyTracker
 from src.intelligence.trade_setup_generator import TradeSetupGenerator
 from src.intelligence.opportunity_scanner import OpportunityScanner
+from src.intelligence.ta_engine import CryptoTAEngine
 
 # Output
 from src.content.x_thread_generator import generate_x_thread
@@ -125,14 +127,16 @@ DEFI_ASSETS = ['AAVE', 'UNI', 'CRV', 'LDO']
 # =============================================================================
 
 ANCHOR_SLOTS = [
-    {"hour": 8,  "mode": "morning_scan",   "label": "Morning Scan",   "full_article": True},
-    {"hour": 16, "mode": "mid_day_update",  "label": "Mid-Day Update", "full_article": False},
-    {"hour": 0,  "mode": "closing_bell",    "label": "Closing Bell",   "full_article": False},
+    {"hour": 8,  "mode": "morning_scan",    "label": "Morning Scan",    "full_article": True},
+    {"hour": 12, "mode": "mid_day_update",  "label": "Midday Pulse",    "full_article": False},
+    {"hour": 16, "mode": "mid_day_update",  "label": "Afternoon Update", "full_article": False},
+    {"hour": 20, "mode": "mid_day_update",  "label": "Evening Brief",   "full_article": False},
+    {"hour": 0,  "mode": "closing_bell",    "label": "Closing Bell",    "full_article": False},
 ]
 ANCHOR_WINDOW_MINUTES = 15        # How close to slot hour to trigger
 BREAKING_NEWS_INTERVAL = 900      # 15 min between breaking news checks
-BREAKING_NEWS_THRESHOLD = 0.85    # Relevance score threshold for breaking
-ANCHOR_COOLDOWN_MINUTES = 45      # Suppress breaking news right after anchor
+BREAKING_NEWS_THRESHOLD = 0.72    # Relevance score threshold for breaking (was 0.85 — too strict)
+ANCHOR_COOLDOWN_MINUTES = 30      # Suppress breaking news right after anchor (was 45)
 
 # Directories
 DATA_DIR = Path('data')
@@ -259,12 +263,14 @@ class CryptoAnalysisOrchestrator:
         self.smart_money_tracker = SmartMoneyTracker()
         self.trade_setup_gen = TradeSetupGenerator()
         self.opportunity_scanner = OpportunityScanner()
+        self.ta_engine = CryptoTAEngine()
         self.current_regime = None
         logger.info("   Regime Detector: Ready")
         logger.info("   Correlation Engine: Ready")
         logger.info("   Smart Money Tracker: Ready")
         logger.info(f"   Trade Setup Generator: {'Ready' if self.trade_setup_gen._enabled else 'Disabled (no API key)'}")
         logger.info("   Opportunity Scanner: Ready")
+        logger.info("   CryptoTAEngine: Ready (Binance/Bybit OHLCV + Structure/Zones)")
 
         # State
         self.running = False
@@ -487,6 +493,18 @@ class CryptoAnalysisOrchestrator:
                 logger.error("❌ Could not generate article body - aborting")
                 return
 
+            # Save to Notion first (write once, post anywhere)
+            if self.notion_manager and self.notion_manager.is_available():
+                try:
+                    notion_result = self.notion_manager.save_news_post(
+                        title=title,
+                        content=body,
+                        tags=['morning_scan', 'article', 'daily']
+                    )
+                    logger.info(f"   ✅ Notion: Morning article saved (ID: {notion_result})")
+                except Exception as e:
+                    logger.warning(f"   ⚠️  Notion save failed: {e}")
+
             # X Article
             logger.info("\n📤 Step 2: Posting article to X...")
             if self.x_use_browser and self.x_browser_poster.enabled:
@@ -529,6 +547,18 @@ class CryptoAnalysisOrchestrator:
             if not summary:
                 return
 
+            # Save to Notion (write once, post anywhere)
+            if self.notion_manager and self.notion_manager.is_available():
+                try:
+                    notion_result = self.notion_manager.save_tweet_thread(
+                        title=f"{slot['label']} Update",
+                        content=summary,
+                        tags=['anchor_note', slot['mode']]
+                    )
+                    logger.info(f"   ✅ Notion: {slot['label']} note saved (ID: {notion_result})")
+                except Exception as e:
+                    logger.warning(f"   ⚠️  Notion save failed: {e}")
+
             if self.substack_use_browser and self.substack_browser.enabled:
                 note_id = self.substack_browser.post_memo_as_note(
                     ticker="MARKET", memo=summary
@@ -559,10 +589,11 @@ class CryptoAnalysisOrchestrator:
             return
 
         try:
-            # Get recent articles from RSS engine (sorted newest first)
-            cutoff = datetime.now(timezone.utc) - timedelta(minutes=20)
+            # Widen recency window to 90 min — RSS feeds can lag, and we check
+            # every 15 min so a 20-min window frequently misses valid articles.
+            cutoff = datetime.now(timezone.utc) - timedelta(minutes=90)
             recent_items = []
-            for item in self.rss_engine.articles[:100]:  # Check top 100 most recent
+            for item in self.rss_engine.articles[:200]:  # Check top 200 most recent
                 pub = item.get('published_at')
                 if pub and hasattr(pub, 'tzinfo'):
                     if pub.tzinfo is None:
@@ -577,6 +608,9 @@ class CryptoAnalysisOrchestrator:
                 logger.info(f"Breaking news check: no recent items (checked {len(self.rss_engine.articles)} total)")
                 return
 
+            # All tracked assets — not just majors
+            ALL_TRACKED = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS
+
             breaking_found = 0
             for item in recent_items:
                 title = item.get('title', '')
@@ -589,11 +623,24 @@ class CryptoAnalysisOrchestrator:
                 if title_hash in self.posted_breaking_headlines:
                     continue
 
-                # Check relevance score across major tickers
+                # Check relevance across ALL tracked assets + macro signals
                 max_score = 0.0
-                for ticker in MAJOR_ASSETS:
+                for ticker in ALL_TRACKED:
                     _, score = _calculate_relevance(title, ticker, item)
                     max_score = max(max_score, score)
+
+                # Boost score for macro events that always move crypto markets
+                title_lower = title.lower()
+                macro_movers = [
+                    'federal reserve', 'fed rate', 'rate cut', 'rate hike', 'fomc',
+                    'interest rate decision', 'cpi report', 'inflation data',
+                    'sec approves', 'sec rejects', 'etf approved', 'etf denied',
+                    'bitcoin etf', 'spot etf', 'crypto ban', 'crypto regulation',
+                    'stablecoin bill', 'crypto bill', 'digital asset',
+                    'binance', 'coinbase', 'kraken', 'ftx', 'tether usdt',
+                ]
+                if any(kw in title_lower for kw in macro_movers):
+                    max_score = max(max_score, 0.75)  # Guarantee threshold passage
 
                 if max_score < BREAKING_NEWS_THRESHOLD:
                     continue
@@ -691,7 +738,7 @@ class CryptoAnalysisOrchestrator:
                         post_result = None  # Fall back to browser
                 
                 # Fall back to browser if API unavailable
-                if not post_result and self.x_browser_poster.enabled:
+                if not post_result and getattr(self.x_browser_poster, 'enabled', False):
                     try:
                         post_result = self.x_browser_poster.post_thread(thread_data)
                         if post_result.get('success'):
@@ -997,11 +1044,25 @@ class CryptoAnalysisOrchestrator:
                             continue
 
                         deriv = research.get('derivatives')
+
+                        # Run TA engine for structure/zone/filter context
+                        ta_ctx = None
+                        try:
+                            ta_ctx = asyncio.run(self.ta_engine.analyze(
+                                ticker=ticker,
+                                htf='4h',
+                                exchange='binance',
+                            ))
+                            logger.debug(f"   TA [{ticker}]: {ta_ctx.get('direction')} quality={ta_ctx.get('setup_quality')}")
+                        except Exception as ta_err:
+                            logger.debug(f"   TA [{ticker}] skipped: {ta_err}")
+
                         setup = self.trade_setup_gen.generate_setup(
                             ticker=ticker,
                             price_data=price_data,
                             regime=self.current_regime,
                             derivatives=deriv,
+                            ta_context=ta_ctx,
                         )
                         if setup:
                             self.web_publisher.publish_trade_setup(setup)
@@ -1206,7 +1267,7 @@ class CryptoAnalysisOrchestrator:
                     post_result = None  # Fall back to browser
             
             # Fall back to browser if API unavailable
-            if not post_result and self.x_browser_poster.enabled:
+            if not post_result and getattr(self.x_browser_poster, 'enabled', False):
                 try:
                     logger.info("Posting thread to X (browser automation)...")
                     post_result = self.x_browser_poster.post_thread(thread)
@@ -1364,7 +1425,7 @@ class CryptoAnalysisOrchestrator:
             discord_sent = True
 
         # X tweet + Web news tweet
-        x_posting_available = self.x_browser_poster.enabled
+        x_posting_available = (self.x_poster and self.x_poster.enabled) or getattr(self.x_browser_poster, 'enabled', False)
         news_tweet = None
         if x_posting_available or self.web_publisher.enabled:
             news_tweet = self.news_narrator.generate_news_tweet(
@@ -1379,7 +1440,7 @@ class CryptoAnalysisOrchestrator:
                 if self.x_poster and self.x_poster.enabled:
                     tid = self.x_poster.post_tweet(news_tweet)
                 # Fall back to browser if API unavailable
-                if not tid and self.x_browser_poster.enabled:
+                if not tid and getattr(self.x_browser_poster, 'enabled', False):
                     tid = self.x_browser_poster.post_tweet(news_tweet)
                 if tid:
                     x_tweet_id = str(tid)
@@ -1394,7 +1455,7 @@ class CryptoAnalysisOrchestrator:
 
         # X Article — post full memo as long-form article (browser only, API doesn't support articles)
         x_article_id = None
-        if self.x_browser_poster.enabled:
+        if getattr(self.x_browser_poster, 'enabled', False):
             article_title = f"{ticker} Market Analysis"
             if current_price:
                 article_title = f"{ticker} @ ${current_price:,.2f} — Market Analysis"
@@ -1536,7 +1597,7 @@ class CryptoAnalysisOrchestrator:
             discord_sent = True
 
         # X tweet + Web news tweet
-        x_posting_available = (self.x_poster and self.x_poster.enabled) or self.x_browser_poster.enabled
+        x_posting_available = (self.x_poster and self.x_poster.enabled) or getattr(self.x_browser_poster, 'enabled', False)
         news_tweet = None
         if x_posting_available or self.web_publisher.enabled:
             news_tweet = self.news_narrator.generate_news_tweet(
@@ -1550,7 +1611,7 @@ class CryptoAnalysisOrchestrator:
                 if self.x_poster and self.x_poster.enabled:
                     tid = self.x_poster.post_tweet(news_tweet)
                 # Fall back to browser if API unavailable
-                if not tid and self.x_browser_poster.enabled:
+                if not tid and getattr(self.x_browser_poster, 'enabled', False):
                     tid = self.x_browser_poster.post_tweet(news_tweet)
                 if tid:
                     x_tweet_id = str(tid)

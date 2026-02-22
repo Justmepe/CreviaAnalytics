@@ -414,27 +414,22 @@ def _filter_spam_news(news_items: List[Dict]) -> List[Dict]:
     - Marketing content
     """
     
-    # Spam keywords to filter out
+    # Spam keywords — only pure PR/marketing junk, NOT legitimate news words.
+    # NOTE: "partnership", "launches", "announces", "adoption", "integration" are
+    # intentionally excluded — Bloomberg/CNBC/Reuters use them constantly.
     SPAM_KEYWORDS = [
-        # Press release indicators
-        'announces', 'launches', 'partnership', 'collaboration', 'alliance',
-        'integration', 'adoption', 'implementation', 'deployment',
-        
-        # Marketing content
-        'proud to', 'excited to', 'pleased to', 'honored to',
-        'leading', 'innovative', 'revolutionary', 'game-changing',
-        
-        # Token/exchange related
-        'listing', 'listed', 'trading', 'available on',
-        'token sale', 'ico', 'ido', 'airdrop',
-        
-        # Generic business speak
-        'expands', 'expands its', 'strengthens', 'enhances',
-        'leverages', 'utilizes', 'harnesses', 'capitalizes',
-        
-        # Low-quality sources
-        'yahoo finance', 'business wire', 'pr newswire',
-        'globenewswire', 'accesswire'
+        # Obvious PR fluff phrases (multi-word only — safe to block)
+        'proud to announce', 'excited to announce', 'pleased to announce',
+        'honored to announce', 'proud to introduce', 'excited to launch',
+        'thrilled to', 'delighted to',
+
+        # Token sale / pure marketing events
+        'token sale', 'ico launch', 'ido launch', 'airdrop event',
+        'presale now live', 'whitelist open',
+
+        # Low-quality wire services (not editorial outlets)
+        'business wire', 'pr newswire', 'globenewswire', 'accesswire',
+        'prnewswire', 'businesswire',
     ]
     
     filtered_items = []

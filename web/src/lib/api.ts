@@ -17,7 +17,7 @@ async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> 
   return res.json();
 }
 
-import type { ContentListResponse, ContentPost, MarketSnapshot, AssetPrice, MarketRegime, CorrelationSnapshot, TradeSetup, OpportunityScan, JournalEntry, PortfolioStats } from '@/types';
+import type { ContentListResponse, ContentPost, MarketSnapshot, AssetPrice, MarketRegime, CorrelationSnapshot, TradeSetup, OpportunityScan, JournalEntry, PortfolioStats, ExchangeKey, PortfolioSummary } from '@/types';
 import { getStoredToken } from './auth';
 
 async function authFetchClient<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -137,6 +137,32 @@ export async function getLatestTradeSetups(asset?: string, limit: number = 10): 
 
 export async function getHealthCheck(): Promise<{ status: string }> {
   return fetchAPI('/api/health');
+}
+
+// --- Portfolio / Exchange API Key management ---
+
+export async function getExchangeKeys(): Promise<ExchangeKey[]> {
+  return authFetchClient<ExchangeKey[]>('/api/portfolio/keys');
+}
+
+export async function addExchangeKey(data: {
+  exchange: string;
+  api_key: string;
+  api_secret: string;
+  label?: string;
+}): Promise<ExchangeKey> {
+  return authFetchClient<ExchangeKey>('/api/portfolio/keys', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  });
+}
+
+export async function deleteExchangeKey(id: number): Promise<void> {
+  await authFetchClient<void>(`/api/portfolio/keys/${id}`, { method: 'DELETE' });
+}
+
+export async function syncPortfolio(): Promise<PortfolioSummary[]> {
+  return authFetchClient<PortfolioSummary[]>('/api/portfolio/sync');
 }
 
 export function formatPrice(price: number | null | undefined): string {
