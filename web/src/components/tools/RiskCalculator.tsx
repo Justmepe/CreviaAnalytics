@@ -17,6 +17,7 @@ interface CalcResult {
   maxLoss: number;
   potentialGain: number;
   notionalValue: number;
+  requiredMargin: number;
   liquidationPrice: number | null;
   dailyFundingCost: number | null;
 }
@@ -109,16 +110,16 @@ export default function RiskCalculator() {
       return;
     }
 
-    // Position size based on capital × leverage (margin-based approach)
+    // Risk-first position sizing: size the position so that stop loss = exact risk amount
     const stopDistance = Math.abs(e - sl);
     if (stopDistance === 0) return;
 
-    const notional = risk * lev;               // total position value in USD
-    const positionSize = notional / e;          // units of asset controlled
+    const positionSize = risk / stopDistance;         // units of asset (e.g. BTC)
+    const notional = positionSize * e;                // total position value in USD
+    const requiredMargin = notional / lev;            // capital needed in account
     const profitDistance = direction === 'long' ? tp - e : e - tp;
     const rr = profitDistance / stopDistance;
-    const maxLoss = positionSize * stopDistance; // P&L at stop (can exceed margin if wide stop)
-    const potentialGain = positionSize * profitDistance; // P&L at TP
+    const potentialGain = risk * rr;                  // gain at TP = risk × R:R ratio
 
     // Liquidation price (simplified for perpetual futures)
     let liqPrice: number | null = null;
@@ -131,7 +132,7 @@ export default function RiskCalculator() {
       }
     }
 
-    // Daily funding cost
+    // Daily funding cost based on notional position size
     let dailyFunding: number | null = null;
     if (context?.funding_rate != null && lev > 1) {
       // Funding paid 3x/day on most exchanges
@@ -141,9 +142,10 @@ export default function RiskCalculator() {
     setResult({
       positionSize: Math.round(positionSize * 10000) / 10000,
       riskReward: Math.round(rr * 100) / 100,
-      maxLoss: Math.round(maxLoss * 100) / 100,
+      maxLoss: Math.round(risk * 100) / 100,         // always equals risk input by design
       potentialGain: Math.round(potentialGain * 100) / 100,
       notionalValue: Math.round(notional * 100) / 100,
+      requiredMargin: Math.round(requiredMargin * 100) / 100,
       liquidationPrice: liqPrice ? Math.round(liqPrice * 100) / 100 : null,
       dailyFundingCost: dailyFunding ? Math.round(dailyFunding * 100) / 100 : null,
     });
@@ -164,7 +166,7 @@ export default function RiskCalculator() {
       }
 
       if (context.funding_rate != null && Math.abs(context.funding_rate) > 0.0005 && lev > 1) {
-        const dailyCost = Math.abs(context.funding_rate) * notional * 3;
+        const dailyCost = Math.abs(context.funding_rate) * (risk / stopDistance * e) * 3;
         w.push({
           severity: dailyCost > risk * 0.1 ? 'high' : 'medium',
           message: `Funding rate at ${(context.funding_rate * 100).toFixed(4)}% — costs $${dailyCost.toFixed(2)}/day`,
@@ -252,7 +254,7 @@ export default function RiskCalculator() {
             { label: 'Stop Loss', value: stopLoss, set: setStopLoss, prefix: '$' },
             { label: 'Take Profit', value: takeProfit, set: setTakeProfit, prefix: '$' },
             { label: 'Leverage', value: leverage, set: setLeverage, suffix: 'x' },
-            { label: 'Capital (Margin)', value: riskAmount, set: setRiskAmount, prefix: '$' },
+            { label: 'Risk Amount (max loss at stop)', value: riskAmount, set: setRiskAmount, prefix: '$' },
           ].map((field) => (
             <div key={field.label}>
               <label className="block text-xs text-zinc-500 mb-1">{field.label}</label>
@@ -303,10 +305,11 @@ export default function RiskCalculator() {
             <h3 className="text-lg font-bold text-white mb-4">Results</h3>
             <div className="grid grid-cols-2 gap-3">
               {[
-                { label: 'Position Size', value: `${result.positionSize}` },
+                { label: 'Loss at Stop', value: `$${result.maxLoss.toLocaleString()}`, negative: true },
+                { label: 'Gain at Target', value: `$${result.potentialGain.toLocaleString()}`, positive: true },
                 { label: 'Risk/Reward', value: `${result.riskReward}:1`, highlight: result.riskReward >= 2 },
-                { label: 'Loss at Stop', value: `$${result.maxLoss}`, negative: true },
-                { label: 'Gain at Target', value: `$${result.potentialGain}`, positive: true },
+                { label: 'Position Size', value: `${result.positionSize}` },
+                { label: 'Required Margin', value: `$${result.requiredMargin.toLocaleString()}` },
                 { label: 'Notional Value', value: `$${result.notionalValue.toLocaleString()}` },
                 ...(result.liquidationPrice ? [{ label: 'Liquidation Price', value: `$${result.liquidationPrice.toLocaleString()}`, negative: true }] : []),
                 ...(result.dailyFundingCost ? [{ label: 'Daily Funding Cost', value: `$${result.dailyFundingCost}` }] : []),
