@@ -9,9 +9,9 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 font-bold text-zinc-950 text-sm">
-                CA
+                CC
               </div>
-              <span className="text-lg font-semibold text-white">Crevia</span>
+              <span className="text-lg font-semibold text-white">CreviaCockpit</span>
             </div>
             <p className="mt-3 text-sm text-zinc-500">
               Professional crypto market analysis. Real-time insights for 16+ assets across majors, DeFi, privacy, and memecoins.
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-zinc-800 pt-6 text-center text-sm text-zinc-600">
-          &copy; {new Date().getFullYear()} Crevia Analytics. All rights reserved.
+          &copy; {new Date().getFullYear()} CreviaCockpit. All rights reserved.
         </div>
       </div>
     </footer>

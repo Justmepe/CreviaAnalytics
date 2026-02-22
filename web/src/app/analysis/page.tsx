@@ -4,7 +4,7 @@ import { getContentFeed } from '@/lib/api';
 
 export const metadata: Metadata = {
   title: 'Analysis Feed',
-  description: 'Crypto market analysis threads, memos, and alerts from Crevia Analytics.',
+  description: 'Crypto market analysis threads, memos, and alerts from CreviaCockpit.',
 };
 
 export const revalidate = 60;

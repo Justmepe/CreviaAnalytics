@@ -81,22 +81,22 @@ export async function POST(req: NextRequest) {
 
       // 4. Confirmation email to the user (double-validates deliverability)
       await sendResendEmail(apiKey, {
-        from: 'Crevia Analytics <onboarding@resend.dev>',
+        from: 'CreviaCockpit <onboarding@resend.dev>',
         to: [email],
-        subject: "You're on the Crevia Analytics waitlist 🎉",
+        subject: "You're on the CreviaCockpit waitlist 🎉",
         html: `
           <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:32px 24px;background:#09090b;color:#e4e4e7;border-radius:12px">
             <div style="width:40px;height:40px;background:#10b981;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#09090b;margin-bottom:24px;font-size:14px">CA</div>
             <h2 style="color:#ffffff;margin:0 0 12px">Hey ${firstName}, you're on the list!</h2>
             <p style="color:#a1a1aa;line-height:1.6;margin:0 0 20px">
-              You've secured early access to <strong style="color:#10b981">Crevia Analytics</strong> —
+              You've secured early access to <strong style="color:#10b981">CreviaCockpit</strong> —
               live market regime detection, AI trade setups, opportunity scanner, and risk calculator for 16+ crypto assets.
             </p>
             <p style="color:#a1a1aa;line-height:1.6;margin:0 0 24px">
               We'll email you at <strong style="color:#ffffff">${email}</strong> when your early access is ready.
               Early access members get Pro features <strong style="color:#10b981">free during beta</strong>.
             </p>
-            <a href="https://creviaanalytics.com/tools/risk-calculator"
+            <a href="https://crevia.creohub.io/tools/risk-calculator"
                style="display:inline-block;background:#10b981;color:#09090b;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px">
               Try the Risk Calculator Free →
             </a>
@@ -114,7 +114,7 @@ export async function POST(req: NextRequest) {
           to: [ownerEmail],
           subject: `New waitlist signup: ${email}`,
           html: `
-            <p>A new person joined the Crevia Analytics waitlist.</p>
+            <p>A new person joined the CreviaCockpit waitlist.</p>
             <table cellpadding="6" style="border-collapse:collapse">
               <tr><td><strong>Email</strong></td><td>${email}</td></tr>
               <tr><td><strong>Name</strong></td><td>${name || '—'}</td></tr>

@@ -37,7 +37,7 @@ export default function LoginPage() {
             CA
           </div>
           <h1 className="text-2xl font-bold text-white">Welcome back</h1>
-          <p className="text-sm text-zinc-500 mt-1">Sign in to your Crevia Analytics account</p>
+          <p className="text-sm text-zinc-500 mt-1">Sign in to your CreviaCockpit account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

@@ -1,7 +1,7 @@
 import RiskCalculator from '@/components/tools/RiskCalculator';
 
 export const metadata = {
-  title: 'Risk Calculator | Crevia Analytics',
+  title: 'Risk Calculator | CreviaCockpit',
   description: 'Context-aware position sizing calculator with market condition warnings.',
 };
 

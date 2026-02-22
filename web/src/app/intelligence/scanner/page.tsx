@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const revalidate = 60;
 
 export const metadata = {
-  title: 'Opportunity Scanner | Crevia Analytics',
+  title: 'Opportunity Scanner | CreviaCockpit',
   description: 'Multi-asset opportunity ranking by composite score, R/R ratio, and regime alignment.',
 };
 

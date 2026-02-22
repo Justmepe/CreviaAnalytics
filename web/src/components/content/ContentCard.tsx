@@ -62,7 +62,7 @@ export default function ContentCard({ post }: { post: ContentPost }) {
       <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
           <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          <span className="text-xs text-zinc-500">Crevia Analytics</span>
+          <span className="text-xs text-zinc-500">CreviaCockpit</span>
         </div>
         {post.content_type === 'thread' && post.tweets && (
           <span className="text-xs text-zinc-500">{post.tweets.length} tweets</span>

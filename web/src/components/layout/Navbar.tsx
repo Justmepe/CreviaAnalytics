@@ -40,10 +40,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 font-bold text-zinc-950 text-sm">
-            CA
+            CC
           </div>
           <span className="text-lg font-semibold text-white">
-            Crevia <span className="text-emerald-400">Analytics</span>
+            Crevia<span className="text-emerald-400">Cockpit</span>
           </span>
         </Link>
 

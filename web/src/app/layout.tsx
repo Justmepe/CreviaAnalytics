@@ -13,8 +13,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Crevia Analytics | Crypto Market Intelligence",
-    template: "%s | Crevia Analytics",
+    default: "CreviaCockpit | Crypto Market Intelligence",
+    template: "%s | CreviaCockpit",
   },
   description:
     "Real-time crypto market analysis covering 16+ assets across majors, DeFi, privacy coins, and memecoins. Market memos, analysis threads, and risk alerts.",

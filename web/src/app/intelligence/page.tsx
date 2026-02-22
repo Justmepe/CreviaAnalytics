@@ -12,7 +12,7 @@ import Link from 'next/link';
 export const revalidate = 60;
 
 export const metadata = {
-  title: 'Intelligence | Crevia Analytics',
+  title: 'Intelligence | CreviaCockpit',
   description: 'Market regime detection, correlation analysis, smart money tracking, and trading intelligence.',
 };
 

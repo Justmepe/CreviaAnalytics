@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const revalidate = 60;
 
 export const metadata = {
-  title: 'Trade Setups | Crevia Analytics',
+  title: 'Trade Setups | CreviaCockpit',
   description: 'AI-generated trade setups with entry zones, stop losses, and take profit targets.',
 };
 

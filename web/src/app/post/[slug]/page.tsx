@@ -13,9 +13,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const post = await getPost(slug);
     return {
       title: post.title || 'Analysis',
-      description: post.excerpt || 'Crypto market analysis by Crevia Analytics.',
+      description: post.excerpt || 'Crypto market analysis by CreviaCockpit.',
       openGraph: {
-        title: post.title || 'Crevia Analytics',
+        title: post.title || 'CreviaCockpit',
         description: post.excerpt || '',
         images: post.image_url ? [post.image_url] : [],
       },
@@ -125,7 +125,7 @@ export default async function PostPage({ params }: PageProps) {
       <div className="mt-8 flex items-center justify-between border-t border-zinc-800 pt-6">
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-emerald-500" />
-          <span className="text-sm text-zinc-500">Crevia Analytics Research</span>
+          <span className="text-sm text-zinc-500">CreviaCockpit Research</span>
         </div>
         <Link
           href="/analysis"

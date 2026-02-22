@@ -6,7 +6,7 @@ import Link from 'next/link';
 type Step = 'preview' | 'tweet' | 'form' | 'success';
 
 const TWEET_TEXT = encodeURIComponent(
-  `I just found @CreviaAnalytics 🧠
+  `I just found @CreviaCockpit 🧠
 
 → Live market regime detection (RISK_ON / RISK_OFF / ACCUMULATION)
 → AI-powered trade setups with entry zones & R/R ratios
@@ -14,7 +14,7 @@ const TWEET_TEXT = encodeURIComponent(
 → Risk calculator with real-time market warnings
 
 Joining the waitlist now 👇
-creviaanalytics.com/waitlist`
+crevia.creohub.io/waitlist`
 );
 
 const TWEET_URL = `https://x.com/intent/post?text=${TWEET_TEXT}`;
@@ -161,7 +161,7 @@ export default function WaitlistFlow() {
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-white mb-3">Here&apos;s what&apos;s coming</h2>
             <p className="text-zinc-400 max-w-xl mx-auto">
-              Crevia Analytics is a full-stack crypto intelligence platform. Early access members get Pro features free during beta.
+              CreviaCockpit is a full-stack crypto intelligence platform. Early access members get Pro features free during beta.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export default function WaitlistFlow() {
                 <div className="text-xs text-zinc-500">@you</div>
               </div>
             </div>
-            <p className="text-sm text-zinc-300 leading-relaxed whitespace-pre-line">{`I just found @CreviaAnalytics 🧠
+            <p className="text-sm text-zinc-300 leading-relaxed whitespace-pre-line">{`I just found @CreviaCockpit 🧠
 
 → Live market regime detection (RISK_ON / RISK_OFF / ACCUMULATION)
 → AI-powered trade setups with entry zones & R/R ratios
@@ -235,7 +235,7 @@ export default function WaitlistFlow() {
 → Risk calculator with real-time market warnings
 
 Joining the waitlist now 👇
-creviaanalytics.com/waitlist`}</p>
+crevia.creohub.io/waitlist`}</p>
           </div>
 
           <button

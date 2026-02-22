@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 import WaitlistFlow from '@/components/WaitlistFlow';
 
 export const metadata: Metadata = {
-  title: 'Early Access | Crevia Analytics',
-  description: 'Join the waitlist for Crevia Analytics — live market regime detection, AI trade setups, and opportunity scanner for 16+ crypto assets.',
+  title: 'Early Access | CreviaCockpit',
+  description: 'Join the waitlist for CreviaCockpit — live market regime detection, AI trade setups, and opportunity scanner for 16+ crypto assets.',
   openGraph: {
-    title: 'Crevia Analytics — Early Access',
+    title: 'CreviaCockpit — Early Access',
     description: 'Live regime detection, AI trade setups, opportunity scanner, risk calculator. Join the waitlist.',
     type: 'website',
   },

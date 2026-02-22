@@ -121,9 +121,9 @@ function DemoVideoSection() {
               <p className="relative z-10 text-sm font-medium text-zinc-400">Demo video coming soon</p>
               <p className="relative z-10 text-xs text-zinc-600">
                 Follow{' '}
-                <a href="https://x.com/CreviaAnalytics" target="_blank" rel="noopener noreferrer"
+                <a href="https://x.com/CreviaCockpit" target="_blank" rel="noopener noreferrer"
                    className="text-emerald-500 hover:text-emerald-400">
-                  @CreviaAnalytics
+                  @CreviaCockpit
                 </a>
                 {' '}for a preview
               </p>
