@@ -100,34 +100,16 @@ function DemoVideoSection() {
             />
           </div>
         ) : (
-          /* Placeholder shown until NEXT_PUBLIC_DEMO_VIDEO_URL is set */
-          <div className="relative mx-auto overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-900/50"
-               style={{ paddingBottom: '56.25%', height: 0 }}>
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
-              {/* Mock screen lines */}
-              <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden">
-                <div className="flex h-full flex-col gap-2 p-6">
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <div key={i} className="h-4 rounded bg-emerald-500" style={{ width: `${60 + (i % 4) * 10}%`, opacity: 0.3 + (i % 3) * 0.2 }} />
-                  ))}
-                </div>
-              </div>
-              {/* Play icon */}
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-2 border-emerald-500/50 bg-emerald-500/10">
-                <svg className="h-7 w-7 text-emerald-400 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <p className="relative z-10 text-sm font-medium text-zinc-400">Demo video coming soon</p>
-              <p className="relative z-10 text-xs text-zinc-600">
-                Follow{' '}
-                <a href="https://x.com/CreviaCockpit" target="_blank" rel="noopener noreferrer"
-                   className="text-emerald-500 hover:text-emerald-400">
-                  @CreviaCockpit
-                </a>
-                {' '}for a preview
-              </p>
-            </div>
+          /* Local demo video */
+          <div className="mx-auto overflow-hidden rounded-2xl border border-zinc-700 shadow-2xl shadow-emerald-950/20">
+            <video
+              src="/demo.mp4"
+              controls
+              preload="metadata"
+              poster="/logo.jpeg"
+              className="w-full"
+              playsInline
+            />
           </div>
         )}
       </div>

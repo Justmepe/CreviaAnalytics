@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,11 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 font-bold text-zinc-950 text-sm">
-                CC
-              </div>
-              <span className="text-lg font-semibold text-white">CreviaCockpit</span>
+            <div className="flex items-center">
+              <Image
+                src="/logo.jpeg"
+                alt="CreviaCockpit"
+                width={140}
+                height={44}
+                className="h-11 w-auto object-contain"
+              />
             </div>
             <p className="mt-3 text-sm text-zinc-500">
               Professional crypto market analysis. Real-time insights for 16+ assets across majors, DeFi, privacy, and memecoins.
