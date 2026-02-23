@@ -814,8 +814,7 @@ class CryptoAnalysisOrchestrator:
                 # Try API first (faster, no detection)
                 if self.x_poster and self.x_poster.enabled:
                     try:
-                        tweets = thread_data.get('tweets', [])
-                        post_result = self.x_poster.post_thread(tweets)
+                        post_result = self.x_poster.post_thread(thread_data)
                         if post_result and post_result.get('success'):
                             posted_count = post_result.get('posted_count', len(tweets))
                             logger.info(f"   ✅ X thread posted via API ({posted_count} tweets)")
