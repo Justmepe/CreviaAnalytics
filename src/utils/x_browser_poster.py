@@ -658,19 +658,22 @@ class XBrowserPoster:
                             except Exception:
                                 continue
 
-                        # Dismiss common X popups/overlays
+                        # Dismiss common X popups/overlays (including cookie consent)
                         for sel in [
                             'button[data-testid="app-bar-close"]',
                             'div[role="button"]:has-text("Not now")',
                             'button:has-text("Not now")',
                             'button:has-text("Maybe later")',
                             'button[aria-label="Close"]',
+                            # Cookie consent dialog ("Did someone say... cookies?")
+                            'button:has-text("Refuse non-essential cookies")',
+                            'button:has-text("Accept all cookies")',
                         ]:
                             try:
                                 el = page.locator(sel).first
                                 if el.is_visible(timeout=1500):
                                     el.click()
-                                    time.sleep(0.5)
+                                    time.sleep(0.8)
                             except Exception:
                                 continue
 
@@ -746,20 +749,23 @@ class XBrowserPoster:
                             pass
 
                         # Find and click Post button
+                        # Use evaluate("el => el.click()") which bypasses overlay
+                        # interception. _human_move_and_click uses coordinates which
+                        # get blocked by #layers overlay even after JS removal.
                         post_clicked = False
 
-                        # Method 1: data-testid
+                        # Method 1: data-testid via JS evaluate (overlay-proof)
                         try:
                             post_btn = page.locator('button[data-testid="tweetButtonInline"]').first
                             if post_btn.is_visible(timeout=3000) and post_btn.is_enabled():
                                 time.sleep(random.uniform(0.4, 0.9))
-                                _human_move_and_click(page, post_btn)
+                                post_btn.evaluate("el => el.click()")
                                 post_clicked = True
-                                logger.info("[XBrowserPoster] Clicked Post button (testid)")
+                                logger.info("[XBrowserPoster] Clicked Post button (js evaluate)")
                         except Exception:
                             pass
 
-                        # Method 2: text search
+                        # Method 2: text search via JS evaluate
                         if not post_clicked:
                             try:
                                 buttons = page.locator('button')
@@ -769,9 +775,9 @@ class XBrowserPoster:
                                         btn_text = btn.text_content().strip().lower()
                                         if btn_text == "post":
                                             time.sleep(random.uniform(0.4, 0.9))
-                                            _human_move_and_click(page, btn)
+                                            btn.evaluate("el => el.click()")
                                             post_clicked = True
-                                            logger.info("[XBrowserPoster] Clicked Post button (text)")
+                                            logger.info("[XBrowserPoster] Clicked Post button (js text)")
                                             break
                             except Exception:
                                 pass
