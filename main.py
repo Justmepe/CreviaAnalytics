@@ -220,7 +220,7 @@ class CryptoAnalysisOrchestrator:
 
         # X/Twitter posting — browser-only via Patchright (isTrusted fix + human-like input)
         self.x_poster = None  # API disabled (403 Forbidden)
-        self.x_browser_poster = XBrowserPoster(headless=True)  # Patchright + human mouse/type
+        self.x_browser_poster = XBrowserPoster(headless=False)  # Patchright + human mouse/type (headless=False required for DNS on VPS with Xvfb)
         self.x_use_browser = self.x_browser_poster.enabled
 
         if self.x_use_browser:

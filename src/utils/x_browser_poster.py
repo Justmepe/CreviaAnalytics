@@ -525,19 +525,21 @@ class XBrowserPoster:
         """
         with self.lock:
             try:
+                # Ensure virtual display is set for headless=False mode on Linux (Xvfb :99)
+                if platform.system() == "Linux":
+                    os.environ.setdefault('DISPLAY', ':99')
+
                 with sync_playwright() as p:
                     chrome_path = find_chrome_executable()
-                    
-                    # Launch with comprehensive anti-detection features
-                    context = p.chromium.launch_persistent_context(
-                        self.session_dir,
+                    launch_kwargs = dict(
                         headless=self.headless,
                         viewport={"width": 1280, "height": 900},
-                        executable_path=chrome_path,  # Use real Chrome if available
                         user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
                         locale='en-US',
                         timezone_id='America/New_York',
+                        ignore_default_args=['--enable-automation'],
                         args=[
+                            '--no-sandbox',
                             '--disable-blink-features=AutomationControlled',
                             '--disable-dev-shm-usage',
                             '--no-first-run',
@@ -545,15 +547,23 @@ class XBrowserPoster:
                             '--disable-popup-blocking',
                         ],
                     )
+                    if chrome_path:
+                        launch_kwargs['executable_path'] = chrome_path
+
+                    # Launch with comprehensive anti-detection features
+                    context = p.chromium.launch_persistent_context(
+                        self.session_dir,
+                        **launch_kwargs,
+                    )
                     page = context.new_page()
-                    
+
                     # ADD STEALTH SCRIPTS IMMEDIATELY after page creation, BEFORE navigation
                     add_stealth_scripts(page)
 
                     try:
                         # Navigate to X home
                         logger.info("[XBrowserPoster] Navigating to X home...")
-                        page.goto("https://x.com/home", timeout=60000)
+                        page.goto("https://x.com/home", wait_until='domcontentloaded', timeout=60000)
                         page.wait_for_load_state("domcontentloaded", timeout=20000)
 
                         # Wait for React SPA to fully render
@@ -572,6 +582,10 @@ class XBrowserPoster:
                                 self.session_manager.state.mark_error("Redirected to login page")
                             context.close()
                             return False
+
+                        # Session confirmed active — persist state so session_state.json stays valid
+                        if self.session_manager:
+                            self.session_manager.state.mark_logged_in()
 
                         # Wait for timeline to render
                         for sel in [
@@ -780,25 +794,34 @@ class XBrowserPoster:
         """
         with self.lock:
             try:
+                # Ensure virtual display is set for headless=False mode on Linux (Xvfb :99)
+                if platform.system() == "Linux":
+                    os.environ.setdefault('DISPLAY', ':99')
+
                 with sync_playwright() as p:
                     chrome_path = find_chrome_executable()
-                    
-                    # Launch with anti-detection features
-                    context = p.chromium.launch_persistent_context(
-                        self.session_dir,
+                    launch_kwargs = dict(
                         headless=self.headless,
                         viewport={"width": 1280, "height": 900},
-                        executable_path=chrome_path,  # Use real Chrome if available
                         user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
                         locale='en-US',
                         timezone_id='America/New_York',
                         args=[
+                            '--no-sandbox',
                             '--disable-blink-features=AutomationControlled',
                             '--disable-dev-shm-usage',
                             '--no-first-run',
                             '--no-default-browser-check',
                             '--disable-popup-blocking',
                         ],
+                    )
+                    if chrome_path:
+                        launch_kwargs['executable_path'] = chrome_path
+
+                    # Launch with anti-detection features
+                    context = p.chromium.launch_persistent_context(
+                        self.session_dir,
+                        **launch_kwargs,
                     )
                     page = context.new_page()
                     
@@ -1265,27 +1288,36 @@ class XBrowserPoster:
         if not self.enabled:
             return False
 
+        # Ensure virtual display is set for headless=False mode on Linux (Xvfb :99)
+        if platform.system() == "Linux":
+            os.environ.setdefault('DISPLAY', ':99')
+
         try:
             with sync_playwright() as p:
                 chrome_path = find_chrome_executable()
-                context = p.chromium.launch_persistent_context(
-                    self.session_dir,
-                    headless=True,
-                    executable_path=chrome_path,  # Use real Chrome if available
+                launch_kwargs = dict(
+                    headless=False,
                     user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
                     locale='en-US',
                     timezone_id='America/New_York',
                     args=[
+                        '--no-sandbox',
                         '--disable-blink-features=AutomationControlled',
                         '--disable-dev-shm-usage',
                     ],
+                )
+                if chrome_path:
+                    launch_kwargs['executable_path'] = chrome_path
+                context = p.chromium.launch_persistent_context(
+                    self.session_dir,
+                    **launch_kwargs,
                 )
                 page = context.new_page()
                 
                 # Add stealth scripts
                 add_stealth_scripts(page)
 
-                page.goto("https://x.com/home", timeout=30000)
+                page.goto("https://x.com/home", wait_until='domcontentloaded', timeout=30000)
                 page.wait_for_load_state("domcontentloaded", timeout=15000)
                 try:
                     page.wait_for_load_state("networkidle", timeout=15000)
