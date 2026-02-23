@@ -546,7 +546,9 @@ class XBrowserPoster:
                             '--no-default-browser-check',
                             '--disable-popup-blocking',
                             # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
-                            '--disable-features=NetworkServiceSandbox',
+                            # ECH fix: X/Cloudflare ECH configs get cached in the profile; on next launch
+                            # Chrome tries to use ECH-embedded DoH which fails on VPS → ERR_NAME_NOT_RESOLVED
+                            '--disable-features=NetworkServiceSandbox,EncryptedClientHello',
                             '--no-zygote',
                         ],
                     )
@@ -817,7 +819,9 @@ class XBrowserPoster:
                             '--no-default-browser-check',
                             '--disable-popup-blocking',
                             # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
-                            '--disable-features=NetworkServiceSandbox',
+                            # ECH fix: X/Cloudflare ECH configs get cached in the profile; on next launch
+                            # Chrome tries to use ECH-embedded DoH which fails on VPS → ERR_NAME_NOT_RESOLVED
+                            '--disable-features=NetworkServiceSandbox,EncryptedClientHello',
                             '--no-zygote',
                         ],
                     )
@@ -1311,7 +1315,9 @@ class XBrowserPoster:
                         '--disable-blink-features=AutomationControlled',
                         '--disable-dev-shm-usage',
                         # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
-                        '--disable-features=NetworkServiceSandbox',
+                        # ECH fix: X/Cloudflare ECH configs get cached in the profile; on next launch
+                        # Chrome tries to use ECH-embedded DoH which fails on VPS → ERR_NAME_NOT_RESOLVED
+                        '--disable-features=NetworkServiceSandbox,EncryptedClientHello',
                         '--no-zygote',
                     ],
                 )
