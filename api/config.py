@@ -22,6 +22,9 @@ WEB_API_SECRET = os.getenv('WEB_API_SECRET', 'crevia-internal-key')
 CORS_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
+    'https://creviacockpit.com',
+    'https://www.creviacockpit.com',
+    'https://crevia.creviacockpit.com',
 ]
 
 # JWT Authentication
