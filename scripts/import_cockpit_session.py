@@ -22,6 +22,16 @@ AUTH_TOKEN = "5c1ac55f7f550a855c76da44ad3bdaac4e256574"
 ATT_TOKEN = "1-g8NmnpCLKfvebAvfm3DYSgN0yk9YdDqFTiSsrGIN"
 KDT_TOKEN = "ieJv6G9w1WPSfk9do8B4okidgGJDPrTl1oKQ98WZ"
 
+# Additional session cookies
+EXTRA_COOKIES = [
+    {"name": "ct0", "value": "c2fd6ceb22f3b2c39bfb5ade39e8cf07b11401f59f0dad3f1d4cf3537b8a112d9b18f57daa414986ccc9663e08c356dad3d907da06b33e1c0862f922d97ffbae5ab78af6f7a0b4cea387eb4b67240b76"},
+    {"name": "twid", "value": "u%3D2025543739783913472"},
+    {"name": "lang", "value": "en", "httpOnly": False},
+    {"name": "guest_id", "value": "v1%3A177182397416971508", "httpOnly": False},
+    {"name": "personalization_id", "value": "v1_sE3/BfdFPh9c+wy47OpeKQ==", "httpOnly": False},
+    {"name": "__cuid", "value": "054b1b52e4e24cb9b40c0a3ab63c50bb", "httpOnly": False},
+]
+
 if platform.system() == "Linux":
     os.environ.setdefault("DISPLAY", ":99")
 
@@ -81,7 +91,8 @@ try:
 
         # Set the auth_token cookie on x.com before navigating
         print("Injecting auth_token cookie...")
-        context.add_cookies([
+        # Build full cookie list
+        cookies = [
             {
                 "name": "auth_token",
                 "value": AUTH_TOKEN,
@@ -137,8 +148,23 @@ try:
                 "httpOnly": True,
                 "sameSite": "None",
             },
-        ])
-        print("Cookie injected.")
+        ]
+
+        # Add extra session cookies (ct0, twid, lang, etc.) on both domains
+        for domain in [".x.com", ".twitter.com"]:
+            for c in EXTRA_COOKIES:
+                cookies.append({
+                    "name": c["name"],
+                    "value": c["value"],
+                    "domain": domain,
+                    "path": "/",
+                    "secure": True,
+                    "httpOnly": c.get("httpOnly", True),
+                    "sameSite": "None",
+                })
+
+        context.add_cookies(cookies)
+        print(f"Injected {len(cookies)} cookies.")
 
         # Navigate to X home
         print("Navigating to x.com/home...")
