@@ -29,33 +29,31 @@ except ImportError:
     HAS_TWIKIT = False
 
 
-def _run_async(coro):
+class _AsyncLoop:
     """
-    Run an async coroutine in a dedicated thread with its own event loop.
-    Avoids conflicts with the main asyncio event loop in main.py.
+    Persistent event loop running in a background daemon thread.
+
+    twikit's httpx client binds to the event loop it was created on.
+    Using a single long-lived loop (instead of one per call) ensures the
+    client can be reused across multiple post_tweet / verify_session calls.
     """
-    result_box = [None]
-    error_box = [None]
 
-    def _thread():
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        try:
-            result_box[0] = loop.run_until_complete(coro)
-        except Exception as exc:
-            error_box[0] = exc
-        finally:
-            loop.close()
+    def __init__(self):
+        self._loop = asyncio.new_event_loop()
+        self._thread = threading.Thread(target=self._run_loop, daemon=True, name="twikit-loop")
+        self._thread.start()
 
-    t = threading.Thread(target=_thread, daemon=True)
-    t.start()
-    t.join(timeout=120)  # 2-minute timeout per API call
+    def _run_loop(self):
+        asyncio.set_event_loop(self._loop)
+        self._loop.run_forever()
 
-    if t.is_alive():
-        raise TimeoutError("Twikit API call timed out after 120s")
-    if error_box[0]:
-        raise error_box[0]
-    return result_box[0]
+    def run(self, coro, timeout: float = 120.0):
+        """Submit coroutine to the persistent loop and block until result."""
+        future = asyncio.run_coroutine_threadsafe(coro, self._loop)
+        return future.result(timeout=timeout)
+
+    def stop(self):
+        self._loop.call_soon_threadsafe(self._loop.stop)
 
 
 def _load_cookies_as_dict(cookies_file: Path) -> Dict[str, str]:
@@ -80,6 +78,7 @@ class XHttpPoster:
         self.cookies_file = Path(cookies_file) if cookies_file else COOKIES_FILE
         self.enabled = False
         self._client: Optional[TwikitClient] = None
+        self._loop: Optional[_AsyncLoop] = None
         self._lock = threading.Lock()
 
         if not HAS_TWIKIT:
@@ -101,16 +100,18 @@ class XHttpPoster:
             logger.error(f"[XHttpPoster] Failed to initialize: {e}")
 
     def _init_client(self):
-        """Initialize and authenticate the twikit client."""
+        """Initialize twikit client in a persistent event loop."""
         cookies = _load_cookies_as_dict(self.cookies_file)
+
+        # Single persistent loop — twikit's httpx client must live in one loop
+        self._loop = _AsyncLoop()
 
         async def _setup():
             client = TwikitClient('en-US')
-            # Set cookies directly instead of file-based load
             client.set_cookies(cookies)
             return client
 
-        self._client = _run_async(_setup())
+        self._client = self._loop.run(_setup())
         logger.info(f"[XHttpPoster] Loaded {len(cookies)} cookies, client ready")
 
     def post_tweet(self, text: str, reply_to_id: Optional[str] = None) -> Optional[str]:
@@ -137,7 +138,7 @@ class XHttpPoster:
                         kwargs['reply_to'] = reply_to_id
                     return await self._client.create_tweet(text=text, **kwargs)
 
-                tweet = _run_async(_post())
+                tweet = self._loop.run(_post())
                 tweet_id = tweet.id if hasattr(tweet, 'id') else str(tweet)
                 logger.info(f"[XHttpPoster] Posted tweet: {tweet_id}")
                 return tweet_id
@@ -231,7 +232,7 @@ class XHttpPoster:
                 tweets = await self._client.get_latest_timeline()
                 return tweets is not None
 
-            result = _run_async(_check())
+            result = self._loop.run(_check())
             if result:
                 logger.info("[XHttpPoster] Session valid (timeline fetch OK)")
             return bool(result)
