@@ -218,18 +218,15 @@ class CryptoAnalysisOrchestrator:
             logger.warning("   Notion Content Manager: ⚠️  Not configured")
             logger.warning("      Set NOTION_API_KEY and NOTION_DATABASE_ID in .env to enable")
 
-        # X/Twitter direct posting (API primary, browser fallback DISABLED)
-        self.x_poster = XPoster()  # API posting - reliable, no detection
-        self.x_browser_poster = None  # Browser fallback DISABLED
-        self.x_use_browser = False  # Use API only
+        # X/Twitter posting — browser-only via Patchright (isTrusted fix + human-like input)
+        self.x_poster = None  # API disabled (403 Forbidden)
+        self.x_browser_poster = XBrowserPoster(headless=True)  # Patchright + human mouse/type
+        self.x_use_browser = self.x_browser_poster.enabled
 
-        if self.x_poster and self.x_poster.enabled:
-            logger.info("   X Poster: API mode enabled (primary method)")
+        if self.x_use_browser:
+            logger.info("   X Browser Poster: enabled (Patchright + human-like automation)")
         else:
-            logger.warning("   X Poster: API disabled")
-            self.x_use_browser = False
-
-        logger.info("   X Browser Poster: DISABLED (using Notion for content management)")
+            logger.warning("   X Browser Poster: disabled (session missing or Patchright not installed)")
 
         # Web API publishing (for landing page)
         self.web_publisher = WebPublisher()
