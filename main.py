@@ -219,19 +219,14 @@ class CryptoAnalysisOrchestrator:
             logger.warning("   Notion Content Manager: ⚠️  Not configured")
             logger.warning("      Set NOTION_API_KEY and NOTION_DATABASE_ID in .env to enable")
 
-        # X/Twitter posting — HTTP API (twikit) for tweets/threads, browser for articles
+        # X/Twitter posting — browser (Playwright/patchright) for all X posts
         self.x_poster = None  # Official API disabled (403 Forbidden)
-        self.x_http_poster = XHttpPoster()  # twikit internal GraphQL API — no browser needed
-        self.x_browser_poster = XBrowserPoster(headless=False)  # Browser only for Articles
+        self.x_http_poster = XHttpPoster()  # Keep initialized (reserved for future residential proxy)
+        self.x_browser_poster = XBrowserPoster(headless=False)  # Primary: tweets, threads, articles
         self.x_use_browser = self.x_browser_poster.enabled
 
-        if self.x_http_poster.enabled:
-            logger.info("   X HTTP Poster: enabled (twikit — tweets/threads via internal API)")
-        else:
-            logger.warning("   X HTTP Poster: disabled (twikit or x_cookies.json missing)")
-
         if self.x_use_browser:
-            logger.info("   X Browser Poster: enabled (articles only)")
+            logger.info("   X Browser Poster: enabled (tweets/threads/articles via browser)")
         else:
             logger.warning("   X Browser Poster: disabled (session missing or Patchright not installed)")
 
@@ -828,20 +823,20 @@ class CryptoAnalysisOrchestrator:
                         logger.warning(f"   ⚠️  API thread posting failed: {e}")
                         post_result = None  # Fall back to browser
                 
-                # Fall back to HTTP poster (twikit) if API unavailable
-                if not post_result and getattr(self.x_http_poster, 'enabled', False):
+                # Fall back to browser poster if API unavailable
+                if not post_result and getattr(self.x_browser_poster, 'enabled', False):
                     try:
-                        post_result = self.x_http_poster.post_thread(thread_data)
-                        if post_result.get('success'):
-                            logger.info(f"   ✅ X thread posted via HTTP ({post_result.get('posted_count', 0)} tweets)")
+                        post_result = self.x_browser_poster.post_thread(thread_data)
+                        if post_result and post_result.get('success'):
+                            logger.info(f"   ✅ X thread posted via browser ({post_result.get('posted_count', 0)} tweets)")
                         else:
-                            logger.error(f"   ❌ X thread failed: {post_result.get('error', 'Unknown error')}")
+                            logger.error(f"   ❌ X thread browser failed: {post_result.get('error', 'Unknown error') if post_result else 'No result'}")
                     except Exception as e:
-                        logger.error(f"   ❌ X thread HTTP exception: {e}", exc_info=True)
+                        logger.error(f"   ❌ X thread browser exception: {e}", exc_info=True)
                         post_result = None
 
                 if not post_result:
-                    logger.warning("   ⚠️  X posting unavailable (API and HTTP disabled)")
+                    logger.warning("   ⚠️  X posting unavailable (API and browser disabled)")
 
                 # Record in tracker
                 thread_body = thread_data['copy_paste_ready']
@@ -1357,21 +1352,21 @@ class CryptoAnalysisOrchestrator:
                     logger.warning(f"   API thread posting failed: {e}")
                     post_result = None  # Fall back to browser
             
-            # Fall back to HTTP poster (twikit) if API unavailable
-            if not post_result and getattr(self.x_http_poster, 'enabled', False):
+            # Fall back to browser poster if API unavailable
+            if not post_result and getattr(self.x_browser_poster, 'enabled', False):
                 try:
-                    logger.info("Posting thread to X (HTTP/twikit)...")
-                    post_result = self.x_http_poster.post_thread(thread)
-                    if post_result['success']:
-                        logger.info(f"   X thread posted via HTTP ({post_result['posted_count']} tweets)")
+                    logger.info("Posting thread to X (browser)...")
+                    post_result = self.x_browser_poster.post_thread(thread)
+                    if post_result and post_result.get('success'):
+                        logger.info(f"   X thread posted via browser ({post_result.get('posted_count', 0)} tweets)")
                     else:
-                        logger.warning(f"   X HTTP thread failed: {post_result['error']}")
+                        logger.warning(f"   X browser thread failed: {post_result.get('error', 'No result') if post_result else 'No result'}")
                 except Exception as e:
-                    logger.warning(f"   X HTTP thread exception: {e}")
+                    logger.warning(f"   X browser thread exception: {e}")
                     post_result = None
 
             if not post_result:
-                logger.warning("   X posting unavailable (API and HTTP disabled)")
+                logger.warning("   X posting unavailable (API and browser disabled)")
 
             # Publish to web API
             if self.web_publisher.enabled:
@@ -1516,7 +1511,7 @@ class CryptoAnalysisOrchestrator:
             discord_sent = True
 
         # X tweet + Web news tweet
-        x_posting_available = (self.x_poster and self.x_poster.enabled) or getattr(self.x_http_poster, 'enabled', False)
+        x_posting_available = (self.x_poster and self.x_poster.enabled) or getattr(self.x_browser_poster, 'enabled', False)
         news_tweet = None
         if x_posting_available or self.web_publisher.enabled:
             news_tweet = self.news_narrator.generate_news_tweet(
@@ -1530,9 +1525,9 @@ class CryptoAnalysisOrchestrator:
                 # Try official API first (faster)
                 if self.x_poster and self.x_poster.enabled:
                     tid = self.x_poster.post_tweet(news_tweet)
-                # Fall back to HTTP poster (twikit)
-                if not tid and getattr(self.x_http_poster, 'enabled', False):
-                    tid = self.x_http_poster.post_tweet(news_tweet)
+                # Fall back to browser poster
+                if not tid and getattr(self.x_browser_poster, 'enabled', False):
+                    tid = self.x_browser_poster.post_tweet(news_tweet)
                 if tid:
                     x_tweet_id = str(tid)
                     logger.info(f"   {ticker}: News tweet posted (ID: {tid})")
@@ -1688,7 +1683,7 @@ class CryptoAnalysisOrchestrator:
             discord_sent = True
 
         # X tweet + Web news tweet
-        x_posting_available = (self.x_poster and self.x_poster.enabled) or getattr(self.x_http_poster, 'enabled', False)
+        x_posting_available = (self.x_poster and self.x_poster.enabled) or getattr(self.x_browser_poster, 'enabled', False)
         news_tweet = None
         if x_posting_available or self.web_publisher.enabled:
             news_tweet = self.news_narrator.generate_news_tweet(
@@ -1701,9 +1696,9 @@ class CryptoAnalysisOrchestrator:
                 # Try official API first (faster)
                 if self.x_poster and self.x_poster.enabled:
                     tid = self.x_poster.post_tweet(news_tweet)
-                # Fall back to HTTP poster (twikit)
-                if not tid and getattr(self.x_http_poster, 'enabled', False):
-                    tid = self.x_http_poster.post_tweet(news_tweet)
+                # Fall back to browser poster
+                if not tid and getattr(self.x_browser_poster, 'enabled', False):
+                    tid = self.x_browser_poster.post_tweet(news_tweet)
                 if tid:
                     x_tweet_id = str(tid)
                     logger.info(f"   {sector_name}: Sector tweet posted (ID: {tid})")
