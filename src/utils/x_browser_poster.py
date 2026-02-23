@@ -619,9 +619,6 @@ class XBrowserPoster:
                     )
                     page = context.new_page()
 
-                    # ADD STEALTH SCRIPTS IMMEDIATELY after page creation, BEFORE navigation
-                    add_stealth_scripts(page)
-
                     try:
                         # Navigate to X home
                         logger.info("[XBrowserPoster] Navigating to X home...")
@@ -896,9 +893,6 @@ class XBrowserPoster:
                         **launch_kwargs,
                     )
                     page = context.new_page()
-                    
-                    # ADD STEALTH SCRIPTS IMMEDIATELY
-                    add_stealth_scripts(page)
 
                     try:
                         # Navigate to articles page and click the Write button
@@ -1395,9 +1389,6 @@ class XBrowserPoster:
                     **launch_kwargs,
                 )
                 page = context.new_page()
-                
-                # Add stealth scripts
-                add_stealth_scripts(page)
 
                 page.goto("https://x.com/home", wait_until='domcontentloaded', timeout=30000)
                 page.wait_for_load_state("domcontentloaded", timeout=15000)
