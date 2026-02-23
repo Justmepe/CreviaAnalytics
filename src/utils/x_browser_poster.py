@@ -658,6 +658,8 @@ class XBrowserPoster:
                             '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
                             '--disable-quic',  # QUIC/H3 alternative service cached from x.com causes DNS issues
                             '--no-zygote',
+                            '--disable-gpu',  # Prevents GPU process crash on VPS (SwiftShader init fails)
+                            '--disable-gpu-sandbox',
                         ],
                     )
                     if chrome_path:
@@ -939,6 +941,8 @@ class XBrowserPoster:
                             '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
                             '--disable-quic',  # QUIC/H3 alternative service cached from x.com causes DNS issues
                             '--no-zygote',
+                            '--disable-gpu',  # Prevents GPU process crash on VPS (SwiftShader init fails)
+                            '--disable-gpu-sandbox',
                         ],
                     )
                     if chrome_path:
@@ -1437,6 +1441,8 @@ class XBrowserPoster:
                         '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
                         '--disable-quic',  # QUIC/H3 alternative service cached from x.com causes DNS issues
                         '--no-zygote',
+                        '--disable-gpu',  # Prevents GPU process crash on VPS (SwiftShader init fails)
+                        '--disable-gpu-sandbox',
                     ],
                 )
                 if chrome_path:
