@@ -516,6 +516,24 @@ class XBrowserPoster:
                 page.keyboard.press('Enter')
                 time.sleep(0.03)
 
+    def _clear_network_state(self) -> None:
+        """
+        Delete Chrome's cached network state before launch.
+
+        Chrome caches QUIC alt-service, ECH, and DoH configs in
+        'Default/Network Persistent State'. On VPS, these cached configs
+        (especially QUIC h3 and Cloudflare ECH) cause ERR_NAME_NOT_RESOLVED
+        for x.com on subsequent Chrome launches. Deleting this file before
+        each launch ensures Chrome always does a fresh DNS lookup.
+        """
+        nps_path = Path(self.session_dir) / "Default" / "Network Persistent State"
+        if nps_path.exists():
+            try:
+                nps_path.unlink()
+                logger.debug("[XBrowserPoster] Cleared Network Persistent State (prevents cached QUIC/ECH DNS issues)")
+            except Exception:
+                pass  # Non-critical — Chrome will recreate it
+
     def _post_single_tweet_browser(self, tweet_text: str) -> bool:
         """
         Post a single tweet using the browser.
@@ -528,6 +546,9 @@ class XBrowserPoster:
                 # Ensure virtual display is set for headless=False mode on Linux (Xvfb :99)
                 if platform.system() == "Linux":
                     os.environ.setdefault('DISPLAY', ':99')
+
+                # Clear cached network state to avoid QUIC/ECH/DoH DNS corruption on VPS
+                self._clear_network_state()
 
                 with sync_playwright() as p:
                     chrome_path = find_chrome_executable()
@@ -545,10 +566,12 @@ class XBrowserPoster:
                             '--no-first-run',
                             '--no-default-browser-check',
                             '--disable-popup-blocking',
-                            # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
-                            # ECH fix: X/Cloudflare ECH configs get cached in the profile; on next launch
-                            # Chrome tries to use ECH-embedded DoH which fails on VPS → ERR_NAME_NOT_RESOLVED
-                            '--disable-features=NetworkServiceSandbox,EncryptedClientHello',
+                            # VPS networking fixes:
+                            # - NetworkServiceSandbox: Chrome sandbox isolates DNS on Linux VPS
+                            # - EncryptedClientHello: ECH/DoH configs from Cloudflare get cached and break DNS
+                            # - DnsOverHttpsUpgrade: prevent automatic DoH upgrade that VPS can't reach
+                            '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
+                            '--disable-quic',  # QUIC/H3 alternative service cached from x.com causes DNS issues
                             '--no-zygote',
                         ],
                     )
@@ -803,6 +826,9 @@ class XBrowserPoster:
                 if platform.system() == "Linux":
                     os.environ.setdefault('DISPLAY', ':99')
 
+                # Clear cached network state to avoid QUIC/ECH/DoH DNS corruption on VPS
+                self._clear_network_state()
+
                 with sync_playwright() as p:
                     chrome_path = find_chrome_executable()
                     launch_kwargs = dict(
@@ -818,10 +844,12 @@ class XBrowserPoster:
                             '--no-first-run',
                             '--no-default-browser-check',
                             '--disable-popup-blocking',
-                            # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
-                            # ECH fix: X/Cloudflare ECH configs get cached in the profile; on next launch
-                            # Chrome tries to use ECH-embedded DoH which fails on VPS → ERR_NAME_NOT_RESOLVED
-                            '--disable-features=NetworkServiceSandbox,EncryptedClientHello',
+                            # VPS networking fixes:
+                            # - NetworkServiceSandbox: Chrome sandbox isolates DNS on Linux VPS
+                            # - EncryptedClientHello: ECH/DoH configs from Cloudflare get cached and break DNS
+                            # - DnsOverHttpsUpgrade: prevent automatic DoH upgrade that VPS can't reach
+                            '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
+                            '--disable-quic',  # QUIC/H3 alternative service cached from x.com causes DNS issues
                             '--no-zygote',
                         ],
                     )
@@ -1302,6 +1330,9 @@ class XBrowserPoster:
         if platform.system() == "Linux":
             os.environ.setdefault('DISPLAY', ':99')
 
+        # Clear cached network state to avoid QUIC/ECH/DoH DNS corruption on VPS
+        self._clear_network_state()
+
         try:
             with sync_playwright() as p:
                 chrome_path = find_chrome_executable()
@@ -1314,10 +1345,12 @@ class XBrowserPoster:
                         '--no-sandbox',
                         '--disable-blink-features=AutomationControlled',
                         '--disable-dev-shm-usage',
-                        # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
-                        # ECH fix: X/Cloudflare ECH configs get cached in the profile; on next launch
-                        # Chrome tries to use ECH-embedded DoH which fails on VPS → ERR_NAME_NOT_RESOLVED
-                        '--disable-features=NetworkServiceSandbox,EncryptedClientHello',
+                        # VPS networking fixes:
+                        # - NetworkServiceSandbox: Chrome sandbox isolates DNS on Linux VPS
+                        # - EncryptedClientHello: ECH/DoH configs from Cloudflare get cached and break DNS
+                        # - DnsOverHttpsUpgrade: prevent automatic DoH upgrade that VPS can't reach
+                        '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
+                        '--disable-quic',  # QUIC/H3 alternative service cached from x.com causes DNS issues
                         '--no-zygote',
                     ],
                 )
