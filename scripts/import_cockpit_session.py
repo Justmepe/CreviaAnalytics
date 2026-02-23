@@ -20,6 +20,7 @@ SESSION_DIR = PROJECT_ROOT / "x_browser_session_cockpit"
 # Auth cookies for CreviaCockpit (@CreviaCockpit)
 AUTH_TOKEN = "5c1ac55f7f550a855c76da44ad3bdaac4e256574"
 ATT_TOKEN = "1-g8NmnpCLKfvebAvfm3DYSgN0yk9YdDqFTiSsrGIN"
+KDT_TOKEN = "ieJv6G9w1WPSfk9do8B4okidgGJDPrTl1oKQ98WZ"
 
 if platform.system() == "Linux":
     os.environ.setdefault("DISPLAY", ":99")
@@ -99,6 +100,15 @@ try:
                 "httpOnly": True,
                 "sameSite": "None",
             },
+            {
+                "name": "kdt",
+                "value": KDT_TOKEN,
+                "domain": ".x.com",
+                "path": "/",
+                "secure": True,
+                "httpOnly": True,
+                "sameSite": "None",
+            },
             # Also set on twitter.com domain (redirects)
             {
                 "name": "auth_token",
@@ -112,6 +122,15 @@ try:
             {
                 "name": "att",
                 "value": ATT_TOKEN,
+                "domain": ".twitter.com",
+                "path": "/",
+                "secure": True,
+                "httpOnly": True,
+                "sameSite": "None",
+            },
+            {
+                "name": "kdt",
+                "value": KDT_TOKEN,
                 "domain": ".twitter.com",
                 "path": "/",
                 "secure": True,
