@@ -516,21 +516,72 @@ class XBrowserPoster:
                 page.keyboard.press('Enter')
                 time.sleep(0.03)
 
+    def _kill_orphaned_chrome(self) -> None:
+        """
+        Kill any Chrome processes that are still using our session directory.
+
+        When PM2 restarts the engine (due to crash or manual restart), Python
+        is killed but Chrome subprocesses can survive as orphans. They hold the
+        profile LOCK file, preventing the new Chrome instance from starting
+        correctly. This kills those orphans before each launch.
+        """
+        if platform.system() != "Linux":
+            return
+        import subprocess
+        session_path = str(Path(self.session_dir).resolve())
+        try:
+            result = subprocess.run(
+                ['pgrep', '-f', session_path],
+                capture_output=True, text=True, timeout=5,
+            )
+            pids = result.stdout.strip().split()
+            for pid in pids:
+                try:
+                    subprocess.run(['kill', '-9', pid], timeout=5)
+                    logger.info(f"[XBrowserPoster] Killed orphaned Chrome (pid={pid})")
+                except Exception:
+                    pass
+            if pids:
+                time.sleep(1)  # Give OS time to release file locks
+        except Exception:
+            pass
+
     def _clear_network_state(self) -> None:
         """
-        Delete Chrome's cached network state before each launch.
+        Kill orphaned Chrome, delete LOCK, and clear cached network state.
 
-        After a successful x.com navigation, Chrome writes network state to
-        multiple files: Network Persistent State (QUIC/ECH/alt-services),
-        TransportSecurity (HSTS), Reporting and NEL, and Cache. On VPS,
-        any of these can cause ERR_NAME_NOT_RESOLVED on the next Chrome launch
-        because they contain Cloudflare ECH/QUIC configs unreachable from the
-        datacenter. We wipe them all before each launch (Cookies preserved).
+        On VPS with PM2 restarts, Chrome processes survive as orphans when
+        Python is killed. They hold the profile LOCK file which prevents new
+        Chrome from starting properly. Also, after a successful x.com navigation,
+        Chrome writes QUIC/ECH/alt-service configs that cause ERR_NAME_NOT_RESOLVED
+        on the next launch (Cloudflare ECH unreachable from datacenter IPs).
+        We kill orphans, delete the LOCK, and wipe network state each launch.
+        Cookies and Preferences are preserved.
         """
         import shutil
-        default_dir = Path(self.session_dir) / "Default"
 
-        # Files to delete (singletons)
+        # Step 1: Kill any Chrome processes still using this session dir
+        self._kill_orphaned_chrome()
+
+        default_dir = Path(self.session_dir) / "Default"
+        session_dir = Path(self.session_dir)
+
+        # Step 2: Remove Chrome's profile LOCK files (prevents "profile in use" errors)
+        lock_files = [
+            session_dir / "SingletonLock",
+            session_dir / "SingletonCookie",
+            session_dir / "SingletonSocket",
+            default_dir / "LOCK",
+        ]
+        for lf in lock_files:
+            if lf.exists() or lf.is_symlink():
+                try:
+                    lf.unlink()
+                    logger.debug(f"[XBrowserPoster] Removed lock: {lf.name}")
+                except Exception:
+                    pass
+
+        # Step 3: Delete network state files (QUIC/ECH/HSTS/NEL)
         state_files = [
             "Network Persistent State",
             "TransportSecurity",
