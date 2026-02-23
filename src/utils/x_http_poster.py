@@ -219,21 +219,27 @@ class XHttpPoster:
         return result
 
     def verify_session(self) -> bool:
-        """Check if the session cookies are still valid by fetching own profile."""
+        """
+        Check if session cookies are valid using the home timeline GraphQL endpoint
+        (same call browser makes at x.com/home — avoids v1.1 OAuth requirement).
+        """
         if not self.enabled or not self._client:
             return False
 
         try:
             async def _check():
-                # get_user_by_screen_name on self is a light read-only call
-                me = await self._client.user()
-                return me
+                tweets = await self._client.get_latest_timeline()
+                return tweets is not None
 
-            user = _run_async(_check())
-            if user:
-                logger.info(f"[XHttpPoster] Session valid (user: {getattr(user, 'screen_name', '?')})")
-                return True
-            return False
+            result = _run_async(_check())
+            if result:
+                logger.info("[XHttpPoster] Session valid (timeline fetch OK)")
+            return bool(result)
         except Exception as e:
-            logger.error(f"[XHttpPoster] Session check failed: {e}")
-            return False
+            err = str(e)
+            logger.error(f"[XHttpPoster] Session check failed: {err}")
+            if "401" in err or "403" in err or "unauthorized" in err.lower():
+                return False
+            # Non-auth errors (404, endpoint issues) — try posting anyway
+            logger.warning("[XHttpPoster] verify_session inconclusive — attempting posting")
+            return True
