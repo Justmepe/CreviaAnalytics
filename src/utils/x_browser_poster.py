@@ -545,6 +545,9 @@ class XBrowserPoster:
                             '--no-first-run',
                             '--no-default-browser-check',
                             '--disable-popup-blocking',
+                            # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
+                            '--disable-features=NetworkServiceSandbox',
+                            '--no-zygote',
                         ],
                     )
                     if chrome_path:
@@ -813,6 +816,9 @@ class XBrowserPoster:
                             '--no-first-run',
                             '--no-default-browser-check',
                             '--disable-popup-blocking',
+                            # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
+                            '--disable-features=NetworkServiceSandbox',
+                            '--no-zygote',
                         ],
                     )
                     if chrome_path:
@@ -1304,6 +1310,9 @@ class XBrowserPoster:
                         '--no-sandbox',
                         '--disable-blink-features=AutomationControlled',
                         '--disable-dev-shm-usage',
+                        # VPS DNS fix: Chrome's network sandbox blocks system DNS on Linux VPS
+                        '--disable-features=NetworkServiceSandbox',
+                        '--no-zygote',
                     ],
                 )
                 if chrome_path:
