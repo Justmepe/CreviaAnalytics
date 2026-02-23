@@ -30,10 +30,17 @@ from threading import Lock
 logger = logging.getLogger(__name__)
 
 try:
-    from playwright.sync_api import sync_playwright
+    # Patchright is an undetected fork of Playwright that patches event.isTrusted
+    # detection — critical since X now checks isTrusted on all input events (Feb 2026).
+    # Drop-in replacement: same API, just fixes the core detection vector.
+    from patchright.sync_api import sync_playwright
     HAS_PLAYWRIGHT = True
 except ImportError:
-    HAS_PLAYWRIGHT = False
+    try:
+        from playwright.sync_api import sync_playwright
+        HAS_PLAYWRIGHT = True
+    except ImportError:
+        HAS_PLAYWRIGHT = False
 
 # Project root (two levels up from src/utils/)
 PROJECT_ROOT = Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))

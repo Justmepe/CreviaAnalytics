@@ -24,10 +24,14 @@ from threading import Lock
 logger = logging.getLogger(__name__)
 
 try:
-    from playwright.sync_api import sync_playwright
+    from patchright.sync_api import sync_playwright
     HAS_PLAYWRIGHT = True
 except ImportError:
-    HAS_PLAYWRIGHT = False
+    try:
+        from playwright.sync_api import sync_playwright
+        HAS_PLAYWRIGHT = True
+    except ImportError:
+        HAS_PLAYWRIGHT = False
 
 # Project root
 PROJECT_ROOT = Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
