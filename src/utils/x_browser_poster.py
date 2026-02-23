@@ -518,21 +518,55 @@ class XBrowserPoster:
 
     def _clear_network_state(self) -> None:
         """
-        Delete Chrome's cached network state before launch.
+        Delete Chrome's cached network state before each launch.
 
-        Chrome caches QUIC alt-service, ECH, and DoH configs in
-        'Default/Network Persistent State'. On VPS, these cached configs
-        (especially QUIC h3 and Cloudflare ECH) cause ERR_NAME_NOT_RESOLVED
-        for x.com on subsequent Chrome launches. Deleting this file before
-        each launch ensures Chrome always does a fresh DNS lookup.
+        After a successful x.com navigation, Chrome writes network state to
+        multiple files: Network Persistent State (QUIC/ECH/alt-services),
+        TransportSecurity (HSTS), Reporting and NEL, and Cache. On VPS,
+        any of these can cause ERR_NAME_NOT_RESOLVED on the next Chrome launch
+        because they contain Cloudflare ECH/QUIC configs unreachable from the
+        datacenter. We wipe them all before each launch (Cookies preserved).
         """
-        nps_path = Path(self.session_dir) / "Default" / "Network Persistent State"
-        if nps_path.exists():
-            try:
-                nps_path.unlink()
-                logger.debug("[XBrowserPoster] Cleared Network Persistent State (prevents cached QUIC/ECH DNS issues)")
-            except Exception:
-                pass  # Non-critical — Chrome will recreate it
+        import shutil
+        default_dir = Path(self.session_dir) / "Default"
+
+        # Files to delete (singletons)
+        state_files = [
+            "Network Persistent State",
+            "TransportSecurity",
+            "Reporting and NEL",
+            "Reporting and NEL-journal",
+            "SCT Auditing Pending Reports",
+        ]
+        # Directories to delete (caches — safe to nuke, Chrome rebuilds them)
+        state_dirs = [
+            "Cache",
+            "Code Cache",
+            "GPUCache",
+            "DawnGraphiteCache",
+            "DawnWebGPUCache",
+        ]
+
+        deleted = []
+        for name in state_files:
+            p = default_dir / name
+            if p.exists():
+                try:
+                    p.unlink()
+                    deleted.append(name)
+                except Exception:
+                    pass
+        for name in state_dirs:
+            p = default_dir / name
+            if p.exists():
+                try:
+                    shutil.rmtree(p, ignore_errors=True)
+                    deleted.append(name + "/")
+                except Exception:
+                    pass
+
+        if deleted:
+            logger.debug(f"[XBrowserPoster] Cleared network state: {', '.join(deleted)}")
 
     def _post_single_tweet_browser(self, tweet_text: str) -> bool:
         """
