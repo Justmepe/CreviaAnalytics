@@ -190,45 +190,81 @@ def _analyze_news_item(item: Dict[str, Any], ticker: str) -> Optional[Dict[str, 
     }
 
 
+import re as _re
+
+# Full names for each ticker — used for word-boundary matching to avoid
+# 'sol' matching 'sold'/'solutions', 'uni' matching 'unique', etc.
+_TICKER_ALIASES = {
+    'btc': ['bitcoin', 'btc'],
+    'eth': ['ethereum', 'eth', 'ether'],
+    'sol': ['solana', 'sol'],
+    'bnb': ['bnb', 'binance coin'],
+    'doge': ['dogecoin', 'doge'],
+    'shib': ['shiba inu', 'shib'],
+    'pepe': ['pepe'],
+    'floki': ['floki'],
+    'xmr': ['monero', 'xmr'],
+    'zec': ['zcash', 'zec'],
+    'dash': ['dash'],
+    'scrt': ['secret network', 'scrt'],
+    'aave': ['aave'],
+    'uni': ['uniswap', 'uni'],
+    'crv': ['curve', 'crv'],
+    'ldo': ['lido', 'ldo'],
+}
+
+def _ticker_in_text(ticker_lower: str, text: str) -> bool:
+    """
+    Check if the ticker (or its full crypto name) appears as a whole word in text.
+    Uses word boundaries to prevent 'sol' matching 'sold', 'uni' matching 'unique', etc.
+    """
+    terms = _TICKER_ALIASES.get(ticker_lower, [ticker_lower])
+    for term in terms:
+        if _re.search(r'\b' + _re.escape(term) + r'\b', text):
+            return True
+    return False
+
+
 def _calculate_relevance(title: str, ticker: str, item: Dict[str, Any]) -> tuple:
     """
-    Calculate how relevant this news is to the asset
-    
+    Calculate how relevant this news is to the asset.
+    Uses whole-word matching to prevent false positives.
+
     Returns:
         tuple: (relevance_type, score)
             relevance_type: 'direct', 'indirect', 'macro'
             score: 0.0 to 1.0
     """
-    
+
     title_lower = title.lower()
     ticker_lower = ticker.lower()
     currencies = [c.lower() for c in item.get('currencies', [])]
-    
-    # Direct relevance: Ticker mentioned
-    if ticker_lower in currencies or ticker_lower in title_lower:
+
+    # Direct relevance: Ticker mentioned as whole word (not substring)
+    if ticker_lower in currencies or _ticker_in_text(ticker_lower, title_lower):
         # Check for high-impact keywords
         high_impact = any(kw in title_lower for kw in [
             'hack', 'exploit', 'sec', 'etf', 'approval', 'lawsuit',
             'partnership', 'mainnet', 'upgrade', 'delisting'
         ])
-        
+
         if high_impact:
             return ('direct', 0.95)
         else:
             return ('direct', 0.85)
-    
+
     # Indirect relevance: Related sector or ecosystem
     if any(kw in title_lower for kw in ['defi', 'nft', 'layer', 'blockchain']):
-        if ticker_lower in title_lower or len(currencies) > 0:
+        if _ticker_in_text(ticker_lower, title_lower) or len(currencies) > 0:
             return ('indirect', 0.6)
         else:
             return ('indirect', 0.4)
-    
+
     # Macro relevance: Affects entire market
     macro_keywords = ['regulation', 'sec', 'fed', 'inflation', 'market crash', 'bull run']
     if any(kw in title_lower for kw in macro_keywords):
         return ('macro', 0.5)
-    
+
     # Default: Low relevance
     return ('indirect', 0.3)
 

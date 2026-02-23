@@ -234,6 +234,7 @@ CRITICAL RULES:
 8. If price movements mentioned, be specific with numbers
 9. Maintain credibility - acknowledge what we DON'T know
 10. End with clear takeaway, not generic CTA
+11. FORMATTING: Do NOT use em-dashes (—) or en-dashes (–). Use a colon (:) instead. Do NOT use hyphenated bullet lists mid-sentence. Use line breaks or bullet points (•) instead.
 
 TONE:
 - Professional but engaging (Bloomberg meets X/Twitter)
@@ -593,6 +594,7 @@ CRITICAL RULES - READ CAREFULLY:
 7. NO price predictions. Focus on "what happened" and "why", not "what will happen"
 8. If funding rate is 0, say "neutral funding" not "0% funding"
 9. Be specific with percentages (e.g., "BTC +2.3%" not "BTC up")
+10. FORMATTING: Do NOT use em-dashes (—) or en-dashes (–). Use a colon (:) or plain hyphen (-) instead. Do NOT use bullet hyphens like "- item" in mid-sentence. Use bullet points (•) or line breaks instead.
 
 TONE & STYLE:
 - Professional, data-driven analysis (Bloomberg Terminal meets X/Twitter)
@@ -687,19 +689,65 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
         return tweets if tweets else split_text_into_tweets(thread_text)
     
     def _build_with_templates(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """Fallback template-based thread generation"""
-        # Simple fallback that combines available data
+        """Fallback template-based thread generation (7 tweets with real data)"""
+        now = datetime.now(timezone.utc)
+        date_str = now.strftime('%B %d, %Y')
+        time_str = now.strftime('%H:%M UTC')
+
         majors = data.get('majors', {})
+        market = data.get('market_context', {})
         defi = data.get('defi', [])
         memes = data.get('memecoins', [])
-        
+
+        # Build price lines from available data
+        price_lines = []
+        for sym, info in list(majors.items())[:4]:
+            if isinstance(info, dict):
+                price = info.get('price', 0)
+                chg = info.get('change_24h', 0)
+                if price:
+                    price_lines.append(f"{sym}: ${price:,.0f} ({chg:+.1f}%)")
+
+        total_cap = market.get('total_market_cap', 0)
+        btc_dom = market.get('btc_dominance', 0)
+        fg = market.get('fear_greed_index', 0)
+        fg_label = market.get('fear_greed_label', 'Neutral')
+        liq = market.get('total_liquidations_24h', 0)
+
         tweets = [
-            f"📊 Market Update\nGenerated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n\nThread on today's moves 👇",
-            f"Majors: {', '.join(str(m) for m in list(majors.keys())[:4]) if majors else 'TBD'}\nDeFi and Memecoins showing strong activity.",
-            f"Key to watch: Major support/resistance levels and on-chain flows.",
-            f"What's your take? Share your analysis in the replies 👇"
+            (f"1/ 📊 CRYPTO MARKET UPDATE\n\n{date_str}, {time_str}\n\n"
+             f"Total Cap: ${total_cap/1e12:.2f}T | BTC Dom: {btc_dom:.1f}%\n"
+             f"Fear & Greed: {fg} ({fg_label})\n"
+             f"24h Liquidations: ${liq/1e6:.0f}M"),
+
+            (f"2/ 💎 MAJORS\n\n" + "\n".join(price_lines) if price_lines
+             else "2/ 💎 MAJORS\n\nPrice data loading..."),
+
+            (f"3/ 📈 DERIVATIVES\n\n"
+             f"Liquidations signal {'long squeeze pressure' if liq > 100e6 else 'moderate leverage'} "
+             f"(${liq/1e6:.0f}M 24h).\n"
+             f"Watch funding rates for directional bias."),
+
+            (f"4/ 🧩 DEFI & ALTS\n\n"
+             + (", ".join(str(t.get('ticker', '')) for t in defi[:4] if isinstance(t, dict) and t)
+                if defi else "DeFi sector data loading.")
+             + "\n\nMonitor TVL flows for capital rotation signals."),
+
+            (f"5/ 🐸 MEMECOINS\n\n"
+             + (", ".join(str(t.get('ticker', '')) for t in memes[:4] if isinstance(t, dict) and t)
+                if memes else "Memecoin sector data loading.")
+             + "\n\nHigh beta sector: outperforms in risk-on, underperforms in risk-off."),
+
+            (f"6/ ⚠️ RISK ASSESSMENT\n\n"
+             f"Fear & Greed at {fg} ({fg_label}).\n"
+             f"{'Elevated greed: risk of pullback. Reduce leverage.' if fg > 70 else 'Fear territory: accumulation opportunity for patient traders.' if fg < 30 else 'Neutral sentiment. Wait for directional confirmation.'}"),
+
+            (f"7/ 📌 BOTTOM LINE\n\n"
+             f"BTC dominance at {btc_dom:.1f}% signals "
+             f"{'alt season potential' if btc_dom < 45 else 'capital consolidation in majors' if btc_dom > 55 else 'mixed rotation'}.\n\n"
+             f"Follow for real-time analysis."),
         ]
-        
+
         return {
             'thread': '\n\n'.join(tweets),
             'tweets': tweets,

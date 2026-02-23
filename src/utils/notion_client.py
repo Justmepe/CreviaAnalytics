@@ -102,13 +102,12 @@ class NotionClient:
                     ]
                 },
                 "Content": {
+                    # Notion rich_text blocks have a 2000-char limit per element.
+                    # Split long content into multiple blocks to avoid API errors.
                     "rich_text": [
-                        {
-                            "text": {
-                                "content": content
-                            }
-                        }
-                    ]
+                        {"text": {"content": chunk}}
+                        for chunk in [content[i:i+1900] for i in range(0, min(len(content), 19000), 1900)]
+                    ] or [{"text": {"content": ""}}]
                 },
                 "Type": {
                     "select": {

@@ -289,6 +289,8 @@ class CryptoAnalysisOrchestrator:
         self.last_breaking_check = 0          # Timestamp of last breaking news check
         self.morning_context = None           # Stored thread summary for mid-day reference
         self.posted_breaking_headlines = set()  # Dedup breaking news (title hashes)
+        self.last_btc_price = None            # For price crash/spike detection
+        self.last_price_alert_time = 0        # Cooldown for price alerts
 
         logger.info("Components initialized")
 
@@ -357,6 +359,7 @@ class CryptoAnalysisOrchestrator:
                             logger.debug(f"Anchor {anchor['label']} already ran today ({today})")
                     elif current_time - self.last_breaking_check > BREAKING_NEWS_INTERVAL:
                         self._check_and_post_breaking_news()
+                        self._check_price_alert()
                         self.last_breaking_check = current_time
 
                     # Sleep 60s — check every minute for anchors and breaking news
@@ -580,6 +583,65 @@ class CryptoAnalysisOrchestrator:
         elapsed = (time.time() - self.last_anchor_time) / 60
         return elapsed < ANCHOR_COOLDOWN_MINUTES
 
+    def _check_price_alert(self):
+        """Detect significant BTC price moves (>3% per cycle) and post breaking alert."""
+        try:
+            # Cooldown: don't fire price alerts more than once per 2 hours
+            if time.time() - self.last_price_alert_time < 7200:
+                return
+
+            if not hasattr(self, 'data_aggregator') or not self.data_aggregator:
+                return
+
+            btc_snapshot = self.data_aggregator.get_asset_snapshot('BTC')
+            if not btc_snapshot or not btc_snapshot.price:
+                return
+
+            current_price = btc_snapshot.price.mark_price
+            change_24h = btc_snapshot.price.price_change_24h or 0
+
+            # Update tracked price
+            prev_price = self.last_btc_price
+            self.last_btc_price = current_price
+
+            if prev_price is None:
+                return
+
+            # Cycle-over-cycle change
+            cycle_change_pct = ((current_price - prev_price) / prev_price) * 100
+
+            # Trigger on >3% move per cycle OR >8% 24h move
+            threshold_cycle = 3.0
+            threshold_24h = 8.0
+
+            if abs(cycle_change_pct) >= threshold_cycle or abs(change_24h) >= threshold_24h:
+                direction = "CRASH" if cycle_change_pct < 0 else "SPIKE"
+                alert_headline = (
+                    f"Bitcoin {direction}: BTC {'drops' if cycle_change_pct < 0 else 'surges'} "
+                    f"{abs(cycle_change_pct):.1f}% to ${current_price:,.0f} "
+                    f"(24h: {change_24h:+.1f}%)"
+                )
+                logger.info(f"⚡ PRICE ALERT: {alert_headline}")
+
+                # Build synthetic item for breaking news pipeline
+                price_item = {
+                    'title': alert_headline,
+                    'summary': (
+                        f"Bitcoin has moved {cycle_change_pct:+.1f}% in the last cycle, "
+                        f"currently trading at ${current_price:,.0f}. "
+                        f"24-hour change: {change_24h:+.1f}%. "
+                        f"This significant price action warrants immediate attention."
+                    ),
+                    'source': 'Crevia Price Monitor',
+                    'published_at': datetime.now(timezone.utc),
+                    'currencies': ['BTC'],
+                }
+                self._post_breaking_news(price_item, 0.95)
+                self.last_price_alert_time = time.time()
+
+        except Exception as e:
+            logger.warning(f"Price alert check error: {e}")
+
     def _check_and_post_breaking_news(self):
         """Scan RSS feeds for high-impact news, post immediately if found."""
 
@@ -611,6 +673,31 @@ class CryptoAnalysisOrchestrator:
             # All tracked assets — not just majors
             ALL_TRACKED = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS
 
+            # Explicit crypto keywords — title MUST contain at least one of these
+            # to be considered for breaking news (prevents meatball recalls, defense
+            # stocks, and other irrelevant news from slipping through).
+            CRYPTO_KEYWORDS = [
+                'bitcoin', 'btc', 'ethereum', 'eth', 'crypto', 'cryptocurrency',
+                'blockchain', 'defi', 'nft', 'web3', 'solana', 'sol', 'binance',
+                'coinbase', 'tether', 'usdt', 'usdc', 'stablecoin', 'altcoin',
+                'dogecoin', 'doge', 'shiba', 'monero', 'xmr', 'uniswap',
+                'decentralized', 'wallet', 'exchange', 'mining', 'miner',
+                'halving', 'mempool', 'on-chain', 'onchain', 'layer 2', 'l2',
+                'sec crypto', 'crypto etf', 'spot etf', 'crypto ban', 'crypto regulation',
+                'digital asset', 'virtual currency', 'token', 'liquidation',
+                'open interest', 'funding rate', 'futures', 'perp',
+            ]
+
+            # Macro events that move crypto regardless of explicit crypto mention
+            MACRO_MOVERS = [
+                'federal reserve', 'fed rate', 'rate cut', 'rate hike', 'fomc',
+                'interest rate decision', 'cpi report', 'inflation data',
+                'sec approves', 'sec rejects', 'etf approved', 'etf denied',
+                'bitcoin etf', 'spot etf', 'crypto ban', 'crypto regulation',
+                'stablecoin bill', 'crypto bill', 'digital asset',
+                'ftx', 'tether usdt',
+            ]
+
             breaking_found = 0
             for item in recent_items:
                 title = item.get('title', '')
@@ -623,24 +710,25 @@ class CryptoAnalysisOrchestrator:
                 if title_hash in self.posted_breaking_headlines:
                     continue
 
-                # Check relevance across ALL tracked assets + macro signals
+                title_lower = title.lower()
+
+                # Pre-filter: must contain at least one explicit crypto keyword
+                # OR be a genuine macro mover. This stops "meatball recalls",
+                # "defense stocks", etc. from triggering.
+                is_crypto_relevant = any(kw in title_lower for kw in CRYPTO_KEYWORDS)
+                is_macro_mover = any(kw in title_lower for kw in MACRO_MOVERS)
+                if not is_crypto_relevant and not is_macro_mover:
+                    continue
+
+                # Check relevance across ALL tracked assets using whole-word matching
                 max_score = 0.0
                 for ticker in ALL_TRACKED:
                     _, score = _calculate_relevance(title, ticker, item)
                     max_score = max(max_score, score)
 
-                # Boost score for macro events that always move crypto markets
-                title_lower = title.lower()
-                macro_movers = [
-                    'federal reserve', 'fed rate', 'rate cut', 'rate hike', 'fomc',
-                    'interest rate decision', 'cpi report', 'inflation data',
-                    'sec approves', 'sec rejects', 'etf approved', 'etf denied',
-                    'bitcoin etf', 'spot etf', 'crypto ban', 'crypto regulation',
-                    'stablecoin bill', 'crypto bill', 'digital asset',
-                    'binance', 'coinbase', 'kraken', 'ftx', 'tether usdt',
-                ]
-                if any(kw in title_lower for kw in macro_movers):
-                    max_score = max(max_score, 0.75)  # Guarantee threshold passage
+                # Boost for confirmed macro events (but don't guarantee — just raise floor)
+                if is_macro_mover and max_score < 0.8:
+                    max_score = 0.8
 
                 if max_score < BREAKING_NEWS_THRESHOLD:
                     continue
