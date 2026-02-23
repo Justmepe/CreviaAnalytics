@@ -230,6 +230,14 @@ class CryptoAnalysisOrchestrator:
         else:
             logger.warning("   X Browser Poster: disabled (session missing or Patchright not installed)")
 
+        # X Account 2 — CreviaCockpit (breaking news only, posts after primary)
+        cockpit_session = str(Path(__file__).parent / "x_browser_session_cockpit")
+        self.x_cockpit_poster = XBrowserPoster(session_dir=cockpit_session, headless=False)
+        if self.x_cockpit_poster.enabled:
+            logger.info("   X Cockpit Poster: enabled (@CreviaCockpit — breaking news)")
+        else:
+            logger.info("   X Cockpit Poster: disabled (run setup_x_session_cockpit.py to activate)")
+
         # Web API publishing (for landing page)
         self.web_publisher = WebPublisher()
         if self.web_publisher.enabled:
@@ -931,6 +939,37 @@ class CryptoAnalysisOrchestrator:
                     logger.error(f"   ❌ Substack Chat exception: {e}", exc_info=True)
             else:
                 logger.warning("   ⚠️  Substack Chat posting disabled")
+
+            # Post to @CreviaCockpit (breaking news only — thread + article)
+            if getattr(self.x_cockpit_poster, 'enabled', False):
+                logger.info("\n📤 Cockpit Step 1: Posting thread to @CreviaCockpit...")
+                if raw_thread and thread_data:
+                    try:
+                        cockpit_thread = self.x_cockpit_poster.post_thread(thread_data)
+                        if cockpit_thread and cockpit_thread.get('success'):
+                            logger.info("   ✅ @CreviaCockpit thread posted")
+                        else:
+                            logger.warning("   ⚠️  @CreviaCockpit thread failed")
+                    except Exception as e:
+                        logger.error(f"   ❌ @CreviaCockpit thread exception: {e}")
+
+                logger.info("\n📤 Cockpit Step 2: Posting article to @CreviaCockpit...")
+                try:
+                    from src.content.breaking_news_article_generator import generate_breaking_news_article as _gen
+                    _ad = _gen(
+                        headline=headline, summary=summary, source=source,
+                        current_price=current_price, ticker=ticker, relevance_score=score
+                    )
+                    if _ad and _ad.get('body'):
+                        cockpit_art = self.x_cockpit_poster.post_article(_ad['title'], _ad['body'])
+                        if cockpit_art:
+                            logger.info("   ✅ @CreviaCockpit article posted")
+                        else:
+                            logger.warning("   ⚠️  @CreviaCockpit article failed")
+                except Exception as e:
+                    logger.error(f"   ❌ @CreviaCockpit article exception: {e}")
+            else:
+                logger.debug("   @CreviaCockpit poster disabled — skipping")
 
             logger.info(f"\n{'='*80}")
             logger.info("✅ Breaking news posting complete")
