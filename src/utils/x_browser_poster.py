@@ -79,10 +79,101 @@ def find_chrome_executable() -> Optional[str]:
     return None  # Fall back to Chromium
 
 
+def _human_move_and_click(page, element, button: str = 'left'):
+    """
+    Move the mouse in a curved path to the element then click at a random offset
+    within the element bounds. Avoids the 'always clicks dead center' bot pattern.
+    """
+    try:
+        box = element.bounding_box()
+        if not box:
+            element.click()
+            return
+
+        # Random target inside element (20-80% range to avoid edges)
+        target_x = box['x'] + random.uniform(box['width'] * 0.2, box['width'] * 0.8)
+        target_y = box['y'] + random.uniform(box['height'] * 0.2, box['height'] * 0.8)
+
+        # Move mouse in small steps with slight jitter (curved path)
+        # Start from a random prior position on screen
+        start_x = random.uniform(100, 1100)
+        start_y = random.uniform(100, 700)
+        page.mouse.move(start_x, start_y)
+
+        steps = random.randint(8, 18)
+        for step in range(1, steps + 1):
+            t = step / steps
+            # Ease-in-out interpolation
+            ease = t * t * (3 - 2 * t)
+            ix = start_x + (target_x - start_x) * ease + random.uniform(-4, 4)
+            iy = start_y + (target_y - start_y) * ease + random.uniform(-4, 4)
+            page.mouse.move(ix, iy)
+            time.sleep(random.uniform(0.004, 0.018))
+
+        # Arrive at target, brief pause before click
+        page.mouse.move(target_x, target_y)
+        time.sleep(random.uniform(0.08, 0.22))
+        page.mouse.click(target_x, target_y, button=button)
+    except Exception:
+        # Fallback to regular click if anything fails
+        try:
+            element.click()
+        except Exception:
+            element.evaluate("el => el.click()")
+
+
+def _human_type(page, text: str, wpm: int = 55):
+    """
+    Type text with human-like variable speed.
+
+    Uses a gaussian distribution around the target WPM with occasional
+    burst typing and thinking pauses — avoids the uniform-delay bot pattern.
+    """
+    if not text:
+        return
+
+    # base seconds-per-character from target WPM (avg 5 chars/word)
+    base_ms = 60_000 / (wpm * 5) / 1000  # seconds
+
+    i = 0
+    while i < len(text):
+        char = text[i]
+
+        # Thinking pause (rare, ~1.5% of chars)
+        if random.random() < 0.015:
+            time.sleep(random.uniform(0.3, 1.2))
+
+        # Burst mode: type next 3-8 chars faster (mimics typing common letter combos)
+        if random.random() < 0.12:
+            burst_len = random.randint(3, 8)
+            for j in range(burst_len):
+                if i >= len(text):
+                    break
+                c = text[i]
+                if c == '\n':
+                    page.keyboard.press('Enter')
+                else:
+                    page.keyboard.type(c)
+                time.sleep(max(0.01, random.gauss(base_ms * 0.45, base_ms * 0.15)))
+                i += 1
+            continue
+
+        # Normal character
+        if char == '\n':
+            page.keyboard.press('Enter')
+        else:
+            page.keyboard.type(char)
+
+        # Gaussian delay — more natural than uniform
+        delay = max(0.018, random.gauss(base_ms, base_ms * 0.35))
+        time.sleep(delay)
+        i += 1
+
+
 def add_stealth_scripts(page):
     """
     Add stealth scripts to hide automation signals from detection.
-    
+
     This must be called IMMEDIATELY after context creation, BEFORE navigation.
     Hides:
     - navigator.webdriver (main detection vector)
@@ -340,11 +431,11 @@ class XBrowserPoster:
                 # Bold text: toggle Ctrl+B, type, toggle Ctrl+B
                 bold_text = part[2:-2]
                 page.keyboard.press('Control+b')
-                page.keyboard.type(bold_text, delay=5)
+                _human_type(page, bold_text, wpm=60)
                 page.keyboard.press('Control+b')
             else:
                 # Normal text
-                page.keyboard.type(part, delay=5)
+                _human_type(page, part, wpm=60)
 
     def _type_formatted_body(self, page, body: str):
         """
@@ -388,17 +479,19 @@ class XBrowserPoster:
                 # Make heading text bold (works reliably across all editors)
                 text = block['text']
                 page.keyboard.press('Control+b')
-                page.keyboard.type(text, delay=5)
+                _human_type(page, text, wpm=58)
                 page.keyboard.press('Control+b')
                 page.keyboard.press('Enter')
                 page.keyboard.press('Enter')
-                time.sleep(0.1)
+                time.sleep(random.uniform(0.08, 0.18))
 
             elif btype == 'bullet_list':
                 for item in block['items']:
                     # Type '- ' at start; ProseMirror auto-converts to bullet list
-                    page.keyboard.type('- ', delay=5)
-                    time.sleep(0.1)
+                    page.keyboard.type('-')
+                    time.sleep(random.uniform(0.05, 0.12))
+                    page.keyboard.type(' ')
+                    time.sleep(random.uniform(0.08, 0.18))
                     self._type_inline_formatted(page, item)
                     page.keyboard.press('Enter')
                     time.sleep(0.05)
@@ -523,8 +616,8 @@ class XBrowserPoster:
                             try:
                                 el = page.locator(selector).first
                                 if el.is_visible(timeout=3000):
-                                    time.sleep(random.uniform(0.5, 1.0))
-                                    el.click(force=True)
+                                    time.sleep(random.uniform(0.5, 1.2))
+                                    _human_move_and_click(page, el)
                                     compose_opened = True
                                     logger.info(f"[XBrowserPoster] Compose area found: {selector}")
                                     break
@@ -540,21 +633,19 @@ class XBrowserPoster:
                             context.close()
                             return False
 
-                        time.sleep(random.uniform(0.5, 1.0))
+                        time.sleep(random.uniform(0.6, 1.2))
 
                         # Click into contenteditable to ensure focus
                         try:
                             text_input = page.locator('div[contenteditable="true"]').first
                             if text_input.is_visible(timeout=3000):
-                                text_input.click(force=True)
-                                time.sleep(random.uniform(0.3, 0.5))
+                                _human_move_and_click(page, text_input)
+                                time.sleep(random.uniform(0.3, 0.6))
                         except Exception:
                             pass
 
-                        # Type tweet with human-like speed
-                        for char in tweet_text:
-                            page.keyboard.type(char)
-                            time.sleep(random.uniform(0.03, 0.08))
+                        # Type tweet with human-like speed (gaussian, not uniform)
+                        _human_type(page, tweet_text)
 
                         logger.info(f"[XBrowserPoster] Typed: {tweet_text[:60]}...")
                         time.sleep(random.uniform(1, 2))
@@ -581,8 +672,8 @@ class XBrowserPoster:
                         try:
                             post_btn = page.locator('button[data-testid="tweetButtonInline"]').first
                             if post_btn.is_visible(timeout=3000) and post_btn.is_enabled():
-                                time.sleep(random.uniform(0.2, 0.5))
-                                post_btn.click(force=True)
+                                time.sleep(random.uniform(0.4, 0.9))
+                                _human_move_and_click(page, post_btn)
                                 post_clicked = True
                                 logger.info("[XBrowserPoster] Clicked Post button (testid)")
                         except Exception:
@@ -597,8 +688,8 @@ class XBrowserPoster:
                                     if btn.is_visible(timeout=1000):
                                         btn_text = btn.text_content().strip().lower()
                                         if btn_text == "post":
-                                            time.sleep(random.uniform(0.2, 0.5))
-                                            btn.click(force=True)
+                                            time.sleep(random.uniform(0.4, 0.9))
+                                            _human_move_and_click(page, btn)
                                             post_clicked = True
                                             logger.info("[XBrowserPoster] Clicked Post button (text)")
                                             break
@@ -782,12 +873,12 @@ class XBrowserPoster:
                             title_field = page.locator('textarea[placeholder*="title"]').first
                             title_field.wait_for(state="visible", timeout=10000)
 
-                            # Click and fill the title
-                            title_field.click()
-                            time.sleep(1)
-                            title_field.fill(title)
+                            # Human click then type (NOT fill — fill is instant and detectable)
+                            _human_move_and_click(page, title_field)
+                            time.sleep(random.uniform(0.5, 1.0))
+                            _human_type(page, title, wpm=50)
                             title_filled = True
-                            logger.info(f"[XBrowserPoster] ✅ Title filled in textarea: {title}")
+                            logger.info(f"[XBrowserPoster] ✅ Title typed: {title}")
                         except Exception as e:
                             logger.warning(f"[XBrowserPoster] Textarea not found, trying input: {e}")
 
@@ -795,11 +886,11 @@ class XBrowserPoster:
                             try:
                                 title_field = page.locator('input[placeholder*="title"]').first
                                 title_field.wait_for(state="visible", timeout=5000)
-                                title_field.click()
-                                time.sleep(1)
-                                title_field.fill(title)
+                                _human_move_and_click(page, title_field)
+                                time.sleep(random.uniform(0.5, 1.0))
+                                _human_type(page, title, wpm=50)
                                 title_filled = True
-                                logger.info(f"[XBrowserPoster] ✅ Title filled in input: {title}")
+                                logger.info(f"[XBrowserPoster] ✅ Title typed in input: {title}")
                             except Exception as e2:
                                 logger.error(f"[XBrowserPoster] ❌ Could not find title field: {e2}")
                                 page.screenshot(path=str(PROJECT_ROOT / "x_debug_no_title.png"))
@@ -982,7 +1073,8 @@ class XBrowserPoster:
                         try:
                             dialog_btn = page.locator('[role="dialog"] button:has-text("Publish")').first
                             if dialog_btn.is_visible(timeout=5000):
-                                dialog_btn.click(force=True)
+                                time.sleep(random.uniform(0.3, 0.7))
+                                _human_move_and_click(page, dialog_btn)
                                 dialog_published = True
                                 logger.info("[XBrowserPoster] Clicked Publish in dialog (role=dialog)")
                         except Exception:
@@ -993,7 +1085,8 @@ class XBrowserPoster:
                             try:
                                 layers_btn = page.locator('#layers button:has-text("Publish")').first
                                 if layers_btn.is_visible(timeout=3000):
-                                    layers_btn.click(force=True)
+                                    time.sleep(random.uniform(0.3, 0.7))
+                                    _human_move_and_click(page, layers_btn)
                                     dialog_published = True
                                     logger.info("[XBrowserPoster] Clicked Publish in #layers")
                             except Exception:
@@ -1005,7 +1098,8 @@ class XBrowserPoster:
                                 all_publish = page.locator('button:has-text("Publish")').all()
                                 logger.info(f"[XBrowserPoster] Found {len(all_publish)} Publish buttons total")
                                 if len(all_publish) >= 2:
-                                    all_publish[-1].click(force=True)
+                                    time.sleep(random.uniform(0.3, 0.7))
+                                    _human_move_and_click(page, all_publish[-1])
                                     dialog_published = True
                                     logger.info("[XBrowserPoster] Clicked last Publish button")
                             except Exception:
