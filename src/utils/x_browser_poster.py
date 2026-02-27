@@ -1491,7 +1491,12 @@ class XBrowserPoster:
 
                         # ── Type each tweet, clicking '+' between them ────────────
                         for i, tweet_text in enumerate(tweets):
-                            tweet_text = tweet_text[:280]
+                            # Hard-cap at 276 chars at a word boundary (Twitter limit is 280;
+                            # raw [:280] slices mid-word — always truncate cleanly)
+                            if len(tweet_text) > 276:
+                                cut = tweet_text[:275]
+                                last_sp = cut.rfind(' ')
+                                tweet_text = cut[:last_sp].rstrip() if last_sp > 140 else cut.rstrip()
 
                             # Focus the correct textarea for this slot
                             textarea_sel = f'div[data-testid="tweetTextarea_{i}"]'

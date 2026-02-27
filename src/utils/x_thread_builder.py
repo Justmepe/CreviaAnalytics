@@ -65,8 +65,28 @@ class ThreadBuilder:
     """
     
     MAX_TWEET_LENGTH = 280
+    SAFE_TWEET_LENGTH = 276   # Hard ceiling with buffer for newline/emoji edge cases
     TWITTER_URL_LENGTH = 23  # X counts URLs as fixed 23 chars
-    
+
+    # ── CTA tweet appended to every thread ──────────────────────
+    CTA_TWEET = (
+        "Follow @Peter_n_Gikonyo + @CreviaCockpit for real-time crypto intelligence.\n"
+        "AI trade setups, regime detection & risk tools: crevia.creohub.io\n"
+        "#BTC #ETH #Crypto #CryptoNews #CryptoTrading"
+    )
+
+    @staticmethod
+    def _truncate_tweet(text: str, limit: int = 276) -> str:
+        """Truncate text to limit chars at a word boundary (never mid-word)."""
+        if len(text) <= limit:
+            return text
+        # Cut at limit-1 to leave room, then back up to the last space
+        truncated = text[:limit - 1]
+        last_space = truncated.rfind(' ')
+        if last_space > limit // 2:
+            return truncated[:last_space].rstrip()
+        return truncated.rstrip()
+
     def __init__(self):
         self.tweets: List[Tweet] = []
         self.metadata: Optional[ThreadMetadata] = None
@@ -226,7 +246,7 @@ Tweet 7: BOTTOM LINE - Concise takeaway + what traders/investors should do
 CRITICAL RULES:
 1. Professional Bloomberg/Reuters tone - serious, factual, data-driven
 2. NO speculation or predictions - stick to facts and known implications
-3. Each tweet 220-275 chars (leave room for numbering)
+3. Each tweet STRICTLY 180-255 chars — Twitter enforces 280 and cuts off mid-word if exceeded
 4. Use emojis strategically: 🚨 for alert, ⚠️ for caution, 📊 for data, 💡 for insights
 5. Include date/time reference in tweet 1
 6. Number tweets clearly: 1/, 2/, 3/, etc.
@@ -276,6 +296,9 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
         if len(tweets) < 3:
             # Claude didn't format properly, fallback
             raise ValueError("Claude returned insufficient tweets")
+
+        # Append CTA tweet
+        tweets.append(self.CTA_TWEET)
 
         return {
             'thread': thread_text,
@@ -601,7 +624,7 @@ TONE & STYLE:
 - Use emojis strategically but professionally:
   📊 for data/metrics, 🚀 for bullish signals, 🐻 for bearish, ⚠️ for risk warnings
   🐸 for memecoins, 🕶️ for privacy coins, 🧩 for DeFi, 💎 for majors
-- Each tweet 220-275 chars (leave room for numbering)
+- Each tweet STRICTLY 180-255 chars — Twitter enforces 280 and cuts off mid-word if exceeded
 - Number tweets clearly: 1/, 2/, 3/, etc.
 - Build narrative flow - each tweet builds on the previous
 - Include specific percentages, dollar amounts, and data points
@@ -659,7 +682,10 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
         if len(tweets) < 3:
             # Fallback if Claude didn't format properly
             tweets = split_text_into_tweets(thread_text, max_length=280)
-        
+
+        # Append CTA tweet
+        tweets.append(self.CTA_TWEET)
+
         # Format results
         return {
             'thread': thread_text,
@@ -684,8 +710,10 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
                 tweet = part.strip()
                 # Clean up extra blank lines
                 tweet = '\n'.join(line for line in tweet.split('\n') if line.strip())
+                # Enforce hard character limit at word boundary
+                tweet = self._truncate_tweet(tweet, self.SAFE_TWEET_LENGTH)
                 tweets.append(tweet)
-        
+
         return tweets if tweets else split_text_into_tweets(thread_text)
     
     def _build_with_templates(self, data: Dict[str, Any]) -> Dict[str, Any]:
@@ -967,8 +995,8 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
         return json.dumps(self.to_dict(), indent=2)
     
     def get_tweets_for_posting(self) -> List[str]:
-        """Get just the tweet texts in order"""
-        return [t.text for t in self.tweets]
+        """Get tweet texts in order, each enforced to ≤SAFE_TWEET_LENGTH chars at word boundary."""
+        return [self._truncate_tweet(t.text, self.SAFE_TWEET_LENGTH) for t in self.tweets]
     
     def get_thread_summary(self) -> Dict[str, Any]:
         """Get summary of thread"""
