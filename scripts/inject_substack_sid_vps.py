@@ -50,7 +50,7 @@ def main():
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
             str(SESSION_DIR),
-            headless=False,
+            headless=True,
             args=[
                 "--no-sandbox",
                 "--disable-blink-features=AutomationControlled",
