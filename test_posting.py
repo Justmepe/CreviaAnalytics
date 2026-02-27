@@ -35,7 +35,8 @@ NOW = datetime.now(timezone.utc).strftime('%b %d %H:%M UTC')
 THREAD_TWEETS = [
     f"1/ 🧪 CREVIA SYSTEM TEST — {NOW}\n\nPosting pipeline verification. Ignore this thread.",
     "2/ BTC is the benchmark asset. Thread composer test: verifying true reply chain (not separate tweets).",
-    "3/ ETH funding rates, whale flows, and regime detection all online. Cockpit tracking live.\n\nFull analysis → https://crevia.creohub.io",
+    "3/ ETH funding rates, whale flows, and regime detection all online. Cockpit tracking live.",
+    "4/ All systems nominal. Tweet 4 of 4 — confirming thread depth.\n\nFull analysis → https://crevia.creohub.io",
 ]
 
 X_ARTICLE_TITLE = f"Crevia System Test — {NOW}"

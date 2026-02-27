@@ -1517,7 +1517,9 @@ class XBrowserPoster:
 
                             # Click '+' to add next tweet slot (not after last tweet)
                             if i < len(tweets) - 1:
+                                next_textarea_sel = f'div[data-testid="tweetTextarea_{i+1}"]'
                                 add_clicked = False
+
                                 for add_sel in [
                                     'div[data-testid="addButton"]',
                                     'button[data-testid="addButton"]',
@@ -1527,12 +1529,37 @@ class XBrowserPoster:
                                 ]:
                                     try:
                                         btn = page.locator(add_sel).first
-                                        if btn.is_visible(timeout=4000):
+                                        if not btn.is_visible(timeout=4000):
+                                            continue
+                                        # Use real Playwright click (mousedown+mouseup+click)
+                                        # so React synthetic events fire — JS .click() alone
+                                        # does not trigger the addButton React handler.
+                                        try:
+                                            btn.click(timeout=3000)
+                                        except Exception:
                                             btn.evaluate("el => el.click()")
+                                        time.sleep(random.uniform(0.5, 1.0))
+
+                                        # Verify the next textarea actually appeared
+                                        try:
+                                            page.locator(next_textarea_sel).wait_for(
+                                                state='visible', timeout=5000
+                                            )
                                             add_clicked = True
-                                            time.sleep(random.uniform(0.5, 1.0))
-                                            logger.info(f"[XBrowserPoster] '+' clicked after tweet {i+1}")
-                                            break
+                                            logger.info(f"[XBrowserPoster] '+' clicked after tweet {i+1} — textarea_{i+1} confirmed")
+                                        except Exception:
+                                            logger.warning(f"[XBrowserPoster] '+' click landed but textarea_{i+1} not visible — retrying with JS click")
+                                            btn.evaluate("el => el.click()")
+                                            time.sleep(0.8)
+                                            try:
+                                                page.locator(next_textarea_sel).wait_for(
+                                                    state='visible', timeout=5000
+                                                )
+                                                add_clicked = True
+                                                logger.info(f"[XBrowserPoster] '+' JS retry confirmed textarea_{i+1}")
+                                            except Exception:
+                                                pass
+                                        break
                                     except Exception:
                                         continue
 
