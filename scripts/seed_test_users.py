@@ -18,9 +18,14 @@ import os
 # Allow running from project root or scripts/
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+import bcrypt as _bcrypt
 from api.database import SessionLocal, create_tables
 from api.models.user import User
-from api.middleware.auth import hash_password
+
+
+def hash_password(password: str) -> str:
+    """Use bcrypt directly — avoids passlib/bcrypt 4.x incompatibility."""
+    return _bcrypt.hashpw(password.encode('utf-8'), _bcrypt.gensalt()).decode('utf-8')
 
 PASSWORD = 'TestCrevia1!'
 
