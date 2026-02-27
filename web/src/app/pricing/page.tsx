@@ -121,7 +121,7 @@ export default function PricingPage() {
 
       {/* ══ TRIAL LADDER ══ */}
       <div className="pricing-section">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', background: '#10141c', border: '1px solid #1a2030', borderRadius: 8, overflow: 'hidden' }}>
+        <div className="pricing-trial-grid">
           {[
             { days: '3',  label: 'Day free trial', tier: 'Basic · $20/mo',    color: '#00d68f' },
             { days: '7',  label: 'Day free trial', tier: 'Premium · $100/mo', color: '#f0a030' },

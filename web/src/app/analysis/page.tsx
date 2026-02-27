@@ -101,7 +101,7 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 mb-4">
             {types.map((t) => {
               const isActive = (contentType || '') === t.value;
               return (
@@ -141,9 +141,44 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
             })}
           </div>
 
+          {/* ── Subscribe CTA strip ── */}
+          <div
+            className="flex flex-wrap items-center justify-between gap-3 mb-6 rounded-[6px] px-4 py-3"
+            style={{ background: '#0d1117', border: '1px solid #1c2235' }}
+          >
+            <span className="font-mono-cc text-[11px] tracking-[0.5px]" style={{ color: '#4a5272' }}>
+              Get instant alerts when analysis drops
+            </span>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://petergikonyo.substack.com/subscribe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono-cc text-[10px] tracking-[0.8px] uppercase rounded-[4px] px-3 py-1.5 transition-opacity hover:opacity-80"
+                style={{
+                  background: '#00d68f',
+                  color: '#000',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                Subscribe Free
+              </a>
+              <a
+                href="https://twitter.com/CreviaCockpit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono-cc text-[10px] tracking-[0.5px] uppercase transition-colors hover:text-[#00d68f]"
+                style={{ color: '#4a5272', textDecoration: 'none' }}
+              >
+                Follow @CreviaCockpit →
+              </a>
+            </div>
+          </div>
+
           {/* Content Grid */}
           {items.length > 0 ? (
-            <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <div className="analysis-content-grid">
               {featuredItem && (
                 <div style={{ gridColumn: 'span 2' }}>
                   <ContentCard post={featuredItem} featured />
