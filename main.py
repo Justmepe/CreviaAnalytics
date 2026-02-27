@@ -136,7 +136,8 @@ ANCHOR_SLOTS = [
     {"hour": 20, "mode": "mid_day_update",  "label": "Evening Brief",   "full_article": False},
     {"hour": 0,  "mode": "closing_bell",    "label": "Closing Bell",    "full_article": False},
 ]
-ANCHOR_WINDOW_MINUTES = 15        # How close to slot hour to trigger
+ANCHOR_WINDOW_MINUTES = 15        # Minutes BEFORE slot hour to trigger early
+ANCHOR_CATCHUP_MINUTES = 180      # Minutes AFTER slot to catch up (3h covers PM2 restarts)
 BREAKING_NEWS_INTERVAL = 900      # 15 min between breaking news checks
 BREAKING_NEWS_THRESHOLD = 0.72    # Relevance score threshold for breaking (was 0.85 — too strict)
 ANCHOR_COOLDOWN_MINUTES = 30      # Suppress breaking news right after anchor (was 45)
@@ -395,16 +396,36 @@ class CryptoAnalysisOrchestrator:
     # =========================================================================
 
     def _get_current_anchor_slot(self) -> Optional[Dict]:
-        """Check if current UTC time is within ANCHOR_WINDOW_MINUTES of any slot."""
+        """Check if UTC time is near an anchor slot (early trigger + 3h catch-up).
+
+        Triggers within ANCHOR_WINDOW_MINUTES BEFORE the slot time, or within
+        ANCHOR_CATCHUP_MINUTES AFTER it — so PM2 restarts don't silently miss
+        morning/mid-day scans. Already-run anchors (same calendar day) are
+        skipped automatically via last_anchor_date.
+        """
         now = datetime.now(timezone.utc)
+        today = now.strftime('%Y-%m-%d')
+
         for slot in ANCHOR_SLOTS:
-            slot_time = now.replace(hour=slot["hour"], minute=0, second=0, microsecond=0)
-            diff_seconds = abs((now - slot_time).total_seconds())
-            # Handle midnight wrap (e.g., 23:50 is 10 min from 00:00)
-            if diff_seconds > 43200:  # More than 12 hours means we wrapped
-                diff_seconds = 86400 - diff_seconds
-            if diff_seconds / 60 <= ANCHOR_WINDOW_MINUTES:
+            anchor_hour = slot["hour"]
+
+            # Skip if already ran today
+            if self.last_anchor_date.get(anchor_hour) == today:
+                continue
+
+            slot_time = now.replace(hour=anchor_hour, minute=0, second=0, microsecond=0)
+            # Signed diff: positive = we're past the slot, negative = slot is in the future
+            diff_seconds = (now - slot_time).total_seconds()
+
+            # For midnight (hour=0): slot_time = today 00:00.
+            # At 23:55 diff ≈ +86100s — that's 24h past, not the upcoming midnight.
+            # At 00:05 diff = +300s — triggers correctly. ✓
+            pre_window = ANCHOR_WINDOW_MINUTES * 60   # e.g. 900s (15 min early)
+            catch_up   = ANCHOR_CATCHUP_MINUTES * 60  # e.g. 10800s (3h catch-up)
+
+            if -pre_window <= diff_seconds <= catch_up:
                 return slot
+
         return None
 
     def _run_anchor_content(self, slot: Dict):
@@ -565,6 +586,27 @@ class CryptoAnalysisOrchestrator:
                     logger.error(f"   ❌ Substack Article exception: {e}", exc_info=True)
             else:
                 logger.warning("   ⚠️  Substack Article posting disabled")
+
+            # Publish morning article to web analysis feed
+            logger.info("\n🌐 Web: Publishing morning article to analysis feed...")
+            if self.web_publisher.enabled and body:
+                try:
+                    mentioned = session_content.get('mentioned_assets', ['BTC', 'ETH']) if session_content else ['BTC', 'ETH']
+                    web_result = self.web_publisher.publish_memo(
+                        ticker='MARKET',
+                        memo=body,
+                        sector='global',
+                        tickers=mentioned,
+                        market_snapshot={'article_title': title, 'mode': 'morning_scan'},
+                    )
+                    if web_result:
+                        logger.info(f"   ✅ Morning article published to web: /post/{web_result.get('slug', '?')}")
+                    else:
+                        logger.warning("   ⚠️  Web morning article publish failed")
+                except Exception as e:
+                    logger.warning(f"   ⚠️  Web morning article publish exception: {e}")
+            else:
+                logger.debug("   Web publisher disabled or no body — skipping")
 
             logger.info(f"\n{'='*80}")
             logger.info("✅ Morning scan article posting complete")
@@ -909,6 +951,29 @@ class CryptoAnalysisOrchestrator:
                         content_type='breaking_thread',
                         ticker='BREAKING',
                     )
+
+                # Publish thread to web feed
+                logger.info("\n🌐 Web: Publishing thread to web feed...")
+                if self.web_publisher.enabled:
+                    try:
+                        web_result = self.web_publisher.publish_thread(
+                            thread_data=thread_data,
+                            tickers=breaking_assets,
+                            sector='global',
+                            market_snapshot={
+                                'headline': headline,
+                                'source': source,
+                                'relevance_score': score,
+                            },
+                        )
+                        if web_result:
+                            logger.info(f"   ✅ Thread published to web: /post/{web_result.get('slug', '?')}")
+                        else:
+                            logger.warning("   ⚠️  Web thread publish failed")
+                    except Exception as e:
+                        logger.warning(f"   ⚠️  Web thread publish exception: {e}")
+                else:
+                    logger.debug("   Web publisher disabled — skipping")
             else:
                 logger.error("   ❌ Thread generation returned None")
 
@@ -976,6 +1041,31 @@ class CryptoAnalysisOrchestrator:
                             logger.error(f"   ❌ Substack Article exception: {e}", exc_info=True)
                     else:
                         logger.warning("   ⚠️  Substack Article posting disabled or no content")
+
+                    # Publish article to web feed
+                    logger.info("\n🌐 Web: Publishing article to web feed...")
+                    if self.web_publisher.enabled:
+                        try:
+                            web_memo = self.web_publisher.publish_memo(
+                                ticker=ticker,
+                                memo=article_body,
+                                current_price=current_price,
+                                sector='global',
+                                tickers=breaking_assets,
+                                market_snapshot={
+                                    'headline': headline,
+                                    'source': source,
+                                    'relevance_score': score,
+                                },
+                            )
+                            if web_memo:
+                                logger.info(f"   ✅ Article published to web: /post/{web_memo.get('slug', '?')}")
+                            else:
+                                logger.warning("   ⚠️  Web article publish failed")
+                        except Exception as e:
+                            logger.warning(f"   ⚠️  Web article publish exception: {e}")
+                    else:
+                        logger.debug("   Web publisher disabled — skipping")
                 else:
                     logger.error("   ❌ Article generation returned None")
             except Exception as e:

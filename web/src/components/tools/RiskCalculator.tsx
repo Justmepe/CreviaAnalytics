@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { useMarketPrices } from '@/context/MarketPricesContext';
 
 interface MarketContext {
   regime: { name: string; confidence: number; color: string; trader_action: string } | null;
@@ -30,16 +31,36 @@ interface Warning {
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
-/* ── Asset config ─────────────────────────────────────────── */
+/* ── Asset config — all 22 tracked assets ────────────────── */
 const ASSETS = [
-  { ticker: 'BTC',  grad: 'linear-gradient(135deg,#f7931a,#e07c10)', textColor: '#08090c', defaultPrice: 67000 },
-  { ticker: 'ETH',  grad: 'linear-gradient(135deg,#627eea,#4f67c8)', textColor: '#fff',    defaultPrice: 3200  },
-  { ticker: 'SOL',  grad: 'linear-gradient(135deg,#9945ff,#14f195)', textColor: '#fff',    defaultPrice: 120   },
-  { ticker: 'BNB',  grad: 'linear-gradient(135deg,#f3ba2f,#d4a228)', textColor: '#08090c', defaultPrice: 580   },
-  { ticker: 'XMR',  grad: 'linear-gradient(135deg,#f06020,#c84010)', textColor: '#fff',    defaultPrice: 160   },
-  { ticker: 'AAVE', grad: 'linear-gradient(135deg,#2ebac6,#1a9aaa)', textColor: '#fff',    defaultPrice: 95    },
-  { ticker: 'DOGE', grad: 'linear-gradient(135deg,#c2a633,#a88b28)', textColor: '#08090c', defaultPrice: 0.08  },
-  { ticker: 'UNI',  grad: 'linear-gradient(135deg,#ff007a,#cc005c)', textColor: '#fff',    defaultPrice: 8     },
+  // Majors
+  { ticker: 'BTC',  grad: 'linear-gradient(135deg,#f7931a,#e87d16)', textColor: '#08090c', defaultPrice: 97000     },
+  { ticker: 'ETH',  grad: 'linear-gradient(135deg,#627eea,#4f67c8)', textColor: '#fff',    defaultPrice: 3000      },
+  { ticker: 'XRP',  grad: 'linear-gradient(135deg,#346aa9,#1e4a80)', textColor: '#fff',    defaultPrice: 2.5       },
+  { ticker: 'SOL',  grad: 'linear-gradient(135deg,#9945ff,#14f195)', textColor: '#fff',    defaultPrice: 170       },
+  // Altcoins
+  { ticker: 'BNB',  grad: 'linear-gradient(135deg,#f3ba2f,#d4a228)', textColor: '#08090c', defaultPrice: 600       },
+  { ticker: 'AVAX', grad: 'linear-gradient(135deg,#e84142,#b52e2f)', textColor: '#fff',    defaultPrice: 30        },
+  { ticker: 'SUI',  grad: 'linear-gradient(135deg,#4da2ff,#2578d8)', textColor: '#fff',    defaultPrice: 3.5       },
+  { ticker: 'LINK', grad: 'linear-gradient(135deg,#2a5ada,#1a3aaa)', textColor: '#fff',    defaultPrice: 15        },
+  // DeFi
+  { ticker: 'AAVE', grad: 'linear-gradient(135deg,#b6509e,#8b3d7a)', textColor: '#fff',    defaultPrice: 95        },
+  { ticker: 'UNI',  grad: 'linear-gradient(135deg,#ff007a,#c8005e)', textColor: '#fff',    defaultPrice: 8         },
+  { ticker: 'CRV',  grad: 'linear-gradient(135deg,#3a82b5,#2a6288)', textColor: '#fff',    defaultPrice: 0.35      },
+  { ticker: 'LDO',  grad: 'linear-gradient(135deg,#77d1f3,#45a8c8)', textColor: '#08090c', defaultPrice: 1.2       },
+  // Privacy
+  { ticker: 'XMR',  grad: 'linear-gradient(135deg,#f26822,#c85416)', textColor: '#fff',    defaultPrice: 200       },
+  { ticker: 'ZEC',  grad: 'linear-gradient(135deg,#ecb244,#c4912e)', textColor: '#08090c', defaultPrice: 30        },
+  { ticker: 'DASH', grad: 'linear-gradient(135deg,#008de4,#006bb5)', textColor: '#fff',    defaultPrice: 25        },
+  { ticker: 'SCRT', grad: 'linear-gradient(135deg,#312154,#1e1e2e)', textColor: '#fff',    defaultPrice: 0.4       },
+  // Memecoins
+  { ticker: 'DOGE', grad: 'linear-gradient(135deg,#c2a633,#a08a29)', textColor: '#08090c', defaultPrice: 0.13      },
+  { ticker: 'SHIB', grad: 'linear-gradient(135deg,#e8542a,#c43e1e)', textColor: '#fff',    defaultPrice: 0.000012  },
+  { ticker: 'PEPE', grad: 'linear-gradient(135deg,#4caf50,#2e7d32)', textColor: '#fff',    defaultPrice: 0.0000085 },
+  { ticker: 'FLOKI',grad: 'linear-gradient(135deg,#ff9800,#e65100)', textColor: '#08090c', defaultPrice: 0.00006   },
+  // Commodities
+  { ticker: 'XAU',  grad: 'linear-gradient(135deg,#ffd700,#b8960a)', textColor: '#08090c', defaultPrice: 2900      },
+  { ticker: 'TSLA', grad: 'linear-gradient(135deg,#cc0000,#990000)', textColor: '#fff',    defaultPrice: 280       },
 ];
 
 /* ── Regime helpers ──────────────────────────────────────── */
@@ -121,7 +142,10 @@ export default function RiskCalculator() {
   const [warnings, setWarnings] = useState<Warning[]>([]);
   const [context, setContext]  = useState<MarketContext | null>(null);
 
-  // Fetch market context
+  // Live prices via WebSocket (same source as market page / LiveMarketBar)
+  const { ticks } = useMarketPrices();
+
+  // Fetch market context on mount only
   useEffect(() => {
     fetch(`${API_BASE}/api/intelligence/market-context`)
       .then(r => r.ok ? r.json() : null)
@@ -129,10 +153,15 @@ export default function RiskCalculator() {
       .catch(() => {});
   }, []);
 
-  // Auto-fill entry price when asset selected
+  // Auto-fill entry price when asset selected.
+  // Always switches price when changing assets (stale price was for different symbol).
   const handleAssetSelect = (idx: number) => {
     setSelectedAsset(idx);
-    if (!entry) setEntry(String(ASSETS[idx].defaultPrice));
+    const asset = ASSETS[idx];
+    const livePrice = ticks[asset.ticker]?.price;
+    setEntry(String(livePrice ?? asset.defaultPrice));
+    setStopLoss('');
+    setTakeProfit('');
   };
 
   const lev = Math.max(1, Math.round(leverage));
@@ -286,8 +315,8 @@ export default function RiskCalculator() {
             <div style={{ fontSize: 12, color: '#38405a' }}>Position sizing with real-time market condition warnings</div>
           </div>
 
-          {/* Asset selector */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6, marginBottom: 20 }}>
+          {/* Asset selector — scrollable grid, 22 assets × 4 cols */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6, marginBottom: 20, maxHeight: 248, overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#1a2030 transparent' }}>
             {ASSETS.map((a, i) => (
               <button
                 key={a.ticker}

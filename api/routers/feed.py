@@ -119,10 +119,14 @@ def get_feed_posts(
         uq = uq.filter(UserFeedPost.created_at > since_dt)
     user_posts = uq.limit(limit).all()
 
-    # Engine content posts
+    # Engine content posts — threads only in the live feed.
+    # Articles/memos are surfaced on the Analysis page cards instead.
     cq = (
         db.query(ContentPost)
-        .filter(ContentPost.is_published == True)  # noqa: E712
+        .filter(
+            ContentPost.is_published == True,  # noqa: E712
+            ContentPost.content_type == 'thread',
+        )
         .order_by(ContentPost.published_at.desc())
     )
     if since_dt:
