@@ -41,7 +41,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <Image
-            src="/logo-mark.jpeg"
+            src="/logo.png"
             alt="CreviaCockpit"
             width={200}
             height={167}

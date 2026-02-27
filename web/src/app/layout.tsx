@@ -60,6 +60,11 @@ export const metadata: Metadata = {
     "DeFi",
     "crypto research",
   ],
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default async function RootLayout({

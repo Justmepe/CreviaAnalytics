@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center">
               <Image
-                src="/logo-full.jpeg"
+                src="/logo2.png"
                 alt="CreviaCockpit"
                 width={376}
                 height={450}
