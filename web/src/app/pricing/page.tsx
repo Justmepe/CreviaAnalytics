@@ -90,7 +90,7 @@ export default function PricingPage() {
     <div style={{ background: '#070809', minHeight: '100vh', color: '#e2e6f0' }}>
 
       {/* ══ HERO ══ */}
-      <div style={{ padding: '72px 80px 48px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <div className="pricing-hero">
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(0,229,160,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,160,0.025) 1px, transparent 1px)', backgroundSize: '60px 60px', maskImage: 'radial-gradient(ellipse 70% 80% at 50% 50%, black 0%, transparent 70%)', WebkitMaskImage: 'radial-gradient(ellipse 70% 80% at 50% 50%, black 0%, transparent 70%)' }} />
         <div style={{ position: 'absolute', top: 0, left: '25%', right: '25%', height: 1, background: 'linear-gradient(90deg, transparent, #00d68f, transparent)' }} />
 
@@ -99,7 +99,7 @@ export default function PricingPage() {
           Try free before you commit
         </div>
 
-        <h1 className="font-serif-cc" style={{ fontSize: 52, lineHeight: 1.1, letterSpacing: -1, color: '#e2e6f0', marginBottom: 14 }}>
+        <h1 className="font-serif-cc pricing-h1" style={{ fontSize: 52, lineHeight: 1.1, letterSpacing: -1, color: '#e2e6f0', marginBottom: 14 }}>
           The cockpit pays for<br /><em style={{ fontStyle: 'italic', color: '#00d68f' }}>itself in one trade.</em>
         </h1>
 
@@ -120,7 +120,7 @@ export default function PricingPage() {
       </div>
 
       {/* ══ TRIAL LADDER ══ */}
-      <div style={{ padding: '0 80px 32px' }}>
+      <div className="pricing-section">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', background: '#10141c', border: '1px solid #1a2030', borderRadius: 8, overflow: 'hidden' }}>
           {[
             { days: '3',  label: 'Day free trial', tier: 'Basic · $20/mo',    color: '#00d68f' },
@@ -142,7 +142,8 @@ export default function PricingPage() {
       </div>
 
       {/* ══ PLANS GRID ══ */}
-      <div style={{ padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '260px 1fr 260px', gap: 16, alignItems: 'start' }}>
+      <div className="plans-section">
+      <div className="plans-grid">
 
         {/* ── BASIC ── */}
         <div style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 8, padding: '28px 24px', display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -245,15 +246,17 @@ export default function PricingPage() {
           </ul>
           <div className="font-mono-cc" style={{ fontSize: 10, color: '#38405a', textAlign: 'center', paddingTop: 12, borderTop: '1px solid rgba(155,124,244,0.15)' }}>No credit card to start trial</div>
         </div>
-      </div>
+      </div>{/* plans-grid */}
+      </div>{/* plans-section */}
 
       {/* ══ COMPARISON TABLE ══ */}
-      <div style={{ padding: '0 80px 72px' }}>
+      <div className="compare-section">
         <div className="font-mono-cc" style={{ fontSize: 10, letterSpacing: '2px', textTransform: 'uppercase', color: '#38405a', marginBottom: 8 }}>Side by side</div>
         <h2 className="font-serif-cc" style={{ fontSize: 32, color: '#e2e6f0', lineHeight: 1.2, letterSpacing: -0.5, marginBottom: 36 }}>
           See what&apos;s <em style={{ fontStyle: 'italic', color: '#00d68f' }}>inside each tier.</em>
         </h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #1a2030', borderRadius: 8, overflow: 'hidden' }}>
+        <div className="table-scroll">
+        <table style={{ width: '100%', minWidth: 480, borderCollapse: 'collapse', border: '1px solid #1a2030', borderRadius: 8, overflow: 'hidden' }}>
           <thead>
             <tr style={{ background: '#151a26' }}>
               {['Feature', 'Basic', 'Premium', 'Premium+'].map((h, i) => (
@@ -288,10 +291,11 @@ export default function PricingPage() {
             })}
           </tbody>
         </table>
-      </div>
+        </div>{/* table-scroll */}
+      </div>{/* compare-section */}
 
       {/* ══ FAQ ══ */}
-      <div style={{ padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '280px 1fr', gap: 60, alignItems: 'start' }}>
+      <div className="faq-section">
         <div>
           <h2 className="font-serif-cc" style={{ fontSize: 32, color: '#e2e6f0', lineHeight: 1.2, letterSpacing: -0.5, marginBottom: 12 }}>
             Common <em style={{ fontStyle: 'italic', color: '#00d68f' }}>questions.</em>
@@ -312,7 +316,7 @@ export default function PricingPage() {
       </div>
 
       {/* ══ BOTTOM CTA ══ */}
-      <div style={{ margin: '0 80px 80px' }}>
+      <div className="pricing-cta-wrap">
         <div style={{ background: '#10141c', border: '1px solid #222c42', borderRadius: 10, padding: 60, textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,214,143,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', top: 0, left: '20%', right: '20%', height: 1, background: 'linear-gradient(90deg, transparent, #00d68f, transparent)' }} />

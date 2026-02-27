@@ -90,14 +90,14 @@ export default async function HomePage() {
 
       {/* ══ HERO ══ */}
       <section
-        className="hero-grid-bg"
-        style={{ minHeight: '92vh', display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', position: 'relative', overflow: 'hidden' }}
+        className="hero-grid-bg hero-section"
+        style={{ alignItems: 'center', position: 'relative', overflow: 'hidden' }}
       >
         {/* Glow orb */}
         <div style={{ position: 'absolute', width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,214,143,0.06) 0%, transparent 70%)', right: -100, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
 
         {/* Left: Brand + Headline */}
-        <div className="animate-fade-up" style={{ padding: '80px 0 80px 80px', position: 'relative', zIndex: 2 }}>
+        <div className="animate-fade-up hero-left" style={{ position: 'relative', zIndex: 2 }}>
           <div
             className="font-mono-cc"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 10, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#00d68f', background: 'rgba(0,214,143,0.07)', border: '1px solid rgba(0,214,143,0.2)', padding: '5px 12px', borderRadius: 20, marginBottom: 28 }}
@@ -107,13 +107,13 @@ export default async function HomePage() {
           </div>
 
           {/* Typographic brand */}
-          <div className="font-bebas" style={{ fontSize: 80, lineHeight: 0.92, letterSpacing: 2, marginBottom: 8, color: '#e2e6f0' }}>
+          <div className="font-bebas hero-brand" style={{ fontSize: 80, lineHeight: 0.92, letterSpacing: 2, marginBottom: 8, color: '#e2e6f0' }}>
             <span style={{ display: 'block' }}>CREO</span>
             <span style={{ display: 'block', WebkitTextStroke: '1px #00d68f', color: 'transparent', letterSpacing: 12 }}>VIA</span>
             <span style={{ display: 'block', fontSize: 52, color: '#3d4562', letterSpacing: 8 }}>COCKPIT</span>
           </div>
 
-          <h1 className="font-serif-cc" style={{ fontSize: 40, lineHeight: 1.15, color: '#e2e6f0', marginBottom: 20, letterSpacing: -0.5 }}>
+          <h1 className="font-serif-cc hero-h1" style={{ fontSize: 40, lineHeight: 1.15, color: '#e2e6f0', marginBottom: 20, letterSpacing: -0.5 }}>
             We create the path.<br />
             <em style={{ fontStyle: 'italic', color: '#00d68f' }}>You control the outcome.</em>
           </h1>
@@ -175,7 +175,7 @@ export default async function HomePage() {
         </div>
 
         {/* Right: Live preview panel */}
-        <div style={{ padding: '80px 60px 80px 40px', position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div className="hero-right" style={{ position: 'relative', zIndex: 2 }}>
           <div
             className="font-mono-cc"
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase', color: '#3d4562', padding: '6px 0' }}
@@ -229,7 +229,7 @@ export default async function HomePage() {
       </section>
 
       {/* ══ BRAND STORY ══ */}
-      <section style={{ borderTop: '1px solid #1c2235', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', position: 'relative' }}>
+      <section className="brand-story-grid">
         <div style={{ position: 'absolute', top: 0, left: '33.33%', width: 1, height: '100%', background: '#1c2235' }} />
         <div style={{ position: 'absolute', top: 0, left: '66.66%', width: 1, height: '100%', background: '#1c2235' }} />
         {[
@@ -237,7 +237,7 @@ export default async function HomePage() {
           { latin: 'VIA',     translation: 'The way',   color: '#4a8cf0', desc: 'Not a dashboard of numbers. A path through the noise. From regime detection to trade setup to position sizing — the way is lit.' },
           { latin: 'COCKPIT', translation: 'Command',   color: '#f0a030', desc: 'The cockpit is where decisions are made under pressure. Every instrument in view. Everything needed to command the trade.' },
         ].map((b) => (
-          <div key={b.latin} style={{ padding: '48px 60px' }}>
+          <div key={b.latin} className="brand-story-item">
             <div className="font-bebas" style={{ fontSize: 52, lineHeight: 1, color: '#e2e6f0', marginBottom: 4, letterSpacing: 2 }}>{b.latin}</div>
             <div className="font-mono-cc" style={{ fontSize: 10, letterSpacing: '1.5px', textTransform: 'uppercase', color: b.color, marginBottom: 16 }}>{b.translation}</div>
             <p className="font-serif-cc" style={{ fontSize: 17, lineHeight: 1.6, color: '#7a839e', fontStyle: 'italic' }}>{b.desc}</p>
@@ -246,7 +246,7 @@ export default async function HomePage() {
       </section>
 
       {/* ══ FEATURES GRID ══ */}
-      <section style={{ padding: 80, borderTop: '1px solid #1c2235' }}>
+      <section className="features-section">
         <div style={{ textAlign: 'center', marginBottom: 56 }}>
           <span className="font-mono-cc" style={{ fontSize: 10, letterSpacing: '2px', textTransform: 'uppercase', color: '#00d68f', display: 'block', marginBottom: 14 }}>The Intelligence Platform</span>
           <h2 className="font-serif-cc" style={{ fontSize: 40, color: '#e2e6f0', lineHeight: 1.2, letterSpacing: -0.5 }}>
@@ -254,7 +254,7 @@ export default async function HomePage() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 1, background: '#1c2235', border: '1px solid #1c2235', borderRadius: 8, overflow: 'hidden' }}>
+        <div className="features-grid">
           {features.map((f) => (
             <div
               key={f.title}
@@ -277,7 +277,7 @@ export default async function HomePage() {
       </section>
 
       {/* ══ HOW IT WORKS ══ */}
-      <section style={{ padding: 80, borderTop: '1px solid #1c2235', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+      <section className="how-section">
         <div>
           <span className="font-mono-cc" style={{ fontSize: 10, letterSpacing: '2px', textTransform: 'uppercase', color: '#00d68f', display: 'block', marginBottom: 14 }}>Under the hood</span>
           <h2 className="font-serif-cc" style={{ fontSize: 38, color: '#e2e6f0', lineHeight: 1.2, letterSpacing: -0.5, marginBottom: 16 }}>
@@ -301,7 +301,7 @@ export default async function HomePage() {
         </div>
 
         {/* Instrument panel visual */}
-        <div style={{ background: '#111520', border: '1px solid #242c42', borderRadius: 10, padding: 24, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, position: 'relative', overflow: 'hidden' }}>
+        <div className="instrument-panel" style={{ background: '#111520', border: '1px solid #242c42', borderRadius: 10, padding: 24, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center top, rgba(0,214,143,0.04) 0%, transparent 60%)', pointerEvents: 'none' }} />
           {instruments.map((inst) => (
             <div
@@ -322,7 +322,7 @@ export default async function HomePage() {
 
       {/* ══ LATEST ANALYSIS ══ */}
       {(content as Awaited<ReturnType<typeof getContentFeed>> | null)?.items && (content as Awaited<ReturnType<typeof getContentFeed>>).items.length > 0 && (
-        <section style={{ padding: '0 80px 80px', borderTop: '1px solid #1c2235' }}>
+        <section className="latest-section">
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 24 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 16 }}>
               <h2 className="font-bebas" style={{ fontSize: 24, letterSpacing: 2, color: '#e8eaf0' }}>Latest Analysis</h2>
@@ -335,7 +335,7 @@ export default async function HomePage() {
               View all →
             </Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+          <div className="analysis-grid">
             {(content as Awaited<ReturnType<typeof getContentFeed>>).items.slice(0, 6).map((post) => (
               <ContentCard key={post.id} post={post} />
             ))}
@@ -344,7 +344,7 @@ export default async function HomePage() {
       )}
 
       {/* ══ WAITLIST CTA ══ */}
-      <div style={{ padding: '0 80px 80px' }}>
+      <div className="cta-wrapper">
         <div style={{ background: '#111520', border: '1px solid #242c42', borderRadius: 10, padding: '60px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,214,143,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', top: 0, left: '20%', right: '20%', height: 1, background: 'linear-gradient(90deg, transparent, #00d68f, transparent)' }} />

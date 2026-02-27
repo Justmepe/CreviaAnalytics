@@ -64,7 +64,7 @@ function WhaleIntelligence() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 16, alignItems: 'start' }}>
+      <div className="whale-intel-grid">
 
         {/* Alert Feed */}
         <div style={{ background: '#111520', border: '1px solid #1c2235', borderRadius: 6, overflow: 'hidden' }}>

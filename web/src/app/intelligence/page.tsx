@@ -202,8 +202,7 @@ export default async function IntelligencePage() {
   return (
     <div style={{ background: '#08090c', minHeight: '100vh' }}>
       <div
-        className="mx-auto"
-        style={{ display: 'grid', gridTemplateColumns: '1fr 320px', maxWidth: 1280 }}
+        className="intel-shell mx-auto"
       >
 
         {/* ── Main Column ── */}

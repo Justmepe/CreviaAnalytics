@@ -61,13 +61,7 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
     <div style={{ background: '#08090c', minHeight: '100vh' }}>
 
       {/* ── 2-column page shell ── */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 360px',
-        }}
-        className="analysis-shell"
-      >
+      <div className="analysis-shell">
 
         {/* ── LEFT: Analysis content ── */}
         <div
