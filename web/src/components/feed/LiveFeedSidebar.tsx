@@ -561,8 +561,8 @@ export default function LiveFeedSidebar() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 28, height: 28, borderRadius: '50%', flexShrink: 0, background: '#1a2030', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, color: '#38405a' }}>?</div>
             <div style={{ flex: 1, fontFamily: 'var(--font-dm-sans)', fontSize: 11.5, color: '#788098', lineHeight: 1.5 }}>
-              <a href="/auth" style={{ color: '#00d68f', textDecoration: 'none', fontWeight: 500 }}>Sign in</a>{' or '}
-              <a href="/auth?mode=register" style={{ color: '#00d68f', textDecoration: 'none', fontWeight: 500 }}>join free</a>{' to share your market read'}
+              <a href="/auth/login" style={{ color: '#00d68f', textDecoration: 'none', fontWeight: 500 }}>Sign in</a>{' or '}
+              <a href="/auth/register" style={{ color: '#00d68f', textDecoration: 'none', fontWeight: 500 }}>join free</a>{' to share your market read'}
             </div>
           </div>
         )}
@@ -572,7 +572,7 @@ export default function LiveFeedSidebar() {
       {showAuthBanner && (
         <div style={{ padding: '10px 16px', background: 'rgba(0,214,143,0.05)', borderBottom: '1px solid rgba(0,214,143,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0, animation: 'postIn 0.3s ease forwards' }}>
           <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 10, color: '#a0a8c0', lineHeight: 1.5 }}>
-            <a href="/auth?mode=register" style={{ color: '#00d68f', textDecoration: 'none', fontWeight: 500 }}>Create a free account</a>{' to react, repost, and post.'}
+            <a href="/auth/register" style={{ color: '#00d68f', textDecoration: 'none', fontWeight: 500 }}>Create a free account</a>{' to react, repost, and post.'}
           </span>
           <button onClick={() => setShowAuthBanner(false)} style={{ background: 'none', border: 'none', color: '#38405a', cursor: 'pointer', fontSize: 16, padding: '0 4px', lineHeight: 1, flexShrink: 0 }}>×</button>
         </div>
