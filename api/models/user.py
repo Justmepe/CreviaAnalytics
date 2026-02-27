@@ -42,7 +42,7 @@ class User(Base):
     provider_id = Column(String(255))
 
     # Subscription
-    tier = Column(String(20), default='free')  # free, pro, enterprise
+    tier = Column(String(20), default='free')  # free, basic, pro (Premium), enterprise (Premium+)
     stripe_customer_id = Column(String(255))
     subscription_status = Column(String(20), default='none')  # active, canceled, past_due, none
     subscription_end = Column(DateTime(timezone=True))

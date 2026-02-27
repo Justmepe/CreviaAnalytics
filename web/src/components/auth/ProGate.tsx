@@ -5,13 +5,20 @@ import { useAuth } from '@/context/AuthContext';
 
 interface ProGateProps {
   children: React.ReactNode;
-  minTier?: 'pro' | 'enterprise';
+  minTier?: 'basic' | 'pro' | 'enterprise';
   featureName?: string;
   /** Optional blurred ghost rows shown behind the lock overlay */
   ghostRows?: React.ReactNode;
 }
 
-const tierLevels: Record<string, number> = { free: 0, pro: 1, enterprise: 2 };
+// free=0, basic=1, pro=2 (Premium), enterprise=3 (Premium+)
+const tierLevels: Record<string, number> = { free: 0, basic: 1, pro: 2, enterprise: 3 };
+
+const UPGRADE_LABEL: Record<string, string> = {
+  basic: 'Upgrade to Basic',
+  pro: 'Upgrade to Premium',
+  enterprise: 'Upgrade to Premium+',
+};
 
 export default function ProGate({
   children,
@@ -60,32 +67,34 @@ export default function ProGate({
           </svg>
         </div>
 
-        <div className="font-syne text-[14px] font-semibold" style={{ color: '#dfe3f0' }}>
-          Pro Required
+        <div className="font-syne text-[13px] font-semibold" style={{ color: '#dfe3f0' }}>
+          {minTier === 'basic' ? 'Basic Plan Required' : minTier === 'enterprise' ? 'Premium+ Required' : 'Premium Required'}
         </div>
 
         <p
-          className="text-[12px] text-center max-w-[240px] leading-relaxed"
-          style={{ color: '#7a839e', fontWeight: 300 }}
+          className="font-mono-cc text-[10px] text-center max-w-[220px] leading-relaxed"
+          style={{ color: '#7a839e', letterSpacing: '0.3px' }}
         >
-          {featureName} is available on the Pro plan. See live setups across all 16+ assets.
+          {featureName} requires the {minTier === 'basic' ? 'Basic' : minTier === 'enterprise' ? 'Premium+' : 'Premium'} plan.
         </p>
 
         <div className="flex gap-2 mt-1">
           <Link
             href="/pricing"
-            className="font-mono-cc text-[11px] uppercase tracking-[0.5px] px-4 py-1.5 rounded transition-opacity hover:opacity-85"
-            style={{ background: '#00d68f', color: '#08090c', fontWeight: 500 }}
+            className="font-mono-cc text-[10px] uppercase tracking-[0.5px] px-4 py-1.5 rounded transition-opacity hover:opacity-85"
+            style={{ background: '#f0a030', color: '#08090c', fontWeight: 500 }}
           >
-            Upgrade to Pro
+            {UPGRADE_LABEL[minTier]} →
           </Link>
-          <Link
-            href="/auth/login"
-            className="font-mono-cc text-[11px] uppercase tracking-[0.5px] px-4 py-1.5 rounded transition-colors"
-            style={{ color: '#7a839e', border: '1px solid #242c42', textDecoration: 'none' }}
-          >
-            Sign In
-          </Link>
+          {!user && (
+            <Link
+              href="/auth/login"
+              className="font-mono-cc text-[10px] uppercase tracking-[0.5px] px-4 py-1.5 rounded transition-colors"
+              style={{ color: '#7a839e', border: '1px solid #242c42', textDecoration: 'none' }}
+            >
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
     </div>
