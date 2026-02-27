@@ -1540,21 +1540,10 @@ class XBrowserPoster:
                                     logger.warning(f"[XBrowserPoster] '+' button not found after tweet {i+1} — posting partial thread ({i+1} tweets)")
                                     break
 
-                        # ── Remove overlay masks ─────────────────────────────────
-                        try:
-                            page.evaluate("""
-                                const layers = document.getElementById('layers');
-                                if (layers) {
-                                    layers.querySelectorAll('[data-testid="mask"], [class*="r-1p0dtai"]').forEach(el => {
-                                        if (!el.closest('[data-testid="tweetButton"]') &&
-                                            !el.closest('[data-testid="tweetButtonInline"]')) {
-                                            el.remove();
-                                        }
-                                    });
-                                }
-                            """)
-                        except Exception:
-                            pass
+                        # NOTE: Do NOT remove elements from #layers here.
+                        # The thread compose dialog itself lives inside #layers —
+                        # touching it collapses the dialog before we can click Post.
+                        # (Overlay removal is only needed for single-tweet posts.)
 
                         # Small pause to let the Post all button become enabled
                         time.sleep(random.uniform(1.0, 1.5))
