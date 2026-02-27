@@ -80,6 +80,8 @@ from src.content.x_thread_generator import generate_x_thread
 from src.content.news_narrator import NewsNarrator
 from src.pillars.news import get_rss_engine, _calculate_relevance
 from src.utils.x_thread_builder import ThreadBuilder
+from src.content.post_decorator import PostDecorator
+from src.content.content_session import ContentSession
 
 
 # =============================================================================
@@ -264,6 +266,9 @@ class CryptoAnalysisOrchestrator:
         # Thread builder (for breaking news threads)
         self.thread_builder = ThreadBuilder()
 
+        # Content decorator (CTAs, hashtags, site links on every post)
+        self.post_decorator = PostDecorator()
+
         # Intelligence layer — regime detection + correlation + smart money
         self.regime_detector = RegimeDetector(aggregator=self.data)
         self.correlation_engine = CorrelationEngine()
@@ -419,22 +424,28 @@ class CryptoAnalysisOrchestrator:
             self._run_analysis_phase()
             self.last_analysis_time = current_time
 
-        # 2. Generate thread with correct mode
+        # 2. For morning_scan: ContentSession — ONE Claude call covers thread + article + note
+        session_content = None
+        if slot["mode"] == "morning_scan":
+            session_content = self._run_content_session("morning_scan")
+
+        # 3. Generate thread with correct mode
         thread_data = self._run_thread_generation(
             thread_mode=slot["mode"],
-            previous_context=self.morning_context
+            previous_context=self.morning_context,
+            session_content=session_content,
         )
 
-        # 3. Store morning context for mid-day reference
+        # 4. Store morning context for mid-day reference
         if slot["mode"] == "morning_scan" and thread_data:
             # Build a short summary of morning thread for mid-day reference
             tweets = thread_data.get('tweets', [])
             if tweets:
                 self.morning_context = tweets[0][:200]  # First tweet as summary
 
-        # 4. Platform routing based on slot type
+        # 5. Platform routing based on slot type
         if slot.get("full_article") and thread_data:
-            self._post_anchor_article(thread_data)
+            self._post_anchor_article(thread_data, session_content=session_content)
         elif thread_data:
             self._post_anchor_note(thread_data, slot)
 
@@ -443,65 +454,77 @@ class CryptoAnalysisOrchestrator:
 
         logger.info(f"Anchor slot {slot['label']} complete")
 
-    def _post_anchor_article(self, thread_data: Dict):
+    def _post_anchor_article(self, thread_data: Dict, session_content: Optional[Dict] = None):
         """Post full article to X Articles + Substack Article (morning slot)."""
         try:
             logger.info(f"\n{'='*80}")
             logger.info("📰 POSTING MORNING SCAN ARTICLE")
             logger.info(f"{'='*80}")
 
-            # Generate proper long-form article with Claude AI
             from src.content.newsletter_generator import generate_daily_scan_newsletter
 
-            # Get analysis data from latest cycle
-            if not hasattr(self, 'latest_analyses') or 'BTC' not in self.latest_analyses:
-                logger.warning("⚠️  No analysis data available - using fallback")
-                # Fallback to thread-based article
-                body = self._build_article_body(thread_data)
-                title = "Daily Crypto Market Scan"
-            else:
-                logger.info("\n📝 Step 1: Generating article with Claude AI...")
+            title = "Daily Crypto Market Scan"
+            body = ""
 
-                # Build sector analyses the same way thread generation does
-                sector_analyses = {
-                    'memecoins': [self.latest_analyses.get(t) for t in MEMECOIN_ASSETS if t in self.latest_analyses],
-                    'privacy': [self.latest_analyses.get(t) for t in PRIVACY_ASSETS if t in self.latest_analyses],
-                    'defi': [self.latest_analyses.get(t) for t in DEFI_ASSETS if t in self.latest_analyses]
-                }
-                logger.info(f"   Sector data: {len(sector_analyses['memecoins'])} memecoins, {len(sector_analyses['privacy'])} privacy, {len(sector_analyses['defi'])} DeFi")
+            # Path 1: Reuse ContentSession output — zero extra Claude calls
+            if session_content and session_content.get('x_article', {}).get('body'):
+                logger.info("\n📝 Step 1: Using pregenerated article from ContentSession...")
+                art = session_content['x_article']
+                title = art.get('title', 'Daily Crypto Market Scan')
+                body = art.get('body', '')
+                logger.info(f"   ✅ Article from ContentSession: {len(body.split())} words")
 
-                # Get global market context
-                global_metrics = self.data.get_global_metrics()
-                market_context = global_metrics.to_dict() if global_metrics else {}
-
-                # Generate newsletter with Claude
-                try:
-                    newsletter = generate_daily_scan_newsletter(
-                        btc_analysis=self.latest_analyses.get('BTC', {}),
-                        eth_analysis=self.latest_analyses.get('ETH', {}),
-                        market_context=market_context,
-                        sector_analyses=sector_analyses,
-                        all_analyses=self.latest_analyses
-                    )
-
-                    title = newsletter.get('title', 'Daily Crypto Market Scan')
-                    body = newsletter.get('body', '')
-                    word_count = newsletter.get('word_count', 0)
-
-                    if body:
-                        logger.info(f"   ✅ Article generated: {word_count} words by {newsletter.get('generated_by', 'Unknown')}")
-                    else:
-                        logger.warning("   ❌ Newsletter returned empty - using fallback")
-                        body = self._build_article_body(thread_data)
-                except Exception as e:
-                    logger.error(f"   ❌ Newsletter generation failed: {e}")
-                    logger.info("   Falling back to thread-based article")
+            # Path 2: Generate fresh via newsletter generator (no ContentSession available)
+            if not body:
+                if not hasattr(self, 'latest_analyses') or 'BTC' not in self.latest_analyses:
+                    logger.warning("⚠️  No analysis data available - using fallback")
                     body = self._build_article_body(thread_data)
                     title = "Daily Crypto Market Scan"
+                else:
+                    logger.info("\n📝 Step 1: Generating article with Claude AI...")
+
+                    sector_analyses = {
+                        'memecoins': [self.latest_analyses.get(t) for t in MEMECOIN_ASSETS if t in self.latest_analyses],
+                        'privacy': [self.latest_analyses.get(t) for t in PRIVACY_ASSETS if t in self.latest_analyses],
+                        'defi': [self.latest_analyses.get(t) for t in DEFI_ASSETS if t in self.latest_analyses]
+                    }
+                    logger.info(f"   Sector data: {len(sector_analyses['memecoins'])} memecoins, {len(sector_analyses['privacy'])} privacy, {len(sector_analyses['defi'])} DeFi")
+
+                    global_metrics = self.data.get_global_metrics()
+                    market_context = global_metrics.to_dict() if global_metrics else {}
+
+                    try:
+                        newsletter = generate_daily_scan_newsletter(
+                            btc_analysis=self.latest_analyses.get('BTC', {}),
+                            eth_analysis=self.latest_analyses.get('ETH', {}),
+                            market_context=market_context,
+                            sector_analyses=sector_analyses,
+                            all_analyses=self.latest_analyses
+                        )
+
+                        title = newsletter.get('title', 'Daily Crypto Market Scan')
+                        body = newsletter.get('body', '')
+                        word_count = newsletter.get('word_count', 0)
+
+                        if body:
+                            logger.info(f"   ✅ Article generated: {word_count} words by {newsletter.get('generated_by', 'Unknown')}")
+                        else:
+                            logger.warning("   ❌ Newsletter returned empty - using fallback")
+                            body = self._build_article_body(thread_data)
+                    except Exception as e:
+                        logger.error(f"   ❌ Newsletter generation failed: {e}")
+                        logger.info("   Falling back to thread-based article")
+                        body = self._build_article_body(thread_data)
+                        title = "Daily Crypto Market Scan"
 
             if not body:
                 logger.error("❌ Could not generate article body - aborting")
                 return
+
+            # Apply PostDecorator — each platform gets its own CTA variant
+            assets = session_content.get('mentioned_assets', ['BTC', 'ETH']) if session_content else ['BTC', 'ETH']
+            x_body = self.post_decorator.decorate_x_article(body, assets)
+            _, sub_body, _ = self.post_decorator.decorate_substack_article(title, body, assets)
 
             # Save to Notion first (write once, post anywhere)
             if self.notion_manager and self.notion_manager.is_available():
@@ -519,7 +542,7 @@ class CryptoAnalysisOrchestrator:
             logger.info("\n📤 Step 2: Posting article to X...")
             if self.x_use_browser and self.x_browser_poster.enabled:
                 try:
-                    x_result = self.x_browser_poster.post_article(title, body)
+                    x_result = self.x_browser_poster.post_article(title, x_body)
                     if x_result:
                         logger.info("   ✅ X Article posted successfully")
                     else:
@@ -533,7 +556,7 @@ class CryptoAnalysisOrchestrator:
             logger.info("\n📤 Step 3: Posting article to Substack...")
             if self.substack_use_browser and self.substack_browser.enabled:
                 try:
-                    sub_result = self.substack_browser.post_article(title, body)
+                    sub_result = self.substack_browser.post_article(title, sub_body)
                     if sub_result:
                         logger.info("   ✅ Substack Article posted successfully")
                     else:
@@ -556,6 +579,9 @@ class CryptoAnalysisOrchestrator:
             summary = self._build_note_summary(thread_data, slot)
             if not summary:
                 return
+
+            # Decorate with CTA
+            summary = self.post_decorator.decorate_substack_note(summary, ['BTC', 'ETH'])
 
             # Save to Notion (write once, post anywhere)
             if self.notion_manager and self.notion_manager.is_available():
@@ -589,6 +615,31 @@ class CryptoAnalysisOrchestrator:
             return False
         elapsed = (time.time() - self.last_anchor_time) / 60
         return elapsed < ANCHOR_COOLDOWN_MINUTES
+
+    def _run_content_session(self, mode: str) -> Optional[Dict]:
+        """
+        Run ContentSession for the given mode — ONE Claude call covers thread + article + note.
+        Returns the content dict or None on failure.
+        """
+        try:
+            global_context = self.latest_research.get('global', {})
+            analysis_data = {
+                'market_context': global_context,
+                'majors': {t: self.latest_analyses.get(t, {}) for t in MAJOR_ASSETS if t in self.latest_analyses},
+                'defi': [self.latest_analyses.get(t, {}) for t in DEFI_ASSETS if t in self.latest_analyses],
+                'memecoins': [self.latest_analyses.get(t, {}) for t in MEMECOIN_ASSETS if t in self.latest_analyses],
+                'privacy_coins': [self.latest_analyses.get(t, {}) for t in PRIVACY_ASSETS if t in self.latest_analyses],
+            }
+            logger.info(f"[ContentSession] Running {mode} master brief (single Claude call)...")
+            session = ContentSession(analysis_data, mode=mode)
+            content = session.generate_all()
+            headline = content.get('headline', '')
+            tweet_count = len(content.get('x_thread', []))
+            logger.info(f"[ContentSession] Done — '{headline[:60]}...' ({tweet_count} tweets)")
+            return content
+        except Exception as e:
+            logger.warning(f"[ContentSession] Failed: {e} — pipeline will use legacy generators")
+            return None
 
     def _check_price_alert(self):
         """Detect significant BTC price moves (>3% per cycle) and post breaking alert."""
@@ -808,6 +859,10 @@ class CryptoAnalysisOrchestrator:
                     else:
                         tweet_texts.append(str(t))
 
+                # Apply CTAs + hashtags to breaking news thread
+                breaking_assets = item.get('currencies', ['BTC'])
+                tweet_texts = self.post_decorator.decorate_x_thread(tweet_texts, breaking_assets)
+
                 thread_data = {
                     'tweets': tweet_texts,
                     'tweet_count': len(tweet_texts),
@@ -877,6 +932,11 @@ class CryptoAnalysisOrchestrator:
                     word_count = article_data.get('word_count', len(article_body.split()))
                     logger.info(f"   ✅ Article generated: {word_count} words by {article_data.get('generated_by', 'Unknown')}")
 
+                    # Decorate for each platform separately
+                    breaking_assets = item.get('currencies', ['BTC'])
+                    x_article_body = self.post_decorator.decorate_x_article(article_body, breaking_assets)
+                    _, sub_article_body, _ = self.post_decorator.decorate_substack_article(article_title, article_body, breaking_assets)
+
                     # Save to Notion first (before posting anywhere)
                     if self.notion_manager and self.notion_manager.is_available():
                         try:
@@ -893,7 +953,7 @@ class CryptoAnalysisOrchestrator:
                     logger.info("\n📤 Step 4: Posting article to X...")
                     if self.x_use_browser and self.x_browser_poster.enabled and article_body:
                         try:
-                            x_result = self.x_browser_poster.post_article(article_title, article_body)
+                            x_result = self.x_browser_poster.post_article(article_title, x_article_body)
                             if x_result:
                                 logger.info("   ✅ X Article posted")
                             else:
@@ -907,7 +967,7 @@ class CryptoAnalysisOrchestrator:
                     logger.info("\n📤 Step 5: Posting article to Substack...")
                     if self.substack_use_browser and self.substack_browser.enabled and article_body:
                         try:
-                            sub_result = self.substack_browser.post_article(article_title, article_body)
+                            sub_result = self.substack_browser.post_article(article_title, sub_article_body)
                             if sub_result:
                                 logger.info("   ✅ Substack Article posted")
                             else:
@@ -1285,7 +1345,8 @@ class CryptoAnalysisOrchestrator:
             logger.error(f"Analysis phase error: {e}")
 
     def _run_thread_generation(self, thread_mode: str = 'morning_scan',
-                               previous_context: Optional[str] = None) -> Optional[Dict]:
+                               previous_context: Optional[str] = None,
+                               session_content: Optional[Dict] = None) -> Optional[Dict]:
         """
         Generate X/Twitter thread with mode awareness.
 
@@ -1324,23 +1385,42 @@ class CryptoAnalysisOrchestrator:
             global_metrics = self.data.get_global_metrics()
             market_context = global_metrics.to_dict() if global_metrics else self.latest_research.get('global')
 
-            # Generate thread with mode (Claude used internally for writing)
-            logger.info(f"Generating {thread_mode} thread...")
-            thread = generate_x_thread(
-                btc_analysis=updated_analyses['BTC'],
-                market_context=market_context,
-                thread_mode=thread_mode,
-                previous_context=previous_context,
-                eth_analysis=updated_analyses.get('ETH'),
-                sector_analyses=sector_analyses,
-                all_analyses=updated_analyses
-            )
+            # Generate thread — use ContentSession output if pregenerated, else call Claude
+            if session_content and session_content.get('x_thread'):
+                logger.info(f"Using pregenerated {thread_mode} thread from ContentSession")
+                raw_tweets = session_content['x_thread']
+                thread = {
+                    'tweets': raw_tweets,
+                    'tweet_count': len(raw_tweets),
+                    'copy_paste_ready': '\n\n'.join(raw_tweets),
+                    'type': thread_mode,
+                }
+            else:
+                logger.info(f"Generating {thread_mode} thread via Claude...")
+                thread = generate_x_thread(
+                    btc_analysis=updated_analyses['BTC'],
+                    market_context=market_context,
+                    thread_mode=thread_mode,
+                    previous_context=previous_context,
+                    eth_analysis=updated_analyses.get('ETH'),
+                    sector_analyses=sector_analyses,
+                    all_analyses=updated_analyses
+                )
 
-            # Dedup check
+            # Dedup check (on raw content, before CTA decoration)
             thread_body = thread.get('copy_paste_ready', '')
             if self.tracker.is_duplicate(thread_body):
                 logger.info("   Thread is a duplicate, skipping all channels")
                 return None
+
+            # Apply CTAs + hashtags to final tweet only
+            mentioned = (
+                session_content.get('mentioned_assets', []) if session_content
+                else [t for t in (MAJOR_ASSETS + MEMECOIN_ASSETS) if t in updated_analyses]
+            )
+            tweets = self.post_decorator.decorate_x_thread(list(thread.get('tweets', [])), mentioned)
+            thread['tweets'] = tweets
+            thread['copy_paste_ready'] = '\n\n'.join(tweets)
 
             # Save thread
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -1908,6 +1988,12 @@ def print_banner():
 
 def main():
     """Main entry point"""
+    # Python 3.13 on Windows: sync_playwright() creates its own event loop via
+    # asyncio.new_event_loop(). Without this, the default policy may produce a
+    # SelectorEventLoop which doesn't support subprocess transport → NotImplementedError.
+    if sys.platform == 'win32':
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+
     print_banner()
 
     orchestrator = CryptoAnalysisOrchestrator()

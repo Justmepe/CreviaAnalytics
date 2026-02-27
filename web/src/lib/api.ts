@@ -8,6 +8,7 @@ async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> 
       ...options?.headers,
     },
     next: { revalidate: 60 },
+    signal: AbortSignal.timeout(8000),
   });
 
   if (!res.ok) {

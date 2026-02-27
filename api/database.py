@@ -24,4 +24,5 @@ def create_tables():
     """Create all tables (for initial setup)."""
     from api.models import content, user  # noqa: F401 — ensure models are registered
     from api.models import journal  # noqa: F401
+    from api.models import feed  # noqa: F401
     Base.metadata.create_all(bind=engine)

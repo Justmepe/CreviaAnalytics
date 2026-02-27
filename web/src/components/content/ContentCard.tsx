@@ -2,71 +2,225 @@ import Link from 'next/link';
 import { timeAgo } from '@/lib/api';
 import type { ContentPost } from '@/types';
 
-const TYPE_BADGES: Record<string, { label: string; color: string }> = {
-  thread: { label: 'Thread', color: 'bg-blue-500/20 text-blue-400' },
-  memo: { label: 'Memo', color: 'bg-emerald-500/20 text-emerald-400' },
-  news_tweet: { label: 'News', color: 'bg-amber-500/20 text-amber-400' },
-  risk_alert: { label: 'Alert', color: 'bg-red-500/20 text-red-400' },
+// ── Sector config ────────────────────────────────────────
+const SECTOR_CONFIG: Record<string, { label: string; bg: string; color: string; accentLine: string }> = {
+  defi:      { label: 'DeFi',      bg: '#0d2e22', color: '#00e5a0', accentLine: 'rgba(0,229,160,0.25)' },
+  privacy:   { label: 'Privacy',   bg: '#1a1030', color: '#a78bfa', accentLine: 'rgba(167,139,250,0.25)' },
+  memecoins: { label: 'Memecoins', bg: '#2a1a0a', color: '#f5a623', accentLine: 'rgba(245,166,35,0.25)' },
+  majors:    { label: 'Majors',    bg: '#0a1a2e', color: '#3b82f6', accentLine: 'rgba(59,130,246,0.25)' },
+  global:    { label: 'Global',    bg: '#1e1e2e', color: '#e8eaf0', accentLine: 'rgba(232,234,240,0.15)' },
 };
 
-const SECTOR_LABELS: Record<string, string> = {
-  majors: 'Majors',
-  memecoins: 'Memecoins',
-  privacy: 'Privacy',
-  defi: 'DeFi',
-  global: 'Global',
+const TYPE_CONFIG: Record<string, { label: string }> = {
+  thread:     { label: 'Thread' },
+  memo:       { label: 'Memo' },
+  news_tweet: { label: 'News' },
+  risk_alert: { label: 'Alert' },
 };
 
-export default function ContentCard({ post }: { post: ContentPost }) {
-  const badge = TYPE_BADGES[post.content_type] || TYPE_BADGES.memo;
-  const sectorLabel = post.sector ? SECTOR_LABELS[post.sector] || post.sector : null;
+const SIGNAL_CONFIG: Record<string, { label: string; color: string; dotColor: string }> = {
+  RISK_OFF:         { label: 'Risk-Off Regime',  color: '#f03e5a', dotColor: '#f03e5a' },
+  BEARISH:          { label: 'Bearish',           color: '#f03e5a', dotColor: '#f03e5a' },
+  BULLISH:          { label: 'Bullish',           color: '#00d68f', dotColor: '#00d68f' },
+  RELATIVE_STRENGTH:{ label: 'Relative Strength', color: '#00d68f', dotColor: '#00d68f' },
+  RISK_ON:          { label: 'Risk-On',           color: '#00d68f', dotColor: '#00d68f' },
+  NEUTRAL:          { label: 'Neutral',           color: '#f0a030', dotColor: '#f0a030' },
+  RANGE_BOUND:      { label: 'Range Bound',       color: '#f0a030', dotColor: '#f0a030' },
+};
+
+/* ── Title sanitizer ─────────────────────────────────────── */
+const RAW_TITLE_PATTERNS = [
+  /^#\s+/,                              // Leading # markdown
+  /^Prices?:/i,                         // "Prices: AAVE: $123..."
+  /^[A-Z]{2,6}:\s+\$[\d.]+/,           // "AAVE: $123.4567 | ..."
+  /\$[\d.,]+\s*\|\s*[A-Z]{2,6}:/,      // Price table pattern
+];
+
+function sanitizeTitle(title: string | null | undefined, post: ContentPost): string {
+  if (!title) return buildFallbackTitle(post);
+
+  let t = title.trim();
+
+  // Strip leading markdown # artifacts
+  t = t.replace(/^#+\s*/, '');
+
+  // Check for raw data patterns
+  const isRaw = RAW_TITLE_PATTERNS.some(p => p.test(t));
+  if (isRaw) return buildFallbackTitle(post);
+
+  return t || buildFallbackTitle(post);
+}
+
+function buildFallbackTitle(post: ContentPost): string {
+  // Try to extract first clean sentence from excerpt
+  if (post.excerpt) {
+    const clean = post.excerpt.replace(/^#+\s*/, '').replace(/Prices?:[^.]*\.\s*/gi, '').trim();
+    const firstSentence = clean.split(/[.!?]/)[0]?.trim();
+    if (firstSentence && firstSentence.length > 20 && firstSentence.length < 120) {
+      return firstSentence;
+    }
+  }
+
+  // Generate synthetic title from metadata
+  const typeLabel = TYPE_CONFIG[post.content_type]?.label ?? 'Analysis';
+  const sectorLabel = SECTOR_CONFIG[post.sector ?? 'global']?.label ?? 'Market';
+  const tickers = post.tickers?.slice(0, 2).join(' & ') ?? '';
+  if (tickers) return `${sectorLabel} ${typeLabel}: ${tickers} Update`;
+  return `${sectorLabel} Market ${typeLabel}`;
+}
+
+/* ── Excerpt sanitizer ───────────────────────────────────── */
+function sanitizeExcerpt(excerpt: string | null | undefined): string {
+  if (!excerpt) return '';
+  return excerpt
+    .replace(/^#+\s*/gm, '')               // Strip markdown headers
+    .replace(/Prices?:[^\n]*/gi, '')        // Strip raw price lines
+    .trim()
+    .slice(0, 160)
+    .replace(/\s+\S*$/, '…');              // Trim to word boundary + ellipsis
+}
+
+interface Props {
+  post: ContentPost;
+  featured?: boolean;
+}
+
+export default function ContentCard({ post, featured = false }: Props) {
+  const typeConfig = TYPE_CONFIG[post.content_type] || TYPE_CONFIG.memo;
+  const sectorKey = post.sector || 'global';
+  const sector = SECTOR_CONFIG[sectorKey] || SECTOR_CONFIG.global;
+  const displayTitle = sanitizeTitle(post.title, post);
+  const displayExcerpt = sanitizeExcerpt(post.excerpt);
+  const isThread = post.content_type === 'thread';
+  const isLocked = (post as { is_locked?: boolean }).is_locked;
+
+  // Pick signal from post metadata if available
+  const signalKey = (post as { signal?: string }).signal;
+  const signal = signalKey ? SIGNAL_CONFIG[signalKey] : null;
+
+  const tweetCount = post.tweets?.length;
 
   return (
     <Link
       href={`/post/${post.slug}`}
-      className="group block rounded-xl border border-zinc-800 bg-zinc-900/30 p-5 transition-all hover:border-zinc-700 hover:bg-zinc-900/60"
+      className={`group block rounded-[6px] relative overflow-hidden transition-all duration-200${
+        featured ? ' bg-gradient-to-br from-[#111520] to-[#13181f]' : ' bg-[#111520]'
+      }`}
+      style={{
+        border: '1px solid #1c2235',
+        textDecoration: 'none',
+      }}
     >
-      {/* Header */}
-      <div className="flex items-center gap-2">
-        <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${badge.color}`}>
-          {badge.label}
-        </span>
-        {sectorLabel && (
-          <span className="rounded-full bg-zinc-800 px-2.5 py-0.5 text-xs font-medium text-zinc-400">
-            {sectorLabel}
-          </span>
+      {/* Top accent line on hover */}
+      <span
+        className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{ background: `linear-gradient(90deg, transparent, ${sector.accentLine}, transparent)` }}
+      />
+
+      <div className="p-5 flex flex-col gap-3 h-full">
+        {/* ── Top row: tags + time ── */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            {/* Type badge */}
+            <span
+              className="font-mono-cc text-[10px] font-medium tracking-[0.8px] uppercase px-2 py-0.5 rounded-[3px]"
+              style={{ background: '#181c24', color: '#6b7494', border: '1px solid #1e2330' }}
+            >
+              {typeConfig.label}
+            </span>
+            {/* Sector badge */}
+            <span
+              className="font-mono-cc text-[10px] font-medium tracking-[0.8px] uppercase px-2 py-0.5 rounded-[3px]"
+              style={{ background: sector.bg, color: sector.color }}
+            >
+              {sector.label}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            {tweetCount && isThread && (
+              <span className="font-mono-cc text-[10px]" style={{ color: '#3d4562' }}>
+                {tweetCount} posts
+              </span>
+            )}
+            <span className="font-mono-cc text-[10px]" style={{ color: '#3d4562', letterSpacing: '0.5px' }}>
+              {timeAgo(post.published_at)}
+            </span>
+          </div>
+        </div>
+
+        {/* ── Headline ── */}
+        <h3
+          className={`font-sans leading-snug group-hover:text-[#00d68f] transition-colors${
+            featured ? ' text-[17px] font-semibold' : ' text-[14px] font-semibold'
+          }`}
+          style={{ color: '#e8eaf0', letterSpacing: '-0.2px' }}
+        >
+          {displayTitle}
+        </h3>
+
+        {/* ── Excerpt ── */}
+        {displayExcerpt && (
+          <p
+            className="text-[13px] leading-relaxed"
+            style={{ color: '#6b7494', fontWeight: 300, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+          >
+            {displayExcerpt}
+          </p>
         )}
+
+        {/* ── Asset chips ── */}
         {post.tickers && post.tickers.length > 0 && (
-          <div className="flex gap-1">
-            {post.tickers.slice(0, 3).map((t) => (
-              <span key={t} className="text-xs font-medium text-zinc-500">
-                {t}
+          <div className="flex gap-1.5 flex-wrap mt-auto">
+            {post.tickers.slice(0, 5).map((ticker) => (
+              <span
+                key={ticker}
+                className="font-mono-cc text-[11px] font-medium px-2 py-0.5 rounded-[3px] flex items-center gap-1"
+                style={{ background: '#181c24', color: '#6b7494', border: '1px solid #1e2330' }}
+              >
+                {ticker}
               </span>
             ))}
           </div>
         )}
-        <span className="ml-auto text-xs text-zinc-600">{timeAgo(post.published_at)}</span>
-      </div>
 
-      {/* Title */}
-      <h3 className="mt-3 text-base font-semibold text-white group-hover:text-emerald-400 transition-colors line-clamp-2">
-        {post.title || 'Untitled Analysis'}
-      </h3>
+        {/* ── Footer ── */}
+        <div
+          className="flex items-center justify-between pt-3 mt-auto"
+          style={{ borderTop: '1px solid #1e2330' }}
+        >
+          {isLocked ? (
+            <span
+              className="font-mono-cc text-[10px] tracking-[1px] uppercase px-2 py-0.5 rounded-[3px]"
+              style={{
+                color: '#f0a030',
+                background: 'rgba(240,160,48,0.08)',
+                border: '1px solid rgba(240,160,48,0.2)',
+              }}
+            >
+              ⚡ Pro · Live Now
+            </span>
+          ) : signal ? (
+            <span
+              className="font-mono-cc text-[10px] tracking-[0.8px] uppercase flex items-center gap-1.5"
+              style={{ color: signal.color }}
+            >
+              <span
+                className="inline-block w-[5px] h-[5px] rounded-full"
+                style={{ background: signal.dotColor }}
+              />
+              {signal.label}
+            </span>
+          ) : (
+            <span />
+          )}
 
-      {/* Excerpt */}
-      {post.excerpt && (
-        <p className="mt-2 text-sm text-zinc-400 line-clamp-2">{post.excerpt}</p>
-      )}
-
-      {/* Footer */}
-      <div className="mt-4 flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
-          <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          <span className="text-xs text-zinc-500">CreviaCockpit</span>
+          <span
+            className="font-mono-cc text-[10px] tracking-[0.8px] uppercase flex items-center gap-1 transition-colors duration-200"
+            style={{ color: '#3d4562' }}
+          >
+            {isLocked ? 'Unlock' : isThread ? 'Read thread' : 'Read'} →
+          </span>
         </div>
-        {post.content_type === 'thread' && post.tweets && (
-          <span className="text-xs text-zinc-500">{post.tweets.length} tweets</span>
-        )}
       </div>
     </Link>
   );

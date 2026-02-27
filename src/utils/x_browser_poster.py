@@ -1342,11 +1342,10 @@ class XBrowserPoster:
 
     def post_thread(self, thread_data: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Post a full thread to X using browser automation.
+        Post a true X thread using the thread-composer UI (one browser session).
 
-        Posts each tweet sequentially with jitter delays between them.
-        Note: Browser mode posts individual tweets (not as replies to create
-        a connected thread). For true threaded replies, use the API method.
+        Types all tweets with X's '+' (Add) button, then posts them all at once
+        so they appear as a connected reply chain — not separate standalone tweets.
 
         Args:
             thread_data: Dict with 'tweets' list, 'type', 'tweet_count'
@@ -1366,42 +1365,269 @@ class XBrowserPoster:
             result['error'] = 'XBrowserPoster not enabled'
             return result
 
-        tweets = thread_data.get('tweets', [])
+        tweets = [t.strip() for t in thread_data.get('tweets', []) if str(t).strip()]
         if not tweets:
             result['error'] = 'No tweets to post'
             return result
 
-        logger.info(f"[XBrowserPoster] Posting thread ({len(tweets)} tweets)...")
+        logger.info(f"[XBrowserPoster] Composing thread ({len(tweets)} tweets) in one session...")
+        return self._post_thread_composer(tweets, thread_data)
 
-        for i, tweet_text in enumerate(tweets):
-            tweet_text = tweet_text.strip()
-            if not tweet_text:
-                continue
+    def _post_thread_composer(self, tweets: List[str], thread_data: Optional[Dict] = None) -> Dict[str, Any]:
+        """
+        Post a true X thread using X's thread-composer UI.
 
-            # Jitter delay between tweets (skip for first tweet)
-            if i > 0:
-                self._apply_jitter_delay()
+        Opens one browser session, uses the '+' (Add tweet) button to build a
+        multi-tweet thread, then clicks 'Post all' — creates a proper reply chain.
+        """
+        result = {'success': False, 'posted_count': 0, 'tweet_ids': [], 'thread_url': None, 'error': None}
 
-            success = self._post_single_tweet_browser(tweet_text)
-            self.log_post(tweet_text, success, thread_data)
+        with self.lock:
+            try:
+                if platform.system() == "Linux":
+                    os.environ.setdefault('DISPLAY', ':99')
 
-            if success:
-                result['posted_count'] += 1
-                result['tweet_ids'].append(f'browser_posted_{i}')
-                logger.info(f"[XBrowserPoster] [{i + 1}/{len(tweets)}] Posted")
-            else:
-                result['error'] = f'Failed at tweet {i + 1}/{len(tweets)}'
-                logger.error(f"[XBrowserPoster] Thread broken at tweet {i + 1}")
-                break
+                self._clear_network_state()
 
-        non_empty = [t for t in tweets if t.strip()]
-        result['success'] = result['posted_count'] == len(non_empty)
+                with sync_playwright() as p:
+                    chrome_path = find_chrome_executable()
+                    launch_kwargs = dict(
+                        headless=self.headless,
+                        viewport={"width": 1280, "height": 900},
+                        user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+                        locale='en-US',
+                        timezone_id='America/New_York',
+                        ignore_default_args=['--enable-automation'],
+                        args=[
+                            '--no-sandbox',
+                            '--disable-blink-features=AutomationControlled',
+                            '--disable-dev-shm-usage',
+                            '--no-first-run',
+                            '--no-default-browser-check',
+                            '--disable-popup-blocking',
+                            '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
+                            '--disable-quic',
+                            '--no-zygote',
+                            '--disable-gpu',
+                            '--disable-gpu-sandbox',
+                        ],
+                    )
+                    if chrome_path:
+                        launch_kwargs['executable_path'] = chrome_path
 
-        status = "complete" if result['success'] else "partial"
-        logger.info(
-            f"[XBrowserPoster] Thread {status} "
-            f"({result['posted_count']}/{len(non_empty)} tweets)"
-        )
+                    context = p.chromium.launch_persistent_context(self.session_dir, **launch_kwargs)
+                    page = context.new_page()
+
+                    try:
+                        # ── Navigate + session check ─────────────────────────────
+                        logger.info("[XBrowserPoster] Thread composer: navigating to X home...")
+                        page.goto("https://x.com/home", wait_until='domcontentloaded', timeout=60000)
+                        page.wait_for_load_state("domcontentloaded", timeout=20000)
+                        try:
+                            page.wait_for_load_state("networkidle", timeout=30000)
+                        except Exception:
+                            pass
+                        time.sleep(random.uniform(3, 5))
+
+                        if "login" in page.url.lower() or "flow" in page.url.lower():
+                            logger.error("[XBrowserPoster] Thread composer: session expired")
+                            if self.session_manager:
+                                self.session_manager.state.mark_error("Redirected to login page")
+                            result['error'] = 'Session expired'
+                            context.close()
+                            return result
+
+                        if self.session_manager:
+                            self.session_manager.state.mark_logged_in()
+
+                        # ── Dismiss overlays ─────────────────────────────────────
+                        for sel in [
+                            'button[data-testid="app-bar-close"]',
+                            'div[role="button"]:has-text("Not now")',
+                            'button:has-text("Not now")',
+                            'button:has-text("Maybe later")',
+                            'button[aria-label="Close"]',
+                            'button:has-text("Refuse non-essential cookies")',
+                            'button:has-text("Accept all cookies")',
+                        ]:
+                            try:
+                                el = page.locator(sel).first
+                                if el.is_visible(timeout=1500):
+                                    el.click()
+                                    time.sleep(0.8)
+                            except Exception:
+                                continue
+                        page.keyboard.press("Escape")
+                        time.sleep(0.5)
+
+                        # ── Click first compose area ──────────────────────────────
+                        compose_found = False
+                        for sel in [
+                            'div[data-testid="tweetTextarea_0"]',
+                            'div[contenteditable="true"][role="textbox"]',
+                            'div[aria-label*="Post text"]',
+                            'div[aria-label*="What"]',
+                        ]:
+                            try:
+                                el = page.locator(sel).first
+                                if el.is_visible(timeout=3000):
+                                    time.sleep(random.uniform(0.4, 0.8))
+                                    _human_move_and_click(page, el)
+                                    compose_found = True
+                                    logger.info(f"[XBrowserPoster] Compose area: {sel}")
+                                    break
+                            except Exception:
+                                continue
+
+                        if not compose_found:
+                            logger.error("[XBrowserPoster] Thread composer: compose area not found")
+                            try:
+                                page.screenshot(path=str(PROJECT_ROOT / "x_debug_thread_compose.png"))
+                            except Exception:
+                                pass
+                            result['error'] = 'Compose area not found'
+                            context.close()
+                            return result
+
+                        # ── Type each tweet, clicking '+' between them ────────────
+                        for i, tweet_text in enumerate(tweets):
+                            tweet_text = tweet_text[:280]
+
+                            # Focus the correct textarea for this slot
+                            textarea_sel = f'div[data-testid="tweetTextarea_{i}"]'
+                            try:
+                                ta = page.locator(textarea_sel).first
+                                if i > 0:
+                                    ta.wait_for(state='visible', timeout=8000)
+                                ta.click()
+                                time.sleep(random.uniform(0.3, 0.5))
+                            except Exception:
+                                # Fallback: click the last visible contenteditable
+                                try:
+                                    edits = page.locator('div[contenteditable="true"]').all()
+                                    if edits:
+                                        edits[-1].click()
+                                        time.sleep(0.3)
+                                except Exception:
+                                    pass
+
+                            _human_type(page, tweet_text)
+                            logger.info(f"[XBrowserPoster] Thread [{i+1}/{len(tweets)}] typed ({len(tweet_text)} chars)")
+                            time.sleep(random.uniform(0.8, 1.5))
+
+                            # Click '+' to add next tweet slot (not after last tweet)
+                            if i < len(tweets) - 1:
+                                add_clicked = False
+                                for add_sel in [
+                                    'div[data-testid="addButton"]',
+                                    'button[data-testid="addButton"]',
+                                    'div[aria-label="Add"]',
+                                    'button[aria-label="Add"]',
+                                    '[data-testid="addButton"]',
+                                ]:
+                                    try:
+                                        btn = page.locator(add_sel).first
+                                        if btn.is_visible(timeout=4000):
+                                            btn.evaluate("el => el.click()")
+                                            add_clicked = True
+                                            time.sleep(random.uniform(0.5, 1.0))
+                                            logger.info(f"[XBrowserPoster] '+' clicked after tweet {i+1}")
+                                            break
+                                    except Exception:
+                                        continue
+
+                                if not add_clicked:
+                                    logger.warning(f"[XBrowserPoster] '+' button not found after tweet {i+1} — posting partial thread ({i+1} tweets)")
+                                    break
+
+                        # ── Remove overlay masks ─────────────────────────────────
+                        try:
+                            page.evaluate("""
+                                const layers = document.getElementById('layers');
+                                if (layers) {
+                                    layers.querySelectorAll('[data-testid="mask"], [class*="r-1p0dtai"]').forEach(el => {
+                                        if (!el.closest('[data-testid="tweetButtonInline"]')) {
+                                            el.remove();
+                                        }
+                                    });
+                                }
+                            """)
+                        except Exception:
+                            pass
+
+                        # ── Click 'Post all' ─────────────────────────────────────
+                        post_clicked = False
+                        for post_sel in [
+                            'button[data-testid="tweetButtonInline"]',
+                            'div[data-testid="tweetButtonInline"]',
+                        ]:
+                            try:
+                                btn = page.locator(post_sel).first
+                                if btn.is_visible(timeout=4000) and btn.is_enabled():
+                                    time.sleep(random.uniform(0.4, 0.8))
+                                    btn.evaluate("el => el.click()")
+                                    post_clicked = True
+                                    logger.info("[XBrowserPoster] 'Post all' clicked")
+                                    break
+                            except Exception:
+                                continue
+
+                        # Fallback: find any Post/Post all button by text
+                        if not post_clicked:
+                            try:
+                                for btn in page.locator('button').all()[:25]:
+                                    txt = btn.text_content().strip().lower()
+                                    if txt in ('post', 'post all'):
+                                        if btn.is_visible(timeout=1000) and btn.is_enabled():
+                                            btn.evaluate("el => el.click()")
+                                            post_clicked = True
+                                            logger.info(f"[XBrowserPoster] Post button found by text: '{txt}'")
+                                            break
+                            except Exception:
+                                pass
+
+                        if not post_clicked:
+                            logger.error("[XBrowserPoster] Thread composer: Post button not found")
+                            try:
+                                page.screenshot(path=str(PROJECT_ROOT / "x_debug_thread_post.png"))
+                            except Exception:
+                                pass
+                            result['error'] = 'Post button not found'
+                            context.close()
+                            return result
+
+                        # ── Wait for confirmation ────────────────────────────────
+                        time.sleep(random.uniform(5, 8))
+                        try:
+                            page.wait_for_load_state("domcontentloaded", timeout=10000)
+                        except Exception:
+                            pass
+
+                        non_empty = len(tweets)
+                        result['success'] = True
+                        result['posted_count'] = non_empty
+                        result['tweet_ids'] = [f'thread_tweet_{i}' for i in range(non_empty)]
+                        logger.info(f"[XBrowserPoster] Thread posted successfully ({non_empty} tweets)")
+
+                        if self.session_manager:
+                            self.session_manager.state.mark_verified()
+
+                        if thread_data:
+                            self.log_post(tweets[0], True, thread_data)
+
+                    except Exception as inner_e:
+                        logger.error(f"[XBrowserPoster] Thread composer inner error: {inner_e}")
+                        try:
+                            page.screenshot(path=str(PROJECT_ROOT / "x_debug_thread_error.png"))
+                        except Exception:
+                            pass
+                        result['error'] = str(inner_e)
+                    finally:
+                        context.close()
+
+            except Exception as outer_e:
+                logger.error(f"[XBrowserPoster] Thread composer launch error: {outer_e}")
+                result['error'] = str(outer_e)
 
         return result
 

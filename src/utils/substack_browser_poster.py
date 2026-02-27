@@ -152,20 +152,45 @@ class SubstackBrowserPoster:
 
     def _navigate_and_check_login(self, page) -> bool:
         """
-        Navigate to Substack home and verify we're logged in.
+        Navigate to the publisher dashboard first to verify the publisher session.
+        Falls back to reader if publisher redirect fails (useful for note flow).
         Returns True if logged in, False if session expired.
         """
-        logger.info("[SubstackBrowser] Navigating to Substack...")
-        page.goto("https://substack.com/home", timeout=30000)
-        page.wait_for_load_state("domcontentloaded", timeout=15000)
-        time.sleep(random.uniform(2, 3))
-
-        url = page.url
-        if "login" in url.lower() or "auth" in url.lower():
-            logger.error("[SubstackBrowser] Session expired! Run setup_substack_session.py")
+        logger.info("[SubstackBrowser] Navigating to publisher dashboard...")
+        pub_url = f"https://{self.subdomain}.substack.com/publish"
+        try:
+            page.goto(pub_url, timeout=30000)
+            page.wait_for_load_state("domcontentloaded", timeout=15000)
+            time.sleep(random.uniform(2, 3))
+        except Exception as nav_e:
+            logger.error(f"[SubstackBrowser] Publisher nav failed: {nav_e}")
             return False
 
-        logger.info(f"[SubstackBrowser] Logged in, URL: {url}")
+        url = page.url
+        if "sign-in" in url.lower() or "login" in url.lower():
+            logger.error(
+                "[SubstackBrowser] Publisher session expired — run setup_substack_session.py "
+                f"and log in at https://{self.subdomain}.substack.com/publish"
+            )
+            return False
+
+        if "/publish" in url:
+            logger.info(f"[SubstackBrowser] Publisher dashboard loaded: {url}")
+            return True
+
+        # Unexpected redirect — try reader as fallback (notes only need reader session)
+        logger.warning(f"[SubstackBrowser] Publisher redirected to: {url} — checking reader session")
+        try:
+            page.goto("https://substack.com/home", timeout=30000)
+            page.wait_for_load_state("domcontentloaded", timeout=15000)
+            time.sleep(random.uniform(1, 2))
+        except Exception:
+            pass
+        url2 = page.url
+        if "login" in url2.lower() or "auth" in url2.lower() or "sign-in" in url2.lower():
+            logger.error("[SubstackBrowser] Reader session also expired")
+            return False
+        logger.info(f"[SubstackBrowser] Using reader session (publisher unavailable): {url2}")
         return True
 
     def _click_create_new(self, page, option_text: str) -> bool:
@@ -229,36 +254,47 @@ class SubstackBrowserPoster:
         time.sleep(random.uniform(0.8, 1.5))
 
         # Step 2: Select the option from the dropdown menu
+        # Substack periodically renames menu items — try all known aliases
+        _ALIASES = {
+            'Article':         ['Article', 'Post', 'New post', 'Story', 'Long-form'],
+            'New chat thread': ['New chat thread', 'New chat', 'Chat thread', 'Chat', 'Thread'],
+            'New note':        ['New note', 'Note', 'Short post'],
+        }
+        candidates = _ALIASES.get(option_text, [option_text])
+
         option_clicked = False
-        for sel in [
-            f"a:has-text('{option_text}')",
-            f"button:has-text('{option_text}')",
-            f"div[role='menuitem']:has-text('{option_text}')",
-            f"li:has-text('{option_text}')",
-            f"span:has-text('{option_text}')",
-        ]:
-            try:
-                opt = page.locator(sel).first
-                if opt.is_visible(timeout=3000):
-                    opt.click()
-                    time.sleep(random.uniform(1.5, 2.5))
-                    option_clicked = True
-                    logger.info(f"[SubstackBrowser] Selected '{option_text}' from dropdown")
-                    break
-            except Exception:
-                continue
+        for label in candidates:
+            if option_clicked:
+                break
+            for sel in [
+                f"a:has-text('{label}')",
+                f"button:has-text('{label}')",
+                f"div[role='menuitem']:has-text('{label}')",
+                f"li:has-text('{label}')",
+                f"span:has-text('{label}')",
+            ]:
+                try:
+                    opt = page.locator(sel).first
+                    if opt.is_visible(timeout=2000):
+                        opt.click()
+                        time.sleep(random.uniform(1.5, 2.5))
+                        option_clicked = True
+                        logger.info(f"[SubstackBrowser] Selected '{label}' (alias for '{option_text}')")
+                        break
+                except Exception:
+                    continue
 
         if not option_clicked:
             logger.error(f"[SubstackBrowser] Could not find '{option_text}' in dropdown")
-            # Debug: log visible dropdown items
+            # Log all visible dropdown items to diagnose future renames
             try:
                 items = page.locator("div[role='menuitem'], li, a").all()
-                for item in items[:15]:
+                for item in items[:20]:
                     try:
                         if item.is_visible(timeout=200):
-                            txt = item.text_content().strip()[:50]
+                            txt = item.text_content().strip()[:60]
                             if txt:
-                                logger.debug(f"[SubstackBrowser] Dropdown item: '{txt}'")
+                                logger.info(f"[SubstackBrowser] Dropdown item visible: '{txt}'")
                     except Exception:
                         pass
             except Exception:
@@ -320,12 +356,23 @@ class SubstackBrowserPoster:
 
                         # Click Create new → New note
                         if not self._click_create_new(page, "New note"):
-                            # Fallback: try "What's on your mind?" button (reader view)
-                            logger.info("[SubstackBrowser] Falling back to 'What's on your mind?' flow")
+                            # Fallback: navigate to Notes tab where compose box lives
+                            logger.info("[SubstackBrowser] Falling back to Notes tab compose...")
+                            try:
+                                page.goto("https://substack.com/notes", timeout=30000)
+                                page.wait_for_load_state("domcontentloaded", timeout=15000)
+                                time.sleep(random.uniform(2, 3))
+                            except Exception:
+                                pass
+
+                            # Try clicking the "Write a note" / "What's on your mind?" compose area
                             fallback_found = False
                             for sel in [
                                 "button:has-text(\"What's on your mind\")",
                                 "button:has-text('on your mind')",
+                                "div[contenteditable='true'][placeholder]",
+                                "[placeholder*='mind']",
+                                "[placeholder*='note']",
                             ]:
                                 try:
                                     btn = page.locator(sel).first
@@ -333,6 +380,7 @@ class SubstackBrowserPoster:
                                         btn.click()
                                         time.sleep(random.uniform(1.5, 2.5))
                                         fallback_found = True
+                                        logger.info(f"[SubstackBrowser] Notes tab compose found: {sel}")
                                         break
                                 except Exception:
                                     continue
@@ -480,12 +528,26 @@ class SubstackBrowserPoster:
                             context.close()
                             return None
 
-                        # Click Create new → Article
+                        # Click Create new → Article (with direct URL fallback)
                         if not self._click_create_new(page, "Article"):
-                            logger.error("[SubstackBrowser] Could not open Article editor")
-                            self._screenshot_debug(page, "article_no_editor")
-                            context.close()
-                            return None
+                            logger.warning("[SubstackBrowser] Dropdown failed — trying direct new-post URL")
+                            try:
+                                direct_url = f"https://{self.subdomain}.substack.com/publish/new-post"
+                                page.goto(direct_url, timeout=30000)
+                                page.wait_for_load_state("domcontentloaded", timeout=15000)
+                                time.sleep(random.uniform(2, 4))
+                                # Verify we landed on an editor page
+                                if '/publish/new-post' not in page.url and '/publish/post' not in page.url and '/edit/' not in page.url:
+                                    logger.error(f"[SubstackBrowser] Direct URL redirected to: {page.url}")
+                                    self._screenshot_debug(page, "article_no_editor")
+                                    context.close()
+                                    return None
+                                logger.info(f"[SubstackBrowser] Direct URL worked: {page.url}")
+                            except Exception as url_e:
+                                logger.error(f"[SubstackBrowser] Direct URL fallback failed: {url_e}")
+                                self._screenshot_debug(page, "article_no_editor")
+                                context.close()
+                                return None
 
                         # Wait for article editor to load
                         time.sleep(random.uniform(3, 5))

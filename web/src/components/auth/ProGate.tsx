@@ -4,12 +4,11 @@ import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 
 interface ProGateProps {
-  /** Component rendered when user has the required tier */
   children: React.ReactNode;
-  /** Minimum tier required: 'pro' | 'enterprise' */
   minTier?: 'pro' | 'enterprise';
-  /** Feature name shown in the upgrade prompt */
   featureName?: string;
+  /** Optional blurred ghost rows shown behind the lock overlay */
+  ghostRows?: React.ReactNode;
 }
 
 const tierLevels: Record<string, number> = { free: 0, pro: 1, enterprise: 2 };
@@ -18,15 +17,18 @@ export default function ProGate({
   children,
   minTier = 'pro',
   featureName = 'this feature',
+  ghostRows,
 }: ProGateProps) {
   const { user, loading } = useAuth();
 
-  // Show a loading skeleton while auth resolves
   if (loading) {
     return (
-      <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-6 animate-pulse">
-        <div className="h-4 w-32 bg-zinc-800 rounded mb-3" />
-        <div className="h-3 w-48 bg-zinc-800 rounded" />
+      <div
+        className="rounded-md p-6 animate-pulse"
+        style={{ border: '1px solid #1c2235', background: '#111520' }}
+      >
+        <div className="h-4 w-32 rounded mb-3" style={{ background: '#161b28' }} />
+        <div className="h-3 w-48 rounded" style={{ background: '#161b28' }} />
       </div>
     );
   }
@@ -34,46 +36,58 @@ export default function ProGate({
   const userLevel = user ? (tierLevels[user.tier] ?? 0) : 0;
   const requiredLevel = tierLevels[minTier] ?? 1;
 
-  if (userLevel >= requiredLevel) {
-    return <>{children}</>;
-  }
+  if (userLevel >= requiredLevel) return <>{children}</>;
 
   return (
-    <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-6 text-center">
-      <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-3">
-        <svg className="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
+    <div className="relative rounded-md overflow-hidden" style={{ border: '1px solid #1c2235' }}>
+      {/* Blurred ghost rows — real data shape visible behind lock */}
+      <div style={{ filter: 'blur(3.5px)', userSelect: 'none', pointerEvents: 'none' }}>
+        {ghostRows ?? children}
       </div>
-      <h3 className="text-sm font-bold text-white mb-1">
-        {minTier.charAt(0).toUpperCase() + minTier.slice(1)} Required
-      </h3>
-      <p className="text-xs text-zinc-500 mb-4 max-w-xs mx-auto">
-        {featureName} is available on the {minTier} plan and above.
-      </p>
-      {user ? (
-        <Link
-          href="/pricing"
-          className="inline-block rounded-lg bg-emerald-500 px-4 py-2 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
+
+      {/* Lock overlay */}
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center gap-2.5"
+        style={{ background: 'rgba(8,9,12,0.65)', backdropFilter: 'blur(1px)', zIndex: 10 }}
+      >
+        <div
+          className="w-9 h-9 rounded-full flex items-center justify-center"
+          style={{ background: '#111520', border: '1px solid #242c42' }}
         >
-          Upgrade to {minTier.charAt(0).toUpperCase() + minTier.slice(1)}
-        </Link>
-      ) : (
-        <div className="flex gap-2 justify-center">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a839e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+
+        <div className="font-syne text-[14px] font-semibold" style={{ color: '#dfe3f0' }}>
+          Pro Required
+        </div>
+
+        <p
+          className="text-[12px] text-center max-w-[240px] leading-relaxed"
+          style={{ color: '#7a839e', fontWeight: 300 }}
+        >
+          {featureName} is available on the Pro plan. See live setups across all 16+ assets.
+        </p>
+
+        <div className="flex gap-2 mt-1">
           <Link
-            href="/auth/register"
-            className="rounded-lg bg-emerald-500 px-4 py-2 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
+            href="/pricing"
+            className="font-mono-cc text-[11px] uppercase tracking-[0.5px] px-4 py-1.5 rounded transition-opacity hover:opacity-85"
+            style={{ background: '#00d68f', color: '#08090c', fontWeight: 500 }}
           >
-            Create Account
+            Upgrade to Pro
           </Link>
           <Link
             href="/auth/login"
-            className="rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-semibold text-zinc-300 hover:bg-zinc-700 transition-colors"
+            className="font-mono-cc text-[11px] uppercase tracking-[0.5px] px-4 py-1.5 rounded transition-colors"
+            style={{ color: '#7a839e', border: '1px solid #242c42', textDecoration: 'none' }}
           >
             Sign In
           </Link>
         </div>
-      )}
+      </div>
     </div>
   );
 }

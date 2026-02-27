@@ -1,168 +1,172 @@
 'use client';
 
-import { useState } from 'react';
-import type { CorrelationSnapshot, CorrelationPair } from '@/types';
-import { timeAgo } from '@/lib/api';
+import type { CorrelationSnapshot } from '@/types';
 
 interface Props {
   data: CorrelationSnapshot;
 }
 
-function correlationColor(value: number): string {
-  if (value >= 0.8) return 'bg-emerald-500/80 text-white';
-  if (value >= 0.6) return 'bg-emerald-500/50 text-emerald-100';
-  if (value >= 0.4) return 'bg-emerald-500/25 text-emerald-200';
-  if (value >= 0.2) return 'bg-emerald-500/10 text-zinc-300';
-  if (value > -0.2) return 'bg-zinc-800 text-zinc-400';
-  if (value > -0.4) return 'bg-red-500/10 text-zinc-300';
-  if (value > -0.6) return 'bg-red-500/25 text-red-200';
-  if (value > -0.8) return 'bg-red-500/50 text-red-100';
-  return 'bg-red-500/80 text-white';
+// Convert backend enum strings to human-readable tags
+function strengthToTag(strength: string | undefined, value: number): {
+  label: string;
+  bg: string;
+  color: string;
+  border: string;
+  barColor: string;
+  barWidth: number;
+} {
+  const abs = Math.abs(value);
+  const pct = Math.round(abs * 100);
+
+  if (strength === 'very_strong' || abs >= 0.9) {
+    return {
+      label: 'Very Strong',
+      bg: 'rgba(0,214,143,0.08)', color: '#00d68f', border: 'rgba(0,214,143,0.2)',
+      barColor: '#00d68f', barWidth: pct,
+    };
+  }
+  if (strength === 'strong' || abs >= 0.7) {
+    // Check if this is a Watch situation (price vs OI both high = overleveraged)
+    return {
+      label: value > 0 ? 'Watch — Overleveraged' : 'Strong Negative',
+      bg: 'rgba(240,160,48,0.08)', color: '#f0a030', border: 'rgba(240,160,48,0.2)',
+      barColor: '#f0a030', barWidth: pct,
+    };
+  }
+  if (strength === 'moderate' || abs >= 0.4) {
+    return {
+      label: 'Moderate',
+      bg: 'rgba(74,140,240,0.08)', color: '#4a8cf0', border: 'rgba(74,140,240,0.2)',
+      barColor: '#4a8cf0', barWidth: pct,
+    };
+  }
+  return {
+    label: 'Weak',
+    bg: '#161b28', color: '#3d4562', border: '#1c2235',
+    barColor: '#3d4562', barWidth: pct,
+  };
 }
 
-function strengthBadge(strength: string | undefined): string {
-  switch (strength) {
-    case 'very_strong': return 'bg-emerald-500/20 text-emerald-400';
-    case 'strong': return 'bg-blue-500/20 text-blue-400';
-    case 'moderate': return 'bg-yellow-500/20 text-yellow-400';
-    default: return 'bg-zinc-500/20 text-zinc-400';
-  }
+function formatPairLabel(metric1: string, metric2: string): { a: string; b: string } {
+  const fmt = (s: string) =>
+    s.replace(/_/g, ' ')
+     .replace(/\b\w/g, (c) => c.toUpperCase())
+     .replace('Btc', 'BTC')
+     .replace('Oi', 'OI');
+  return { a: fmt(metric1), b: fmt(metric2) };
 }
 
 export default function CorrelationMatrix({ data }: Props) {
-  const [hoveredCell, setHoveredCell] = useState<{ row: number; col: number } | null>(null);
-
-  const matrix = data.correlation_matrix;
-  const labels = data.labels;
   const pairs = data.strongest_pairs || [];
 
-  if (!matrix || !labels || matrix.length === 0) {
+  if (pairs.length === 0) {
     return (
-      <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
-        <h3 className="text-lg font-bold text-white mb-2">Correlation Matrix</h3>
-        <p className="text-sm text-zinc-500">
-          {data.interpretation || 'No correlation data available yet. The engine needs to collect historical metrics first.'}
+      <div
+        className="rounded-[6px] p-5"
+        style={{ background: '#111520', border: '1px solid #1c2235' }}
+      >
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-syne text-[13px] font-semibold" style={{ color: '#dfe3f0' }}>
+            Correlation Matrix
+          </h3>
+        </div>
+        {/* Placeholder rows */}
+        {['Liq ↔ Volume', 'Price ↔ OI', 'Liq ↔ OI'].map((label) => (
+          <div
+            key={label}
+            className="flex items-center gap-3 px-2 py-2 rounded-[4px] mb-2 opacity-25"
+            style={{ background: '#0d0f14', border: '1px solid #1c2235' }}
+          >
+            <span className="font-mono-cc text-[11px] w-[140px] shrink-0" style={{ color: '#7a839e' }}>
+              {label}
+            </span>
+            <div className="flex-1 h-[4px] rounded-full" style={{ background: '#1c2235' }} />
+            <span className="font-mono-cc text-[12px] w-12 text-right" style={{ color: '#3d4562' }}>—</span>
+          </div>
+        ))}
+        <p className="font-mono-cc text-[11px] italic mt-3" style={{ color: '#3d4562' }}>
+          Collecting historical data — correlations appear once enough data points are recorded.
         </p>
       </div>
     );
   }
 
+  // Detect elevated risk note
+  const hasElevatedRisk = pairs.some(
+    (p) => (p.metric1.toLowerCase().includes('liq') || p.metric2.toLowerCase().includes('liq')) && Math.abs(p.correlation) > 0.7
+  );
+
   return (
-    <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 sm:p-6">
+    <div
+      className="rounded-[6px] p-5"
+      style={{ background: '#111520', border: '1px solid #1c2235' }}
+    >
       {/* Header */}
-      <div className="flex items-center justify-between mb-5">
-        <div>
-          <h3 className="text-lg font-bold text-white">Correlation Matrix</h3>
-          <p className="text-xs text-zinc-500 mt-0.5">
-            {data.timeframe_hours}h timeframe &middot; {data.data_points} data points
-            {data.captured_at && ` \u00b7 ${timeAgo(data.captured_at)}`}
-          </p>
-        </div>
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="font-syne text-[13px] font-semibold" style={{ color: '#dfe3f0' }}>
+          Correlation Matrix
+        </h3>
+        <span className="font-mono-cc text-[10px]" style={{ color: '#3d4562' }}>
+          Rolling {data.timeframe_hours}d
+        </span>
       </div>
 
-      {/* Heat Map Grid */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse text-xs">
-          <thead>
-            <tr>
-              <th className="p-1.5 text-right text-zinc-500 font-normal" />
-              {labels.map((label, i) => (
-                <th
-                  key={i}
-                  className="p-1.5 text-center text-zinc-400 font-medium whitespace-nowrap"
-                  style={{ minWidth: '70px' }}
-                >
-                  {label}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {matrix.map((row, i) => (
-              <tr key={i}>
-                <td className="p-1.5 text-right text-zinc-400 font-medium whitespace-nowrap pr-2">
-                  {labels[i]}
-                </td>
-                {row.map((value, j) => {
-                  const isHovered = hoveredCell?.row === i && hoveredCell?.col === j;
-                  const isDiagonal = i === j;
-                  return (
-                    <td
-                      key={j}
-                      className={`p-1.5 text-center cursor-default transition-all ${
-                        isDiagonal
-                          ? 'bg-zinc-700/50 text-zinc-500'
-                          : correlationColor(value)
-                      } ${isHovered ? 'ring-1 ring-white/30' : ''}`}
-                      onMouseEnter={() => setHoveredCell({ row: i, col: j })}
-                      onMouseLeave={() => setHoveredCell(null)}
-                    >
-                      {isDiagonal ? '1.00' : value.toFixed(2)}
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {/* Pair rows */}
+      <div className="flex flex-col gap-2">
+        {pairs.slice(0, 5).map((pair, i) => {
+          const tag = strengthToTag(pair.strength, pair.correlation);
+          const { a, b } = formatPairLabel(pair.metric1, pair.metric2);
+          const isPositive = pair.correlation >= 0;
 
-      {/* Color legend */}
-      <div className="flex items-center justify-center gap-1 mt-3 text-[10px] text-zinc-500">
-        <span>-1.0</span>
-        <div className="flex gap-0.5">
-          <div className="w-4 h-2 rounded-sm bg-red-500/80" />
-          <div className="w-4 h-2 rounded-sm bg-red-500/40" />
-          <div className="w-4 h-2 rounded-sm bg-zinc-700" />
-          <div className="w-4 h-2 rounded-sm bg-emerald-500/40" />
-          <div className="w-4 h-2 rounded-sm bg-emerald-500/80" />
-        </div>
-        <span>+1.0</span>
-      </div>
+          return (
+            <div
+              key={i}
+              className="grid items-center gap-3 px-2.5 py-2 rounded-[4px]"
+              style={{
+                gridTemplateColumns: '140px 1fr 48px 90px',
+                background: '#0d0f14',
+                border: '1px solid #1c2235',
+              }}
+            >
+              {/* Pair label */}
+              <span className="font-mono-cc text-[11px]" style={{ color: '#7a839e' }}>
+                <strong style={{ color: '#dfe3f0', fontWeight: 500 }}>{a}</strong>
+                {' '}↔ {b}
+              </span>
 
-      {/* Strongest Pairs */}
-      {pairs.length > 0 && (
-        <div className="mt-5 border-t border-zinc-800 pt-4">
-          <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-3">
-            Strongest Correlations
-          </p>
-          <div className="grid gap-2 sm:grid-cols-2">
-            {pairs.slice(0, 6).map((pair, i) => (
-              <div key={i} className="flex items-start gap-2 rounded-lg bg-zinc-800/60 px-3 py-2">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-sm font-medium text-zinc-200">
-                      {pair.metric1} &harr; {pair.metric2}
-                    </span>
-                    <span className={`inline-flex rounded-full px-1.5 py-0.5 text-[10px] font-medium ${
-                      pair.correlation > 0 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400'
-                    }`}>
-                      {pair.correlation > 0 ? '+' : ''}{pair.correlation.toFixed(2)}
-                    </span>
-                    {pair.strength && (
-                      <span className={`inline-flex rounded-full px-1.5 py-0.5 text-[10px] font-medium ${strengthBadge(pair.strength)}`}>
-                        {pair.strength.replace('_', ' ')}
-                      </span>
-                    )}
-                  </div>
-                  {pair.note && (
-                    <p className="text-xs text-zinc-500 mt-0.5 leading-relaxed">{pair.note}</p>
-                  )}
-                </div>
+              {/* Bar */}
+              <div className="h-[4px] rounded-full overflow-hidden" style={{ background: '#1c2235' }}>
+                <div
+                  className="h-full rounded-full transition-all duration-1000"
+                  style={{ width: `${tag.barWidth}%`, background: tag.barColor }}
+                />
               </div>
-            ))}
-          </div>
-        </div>
-      )}
 
-      {/* Interpretation */}
-      {data.interpretation && (
-        <div className="mt-4 rounded-lg bg-zinc-800/60 p-3">
-          <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-1">
-            Interpretation
-          </p>
-          <p className="text-sm text-zinc-300 leading-relaxed">{data.interpretation}</p>
-        </div>
+              {/* Value */}
+              <span
+                className="font-mono-cc text-[12px] font-medium text-right"
+                style={{ color: isPositive ? tag.barColor : '#f03e5a' }}
+              >
+                {isPositive ? '+' : ''}{pair.correlation.toFixed(2)}
+              </span>
+
+              {/* Tag */}
+              <span
+                className="font-mono-cc text-[9px] tracking-[0.5px] uppercase px-1.5 py-0.5 rounded-[3px] text-center"
+                style={{ background: tag.bg, color: tag.color, border: `1px solid ${tag.border}` }}
+              >
+                {tag.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Warning note */}
+      {hasElevatedRisk && (
+        <p className="font-mono-cc text-[11px] italic mt-3" style={{ color: '#3d4562' }}>
+          ⚠ Elevated liquidation signals detected — positions being flushed. Monitor closely.
+        </p>
       )}
     </div>
   );

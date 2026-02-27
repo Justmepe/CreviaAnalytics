@@ -13,6 +13,7 @@ from api.routers import journal
 from api.routers import stream
 from api.routers import waitlist
 from api.routers import portfolio
+from api.routers import feed
 
 app = FastAPI(
     title='Crevia Analytics API',
@@ -38,6 +39,7 @@ app.include_router(journal.router)
 app.include_router(stream.router)
 app.include_router(waitlist.router)
 app.include_router(portfolio.router)
+app.include_router(feed.router)
 
 
 @app.on_event('startup')

@@ -1,12 +1,18 @@
 'use client';
 
 import { useMarketStream } from '@/hooks/useMarketStream';
+import { useMarketPrices } from '@/context/MarketPricesContext';
 import { formatPrice, formatLargeNumber } from '@/lib/api';
 
 export default function LiveMarketBar() {
+  // Regime + MCAP + F&G + BTC.D from SSE (DB snapshot)
   const { snapshot, regime, connected } = useMarketStream();
+  // BTC + ETH live prices from shared WebSocket context
+  const { ticks, wsStatus } = useMarketPrices();
 
-  if (!snapshot) return null;
+  const btcPrice = ticks['BTC']?.price ?? snapshot?.btc_price ?? null;
+  const ethPrice = ticks['ETH']?.price ?? snapshot?.eth_price ?? null;
+  const isLive = wsStatus === 'live' || connected;
 
   const regimeColors: Record<string, string> = {
     RISK_ON: 'text-emerald-400',
@@ -24,39 +30,39 @@ export default function LiveMarketBar() {
         <div className="flex items-center gap-6 overflow-x-auto scrollbar-hide">
           {/* Live indicator */}
           <div className="flex items-center gap-1.5 shrink-0">
-            <div className={`h-1.5 w-1.5 rounded-full ${connected ? 'bg-emerald-500 animate-pulse' : 'bg-zinc-600'}`} />
-            <span className="text-zinc-600">{connected ? 'LIVE' : 'OFFLINE'}</span>
+            <div className={`h-1.5 w-1.5 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-zinc-600'}`} />
+            <span className="text-zinc-600">{isLive ? 'LIVE' : 'OFFLINE'}</span>
           </div>
 
-          {snapshot.btc_price && (
+          {btcPrice != null && (
             <div className="flex items-center gap-1.5 shrink-0">
               <span className="text-zinc-500">BTC</span>
-              <span className="text-white font-mono font-medium">{formatPrice(snapshot.btc_price)}</span>
+              <span className="text-white font-mono font-medium">{formatPrice(btcPrice)}</span>
             </div>
           )}
 
-          {snapshot.eth_price && (
+          {ethPrice != null && (
             <div className="flex items-center gap-1.5 shrink-0">
               <span className="text-zinc-500">ETH</span>
-              <span className="text-white font-mono font-medium">{formatPrice(snapshot.eth_price)}</span>
+              <span className="text-white font-mono font-medium">{formatPrice(ethPrice)}</span>
             </div>
           )}
 
-          {snapshot.total_market_cap && (
+          {snapshot?.total_market_cap && (
             <div className="flex items-center gap-1.5 shrink-0">
               <span className="text-zinc-500">MCAP</span>
               <span className="text-white font-mono">{formatLargeNumber(snapshot.total_market_cap)}</span>
             </div>
           )}
 
-          {snapshot.btc_dominance && (
+          {snapshot?.btc_dominance && (
             <div className="flex items-center gap-1.5 shrink-0">
               <span className="text-zinc-500">BTC.D</span>
               <span className="text-white font-mono">{snapshot.btc_dominance.toFixed(1)}%</span>
             </div>
           )}
 
-          {snapshot.fear_greed_index != null && (
+          {snapshot?.fear_greed_index != null && (
             <div className="flex items-center gap-1.5 shrink-0">
               <span className="text-zinc-500">F&G</span>
               <span className={`font-mono ${
@@ -66,7 +72,8 @@ export default function LiveMarketBar() {
                 snapshot.fear_greed_index >= 25 ? 'text-blue-400' :
                 'text-emerald-400'
               }`}>
-                {snapshot.fear_greed_index} {snapshot.fear_greed_label ? `(${snapshot.fear_greed_label})` : ''}
+                {snapshot.fear_greed_index}
+                {snapshot.fear_greed_label ? ` (${snapshot.fear_greed_label})` : ''}
               </span>
             </div>
           )}
