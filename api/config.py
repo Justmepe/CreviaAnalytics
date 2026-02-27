@@ -24,7 +24,7 @@ CORS_ORIGINS = [
     'http://127.0.0.1:3000',
     'https://creviacockpit.com',
     'https://www.creviacockpit.com',
-    'https://crevia.creviacockpit.com',
+    'https://api.creviacockpit.com',
 ]
 
 # JWT Authentication
