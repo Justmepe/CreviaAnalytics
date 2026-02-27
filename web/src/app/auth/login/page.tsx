@@ -33,9 +33,12 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500 font-bold text-zinc-950 text-lg mb-4">
-            CA
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.png"
+            alt="CreviaCockpit"
+            style={{ height: 64, width: 'auto', margin: '0 auto 16px', display: 'block' }}
+          />
           <h1 className="text-2xl font-bold text-white">Welcome back</h1>
           <p className="text-sm text-zinc-500 mt-1">Sign in to your CreviaCockpit account</p>
         </div>

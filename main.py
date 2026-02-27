@@ -119,11 +119,12 @@ RESEARCH_INTERVAL = int(os.getenv('RESEARCH_INTERVAL', '60'))
 ANALYSIS_INTERVAL = int(os.getenv('ANALYSIS_INTERVAL', '300'))
 THREAD_GENERATION_INTERVAL = int(os.getenv('THREAD_INTERVAL', '3600'))
 
-# Assets to track
-MAJOR_ASSETS = ['BTC', 'ETH', 'SOL', 'BNB']
-MEMECOIN_ASSETS = ['DOGE', 'SHIB', 'PEPE', 'FLOKI']
-PRIVACY_ASSETS = ['XMR', 'ZEC', 'DASH', 'SCRT']
-DEFI_ASSETS = ['AAVE', 'UNI', 'CRV', 'LDO']
+# Assets to track (22 total)
+MAJOR_ASSETS = ['BTC', 'ETH', 'XRP', 'SOL', 'BNB', 'AVAX', 'SUI', 'LINK']  # 8 large-caps
+MEMECOIN_ASSETS = ['DOGE', 'SHIB', 'PEPE', 'FLOKI']                          # 4 memecoins
+PRIVACY_ASSETS = ['XMR', 'ZEC', 'DASH', 'SCRT']                              # 4 privacy coins
+DEFI_ASSETS = ['AAVE', 'UNI', 'CRV', 'LDO']                                  # 4 DeFi protocols
+COMMODITIES_ASSETS = ['XAU', 'TSLA']                                          # 2 commodities/tokenized stocks (Binance Futures)
 
 # =============================================================================
 # TIME-AWARE SCHEDULING
@@ -507,9 +508,10 @@ class CryptoAnalysisOrchestrator:
                     sector_analyses = {
                         'memecoins': [self.latest_analyses.get(t) for t in MEMECOIN_ASSETS if t in self.latest_analyses],
                         'privacy': [self.latest_analyses.get(t) for t in PRIVACY_ASSETS if t in self.latest_analyses],
-                        'defi': [self.latest_analyses.get(t) for t in DEFI_ASSETS if t in self.latest_analyses]
+                        'defi': [self.latest_analyses.get(t) for t in DEFI_ASSETS if t in self.latest_analyses],
+                        'commodities': [self.latest_analyses.get(t) for t in COMMODITIES_ASSETS if t in self.latest_analyses],
                     }
-                    logger.info(f"   Sector data: {len(sector_analyses['memecoins'])} memecoins, {len(sector_analyses['privacy'])} privacy, {len(sector_analyses['defi'])} DeFi")
+                    logger.info(f"   Sector data: {len(sector_analyses['memecoins'])} memecoins, {len(sector_analyses['privacy'])} privacy, {len(sector_analyses['defi'])} DeFi, {len(sector_analyses['commodities'])} commodities")
 
                     global_metrics = self.data.get_global_metrics()
                     market_context = global_metrics.to_dict() if global_metrics else {}
@@ -671,6 +673,7 @@ class CryptoAnalysisOrchestrator:
                 'defi': [self.latest_analyses.get(t, {}) for t in DEFI_ASSETS if t in self.latest_analyses],
                 'memecoins': [self.latest_analyses.get(t, {}) for t in MEMECOIN_ASSETS if t in self.latest_analyses],
                 'privacy_coins': [self.latest_analyses.get(t, {}) for t in PRIVACY_ASSETS if t in self.latest_analyses],
+                'commodities': [self.latest_analyses.get(t, {}) for t in COMMODITIES_ASSETS if t in self.latest_analyses],
             }
             logger.info(f"[ContentSession] Running {mode} master brief (single Claude call)...")
             session = ContentSession(analysis_data, mode=mode)
@@ -771,7 +774,7 @@ class CryptoAnalysisOrchestrator:
                 return
 
             # All tracked assets — not just majors
-            ALL_TRACKED = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS
+            ALL_TRACKED = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS + COMMODITIES_ASSETS
 
             # Explicit crypto keywords — title MUST contain at least one of these
             # to be considered for breaking news (prevents meatball recalls, defense
@@ -1201,7 +1204,7 @@ class CryptoAnalysisOrchestrator:
 
             # 2. Fetch all asset prices in batch (efficient)
             logger.info("Fetching asset prices...")
-            all_tickers = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS
+            all_tickers = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS + COMMODITIES_ASSETS
             prices = self.data.get_prices_batch(all_tickers)
 
             for ticker, price in prices.items():
@@ -1211,9 +1214,9 @@ class CryptoAnalysisOrchestrator:
                 }
                 logger.info(f"   {ticker}: ${price.price_usd:,.2f} ({price.price_change_24h:+.2f}%)")
 
-            # 3. Fetch derivatives for majors
+            # 3. Fetch derivatives for majors + commodities (all on Binance Futures)
             logger.info("Fetching derivatives data...")
-            for ticker in MAJOR_ASSETS:
+            for ticker in MAJOR_ASSETS + COMMODITIES_ASSETS:
                 deriv = self.data.get_derivatives(ticker)
                 if deriv:
                     if ticker in self.latest_research:
@@ -1428,6 +1431,16 @@ class CryptoAnalysisOrchestrator:
                 except Exception as e:
                     logger.error(f"   {ticker} failed: {e}")
 
+            # Analyze commodities/tokenized stocks (XAU, TSLA — Binance Futures)
+            logger.info("Analyzing commodities/tokenized stocks...")
+            for ticker in COMMODITIES_ASSETS:
+                try:
+                    analysis = analyze_major(ticker)
+                    self.latest_analyses[ticker] = analysis
+                    logger.info(f"   {ticker}: OK")
+                except Exception as e:
+                    logger.error(f"   {ticker} failed: {e}")
+
             # Save analyses
             self._save_analyses()
 
@@ -1458,7 +1471,7 @@ class CryptoAnalysisOrchestrator:
 
             # Get fresh prices from data layer
             logger.info("Fetching real-time prices...")
-            all_tickers = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS
+            all_tickers = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS + COMMODITIES_ASSETS
             prices = self.data.get_prices_batch(all_tickers)
 
             # Inject prices into analyses
@@ -1468,7 +1481,8 @@ class CryptoAnalysisOrchestrator:
             sector_analyses = {
                 'memecoins': [updated_analyses.get(t) for t in MEMECOIN_ASSETS if t in updated_analyses],
                 'privacy': [updated_analyses.get(t) for t in PRIVACY_ASSETS if t in updated_analyses],
-                'defi': [updated_analyses.get(t) for t in DEFI_ASSETS if t in updated_analyses]
+                'defi': [updated_analyses.get(t) for t in DEFI_ASSETS if t in updated_analyses],
+                'commodities': [updated_analyses.get(t) for t in COMMODITIES_ASSETS if t in updated_analyses],
             }
 
             # Get global context
@@ -1633,8 +1647,8 @@ class CryptoAnalysisOrchestrator:
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             memos_generated = 0
 
-            # --- 1. Individual memos for each major asset ---
-            for ticker in MAJOR_ASSETS:
+            # --- 1. Individual memos for each major asset + commodities ---
+            for ticker in MAJOR_ASSETS + COMMODITIES_ASSETS:
                 memos_generated += self._generate_and_send_memo(ticker, timestamp)
 
             # --- 2. Sector memos: aggregate news across coins in each sector ---
@@ -1642,6 +1656,7 @@ class CryptoAnalysisOrchestrator:
                 'MEMECOINS': MEMECOIN_ASSETS,
                 'PRIVACY': PRIVACY_ASSETS,
                 'DEFI': DEFI_ASSETS,
+                'COMMODITIES': COMMODITIES_ASSETS,
             }
             for sector_name, sector_tickers in sector_map.items():
                 memos_generated += self._generate_sector_memo(

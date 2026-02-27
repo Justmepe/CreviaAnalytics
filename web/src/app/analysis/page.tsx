@@ -16,7 +16,6 @@ interface PageProps {
 
 const types = [
   { value: '', label: 'All' },
-  { value: 'thread', label: 'Threads' },
   { value: 'memo', label: 'Memos' },
   { value: 'news_tweet', label: 'News' },
   { value: 'risk_alert', label: 'Alerts' },
@@ -53,8 +52,9 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
     return `/analysis${qs ? `?${qs}` : ''}`;
   }
 
-  const items = content?.items || [];
-  const featuredItem = items[0]?.content_type === 'thread' ? items[0] : null;
+  // Exclude threads from the analysis feed — threads live on the Cockpit Feed / @CreviaCockpit
+  const items = (content?.items || []).filter(i => i.content_type !== 'thread');
+  const featuredItem = items.length > 0 ? items[0] : null;
   const restItems = featuredItem ? items.slice(1) : items;
 
   return (
@@ -174,6 +174,40 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
                 Follow @CreviaCockpit →
               </a>
             </div>
+          </div>
+
+          {/* ── Threads redirect banner ── */}
+          <div
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              gap: 12, marginBottom: 20, padding: '10px 14px',
+              background: 'rgba(61,127,255,0.04)', border: '1px solid rgba(61,127,255,0.15)',
+              borderRadius: 6,
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontSize: 15 }}>𝕏</span>
+              <div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: '#3d7fff', letterSpacing: '0.5px', marginBottom: 2 }}>
+                  Market threads post live on @CreviaCockpit
+                </div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#38405a' }}>
+                  Scroll the Cockpit Feed or follow us on X for real-time threads &amp; signals
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://twitter.com/CreviaCockpit"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.8px', textTransform: 'uppercase',
+                color: '#08090c', background: '#3d7fff', padding: '6px 14px',
+                borderRadius: 3, fontWeight: 500, textDecoration: 'none', flexShrink: 0,
+              }}
+            >
+              Follow on X →
+            </a>
           </div>
 
           {/* Content Grid */}

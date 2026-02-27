@@ -137,13 +137,8 @@ export default function CockpitShell({ children }: { children: React.ReactNode }
             flexShrink: 0,
           }}
         >
-          <div style={{
-            width: 26, height: 26, borderRadius: 6,
-            background: 'linear-gradient(135deg, #00e5a0, #0090ff)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: 'var(--font-bebas)', fontSize: 11, color: '#070809',
-            letterSpacing: '0.5px',
-          }}>CC</div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="CreviaCockpit" style={{ height: 26, width: 'auto', borderRadius: 6, objectFit: 'contain' }} />
           <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, color: '#e2e6f0' }}>
             Crevia<span style={{ color: '#00e5a0' }}>Cockpit</span>
           </span>

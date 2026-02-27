@@ -49,9 +49,12 @@ class CoinGeckoProvider:
     ID_MAP = {
         'BTC': 'bitcoin',
         'ETH': 'ethereum',
+        'XRP': 'ripple',
         'SOL': 'solana',
         'BNB': 'binancecoin',
-        'XRP': 'ripple',
+        'AVAX': 'avalanche-2',
+        'SUI': 'sui',
+        'LINK': 'chainlink',
         'DOGE': 'dogecoin',
         'SHIB': 'shiba-inu',
         'PEPE': 'pepe',
@@ -59,19 +62,20 @@ class CoinGeckoProvider:
         'XMR': 'monero',
         'ZEC': 'zcash',
         'DASH': 'dash',
-        'LTC': 'litecoin',
+        'SCRT': 'secret',
         'AAVE': 'aave',
         'UNI': 'uniswap',
         'CRV': 'curve-dao-token',
+        'LDO': 'lido-dao',
+        # Legacy / extras
+        'LTC': 'litecoin',
         'COMP': 'compound-governance-token',
         'MKR': 'maker',
-        'LINK': 'chainlink',
-        'AVAX': 'avalanche-2',
         'MATIC': 'matic-network',
         'ADA': 'cardano',
         'DOT': 'polkadot',
         'ATOM': 'cosmos',
-        'LDO': 'lido-dao',
+        # XAU (Gold) and TSLA are Binance Futures only — not available on CoinGecko
     }
 
     def __init__(self, api_key: str = None):
