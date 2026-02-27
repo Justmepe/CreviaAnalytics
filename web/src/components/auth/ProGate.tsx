@@ -80,7 +80,7 @@ export default function ProGate({
 
         <div className="flex gap-2 mt-1">
           <Link
-            href="/pricing"
+            href="/waitlist"
             className="font-mono-cc text-[10px] uppercase tracking-[0.5px] px-4 py-1.5 rounded transition-opacity hover:opacity-85"
             style={{ background: '#f0a030', color: '#08090c', fontWeight: 500 }}
           >

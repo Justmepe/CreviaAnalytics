@@ -1,7 +1,21 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
+
+const COCKPIT_PATHS = [
+  '/dashboard', '/whale-tracker', '/alerts', '/billing', '/journal', '/account',
+];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const { user } = useAuth();
+
+  if (user && COCKPIT_PATHS.some(p => pathname === p || pathname.startsWith(p + '/'))) {
+    return null;
+  }
   return (
     <footer className="border-t border-zinc-800 bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">

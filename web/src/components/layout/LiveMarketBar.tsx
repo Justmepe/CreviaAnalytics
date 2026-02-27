@@ -1,14 +1,26 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { useMarketStream } from '@/hooks/useMarketStream';
 import { useMarketPrices } from '@/context/MarketPricesContext';
+import { useAuth } from '@/context/AuthContext';
 import { formatPrice, formatLargeNumber } from '@/lib/api';
 
+const COCKPIT_PATHS = [
+  '/dashboard', '/whale-tracker', '/alerts', '/billing', '/journal', '/account',
+];
+
 export default function LiveMarketBar() {
-  // Regime + MCAP + F&G + BTC.D from SSE (DB snapshot)
+  const pathname = usePathname();
+  const { user } = useAuth();
+  // All hooks must be called before any conditional returns (React rules of hooks)
   const { snapshot, regime, connected } = useMarketStream();
-  // BTC + ETH live prices from shared WebSocket context
   const { ticks, wsStatus } = useMarketPrices();
+
+  // CockpitShell topbar has its own market ticker — no duplicate bar in cockpit
+  if (user && COCKPIT_PATHS.some(p => pathname === p || pathname.startsWith(p + '/'))) {
+    return null;
+  }
 
   const btcPrice = ticks['BTC']?.price ?? snapshot?.btc_price ?? null;
   const ethPrice = ticks['ETH']?.price ?? snapshot?.eth_price ?? null;

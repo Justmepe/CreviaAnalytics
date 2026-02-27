@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { getPortfolioStats, getJournalEntries, syncPortfolio, timeAgo } from '@/lib/api';
 import type { PortfolioStats, JournalEntry, MarketRegime, TradeSetup, ContentPost, PortfolioSummary } from '@/types';
+import CockpitShell from '@/components/layout/CockpitShell';
 
 interface DashboardClientProps {
   regime: MarketRegime | null;
@@ -76,7 +77,7 @@ function TierLock({ children, title, minTierLabel = 'Basic' }: {
             {title}
           </div>
         )}
-        <Link href="/pricing" style={{
+        <Link href="/waitlist" style={{
           fontFamily: 'var(--font-dm-mono)', fontSize: 9, letterSpacing: '0.8px', textTransform: 'uppercase',
           color: '#08090c', background: '#f0a030', padding: '6px 16px',
           borderRadius: 3, fontWeight: 500, textDecoration: 'none', display: 'inline-block',
@@ -96,7 +97,7 @@ function PremiumLock({ children }: { children: React.ReactNode }) {
       <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 10, letterSpacing: '0.5px', textTransform: 'uppercase', color: '#788098' }}>
         Premium Feature
       </div>
-      <Link href="/pricing" style={{
+      <Link href="/waitlist" style={{
         fontFamily: 'var(--font-dm-mono)', fontSize: 9, letterSpacing: '0.8px', textTransform: 'uppercase',
         color: '#08090c', background: '#f0a030', padding: '5px 14px',
         borderRadius: 3, fontWeight: 500, textDecoration: 'none', display: 'inline-block',
@@ -235,15 +236,11 @@ export default function DashboardClient({
   if (!user) return null;
 
   const tierLevel = TIER_LEVEL[user.tier] ?? 0;
-  const isFree     = tierLevel === 0;
-  const isBasic    = tierLevel >= 1;
-  const isPremium  = tierLevel >= 2;
-  const tierMeta   = TIER_META[user.tier] || TIER_META.free;
+  const isFree    = tierLevel === 0;
+  const isPremium = tierLevel >= 2;
   const regimeStyle = regime
     ? REGIME_COLORS[regime.regime_name] || REGIME_COLORS.NEUTRAL
     : REGIME_COLORS.NEUTRAL;
-  const greeting = new Date().getUTCHours() < 12 ? 'Good morning' : new Date().getUTCHours() < 17 ? 'Good afternoon' : 'Good evening';
-  const displayName = user.name || user.email.split('@')[0];
   const totalPnl = stats?.total_pnl_usd ?? 0;
   const openRiskUsd = openTrades.reduce((acc, t) => {
     if (t.stop_loss_price && t.entry_price && t.quantity) {
@@ -253,43 +250,15 @@ export default function DashboardClient({
   }, 0);
 
   return (
-    <main style={{ minHeight: '100vh', background: '#070809' }}>
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-8">
+    <CockpitShell>
+      <div style={{ padding: '14px 16px' }}>
 
-        {/* ── Header ── */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 20 }}>
-          <div>
-            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: 26, letterSpacing: '2px', color: '#e2e6f0', lineHeight: 1 }}>
-              {greeting}, {displayName}.
-            </div>
-            <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 10, color: '#38405a', marginTop: 4, letterSpacing: '0.5px' }}>
-              {isFree
-                ? 'You have access to the Cockpit Feed. Upgrade to unlock your full trading dashboard.'
-                : `${isPremium ? 'Full cockpit access' : 'Basic cockpit access'} · market intelligence overview`}
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            {/* Tier badge */}
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: 7, padding: '6px 12px',
-              borderRadius: 5, background: tierMeta.bg, border: `1px solid ${tierMeta.border}`,
-              cursor: 'pointer',
-            }}>
-              <span style={{ fontSize: 13 }}>{tierMeta.icon}</span>
-              <div>
-                <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 10, fontWeight: 500, letterSpacing: '0.8px', textTransform: 'uppercase', color: tierMeta.color }}>
-                  {tierMeta.label}
-                </div>
-                {isFree && (
-                  <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 8, color: '#f0a030', marginTop: 1 }}>
-                    <Link href="/pricing" style={{ color: '#f0a030', textDecoration: 'none' }}>Start free trial →</Link>
-                  </div>
-                )}
-              </div>
-            </div>
-            <button onClick={logout} style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 9, color: '#38405a', background: 'none', border: 'none', cursor: 'pointer', letterSpacing: '0.5px' }}>
-              Sign out
-            </button>
+        {/* ── Page subtitle (context line) ── */}
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 10, color: '#38405a', letterSpacing: '0.5px' }}>
+            {isFree
+              ? 'Cockpit Feed is live. Upgrade to unlock your full trading dashboard.'
+              : `${isPremium ? 'Full cockpit access' : 'Basic cockpit access'} · market intelligence overview`}
           </div>
         </div>
 
@@ -309,11 +278,11 @@ export default function DashboardClient({
                 </div>
               </div>
               <div style={{ display: 'flex', gap: 8, flexShrink: 0, marginLeft: 20 }}>
-                <Link href="/pricing" style={{
+                <Link href="/waitlist" style={{
                   fontFamily: 'var(--font-dm-mono)', fontSize: 9, letterSpacing: '0.8px', textTransform: 'uppercase',
                   color: '#08090c', background: '#f0a030', padding: '7px 16px', borderRadius: 3, fontWeight: 500, textDecoration: 'none',
                 }}>
-                  Start 3-day trial →
+                  Join Waitlist →
                 </Link>
               </div>
             </div>
@@ -700,6 +669,6 @@ export default function DashboardClient({
         )}
 
       </div>
-    </main>
+    </CockpitShell>
   );
 }

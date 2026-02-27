@@ -142,7 +142,7 @@ export default async function HomePage() {
 
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Link
-              href="/pricing"
+              href="/waitlist"
               className="font-mono-cc"
               style={{ fontSize: 11, letterSpacing: '0.8px', textTransform: 'uppercase', color: '#08090c', background: '#00d68f', border: 'none', padding: '14px 28px', borderRadius: 5, fontWeight: 500, boxShadow: '0 0 30px rgba(0,214,143,0.25)', textDecoration: 'none' }}
             >
@@ -358,7 +358,7 @@ export default async function HomePage() {
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginBottom: 16 }}>
             <Link
-              href="/pricing"
+              href="/waitlist"
               className="font-mono-cc"
               style={{ padding: '14px 32px', borderRadius: 5, color: '#08090c', background: '#00d68f', fontWeight: 500, fontSize: 11, letterSpacing: '0.8px', textTransform: 'uppercase', textDecoration: 'none', boxShadow: '0 0 24px rgba(0,214,143,0.25)' }}
             >

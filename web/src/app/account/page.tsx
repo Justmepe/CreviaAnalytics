@@ -298,10 +298,10 @@ export default function AccountPage() {
               Get access to AI trade setups, opportunity scanner, and priority content delivery.
             </p>
             <Link
-              href="/pricing"
+              href="/waitlist"
               className="inline-block rounded-lg bg-emerald-500 px-5 py-2 text-sm font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
             >
-              View Pro Plans
+              Join Waitlist
             </Link>
           </div>
         )}

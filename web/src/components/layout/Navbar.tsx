@@ -3,7 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
+
+// Paths where the cockpit shell (sidebar layout) takes over — hide public Navbar
+const COCKPIT_PATHS = [
+  '/dashboard', '/whale-tracker', '/alerts', '/billing', '/journal', '/account',
+];
 
 const publicNavLinks = [
   { href: '/', label: 'Home' },
@@ -33,7 +39,13 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const { user, logout } = useAuth();
+  const pathname = usePathname();
   const navLinks = user ? authedNavLinks : publicNavLinks;
+
+  // Hide public Navbar when user is in their cockpit
+  if (user && COCKPIT_PATHS.some(p => pathname === p || pathname.startsWith(p + '/'))) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md">
@@ -99,7 +111,7 @@ export default function Navbar() {
                   </Link>
                   {user.tier === 'free' && (
                     <Link
-                      href="/pricing"
+                      href="/waitlist"
                       onClick={() => setUserMenuOpen(false)}
                       className="block px-3 py-2 text-sm text-emerald-400 hover:bg-zinc-800"
                     >
