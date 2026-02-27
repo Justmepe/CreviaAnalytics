@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
               We'll email you at <strong style="color:#ffffff">${email}</strong> when your early access is ready.
               Early access members get Pro features <strong style="color:#10b981">free during beta</strong>.
             </p>
-            <a href="https://crevia.creohub.io/tools/risk-calculator"
+            <a href="https://creviacockpit.com/tools/risk-calculator"
                style="display:inline-block;background:#10b981;color:#09090b;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px">
               Try the Risk Calculator Free →
             </a>

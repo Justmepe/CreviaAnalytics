@@ -8,13 +8,13 @@ Rules (marketer-first):
   - Substack article: tags array + one CTA block at end of body
   - Mentions:     only when data source is explicitly that account (never gratuitous)
   - CTA wording:  rotate so it doesn't feel mechanical
-  - Site link:    always https://crevia.creohub.io
+  - Site link:    always https://creviacockpit.com
 """
 
 import random
 from typing import List, Optional, Tuple
 
-SITE_URL = "https://crevia.creohub.io"
+SITE_URL = "https://creviacockpit.com"
 
 # ── CTA variants (rotate) ─────────────────────────────────────────────────────
 

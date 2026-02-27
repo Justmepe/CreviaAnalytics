@@ -71,7 +71,7 @@ class ThreadBuilder:
     # ── CTA tweet appended to every thread ──────────────────────
     CTA_TWEET = (
         "Follow @Peter_n_Gikonyo + @CreviaCockpit for real-time crypto intelligence.\n"
-        "AI trade setups, regime detection & risk tools: crevia.creohub.io\n"
+        "AI trade setups, regime detection & risk tools: creviacockpit.com\n"
         "#BTC #ETH #Crypto #CryptoNews #CryptoTrading"
     )
 

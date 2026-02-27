@@ -36,7 +36,7 @@ THREAD_TWEETS = [
     f"1/ 🧪 CREVIA SYSTEM TEST — {NOW}\n\nPosting pipeline verification. Ignore this thread.",
     "2/ BTC is the benchmark asset. Thread composer test: verifying true reply chain (not separate tweets).",
     "3/ ETH funding rates, whale flows, and regime detection all online. Cockpit tracking live.",
-    "4/ All systems nominal. Tweet 4 of 4 — confirming thread depth.\n\nFull analysis → https://crevia.creohub.io",
+    "4/ All systems nominal. Tweet 4 of 4 — confirming thread depth.\n\nFull analysis → https://creviacockpit.com",
 ]
 
 X_ARTICLE_TITLE = f"Crevia System Test — {NOW}"
@@ -56,14 +56,14 @@ This is an automated system verification post from Crevia Cockpit.
 
 All systems nominal. Live data, regime detection, and whale flow scanner are active.
 
-→ [Crevia Cockpit](https://crevia.creohub.io)
+→ [Crevia Cockpit](https://creviacockpit.com)
 """
 
 SUBSTACK_NOTE = (
     f"[System Test — {NOW}]\n\n"
     "Crevia Cockpit posting pipeline online. BTC regime detection, whale scanner, "
     "and live trade setups all active.\n\n"
-    "Full analysis → https://crevia.creohub.io"
+    "Full analysis → https://creviacockpit.com"
 )
 
 SUBSTACK_ARTICLE_TITLE = f"Crevia System Verification — {NOW}"
@@ -84,7 +84,7 @@ This is a system verification post confirming that the Crevia Cockpit content pi
 
 Crevia Cockpit provides real-time regime detection, whale flow scanning, and trade setups for crypto markets.
 
-→ [crevia.creohub.io](https://crevia.creohub.io)
+→ [creviacockpit.com](https://creviacockpit.com)
 """
 
 

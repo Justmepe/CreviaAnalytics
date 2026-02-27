@@ -14,7 +14,7 @@ const TWEET_TEXT = encodeURIComponent(
 → Risk calculator with real-time market warnings
 
 Joining the waitlist now 👇
-crevia.creohub.io/waitlist`
+creviacockpit.com/waitlist`
 );
 
 const TWEET_URL = `https://x.com/intent/post?text=${TWEET_TEXT}`;
@@ -235,7 +235,7 @@ export default function WaitlistFlow() {
 → Risk calculator with real-time market warnings
 
 Joining the waitlist now 👇
-crevia.creohub.io/waitlist`}</p>
+creviacockpit.com/waitlist`}</p>
           </div>
 
           <button

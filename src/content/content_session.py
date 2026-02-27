@@ -28,7 +28,7 @@ from typing import Dict, Any, List, Optional
 
 logger = logging.getLogger(__name__)
 
-SITE_URL = "https://crevia.creohub.io"
+SITE_URL = "https://creviacockpit.com"
 
 
 class ContentSession:
