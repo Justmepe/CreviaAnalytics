@@ -247,6 +247,7 @@ class XBrowserPoster:
         max_delay: float = 90.0,
         headless: bool = False,
         auto_login: bool = False,
+        env_prefix: str = "X",
     ):
         self.session_dir = session_dir or SESSION_DIR
         self.log_file = log_file or LOG_FILE
@@ -254,6 +255,7 @@ class XBrowserPoster:
         self.max_delay = max_delay
         self.headless = headless
         self.auto_login = auto_login
+        self._env_prefix = env_prefix
         self.lock = Lock()
 
         # Initialize session manager if available
@@ -286,6 +288,50 @@ class XBrowserPoster:
                     logger.warning("[XBrowserPoster] Set auto_login=True to auto-restore invalid sessions")
         
         logger.info("[XBrowserPoster] Initialized (Playwright browser automation with session management)")
+
+    def _inject_session_cookies(self, context) -> None:
+        """
+        Auto-inject fresh X auth cookies from env vars before each session.
+
+        Reads {env_prefix}_AUTH_TOKEN and {env_prefix}_CT0 from environment.
+        Called after every launch_persistent_context() so sessions stay alive
+        even if the browser profile cookies get corrupted or rotated by X.
+        Silently skips if env vars are not set.
+        """
+        auth_token = os.getenv(f"{self._env_prefix}_AUTH_TOKEN", "").strip().strip('"').strip("'")
+        ct0 = os.getenv(f"{self._env_prefix}_CT0", "").strip().strip('"').strip("'")
+        if not auth_token:
+            return
+        from datetime import timedelta
+        expires = int((datetime.now(timezone.utc) + timedelta(days=365)).timestamp())
+        cookies = [
+            {
+                "name": "auth_token",
+                "value": auth_token,
+                "domain": ".x.com",
+                "path": "/",
+                "expires": expires,
+                "httpOnly": True,
+                "secure": True,
+                "sameSite": "None",
+            },
+        ]
+        if ct0:
+            cookies.append({
+                "name": "ct0",
+                "value": ct0,
+                "domain": ".x.com",
+                "path": "/",
+                "expires": expires,
+                "httpOnly": False,
+                "secure": True,
+                "sameSite": "Lax",
+            })
+        try:
+            context.add_cookies(cookies)
+            logger.info(f"[XBrowserPoster] Auto-injected {self._env_prefix} auth cookies from env")
+        except Exception as e:
+            logger.warning(f"[XBrowserPoster] Cookie auto-inject skipped: {e}")
 
     def _apply_jitter_delay(self):
         """Wait with jitter between min_delay and max_delay before posting."""
@@ -670,6 +716,7 @@ class XBrowserPoster:
                         self.session_dir,
                         **launch_kwargs,
                     )
+                    self._inject_session_cookies(context)
                     page = context.new_page()
 
                     try:
@@ -953,6 +1000,7 @@ class XBrowserPoster:
                         self.session_dir,
                         **launch_kwargs,
                     )
+                    self._inject_session_cookies(context)
                     page = context.new_page()
 
                     try:
@@ -1416,6 +1464,7 @@ class XBrowserPoster:
                         launch_kwargs['executable_path'] = chrome_path
 
                     context = p.chromium.launch_persistent_context(self.session_dir, **launch_kwargs)
+                    self._inject_session_cookies(context)
                     page = context.new_page()
 
                     try:
@@ -1710,6 +1759,7 @@ class XBrowserPoster:
                     self.session_dir,
                     **launch_kwargs,
                 )
+                self._inject_session_cookies(context)
                 page = context.new_page()
 
                 page.goto("https://x.com/home", wait_until='domcontentloaded', timeout=30000)

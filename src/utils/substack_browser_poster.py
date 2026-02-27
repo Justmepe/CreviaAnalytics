@@ -309,6 +309,34 @@ class SubstackBrowserPoster:
             page.keyboard.type(char)
             time.sleep(random.uniform(min_delay, max_delay))
 
+    def _inject_session_cookies(self, context) -> None:
+        """
+        Auto-inject fresh Substack session cookie from SUBSTACK_SID env var.
+
+        Called after every launch_persistent_context() so the session stays
+        alive even if the browser profile's cookies get corrupted or rotated.
+        Silently skips if the env var is not set.
+        """
+        sid = os.getenv("SUBSTACK_SID", "").strip().strip('"').strip("'")
+        if not sid:
+            return
+        from datetime import timedelta
+        cookie = {
+            "name": "substack.sid",
+            "value": sid,
+            "domain": ".substack.com",
+            "path": "/",
+            "expires": int((datetime.now(timezone.utc) + timedelta(days=365)).timestamp()),
+            "httpOnly": True,
+            "secure": True,
+            "sameSite": "Lax",
+        }
+        try:
+            context.add_cookies([cookie])
+            logger.info("[SubstackBrowser] Auto-injected SUBSTACK_SID from env")
+        except Exception as e:
+            logger.warning(f"[SubstackBrowser] Cookie auto-inject skipped: {e}")
+
     def _dismiss_overlays(self, page):
         """Remove backdrop/overlay elements that block clicks."""
         try:
@@ -346,6 +374,7 @@ class SubstackBrowserPoster:
                         headless=self.headless,
                         viewport={"width": 1280, "height": 900},
                     )
+                    self._inject_session_cookies(context)
                     page = context.new_page()
 
                     try:
@@ -520,6 +549,7 @@ class SubstackBrowserPoster:
                         headless=self.headless,
                         viewport={"width": 1280, "height": 900},
                     )
+                    self._inject_session_cookies(context)
                     page = context.new_page()
 
                     try:
@@ -530,21 +560,46 @@ class SubstackBrowserPoster:
 
                         # Click Create new → Article (with direct URL fallback)
                         if not self._click_create_new(page, "Article"):
-                            logger.warning("[SubstackBrowser] Dropdown failed — trying direct new-post URL")
-                            try:
-                                direct_url = f"https://{self.subdomain}.substack.com/publish/new-post"
-                                page.goto(direct_url, timeout=30000)
-                                page.wait_for_load_state("domcontentloaded", timeout=15000)
-                                time.sleep(random.uniform(2, 4))
-                                # Verify we landed on an editor page
-                                if '/publish/new-post' not in page.url and '/publish/post' not in page.url and '/edit/' not in page.url:
-                                    logger.error(f"[SubstackBrowser] Direct URL redirected to: {page.url}")
-                                    self._screenshot_debug(page, "article_no_editor")
-                                    context.close()
-                                    return None
-                                logger.info(f"[SubstackBrowser] Direct URL worked: {page.url}")
-                            except Exception as url_e:
-                                logger.error(f"[SubstackBrowser] Direct URL fallback failed: {url_e}")
+                            logger.warning("[SubstackBrowser] Dropdown failed — trying direct editor URLs")
+                            editor_found = False
+                            # Substack has used several URL patterns for the post editor over time
+                            direct_urls = [
+                                f"https://{self.subdomain}.substack.com/publish/post",
+                                f"https://{self.subdomain}.substack.com/publish/posts/new",
+                                f"https://{self.subdomain}.substack.com/publish/new-post",
+                                f"https://{self.subdomain}.substack.com/publish/p/new",
+                            ]
+                            for direct_url in direct_urls:
+                                try:
+                                    page.goto(direct_url, timeout=30000)
+                                    page.wait_for_load_state("domcontentloaded", timeout=15000)
+                                    time.sleep(random.uniform(2, 3))
+                                    cur = page.url
+                                    # Accept any /publish/ URL that isn't just the dashboard home
+                                    # (editor URLs contain /post, /posts, /p/, /edit/, or /new)
+                                    is_editor = (
+                                        '/publish/post' in cur
+                                        or '/publish/posts' in cur
+                                        or '/publish/p/' in cur
+                                        or '/edit/' in cur
+                                        or '/publish/new' in cur
+                                    )
+                                    is_dashboard_only = cur.rstrip('/').endswith('/publish')
+                                    if is_editor or (
+                                        '/publish' in cur
+                                        and not is_dashboard_only
+                                        and 'sign-in' not in cur
+                                        and 'login' not in cur
+                                    ):
+                                        logger.info(f"[SubstackBrowser] Direct URL worked: {cur}")
+                                        editor_found = True
+                                        break
+                                    logger.info(f"[SubstackBrowser] {direct_url} → {cur} (not an editor)")
+                                except Exception as url_e:
+                                    logger.warning(f"[SubstackBrowser] {direct_url} failed: {url_e}")
+                                    continue
+                            if not editor_found:
+                                logger.error(f"[SubstackBrowser] All direct URLs failed. Last URL: {page.url}")
                                 self._screenshot_debug(page, "article_no_editor")
                                 context.close()
                                 return None
@@ -843,6 +898,7 @@ class SubstackBrowserPoster:
                         headless=self.headless,
                         viewport={"width": 1280, "height": 900},
                     )
+                    self._inject_session_cookies(context)
                     page = context.new_page()
 
                     try:
@@ -1121,6 +1177,7 @@ class SubstackBrowserPoster:
                     headless=True,
                     viewport={"width": 1280, "height": 900},
                 )
+                self._inject_session_cookies(context)
                 page = context.new_page()
 
                 page.goto("https://substack.com/home", timeout=20000)

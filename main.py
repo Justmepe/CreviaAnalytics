@@ -234,7 +234,7 @@ class CryptoAnalysisOrchestrator:
 
         # X Account 2 — CreviaCockpit (breaking news only, posts after primary)
         cockpit_session = str(Path(__file__).parent / "x_browser_session_cockpit")
-        self.x_cockpit_poster = XBrowserPoster(session_dir=cockpit_session, headless=False)
+        self.x_cockpit_poster = XBrowserPoster(session_dir=cockpit_session, headless=True, env_prefix="X_COCKPIT")
         if self.x_cockpit_poster.enabled:
             logger.info("   X Cockpit Poster: enabled (@CreviaCockpit — breaking news)")
         else:
