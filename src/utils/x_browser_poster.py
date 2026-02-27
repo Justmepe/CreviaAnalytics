@@ -1546,7 +1546,8 @@ class XBrowserPoster:
                                 const layers = document.getElementById('layers');
                                 if (layers) {
                                     layers.querySelectorAll('[data-testid="mask"], [class*="r-1p0dtai"]').forEach(el => {
-                                        if (!el.closest('[data-testid="tweetButtonInline"]')) {
+                                        if (!el.closest('[data-testid="tweetButton"]') &&
+                                            !el.closest('[data-testid="tweetButtonInline"]')) {
                                             el.remove();
                                         }
                                     });
@@ -1555,9 +1556,17 @@ class XBrowserPoster:
                         except Exception:
                             pass
 
+                        # Small pause to let the Post all button become enabled
+                        time.sleep(random.uniform(1.0, 1.5))
+
                         # ── Click 'Post all' ─────────────────────────────────────
+                        # In thread composer mode X uses data-testid="tweetButton"
+                        # (the modal-level button). The inline single-tweet button
+                        # is "tweetButtonInline". Try both.
                         post_clicked = False
                         for post_sel in [
+                            'button[data-testid="tweetButton"]',
+                            'div[data-testid="tweetButton"]',
                             'button[data-testid="tweetButtonInline"]',
                             'div[data-testid="tweetButtonInline"]',
                         ]:
@@ -1567,7 +1576,7 @@ class XBrowserPoster:
                                     time.sleep(random.uniform(0.4, 0.8))
                                     btn.evaluate("el => el.click()")
                                     post_clicked = True
-                                    logger.info("[XBrowserPoster] 'Post all' clicked")
+                                    logger.info(f"[XBrowserPoster] 'Post all' clicked ({post_sel})")
                                     break
                             except Exception:
                                 continue
@@ -1575,8 +1584,11 @@ class XBrowserPoster:
                         # Fallback: find any Post/Post all button by text
                         if not post_clicked:
                             try:
-                                for btn in page.locator('button').all()[:25]:
-                                    txt = btn.text_content().strip().lower()
+                                for btn in page.locator('button').all()[:30]:
+                                    try:
+                                        txt = btn.text_content().strip().lower()
+                                    except Exception:
+                                        continue
                                     if txt in ('post', 'post all'):
                                         if btn.is_visible(timeout=1000) and btn.is_enabled():
                                             btn.evaluate("el => el.click()")
