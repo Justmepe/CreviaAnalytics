@@ -128,9 +128,15 @@ class ContentSession:
             if self.mode == 'morning_scan':
                 prompt = self._build_morning_scan_prompt(context_json, date_str, time_str)
                 max_tokens = 10000
-            else:
-                prompt = self._build_standard_prompt(context_json, date_str, time_str)
+            elif self.mode == 'mid_day_update':
+                prompt = self._build_mid_day_prompt(context_json, date_str, time_str)
                 max_tokens = 8000
+            elif self.mode == 'closing_bell':
+                prompt = self._build_closing_prompt(context_json, date_str, time_str)
+                max_tokens = 8000
+            else:  # breaking_news
+                prompt = self._build_breaking_news_prompt(context_json, date_str, time_str)
+                max_tokens = 6000
 
             engine = ClaudeResearchEngine(api_key)
             response = engine._call_model(prompt, max_tokens=max_tokens)
@@ -200,54 +206,131 @@ Return ONLY this JSON object (no preamble, no markdown):
   "mentioned_assets": ["BTC", "ETH", "SOL", ...]
 }}"""
 
-    def _build_standard_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
-        mode_instructions = {
-            'mid_day_update': (
-                f"This is the MID-DAY UPDATE at {time_str}. "
-                "Write a focused 6-8 tweet thread + 800-word narrative. "
-                "Highlight what has CHANGED since the morning: price moves, news, derivatives shifts. "
-                "Be specific — compare to earlier levels."
-            ),
-            'closing_bell': (
-                f"This is the CLOSING BELL at {time_str}. "
-                "Write a concise 6-8 tweet thread + 800-word narrative. "
-                "Summarise the day: biggest movers, regime signal, overnight watch levels. "
-                "Give a clear directional bias for Asian session."
-            ),
-            'breaking_news': (
-                "This is a BREAKING NEWS post. "
-                "Write a tight 5-7 tweet thread + 600-word narrative. "
-                "Tweet 1: the news hook (who, what, why it matters). "
-                "Tweets 2-4: market impact — which assets, which direction, key levels. "
-                "Final tweet: trade angle or risk management note."
-            ),
-        }.get(self.mode, "Write a concise 6-tweet crypto market update thread and 600-word narrative.")
+    def _build_mid_day_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior crypto market analyst at CreviaCockpit writing the MID-DAY UPDATE for {date_str} at {time_str}.
 
-        return f"""You are a senior crypto market analyst at CreviaCockpit. {date_str} at {time_str}.
+Write 3 SECTOR-SPECIFIC threads covering the mid-day market picture.
 
-{mode_instructions}
+SECTOR DEFINITIONS:
+  majors_update    → BTC, ETH — what has changed since the morning open, key level holds/breaks
+  alts_flow        → XRP, SOL, BNB, AVAX, SUI, LINK — top movers, rotation, relative strength
+  derivatives_flow → Funding rates, OI changes, liquidations, DeFi yield update
 
 MARKET DATA (JSON):
 {context_json}
 
-TWEET RULES:
-- Use emojis: 💎 BTC | ⚡ ETH | 🪙 alts | 📊 metrics | ⬆️⬇️ direction | 🎯 levels | ⚠️ risk
-- Every price claim needs an exact number from the data — no vague "rising strongly"
-- Numbered: 1/ 2/ 3/ etc. Each tweet ≤280 chars
-- Authoritative tone — zero hype, zero em-dashes, zero filler
+RULES FOR EVERY TWEET:
+1. Use EXACT numbers — never say "higher" without a % or price
+2. Compare to earlier levels where data allows ("was $X this morning, now $Y")
+3. Use emojis deliberately:
+   💎 BTC  ⚡ ETH  🪙 alts  📊 metrics  ⬆️ bullish / ⬇️ bearish  🎯 key level  ⚠️ risk  🔄 rotation
+4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
+5. Tweet 1 of each thread: sector header + time + 2-3 top metrics + "👇"
+6. Final tweet: actionable signal or key level to watch next
+7. 4-5 tweets per thread — substantive, zero filler
+8. DO NOT repeat the same data point across threads
+9. Zero em-dashes. Zero hype. Authoritative analyst voice.
+
+ALSO write: an 800-word narrative covering all three sectors (for Substack + X Article).
 
 Return ONLY this JSON object (no preamble, no markdown):
 {{
-  "headline": "Tension-driven headline — must cite a specific asset or data point",
-  "thread_tweets": [
-    "1/ tweet ≤280 chars",
-    "2/ tweet",
-    "..."
-  ],
-  "narrative": "Professional narrative (800 words for update/closing, 600 for breaking news). Specific numbers throughout.",
-  "key_insight": "2-sentence hook: dominant tension + trade angle",
+  "headline": "Tension-driven mid-day headline with specific price or % and what it means",
+  "sector_threads": {{
+    "majors_update":    ["1/ tweet ≤280 chars", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
+    "alts_flow":        ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
+    "derivatives_flow": ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"]
+  }},
+  "narrative": "800-word professional narrative covering all three sectors — specific numbers, no filler",
+  "key_insight": "2-sentence hook: what changed since morning and why it matters",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["crypto", "bitcoin", "markets"],
+  "mentioned_assets": ["BTC", "ETH", ...]
+}}"""
+
+    def _build_closing_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior crypto market analyst at CreviaCockpit writing the CLOSING BELL for {date_str} at {time_str}.
+
+Write 3 SECTOR-SPECIFIC threads summarising the day and setting up the overnight/Asian session.
+
+SECTOR DEFINITIONS:
+  day_summary     → Full-day performance: BTC, ETH, total market — net change, narrative arc
+  sector_wrap     → Best and worst sectors (majors vs alts vs DeFi vs memecoins vs privacy)
+  overnight_watch → Key levels to hold/break overnight, macro risk, Asian session setup
+
+MARKET DATA (JSON):
+{context_json}
+
+RULES FOR EVERY TWEET:
+1. Use EXACT numbers — day's open vs close, % moves, key levels
+2. Retrospective tone: "Today, X happened because Y"
+3. Use emojis:
+   💎 BTC  ⚡ ETH  🪙 alts  🏦 DeFi  🐸 memes  🔒 privacy  🌍 macro
+   📊 metrics  ⬆️⬇️ direction  🎯 levels  ⚠️ risk  🌙 overnight
+4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
+5. Tweet 1 of each thread: sector header + date + 2-3 key day metrics + "👇"
+6. Final tweet of overnight_watch: clear statement of bull vs bear trigger for tomorrow
+7. 4-5 tweets per thread — no padding
+8. DO NOT repeat data points across threads
+9. Zero em-dashes. Zero hype. Zero filler.
+
+ALSO write: an 800-word narrative day wrap (for Substack + X Article).
+
+Return ONLY this JSON object (no preamble, no markdown):
+{{
+  "headline": "Day-wrap headline — cite the dominant move, the asset, and whether it held",
+  "sector_threads": {{
+    "day_summary":     ["1/ tweet ≤280 chars", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
+    "sector_wrap":     ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
+    "overnight_watch": ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"]
+  }},
+  "narrative": "800-word professional day-wrap narrative — what happened, why it mattered, what's next",
+  "key_insight": "2-sentence hook: the day's defining move and overnight trade angle",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["crypto", "bitcoin", "markets"],
+  "mentioned_assets": ["BTC", "ETH", ...]
+}}"""
+
+    def _build_breaking_news_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior crypto market analyst at CreviaCockpit breaking a news story on {date_str} at {time_str}.
+
+Write a TIGHT 5-7 tweet thread + 600-word narrative. This is time-sensitive.
+
+MARKET DATA + NEWS (JSON):
+{context_json}
+
+THREAD STRUCTURE (strict):
+  Tweet 1: 🚨 News hook — WHO did WHAT, one specific number, why it matters NOW
+  Tweet 2: Which assets are affected and HOW (price level, % change, direction)
+  Tweet 3: Context — why this matters structurally (on-chain, derivatives, narrative)
+  Tweet 4: Key levels: support/resistance to watch as this plays out
+  Tweet 5: The trade angle — what the smart play is and what invalidates it
+  Tweet 6-7 (optional): Risk factors, related assets, broader macro angle
+
+TWEET RULES:
+1. Open tweet 1 with 🚨 — this signals breaking news
+2. Use relevant asset emojis: 💎 BTC  ⚡ ETH  🪙 alts  🏦 DeFi — match the emoji to the affected asset
+3. Every claim must have a number — no "significant move" without a price or %
+4. Numbered: 1/ 2/ 3/ etc. Each tweet ≤280 chars
+5. ZERO em-dashes (no —). Use commas or periods instead.
+6. ZERO hype words: no "massive", "insane", "moon", "explode", "huge". Report facts.
+7. Sound like a Bloomberg terminal alert, not a Telegram pump group
+8. Final tweet: give one concrete trade angle with an invalidation level
+
+Return ONLY this JSON object (no preamble, no markdown):
+{{
+  "headline": "Breaking news headline — factual, specific, cites the asset and event",
+  "thread_tweets": [
+    "1/ 🚨 tweet ≤280 chars",
+    "2/ tweet",
+    "3/ tweet",
+    "4/ tweet",
+    "5/ tweet"
+  ],
+  "narrative": "600-word professional breaking news analysis — what happened, market impact, trade angle. No em-dashes, no hype.",
+  "key_insight": "2-sentence summary: the event and its direct market implication",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["crypto", "breakingnews", "bitcoin"],
   "mentioned_assets": ["BTC", "ETH", ...]
 }}"""
 
@@ -275,12 +358,18 @@ Return ONLY this JSON object (no preamble, no markdown):
         x_thread (the full set lives in sector_threads).
         For other modes: uses thread_tweets directly.
         """
-        # Morning scan — primary thread is the majors sector thread
-        if self.mode == 'morning_scan':
+        # Sector-based modes — use first sector thread as the representative x_thread
+        SECTOR_MODES = {'morning_scan', 'mid_day_update', 'closing_bell'}
+        FIRST_SECTOR = {
+            'morning_scan':   'majors',
+            'mid_day_update': 'majors_update',
+            'closing_bell':   'day_summary',
+        }
+        if self.mode in SECTOR_MODES:
             sector_threads = master.get('sector_threads', {})
-            raw = sector_threads.get('majors', [])
+            first_key = FIRST_SECTOR.get(self.mode, '')
+            raw = sector_threads.get(first_key, [])
             if not raw:
-                # Try any sector as fallback
                 for tweets in sector_threads.values():
                     if tweets:
                         raw = tweets
@@ -299,18 +388,24 @@ Return ONLY this JSON object (no preamble, no markdown):
 
     def _derive_sector_threads(self, master: Dict) -> Dict[str, List[str]]:
         """
-        For morning_scan: return the 6 sector threads from the master brief,
-        each cleaned to ≤280 chars per tweet.
-        For all other modes: returns an empty dict.
+        Return sector_threads for any scan mode (morning, mid-day, closing).
+        Breaking news uses thread_tweets instead — returns empty dict for that mode.
+        Tweets cleaned to ≤280 chars each.
         """
-        if self.mode != 'morning_scan':
+        SECTOR_KEYS_BY_MODE: Dict[str, List[str]] = {
+            'morning_scan':   ['majors', 'altcoins', 'memecoins', 'privacy', 'defi', 'commodities'],
+            'mid_day_update': ['majors_update', 'alts_flow', 'derivatives_flow'],
+            'closing_bell':   ['day_summary', 'sector_wrap', 'overnight_watch'],
+        }
+
+        expected = SECTOR_KEYS_BY_MODE.get(self.mode)
+        if not expected:
             return {}
 
-        SECTOR_ORDER = ['majors', 'altcoins', 'memecoins', 'privacy', 'defi', 'commodities']
         raw = master.get('sector_threads', {})
         result: Dict[str, List[str]] = {}
 
-        for sector in SECTOR_ORDER:
+        for sector in expected:
             tweets = raw.get(sector, [])
             clean = [str(t).strip()[:280] for t in tweets if str(t).strip()]
             if clean:
@@ -320,7 +415,7 @@ Return ONLY this JSON object (no preamble, no markdown):
 
         if result:
             counts = {k: len(v) for k, v in result.items()}
-            logger.info(f"[ContentSession] Sector threads: {counts}")
+            logger.info(f"[ContentSession] Sector threads ({self.mode}): {counts}")
 
         return result
 

@@ -565,19 +565,19 @@ class CryptoAnalysisOrchestrator:
         # 2. ContentSession — ONE Claude call generates ALL content for this slot.
         session_content = self._run_content_session(slot["mode"])
 
-        # 3. Morning scan: post 6 sector-specific threads then long-form article
+        sector_threads = session_content.get('sector_threads', {}) if session_content else {}
+
+        # 3. Morning scan: 6 sector threads → long-form article
         if slot["mode"] == "morning_scan":
-            sector_threads = session_content.get('sector_threads', {}) if session_content else {}
             if sector_threads:
                 logger.info(f"[MorningScan] Posting {len(sector_threads)} sector threads...")
-                # Store morning context summary for mid-day reference
                 majors_tweets = sector_threads.get('majors', [])
                 if majors_tweets:
                     self.morning_context = majors_tweets[0][:200]
                 self._post_sector_threads(sector_threads, session_content)
+                self._post_anchor_article(None, session_content=session_content)
             else:
-                # Fallback: no sector_threads from Claude — use legacy single thread
-                logger.warning("[MorningScan] No sector_threads in ContentSession — falling back to single thread")
+                logger.warning("[MorningScan] No sector_threads — falling back to single thread")
                 thread_data = self._run_thread_generation(
                     thread_mode="morning_scan",
                     previous_context=self.morning_context,
@@ -593,15 +593,25 @@ class CryptoAnalysisOrchestrator:
             logger.info(f"Anchor slot {slot['label']} complete")
             return
 
-        # 4. Mid-day / closing bell: single focused thread + Substack note
-        thread_data = self._run_thread_generation(
-            thread_mode=slot["mode"],
-            previous_context=self.morning_context,
-            session_content=session_content,
-        )
-
-        if thread_data:
-            self._post_anchor_note(thread_data, slot)
+        # 4. Mid-day / closing bell: sector threads → Substack note
+        if sector_threads:
+            logger.info(f"[{slot['label']}] Posting {len(sector_threads)} sector threads...")
+            # Store first thread tweet as morning context for closing reference
+            first_sector_tweets = next(iter(sector_threads.values()), [])
+            if first_sector_tweets and slot["mode"] == "mid_day_update":
+                self.morning_context = first_sector_tweets[0][:200]
+            self._post_sector_threads(sector_threads, session_content)
+            self._post_anchor_note(None, slot, session_content=session_content)
+        else:
+            # Fallback: no sector_threads — use legacy single thread
+            logger.warning(f"[{slot['label']}] No sector_threads — falling back to single thread")
+            thread_data = self._run_thread_generation(
+                thread_mode=slot["mode"],
+                previous_context=self.morning_context,
+                session_content=session_content,
+            )
+            if thread_data:
+                self._post_anchor_note(thread_data, slot, session_content=session_content)
 
         # 5. Generate individual asset + sector memos
         self._run_news_memo_generation()
@@ -756,15 +766,25 @@ class CryptoAnalysisOrchestrator:
 
         Order: majors → altcoins → memecoins → privacy → defi → commodities
         """
-        SECTOR_ORDER  = ['majors', 'altcoins', 'memecoins', 'privacy', 'defi', 'commodities']
+        # Sector ordering: dict preserves insertion order — use whatever sectors Claude returned
         SECTOR_LABELS = {
-            'majors':      '🏛️  MAJORS',
-            'altcoins':    '🪙  ALTCOINS',
-            'memecoins':   '🐸  MEMECOINS',
-            'privacy':     '🔒  PRIVACY',
-            'defi':        '🏦  DeFi',
-            'commodities': '🌍  COMMODITIES & MACRO',
+            # Morning scan
+            'majors':            '🏛️  MAJORS',
+            'altcoins':          '🪙  ALTCOINS',
+            'memecoins':         '🐸  MEMECOINS',
+            'privacy':           '🔒  PRIVACY',
+            'defi':              '🏦  DeFi',
+            'commodities':       '🌍  COMMODITIES & MACRO',
+            # Mid-day
+            'majors_update':     '🏛️  MAJORS UPDATE',
+            'alts_flow':         '🪙  ALTS & MOVERS',
+            'derivatives_flow':  '📊  DERIVATIVES & FLOW',
+            # Closing
+            'day_summary':       '🌅  DAY SUMMARY',
+            'sector_wrap':       '🔍  SECTOR WRAP',
+            'overnight_watch':   '🌙  OVERNIGHT WATCH',
         }
+        SECTOR_ORDER = list(sector_threads.keys())   # preserves Claude's insertion order
         DELAY_BETWEEN = 120  # 2 minutes between sector threads
 
         posted_count = 0
@@ -819,13 +839,16 @@ class CryptoAnalysisOrchestrator:
 
         logger.info(f"\n[SectorThreads] Done — {posted_count}/{len(sector_threads)} threads posted")
 
-        # Post the long-form article (X Article + Substack) after all sector threads
-        self._post_anchor_article(None, session_content=session_content)
-
-    def _post_anchor_note(self, thread_data: Dict, slot: Dict):
+    def _post_anchor_note(self, thread_data: Optional[Dict], slot: Dict,
+                          session_content: Optional[Dict] = None):
         """Post summary note to Substack (mid-day/closing slots)."""
         try:
-            summary = self._build_note_summary(thread_data, slot)
+            # Prefer ContentSession's pre-generated note; fall back to thread-based builder
+            if session_content and session_content.get('substack_note'):
+                summary = session_content['substack_note']
+            else:
+                summary = self._build_note_summary(thread_data, slot) if thread_data else None
+
             if not summary:
                 return
 
