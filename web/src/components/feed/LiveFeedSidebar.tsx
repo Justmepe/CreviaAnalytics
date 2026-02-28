@@ -324,7 +324,7 @@ function FeedPostItem({ post, isNew, isAuthed, onRequireAuth }: PostProps) {
 
 // ── Main component ───────────────────────────────────────────────────────────
 
-const TABS = ['For You', 'Following', 'Signals', 'Whales'];
+const TABS = ['For You', 'Following', 'Setups', 'Whales'];
 
 export default function LiveFeedSidebar() {
   const { user } = useAuth();
@@ -690,7 +690,7 @@ const SUGGESTIONS = [
   {
     name: 'Risk Engine',
     handle: '@riskengine',
-    desc: 'Live liquidation alerts and position sizing signals.',
+    desc: 'Live liquidation alerts and position sizing intelligence.',
     gradient: 'linear-gradient(135deg, #f03e5a, #c02040)',
     initials: 'RE',
     initColor: '#fff',

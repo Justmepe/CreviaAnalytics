@@ -289,10 +289,10 @@ export default function DashboardClient({
 
             {/* Dashboard preview — blurred/locked */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
-              <TierLock title="Market Regime · Confidence · Signals">
+              <TierLock title="Market Regime · Confidence · Intelligence">
                 <div style={{ background: '#10141c', padding: '20px', borderRadius: 8 }}>
                   <div style={{ fontFamily: 'var(--font-bebas)', fontSize: 32, color: '#00e5a0' }}>ACCUMULATION</div>
-                  <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 10, color: '#788098', marginTop: 4 }}>80% confidence · 4 confirming signals</div>
+                  <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 10, color: '#788098', marginTop: 4 }}>80% confidence · 4 confirming factors</div>
                   <div style={{ height: 3, borderRadius: 2, background: '#1a2030', marginTop: 12 }}>
                     <div style={{ height: 3, borderRadius: 2, width: '80%', background: '#00e5a0' }} />
                   </div>

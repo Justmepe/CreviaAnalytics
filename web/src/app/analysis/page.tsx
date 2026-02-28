@@ -194,7 +194,7 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
                   Market threads post live on @CreviaCockpit
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#38405a' }}>
-                  Scroll the Cockpit Feed or follow us on X for real-time threads &amp; signals
+                  Scroll the Cockpit Feed or catch live threads &amp; regime intelligence on X
                 </div>
               </div>
             </div>
