@@ -82,6 +82,7 @@ from src.pillars.news import get_rss_engine, _calculate_relevance
 from src.utils.x_thread_builder import ThreadBuilder
 from src.content.post_decorator import PostDecorator
 from src.content.content_session import ContentSession
+from src.content.marketing_post_generator import MarketingPostGenerator
 
 
 # =============================================================================
@@ -142,6 +143,15 @@ ANCHOR_CATCHUP_MINUTES = 180      # Minutes AFTER slot to catch up (3h covers PM
 BREAKING_NEWS_INTERVAL = 900      # 15 min between breaking news checks
 BREAKING_NEWS_THRESHOLD = 0.72    # Relevance score threshold for breaking (was 0.85 — too strict)
 ANCHOR_COOLDOWN_MINUTES = 30      # Suppress breaking news right after anchor (was 45)
+
+# Marketing post slots — standalone sales posts, separate from anchor content
+MARKETING_SLOTS = [
+    {"hour": 9,  "post_type": "pain_led",      "label": "Sales: Pain-Led"},
+    {"hour": 15, "post_type": "value_stack",   "label": "Sales: Value Stack"},
+    {"hour": 21, "post_type": "social_proof",  "label": "Sales: Social Proof"},
+    {"hour": 1,  "post_type": "risk_reversal", "label": "Sales: Risk Reversal"},
+]
+MARKETING_WINDOW_MINUTES = 30    # Catch-up window for marketing slots (missed by PM2 restart)
 
 # Directories
 DATA_DIR = Path('data')
@@ -271,6 +281,10 @@ class CryptoAnalysisOrchestrator:
         # Content decorator (CTAs, hashtags, site links on every post)
         self.post_decorator = PostDecorator()
 
+        # Marketing post generator (Hormozi-framework sales posts, 4 slots/day)
+        self.marketing_gen = MarketingPostGenerator()
+        logger.info("   Marketing Post Generator: Ready (pain_led / value_stack / social_proof / risk_reversal)")
+
         # Intelligence layer — regime detection + correlation + smart money
         self.regime_detector = RegimeDetector(aggregator=self.data)
         self.correlation_engine = CorrelationEngine()
@@ -301,6 +315,7 @@ class CryptoAnalysisOrchestrator:
         self.last_anchor_date = {}            # Dict[hour] -> date when last executed
         self.last_anchor_time = None          # Timestamp of last anchor execution
         self.last_breaking_check = 0          # Timestamp of last breaking news check
+        self.last_marketing_date = {}         # Dict[hour] -> date when marketing post last ran
         self.morning_context = None           # Stored thread summary for mid-day reference
         self.posted_breaking_headlines = set()  # Dedup breaking news (title hashes)
         self.last_btc_price = None            # For price crash/spike detection
@@ -376,6 +391,16 @@ class CryptoAnalysisOrchestrator:
                         self._check_price_alert()
                         self.last_breaking_check = current_time
 
+                    # Marketing posts — standalone sales posts, run independently of anchors
+                    mkt_slot = self._get_current_marketing_slot()
+                    if mkt_slot:
+                        mkt_hour = mkt_slot["hour"]
+                        today = now_utc.strftime('%Y-%m-%d')
+                        if self.last_marketing_date.get(mkt_hour) != today:
+                            logger.info(f"MARKETING SLOT TRIGGERED: {mkt_slot['label']} ({mkt_hour:02d}:00 UTC)")
+                            self._run_marketing_post(mkt_slot)
+                            self.last_marketing_date[mkt_hour] = today
+
                     # Sleep 60s — check every minute for anchors and breaking news
                     logger.info(f"\nNext check in 60s (UTC: {now_utc.strftime('%H:%M')})...")
                     time.sleep(60)
@@ -428,6 +453,97 @@ class CryptoAnalysisOrchestrator:
                 return slot
 
         return None
+
+    def _get_current_marketing_slot(self) -> Optional[Dict]:
+        """Check if UTC time is within the trigger window of a marketing post slot.
+
+        Uses a narrow ±30 min window (no 3h catch-up — marketing posts are time-sensitive).
+        Already-run slots (same calendar day) are skipped via last_marketing_date.
+        """
+        now = datetime.now(timezone.utc)
+        today = now.strftime('%Y-%m-%d')
+        window = MARKETING_WINDOW_MINUTES * 60
+
+        for slot in MARKETING_SLOTS:
+            hour = slot["hour"]
+
+            if self.last_marketing_date.get(hour) == today:
+                continue
+
+            slot_time = now.replace(hour=hour, minute=0, second=0, microsecond=0)
+            diff = (now - slot_time).total_seconds()
+
+            # Trigger within 30 min after the slot time (no early trigger for sales posts)
+            if 0 <= diff <= window:
+                return slot
+
+        return None
+
+    def _run_marketing_post(self, slot: Dict):
+        """Generate and post a standalone marketing/sales post for X (@CreviaCockpit).
+
+        Fires at 09:00, 15:00, 21:00, 01:00 UTC alongside regular content.
+        Never touches the market intelligence thread/article pipeline.
+        """
+        post_type = slot["post_type"]
+        label = slot["label"]
+
+        logger.info(f"\n{'='*60}")
+        logger.info(f"MARKETING POST: {label}")
+        logger.info(f"{'='*60}")
+
+        # Build lightweight market context for Claude
+        try:
+            global_metrics = self.data.get_global_metrics()
+            market_data = global_metrics.to_dict() if global_metrics else {}
+        except Exception:
+            market_data = {}
+
+        # Add regime to context
+        if self.current_regime:
+            market_data['regime_name'] = self.current_regime.get('regime', 'NEUTRAL')
+
+        # Generate post
+        post = None
+        try:
+            if post_type == 'pain_led':
+                post = self.marketing_gen.generate_pain_led(market_data)
+            elif post_type == 'value_stack':
+                post = self.marketing_gen.generate_value_stack(market_data)
+            elif post_type == 'social_proof':
+                post = self.marketing_gen.generate_social_proof(market_data)
+            elif post_type == 'risk_reversal':
+                post = self.marketing_gen.generate_risk_reversal(market_data)
+        except Exception as e:
+            logger.error(f"   ❌ Marketing post generation failed: {e}", exc_info=True)
+            return
+
+        if not post or not post.get('tweets'):
+            logger.warning(f"   ⚠️  No post content generated for {label}")
+            return
+
+        tweets = post['tweets']
+        logger.info(f"   Generated {post['tweet_count']} tweet(s) [{post_type}]")
+        for i, t in enumerate(tweets, 1):
+            logger.info(f"   Tweet {i} ({len(t)} chars): {t[:80]}...")
+
+        # Post to X via @CreviaCockpit browser poster
+        if not self.x_cockpit_poster or not self.x_cockpit_poster.enabled:
+            logger.warning("   ⚠️  @CreviaCockpit poster not enabled — skipping X post")
+            return
+
+        try:
+            if len(tweets) == 1:
+                result = self.x_cockpit_poster.post_tweet(tweets[0])
+            else:
+                result = self.x_cockpit_poster.post_thread({'tweets': tweets, 'tweet_count': len(tweets)})
+
+            if result:
+                logger.info(f"   ✅ Marketing post published to @CreviaCockpit")
+            else:
+                logger.error(f"   ❌ @CreviaCockpit post returned False")
+        except Exception as e:
+            logger.error(f"   ❌ @CreviaCockpit post exception: {e}", exc_info=True)
 
     def _run_anchor_content(self, slot: Dict):
         """Execute full content pipeline for an anchor time slot."""
