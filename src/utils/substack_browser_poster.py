@@ -16,6 +16,8 @@ import time
 import json
 import random
 import logging
+import platform
+import subprocess
 from pathlib import Path
 from datetime import datetime, timezone
 from typing import Optional, List, Dict, Any
@@ -148,6 +150,71 @@ class SubstackBrowserPoster:
         self._posts_today.append(post_id)
         self._save_notes_log()
 
+    # ─── Browser launch helpers ───────────────────────────────────────
+
+    def _kill_orphaned_chrome(self):
+        """Kill any Chrome processes holding the session lock (Linux VPS only)."""
+        if platform.system() != "Linux":
+            return
+        try:
+            result = subprocess.run(
+                ["pgrep", "-f", self.session_dir],
+                capture_output=True, text=True, timeout=5
+            )
+            pids = result.stdout.strip().split()
+            for pid in pids:
+                try:
+                    subprocess.run(["kill", "-9", pid], timeout=3)
+                    logger.info(f"[SubstackBrowser] Killed orphaned Chrome PID {pid}")
+                except Exception:
+                    pass
+            if pids:
+                time.sleep(1)
+        except Exception:
+            pass
+
+    def _clear_network_state(self):
+        """Delete Chrome lock files and network cache before each launch."""
+        session = Path(self.session_dir)
+        for name in [
+            "SingletonLock", "SingletonCookie", "SingletonSocket",
+            "TransportSecurity", "NEL",
+        ]:
+            try:
+                (session / name).unlink(missing_ok=True)
+            except Exception:
+                pass
+        try:
+            (session / "Default" / "LOCK").unlink(missing_ok=True)
+        except Exception:
+            pass
+
+    def _get_launch_kwargs(self) -> dict:
+        """Return common Playwright launch kwargs including VPS-compatible Chrome flags."""
+        if platform.system() == "Linux":
+            os.environ.setdefault('DISPLAY', ':99')
+        args = [
+            '--no-sandbox',
+            '--disable-blink-features=AutomationControlled',
+            '--disable-dev-shm-usage',
+            '--no-first-run',
+            '--no-default-browser-check',
+            '--disable-popup-blocking',
+            '--disable-features=NetworkServiceSandbox,EncryptedClientHello,DnsOverHttpsUpgrade',
+            '--disable-quic',
+            '--no-zygote',
+            '--disable-gpu',
+            '--disable-gpu-sandbox',
+        ]
+        return dict(
+            headless=self.headless,
+            viewport={"width": 1280, "height": 900},
+            user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+            locale='en-US',
+            ignore_default_args=['--enable-automation'],
+            args=args,
+        )
+
     # ─── Core browser helpers ─────────────────────────────────────────
 
     def _navigate_and_check_login(self, page) -> bool:
@@ -203,16 +270,26 @@ class SubstackBrowserPoster:
 
         Returns True if the option was clicked successfully.
         """
-        # Step 1: Find and click the "Create new" button
-        create_btn = None
-        for sel in [
+        # Dismiss any overlays before attempting to find the button
+        self._dismiss_overlays(page)
+
+        # Step 1: Find and click the "Create new" / "New post" button
+        # Substack has used several labels over time: "Create new", "Create", "New", "New post"
+        _CREATE_SELS = [
             "button:has-text('Create new')",
-            "button:has-text('Create')",
             "a:has-text('Create new')",
-        ]:
+            "button:has-text('New post')",
+            "button:has-text('Create')",
+            "a:has-text('New post')",
+            "[aria-label*='Create']",
+            "[aria-label*='New post']",
+            "button[class*='create']",
+        ]
+        create_btn = None
+        for sel in _CREATE_SELS:
             try:
                 btn = page.locator(sel).first
-                if btn.is_visible(timeout=5000):
+                if btn.is_visible(timeout=3000):
                     create_btn = btn
                     logger.info(f"[SubstackBrowser] Found 'Create new': {sel}")
                     break
@@ -228,12 +305,9 @@ class SubstackBrowserPoster:
                 page.goto(pub_url, timeout=30000)
                 page.wait_for_load_state("domcontentloaded", timeout=15000)
                 time.sleep(random.uniform(2, 3))
+                self._dismiss_overlays(page)
 
-                for sel in [
-                    "button:has-text('Create new')",
-                    "button:has-text('Create')",
-                    "a:has-text('Create new')",
-                ]:
+                for sel in _CREATE_SELS:
                     try:
                         btn = page.locator(sel).first
                         if btn.is_visible(timeout=3000):
@@ -247,10 +321,25 @@ class SubstackBrowserPoster:
 
         if not create_btn:
             logger.error("[SubstackBrowser] 'Create new' button not found anywhere")
+            try:
+                self._screenshot_debug(page, "create_new_not_found")
+                # Log all visible buttons to diagnose the issue
+                btns = page.locator("button").all()
+                for b in btns[:20]:
+                    try:
+                        if b.is_visible(timeout=200):
+                            logger.info(f"[SubstackBrowser] Visible button: '{b.text_content().strip()[:40]}'")
+                    except Exception:
+                        pass
+            except Exception:
+                pass
             return False
 
         # Click the dropdown
-        create_btn.click()
+        try:
+            create_btn.click()
+        except Exception:
+            create_btn.evaluate("el => el.click()")
         time.sleep(random.uniform(0.8, 1.5))
 
         # Step 2: Select the option from the dropdown menu
@@ -388,11 +477,12 @@ class SubstackBrowserPoster:
         """
         with self.lock:
             try:
+                self._kill_orphaned_chrome()
+                self._clear_network_state()
                 with sync_playwright() as p:
                     context = p.chromium.launch_persistent_context(
                         self.session_dir,
-                        headless=self.headless,
-                        viewport={"width": 1280, "height": 900},
+                        **self._get_launch_kwargs(),
                     )
                     self._inject_session_cookies(context)
                     page = context.new_page()
@@ -507,34 +597,61 @@ class SubstackBrowserPoster:
                             except Exception:
                                 continue
 
-                        # Fallback: find Post button, skip dashboard nav buttons
+                        # Fallback: find Post/Share/Publish button, skip nav buttons
                         if not post_clicked:
                             for sel in [
                                 "button:has-text('Post')",
+                                "button:has-text('Share')",
                                 "button:has-text('Publish')",
-                                "button[type='submit']:has-text('Post')",
+                                "button[type='submit']",
                             ]:
                                 try:
                                     btns = page.locator(sel)
                                     for i in range(btns.count()):
                                         btn = btns.nth(i)
-                                        if btn.is_visible(timeout=1000) and btn.is_enabled():
-                                            href = btn.get_attribute('data-href') or ''
-                                            if '/share-center' in href or '/detail/' in href:
+                                        try:
+                                            if not (btn.is_visible(timeout=1000) and btn.is_enabled()):
                                                 continue
-                                            self._dismiss_overlays(page)
-                                            time.sleep(random.uniform(0.3, 0.5))
-                                            try:
-                                                btn.click(force=True)
-                                            except Exception:
-                                                btn.evaluate("el => el.click()")
-                                            post_clicked = True
-                                            logger.info(f"[SubstackBrowser] Clicked Post: {sel}")
-                                            break
+                                        except Exception:
+                                            continue
+                                        href = btn.get_attribute('data-href') or ''
+                                        if '/share-center' in href or '/detail/' in href:
+                                            continue
+                                        # Skip navigation-level buttons (small text, large page area)
+                                        txt = btn.text_content().strip().lower() if btn.text_content() else ''
+                                        if txt in ('home', 'settings', 'stats', 'dashboard'):
+                                            continue
+                                        self._dismiss_overlays(page)
+                                        time.sleep(random.uniform(0.3, 0.5))
+                                        try:
+                                            btn.click(force=True)
+                                        except Exception:
+                                            btn.evaluate("el => el.click()")
+                                        post_clicked = True
+                                        logger.info(f"[SubstackBrowser] Clicked Post ('{txt}'): {sel}")
+                                        break
                                     if post_clicked:
                                         break
                                 except Exception:
                                     continue
+
+                        # Last resort: JS — find the submit/post button near the compose area
+                        if not post_clicked:
+                            try:
+                                clicked = page.evaluate("""(() => {
+                                    const btns = [...document.querySelectorAll('button')];
+                                    const postBtn = btns.find(b => {
+                                        const t = b.textContent.trim().toLowerCase();
+                                        return (t === 'post' || t === 'share' || t === 'publish') && b.offsetParent !== null;
+                                    });
+                                    if (postBtn) { postBtn.click(); return true; }
+                                    return false;
+                                })()""")
+                                if clicked:
+                                    post_clicked = True
+                                    logger.info("[SubstackBrowser] JS fallback: clicked Post/Share button")
+                            except Exception:
+                                pass
 
                         if not post_clicked:
                             logger.error("[SubstackBrowser] Post button not found for note")
@@ -569,11 +686,12 @@ class SubstackBrowserPoster:
         """
         with self.lock:
             try:
+                self._kill_orphaned_chrome()
+                self._clear_network_state()
                 with sync_playwright() as p:
                     context = p.chromium.launch_persistent_context(
                         self.session_dir,
-                        headless=self.headless,
-                        viewport={"width": 1280, "height": 900},
+                        **self._get_launch_kwargs(),
                     )
                     self._inject_session_cookies(context)
                     page = context.new_page()
@@ -918,11 +1036,12 @@ class SubstackBrowserPoster:
         """
         with self.lock:
             try:
+                self._kill_orphaned_chrome()
+                self._clear_network_state()
                 with sync_playwright() as p:
                     context = p.chromium.launch_persistent_context(
                         self.session_dir,
-                        headless=self.headless,
-                        viewport={"width": 1280, "height": 900},
+                        **self._get_launch_kwargs(),
                     )
                     self._inject_session_cookies(context)
                     page = context.new_page()

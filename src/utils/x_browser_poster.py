@@ -1268,8 +1268,9 @@ class XBrowserPoster:
                             return False
 
                         # Wait for confirmation dialog to appear
+                        # VPS is slower — give it up to 10s before checking for dialog
                         logger.info("[XBrowserPoster] Waiting for publish confirmation dialog...")
-                        time.sleep(5)
+                        time.sleep(8)
 
                         # Take debug screenshot after first Publish click
                         try:
@@ -1284,47 +1285,89 @@ class XBrowserPoster:
                             context.close()
                             return False
 
+                        # If already published (no longer on edit URL), skip dialog step
+                        if "compose/articles/edit" not in page.url:
+                            logger.info(f"[XBrowserPoster] Article published without dialog — URL: {page.url}")
+                            context.close()
+                            return True
+
                         # STEP 2: Click Publish button inside the confirmation dialog
+                        # Use evaluate/JS click — _human_move_and_click can be blocked by overlays
                         dialog_published = False
 
                         # Method 1: Publish button inside [role="dialog"]
-                        try:
-                            dialog_btn = page.locator('[role="dialog"] button:has-text("Publish")').first
-                            if dialog_btn.is_visible(timeout=5000):
-                                time.sleep(random.uniform(0.3, 0.7))
-                                _human_move_and_click(page, dialog_btn)
-                                dialog_published = True
-                                logger.info("[XBrowserPoster] Clicked Publish in dialog (role=dialog)")
-                        except Exception:
-                            pass
-
-                        # Method 2: Publish button inside #layers (dialog shows up in layers)
-                        if not dialog_published:
+                        for btn_text in ["Publish", "Publish now", "Post article", "Confirm"]:
                             try:
-                                layers_btn = page.locator('#layers button:has-text("Publish")').first
-                                if layers_btn.is_visible(timeout=3000):
+                                dialog_btn = page.locator(f'[role="dialog"] button:has-text("{btn_text}")').first
+                                if dialog_btn.is_visible(timeout=5000):
                                     time.sleep(random.uniform(0.3, 0.7))
-                                    _human_move_and_click(page, layers_btn)
+                                    try:
+                                        dialog_btn.click(timeout=3000)
+                                    except Exception:
+                                        dialog_btn.evaluate("el => el.click()")
                                     dialog_published = True
-                                    logger.info("[XBrowserPoster] Clicked Publish in #layers")
+                                    logger.info(f"[XBrowserPoster] Clicked '{btn_text}' in dialog (role=dialog)")
+                                    break
                             except Exception:
-                                pass
+                                continue
 
-                        # Method 3: Find all Publish buttons, click the last one
+                        # Method 2: Publish button inside #layers
+                        if not dialog_published:
+                            for btn_text in ["Publish", "Publish now", "Post article"]:
+                                try:
+                                    layers_btn = page.locator(f'#layers button:has-text("{btn_text}")').first
+                                    if layers_btn.is_visible(timeout=3000):
+                                        time.sleep(random.uniform(0.3, 0.7))
+                                        try:
+                                            layers_btn.click(timeout=3000)
+                                        except Exception:
+                                            layers_btn.evaluate("el => el.click()")
+                                        dialog_published = True
+                                        logger.info(f"[XBrowserPoster] Clicked '{btn_text}' in #layers")
+                                        break
+                                except Exception:
+                                    continue
+
+                        # Method 3: Find all Publish buttons visible, click last one
                         if not dialog_published:
                             try:
                                 all_publish = page.locator('button:has-text("Publish")').all()
                                 logger.info(f"[XBrowserPoster] Found {len(all_publish)} Publish buttons total")
-                                if len(all_publish) >= 2:
-                                    time.sleep(random.uniform(0.3, 0.7))
-                                    _human_move_and_click(page, all_publish[-1])
+                                for btn in reversed(all_publish):
+                                    try:
+                                        if btn.is_visible(timeout=2000):
+                                            try:
+                                                btn.click(timeout=3000)
+                                            except Exception:
+                                                btn.evaluate("el => el.click()")
+                                            dialog_published = True
+                                            logger.info("[XBrowserPoster] Clicked last visible Publish button")
+                                            break
+                                    except Exception:
+                                        continue
+                            except Exception:
+                                pass
+
+                        # Method 4: JS — find and click whichever Publish button is inside a dialog/modal
+                        if not dialog_published:
+                            try:
+                                clicked = page.evaluate("""(() => {
+                                    const btns = [...document.querySelectorAll('button')];
+                                    const publishBtn = btns.find(b =>
+                                        b.textContent.trim().toLowerCase().startsWith('publish') &&
+                                        b.offsetParent !== null
+                                    );
+                                    if (publishBtn) { publishBtn.click(); return true; }
+                                    return false;
+                                })()""")
+                                if clicked:
                                     dialog_published = True
-                                    logger.info("[XBrowserPoster] Clicked last Publish button")
+                                    logger.info("[XBrowserPoster] JS fallback: clicked visible Publish button")
                             except Exception:
                                 pass
 
                         if not dialog_published:
-                            logger.warning("[XBrowserPoster] Could not find dialog Publish button")
+                            logger.warning("[XBrowserPoster] Could not find dialog Publish button — checking if already published")
                             try:
                                 page.screenshot(path=str(PROJECT_ROOT / "x_debug_no_dialog.png"))
                             except Exception:
@@ -1522,7 +1565,32 @@ class XBrowserPoster:
                         page.keyboard.press("Escape")
                         time.sleep(0.5)
 
-                        # ── Click first compose area ──────────────────────────────
+                        # ── Open full compose dialog via sidebar button ────────────
+                        # The sidebar "Post" button opens the full thread-composer modal
+                        # (lives in #layers) which is more reliable than the inline
+                        # home-feed compose box for multi-tweet thread construction.
+                        compose_opened = False
+                        for sidebar_sel in [
+                            '[data-testid="SideNav_NewTweet_Button"]',
+                            'a[data-testid="SideNav_NewTweet_Button"]',
+                            '[aria-label="Post"][role="link"]',
+                            '[aria-label="Post"][role="button"]',
+                        ]:
+                            try:
+                                btn = page.locator(sidebar_sel).first
+                                if btn.is_visible(timeout=3000):
+                                    btn.click()
+                                    time.sleep(random.uniform(1.5, 2.5))
+                                    compose_opened = True
+                                    logger.info(f"[XBrowserPoster] Compose modal opened via: {sidebar_sel}")
+                                    break
+                            except Exception:
+                                continue
+
+                        if not compose_opened:
+                            logger.info("[XBrowserPoster] Sidebar compose button not found — using inline home compose")
+
+                        # ── Click first compose textarea ──────────────────────────
                         compose_found = False
                         for sel in [
                             'div[data-testid="tweetTextarea_0"]',
@@ -1532,7 +1600,7 @@ class XBrowserPoster:
                         ]:
                             try:
                                 el = page.locator(sel).first
-                                if el.is_visible(timeout=3000):
+                                if el.is_visible(timeout=5000):
                                     time.sleep(random.uniform(0.4, 0.8))
                                     _human_move_and_click(page, el)
                                     compose_found = True
@@ -1565,7 +1633,7 @@ class XBrowserPoster:
                             try:
                                 ta = page.locator(textarea_sel).first
                                 if i > 0:
-                                    ta.wait_for(state='visible', timeout=8000)
+                                    ta.wait_for(state='visible', timeout=12000)
                                 ta.click()
                                 time.sleep(random.uniform(0.3, 0.5))
                             except Exception:
@@ -1590,48 +1658,91 @@ class XBrowserPoster:
                                 for add_sel in [
                                     'div[data-testid="addButton"]',
                                     'button[data-testid="addButton"]',
+                                    '[data-testid="addButton"]',
                                     'div[aria-label="Add"]',
                                     'button[aria-label="Add"]',
-                                    '[data-testid="addButton"]',
                                 ]:
                                     try:
                                         btn = page.locator(add_sel).first
-                                        if not btn.is_visible(timeout=4000):
+                                        if not btn.is_visible(timeout=5000):
                                             continue
-                                        # Use real Playwright click (mousedown+mouseup+click)
-                                        # so React synthetic events fire — JS .click() alone
-                                        # does not trigger the addButton React handler.
+
+                                        # Scroll addButton into view (VPS viewport may cut it off)
+                                        try:
+                                            btn.scroll_into_view_if_needed(timeout=2000)
+                                            time.sleep(0.3)
+                                        except Exception:
+                                            pass
+
+                                        # Attempt 1: real Playwright click (fires React synthetic events)
+                                        clicked = False
                                         try:
                                             btn.click(timeout=3000)
+                                            clicked = True
                                         except Exception:
-                                            btn.evaluate("el => el.click()")
-                                        time.sleep(random.uniform(0.5, 1.0))
+                                            pass
 
-                                        # Verify the next textarea actually appeared
+                                        # Attempt 2: JS dispatchEvent if Playwright click failed/was blocked
+                                        if not clicked:
+                                            try:
+                                                page.evaluate("""
+                                                    (() => {
+                                                        const el = document.querySelector('[data-testid="addButton"]');
+                                                        if (el) {
+                                                            el.dispatchEvent(new MouseEvent('mousedown', {bubbles:true, cancelable:true}));
+                                                            el.dispatchEvent(new MouseEvent('mouseup',   {bubbles:true, cancelable:true}));
+                                                            el.dispatchEvent(new MouseEvent('click',     {bubbles:true, cancelable:true}));
+                                                        }
+                                                    })()
+                                                """)
+                                                clicked = True
+                                            except Exception:
+                                                pass
+
+                                        # Give React time to create the new textarea slot
+                                        time.sleep(random.uniform(2.0, 3.0))
+
+                                        # Verify the next textarea appeared
                                         try:
                                             page.locator(next_textarea_sel).wait_for(
-                                                state='visible', timeout=5000
+                                                state='visible', timeout=10000
                                             )
                                             add_clicked = True
                                             logger.info(f"[XBrowserPoster] '+' clicked after tweet {i+1} — textarea_{i+1} confirmed")
+                                            break
                                         except Exception:
-                                            logger.warning(f"[XBrowserPoster] '+' click landed but textarea_{i+1} not visible — retrying with JS click")
-                                            btn.evaluate("el => el.click()")
-                                            time.sleep(0.8)
+                                            logger.warning(f"[XBrowserPoster] '+' click landed but textarea_{i+1} not visible — trying dispatchEvent retry")
+                                            # Full dispatchEvent retry
                                             try:
-                                                page.locator(next_textarea_sel).wait_for(
-                                                    state='visible', timeout=5000
-                                                )
-                                                add_clicked = True
-                                                logger.info(f"[XBrowserPoster] '+' JS retry confirmed textarea_{i+1}")
+                                                page.evaluate("""
+                                                    (() => {
+                                                        const el = document.querySelector('[data-testid="addButton"]');
+                                                        if (el) {
+                                                            el.dispatchEvent(new MouseEvent('mousedown', {bubbles:true, cancelable:true}));
+                                                            el.dispatchEvent(new MouseEvent('mouseup',   {bubbles:true, cancelable:true}));
+                                                            el.dispatchEvent(new MouseEvent('click',     {bubbles:true, cancelable:true}));
+                                                        }
+                                                    })()
+                                                """)
                                             except Exception:
                                                 pass
-                                        break
+                                            time.sleep(1.5)
+                                            try:
+                                                page.locator(next_textarea_sel).wait_for(
+                                                    state='visible', timeout=8000
+                                                )
+                                                add_clicked = True
+                                                logger.info(f"[XBrowserPoster] '+' dispatchEvent retry confirmed textarea_{i+1}")
+                                                break
+                                            except Exception:
+                                                pass
+                                        # Continue to next selector if this one failed
+                                        continue
                                     except Exception:
                                         continue
 
                                 if not add_clicked:
-                                    logger.warning(f"[XBrowserPoster] '+' button not found after tweet {i+1} — posting partial thread ({i+1} tweets)")
+                                    logger.warning(f"[XBrowserPoster] '+' button not confirmed after tweet {i+1} — posting partial thread ({i+1} tweets)")
                                     break
 
                         # NOTE: Do NOT remove elements from #layers here.
