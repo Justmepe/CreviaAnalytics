@@ -562,28 +562,45 @@ class CryptoAnalysisOrchestrator:
             self._run_analysis_phase()
             self.last_analysis_time = current_time
 
-        # 2. ContentSession — ONE Claude call generates ALL content for this slot
-        # (thread + article + note). Avoids calling Claude separately per format.
+        # 2. ContentSession — ONE Claude call generates ALL content for this slot.
         session_content = self._run_content_session(slot["mode"])
 
-        # 3. Generate thread with correct mode
+        # 3. Morning scan: post 6 sector-specific threads then long-form article
+        if slot["mode"] == "morning_scan":
+            sector_threads = session_content.get('sector_threads', {}) if session_content else {}
+            if sector_threads:
+                logger.info(f"[MorningScan] Posting {len(sector_threads)} sector threads...")
+                # Store morning context summary for mid-day reference
+                majors_tweets = sector_threads.get('majors', [])
+                if majors_tweets:
+                    self.morning_context = majors_tweets[0][:200]
+                self._post_sector_threads(sector_threads, session_content)
+            else:
+                # Fallback: no sector_threads from Claude — use legacy single thread
+                logger.warning("[MorningScan] No sector_threads in ContentSession — falling back to single thread")
+                thread_data = self._run_thread_generation(
+                    thread_mode="morning_scan",
+                    previous_context=self.morning_context,
+                    session_content=session_content,
+                )
+                if thread_data:
+                    tweets = thread_data.get('tweets', [])
+                    if tweets:
+                        self.morning_context = tweets[0][:200]
+                    self._post_anchor_article(thread_data, session_content=session_content)
+
+            self._run_news_memo_generation()
+            logger.info(f"Anchor slot {slot['label']} complete")
+            return
+
+        # 4. Mid-day / closing bell: single focused thread + Substack note
         thread_data = self._run_thread_generation(
             thread_mode=slot["mode"],
             previous_context=self.morning_context,
             session_content=session_content,
         )
 
-        # 4. Store morning context for mid-day reference
-        if slot["mode"] == "morning_scan" and thread_data:
-            # Build a short summary of morning thread for mid-day reference
-            tweets = thread_data.get('tweets', [])
-            if tweets:
-                self.morning_context = tweets[0][:200]  # First tweet as summary
-
-        # 5. Platform routing based on slot type
-        if slot.get("full_article") and thread_data:
-            self._post_anchor_article(thread_data, session_content=session_content)
-        elif thread_data:
+        if thread_data:
             self._post_anchor_note(thread_data, slot)
 
         # 5. Generate individual asset + sector memos
@@ -731,6 +748,79 @@ class CryptoAnalysisOrchestrator:
 
         except Exception as e:
             logger.error(f"❌ CRITICAL: Anchor article posting error: {e}", exc_info=True)
+
+    def _post_sector_threads(self, sector_threads: Dict, session_content: Dict):
+        """
+        Morning scan: post each sector thread to X (main + @CreviaCockpit) with a delay
+        between them so they don't flood the timeline, then post the long-form article.
+
+        Order: majors → altcoins → memecoins → privacy → defi → commodities
+        """
+        SECTOR_ORDER  = ['majors', 'altcoins', 'memecoins', 'privacy', 'defi', 'commodities']
+        SECTOR_LABELS = {
+            'majors':      '🏛️  MAJORS',
+            'altcoins':    '🪙  ALTCOINS',
+            'memecoins':   '🐸  MEMECOINS',
+            'privacy':     '🔒  PRIVACY',
+            'defi':        '🏦  DeFi',
+            'commodities': '🌍  COMMODITIES & MACRO',
+        }
+        DELAY_BETWEEN = 120  # 2 minutes between sector threads
+
+        posted_count = 0
+        for sector in SECTOR_ORDER:
+            tweets = sector_threads.get(sector, [])
+            if not tweets:
+                logger.warning(f"[SectorThreads] No tweets for '{sector}' — skipping")
+                continue
+
+            label = SECTOR_LABELS.get(sector, sector.upper())
+            logger.info(f"\n{'='*60}")
+            logger.info(f"📡 {label} thread ({len(tweets)} tweets)...")
+
+            body = '\n'.join(tweets)
+
+            # Dedup check — skip if content already posted
+            if self.tracker.is_duplicate(body):
+                logger.info(f"   ↩️  {label} duplicate detected — skipping")
+                continue
+
+            thread_data = {'tweets': tweets, 'tweet_count': len(tweets)}
+
+            # ── Main account ──────────────────────────────────────────────
+            result = None
+            if getattr(self.x_browser_poster, 'enabled', False):
+                result = self.x_browser_poster.post_thread(thread_data)
+
+            if result and result.get('success'):
+                logger.info(f"   ✅ {label} posted (main)")
+                self.tracker.record_post(
+                    body=body,
+                    content_type='sector_thread',
+                    ticker='MARKET',
+                    sector=sector,
+                )
+                posted_count += 1
+            else:
+                logger.warning(f"   ❌ {label} main account failed")
+
+            # ── @CreviaCockpit ────────────────────────────────────────────
+            if getattr(self.x_cockpit_poster, 'enabled', False):
+                cockpit_result = self.x_cockpit_poster.post_thread(thread_data)
+                if cockpit_result and cockpit_result.get('success'):
+                    logger.info(f"   ✅ {label} posted (@CreviaCockpit)")
+                else:
+                    logger.warning(f"   ⚠️  {label} @CreviaCockpit failed")
+
+            # Wait before next sector (skip delay after the last one)
+            if sector != SECTOR_ORDER[-1]:
+                logger.info(f"   ⏳ Waiting {DELAY_BETWEEN}s before next sector...")
+                time.sleep(DELAY_BETWEEN)
+
+        logger.info(f"\n[SectorThreads] Done — {posted_count}/{len(sector_threads)} threads posted")
+
+        # Post the long-form article (X Article + Substack) after all sector threads
+        self._post_anchor_article(None, session_content=session_content)
 
     def _post_anchor_note(self, thread_data: Dict, slot: Dict):
         """Post summary note to Substack (mid-day/closing slots)."""
@@ -1117,8 +1207,10 @@ class CryptoAnalysisOrchestrator:
         except Exception as e:
             logger.error(f"❌ CRITICAL: Breaking news posting error: {e}", exc_info=True)
 
-    def _build_article_body(self, thread_data: Dict) -> Optional[str]:
+    def _build_article_body(self, thread_data: Optional[Dict]) -> Optional[str]:
         """Convert thread data into long-form article body."""
+        if not thread_data:
+            return None
         tweets = thread_data.get('tweets', [])
         if not tweets:
             return None

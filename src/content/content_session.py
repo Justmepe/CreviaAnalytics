@@ -79,6 +79,7 @@ class ContentSession:
             'x_article':          self._derive_x_article(master),
             'substack_article':   self._derive_substack_article(master),
             'substack_note':      self._derive_substack_note(master),
+            'sector_threads':     self._derive_sector_threads(master),
             'docx_path':          self._write_docx(master),
         }
         return result
@@ -95,6 +96,9 @@ class ContentSession:
         """
         Call Claude once and return the master brief as a Python dict.
         Falls back to a template-based brief if the API call fails.
+
+        morning_scan → sector_threads dict (6 sector threads, 4-6 tweets each) + narrative
+        all other modes → thread_tweets list + narrative
         """
         api_key = os.getenv('ANTHROPIC_API_KEY')
         if not api_key:
@@ -117,77 +121,135 @@ class ContentSession:
                 'defi':           self.analysis_data.get('defi', []),
                 'memecoins':      self.analysis_data.get('memecoins', []),
                 'privacy_coins':  self.analysis_data.get('privacy_coins', []),
+                'commodities':    self.analysis_data.get('commodities', []),
                 'news_context':   self.news_context or '',
             }, indent=2)
 
-            mode_instructions = {
-                'morning_scan': (
-                    "This is the MORNING SCAN (08:00 UTC). "
-                    "Generate a comprehensive 12-tweet thread + 1500-word narrative. "
-                    "Tone: authoritative, data-driven, Bloomberg-style. "
-                    "Cover: market overview, BTC, ETH, alts, DeFi, derivatives, on-chain, scenarios, risk."
-                ),
-                'mid_day_update': (
-                    "This is a MID-DAY UPDATE (12:00 or 16:00 UTC). "
-                    "Generate a focused 6-tweet thread + 800-word narrative. "
-                    "Compare to morning scan context. Highlight what changed."
-                ),
-                'closing_bell': (
-                    "This is the CLOSING BELL (00:00 UTC). "
-                    "Generate a concise 6-tweet thread + 800-word narrative. "
-                    "Summarise the day: key moves, regime shift if any, overnight watch levels."
-                ),
-                'breaking_news': (
-                    "This is a BREAKING NEWS post. "
-                    "Generate a tight 5-tweet thread + 600-word narrative. "
-                    "Lead with the news, explain market impact, give the trade angle."
-                ),
-            }.get(self.mode, "Generate a concise 6-tweet market update thread and 600-word narrative.")
-
-            prompt = f"""You are a senior crypto market analyst and journalist writing for CreviaCockpit.
-
-{mode_instructions}
-
-MARKET DATA (JSON):
-{context_json}
-
-Return a JSON object with EXACTLY these keys:
-{{
-  "headline": "An editorial, tension-driven headline (e.g. 'BTC Holds $68K as Alts Bleed — Risk-Off or Opportunity?')",
-  "thread_tweets": [
-    "Tweet 1 text (≤280 chars, starts with '1/')",
-    "Tweet 2 text (≤280 chars, starts with '2/')",
-    ...
-  ],
-  "narrative": "Full {'' if self.mode == 'morning_scan' else 'shorter '}narrative (1500 words for morning scan, 800 words otherwise). Professional, specific, no filler.",
-  "key_insight": "2-sentence market hook for a social note. State the tension, give the trade angle.",
-  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
-  "tags": ["tag1", "tag2", "tag3"],
-  "mentioned_assets": ["BTC", "ETH", ...]
-}}
-
-Requirements:
-- thread_tweets: numbered 1/, 2/, 3/... each ≤280 chars
-- narrative: no filler, data-specific, cite actual numbers from the data
-- headline: must create intellectual tension (not just 'Crypto Market Update')
-- Return ONLY the JSON object. No preamble, no explanation."""
+            if self.mode == 'morning_scan':
+                prompt = self._build_morning_scan_prompt(context_json, date_str, time_str)
+                max_tokens = 10000
+            else:
+                prompt = self._build_standard_prompt(context_json, date_str, time_str)
+                max_tokens = 8000
 
             engine = ClaudeResearchEngine(api_key)
-            response = engine._call_model(prompt, max_tokens=8000)
+            response = engine._call_model(prompt, max_tokens=max_tokens)
 
             raw = ""
             for block in response.content:
                 if hasattr(block, 'text'):
                     raw += block.text
 
-            # Parse JSON from response
             master = self._parse_master_json(raw)
-            logger.info(f"[ContentSession] Master brief generated: '{master.get('headline', '')[:60]}...'")
+            logger.info(f"[ContentSession] Master brief: '{master.get('headline', '')[:60]}...'")
             return master
 
         except Exception as e:
             logger.error(f"[ContentSession] Claude call failed: {e}. Using template fallback.")
             return self._template_fallback()
+
+    # ── Prompt builders ───────────────────────────────────────────────────────
+
+    def _build_morning_scan_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior crypto market analyst at CreviaCockpit writing the MORNING SCAN for {date_str} at {time_str}.
+
+Your job: write 6 SECTOR-SPECIFIC threads that together cover all 22 tracked assets, so readers can choose which sectors matter to them.
+
+SECTOR DEFINITIONS:
+  majors      → BTC, ETH          (flagship pair, market structure, dominance, derivatives)
+  altcoins    → XRP, SOL, BNB, AVAX, SUI, LINK  (high-cap rotation, relative strength)
+  memecoins   → DOGE, SHIB, PEPE, FLOKI          (sentiment, risk appetite, volume)
+  privacy     → XMR, ZEC, DASH, SCRT             (privacy narrative, DEX vs CEX flows)
+  defi        → AAVE, UNI, CRV, LDO              (TVL, yields, governance)
+  commodities → XAU, TSLA + macro context        (cross-asset, rate sensitivity)
+
+MARKET DATA (JSON):
+{context_json}
+
+RULES FOR EVERY TWEET:
+1. Use EXACT numbers from the data — never say "rising" without a % to back it up
+2. Use emojis deliberately:
+   💎 BTC  ⚡ ETH  🪙 alts  🐸 memecoins  🔒 privacy  🏦 DeFi  🌍 macro
+   📊 metric  ⬆️ bullish / ⬇️ bearish  🎯 key level  ⚠️ risk/warning
+3. Each tweet ≤280 chars, numbered: 1/ 2/ 3/ etc.
+4. TWEET 1 of every thread = sector header + date + 2-3 top metrics + "👇"
+   Example: "1/ 🏛️ MAJORS SCAN | {date_str}\\n\\nBTC Dom: 61.4% | Mcap: $2.7T | F&G: 71\\n\\nHere's where the big two stand 👇"
+5. Middle tweets: one tweet per key asset — price, 24h %, one key level, one-line read
+6. Final tweet: sector trade angle, rotation signal, or key watch level — give the "so what"
+7. 4-6 tweets per sector. Each sector thread is POSTED SEPARATELY so keep each self-contained.
+8. DO NOT repeat the same data point or insight across different sector threads.
+9. Tone: authoritative analyst, zero hype, zero filler, zero em-dashes
+
+ALSO write: a full 1500-word narrative article covering all sectors (for X Article + Substack).
+
+Return ONLY this JSON object (no preamble, no markdown):
+{{
+  "headline": "Editorial, tension-driven headline for today's full scan — cite the dominant narrative and a specific price or data point",
+  "sector_threads": {{
+    "majors":      ["1/ tweet ≤280 chars", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
+    "altcoins":    ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
+    "memecoins":   ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
+    "privacy":     ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
+    "defi":        ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
+    "commodities": ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"]
+  }},
+  "narrative": "Full 1500-word professional narrative — specific numbers, no filler, covers all sectors",
+  "key_insight": "2-sentence hook: state the dominant market tension, give the trade angle",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["crypto", "bitcoin", "markets"],
+  "mentioned_assets": ["BTC", "ETH", "SOL", ...]
+}}"""
+
+    def _build_standard_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        mode_instructions = {
+            'mid_day_update': (
+                f"This is the MID-DAY UPDATE at {time_str}. "
+                "Write a focused 6-8 tweet thread + 800-word narrative. "
+                "Highlight what has CHANGED since the morning: price moves, news, derivatives shifts. "
+                "Be specific — compare to earlier levels."
+            ),
+            'closing_bell': (
+                f"This is the CLOSING BELL at {time_str}. "
+                "Write a concise 6-8 tweet thread + 800-word narrative. "
+                "Summarise the day: biggest movers, regime signal, overnight watch levels. "
+                "Give a clear directional bias for Asian session."
+            ),
+            'breaking_news': (
+                "This is a BREAKING NEWS post. "
+                "Write a tight 5-7 tweet thread + 600-word narrative. "
+                "Tweet 1: the news hook (who, what, why it matters). "
+                "Tweets 2-4: market impact — which assets, which direction, key levels. "
+                "Final tweet: trade angle or risk management note."
+            ),
+        }.get(self.mode, "Write a concise 6-tweet crypto market update thread and 600-word narrative.")
+
+        return f"""You are a senior crypto market analyst at CreviaCockpit. {date_str} at {time_str}.
+
+{mode_instructions}
+
+MARKET DATA (JSON):
+{context_json}
+
+TWEET RULES:
+- Use emojis: 💎 BTC | ⚡ ETH | 🪙 alts | 📊 metrics | ⬆️⬇️ direction | 🎯 levels | ⚠️ risk
+- Every price claim needs an exact number from the data — no vague "rising strongly"
+- Numbered: 1/ 2/ 3/ etc. Each tweet ≤280 chars
+- Authoritative tone — zero hype, zero em-dashes, zero filler
+
+Return ONLY this JSON object (no preamble, no markdown):
+{{
+  "headline": "Tension-driven headline — must cite a specific asset or data point",
+  "thread_tweets": [
+    "1/ tweet ≤280 chars",
+    "2/ tweet",
+    "..."
+  ],
+  "narrative": "Professional narrative (800 words for update/closing, 600 for breaking news). Specific numbers throughout.",
+  "key_insight": "2-sentence hook: dominant tension + trade angle",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["crypto", "bitcoin", "markets"],
+  "mentioned_assets": ["BTC", "ETH", ...]
+}}"""
 
     def _parse_master_json(self, raw: str) -> Dict[str, Any]:
         """Extract JSON from Claude's response (handles markdown fences)."""
@@ -206,17 +268,61 @@ Requirements:
     # ── Format derivation ─────────────────────────────────────────────────────
 
     def _derive_x_thread(self, master: Dict) -> List[str]:
-        """Return thread_tweets as a clean list of strings."""
-        raw = master.get('thread_tweets', [])
+        """
+        Return the primary thread as a clean list of strings.
+
+        For morning_scan: uses the 'majors' sector thread as the representative
+        x_thread (the full set lives in sector_threads).
+        For other modes: uses thread_tweets directly.
+        """
+        # Morning scan — primary thread is the majors sector thread
+        if self.mode == 'morning_scan':
+            sector_threads = master.get('sector_threads', {})
+            raw = sector_threads.get('majors', [])
+            if not raw:
+                # Try any sector as fallback
+                for tweets in sector_threads.values():
+                    if tweets:
+                        raw = tweets
+                        break
+        else:
+            raw = master.get('thread_tweets', [])
+
         tweets: List[str] = []
         for t in raw:
             s = str(t).strip()
             if s:
                 tweets.append(s[:280])
         if not tweets:
-            # Split narrative into tweet-sized chunks as fallback
             tweets = self._split_narrative_to_tweets(master.get('narrative', ''))
         return tweets
+
+    def _derive_sector_threads(self, master: Dict) -> Dict[str, List[str]]:
+        """
+        For morning_scan: return the 6 sector threads from the master brief,
+        each cleaned to ≤280 chars per tweet.
+        For all other modes: returns an empty dict.
+        """
+        if self.mode != 'morning_scan':
+            return {}
+
+        SECTOR_ORDER = ['majors', 'altcoins', 'memecoins', 'privacy', 'defi', 'commodities']
+        raw = master.get('sector_threads', {})
+        result: Dict[str, List[str]] = {}
+
+        for sector in SECTOR_ORDER:
+            tweets = raw.get(sector, [])
+            clean = [str(t).strip()[:280] for t in tweets if str(t).strip()]
+            if clean:
+                result[sector] = clean
+            else:
+                logger.warning(f"[ContentSession] No tweets for sector '{sector}' — skipped")
+
+        if result:
+            counts = {k: len(v) for k, v in result.items()}
+            logger.info(f"[ContentSession] Sector threads: {counts}")
+
+        return result
 
     def _derive_x_article(self, master: Dict) -> Dict[str, str]:
         """Return title + narrative body for X Article."""
