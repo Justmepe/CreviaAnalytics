@@ -594,12 +594,12 @@ class CryptoAnalysisOrchestrator:
             if self.web_publisher.enabled and body:
                 try:
                     mentioned = session_content.get('mentioned_assets', ['BTC', 'ETH']) if session_content else ['BTC', 'ETH']
-                    web_result = self.web_publisher.publish_memo(
-                        ticker='MARKET',
-                        memo=body,
+                    web_result = self.web_publisher.publish_article(
+                        title=title,
+                        body=body,
                         sector='global',
                         tickers=mentioned,
-                        market_snapshot={'article_title': title, 'mode': 'morning_scan'},
+                        market_snapshot={'mode': 'morning_scan'},
                     )
                     if web_result:
                         logger.info(f"   ✅ Morning article published to web: /post/{web_result.get('slug', '?')}")
@@ -1049,10 +1049,9 @@ class CryptoAnalysisOrchestrator:
                     logger.info("\n🌐 Web: Publishing article to web feed...")
                     if self.web_publisher.enabled:
                         try:
-                            web_memo = self.web_publisher.publish_memo(
-                                ticker=ticker,
-                                memo=article_body,
-                                current_price=current_price,
+                            web_memo = self.web_publisher.publish_article(
+                                title=article_title,
+                                body=article_body,
                                 sector='global',
                                 tickers=breaking_assets,
                                 market_snapshot={

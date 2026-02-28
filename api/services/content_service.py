@@ -11,6 +11,37 @@ from api.models.content import ContentPost, ThreadTweet, MarketSnapshot, AssetPr
 from api.config import ENTERPRISE_WINDOW, PRO_WINDOW
 
 
+def _is_price_data_line(line: str) -> bool:
+    """Return True if the line looks like a raw price-data dump."""
+    l = line.lower()
+    if l.startswith('prices:') or l.startswith('price:'):
+        return True
+    # Pattern: "TICKER: $123.45 | ..." or "TICKER: $123.45,"
+    if re.match(r'^[A-Z]{2,6}:\s*\$[\d,]+', line) and ('|' in line or ',' in line):
+        return True
+    return False
+
+
+def _extract_title(body: str, ticker: str) -> str:
+    """Extract a clean headline from memo/article body, skipping price-dump lines."""
+    for line in body.split('\n')[:15]:
+        line = line.strip()
+        if not line:
+            continue
+        # Markdown header — strip leading # characters
+        if line.startswith('#'):
+            cleaned = line.lstrip('#').strip()
+            if cleaned and not _is_price_data_line(cleaned):
+                return cleaned[:200]
+            continue
+        # Skip raw price-data lines
+        if _is_price_data_line(line):
+            continue
+        # First meaningful non-price line is the title
+        return line[:200]
+    return f'{ticker} Market Analysis'
+
+
 def generate_slug(content_type: str, ticker: str, title: Optional[str] = None) -> str:
     """Generate a URL-friendly slug for a content post."""
     date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
@@ -85,18 +116,23 @@ def create_memo_post(db: Session, ticker: str, body: str,
                      market_snapshot: Optional[dict] = None,
                      source_file: Optional[str] = None) -> ContentPost:
     """Store a market memo as a ContentPost."""
-    # Extract a title from the first line of the memo
-    first_line = body.split('\n')[0].strip()
-    title = first_line[:200] if first_line else f'{ticker} Market Memo'
+    title = _extract_title(body, ticker)
     excerpt = body[:160].replace('\n', ' ')
 
     # Determine sector from ticker if not provided
     if not sector:
         sector_map = {
-            'BTC': 'majors', 'ETH': 'majors', 'SOL': 'majors', 'BNB': 'majors',
+            # Majors (large-caps)
+            'BTC': 'majors', 'ETH': 'majors', 'XRP': 'majors', 'SOL': 'majors',
+            'BNB': 'majors', 'AVAX': 'majors', 'SUI': 'majors', 'LINK': 'majors',
+            # Memecoins
             'DOGE': 'memecoins', 'SHIB': 'memecoins', 'PEPE': 'memecoins', 'FLOKI': 'memecoins',
+            # Privacy
             'XMR': 'privacy', 'ZEC': 'privacy', 'DASH': 'privacy', 'SCRT': 'privacy',
+            # DeFi
             'AAVE': 'defi', 'UNI': 'defi', 'CRV': 'defi', 'LDO': 'defi',
+            # Commodities / tokenized stocks
+            'XAU': 'commodities', 'TSLA': 'commodities',
         }
         sector = sector_map.get(ticker, 'global')
 
@@ -123,6 +159,33 @@ def create_memo_post(db: Session, ticker: str, body: str,
     return post
 
 
+def create_article_post(db: Session, title: str, body: str,
+                        sector: str = 'global',
+                        tickers: Optional[List[str]] = None,
+                        image_url: Optional[str] = None,
+                        market_snapshot: Optional[dict] = None,
+                        source_file: Optional[str] = None) -> ContentPost:
+    """Store a long-form newsletter article as a ContentPost (content_type='article')."""
+    excerpt = body[:200].replace('\n', ' ').strip()
+    post = ContentPost(
+        content_type='article',
+        title=title[:200],
+        slug=generate_slug('article', tickers[0] if tickers else 'market', title),
+        body=body,
+        excerpt=excerpt,
+        tickers=tickers or ['BTC', 'ETH'],
+        sector=sector,
+        tier='enterprise',  # First hour: Enterprise only
+        image_url=image_url,
+        market_snapshot=market_snapshot,
+        source_file=source_file,
+    )
+    db.add(post)
+    db.commit()
+    db.refresh(post)
+    return post
+
+
 def create_news_tweet_post(db: Session, ticker: str, body: str,
                            current_price: Optional[float] = None,
                            sector: Optional[str] = None,
@@ -133,10 +196,17 @@ def create_news_tweet_post(db: Session, ticker: str, body: str,
 
     if not sector:
         sector_map = {
-            'BTC': 'majors', 'ETH': 'majors', 'SOL': 'majors', 'BNB': 'majors',
+            # Majors (large-caps)
+            'BTC': 'majors', 'ETH': 'majors', 'XRP': 'majors', 'SOL': 'majors',
+            'BNB': 'majors', 'AVAX': 'majors', 'SUI': 'majors', 'LINK': 'majors',
+            # Memecoins
             'DOGE': 'memecoins', 'SHIB': 'memecoins', 'PEPE': 'memecoins', 'FLOKI': 'memecoins',
+            # Privacy
             'XMR': 'privacy', 'ZEC': 'privacy', 'DASH': 'privacy', 'SCRT': 'privacy',
+            # DeFi
             'AAVE': 'defi', 'UNI': 'defi', 'CRV': 'defi', 'LDO': 'defi',
+            # Commodities / tokenized stocks
+            'XAU': 'commodities', 'TSLA': 'commodities',
         }
         sector = sector_map.get(ticker, 'global')
 

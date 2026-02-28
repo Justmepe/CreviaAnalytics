@@ -9,11 +9,11 @@ from typing import Optional
 from api.database import get_db
 from api.config import WEB_API_SECRET
 from api.schemas.content import (
-    PublishThreadRequest, PublishMemoRequest, PublishNewsTweetRequest,
+    PublishThreadRequest, PublishMemoRequest, PublishNewsTweetRequest, PublishArticleRequest,
     ContentPostResponse, ContentListResponse, TweetResponse,
 )
 from api.services.content_service import (
-    create_thread_post, create_memo_post, create_news_tweet_post,
+    create_thread_post, create_memo_post, create_news_tweet_post, create_article_post,
     get_content_feed, get_content_by_slug, get_content_tier,
 )
 
@@ -54,6 +54,22 @@ def publish_memo(req: PublishMemoRequest, db: Session = Depends(get_db),
         current_price=req.current_price,
         sector=req.sector,
         tickers=req.tickers if req.tickers else [req.ticker],
+        image_url=req.image_url,
+        market_snapshot=req.market_snapshot,
+        source_file=req.source_file,
+    )
+    return post
+
+
+@router.post('/publish/article', response_model=ContentPostResponse)
+def publish_article(req: PublishArticleRequest, db: Session = Depends(get_db),
+                    _=Depends(_verify_internal)):
+    post = create_article_post(
+        db=db,
+        title=req.title,
+        body=req.body,
+        sector=req.sector,
+        tickers=req.tickers,
         image_url=req.image_url,
         market_snapshot=req.market_snapshot,
         source_file=req.source_file,

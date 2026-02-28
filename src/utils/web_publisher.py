@@ -119,6 +119,45 @@ class WebPublisher:
             print(f"[WebPublisher] Memo published: /post/{result.get('slug', '?')}")
         return result
 
+    def publish_article(self, title: str, body: str,
+                        sector: str = 'global',
+                        tickers: Optional[List[str]] = None,
+                        image_url: Optional[str] = None,
+                        market_snapshot: Optional[dict] = None,
+                        source_file: Optional[str] = None) -> Optional[dict]:
+        """
+        Publish a long-form newsletter article to the web API (content_type='article').
+
+        Args:
+            title: Article headline
+            body: Full article body (markdown)
+            sector: Sector classification
+            tickers: Asset tickers covered
+            image_url: Lead image URL
+            market_snapshot: Market data at generation time
+            source_file: Path to saved article file
+
+        Returns:
+            API response dict or None on failure
+        """
+        if not self.enabled:
+            return None
+
+        payload = {
+            'title': title,
+            'body': body,
+            'sector': sector,
+            'tickers': tickers or ['BTC', 'ETH'],
+            'image_url': image_url,
+            'market_snapshot': market_snapshot,
+            'source_file': source_file,
+        }
+
+        result = self._post('/api/content/publish/article', payload)
+        if result:
+            print(f"[WebPublisher] Article published: /post/{result.get('slug', '?')}")
+        return result
+
     def publish_news_tweet(self, ticker: str, tweet_text: str,
                            current_price: Optional[float] = None,
                            sector: Optional[str] = None,

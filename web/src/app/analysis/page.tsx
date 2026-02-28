@@ -16,6 +16,7 @@ interface PageProps {
 
 const types = [
   { value: '', label: 'All' },
+  { value: 'article', label: 'Articles' },
   { value: 'memo', label: 'Memos' },
   { value: 'news_tweet', label: 'News' },
   { value: 'risk_alert', label: 'Alerts' },
@@ -27,6 +28,7 @@ const sectors = [
   { value: 'memecoins', label: 'Memecoins' },
   { value: 'privacy', label: 'Privacy' },
   { value: 'defi', label: 'DeFi' },
+  { value: 'commodities', label: 'Commodities' },
 ];
 
 export default async function AnalysisPage({ searchParams }: PageProps) {

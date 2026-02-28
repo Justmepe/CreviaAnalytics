@@ -30,6 +30,16 @@ class PublishMemoRequest(BaseModel):
     source_file: Optional[str] = None
 
 
+class PublishArticleRequest(BaseModel):
+    title: str
+    body: str
+    sector: str = 'global'
+    tickers: List[str] = ['BTC', 'ETH']
+    image_url: Optional[str] = None
+    market_snapshot: Optional[Dict[str, Any]] = None
+    source_file: Optional[str] = None
+
+
 class PublishNewsTweetRequest(BaseModel):
     ticker: str
     body: str
