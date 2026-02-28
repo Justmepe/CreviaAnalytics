@@ -62,19 +62,26 @@ class ContentSession:
         """
         Run ONE Claude call → return all content formats.
         Subsequent calls use the cached master brief.
+
+        Returns dict with keys:
+            headline, directional_signal, mentioned_assets, tags,
+            x_thread, x_article, substack_article, substack_note,
+            docx_path  ← absolute path to the .docx file written to output/newsletters/
         """
         master = self._get_master()
 
-        return {
-            'headline':          master.get('headline', ''),
+        result = {
+            'headline':           master.get('headline', ''),
             'directional_signal': master.get('directional_signal', 'NEUTRAL'),
-            'mentioned_assets':  master.get('mentioned_assets', []),
-            'tags':              master.get('tags', []),
-            'x_thread':          self._derive_x_thread(master),
-            'x_article':         self._derive_x_article(master),
-            'substack_article':  self._derive_substack_article(master),
-            'substack_note':     self._derive_substack_note(master),
+            'mentioned_assets':   master.get('mentioned_assets', []),
+            'tags':               master.get('tags', []),
+            'x_thread':           self._derive_x_thread(master),
+            'x_article':          self._derive_x_article(master),
+            'substack_article':   self._derive_substack_article(master),
+            'substack_note':      self._derive_substack_note(master),
+            'docx_path':          self._write_docx(master),
         }
+        return result
 
     # ── Master brief ──────────────────────────────────────────────────────────
 
@@ -240,6 +247,17 @@ Requirements:
         return f"{headline}\n\nFull analysis → {SITE_URL}"
 
     # ── Helpers ───────────────────────────────────────────────────────────────
+
+    def _write_docx(self, master: Dict) -> Optional[str]:
+        """Format master brief as a Word document and save it. Returns path or None on error."""
+        try:
+            from src.utils.docx_formatter import DocxFormatter
+            formatter = DocxFormatter(output_dir="output/newsletters")
+            path = formatter.write(master, mode=self.mode)
+            return path
+        except Exception as e:
+            logger.warning(f"[ContentSession] DocxFormatter failed (non-fatal): {e}")
+            return None
 
     def _split_narrative_to_tweets(self, narrative: str, max_len: int = 270) -> List[str]:
         """Emergency fallback: split narrative into tweet-sized chunks."""
