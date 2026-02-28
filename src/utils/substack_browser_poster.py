@@ -338,7 +338,8 @@ class SubstackBrowserPoster:
             logger.warning(f"[SubstackBrowser] Cookie auto-inject skipped: {e}")
 
     def _dismiss_overlays(self, page):
-        """Remove backdrop/overlay elements that block clicks."""
+        """Remove backdrop/overlay elements and dismiss cookie banners."""
+        # Disable backdrop pointer-events
         try:
             page.evaluate("""
                 document.querySelectorAll('[class*="backdrop"]').forEach(el => {
@@ -349,6 +350,25 @@ class SubstackBrowserPoster:
             """)
         except Exception:
             pass
+        # Dismiss cookie policy / consent banners (blocks Post button clicks)
+        for sel in [
+            "button:has-text('Reject')",
+            "button:has-text('Accept')",
+            "button:has-text('I accept')",
+            "button:has-text('Got it')",
+            "button:has-text('OK')",
+            "[class*='cookie'] button",
+            "[id*='cookie'] button",
+            "[class*='consent'] button",
+        ]:
+            try:
+                btn = page.locator(sel).first
+                if btn.is_visible(timeout=400):
+                    btn.evaluate("el => el.click()")
+                    time.sleep(0.5)
+                    break
+            except Exception:
+                continue
 
     def _screenshot_debug(self, page, name: str):
         """Save a debug screenshot."""
@@ -475,7 +495,10 @@ class SubstackBrowserPoster:
                                         if btn.is_visible(timeout=500) and btn.is_enabled():
                                             self._dismiss_overlays(page)
                                             time.sleep(random.uniform(0.3, 0.5))
-                                            btn.click(force=True)
+                                            try:
+                                                btn.click(force=True)
+                                            except Exception:
+                                                btn.evaluate("el => el.click()")
                                             post_clicked = True
                                             logger.info(f"[SubstackBrowser] Post clicked in {container_sel}")
                                             break
@@ -501,7 +524,10 @@ class SubstackBrowserPoster:
                                                 continue
                                             self._dismiss_overlays(page)
                                             time.sleep(random.uniform(0.3, 0.5))
-                                            btn.click(force=True)
+                                            try:
+                                                btn.click(force=True)
+                                            except Exception:
+                                                btn.evaluate("el => el.click()")
                                             post_clicked = True
                                             logger.info(f"[SubstackBrowser] Clicked Post: {sel}")
                                             break
@@ -908,14 +934,24 @@ class SubstackBrowserPoster:
                             return None
 
                         # Click Create new → New chat thread
-                        if not self._click_create_new(page, "New chat thread"):
-                            logger.error("[SubstackBrowser] Could not open chat thread editor")
-                            self._screenshot_debug(page, "thread_no_editor")
-                            context.close()
-                            return None
-
-                        # Wait for thread compose to load
+                        self._click_create_new(page, "New chat thread")
                         time.sleep(random.uniform(2, 3))
+
+                        # Verify we landed on the publication chat page (not reader inbox)
+                        # If dropdown navigated to wrong place, go directly to publish/chat
+                        current_url = page.url
+                        if "/publish/chat" not in current_url and f"{self.subdomain}.substack.com/chat" not in current_url:
+                            logger.info(f"[SubstackBrowser] Chat dropdown went to wrong URL ({current_url}), navigating directly to publish/chat...")
+                            try:
+                                page.goto(f"https://{self.subdomain}.substack.com/publish/chat", timeout=30000)
+                                page.wait_for_load_state("domcontentloaded", timeout=15000)
+                                time.sleep(random.uniform(2, 3))
+                            except Exception as nav_e:
+                                logger.error(f"[SubstackBrowser] Publish chat nav failed: {nav_e}")
+                                context.close()
+                                return None
+
+                        self._dismiss_overlays(page)
 
                         # Fill the thread title/topic if there's a title field
                         for sel in [

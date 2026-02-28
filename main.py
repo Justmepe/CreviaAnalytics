@@ -562,10 +562,9 @@ class CryptoAnalysisOrchestrator:
             self._run_analysis_phase()
             self.last_analysis_time = current_time
 
-        # 2. For morning_scan: ContentSession — ONE Claude call covers thread + article + note
-        session_content = None
-        if slot["mode"] == "morning_scan":
-            session_content = self._run_content_session("morning_scan")
+        # 2. ContentSession — ONE Claude call generates ALL content for this slot
+        # (thread + article + note). Avoids calling Claude separately per format.
+        session_content = self._run_content_session(slot["mode"])
 
         # 3. Generate thread with correct mode
         thread_data = self._run_thread_generation(
@@ -776,9 +775,10 @@ class CryptoAnalysisOrchestrator:
         elapsed = (time.time() - self.last_anchor_time) / 60
         return elapsed < ANCHOR_COOLDOWN_MINUTES
 
-    def _run_content_session(self, mode: str) -> Optional[Dict]:
+    def _run_content_session(self, mode: str, news_context: Optional[str] = None) -> Optional[Dict]:
         """
         Run ContentSession for the given mode — ONE Claude call covers thread + article + note.
+        Pass news_context for breaking_news mode (headline + summary of the event).
         Returns the content dict or None on failure.
         """
         try:
@@ -792,7 +792,7 @@ class CryptoAnalysisOrchestrator:
                 'commodities': [self.latest_analyses.get(t, {}) for t in COMMODITIES_ASSETS if t in self.latest_analyses],
             }
             logger.info(f"[ContentSession] Running {mode} master brief (single Claude call)...")
-            session = ContentSession(analysis_data, mode=mode)
+            session = ContentSession(analysis_data, mode=mode, news_context=news_context)
             content = session.generate_all()
             headline = content.get('headline', '')
             tweet_count = len(content.get('x_thread', []))
@@ -970,277 +970,148 @@ class CryptoAnalysisOrchestrator:
             logger.error(f"Breaking news check error: {e}")
 
     def _post_breaking_news(self, item: Dict, score: float):
-        """Build and post breaking news across platforms."""
+        """Build and post breaking news across platforms — ONE Claude call via ContentSession."""
         try:
             headline = item.get('title', '')
             summary = item.get('summary', item.get('description', ''))
             source = item.get('source', 'Unknown')
+            breaking_assets = item.get('currencies', ['BTC'])
 
             logger.info(f"\n{'='*80}")
-            logger.info(f"📰 POSTING BREAKING NEWS")
+            logger.info(f"📰 BREAKING NEWS — ContentSession (1 Claude call)")
             logger.info(f"   Headline: {headline[:70]}...")
-            logger.info(f"   Source: {source}")
-            logger.info(f"   Relevance: {score:.0%}")
+            logger.info(f"   Source: {source} | Relevance: {score:.0%}")
             logger.info(f"{'='*80}")
 
-            # Get current price for context (try BTC as default)
-            current_price = None
-            ticker = 'BTC'
-            try:
-                if hasattr(self, 'data_aggregator') and self.data_aggregator:
-                    btc_snapshot = self.data_aggregator.get_asset_snapshot('BTC')
-                    if btc_snapshot and btc_snapshot.price:
-                        current_price = btc_snapshot.price.mark_price
-                        logger.info(f"   Current BTC: ${current_price:,.2f}")
-            except Exception as e:
-                logger.warning(f"   Could not fetch BTC price: {e}")
-
-            # Build breaking news thread via ThreadBuilder
-            logger.info("\n📝 Step 1: Generating thread with Claude AI...")
-            raw_thread = self.thread_builder.build_breaking_news_thread(
-                headline=headline,
-                what_happened=summary[:500] if summary else headline,
-                impact=f"High-impact event (relevance: {score:.0%})",
-                our_take=f"Source: {source}",
-                tags=["crypto", "breaking"]
+            # Build news context string for Claude
+            news_context = (
+                f"BREAKING NEWS\n"
+                f"Headline: {headline}\n"
+                f"Summary: {summary[:600] if summary else headline}\n"
+                f"Source: {source}\n"
+                f"Relevance score: {score:.0%}\n"
+                f"Assets affected: {', '.join(breaking_assets)}"
             )
 
-            if raw_thread:
-                tweet_count = len(raw_thread.get('tweets', []))
-                logger.info(f"   ✅ Thread generated: {tweet_count} tweets")
+            # ── ONE Claude call → all content formats ──────────────────────────
+            logger.info("\n📝 Step 1: ContentSession — generating all content (1 Claude call)...")
+            session_content = self._run_content_session('breaking_news', news_context=news_context)
 
-                # Normalize tweets to list of strings (ThreadBuilder returns dicts)
-                raw_tweets = raw_thread.get('tweets', [])
-                tweet_texts = []
-                for t in raw_tweets:
-                    if isinstance(t, dict):
-                        tweet_texts.append(t.get('text', ''))
-                    elif isinstance(t, str):
-                        tweet_texts.append(t)
-                    else:
-                        tweet_texts.append(str(t))
+            if not session_content:
+                logger.error("   ❌ ContentSession returned None — aborting breaking news")
+                return
 
-                # Apply CTAs + hashtags to breaking news thread
-                breaking_assets = item.get('currencies', ['BTC'])
-                tweet_texts = self.post_decorator.decorate_x_thread(tweet_texts, breaking_assets)
+            # Extract pre-generated content — no more Claude calls after this
+            tweet_texts = session_content.get('x_thread', [])
+            article_title = session_content.get('x_article', {}).get('title', headline)
+            article_body  = session_content.get('x_article', {}).get('body', '')
+            sub_note      = session_content.get('substack_note', '')
+            tweet_count   = len(tweet_texts)
+            logger.info(f"   ✅ ContentSession done — {tweet_count} tweets, {len(article_body.split())} words")
 
-                thread_data = {
-                    'tweets': tweet_texts,
-                    'tweet_count': len(tweet_texts),
-                    'copy_paste_ready': '\n\n'.join(tweet_texts),
-                    'type': 'breaking_news',
-                }
+            # Apply CTAs + hashtags to thread
+            tweet_texts = self.post_decorator.decorate_x_thread(tweet_texts, breaking_assets)
+            thread_data = {
+                'tweets': tweet_texts,
+                'tweet_count': len(tweet_texts),
+                'copy_paste_ready': '\n\n'.join(tweet_texts),
+                'type': 'breaking_news',
+            }
 
-                # Post X thread
-                logger.info("\n📤 Step 2: Posting thread to X...")
-                post_result = None
-                # Try API first (faster, no detection)
-                if self.x_poster and self.x_poster.enabled:
-                    try:
-                        post_result = self.x_poster.post_thread(thread_data)
-                        if post_result and post_result.get('success'):
-                            posted_count = post_result.get('posted_count', len(tweets))
-                            logger.info(f"   ✅ X thread posted via API ({posted_count} tweets)")
-                        else:
-                            post_result = None  # Fall back to browser
-                    except Exception as e:
-                        logger.warning(f"   ⚠️  API thread posting failed: {e}")
-                        post_result = None  # Fall back to browser
-                
-                # Fall back to browser poster if API unavailable
-                if not post_result and getattr(self.x_browser_poster, 'enabled', False):
-                    try:
-                        post_result = self.x_browser_poster.post_thread(thread_data)
-                        if post_result and post_result.get('success'):
-                            logger.info(f"   ✅ X thread posted via browser ({post_result.get('posted_count', 0)} tweets)")
-                        else:
-                            logger.error(f"   ❌ X thread browser failed: {post_result.get('error', 'Unknown error') if post_result else 'No result'}")
-                    except Exception as e:
-                        logger.error(f"   ❌ X thread browser exception: {e}", exc_info=True)
-                        post_result = None
+            # Decorate article for each platform
+            x_article_body  = self.post_decorator.decorate_x_article(article_body, breaking_assets)
+            _, sub_article_body, _ = self.post_decorator.decorate_substack_article(article_title, article_body, breaking_assets)
 
-                if not post_result:
-                    logger.warning("   ⚠️  X posting unavailable (API and browser disabled)")
-
-                # Record in tracker
-                thread_body = thread_data['copy_paste_ready']
-                if not self.tracker.is_duplicate(thread_body):
-                    self.tracker.record_post(
-                        body=thread_body,
-                        content_type='breaking_thread',
-                        ticker='BREAKING',
-                    )
-
-                # Publish thread to web feed
-                logger.info("\n🌐 Web: Publishing thread to web feed...")
-                if self.web_publisher.enabled:
-                    try:
-                        web_result = self.web_publisher.publish_thread(
-                            thread_data=thread_data,
-                            tickers=breaking_assets,
-                            sector='global',
-                            market_snapshot={
-                                'headline': headline,
-                                'source': source,
-                                'relevance_score': score,
-                            },
-                        )
-                        if web_result:
-                            logger.info(f"   ✅ Thread published to web: /post/{web_result.get('slug', '?')}")
-                        else:
-                            logger.warning("   ⚠️  Web thread publish failed")
-                    except Exception as e:
-                        logger.warning(f"   ⚠️  Web thread publish exception: {e}")
-                else:
-                    logger.debug("   Web publisher disabled — skipping")
-            else:
-                logger.error("   ❌ Thread generation returned None")
-
-            # Generate breaking news article (long-form)
-            logger.info("\n📄 Step 3: Generating article with Claude AI...")
-            from src.content.breaking_news_article_generator import generate_breaking_news_article
-
-            try:
-                article_data = generate_breaking_news_article(
-                    headline=headline,
-                    summary=summary,
-                    source=source,
-                    current_price=current_price,
-                    ticker=ticker,
-                    relevance_score=score
-                )
-
-                if article_data:
-                    article_title = article_data.get('title', headline)
-                    article_body = article_data.get('body', '')
-                    word_count = article_data.get('word_count', len(article_body.split()))
-                    logger.info(f"   ✅ Article generated: {word_count} words by {article_data.get('generated_by', 'Unknown')}")
-
-                    # Decorate for each platform separately
-                    breaking_assets = item.get('currencies', ['BTC'])
-                    x_article_body = self.post_decorator.decorate_x_article(article_body, breaking_assets)
-                    _, sub_article_body, _ = self.post_decorator.decorate_substack_article(article_title, article_body, breaking_assets)
-
-                    # Save to Notion first (before posting anywhere)
-                    if self.notion_manager and self.notion_manager.is_available():
-                        try:
-                            notion_result = self.notion_manager.save_news_post(
-                                title=article_title,
-                                content=article_body,
-                                tags=['breaking_news', ticker, source]
-                            )
-                            logger.info(f"   ✅ Notion: Article saved (ID: {notion_result})")
-                        except Exception as e:
-                            logger.warning(f"   ⚠️  Notion save failed: {e}")
-
-                    # Post X Article
-                    logger.info("\n📤 Step 4: Posting article to X...")
-                    if self.x_use_browser and self.x_browser_poster.enabled and article_body:
-                        try:
-                            x_result = self.x_browser_poster.post_article(article_title, x_article_body)
-                            if x_result:
-                                logger.info("   ✅ X Article posted")
-                            else:
-                                logger.error("   ❌ X Article posting returned False")
-                        except Exception as e:
-                            logger.error(f"   ❌ X Article exception: {e}", exc_info=True)
-                    else:
-                        logger.warning("   ⚠️  X Article posting disabled or no content")
-
-                    # Post Substack Article
-                    logger.info("\n📤 Step 5: Posting article to Substack...")
-                    if self.substack_use_browser and self.substack_browser.enabled and article_body:
-                        try:
-                            sub_result = self.substack_browser.post_article(article_title, sub_article_body)
-                            if sub_result:
-                                logger.info("   ✅ Substack Article posted")
-                            else:
-                                logger.error("   ❌ Substack Article posting returned False")
-                        except Exception as e:
-                            logger.error(f"   ❌ Substack Article exception: {e}", exc_info=True)
-                    else:
-                        logger.warning("   ⚠️  Substack Article posting disabled or no content")
-
-                    # Publish article to web feed
-                    logger.info("\n🌐 Web: Publishing article to web feed...")
-                    if self.web_publisher.enabled:
-                        try:
-                            web_memo = self.web_publisher.publish_article(
-                                title=article_title,
-                                body=article_body,
-                                sector='global',
-                                tickers=breaking_assets,
-                                market_snapshot={
-                                    'headline': headline,
-                                    'source': source,
-                                    'relevance_score': score,
-                                },
-                            )
-                            if web_memo:
-                                logger.info(f"   ✅ Article published to web: /post/{web_memo.get('slug', '?')}")
-                            else:
-                                logger.warning("   ⚠️  Web article publish failed")
-                        except Exception as e:
-                            logger.warning(f"   ⚠️  Web article publish exception: {e}")
-                    else:
-                        logger.debug("   Web publisher disabled — skipping")
-                else:
-                    logger.error("   ❌ Article generation returned None")
-            except Exception as e:
-                logger.error(f"   ❌ Article generation exception: {e}", exc_info=True)
-
-            # Post Substack Chat Thread (fast, visible to subscribers)
-            logger.info("\n📤 Step 6: Posting chat thread to Substack...")
-            if self.substack_use_browser and self.substack_browser.enabled:
+            # ── Post X thread (main account) ───────────────────────────────────
+            logger.info("\n📤 Step 2: Posting thread to X...")
+            post_result = None
+            if getattr(self.x_browser_poster, 'enabled', False):
                 try:
-                    chat_title = f"{headline[:80]}"
-                    chat_msg = summary[:500] if summary else headline
-                    chat_id = self.substack_browser.post_chat_thread(
-                        title=chat_title,
-                        messages=[chat_msg]
-                    )
-                    if chat_id:
-                        logger.info("   ✅ Substack Chat Thread posted")
+                    post_result = self.x_browser_poster.post_thread(thread_data)
+                    if post_result and post_result.get('success'):
+                        logger.info(f"   ✅ X thread posted ({post_result.get('posted_count', 0)} tweets)")
                     else:
-                        logger.error("   ❌ Substack Chat Thread posting returned None")
+                        logger.error(f"   ❌ X thread failed: {post_result}")
                 except Exception as e:
-                    logger.error(f"   ❌ Substack Chat exception: {e}", exc_info=True)
+                    logger.error(f"   ❌ X thread exception: {e}", exc_info=True)
             else:
-                logger.warning("   ⚠️  Substack Chat posting disabled")
+                logger.warning("   ⚠️  X browser poster disabled")
 
-            # Post to @CreviaCockpit (breaking news only — thread + article)
-            if getattr(self.x_cockpit_poster, 'enabled', False):
-                logger.info("\n📤 Cockpit Step 1: Posting thread to @CreviaCockpit...")
-                if raw_thread and thread_data:
-                    try:
-                        cockpit_thread = self.x_cockpit_poster.post_thread(thread_data)
-                        if cockpit_thread and cockpit_thread.get('success'):
-                            logger.info("   ✅ @CreviaCockpit thread posted")
-                        else:
-                            logger.warning("   ⚠️  @CreviaCockpit thread failed")
-                    except Exception as e:
-                        logger.error(f"   ❌ @CreviaCockpit thread exception: {e}")
+            # Record in tracker
+            thread_body = thread_data['copy_paste_ready']
+            if not self.tracker.is_duplicate(thread_body):
+                self.tracker.record_post(body=thread_body, content_type='breaking_thread', ticker='BREAKING')
 
-                logger.info("\n📤 Cockpit Step 2: Posting article to @CreviaCockpit...")
+            # ── Publish thread to web feed ─────────────────────────────────────
+            if self.web_publisher.enabled:
                 try:
-                    from src.content.breaking_news_article_generator import generate_breaking_news_article as _gen
-                    _ad = _gen(
-                        headline=headline, summary=summary, source=source,
-                        current_price=current_price, ticker=ticker, relevance_score=score
+                    web_result = self.web_publisher.publish_thread(
+                        thread_data=thread_data, tickers=breaking_assets, sector='global',
+                        market_snapshot={'headline': headline, 'source': source, 'relevance_score': score},
                     )
-                    if _ad and _ad.get('body'):
-                        cockpit_art = self.x_cockpit_poster.post_article(_ad['title'], _ad['body'])
-                        if cockpit_art:
-                            logger.info("   ✅ @CreviaCockpit article posted")
-                        else:
-                            logger.warning("   ⚠️  @CreviaCockpit article failed")
+                    if web_result:
+                        logger.info(f"   ✅ Thread published to web: /post/{web_result.get('slug', '?')}")
+                except Exception as e:
+                    logger.warning(f"   ⚠️  Web thread publish exception: {e}")
+
+            # ── Post X Article (main account) ──────────────────────────────────
+            logger.info("\n📤 Step 3: Posting article to X...")
+            if self.x_use_browser and self.x_browser_poster.enabled and article_body:
+                try:
+                    x_result = self.x_browser_poster.post_article(article_title, x_article_body)
+                    logger.info("   ✅ X Article posted" if x_result else "   ❌ X Article returned False")
+                except Exception as e:
+                    logger.error(f"   ❌ X Article exception: {e}", exc_info=True)
+
+            # ── Post Substack Article ──────────────────────────────────────────
+            logger.info("\n📤 Step 4: Posting article to Substack...")
+            if self.substack_use_browser and self.substack_browser.enabled and article_body:
+                try:
+                    sub_result = self.substack_browser.post_article(article_title, sub_article_body)
+                    logger.info("   ✅ Substack Article posted" if sub_result else "   ❌ Substack Article returned False")
+                except Exception as e:
+                    logger.error(f"   ❌ Substack Article exception: {e}", exc_info=True)
+
+            # ── Post Substack Note (key insight from ContentSession) ───────────
+            logger.info("\n📤 Step 5: Posting note to Substack...")
+            if self.substack_use_browser and self.substack_browser.enabled and sub_note:
+                try:
+                    note_id = self.substack_browser.post_note(sub_note)
+                    logger.info(f"   ✅ Substack Note posted (ID: {note_id})" if note_id else "   ❌ Substack Note returned None")
+                except Exception as e:
+                    logger.error(f"   ❌ Substack Note exception: {e}", exc_info=True)
+
+            # ── Publish article to web feed ────────────────────────────────────
+            if self.web_publisher.enabled and article_body:
+                try:
+                    web_memo = self.web_publisher.publish_article(
+                        title=article_title, body=article_body, sector='global',
+                        tickers=breaking_assets,
+                        market_snapshot={'headline': headline, 'source': source, 'relevance_score': score},
+                    )
+                    if web_memo:
+                        logger.info(f"   ✅ Article published to web: /post/{web_memo.get('slug', '?')}")
+                except Exception as e:
+                    logger.warning(f"   ⚠️  Web article publish exception: {e}")
+
+            # ── Post to @CreviaCockpit (same pre-generated content, 0 extra Claude calls) ─
+            if getattr(self.x_cockpit_poster, 'enabled', False):
+                logger.info("\n📤 Cockpit: Posting thread + article to @CreviaCockpit...")
+                try:
+                    cockpit_thread = self.x_cockpit_poster.post_thread(thread_data)
+                    logger.info("   ✅ @CreviaCockpit thread posted" if (cockpit_thread and cockpit_thread.get('success')) else "   ⚠️  @CreviaCockpit thread failed")
+                except Exception as e:
+                    logger.error(f"   ❌ @CreviaCockpit thread exception: {e}")
+                try:
+                    cockpit_art = self.x_cockpit_poster.post_article(article_title, x_article_body)
+                    logger.info("   ✅ @CreviaCockpit article posted" if cockpit_art else "   ⚠️  @CreviaCockpit article failed")
                 except Exception as e:
                     logger.error(f"   ❌ @CreviaCockpit article exception: {e}")
             else:
                 logger.debug("   @CreviaCockpit poster disabled — skipping")
 
             logger.info(f"\n{'='*80}")
-            logger.info("✅ Breaking news posting complete")
+            logger.info("✅ Breaking news posting complete (1 Claude call total)")
             logger.info(f"{'='*80}\n")
 
         except Exception as e:

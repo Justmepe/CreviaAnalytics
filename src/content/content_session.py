@@ -166,7 +166,7 @@ Requirements:
 - Return ONLY the JSON object. No preamble, no explanation."""
 
             engine = ClaudeResearchEngine(api_key)
-            response = engine._call_model(prompt, max_tokens=5000)
+            response = engine._call_model(prompt, max_tokens=8000)
 
             raw = ""
             for block in response.content:
@@ -266,7 +266,12 @@ Requirements:
         majors = self.analysis_data.get('majors', {})
 
         btc = majors.get('BTC', {})
-        btc_price = btc.get('price', 0)
+        _btc_price_raw = btc.get('price', 0)
+        # price may be a nested dict {'mark_price': ..., 'display': ...}
+        if isinstance(_btc_price_raw, dict):
+            btc_price = _btc_price_raw.get('mark_price', 0)
+        else:
+            btc_price = _btc_price_raw or 0
         btc_chg = btc.get('change_24h', 0)
         fg = market.get('fear_greed_index', 50)
         fg_label = market.get('fear_greed_label', 'Neutral')

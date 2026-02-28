@@ -199,6 +199,14 @@ Output the tweet text only, nothing else."""
                         if hasattr(block, 'text'):
                             tweet += block.text
                     tweet = tweet.strip().strip('"').strip("'")
+                    # Reject "no news" responses — don't post them publicly
+                    _no_news_signals = [
+                        'no major', 'not available', 'no crypto', 'no defi',
+                        'no relevant', 'stay tuned', 'all stories relate',
+                        'traditional equities', 'no significant', 'nothing to report',
+                    ]
+                    if any(s in tweet.lower() for s in _no_news_signals):
+                        return None
                     if tweet and len(tweet) <= 280:
                         return tweet
             except Exception:
