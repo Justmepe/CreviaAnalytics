@@ -293,13 +293,14 @@ class XBrowserPoster:
         """
         Auto-inject fresh X auth cookies from env vars before each session.
 
-        Reads {env_prefix}_AUTH_TOKEN and {env_prefix}_CT0 from environment.
-        Called after every launch_persistent_context() so sessions stay alive
-        even if the browser profile cookies get corrupted or rotated by X.
+        Reads {env_prefix}_AUTH_TOKEN, {env_prefix}_CT0, and {env_prefix}_KDT
+        from environment. Called after every launch_persistent_context() so
+        sessions stay alive even if the browser profile cookies get corrupted.
         Silently skips if env vars are not set.
         """
         auth_token = os.getenv(f"{self._env_prefix}_AUTH_TOKEN", "").strip().strip('"').strip("'")
         ct0 = os.getenv(f"{self._env_prefix}_CT0", "").strip().strip('"').strip("'")
+        kdt = os.getenv(f"{self._env_prefix}_KDT", "").strip().strip('"').strip("'")
         if not auth_token:
             return
         from datetime import timedelta
@@ -327,9 +328,21 @@ class XBrowserPoster:
                 "secure": True,
                 "sameSite": "Lax",
             })
+        if kdt:
+            cookies.append({
+                "name": "kdt",
+                "value": kdt,
+                "domain": ".x.com",
+                "path": "/",
+                "expires": expires,
+                "httpOnly": True,
+                "secure": True,
+                "sameSite": "Lax",
+            })
         try:
             context.add_cookies(cookies)
-            logger.info(f"[XBrowserPoster] Auto-injected {self._env_prefix} auth cookies from env")
+            injected = ["auth_token", "ct0"] + (["kdt"] if kdt else [])
+            logger.info(f"[XBrowserPoster] Auto-injected {self._env_prefix} cookies: {', '.join(injected)}")
         except Exception as e:
             logger.warning(f"[XBrowserPoster] Cookie auto-inject skipped: {e}")
 
