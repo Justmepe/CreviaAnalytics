@@ -19,8 +19,8 @@ SITE_URL = "https://creviacockpit.com"
 # ── CTA variants (rotate) ─────────────────────────────────────────────────────
 
 _X_CTA_TEMPLATES = [
-    "Live data & signals → {url}",
-    "Full breakdown + live charts → {url}",
+    "Live data & regime intelligence → {url}",
+    "Full breakdown + live regime dashboard → {url}",
     "Track this live → {url}",
     "Real-time regime detection → {url}",
     "Cockpit is live. Track it → {url}",
@@ -49,7 +49,7 @@ _ARTICLE_CTA_BLOCKS = [
     ),
     (
         "\n\n---\n"
-        "**Want live signals?** Crevia Cockpit detects market regimes and whale flows "
+        "**Want live regime intelligence?** Crevia Cockpit detects market regime shifts and whale flows "
         "before they're obvious. Free early access → {url}"
     ),
 ]

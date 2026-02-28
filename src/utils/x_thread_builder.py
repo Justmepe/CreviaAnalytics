@@ -68,12 +68,47 @@ class ThreadBuilder:
     SAFE_TWEET_LENGTH = 276   # Hard ceiling with buffer for newline/emoji edge cases
     TWITTER_URL_LENGTH = 23  # X counts URLs as fixed 23 chars
 
-    # ── CTA tweet appended to every thread ──────────────────────
-    CTA_TWEET = (
-        "Follow @Peter_n_Gikonyo + @CreviaCockpit for real-time crypto intelligence.\n"
-        "AI trade setups, regime detection & risk tools: creviacockpit.com\n"
-        "#BTC #ETH #Crypto #CryptoNews #CryptoTrading"
+    # ── CTA tweets — 3 formats, rotate per thread ────────────────
+    # Format A — "The Preview" (after market scan / data threads)
+    CTA_FORMAT_A = (
+        "🔒 What's in the full Cockpit right now:\n\n"
+        "→ Live Whale Flow dashboard\n"
+        "→ Regime model flagging shifts before they hit the tape\n"
+        "→ Risk calculator: optimal sizing for this volatility regime\n\n"
+        "This thread was the surface. The cockpit is the depth.\n\n"
+        "📊 creviacockpit.com\n"
+        "#BTC #ETH #CryptoTrading #MarketIntelligence"
     )
+
+    # Format B — "The Pain Contrast" (after bearish / fear regime threads)
+    CTA_FORMAT_B = (
+        "Two traders are looking at this market right now.\n\n"
+        "One is refreshing X, reading opinions.\n"
+        "One has the regime data, whale flow, and a sized position.\n\n"
+        "Same market. Different outcomes.\n\n"
+        "The difference is intelligence, not luck.\n"
+        "→ creviacockpit.com\n"
+        "#CryptoTrading #MarketIntelligence"
+    )
+
+    # Format C — "The Direct Ask" (after high-engagement threads)
+    CTA_FORMAT_C = (
+        "If this breakdown was useful —\n\n"
+        "The full version runs automatically every morning.\n"
+        "Whale flow, regime detection, risk tools. All in one place.\n\n"
+        "→ creviacockpit.com | Free to explore.\n"
+        "#BTC #ETH #CryptoTrading #MarketIntelligence"
+    )
+
+    _cta_counter = 0
+
+    @classmethod
+    def _get_next_cta(cls) -> str:
+        """Rotate through the 3 CTA formats."""
+        formats = [cls.CTA_FORMAT_A, cls.CTA_FORMAT_B, cls.CTA_FORMAT_C]
+        cta = formats[cls._cta_counter % 3]
+        cls._cta_counter += 1
+        return cta
 
     @staticmethod
     def _truncate_tweet(text: str, limit: int = 276) -> str:
@@ -298,7 +333,7 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
             raise ValueError("Claude returned insufficient tweets")
 
         # Append CTA tweet
-        tweets.append(self.CTA_TWEET)
+        tweets.append(self._get_next_cta())
 
         return {
             'thread': thread_text,
@@ -684,7 +719,7 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
             tweets = split_text_into_tweets(thread_text, max_length=280)
 
         # Append CTA tweet
-        tweets.append(self.CTA_TWEET)
+        tweets.append(self._get_next_cta())
 
         # Format results
         return {
