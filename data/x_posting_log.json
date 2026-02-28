@@ -2763,5 +2763,1468 @@
     "thread_type": "comprehensive_analysis",
     "tweet_count": 9,
     "content_preview": "\ud83d\udcca CRYPTO MARKET SNAPSHOT\nFebruary 21, 2026, 16:23 UTC\nTotal Market Cap: $2.42T\nBTC Dominance: 56.5%\n"
+  },
+  {
+    "timestamp": "2026-02-26T15:11:06.059473+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Analysts reject Jane Street '10 am dump' claims, say Bitcoin isn't easily manipulated\nFe",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:11:59.315146+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Analysts reject Jane Street '10 am dump' claims, say Bitcoin isn't easily manipulated",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:12:15.958167+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Trump family-backed miner American Bitcoin posts $59M quarterly loss\nFebruary 26, 2026, ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:13:20.057286+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Trump family-backed miner American Bitcoin posts $59M quarterly loss",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:13:35.367229+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: American Bitcoin Q4 Earnings Call Highlights\nFebruary 26, 2026, 15:13 UTC\nMajor Bitcoin ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:14:28.664921+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] American Bitcoin Q4 Earnings Call Highlights",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:14:45.264002+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Grvt integrates Aave yield into perp DEX collateral on ZKsync stack\nFebruary 26, 2026, 1",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:15:52.296361+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Grvt integrates Aave yield into perp DEX collateral on ZKsync stack - Invezz",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:16:15.489003+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Warning: Is Ethereum Walking Into a Liquidity Trap Before the Next Big Upgrade?\nFebruary",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:17:23.661980+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Warning: Is Ethereum Walking Into a Liquidity Trap Before the Next Big Upgrade? - AD HOC N",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:17:50.794447+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin Surges As ETF Inflows Jump. Trump-Linked Miner Reports Results.\nFebruary 26, 202",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:18:54.443170+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin Surges As ETF Inflows Jump. Trump-Linked Miner Reports Results.",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:19:09.762169+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Grvt integrates Aave so traders can earn yield on perp collateral\nFebruary 26, 2026, 15:",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:20:15.813627+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Grvt integrates Aave so traders can earn yield on perp collateral",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:20:34.835974+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Grvt integrates Aave so traders can earn yield on perp collateral\nFebruary 26, 2026, 15:",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:21:44.649478+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Grvt integrates Aave so traders can earn yield on perp collateral - TradingView",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:21:57.185989+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin Magazine Features Bruce Barone Jr. of BrainSprout on Creative Literacy Education",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:22:48.757798+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Growing Creative Literacy in the Age of Bitcoin: A Conversation with Bruce Barone Jr. of B",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:23:03.821488+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: How Trump Influences Bitcoin Price\nFebruary 26, 2026, 15:22 UTC\nPresident Trump's crypto",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:23:54.528727+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] How does Trump influence the price of Bitcoin?",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:24:11.730194+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: TradingView publishes analysis examining Trump's influence on Bitcoin price action\nFebru",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:25:05.532315+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] How does Trump influence the price of Bitcoin? - TradingView",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T15:25:22.307478+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Trump-linked American Bitcoin posts $153M net loss for 2025 as holdings surpass 6,000 BT",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T15:26:27.418353+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Trump-linked American Bitcoin posts $153 million net loss for 2025 as holdings surpass 6,0",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:03:12.443862+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udcca CRYPTO MARKET SNAPSHOT\nFebruary 26, 2026, 16:02 UTC\nTotal Cap: $2.40T\nBTC Dom: 56.0%\nFear & Greed:",
+    "thread_type": "comprehensive_analysis"
+  },
+  {
+    "timestamp": "2026-02-26T16:03:36.656165+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Bitcoin consolidates around $67K after rejecting key resistance, giving back recent gains despite st",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-26T16:03:36.873517+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] BTC @ $67,330.40 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:03:57.796282+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Ethereum Foundation unveils ambitious roadmap targeting transaction finality in just seconds by 2029",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-26T16:03:58.015654+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] ETH @ $2,029.93 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:04:38.087781+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Memecoins DOGE and SHIB showing renewed interest as market analysts make bullish predictions despite",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-26T16:04:39.003462+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] MEMECOINS Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:05:05.159621+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Privacy coins seeing major volatility as Monero and Zcash diverge with double-digit weekly swings. A",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-26T16:05:05.849965+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] PRIVACY Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:05:29.130964+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Grvt integrates Aave yield into its perpetual DEX on ZKsync, allowing traders to earn passive return",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-26T16:05:29.262333+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] DEFI Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:23:57.280072+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin ETFs Post Half a Billion in Inflows as BTC Rebounds Above $69,000\nFebruary 26, 2",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:25:00.843772+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin ETFs Post Half a Billion in Inflows as BTC Rebounds Above $69,000",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:25:14.528046+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin briefly crashes below $48,000 on upstart exchange despite crypto rally\nFebruary ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:26:14.515190+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin briefly crashes below $48,000 on upstart exchange despite crypto rally",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:26:28.173790+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum reclaims $2K as volatility spike backs ETH price recovery\nFebruary 26, 2026, 16",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:27:23.861255+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum reclaims $2K as volatility spike backs ETH price recovery",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:27:36.227654+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin falls back below $67,000, rapidly giving back Wednesday's gains\nFebruary 26, 202",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:28:28.925004+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin falls back below $67,000, rapidly giving back Wednesday's gains",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:28:42.451141+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Coin Bureau CEO on Bitcoin in 2026: Cycles, Liquidity and a Divided Market\nFebruary 26, ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:29:44.892559+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Coin Bureau CEO on Bitcoin in 2026: Cycles, Liquidity and a Divided Market",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:29:59.498396+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin bear market not 'over already' as price rejects at $68K trend line\nFebruary 26, ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:30:55.308446+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin bear market not 'over already' as price rejects at $68K trend line",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:31:08.981753+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Trump Brothers' Bitcoin Miner Posts Quarterly Loss\nFebruary 26, 2026, 16:30 UTC\nMajor po",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:32:06.685068+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Trump Brothers' Bitcoin Miner Posts Quarterly Loss",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:32:20.083852+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Trump-Linked American Bitcoin (ABTC) Posts $59M Q4 Loss as Bitcoin Slump Hits Treasury H",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:33:25.322272+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Trump-Linked American Bitcoin (ABTC) Posts $59M Q4 Loss as Bitcoin Slump Hits Treasury Hol",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T16:33:38.706090+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Former Solana exec adopts Wall Street infrastructure playbook to accelerate global crypt",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-26T16:34:38.663953+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] A former Solana exec is taking a page out of Wall Street playbook to make global crypto tr",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-26T20:12:11.138803+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udcca CRYPTO MARKET SCAN: EXTREME FEAR EDITION\nFebruary 26, 2026, 20:11 UTC\nTotal Cap: $2.41T\nBTC Dom: 5",
+    "thread_type": "comprehensive_analysis"
+  },
+  {
+    "timestamp": "2026-02-26T20:12:40.484069+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "XRP ETFs saw $483M inflows in Dec while Bitcoin ETFs lost $1.09B, signaling a notable shift in insti",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-26T20:12:41.103927+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] BTC @ $67,730.00 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T00:30:27.680484+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Suspects Arrested After South Korean Police Mishandle $1.4 Million in Bitcoin\nFebruary 2",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T00:31:25.380961+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Suspects Arrested After South Korean Police Mishandle $1.4 Million in Bitcoin: Report",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T00:31:38.610359+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin Maps Quantum Upgrade to Ethereum to Replace Core Cryptography\nFebruary 2",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T00:32:41.142598+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Vitalik Buterin Maps Quantum Upgrade to Ethereum to Replace Core Cryptography",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T00:33:05.975567+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin Maps Quantum Upgrade to Ethereum to Replace Core Cryptography\nFebruary 2",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T00:34:12.991405+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Vitalik Buterin Maps Quantum Upgrade to Ethereum to Replace Core Cryptography - Decrypt",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T00:34:27.357039+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: 'Private Bitcoin' to Launch on Starknet With Zcash-Like Features\nFebruary 27, 2026, 00:3",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T00:35:28.049165+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] 'Private Bitcoin' to Launch on Starknet With Zcash-Like Features",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T00:55:57.099178+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: OCC Proposes New Rules for Stablecoin Issuers Under GENIUS Act\nFebruary 27, 2026, 00:55 ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T00:57:06.445987+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] OCC Proposes New Rules for Stablecoin Issuers Under GENIUS Act - Bitcoin.com News",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T00:57:20.622802+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: STETHUSD Falls 1.58% Daily: Where Is Lido Staked ETH Headed?\nFebruary 27, 2026, 00:57 UT",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T00:58:12.427467+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] STETHUSD Falls 1.58% Daily: Where Is Lido Staked ETH Headed?",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T01:53:07.788423+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Japanese Yen climbs as Tokyo CPI data does little to dent BoJ rate hike expectations\nFeb",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T01:54:07.889887+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Japanese Yen climbs as Tokyo CPI do little to dent BoJ rate hike bets - FXStreet",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T02:47:50.084555+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Another rate rise tipped after inflation data disappoints\nFebruary 27, 2026, 02:47 UTC\nC",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T02:48:46.211888+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Another rate rise tipped after inflation data disappoints - The Nightly",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T02:48:58.628908+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin's 100 BTC club edges toward 20K wallets in a 'bullish sign'\nFebruary 27, 2026, 0",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T02:49:55.640148+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin's 100 BTC club edges toward 20K wallets in a 'bullish sign'",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T03:18:05.599274+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin outlines quantum-resistance roadmap for Ethereum\nFebruary 27, 2026, 03:1",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T03:19:10.753562+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Vitalik Buterin outlines quantum-resistance roadmap for Ethereum",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T03:19:24.258467+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: MARA Shares Rise After Bitcoin Miner Strikes AI Data Center Deal\nFebruary 27, 2026, 03:1",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T03:20:23.723772+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] MARA Shares Rise After Bitcoin Miner Strikes AI Data Center Deal",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T03:20:35.968595+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Institutional Momentum Builds for Solana Ecosystem\nFebruary 27, 2026, 03:20 UTC\nMajor sh",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T03:21:44.915497+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Institutional Momentum Builds for Solana Ecosystem - AD HOC NEWS",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T04:04:52.984577+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: VanEck Files for First Solana Liquid Staking ETF in the U.S.\nFebruary 27, 2026, 04:04 UT",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T04:05:53.263739+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] VanEck Files for First Solana Liquid Staking ETF in the U.S.",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T04:45:07.083061+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Crypto analyst says Bitcoin selling pressure is nearly exhausted\nFebruary 27, 2026, 04:4",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T04:46:02.617182+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Crypto analyst says Bitcoin selling pressure is nearly exhausted",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T04:46:13.906499+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ether could stay 'subdued' in the weeks ahead, says analyst\nFebruary 27, 2026, 04:46 UTC",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T04:47:09.765172+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ether could stay 'subdued' in the weeks ahead: Analyst",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T05:09:11.835046+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin Outlines Ethereum's Quantum-Resistance Roadmap\nFebruary 27, 2026, 05:08 ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T05:10:17.237123+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Vitalik Buterin Outlines Ethereum's Quantum-Resistance Roadmap - KuCoin",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T05:10:30.884317+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Foundation unveils 'Strawmap' plan for Layer 1 upgrades through 2029\nFebruary 2",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T05:11:34.918889+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum Foundation unveils 'Strawmap' plan for Layer 1 upgrades through 2029",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T05:32:05.815115+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin slides Friday as risk-off mood persists, but majors hold weekly gains\nFebruary 2",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T05:32:56.747260+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin slides Friday as risk-off mood persists, but majors hold weekly gains",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T05:55:03.383992+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Elizabeth Warren, OCC Chief Spar Over Trump-Linked Crypto Bank Bid\nFebruary 27, 2026, 05",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T05:56:03.637512+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Elizabeth Warren, OCC Chief Spar Over Trump-Linked Crypto Bank Bid",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T06:16:04.668653+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin Says Ethereum Will Soon Achieve Quantum Resistance\nFebruary 27, 2026, 06",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T06:16:58.146672+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Vitalik Buterin Says Ethereum Will Soon Achieve Quantum Resistance - Eudaimonia and Co",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T06:17:10.165417+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin Reveals Post-Quantum Upgrade Strategy for Ethereum\nFebruary 27, 2026, 06",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T06:18:15.535372+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Is Ethereum at Risk? Vitalik Buterin Reveals Post-Quantum Upgrade Strategy - Coinpedia Fin",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T06:40:14.886673+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Two arrested after South Korean cops lost $1.4M in Bitcoin\nFebruary 27, 2026, 06:40 UTC\n",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T06:41:10.290591+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Two arrested after South Korean cops lost $1.4M in Bitcoin",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T07:03:06.766432+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin ETF holders and treasury firms stack protection against price crash below $60,00",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T07:04:12.118364+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin ETF holders and treasury firms stack protection against price crash below $60,000,",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T07:04:23.371898+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Foundation Unveils New Long-Term Upgrade 'Strawmap'\nFebruary 27, 2026, 07:04 UT",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T07:05:18.696354+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum Foundation Outlines Long-Term Upgrade Plan in New 'Strawmap' - Live Bitcoin News",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T07:26:38.211005+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: US Stablecoin Bill Enters \"Stablecoin Sovereignty Era\"\nFebruary 27, 2026, 07:26 UTC\nNew ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T07:27:38.141229+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] US Stablecoin Bill: Regulating The Stablecoin Sovereignty Era - Outlook India",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T07:27:52.577133+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin Selloff Driven by Long Holders, Says Bitwise CIO\nFebruary 27, 2026, 07:27 UTC\nLo",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T07:29:00.994825+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin Selloff Driven by Long Holders, Says Bitwise CIO - Coinfomania",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:13:15.813306+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udcca DAILY CRYPTO MARKET SCAN\nFebruary 27, 2026, 08:12 UTC\nTotal Cap: $2.42T (flat 24h)\nBTC Dom: 56.1%\n",
+    "thread_type": "comprehensive_analysis"
+  },
+  {
+    "timestamp": "2026-02-27T08:15:04.580128+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] DAILY CRYPTO MARKET SCAN",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:15:46.954761+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Bitcoin ETF holders and treasury firms are hedging against a potential drop below $60K, while Bitwis",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T08:15:47.879762+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] BTC @ $67,860.10 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:16:52.603367+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Ethereum Foundation releases \"Strawmap\" roadmap outlining 7 planned network upgrades through 2029, i",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T08:16:53.654410+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] ETH @ $2,036.92 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:18:16.005119+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Dogecoin makes history as its first ETF officially launches after SEC opens doors for crypto funds. ",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T08:18:16.310652+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] MEMECOINS Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:19:02.712705+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "XRPL Foundation patches critical security flaw before mainnet deployment, preventing potential netwo",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T08:19:02.852570+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] PRIVACY Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:19:51.398588+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "SEC begins review of first Solana-based liquid staking ETF for JitoSOL while Bitcoin ETF holders hed",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T08:19:51.929677+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] DEFI Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:34:02.454848+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Crevia System Test \u2014 Feb 27 08:29 UTC",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:39:43.829584+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: UK Financial Conduct Authority Selects 4 Firms for Stablecoin Sandbox\nFebruary 27, 2026,",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T08:40:56.551517+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] UK Financial Conduct Authority Selects 4 Firms for Stablecoin Sandbox - Bitcoin.com News",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:41:15.757062+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Unveils 7-Fork 'Strawmap' Extending to 2029\nFebruary 27, 2026, 08:40 UTC\nEthere",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T08:42:34.882313+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum's 7-Fork 'Strawmap' to 2029: Ambitious or Overdue? - Blockster",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T08:43:12.861795+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: SEC Review Begins for Solana-Based JitoSOL Liquid Staking ETF\nFebruary 27, 2026, 08:42 U",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T08:44:24.484425+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] SEC Review Begins for Solana-Based JitoSOL Liquid Staking ETF - Coinpaper",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T09:07:33.532037+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin miner MARA posts $1.7B quarterly loss on BTC slump\nFebruary 27, 2026, 09:07 UTC\n",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T09:08:42.372033+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin miner MARA posts $1.7B quarterly loss on BTC slump",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T09:28:43.723434+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Foundation Unveils \"Strawmap\" for Network Upgrades\nFebruary 27, 2026, 09:28 UTC",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T09:29:39.870034+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum price outlook as foundation unveils \"Strawmap\" for network upgrades - crypto.news",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T09:54:17.033569+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Spot Bitcoin ETFs take in $1B in three days as investors buy the dip\nFebruary 27, 2026, ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T09:55:16.354200+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Spot Bitcoin ETFs take in $1B in three days as investors buy the dip",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T09:55:29.945688+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: TeraWulf misses Q4 2025 estimates as Bitcoin mining revenue falls\nFebruary 27, 2026, 09:",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T09:56:36.754610+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] TeraWulf misses Q4 2025 estimates as Bitcoin mining revenue falls",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T10:16:50.992354+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: U.S. spot bitcoin ETFs set for biggest week in 6 after adding $1.1 billion in three days",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T10:17:55.037599+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] U.S. spot bitcoin ETFs set for biggest week in 6 after adding $1.1 billion in three days",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T11:19:08.212312+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin Issues Quantum Computing Warning as Ethereum Foundation Unveils 'Strawma",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T11:20:11.058621+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Vitalik Warns of Quantum Threat as Ethereum Unveils 'Strawmap'",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T11:42:29.273697+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Most US Treasury Yields Decline Early Friday Ahead of January's Producer Price Inflation",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T11:43:27.104070+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Most US Treasury Yields Decline Early Friday Ahead of January's Producer Price Inflation D",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T11:43:40.196528+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin's five-month losing streak may not end in March as $70K caps price\nFebruary 27, ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T11:44:41.644704+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin's five-month losing streak may not end in March as $70K caps price",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T11:44:55.830385+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Unveils Seven-Phase Strategic Blueprint Through 2029\nFebruary 27, 2026, 11:44 U",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T11:46:01.051161+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum's Strategic Blueprint: A Seven-Phase Upgrade Path to 2029 - AD HOC NEWS",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:26:42.468594+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udcca CRYPTO MARKET BRIEFING\nFebruary 27, 2026, 12:26 UTC\nTotal Market Cap: $2.36T\nBTC Dominance: 56.0%\n",
+    "thread_type": "comprehensive_analysis"
+  },
+  {
+    "timestamp": "2026-02-27T12:27:04.681350+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Bitcoin ETFs see strongest inflows in 6 weeks with $1.1B added in 3 days as investors buy the dip ar",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T12:27:04.739358+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] BTC @ $65,910.90 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:27:32.072495+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Ethereum Foundation releases \"Strawmap\" detailing 7-phase upgrade path through 2029, including post-",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T12:27:32.133516+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] ETH @ $1,964.00 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:28:03.325151+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Dogecoin makes history as its first ETF launches following SEC's relaxed stance on crypto funds ente",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T12:28:03.361643+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] MEMECOINS Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:28:27.840404+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Darknet markets accelerating shift to Monero in 2025 as privacy coins gain traction amid regulatory ",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T12:28:27.896280+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] PRIVACY Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:28:54.818897+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Tether freezes $4.2B USDT linked to criminal activity, marking largest enforcement action yet. Meanw",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T12:28:54.902175+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] DEFI Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:51:31.725331+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin chart revisits historic pattern as analysts warn \"the worst may lie ahead\"\nFebru",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T12:52:26.675920+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] The worst may lie ahead. Bitcoin chart revisits historic pattern.",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:52:41.531683+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Unveils Quantum-Safe Roadmap To 2029\nFebruary 27, 2026, 12:52 UTC\nEthereum Foun",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T12:53:37.458248+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum Unveils Quantum-Safe Roadmap To 2029: What's At Stake",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:53:53.417656+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Foundation releases updated protocol roadmap for 2026, signaling shift toward \"",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T12:54:58.751795+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum 2026: Deciphering the Latest Protocol Roadmap of EF, Officially Entering the Era ",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T12:55:12.688549+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin falls with ether, solana while decred, AI-linked tokens advance\nFebruary 27, 202",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T12:56:18.612565+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin falls with ether, solana while decred, AI-linked tokens advance",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T13:18:28.580555+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Forward Industries Solana strategy faces $1 billion unrealized loss as ecosystem bets in",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T13:19:26.092227+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Forward Industries Solana strategy faces $1 billion unrealized loss as ecosystem bets inte",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T13:59:03.283779+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin options traders bet on $90K rebound as analysts flag early signs of market base ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T14:00:00.362537+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin options traders bet on $90K rebound as analysts flag early signs of market base fo",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T14:27:55.401119+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Solana (SOL) falls 4.2%, leading CoinDesk 20 Index lower\nFebruary 27, 2026, 14:27 UTC\nMa",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T14:29:00.247031+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] CoinDesk 20 performance update: Solana (SOL) falls 4.2%, leading index lower",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T14:29:13.775546+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin threatens new breakdown as US PPI sends gold to 1-month high\nFebruary 27, 2026, ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T14:30:14.058952+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin threatens new breakdown as US PPI sends gold to 1-month high",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T14:30:26.951441+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum to Implement Quantum Resistance\nFebruary 27, 2026, 14:30 UTC\nMajor security upg",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T14:31:22.260546+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum to Implement Quantum Resistance: Why It Matters for Crypto, Including Mutuum Fina",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T14:31:36.996613+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Ethereum Foundation Unveils \"Strawmap\" for Network Upgrades\nFebruary 27, 2026, 14:31 UTC",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T14:32:38.441275+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum price outlook as foundation unveils \"Strawmap\" for network upgrades - Cryptonews.",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:16:16.930637+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udcca CRYPTO MARKET SCAN\nFebruary 27, 2026, 16:15 UTC\nTotal Market Cap: $2.35T\nBTC Dominance: 56.1%\nFear",
+    "thread_type": "comprehensive_analysis"
+  },
+  {
+    "timestamp": "2026-02-27T16:16:38.135283+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Bitcoin ETFs see strongest inflows in 6 weeks with $1.1B added in just 3 days as investors buy the d",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T16:16:38.225316+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] BTC @ $65,881.50 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:17:00.557056+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Ethereum Foundation releases comprehensive roadmap through 2029, outlining seven-phase upgrade path ",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T16:17:00.671353+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] ETH @ $1,936.42 \u2014 Market Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:17:25.829463+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Dogecoin makes history as its first ETF launches following SEC's relaxed stance on crypto funds, tho",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T16:17:25.890790+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] MEMECOINS Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:17:48.581691+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Major privacy crypto shift: Kraken ending Monero support in EU while darknet markets increasingly ad",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T16:17:49.028241+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] PRIVACY Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:18:12.537368+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "Barclays exploring blockchain integration for core banking functions including payments and deposits",
+    "thread_type": "single"
+  },
+  {
+    "timestamp": "2026-02-27T16:18:12.592986+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] DEFI Sector Analysis",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:37:05.996895+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: StreetInsider reports Ethereum and Tron maintain strength while emerging token Pepeto ga",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T16:38:08.068078+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum and Tron Hold Strong, But Pepeto Could Deliver Before These Top Crypto Coins Expl",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:38:21.948121+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin to $30K? Analysts debate when and at what price BTC will bottom\nFebruary 27, 202",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T16:39:19.455762+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin to $30K? Analysts debate when and at what price BTC will bottom",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:39:33.608089+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Crypto taxes updated, BTC stuck below $70K: Month in charts\nFebruary 27, 2026, 16:39 UTC",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T16:40:24.346054+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Crypto taxes updated, BTC stuck below $70K: Month in charts",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T16:58:53.716059+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Minnesota Weighs Total Ban on Bitcoin, Crypto ATMs\nFebruary 27, 2026, 16:58 UTC\nState la",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T16:59:48.261428+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Minnesota Weighs Total Ban on Bitcoin, Crypto ATMs",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T17:00:02.253393+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Vitalik Buterin reveals his bold new plan to fix Ethereum's scaling problem\nFebruary 27,",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T17:01:01.983475+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Vitalik Buterin reveals his bold new plan to fix Ethereum's scaling problem",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T17:01:15.699320+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Gold Surges Above $5,200 as US-Iran Tensions Spark Safe-Haven Rally\nFebruary 27, 2026, 1",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T17:02:17.988601+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Gold Price Surge Skyrockets Above $5,200 as Soaring US-Iran Tensions Trigger Safe-Haven Fr",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T17:21:54.416394+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Bitcoin's rebound cancelled as U.S. stocks fall, gold surges, amid mounting macro risks\n",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T17:22:54.801261+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Bitcoin' rebound cancelled as U.S. stocks fall, gold surges, amid mounting macro risks",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T17:23:08.815924+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: How to buy Solana: A step-by-step guide\nFebruary 27, 2026, 17:22 UTC\nEducational content",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T17:24:02.969779+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] How to buy solana: A step-by-step guide",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T17:24:16.753528+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Beginner Checklist Before Your First BTC Buy\nFebruary 27, 2026, 17:24 UTC\nComprehensive ",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T17:25:19.947207+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Beginner checklist before your first BTC buy",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T17:44:51.555242+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: South Korean Tax Service Publishes Wallet Seed Phrases, Ethereum Tokens Stolen Then Retu",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T17:45:42.929656+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Ethereum Tokens Swiped, Returned After South Korean Tax Service Publishes Wallet Seed Phra",
+    "thread_type": "article"
+  },
+  {
+    "timestamp": "2026-02-27T18:23:21.629522+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "\ud83d\udea8 BREAKING: Iranians Mining Bitcoin at $1,325 Cost With 50x Returns Despite Electricity Crisis\nFebru",
+    "thread_type": "breaking_news"
+  },
+  {
+    "timestamp": "2026-02-27T18:24:29.608947+00:00",
+    "method": "playwright_browser",
+    "success": false,
+    "content_preview": "[ARTICLE] Iranians are Mining Bitcoin for $1,325 with 50x Returns Despite Electricity Shortages",
+    "thread_type": "article"
   }
 ]
