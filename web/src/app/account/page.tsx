@@ -1,6 +1,7 @@
 'use client';
 
 import { useAuth } from '@/context/AuthContext';
+import CockpitShell from '@/components/layout/CockpitShell';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useCallback } from 'react';
@@ -255,6 +256,7 @@ export default function AccountPage() {
   const badge = tierBadge[user.tier] || tierBadge.free;
 
   return (
+    <CockpitShell>
     <main className="min-h-screen bg-zinc-950">
       <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6">
         <h1 className="text-2xl font-bold text-white mb-6">Account</h1>
@@ -315,5 +317,6 @@ export default function AccountPage() {
         </button>
       </div>
     </main>
+    </CockpitShell>
   );
 }

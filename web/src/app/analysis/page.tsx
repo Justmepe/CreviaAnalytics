@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import ContentCard from '@/components/content/ContentCard';
 import LiveFeedSidebar from '@/components/feed/LiveFeedSidebar';
 import { getContentFeed } from '@/lib/api';
+import AuthShell from '@/components/layout/AuthShell';
 
 export const metadata: Metadata = {
   title: 'Analysis Feed',
@@ -60,6 +61,7 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
   const restItems = featuredItem ? items.slice(1) : items;
 
   return (
+    <AuthShell>
     <div style={{ background: '#08090c', minHeight: '100vh' }}>
 
       {/* ── 2-column page shell ── */}
@@ -288,5 +290,6 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
         }
       `}</style>
     </div>
+    </AuthShell>
   );
 }

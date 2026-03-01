@@ -31,7 +31,7 @@ function getEmbedUrl(url: string): string | null {
 
 const features = [
   { icon: '🔬', title: 'Market Regime Detection', desc: 'Real-time classification of market conditions — Risk-Off, Risk-On, Accumulation, Distribution, Volatility Expansion. Know the environment before trading.', tag: 'Live', tagStyle: { background: 'rgba(0,214,143,0.08)', color: '#00d68f', border: '1px solid rgba(0,214,143,0.2)' }, accent: '#00d68f' },
-  { icon: '⚡', title: 'AI Trade Setups',          desc: 'Claude-generated entry zones, stop-loss, take-profit, and risk/reward for all 16 tracked assets — aligned with the live market regime.', tag: 'Pro', tagStyle: { background: 'rgba(240,160,48,0.08)', color: '#f0a030', border: '1px solid rgba(240,160,48,0.2)' }, accent: '#f0a030' },
+  { icon: '⚡', title: 'AI Trade Setups',          desc: 'Regime-aligned entry zones, stop-loss, take-profit, and risk/reward for all 16 tracked assets — generated in real-time with the live market context.', tag: 'Pro', tagStyle: { background: 'rgba(240,160,48,0.08)', color: '#f0a030', border: '1px solid rgba(240,160,48,0.2)' }, accent: '#f0a030' },
   { icon: '🐋', title: 'Whale Intelligence',        desc: 'Large wallet movements, exchange netflows, funding rate spikes, and composite sentiment score — updated as smart money moves.', tag: 'Pro', tagStyle: { background: 'rgba(240,160,48,0.08)', color: '#f0a030', border: '1px solid rgba(240,160,48,0.2)' }, accent: '#f0a030' },
   { icon: '🎯', title: 'Opportunity Scanner',       desc: 'Composite scoring across confidence, R/R ratio, regime alignment, and momentum. Ranked list of actionable setups across all sectors.', tag: 'Pro', tagStyle: { background: 'rgba(240,160,48,0.08)', color: '#f0a030', border: '1px solid rgba(240,160,48,0.2)' }, accent: '#f0a030' },
   { icon: '⚖️', title: 'Risk Calculator',           desc: 'Position sizing, risk per trade, leverage, and portfolio exposure — always free. Size correctly regardless of your plan.', tag: 'Free', tagStyle: { background: 'rgba(74,140,240,0.08)', color: '#4a8cf0', border: '1px solid rgba(74,140,240,0.2)' }, accent: '#4a8cf0' },
@@ -41,7 +41,7 @@ const features = [
 const howSteps = [
   { num: '01', title: 'Engine collects live data', desc: 'Prices, derivatives, funding rates, liquidations, stablecoin flows, on-chain signals — pulled from Binance, CoinGecko, Coinglass, and more.' },
   { num: '02', title: 'Regime is detected',        desc: 'Five market regime patterns evaluated against weighted signal conditions. Confidence scored, regime classified, context provided.' },
-  { num: '03', title: 'Claude generates intelligence', desc: 'AI trade setups, threads, memos, and opportunity scans generated in-context with the live regime. Not generic TA — regime-aware output.' },
+  { num: '03', title: 'Intelligence is generated',    desc: 'Trade setups, threads, memos, and opportunity scans generated in-context with the live regime. Not generic TA — regime-aware output.' },
   { num: '04', title: 'You act with confidence',   desc: 'Pro members see everything live. Free users see analysis 6 hours later. Risk calculator available to everyone, always.' },
 ];
 

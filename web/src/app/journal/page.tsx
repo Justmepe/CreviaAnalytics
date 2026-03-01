@@ -3,6 +3,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
+import CockpitShell from '@/components/layout/CockpitShell';
 import {
   getJournalEntries,
   getPortfolioStats,
@@ -124,6 +125,7 @@ export default function JournalPage() {
   }
 
   return (
+    <CockpitShell>
     <main className="min-h-screen bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
 
@@ -305,5 +307,6 @@ export default function JournalPage() {
         )}
       </div>
     </main>
+    </CockpitShell>
   );
 }

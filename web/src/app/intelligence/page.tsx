@@ -5,6 +5,7 @@ import SmartMoneyTracker from '@/components/intelligence/SmartMoneyTracker';
 import TradeSetupCard from '@/components/intelligence/TradeSetupCard';
 import OpportunityCard from '@/components/intelligence/OpportunityCard';
 import ProGate from '@/components/auth/ProGate';
+import AuthShell from '@/components/layout/AuthShell';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -200,6 +201,7 @@ export default async function IntelligencePage() {
   };
 
   return (
+    <AuthShell>
     <div style={{ background: '#08090c', minHeight: '100vh' }}>
       <div
         className="intel-shell mx-auto"
@@ -302,5 +304,6 @@ export default async function IntelligencePage() {
 
       </div>
     </div>
+    </AuthShell>
   );
 }

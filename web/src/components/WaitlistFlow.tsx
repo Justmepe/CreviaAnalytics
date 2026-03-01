@@ -30,7 +30,7 @@ const features = [
   {
     icon: '🎯',
     title: 'AI Trade Setups',
-    desc: 'Claude AI generates entry zones, stop loss, take profits, and position sizing for BTC, ETH, SOL, and 13+ assets every cycle.',
+    desc: 'Regime-aware entry zones, stop loss, take profits, and position sizing generated for BTC, ETH, SOL, and 13+ assets every cycle.',
     tag: 'Pro',
     tagColor: 'text-violet-400 border-violet-500/30 bg-violet-500/10',
   },

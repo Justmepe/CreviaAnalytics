@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getLatestSnapshot } from '@/lib/api';
 import MarketLiveClient from '@/components/market/MarketLiveClient';
+import AuthShell from '@/components/layout/AuthShell';
 
 export const metadata: Metadata = {
   title: 'Live Market Dashboard',
@@ -177,6 +178,7 @@ export default async function MarketPage() {
   const snapshot = await getLatestSnapshot().catch(() => null);
 
   return (
+    <AuthShell>
     <div style={{ background: '#08090c', minHeight: '100vh' }}>
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
 
@@ -215,5 +217,6 @@ export default async function MarketPage() {
 
       </div>
     </div>
+    </AuthShell>
   );
 }
