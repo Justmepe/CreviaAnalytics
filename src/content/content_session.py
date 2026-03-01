@@ -112,12 +112,19 @@ class ContentSession:
             date_str = now.strftime('%B %d, %Y')
             time_str = now.strftime('%H:%M UTC')
 
+            # Split majors dict into flagship pair (BTC/ETH) and altcoins (XRP, SOL, BNB, AVAX, SUI, LINK)
+            # so Claude knows exactly which assets have real data vs which to skip
+            all_majors = self.analysis_data.get('majors', {})
+            flagship  = {t: v for t, v in all_majors.items() if t in ('BTC', 'ETH')}
+            altcoins  = {t: v for t, v in all_majors.items() if t not in ('BTC', 'ETH')}
+
             context_json = json.dumps({
                 'date': date_str,
                 'time': time_str,
                 'mode': self.mode,
                 'market_context': self.analysis_data.get('market_context', {}),
-                'majors':         self.analysis_data.get('majors', {}),
+                'majors':         flagship,
+                'altcoins':       altcoins,
                 'defi':           self.analysis_data.get('defi', []),
                 'memecoins':      self.analysis_data.get('memecoins', []),
                 'privacy_coins':  self.analysis_data.get('privacy_coins', []),
@@ -172,19 +179,26 @@ SECTOR DEFINITIONS:
 MARKET DATA (JSON):
 {context_json}
 
+DATA DISCIPLINE — READ THIS FIRST:
+- The JSON contains separate keys: `majors` (BTC, ETH only), `altcoins` (XRP, SOL, BNB, AVAX, SUI, LINK), `memecoins`, `privacy_coins`, `defi`, `commodities`
+- Every number in a tweet MUST come from the JSON. Do NOT invent prices, percentages, or indices.
+- ESPECIALLY: do NOT reference "alt season index", "alt index", "rotation index", or any index not explicitly in the JSON.
+- If a ticker's entry in the JSON is empty ({{}}) or has no price/change data → SKIP that asset entirely. Do not write a tweet for it.
+- Only the Fear & Greed index from market_context.fear_greed_index is real — do not create variants of it.
+
 RULES FOR EVERY TWEET:
 1. Use EXACT numbers from the data — never say "rising" without a % to back it up
 2. Use emojis deliberately:
    💎 BTC  ⚡ ETH  🪙 alts  🐸 memecoins  🔒 privacy  🏦 DeFi  🌍 macro
    📊 metric  ⬆️ bullish / ⬇️ bearish  🎯 key level  ⚠️ risk/warning
 3. Each tweet ≤280 chars, numbered: 1/ 2/ 3/ etc.
-4. TWEET 1 of every thread = sector header + date + 2-3 top metrics + "👇"
+4. TWEET 1 of every thread = sector header + date + 2-3 top metrics from the data + "👇"
    Example: "1/ 🏛️ MAJORS SCAN | {date_str}\\n\\nBTC Dom: 61.4% | Mcap: $2.7T | F&G: 71\\n\\nHere's where the big two stand 👇"
-5. Middle tweets: one tweet per key asset — price, 24h %, one key level, one-line read
-6. Final tweet: sector trade angle, rotation signal, or key watch level — give the "so what"
+5. Middle tweets: one tweet per asset that HAS data — price, 24h %, one key level, one-line read. Skip assets with no data.
+6. Final tweet: what to watch next — a key level or condition. Do NOT label it "Signal:" or "Trade:". State it as an observation.
 7. 4-6 tweets per sector. Each sector thread is POSTED SEPARATELY so keep each self-contained.
 8. DO NOT repeat the same data point or insight across different sector threads.
-9. Tone: authoritative analyst, zero hype, zero filler, zero em-dashes
+9. ZERO em-dashes (—) or en-dashes (–). ZERO hype. ZERO filler. ZERO "Signal:" / "Trade:" labels.
 
 ALSO write: a full 1500-word narrative article covering all sectors (for X Article + Substack).
 
@@ -219,6 +233,11 @@ SECTOR DEFINITIONS:
 MARKET DATA (JSON):
 {context_json}
 
+DATA DISCIPLINE:
+- Every number MUST come from the JSON. Do NOT invent prices, indices, or percentages.
+- If a ticker has no data in the JSON → skip it. Do not write about it.
+- Do NOT reference any index not in the JSON (no "alt index", "rotation index", etc.)
+
 RULES FOR EVERY TWEET:
 1. Use EXACT numbers — never say "higher" without a % or price
 2. Compare to earlier levels where data allows ("was $X this morning, now $Y")
@@ -226,10 +245,10 @@ RULES FOR EVERY TWEET:
    💎 BTC  ⚡ ETH  🪙 alts  📊 metrics  ⬆️ bullish / ⬇️ bearish  🎯 key level  ⚠️ risk  🔄 rotation
 4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
 5. Tweet 1 of each thread: sector header + time + 2-3 top metrics + "👇"
-6. Final tweet: actionable signal or key level to watch next
+6. Final tweet: key level or condition to watch — no "Signal:" or "Trade:" labels
 7. 4-5 tweets per thread — substantive, zero filler
 8. DO NOT repeat the same data point across threads
-9. Zero em-dashes. Zero hype. Authoritative analyst voice.
+9. ZERO em-dashes (—) or en-dashes (–). Zero hype. Authoritative analyst voice.
 
 ALSO write: an 800-word narrative covering all three sectors (for Substack + X Article).
 
@@ -261,6 +280,11 @@ SECTOR DEFINITIONS:
 MARKET DATA (JSON):
 {context_json}
 
+DATA DISCIPLINE:
+- Every number MUST come from the JSON. Do NOT invent prices, indices, or percentages.
+- If a ticker has no data in the JSON → skip it. Do not write about it.
+- Do NOT reference any index not in the JSON (no "alt index", "rotation index", etc.)
+
 RULES FOR EVERY TWEET:
 1. Use EXACT numbers — day's open vs close, % moves, key levels
 2. Retrospective tone: "Today, X happened because Y"
@@ -269,10 +293,10 @@ RULES FOR EVERY TWEET:
    📊 metrics  ⬆️⬇️ direction  🎯 levels  ⚠️ risk  🌙 overnight
 4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
 5. Tweet 1 of each thread: sector header + date + 2-3 key day metrics + "👇"
-6. Final tweet of overnight_watch: clear statement of bull vs bear trigger for tomorrow
+6. Final tweet of overnight_watch: the level to hold vs the level that breaks the thesis. No "Signal:" labels.
 7. 4-5 tweets per thread — no padding
 8. DO NOT repeat data points across threads
-9. Zero em-dashes. Zero hype. Zero filler.
+9. ZERO em-dashes (—) or en-dashes (–). Zero hype. Zero filler.
 
 ALSO write: an 800-word narrative day wrap (for Substack + X Article).
 
@@ -312,10 +336,11 @@ TWEET RULES:
 2. Use relevant asset emojis: 💎 BTC  ⚡ ETH  🪙 alts  🏦 DeFi — match the emoji to the affected asset
 3. Every claim must have a number — no "significant move" without a price or %
 4. Numbered: 1/ 2/ 3/ etc. Each tweet ≤280 chars
-5. ZERO em-dashes (no —). Use commas or periods instead.
+5. ZERO em-dashes (—) or en-dashes (–). Use commas or periods instead.
 6. ZERO hype words: no "massive", "insane", "moon", "explode", "huge". Report facts.
-7. Sound like a Bloomberg terminal alert, not a Telegram pump group
-8. Final tweet: give one concrete trade angle with an invalidation level
+7. ZERO "Signal:" / "Trade:" labels. State the observation directly.
+8. Sound like a Bloomberg terminal alert, not a Telegram pump group
+9. Final tweet: state the key level to watch and what its breach means — no labels, just the condition
 
 Return ONLY this JSON object (no preamble, no markdown):
 {{
@@ -333,6 +358,34 @@ Return ONLY this JSON object (no preamble, no markdown):
   "tags": ["crypto", "breakingnews", "bitcoin"],
   "mentioned_assets": ["BTC", "ETH", ...]
 }}"""
+
+    @staticmethod
+    def _sanitize_tweet(text: str) -> str:
+        """
+        Hard-enforce content rules on every tweet after Claude generates it.
+
+        Strips:
+        - Em dashes (—) and en dashes (–) → replaced with a comma+space
+        - "Signal:" / "Trade:" / "Setup:" / "Alert:" labels → removed entirely
+          (these imply financial advice; we state observations, readers draw conclusions)
+        - Spaced hyphens used as em-dash surrogates ( - ) between words → comma
+        """
+        t = text
+
+        # Em dash and en dash → ", "
+        t = t.replace('\u2014', ', ').replace('\u2013', ', ')
+        # Spaced hyphen as em-dash surrogate: " - " between words → ", "
+        t = re.sub(r'(?<=\w) - (?=\w)', ', ', t)
+
+        # Remove explicit signal/trade labels (case-insensitive)
+        t = re.sub(r'(?i)^(signal|trade|setup|alert|watch)\s*:\s*', '', t.lstrip())
+        t = re.sub(r'(?i)\n(signal|trade|setup|alert|watch)\s*:\s*', '\n', t)
+
+        # Collapse any double commas or spaces left behind
+        t = re.sub(r',\s*,', ',', t)
+        t = re.sub(r'  +', ' ', t)
+
+        return t.strip()
 
     def _parse_master_json(self, raw: str) -> Dict[str, Any]:
         """Extract JSON from Claude's response (handles markdown fences)."""
@@ -379,7 +432,7 @@ Return ONLY this JSON object (no preamble, no markdown):
 
         tweets: List[str] = []
         for t in raw:
-            s = str(t).strip()
+            s = self._sanitize_tweet(str(t))
             if s:
                 tweets.append(s[:280])
         if not tweets:
@@ -407,7 +460,8 @@ Return ONLY this JSON object (no preamble, no markdown):
 
         for sector in expected:
             tweets = raw.get(sector, [])
-            clean = [str(t).strip()[:280] for t in tweets if str(t).strip()]
+            clean = [self._sanitize_tweet(str(t))[:280] for t in tweets if str(t).strip()]
+            clean = [t for t in clean if t]  # drop any that became empty after sanitize
             if clean:
                 result[sector] = clean
             else:
