@@ -82,14 +82,14 @@ def latest_prices(
 
 
 _SYMBOL_MAP = {
-    'BTC': 'BTCUSDT',
-    'ETH': 'ETHUSDT',
-    'SOL': 'SOLUSDT',
-    'XMR': 'XMRUSDT',
-    'BNB': 'BNBUSDT',
-    'AAVE': 'AAVEUSDT',
-    'DOGE': 'DOGEUSDT',
-    'UNI': 'UNIUSDT',
+    'BTC':   'BTCUSDT',   'ETH':   'ETHUSDT',   'BNB':   'BNBUSDT',
+    'SOL':   'SOLUSDT',   'AAVE':  'AAVEUSDT',  'UNI':   'UNIUSDT',
+    'CRV':   'CRVUSDT',   'LDO':   'LDOUSDT',   'LINK':  'LINKUSDT',
+    'MKR':   'MKRUSDT',   'XMR':   'XMRUSDT',   'ZEC':   'ZECUSDT',
+    'DASH':  'DASHUSDT',  'DOGE':  'DOGEUSDT',  'SHIB':  'SHIBUSDT',
+    'PEPE':  'PEPEUSDT',  'FLOKI': 'FLOKIUSDT', 'DOT':   'DOTUSDT',
+    'ADA':   'ADAUSDT',   'AVAX':  'AVAXUSDT',  'ATOM':  'ATOMUSDT',
+    'SUI':   'SUIUSDT',
 }
 
 @router.get('/klines')
