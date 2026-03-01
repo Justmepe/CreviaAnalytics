@@ -45,14 +45,9 @@ def analyze_major(ticker: str, timeframe_hours: int = 24) -> Dict[str, Any]:
             - risks: Risk & conditions summary
     """
     
-    # Validate ticker
-    if ticker.upper() not in ['BTC', 'BITCOIN', 'ETH', 'ETHEREUM']:
-        return {
-            'error': f'{ticker} is not a major asset. Use BTC or ETH.',
-            'timestamp': get_current_timestamp()
-        }
-    
-    ticker_symbol = 'BTC' if ticker.upper() in ['BTC', 'BITCOIN'] else 'ETH'
+    # Normalise ticker symbol
+    _aliases = {'BITCOIN': 'BTC', 'ETHEREUM': 'ETH'}
+    ticker_symbol = _aliases.get(ticker.upper(), ticker.upper())
     
     # Run all active pillars
     print(f"Analyzing {ticker_symbol}...")

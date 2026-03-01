@@ -318,6 +318,7 @@ class CryptoAnalysisOrchestrator:
         self.last_marketing_date = {}         # Dict[hour] -> date when marketing post last ran
         self.morning_context = None           # Stored thread summary for mid-day reference
         self.posted_breaking_headlines = set()  # Dedup breaking news (title hashes)
+        self.recent_breaking_headlines: list = []  # [(headline_str, timestamp)] for topic similarity
         self.last_btc_price = None            # For price crash/spike detection
         self.last_price_alert_time = 0        # Cooldown for price alerts
 
@@ -888,6 +889,49 @@ class CryptoAnalysisOrchestrator:
         elapsed = (time.time() - self.last_anchor_time) / 60
         return elapsed < ANCHOR_COOLDOWN_MINUTES
 
+    # ── Topic similarity dedup ─────────────────────────────────────────────────
+
+    _TOPIC_STOPWORDS = {
+        'that', 'this', 'with', 'from', 'have', 'been', 'will', 'they', 'their',
+        'about', 'more', 'news', 'says', 'said', 'into', 'also', 'some', 'hits',
+        'amid', 'over', 'after', 'just', 'only', 'than', 'were', 'when', 'what',
+        'most', 'high', 'rise', 'fell', 'fall', 'drop', 'jump', 'gain',
+    }
+
+    def _significant_words(self, text: str) -> set:
+        """Extract significant words from a headline (>3 chars, not stopwords)."""
+        return {
+            w.lower() for w in re.findall(r'\b[a-zA-Z]{4,}\b', text)
+            if w.lower() not in self._TOPIC_STOPWORDS
+        }
+
+    def _is_same_topic(self, headline: str, window_hours: float = 4.0) -> bool:
+        """
+        Return True if headline is semantically similar to a recently posted
+        breaking news headline (same story, different source or wording).
+
+        Uses word-overlap: if >= 3 significant words match AND overlap ratio > 40%,
+        treat as same topic.
+        """
+        cutoff = time.time() - window_hours * 3600
+        # Prune old entries first
+        self.recent_breaking_headlines = [
+            (h, t) for h, t in self.recent_breaking_headlines if t >= cutoff
+        ]
+        new_words = self._significant_words(headline)
+        if len(new_words) < 3:
+            return False
+        for posted_h, _ in self.recent_breaking_headlines:
+            posted_words = self._significant_words(posted_h)
+            overlap = new_words & posted_words
+            if len(overlap) >= 3 and len(overlap) / max(len(new_words), 1) >= 0.4:
+                logger.info(
+                    f"[BreakingDedup] Same topic blocked — overlap {overlap} "
+                    f"with: '{posted_h[:60]}...'"
+                )
+                return True
+        return False
+
     def _run_content_session(self, mode: str, news_context: Optional[str] = None) -> Optional[Dict]:
         """
         Run ContentSession for the given mode — ONE Claude call covers thread + article + note.
@@ -896,13 +940,23 @@ class CryptoAnalysisOrchestrator:
         """
         try:
             global_context = self.latest_research.get('global', {})
+
+            # Inject fresh prices so altcoin data is never stale
+            all_tickers = MAJOR_ASSETS + MEMECOIN_ASSETS + PRIVACY_ASSETS + DEFI_ASSETS + COMMODITIES_ASSETS
+            try:
+                fresh_prices = self.data.get_prices_batch(all_tickers)
+                analyses = self._inject_prices(self.latest_analyses.copy(), fresh_prices)
+            except Exception as _price_err:
+                logger.warning(f"[ContentSession] Fresh price fetch failed: {_price_err} — using cached")
+                analyses = self.latest_analyses
+
             analysis_data = {
                 'market_context': global_context,
-                'majors': {t: self.latest_analyses.get(t, {}) for t in MAJOR_ASSETS if t in self.latest_analyses},
-                'defi': [self.latest_analyses.get(t, {}) for t in DEFI_ASSETS if t in self.latest_analyses],
-                'memecoins': [self.latest_analyses.get(t, {}) for t in MEMECOIN_ASSETS if t in self.latest_analyses],
-                'privacy_coins': [self.latest_analyses.get(t, {}) for t in PRIVACY_ASSETS if t in self.latest_analyses],
-                'commodities': [self.latest_analyses.get(t, {}) for t in COMMODITIES_ASSETS if t in self.latest_analyses],
+                'majors': {t: analyses.get(t, {}) for t in MAJOR_ASSETS if t in analyses},
+                'defi': [analyses.get(t, {}) for t in DEFI_ASSETS if t in analyses],
+                'memecoins': [analyses.get(t, {}) for t in MEMECOIN_ASSETS if t in analyses],
+                'privacy_coins': [analyses.get(t, {}) for t in PRIVACY_ASSETS if t in analyses],
+                'commodities': [analyses.get(t, {}) for t in COMMODITIES_ASSETS if t in analyses],
             }
             logger.info(f"[ContentSession] Running {mode} master brief (single Claude call)...")
             session = ContentSession(analysis_data, mode=mode, news_context=news_context)
@@ -1038,8 +1092,12 @@ class CryptoAnalysisOrchestrator:
 
                 title_hash = hashlib.sha256(title.encode()).hexdigest()[:16]
 
-                # Skip already posted
+                # Skip exact-title duplicates (within session)
                 if title_hash in self.posted_breaking_headlines:
+                    continue
+
+                # Skip same-topic stories already posted recently (cross-source dedup)
+                if self._is_same_topic(title):
                     continue
 
                 title_lower = title.lower()
@@ -1052,11 +1110,22 @@ class CryptoAnalysisOrchestrator:
                 if not is_crypto_relevant and not is_macro_mover:
                     continue
 
-                # Check relevance across ALL tracked assets using whole-word matching
+                # Check relevance across ALL tracked assets — collect ALL that score high
                 max_score = 0.0
+                affected_assets: list = []
                 for ticker in ALL_TRACKED:
                     _, score = _calculate_relevance(title, ticker, item)
+                    if score >= 0.5:
+                        affected_assets.append(ticker)
                     max_score = max(max_score, score)
+
+                # Fallback: mention ticker if it appears literally in title
+                for ticker in ALL_TRACKED:
+                    if ticker.lower() in title_lower and ticker not in affected_assets:
+                        affected_assets.append(ticker)
+
+                if not affected_assets:
+                    affected_assets = ['BTC']  # generic crypto news
 
                 # Boost for confirmed macro events (but don't guarantee — just raise floor)
                 if is_macro_mover and max_score < 0.8:
@@ -1065,9 +1134,17 @@ class CryptoAnalysisOrchestrator:
                 if max_score < BREAKING_NEWS_THRESHOLD:
                     continue
 
-                logger.info(f"BREAKING NEWS DETECTED (score={max_score:.2f}): {title}")
+                logger.info(
+                    f"BREAKING NEWS DETECTED (score={max_score:.2f}, "
+                    f"assets={affected_assets}): {title}"
+                )
                 self.posted_breaking_headlines.add(title_hash)
-                self._post_breaking_news(item, max_score)
+                self.recent_breaking_headlines.append((title, time.time()))
+
+                # Inject the combined asset list into the item before posting
+                item_with_assets = dict(item)
+                item_with_assets['currencies'] = affected_assets
+                self._post_breaking_news(item_with_assets, max_score)
                 breaking_found += 1
 
             if breaking_found == 0:
@@ -1135,6 +1212,12 @@ class CryptoAnalysisOrchestrator:
             x_article_body  = self.post_decorator.decorate_x_article(article_body, breaking_assets)
             _, sub_article_body, _ = self.post_decorator.decorate_substack_article(article_title, article_body, breaking_assets)
 
+            # ── Dedup gate: skip posting if content already tracked ────────────
+            thread_body = thread_data['copy_paste_ready']
+            if self.tracker.is_duplicate(thread_body):
+                logger.info("   ↩️  Breaking news content already posted (content tracker) — skipping")
+                return
+
             # ── Post X thread (main account) ───────────────────────────────────
             logger.info("\n📤 Step 2: Posting thread to X...")
             post_result = None
@@ -1150,10 +1233,8 @@ class CryptoAnalysisOrchestrator:
             else:
                 logger.warning("   ⚠️  X browser poster disabled")
 
-            # Record in tracker
-            thread_body = thread_data['copy_paste_ready']
-            if not self.tracker.is_duplicate(thread_body):
-                self.tracker.record_post(body=thread_body, content_type='breaking_thread', ticker='BREAKING')
+            # Record in tracker immediately after first post attempt
+            self.tracker.record_post(body=thread_body, content_type='breaking_thread', ticker='BREAKING')
 
             # ── Publish thread to web feed ─────────────────────────────────────
             if self.web_publisher.enabled:

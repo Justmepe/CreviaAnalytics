@@ -184,6 +184,7 @@ DATA DISCIPLINE — READ THIS FIRST:
 - Every number in a tweet MUST come from the JSON. Do NOT invent prices, percentages, or indices.
 - ESPECIALLY: do NOT reference "alt season index", "alt index", "rotation index", or any index not explicitly in the JSON.
 - If a ticker's entry in the JSON is empty ({{}}) or has no price/change data → SKIP that asset entirely. Do not write a tweet for it.
+- If ALL tickers in a sector have no data → omit that sector_thread key entirely from the JSON output. Do NOT write tweets about missing data. Do NOT acknowledge data gaps. Simply omit the sector.
 - Only the Fear & Greed index from market_context.fear_greed_index is real — do not create variants of it.
 
 RULES FOR EVERY TWEET:
@@ -236,6 +237,7 @@ MARKET DATA (JSON):
 DATA DISCIPLINE:
 - Every number MUST come from the JSON. Do NOT invent prices, indices, or percentages.
 - If a ticker has no data in the JSON → skip it. Do not write about it.
+- If ALL tickers in a sector have no data → omit that sector_thread key entirely. Do NOT write tweets about missing data or acknowledge data gaps.
 - Do NOT reference any index not in the JSON (no "alt index", "rotation index", etc.)
 
 RULES FOR EVERY TWEET:
@@ -283,6 +285,7 @@ MARKET DATA (JSON):
 DATA DISCIPLINE:
 - Every number MUST come from the JSON. Do NOT invent prices, indices, or percentages.
 - If a ticker has no data in the JSON → skip it. Do not write about it.
+- If ALL tickers in a sector have no data → omit that sector_thread key entirely. Do NOT write tweets about missing data or acknowledge data gaps.
 - Do NOT reference any index not in the JSON (no "alt index", "rotation index", etc.)
 
 RULES FOR EVERY TWEET:
@@ -358,6 +361,23 @@ Return ONLY this JSON object (no preamble, no markdown):
   "tags": ["crypto", "breakingnews", "bitcoin"],
   "mentioned_assets": ["BTC", "ETH", ...]
 }}"""
+
+    @staticmethod
+    def _sanitize_body(text: str) -> str:
+        """
+        Strip em/en dashes from long-form body text (articles, narratives, notes).
+        Replaces — and – with commas or periods depending on context.
+        """
+        if not text:
+            return text
+        # Em dash → ", " (mid-sentence) or ". " (at end of clause)
+        t = text.replace('\u2014', ', ').replace('\u2013', ', ')
+        # Spaced hyphen as em-dash surrogate: " - " between words → ", "
+        t = re.sub(r'(?<=\w) - (?=\w)', ', ', t)
+        # Collapse double commas / extra spaces left behind
+        t = re.sub(r',\s*,', ',', t)
+        t = re.sub(r'  +', ' ', t)
+        return t
 
     @staticmethod
     def _sanitize_tweet(text: str) -> str:
@@ -477,22 +497,22 @@ Return ONLY this JSON object (no preamble, no markdown):
         """Return title + narrative body for X Article."""
         return {
             'title': master.get('headline', 'Crypto Market Analysis'),
-            'body':  master.get('narrative', ''),
+            'body':  self._sanitize_body(master.get('narrative', '')),
         }
 
     def _derive_substack_article(self, master: Dict) -> Dict[str, str]:
         """Return title + narrative for Substack Article (same content, same call)."""
         return {
             'title': master.get('headline', 'Crypto Market Analysis'),
-            'body':  master.get('narrative', ''),
+            'body':  self._sanitize_body(master.get('narrative', '')),
         }
 
     def _derive_substack_note(self, master: Dict) -> str:
         """
         Return a 2-3 sentence Substack Note derived from key_insight.
         """
-        key = master.get('key_insight', '').strip()
-        headline = master.get('headline', '').strip()
+        key = self._sanitize_body(master.get('key_insight', '').strip())
+        headline = self._sanitize_body(master.get('headline', '').strip())
         if key:
             return f"{headline}\n\n{key}\n\nFull analysis → {SITE_URL}"
         # Fallback: use first tweet
