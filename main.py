@@ -15,6 +15,7 @@ Run this script to start the entire analysis engine.
 """
 
 import os
+import re
 import sys
 import time
 import json
