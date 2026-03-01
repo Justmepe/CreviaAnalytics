@@ -17,6 +17,12 @@ interface DashboardClientProps {
   recentContent: ContentPost[];
   btcPrice: number | null;
   ethPrice: number | null;
+  solPrice: number | null;
+  xmrPrice: number | null;
+  bnbPrice: number | null;
+  aavePrice: number | null;
+  solChange: number | null;
+  xmrChange: number | null;
   marketCap: number | null;
   fearGreed: number | null;
   fearGreedLabel: string | null;
@@ -163,8 +169,14 @@ function RegimeHero({ regime, fearGreed, fearGreedLabel }: {
   const rs = regime ? (REGIME_COLORS[regime.regime_name] || REGIME_COLORS.NEUTRAL) : REGIME_COLORS.NEUTRAL;
 
   const rawBars: RegimeSignal[] = regime?.supporting_signals?.slice(0, 4) ?? [];
-  const bars = rawBars.length >= 2
-    ? rawBars.map(s => ({ label: metricLabel(s.metric), pct: Math.round(s.contribution * 100), matched: s.matched }))
+  // Normalize bar widths: largest contribution = 100%, color from matched boolean
+  const maxContrib = rawBars.length ? Math.max(...rawBars.map(s => s.contribution)) : 1;
+  const bars = rawBars.length >= 1
+    ? rawBars.map(s => ({
+        label: s.metric.length > 26 ? s.metric.slice(0, 24) + '…' : s.metric,
+        pct: Math.round((s.contribution / maxContrib) * 100),
+        matched: s.matched,
+      }))
     : [
         { label: 'Exchange Netflow', pct: 72, matched: true },
         { label: 'Funding Rate',     pct: 61, matched: true },
@@ -213,7 +225,7 @@ function RegimeHero({ regime, fearGreed, fearGreedLabel }: {
         {/* Factor bars */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           {bars.map((b, i) => {
-            const barCol = b.pct > 70 ? '#00e5a0' : b.pct > 40 ? '#f0a030' : '#ff3d5a';
+            const barCol = b.matched ? '#00e5a0' : '#ff3d5a';
             return (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 8.5, color: '#38405a', width: 108, flexShrink: 0, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{b.label}</span>
@@ -395,30 +407,35 @@ function ActiveSetups({ setups, isPremium }: { setups: TradeSetup[]; isPremium: 
 type ChartAsset = 'BTC' | 'ETH' | 'SOL' | 'XMR';
 type TF = '4H' | '1D' | '1W';
 
-function PriceChart({ btcPrice, ethPrice, setups, regime }: {
-  btcPrice: number | null; ethPrice: number | null; setups: TradeSetup[]; regime: MarketRegime | null;
+function PriceChart({ btcPrice, ethPrice, solPrice, xmrPrice, setups, regime }: {
+  btcPrice: number | null; ethPrice: number | null;
+  solPrice: number | null; xmrPrice: number | null;
+  setups: TradeSetup[]; regime: MarketRegime | null;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [asset, setAsset] = useState<ChartAsset>('BTC');
   const [tf, setTf] = useState<TF>('4H');
 
-  const regHex   = regime ? (REGIME_COLORS[regime.regime_name]?.hex || '#00e5a0') : '#00e5a0';
+  const regHex    = regime ? (REGIME_COLORS[regime.regime_name]?.hex || '#00e5a0') : '#00e5a0';
   const isRiskOff = regime?.regime_name?.match(/RISK_OFF|DISTRIBUTION/) != null;
 
   const btc = btcPrice || 67468;
   const eth = ethPrice || 2033;
+  const sol = solPrice || 87.4;
+  const xmr = xmrPrice || 347.8;
 
   const ASSETS = useMemo<Record<ChartAsset, { price: number; up: boolean; high: number; low: number; vol: string; oi: string; tp: number | null; entry: number | null; sl: number | null }>>(() => {
     const bS = setups.find(s => s.asset.startsWith('BTC'));
     const eS = setups.find(s => s.asset.startsWith('ETH'));
     const sS = setups.find(s => s.asset.startsWith('SOL'));
+    const xS = setups.find(s => s.asset.startsWith('XMR'));
     return {
       BTC: { price: btc, up: true,  high: btc*1.022, low: btc*0.963, vol: '$38.4B', oi: '$18.2B', tp: bS?.take_profits?.[0]?.price ?? null, entry: bS?.entry_zones?.[0]?.price ?? null, sl: bS?.stop_loss?.price ?? null },
       ETH: { price: eth, up: true,  high: eth*1.072, low: eth*0.906, vol: '$12.1B', oi: '$6.8B',  tp: eS?.take_profits?.[0]?.price ?? null, entry: eS?.entry_zones?.[0]?.price ?? null, sl: eS?.stop_loss?.price ?? null },
-      SOL: { price: 87.4, up: true, high: 92.1, low: 79.8, vol: '$3.2B', oi: '$1.4B', tp: sS?.take_profits?.[0]?.price ?? null, entry: sS?.entry_zones?.[0]?.price ?? null, sl: sS?.stop_loss?.price ?? null },
-      XMR: { price: 347.8, up: false, high: 360.2, low: 330.5, vol: '$0.4B', oi: '$0.2B', tp: null, entry: null, sl: null },
+      SOL: { price: sol, up: sol > 80, high: sol*1.075, low: sol*0.931, vol: '$3.2B', oi: '$1.4B', tp: sS?.take_profits?.[0]?.price ?? null, entry: sS?.entry_zones?.[0]?.price ?? null, sl: sS?.stop_loss?.price ?? null },
+      XMR: { price: xmr, up: xmr > 300, high: xmr*1.036, low: xmr*0.952, vol: '$0.4B', oi: '$0.2B', tp: xS?.take_profits?.[0]?.price ?? null, entry: xS?.entry_zones?.[0]?.price ?? null, sl: xS?.stop_loss?.price ?? null },
     };
-  }, [btc, eth, setups]);
+  }, [btc, eth, sol, xmr, setups]);
 
   const cur = ASSETS[asset];
   const chgPct = ((cur.price / cur.low - 1) * 3).toFixed(2);
@@ -706,19 +723,34 @@ function CockpitFeedPanel({ content }: { content: ContentPost[] }) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Watchlist + Alerts (bottom COL 1, tabbed)
 // ─────────────────────────────────────────────────────────────────────────────
-function WatchlistAlerts({ btcPrice, ethPrice, regime, setups }: {
-  btcPrice: number | null; ethPrice: number | null; regime: MarketRegime | null; setups: TradeSetup[];
+function WatchlistAlerts({ btcPrice, ethPrice, solPrice, xmrPrice, aavePrice, solChange, xmrChange, regime, setups }: {
+  btcPrice: number | null; ethPrice: number | null;
+  solPrice: number | null; xmrPrice: number | null; aavePrice: number | null;
+  solChange: number | null; xmrChange: number | null;
+  regime: MarketRegime | null; setups: TradeSetup[];
 }) {
   const [tab, setTab] = useState<'wl' | 'al'>('wl');
-  const btc = btcPrice || 67468;
-  const eth = ethPrice || 2033;
+  const btc  = btcPrice  || 67468;
+  const eth  = ethPrice  || 2033;
+  const sol  = solPrice  || 87.4;
+  const xmr  = xmrPrice  || 347.8;
+  const aave = aavePrice || 116.2;
+
+  const fmtChg = (c: number | null, fallback: string) =>
+    c != null ? `${c >= 0 ? '+' : ''}${c.toFixed(2)}%` : fallback;
+
+  // Sparkline points: trending up or down based on real 24h change
+  const upPts  = '0,15 6,12 12,13 20,8 28,6 35,3 42,1';
+  const dnPts  = '0,3 6,5 12,4 20,7 28,10 35,13 42,15';
+  const solUp  = (solChange ?? 1) >= 0;
+  const xmrUp  = (xmrChange ?? 1) >= 0;
 
   const WATCH = [
-    { sym: 'BTC',  bg: ASSET_BG.BTC,  price: fmtPrice(btc),  pts: '0,15 6,12 12,13 20,8 28,6 35,3 42,1',  up: true,  chg: '+5.07%' },
-    { sym: 'ETH',  bg: ASSET_BG.ETH,  price: fmtPrice(eth),  pts: '0,17 6,15 12,14 20,11 28,8 35,5 42,3',  up: true,  chg: '+9.16%' },
-    { sym: 'SOL',  bg: ASSET_BG.SOL,  price: '$87.40',         pts: '0,13 6,11 12,10 20,8 28,6 35,4 42,2',  up: true,  chg: '+7.52%' },
-    { sym: 'AAVE', bg: ASSET_BG.AAVE, price: '$116.20',        pts: '0,3 6,5 12,4 20,7 28,10 35,13 42,15', up: false, chg: '–2.31%' },
-    { sym: 'XMR',  bg: ASSET_BG.XMR,  price: '$347.80',        pts: '0,12 6,10 12,9 20,7 28,6 35,5 42,4',  up: true,  chg: '+3.14%' },
+    { sym: 'BTC',  bg: ASSET_BG.BTC,  price: fmtPrice(btc),   pts: upPts, up: true,   chg: '+4.57%'               },
+    { sym: 'ETH',  bg: ASSET_BG.ETH,  price: fmtPrice(eth),   pts: upPts, up: true,   chg: '+7.17%'               },
+    { sym: 'SOL',  bg: ASSET_BG.SOL,  price: fmtPrice(sol),   pts: solUp ? upPts : dnPts, up: solUp, chg: fmtChg(solChange, '+9.41%') },
+    { sym: 'AAVE', bg: ASSET_BG.AAVE, price: fmtPrice(aave),  pts: upPts, up: true,   chg: '+8.89%'               },
+    { sym: 'XMR',  bg: ASSET_BG.XMR,  price: fmtPrice(xmr),   pts: xmrUp ? upPts : dnPts, up: xmrUp, chg: fmtChg(xmrChange, '+1.92%') },
   ];
 
   const ALERTS = [
@@ -1046,7 +1078,9 @@ function FreeDashboard({ regime, fearGreed, fearGreedLabel, recentContent, btcPr
 // Main Dashboard
 // ─────────────────────────────────────────────────────────────────────────────
 export default function DashboardClient({
-  regime, setups, recentContent, btcPrice, ethPrice, marketCap, fearGreed, fearGreedLabel,
+  regime, setups, recentContent,
+  btcPrice, ethPrice, solPrice, xmrPrice, bnbPrice, aavePrice, solChange, xmrChange,
+  marketCap, fearGreed, fearGreedLabel,
 }: DashboardClientProps) {
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -1096,6 +1130,7 @@ export default function DashboardClient({
 
         {isFree ? (
           <FreeDashboard regime={regime} fearGreed={fearGreed} fearGreedLabel={fearGreedLabel} recentContent={recentContent} btcPrice={btcPrice} ethPrice={ethPrice} marketCap={marketCap} />
+
         ) : (
           <>
             {/* ── Regime Hero ── */}
@@ -1134,7 +1169,7 @@ export default function DashboardClient({
               <WhaleActivity isBasicPlus={isBasicPlus} />
 
               {/* COL 2 ROW 2: Price Chart */}
-              <PriceChart btcPrice={btcPrice} ethPrice={ethPrice} setups={setups} regime={regime} />
+              <PriceChart btcPrice={btcPrice} ethPrice={ethPrice} solPrice={solPrice} xmrPrice={xmrPrice} setups={setups} regime={regime} />
 
               {/* COL 3 ROW 2: Cockpit Feed */}
               <CockpitFeedPanel content={recentContent} />
@@ -1142,7 +1177,7 @@ export default function DashboardClient({
 
             {/* ── Bottom Row ── */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr 280px', gap: 12, marginBottom: 12 }}>
-              <WatchlistAlerts btcPrice={btcPrice} ethPrice={ethPrice} regime={regime} setups={setups} />
+              <WatchlistAlerts btcPrice={btcPrice} ethPrice={ethPrice} solPrice={solPrice} xmrPrice={xmrPrice} aavePrice={aavePrice} solChange={solChange} xmrChange={xmrChange} regime={regime} setups={setups} />
               <QuickRisk btcPrice={btcPrice} />
               {/* COL 3 placeholder keeps grid aligned */}
               <div />
