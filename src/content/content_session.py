@@ -97,7 +97,7 @@ class ContentSession:
         Call Claude once and return the master brief as a Python dict.
         Falls back to a template-based brief if the API call fails.
 
-        morning_scan → sector_threads dict (6 sector threads, 4-6 tweets each) + narrative
+        morning_scan → sector_threads dict (6 sector threads, adaptive tweet count) + narrative
         all other modes → thread_tweets list + narrative
         """
         api_key = os.getenv('ANTHROPIC_API_KEY')
@@ -197,7 +197,7 @@ RULES FOR EVERY TWEET:
    Example: "1/ 🏛️ MAJORS SCAN | {date_str}\\n\\nBTC Dom: 61.4% | Mcap: $2.7T | F&G: 71\\n\\nHere's where the big two stand 👇"
 5. Middle tweets: one tweet per asset that HAS data — price, 24h %, one key level, one-line read. Skip assets with no data.
 6. Final tweet: what to watch next — a key level or condition. Do NOT label it "Signal:" or "Trade:". State it as an observation.
-7. 4-6 tweets per sector. Each sector thread is POSTED SEPARATELY so keep each self-contained.
+7. ADAPTIVE LENGTH: Write as many tweets as the content genuinely requires — no minimum, no maximum. A sector with 2 assets may need 3 tweets; one with 6 assets may need 8. NEVER cram multiple ideas into one tweet to hit a count. NEVER cut a thought mid-sentence. A tweet is complete when the idea is complete and fits in ≤280 chars. Each sector thread is POSTED SEPARATELY so keep each self-contained.
 8. DO NOT repeat the same data point or insight across different sector threads.
 9. ZERO em-dashes (—) or en-dashes (–). ZERO hype. ZERO filler. ZERO "Signal:" / "Trade:" labels.
 
@@ -248,7 +248,7 @@ RULES FOR EVERY TWEET:
 4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
 5. Tweet 1 of each thread: sector header + time + 2-3 top metrics + "👇"
 6. Final tweet: key level or condition to watch — no "Signal:" or "Trade:" labels
-7. 4-5 tweets per thread — substantive, zero filler
+7. ADAPTIVE LENGTH: Write as many tweets as the content requires. NEVER cut a sentence or thought mid-way. A tweet is complete when the idea is complete and fits ≤280 chars. No artificial minimum or maximum.
 8. DO NOT repeat the same data point across threads
 9. ZERO em-dashes (—) or en-dashes (–). Zero hype. Authoritative analyst voice.
 
@@ -297,7 +297,7 @@ RULES FOR EVERY TWEET:
 4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
 5. Tweet 1 of each thread: sector header + date + 2-3 key day metrics + "👇"
 6. Final tweet of overnight_watch: the level to hold vs the level that breaks the thesis. No "Signal:" labels.
-7. 4-5 tweets per thread — no padding
+7. ADAPTIVE LENGTH: Write as many tweets as the content requires. NEVER cut a sentence or thought mid-way. A tweet is complete when the idea is complete and fits ≤280 chars. No artificial minimum or maximum.
 8. DO NOT repeat data points across threads
 9. ZERO em-dashes (—) or en-dashes (–). Zero hype. Zero filler.
 
@@ -321,7 +321,8 @@ Return ONLY this JSON object (no preamble, no markdown):
     def _build_breaking_news_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
         return f"""You are a senior crypto market analyst at CreviaCockpit breaking a news story on {date_str} at {time_str}.
 
-Write a TIGHT 5-7 tweet thread + 600-word narrative. This is time-sensitive.
+Write a breaking news thread + 600-word narrative. This is time-sensitive.
+Thread length is ADAPTIVE: write as many tweets as the story requires — 5 if the story is simple, 10+ if it needs full context. NEVER cut a thought mid-sentence. Every tweet must be complete and ≤280 chars.
 
 MARKET DATA + NEWS (JSON):
 {context_json}
@@ -361,6 +362,49 @@ Return ONLY this JSON object (no preamble, no markdown):
   "tags": ["crypto", "breakingnews", "bitcoin"],
   "mentioned_assets": ["BTC", "ETH", ...]
 }}"""
+
+    @staticmethod
+    def _enforce_tweet_lengths(tweets: List[str], limit: int = 278) -> List[str]:
+        """
+        Ensure every tweet is ≤ limit chars.
+
+        Tweets that exceed the limit are split at the best available boundary
+        (sentence end → comma → last space) before the limit.  The remainder
+        continues as a new tweet so no content is ever dropped.
+
+        This replaces the old [:280] hard-slice that cut mid-word and the
+        fixed per-sector count that forced Claude to cram or omit content.
+        """
+        result: List[str] = []
+        for tweet in tweets:
+            tweet = tweet.strip()
+            if not tweet:
+                continue
+            while len(tweet) > limit:
+                chunk = tweet[:limit]
+                # Prefer splitting after sentence-ending punctuation
+                split_at = -1
+                for punct in ('.', '!', '?'):
+                    pos = chunk.rfind(punct)
+                    if pos > limit // 2:
+                        split_at = pos + 1  # include the punctuation
+                        break
+                # Fall back: comma or semicolon
+                if split_at == -1:
+                    for punct in (',', ';', ':'):
+                        pos = chunk.rfind(punct)
+                        if pos > limit // 2:
+                            split_at = pos + 1
+                            break
+                # Last resort: last space (word boundary)
+                if split_at == -1:
+                    last_space = chunk.rfind(' ')
+                    split_at = last_space if last_space > limit // 2 else limit
+                result.append(tweet[:split_at].rstrip())
+                tweet = tweet[split_at:].lstrip()
+            if tweet:
+                result.append(tweet)
+        return result
 
     @staticmethod
     def _sanitize_body(text: str) -> str:
@@ -450,11 +494,9 @@ Return ONLY this JSON object (no preamble, no markdown):
         else:
             raw = master.get('thread_tweets', [])
 
-        tweets: List[str] = []
-        for t in raw:
-            s = self._sanitize_tweet(str(t))
-            if s:
-                tweets.append(s[:280])
+        sanitized = [self._sanitize_tweet(str(t)) for t in raw if str(t).strip()]
+        sanitized = [s for s in sanitized if s]
+        tweets = self._enforce_tweet_lengths(sanitized)
         if not tweets:
             tweets = self._split_narrative_to_tweets(master.get('narrative', ''))
         return tweets
@@ -480,8 +522,8 @@ Return ONLY this JSON object (no preamble, no markdown):
 
         for sector in expected:
             tweets = raw.get(sector, [])
-            clean = [self._sanitize_tweet(str(t))[:280] for t in tweets if str(t).strip()]
-            clean = [t for t in clean if t]  # drop any that became empty after sanitize
+            sanitized = [self._sanitize_tweet(str(t)) for t in tweets if str(t).strip()]
+            clean = self._enforce_tweet_lengths([s for s in sanitized if s])
             if clean:
                 result[sector] = clean
             else:
