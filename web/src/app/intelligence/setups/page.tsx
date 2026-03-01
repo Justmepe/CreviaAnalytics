@@ -2,6 +2,8 @@ import { getLatestTradeSetups } from '@/lib/api';
 import TradeSetupCard from '@/components/intelligence/TradeSetupCard';
 import type { TradeSetup } from '@/types';
 import Link from 'next/link';
+import AuthShell from '@/components/layout/AuthShell';
+import ProGate from '@/components/auth/ProGate';
 
 export const revalidate = 60;
 
@@ -20,24 +22,26 @@ export default async function TradeSetupsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-zinc-950">
-      <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-2xl font-bold text-white">Trade Setups</h1>
-              <p className="text-sm text-zinc-500 mt-1">
-                AI-generated trade ideas based on market regime, price action, and derivatives data
-              </p>
-            </div>
-            <Link
-              href="/intelligence"
-              className="text-sm text-zinc-400 hover:text-white transition-colors"
-            >
-              Back to Intelligence
-            </Link>
+    <AuthShell requireAuth>
+    <main style={{ background: '#08090c', minHeight: '100vh' }}>
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h1 className="font-bebas tracking-[2px] text-[26px]" style={{ color: '#e8eaf0' }}>Trade Setups</h1>
+            <p className="font-mono-cc text-[11px] mt-1" style={{ color: '#3d4562' }}>
+              Regime-aware ideas based on market conditions, price action, and derivatives data
+            </p>
           </div>
+          <Link
+            href="/intelligence"
+            className="font-mono-cc text-[11px] uppercase tracking-[0.5px] transition-colors hover:text-[#00d68f]"
+            style={{ color: '#6b7494', textDecoration: 'none' }}
+          >
+            ← Back to Intelligence
+          </Link>
+        </div>
 
+        <ProGate featureName="AI Trade Setups" minTier="pro">
           {setups.length > 0 ? (
             <div className="grid gap-4 lg:grid-cols-2">
               {setups.map((setup) => (
@@ -45,25 +49,20 @@ export default async function TradeSetupsPage() {
               ))}
             </div>
           ) : (
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-8 text-center">
-              <h2 className="text-lg font-bold text-white">No Trade Setups Yet</h2>
-              <p className="text-sm text-zinc-500 mt-2 max-w-md mx-auto">
-                Trade setups are generated automatically during each research cycle for major assets (BTC, ETH, SOL, BNB).
-                Start the engine to begin generating setups.
+            <div className="rounded-[6px] p-8 text-center" style={{ border: '1px solid #1c2235', background: '#111520' }}>
+              <h2 className="font-syne text-base font-bold" style={{ color: '#e8eaf0' }}>No Trade Setups Yet</h2>
+              <p className="font-mono-cc text-[11px] mt-2" style={{ color: '#3d4562' }}>
+                Trade setups generate automatically each research cycle for all tracked assets.
               </p>
             </div>
           )}
-        </div>
-      </section>
+        </ProGate>
 
-      {/* Disclaimer */}
-      <section>
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-          <p className="text-xs text-zinc-600 text-center">
-            Trade setups are AI-generated analysis, not financial advice. Always do your own research and manage risk appropriately.
-          </p>
-        </div>
-      </section>
+        <p className="font-mono-cc text-[10px] text-center mt-6" style={{ color: '#2a3050' }}>
+          Trade setups are intelligence output, not financial advice. Always manage your own risk.
+        </p>
+      </div>
     </main>
+    </AuthShell>
   );
 }

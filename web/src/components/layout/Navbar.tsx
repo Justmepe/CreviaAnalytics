@@ -9,7 +9,7 @@ import { useAuth } from '@/context/AuthContext';
 // Paths where the cockpit shell (sidebar layout) takes over — hide public Navbar
 const COCKPIT_PATHS = [
   '/dashboard', '/whale-tracker', '/alerts', '/billing', '/journal', '/account',
-  '/intelligence', '/market', '/analysis',
+  '/intelligence', '/intelligence/setups', '/intelligence/scanner', '/market', '/analysis',
 ];
 
 const publicNavLinks = [
