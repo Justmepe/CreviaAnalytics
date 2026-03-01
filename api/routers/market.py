@@ -5,6 +5,7 @@ Market data API router — snapshots and asset prices
 from fastapi import APIRouter, Depends, HTTPException, Query, Header
 from sqlalchemy.orm import Session
 from typing import Optional, List
+import httpx
 
 from api.database import get_db
 from api.config import WEB_API_SECRET
@@ -78,3 +79,46 @@ def latest_prices(
     ticker_list = tickers.split(',') if tickers else None
     prices = get_latest_prices(db, ticker_list)
     return prices
+
+
+_SYMBOL_MAP = {
+    'BTC': 'BTCUSDT',
+    'ETH': 'ETHUSDT',
+    'SOL': 'SOLUSDT',
+    'XMR': 'XMRUSDT',
+    'BNB': 'BNBUSDT',
+    'AAVE': 'AAVEUSDT',
+    'DOGE': 'DOGEUSDT',
+    'UNI': 'UNIUSDT',
+}
+
+@router.get('/klines')
+def get_klines(
+    symbol: str = Query('BTCUSDT', description='Binance pair, e.g. BTCUSDT or BTC'),
+    interval: str = Query('4h', description='Binance interval: 1h, 4h, 1d, 1w'),
+    limit: int = Query(100, ge=10, le=500),
+):
+    """Proxy Binance klines (OHLCV) for chart rendering. symbol accepts ticker (BTC) or pair (BTCUSDT)."""
+    pair = _SYMBOL_MAP.get(symbol.upper(), symbol.upper())
+    url = f'https://api.binance.com/api/v3/klines?symbol={pair}&interval={interval}&limit={limit}'
+    try:
+        with httpx.Client(timeout=8.0) as client:
+            r = client.get(url)
+            r.raise_for_status()
+            raw = r.json()
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=f'Binance klines unavailable: {exc}')
+
+    # Binance kline: [open_time_ms, open, high, low, close, volume, ...]
+    candles = [
+        {
+            'time': int(k[0] // 1000),  # Unix seconds (LWC expects this)
+            'open':   float(k[1]),
+            'high':   float(k[2]),
+            'low':    float(k[3]),
+            'close':  float(k[4]),
+            'volume': float(k[5]),
+        }
+        for k in raw
+    ]
+    return candles

@@ -98,6 +98,24 @@ export async function getLatestPrices(tickers?: string): Promise<AssetPrice[]> {
   return fetchAPI<AssetPrice[]>(`/api/market/prices${qs}`);
 }
 
+export interface KlineBar {
+  time: number;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+}
+
+export async function getKlines(symbol: string, interval: string, limit: number = 100): Promise<KlineBar[]> {
+  const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+  const res = await fetch(`${API}/api/market/klines?symbol=${symbol}&interval=${interval}&limit=${limit}`, {
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!res.ok) throw new Error(`klines error: ${res.status}`);
+  return res.json();
+}
+
 export async function getCurrentRegime(): Promise<MarketRegime> {
   return fetchAPI<MarketRegime>('/api/intelligence/regime/current');
 }

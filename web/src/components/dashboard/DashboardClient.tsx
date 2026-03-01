@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
@@ -10,6 +10,7 @@ import type {
   ContentPost, PortfolioSummary, RegimeSignal,
 } from '@/types';
 import CockpitShell from '@/components/layout/CockpitShell';
+import PriceChartLWC from '@/components/dashboard/PriceChartLWC';
 
 interface DashboardClientProps {
   regime: MarketRegime | null;
@@ -71,22 +72,8 @@ function fmtLarge(n: number | null): string {
   if (n >= 1e9)  return `$${(n / 1e9).toFixed(1)}B`;
   return `$${n.toLocaleString()}`;
 }
-function fmtChartPrice(p: number): string {
-  return p >= 1000 ? `$${(p / 1000).toFixed(1)}K` : p >= 1 ? `$${p.toFixed(1)}` : `$${p.toFixed(4)}`;
-}
 function metricLabel(m: string): string {
   return m.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-}
-function genCandles(base: number, count: number, up: boolean) {
-  const c: { open: number; high: number; low: number; close: number }[] = [];
-  let p = base * (up ? 0.91 : 1.09);
-  const v = base * 0.012, d = up ? 0.003 : -0.003;
-  for (let i = 0; i < count; i++) {
-    const o = p, chg = (Math.random() - 0.48 + d) * v, cl = o + chg;
-    c.push({ open: o, high: Math.max(o, cl) + Math.random() * v * 0.5, low: Math.min(o, cl) - Math.random() * v * 0.5, close: cl });
-    p = cl;
-  }
-  return c;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -402,195 +389,14 @@ function ActiveSetups({ setups, isPremium }: { setups: TradeSetup[]; isPremium: 
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Price Chart (COL 2 ROW 2)
+// Price Chart (COL 2 ROW 2) — delegates to PriceChartLWC (Lightweight Charts + real Binance klines)
 // ─────────────────────────────────────────────────────────────────────────────
-type ChartAsset = 'BTC' | 'ETH' | 'SOL' | 'XMR';
-type TF = '4H' | '1D' | '1W';
-
 function PriceChart({ btcPrice, ethPrice, solPrice, xmrPrice, setups, regime }: {
   btcPrice: number | null; ethPrice: number | null;
   solPrice: number | null; xmrPrice: number | null;
   setups: TradeSetup[]; regime: MarketRegime | null;
 }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [asset, setAsset] = useState<ChartAsset>('BTC');
-  const [tf, setTf] = useState<TF>('4H');
-
-  const regHex    = regime ? (REGIME_COLORS[regime.regime_name]?.hex || '#00e5a0') : '#00e5a0';
-  const isRiskOff = regime?.regime_name?.match(/RISK_OFF|DISTRIBUTION/) != null;
-
-  const btc = btcPrice || 67468;
-  const eth = ethPrice || 2033;
-  const sol = solPrice || 87.4;
-  const xmr = xmrPrice || 347.8;
-
-  const ASSETS = useMemo<Record<ChartAsset, { price: number; up: boolean; high: number; low: number; vol: string; oi: string; tp: number | null; entry: number | null; sl: number | null }>>(() => {
-    const bS = setups.find(s => s.asset.startsWith('BTC'));
-    const eS = setups.find(s => s.asset.startsWith('ETH'));
-    const sS = setups.find(s => s.asset.startsWith('SOL'));
-    const xS = setups.find(s => s.asset.startsWith('XMR'));
-    return {
-      BTC: { price: btc, up: true,  high: btc*1.022, low: btc*0.963, vol: '$38.4B', oi: '$18.2B', tp: bS?.take_profits?.[0]?.price ?? null, entry: bS?.entry_zones?.[0]?.price ?? null, sl: bS?.stop_loss?.price ?? null },
-      ETH: { price: eth, up: true,  high: eth*1.072, low: eth*0.906, vol: '$12.1B', oi: '$6.8B',  tp: eS?.take_profits?.[0]?.price ?? null, entry: eS?.entry_zones?.[0]?.price ?? null, sl: eS?.stop_loss?.price ?? null },
-      SOL: { price: sol, up: sol > 80, high: sol*1.075, low: sol*0.931, vol: '$3.2B', oi: '$1.4B', tp: sS?.take_profits?.[0]?.price ?? null, entry: sS?.entry_zones?.[0]?.price ?? null, sl: sS?.stop_loss?.price ?? null },
-      XMR: { price: xmr, up: xmr > 300, high: xmr*1.036, low: xmr*0.952, vol: '$0.4B', oi: '$0.2B', tp: xS?.take_profits?.[0]?.price ?? null, entry: xS?.entry_zones?.[0]?.price ?? null, sl: xS?.stop_loss?.price ?? null },
-    };
-  }, [btc, eth, sol, xmr, setups]);
-
-  const cur = ASSETS[asset];
-  const chgPct = ((cur.price / cur.low - 1) * 3).toFixed(2);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const draw = () => {
-      const dpr = window.devicePixelRatio || 1;
-      const W = canvas.parentElement?.clientWidth || 500;
-      const H = 190;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-      ctx.scale(dpr, dpr);
-
-      const a = ASSETS[asset];
-      const count  = tf === '4H' ? 60 : tf === '1D' ? 30 : 18;
-      const candles = genCandles(a.price, count, a.up);
-      const pad  = { top: 8, right: 58, bottom: 22, left: 6 };
-      const cw   = W - pad.left - pad.right;
-      const ch   = H - pad.top - pad.bottom;
-      const prices = candles.flatMap(c => [c.high, c.low]);
-      const minP = Math.min(...prices), maxP = Math.max(...prices), pR = maxP - minP || 1;
-      const toY  = (p: number) => pad.top + ch * (1 - (p - minP) / pR);
-      const cW   = Math.max(1.5, cw / count - 1.2);
-
-      // Grid
-      ctx.strokeStyle = 'rgba(26,32,48,.7)'; ctx.lineWidth = 1;
-      for (let i = 0; i <= 4; i++) {
-        const p = minP + pR * i / 4, y = toY(p);
-        ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cw, y); ctx.stroke();
-        ctx.fillStyle = 'rgba(56,64,90,.85)';
-        ctx.font = `500 8px 'DM Mono', monospace`;
-        ctx.textAlign = 'left';
-        ctx.fillText(fmtChartPrice(p), pad.left + cw + 5, y + 3);
-      }
-
-      // Trade levels
-      const levels = [
-        { price: a.tp,    col: 'rgba(0,229,160,.5)',  dash: [4, 3] as number[], lbl: a.tp    ? `TP ${fmtChartPrice(a.tp)}`   : null },
-        { price: a.entry, col: 'rgba(120,128,152,.4)', dash: [3, 3] as number[], lbl: a.entry ? 'Entry'                        : null },
-        { price: a.sl,    col: 'rgba(255,61,90,.5)',   dash: [4, 3] as number[], lbl: a.sl    ? `SL ${fmtChartPrice(a.sl)}`   : null },
-      ];
-      levels.forEach(lv => {
-        if (!lv.price || !lv.lbl) return;
-        const y = toY(lv.price);
-        if (y < pad.top - 2 || y > pad.top + ch + 2) return;
-        ctx.save();
-        ctx.strokeStyle = lv.col; ctx.lineWidth = 1; ctx.setLineDash(lv.dash);
-        ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cw, y); ctx.stroke();
-        ctx.restore();
-        const lw = ctx.measureText(lv.lbl).width + 8;
-        ctx.fillStyle = 'rgba(16,20,28,.9)';
-        ctx.fillRect(pad.left + cw - lw - 2, y - 8, lw, 13);
-        ctx.fillStyle = lv.col.replace(/[\d.]+\)$/, '0.95)');
-        ctx.font = `500 7.5px 'DM Mono', monospace`; ctx.textAlign = 'right';
-        ctx.fillText(lv.lbl, pad.left + cw - 4, y + 3);
-      });
-
-      // Candles
-      candles.forEach((c, i) => {
-        const x = pad.left + (i / count) * cw + cW / 2;
-        const bull = c.close >= c.open;
-        ctx.strokeStyle = bull ? 'rgba(0,229,160,.3)' : 'rgba(255,61,90,.3)'; ctx.lineWidth = 1;
-        ctx.beginPath(); ctx.moveTo(x, toY(c.high)); ctx.lineTo(x, toY(c.low)); ctx.stroke();
-        ctx.fillStyle = bull ? '#00e5a0' : '#ff3d5a';
-        const by = Math.min(toY(c.open), toY(c.close));
-        const bh = Math.max(1, Math.abs(toY(c.open) - toY(c.close)));
-        ctx.fillRect(x - cW / 2, by, cW, bh);
-      });
-
-      // Last price dash
-      const lastY = toY(candles[candles.length - 1].close);
-      ctx.save();
-      ctx.strokeStyle = a.up ? 'rgba(0,229,160,.45)' : 'rgba(255,61,90,.45)';
-      ctx.lineWidth = 1; ctx.setLineDash([2, 5]);
-      ctx.beginPath(); ctx.moveTo(pad.left, lastY); ctx.lineTo(pad.left + cw, lastY); ctx.stroke();
-      ctx.restore();
-
-      // X labels
-      const xLabels = tf === '4H' ? ['–12d','–9d','–6d','–3d','Today'] : tf === '1D' ? ['–30d','–22d','–15d','–7d','Today'] : ['–8w','–6w','–4w','–2w','Today'];
-      ctx.fillStyle = 'rgba(56,64,90,.8)'; ctx.font = `8px 'DM Mono', monospace`; ctx.textAlign = 'center';
-      xLabels.forEach((l, i) => ctx.fillText(l, pad.left + (i / 4) * cw, H - 5));
-    };
-
-    draw();
-    window.addEventListener('resize', draw);
-    return () => window.removeEventListener('resize', draw);
-  }, [asset, tf, ASSETS]);
-
-  const TABS: ChartAsset[] = ['BTC', 'ETH', 'SOL', 'XMR'];
-  const TFS: TF[] = ['4H', '1D', '1W'];
-
-  const tabBtn = (key: string, active: boolean, onClick: () => void, style?: React.CSSProperties) => (
-    <button key={key} onClick={onClick} style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 8.5, letterSpacing: '0.5px', textTransform: 'uppercase', padding: '3px 8px', borderRadius: 3, cursor: 'pointer', transition: 'all 0.15s', border: '1px solid #1a2030', background: active ? '#151a26' : 'none', color: active ? '#e2e6f0' : '#38405a', ...style }}>
-      {key}
-    </button>
-  );
-
-  return (
-    <div style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 8, overflow: 'hidden' }}>
-      {/* Header */}
-      <div style={{ padding: '9px 14px', borderBottom: '1px solid #1a2030', display: 'flex', flexWrap: 'wrap' as const, gap: 7, alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
-          <div style={{ width: 24, height: 24, borderRadius: 4, background: assetBg(asset), display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-dm-mono)', fontSize: 7, fontWeight: 700, color: '#070809', flexShrink: 0 }}>
-            {asset}
-          </div>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 9.5, letterSpacing: '1.2px', textTransform: 'uppercase', color: '#788098' }}>{asset} / USDT</span>
-              <span style={{ fontFamily: 'var(--font-bebas)', fontSize: 19, color: '#e2e6f0', lineHeight: 1 }}>{fmtPrice(cur.price)}</span>
-              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 9.5, color: cur.up ? '#00e5a0' : '#ff3d5a' }}>+{chgPct}%</span>
-            </div>
-            {regime && (
-              <div style={{ marginTop: 2 }}>
-                <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 7.5, letterSpacing: '0.8px', textTransform: 'uppercase', color: regHex, background: `${regHex}12`, border: `1px solid ${regHex}33`, padding: '1px 6px', borderRadius: 2, display: 'inline-flex', alignItems: 'center', gap: 3 }}>
-                  <span style={{ width: 4, height: 4, borderRadius: '50%', background: regHex, display: 'inline-block' }} />
-                  {regime.regime_name.replace(/_/g, ' ')} · {Math.round((regime.confidence || 0) * 100)}%
-                </span>
-              </div>
-            )}
-          </div>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 3, marginLeft: 'auto' }}>
-          {TABS.map(k => tabBtn(k, asset === k, () => setAsset(k)))}
-          <div style={{ width: 1, height: 13, background: '#1a2030', margin: '0 3px' }} />
-          {TFS.map(t => tabBtn(t, tf === t, () => setTf(t), { border: 'none', background: tf === t ? 'rgba(0,229,160,0.08)' : 'none', color: tf === t ? '#00e5a0' : '#38405a' }))}
-        </div>
-      </div>
-
-      {/* Canvas */}
-      <div style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, ${isRiskOff ? 'rgba(255,61,90,.04)' : 'rgba(0,229,160,.04)'} 0%, transparent 60%)`, pointerEvents: 'none', zIndex: 0, transition: 'background 0.8s' }} />
-        <canvas ref={canvasRef} style={{ width: '100%', height: 190, display: 'block', position: 'relative', zIndex: 1 }} />
-      </div>
-
-      {/* Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', borderTop: '1px solid #1a2030' }}>
-        {[
-          { label: '24h Volume',    value: cur.vol },
-          { label: '24h High',      value: fmtPrice(cur.high), color: '#00e5a0' },
-          { label: '24h Low',       value: fmtPrice(cur.low),  color: '#ff3d5a' },
-          { label: 'Open Interest', value: cur.oi },
-        ].map((s, i) => (
-          <div key={s.label} style={{ padding: '7px 13px', borderRight: i < 3 ? '1px solid #1a2030' : undefined }}>
-            <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 7.5, letterSpacing: '0.8px', textTransform: 'uppercase', color: '#38405a', marginBottom: 2 }}>{s.label}</div>
-            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: 15, color: s.color || '#e2e6f0', lineHeight: 1 }}>{s.value}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <PriceChartLWC btcPrice={btcPrice} ethPrice={ethPrice} solPrice={solPrice} xmrPrice={xmrPrice} setups={setups} regime={regime} />;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
