@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
-import { getPortfolioStats, getJournalEntries, syncPortfolio, timeAgo } from '@/lib/api';
+import { getPortfolioStats, getJournalEntries, syncPortfolio, timeAgo, getCurrentRegime, getLatestTradeSetups, getContentFeed } from '@/lib/api';
 import type {
   PortfolioStats, JournalEntry, MarketRegime, TradeSetup,
   ContentPost, PortfolioSummary, RegimeSignal,
@@ -71,9 +71,6 @@ function fmtLarge(n: number | null): string {
   if (n >= 1e12) return `$${(n / 1e12).toFixed(2)}T`;
   if (n >= 1e9)  return `$${(n / 1e9).toFixed(1)}B`;
   return `$${n.toLocaleString()}`;
-}
-function metricLabel(m: string): string {
-  return m.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -775,8 +772,8 @@ function ExchangePortfolioWidget() {
 // ─────────────────────────────────────────────────────────────────────────────
 // Free Dashboard
 // ─────────────────────────────────────────────────────────────────────────────
-function FreeDashboard({ regime, fearGreed, fearGreedLabel, recentContent, btcPrice, ethPrice, marketCap }: {
-  regime: MarketRegime | null; fearGreed: number | null; fearGreedLabel: string | null;
+function FreeDashboard({ fearGreed, fearGreedLabel, recentContent, btcPrice, ethPrice, marketCap }: {
+  fearGreed: number | null; fearGreedLabel: string | null;
   recentContent: ContentPost[]; btcPrice: number | null; ethPrice: number | null; marketCap: number | null;
 }) {
   return (
@@ -885,14 +882,20 @@ function FreeDashboard({ regime, fearGreed, fearGreedLabel, recentContent, btcPr
 // ─────────────────────────────────────────────────────────────────────────────
 export default function DashboardClient({
   regime, setups, recentContent,
-  btcPrice, ethPrice, solPrice, xmrPrice, bnbPrice, aavePrice, solChange, xmrChange,
+  btcPrice, ethPrice, solPrice, xmrPrice, bnbPrice: _bnbPrice, aavePrice, solChange, xmrChange,
   marketCap, fearGreed, fearGreedLabel,
 }: DashboardClientProps) {
   const { user, loading } = useAuth();
   const router = useRouter();
-  const [stats, setStats]         = useState<PortfolioStats | null>(null);
-  const [openTrades, setOpenTrades] = useState<JournalEntry[]>([]);
+  const [stats, setStats]           = useState<PortfolioStats | null>(null);
+  const [openTrades, setOpenTrades]  = useState<JournalEntry[]>([]);
   const [statsLoading, setStatsLoading] = useState(true);
+
+  // Live-refreshing server data (regime, setups, feed) — initialised from SSR props
+  const [liveRegime,  setLiveRegime]  = useState<MarketRegime | null>(regime);
+  const [liveSetups,  setLiveSetups]  = useState<TradeSetup[]>(setups);
+  const [liveContent, setLiveContent] = useState<ContentPost[]>(recentContent);
+  const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
 
   useEffect(() => {
     if (!loading && !user) router.replace('/auth/login');
@@ -908,6 +911,23 @@ export default function DashboardClient({
       }).finally(() => setStatsLoading(false));
     }
   }, [user]);
+
+  // Poll regime + setups + feed every 60 s
+  useEffect(() => {
+    const refresh = async () => {
+      const [r, s, c] = await Promise.allSettled([
+        getCurrentRegime(),
+        getLatestTradeSetups(undefined, 5),
+        getContentFeed({ page_size: 8 }),
+      ]);
+      if (r.status === 'fulfilled') setLiveRegime(r.value);
+      if (s.status === 'fulfilled') setLiveSetups(s.value);
+      if (c.status === 'fulfilled') setLiveContent(c.value.items);
+      setLastRefresh(new Date());
+    };
+    const id = setInterval(refresh, 60_000);
+    return () => clearInterval(id);
+  }, []);
 
   if (loading) {
     return (
@@ -932,24 +952,46 @@ export default function DashboardClient({
 
   return (
     <CockpitShell>
+      {/* ── Responsive grid CSS ── */}
+      <style>{`
+        .dash-metrics { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:12px; }
+        .dash-main    { display:grid; grid-template-columns:1fr 1.1fr 280px; grid-template-rows:auto auto; gap:12px; margin-bottom:12px; align-items:start; }
+        .dash-bottom  { display:grid; grid-template-columns:1fr 1.1fr 280px; gap:12px; margin-bottom:12px; }
+        .dash-port    { display:grid; grid-template-columns:1fr 1.1fr; gap:12px; }
+        .dash-row-span { grid-row:1/3; }
+        @media (max-width:1100px) {
+          .dash-metrics { grid-template-columns:repeat(3,1fr); }
+          .dash-main    { grid-template-columns:1fr 1fr; grid-template-rows:auto auto auto; }
+          .dash-bottom  { grid-template-columns:1fr 1fr; }
+          .dash-port    { grid-template-columns:1fr; }
+          .dash-row-span { grid-row:auto; }
+        }
+        @media (max-width:680px) {
+          .dash-metrics { grid-template-columns:repeat(2,1fr); }
+          .dash-main    { grid-template-columns:1fr; }
+          .dash-bottom  { grid-template-columns:1fr; }
+          .dash-port    { grid-template-columns:1fr; }
+        }
+      `}</style>
+
       <div style={{ padding: '14px 16px' }}>
 
         {isFree ? (
-          <FreeDashboard regime={regime} fearGreed={fearGreed} fearGreedLabel={fearGreedLabel} recentContent={recentContent} btcPrice={btcPrice} ethPrice={ethPrice} marketCap={marketCap} />
+          <FreeDashboard fearGreed={fearGreed} fearGreedLabel={fearGreedLabel} recentContent={liveContent} btcPrice={btcPrice} ethPrice={ethPrice} marketCap={marketCap} />
 
         ) : (
           <>
             {/* ── Regime Hero ── */}
-            <RegimeHero regime={regime} fearGreed={fearGreed} fearGreedLabel={fearGreedLabel} />
+            <RegimeHero regime={liveRegime} fearGreed={fearGreed} fearGreedLabel={fearGreedLabel} />
 
             {/* ── 5-Metric Row ── */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 10, marginBottom: 12 }}>
+            <div className="dash-metrics">
               {[
                 { label: 'Portfolio P&L',    value: statsLoading ? '--' : stats ? `${totalPnl >= 0 ? '+' : ''}$${Math.abs(totalPnl).toFixed(0)}` : '--', sub: stats ? `${stats.total_trades} trades` : 'Log trades to start', color: totalPnl >= 0 ? '#00e5a0' : '#ff3d5a' },
                 { label: 'Open Positions',   value: statsLoading ? '--' : String(openTrades.length), sub: openTrades.length > 0 ? `↑ ${openTrades.length} active` : 'No open trades', color: openTrades.length > 0 ? '#00e5a0' : '#38405a' },
                 { label: 'Open Risk',        value: statsLoading ? '--' : openRisk > 0 ? `$${openRisk.toFixed(0)}` : '$0', sub: openRisk > 0 ? 'at risk in open trades' : 'No risk exposure', color: openRisk > 0 ? '#f0a030' : '#38405a' },
                 { label: 'Win Rate',         value: statsLoading ? '--' : stats ? `${(stats.win_rate * 100).toFixed(0)}%` : '--', sub: stats ? `P.F. ${stats.profit_factor.toFixed(2)}` : 'Log trades to track', color: stats ? (stats.win_rate >= 0.5 ? '#00e5a0' : '#ff3d5a') : '#e2e6f0' },
-                { label: 'Signals Today',    value: String(setups.length), sub: setups.length > 0 ? `↑ ${setups.filter(s => s.direction === 'LONG').length}L · ${setups.filter(s => s.direction === 'SHORT').length}S` : 'No setups yet', color: setups.length > 0 ? '#00e5a0' : '#38405a' },
+                { label: 'Signals Today',    value: String(liveSetups.length), sub: liveSetups.length > 0 ? `↑ ${liveSetups.filter(s => s.direction === 'LONG').length}L · ${liveSetups.filter(s => s.direction === 'SHORT').length}S` : 'No setups yet', color: liveSetups.length > 0 ? '#00e5a0' : '#38405a' },
               ].map(m => (
                 <div key={m.label} style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 6, padding: '11px 13px', transition: 'border-color 0.2s' }}
                   onMouseEnter={e => (e.currentTarget.style.borderColor = '#222c42')}
@@ -962,35 +1004,33 @@ export default function DashboardClient({
             </div>
 
             {/* ── Main 3-col Grid ── */}
-            {/* COL1=LiveSignals (spans 2 rows) | COL2 ROW1=Setups ROW2=Chart | COL3 ROW1=Whales ROW2=Feed */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr 280px', gridTemplateRows: 'auto auto', gap: 12, marginBottom: 12, alignItems: 'start' }}>
+            <div className="dash-main">
 
-              {/* COL 1: Live Signals (full height) */}
-              <LiveSignals regime={regime} setups={setups} content={recentContent} />
+              {/* COL 1: Live Signals (full height on desktop) */}
+              <LiveSignals regime={liveRegime} setups={liveSetups} content={liveContent} />
 
               {/* COL 2 ROW 1: Active Setups */}
-              <ActiveSetups setups={setups} isPremium={isPremium} />
+              <ActiveSetups setups={liveSetups} isPremium={isPremium} />
 
               {/* COL 3 ROW 1: Whale Activity */}
               <WhaleActivity isBasicPlus={isBasicPlus} />
 
               {/* COL 2 ROW 2: Price Chart */}
-              <PriceChart btcPrice={btcPrice} ethPrice={ethPrice} solPrice={solPrice} xmrPrice={xmrPrice} setups={setups} regime={regime} />
+              <PriceChart btcPrice={btcPrice} ethPrice={ethPrice} solPrice={solPrice} xmrPrice={xmrPrice} setups={liveSetups} regime={liveRegime} />
 
               {/* COL 3 ROW 2: Cockpit Feed */}
-              <CockpitFeedPanel content={recentContent} />
+              <CockpitFeedPanel content={liveContent} />
             </div>
 
             {/* ── Bottom Row ── */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr 280px', gap: 12, marginBottom: 12 }}>
-              <WatchlistAlerts btcPrice={btcPrice} ethPrice={ethPrice} solPrice={solPrice} xmrPrice={xmrPrice} aavePrice={aavePrice} solChange={solChange} xmrChange={xmrChange} regime={regime} setups={setups} />
+            <div className="dash-bottom">
+              <WatchlistAlerts btcPrice={btcPrice} ethPrice={ethPrice} solPrice={solPrice} xmrPrice={xmrPrice} aavePrice={aavePrice} solChange={solChange} xmrChange={xmrChange} regime={liveRegime} setups={liveSetups} />
               <QuickRisk btcPrice={btcPrice} />
-              {/* COL 3 placeholder keeps grid aligned */}
               <div />
             </div>
 
             {/* ── Portfolio + Exchange ── */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 12 }}>
+            <div className="dash-port">
 
               {/* Trade Statistics */}
               <div style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 8, padding: '16px 20px' }}>
@@ -1026,6 +1066,15 @@ export default function DashboardClient({
 
               <ExchangePortfolioWidget />
             </div>
+
+            {/* ── Last refresh indicator ── */}
+            {lastRefresh && (
+              <div style={{ marginTop: 10, display: 'flex', justifyContent: 'flex-end' }}>
+                <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 8, color: '#252d40', letterSpacing: '0.5px' }}>
+                  ↺ live · updated {timeAgo(lastRefresh.toISOString())}
+                </span>
+              </div>
+            )}
           </>
         )}
 
