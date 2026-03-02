@@ -408,6 +408,21 @@ class CryptoAnalysisOrchestrator:
                     logger.info(f"\nNext check in 60s (UTC: {now_utc.strftime('%H:%M')})...")
                     time.sleep(60)
 
+                except CreditExhaustedError as credit_err:
+                    logger.error(f"[Cycle] Anthropic credits exhausted: {credit_err}")
+                    if not self.credit_exhausted:
+                        self.credit_exhausted = True
+                        self.discord.send_system_alert(
+                            title="Anthropic Credits Exhausted",
+                            message=(
+                                "The engine has run out of Anthropic API credits.\n\n"
+                                "**All content generation has been paused.**\n\n"
+                                "To resume: top up credits at console.anthropic.com and restart the engine "
+                                "(`pm2 restart crevia-engine --update-env`)."
+                            ),
+                            level='error',
+                        )
+                    continue
                 except Exception as cycle_error:
                     logger.error(f"Error in cycle: {cycle_error}", exc_info=True)
                     time.sleep(5)
@@ -575,6 +590,11 @@ class CryptoAnalysisOrchestrator:
 
         # 2. ContentSession — ONE Claude call generates ALL content for this slot.
         session_content = self._run_content_session(slot["mode"])
+
+        # Guard: ContentSession may have exhausted credits — abort before any fallback Claude calls
+        if self.credit_exhausted:
+            logger.warning(f"[Anchor] Credits exhausted after ContentSession — aborting {slot['label']}")
+            return
 
         sector_threads = session_content.get('sector_threads', {}) if session_content else {}
 

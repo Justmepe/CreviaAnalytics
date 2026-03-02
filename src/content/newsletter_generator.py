@@ -68,7 +68,7 @@ def _generate_with_claude(
     all_analyses: Dict[str, Any]
 ) -> Dict[str, str]:
     """Generate newsletter with Claude AI"""
-    from src.utils.enhanced_data_fetchers import ClaudeResearchEngine
+    from src.utils.enhanced_data_fetchers import ClaudeResearchEngine, CreditExhaustedError
 
     # Build data context
     now = datetime.now(timezone.utc)
@@ -263,9 +263,13 @@ Return the complete article in markdown format with the exact structure above.
 Do NOT include any preamble or explanation - ONLY the article content.
 """
 
-    # Call Claude
-    claude_engine = ClaudeResearchEngine(api_key)
-    response = claude_engine._call_model(prompt, max_tokens=5000)
+    # Call Claude — use Haiku for cost efficiency; re-raise credits error so caller halts
+    content_model = os.getenv('CLAUDE_CONTENT_MODEL', 'claude-haiku-4-5-20251001')
+    claude_engine = ClaudeResearchEngine(api_key, model=content_model)
+    try:
+        response = claude_engine._call_model(prompt, max_tokens=5000)
+    except CreditExhaustedError:
+        raise
 
     # Extract text
     article_body = ""

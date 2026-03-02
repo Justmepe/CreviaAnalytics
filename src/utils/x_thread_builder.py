@@ -248,7 +248,7 @@ class ThreadBuilder:
         tags: List[str] = None
     ) -> Dict[str, Any]:
         """Generate professional breaking news thread with Claude AI"""
-        from src.utils.enhanced_data_fetchers import ClaudeResearchEngine
+        from src.utils.enhanced_data_fetchers import ClaudeResearchEngine, CreditExhaustedError
 
         api_key = os.getenv('ANTHROPIC_API_KEY')
         if not api_key:
@@ -316,8 +316,12 @@ FORMAT EXAMPLE:
 
 Return ONLY the complete thread with numbered tweets. No preamble or explanation."""
 
-        claude_engine = ClaudeResearchEngine(api_key)
-        response = claude_engine._call_model(prompt, max_tokens=1500)
+        content_model = os.getenv('CLAUDE_CONTENT_MODEL', 'claude-haiku-4-5-20251001')
+        claude_engine = ClaudeResearchEngine(api_key, model=content_model)
+        try:
+            response = claude_engine._call_model(prompt, max_tokens=1500)
+        except CreditExhaustedError:
+            raise  # Never swallow — caller must halt posting
 
         # Extract text
         thread_text = ""
@@ -511,7 +515,7 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
         max_tweets: int
     ) -> Dict[str, Any]:
         """Generate comprehensive thread using Claude AI"""
-        from src.utils.enhanced_data_fetchers import ClaudeResearchEngine
+        from src.utils.enhanced_data_fetchers import ClaudeResearchEngine, CreditExhaustedError
 
         # Get API key
         api_key = os.getenv('ANTHROPIC_API_KEY')
@@ -702,9 +706,13 @@ OI: $18.2B (↑ 3.2%)
 
 Return ONLY the complete thread with numbered tweets. No preamble or explanation."""
         
-        claude_engine = ClaudeResearchEngine(api_key)
-        response = claude_engine._call_model(prompt, max_tokens=4000)
-        
+        content_model = os.getenv('CLAUDE_CONTENT_MODEL', 'claude-haiku-4-5-20251001')
+        claude_engine = ClaudeResearchEngine(api_key, model=content_model)
+        try:
+            response = claude_engine._call_model(prompt, max_tokens=4000)
+        except CreditExhaustedError:
+            raise  # Never swallow — caller must halt posting
+
         # Extract text
         thread_text = ""
         for block in response.content:
