@@ -408,6 +408,36 @@ class DiscordNotifier:
             print(f"❌ Discord: Error testing webhook: {e}")
             return False
     
+    def send_system_alert(self, title: str, message: str, level: str = 'error') -> bool:
+        """
+        Send an engine system alert to Discord (credit exhaustion, errors, etc.).
+
+        Uses DISCORD_ALERTS_WEBHOOK_URL if set, falls back to the default webhook.
+        level: 'error' (red), 'warning' (yellow), 'info' (blue)
+        """
+        alerts_url = os.getenv('DISCORD_ALERTS_WEBHOOK_URL', '') or self.webhook_url
+        if not alerts_url:
+            return False
+
+        colours = {'error': 0xFF0000, 'warning': 0xFFA500, 'info': 0x3498DB}
+        colour = colours.get(level, 0xFF0000)
+
+        payload = {
+            'embeds': [{
+                'title': f'🚨 Engine Alert: {title}',
+                'description': message,
+                'color': colour,
+                'footer': {'text': 'CreviaCockpit Engine'},
+                'timestamp': datetime.utcnow().isoformat(),
+            }]
+        }
+        try:
+            resp = self.session.post(alerts_url, json=payload, timeout=10)
+            return resp.status_code == 204
+        except Exception as e:
+            print(f"[Discord] System alert failed: {e}")
+            return False
+
     def close(self):
         """Close session"""
         self.session.close()

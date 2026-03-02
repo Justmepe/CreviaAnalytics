@@ -22,6 +22,14 @@ import json
 from typing import Dict, Any, List, Optional
 from datetime import datetime
 import anthropic
+
+
+class CreditExhaustedError(Exception):
+    """Raised when the Anthropic API key has no remaining credits.
+
+    Callers should catch this specifically and halt content generation
+    rather than posting a template fallback or error message publicly.
+    """
 import os
 from bs4 import BeautifulSoup
 
@@ -388,7 +396,7 @@ class ClaudeResearchEngine:
         - research_sector() - use DataAggregator.get_defi_metrics() instead
     """
     
-    def __init__(self, api_key: str, backup_api_keys: Dict[str, str] = None):
+    def __init__(self, api_key: str, backup_api_keys: Dict[str, str] = None, model: str = None):
         """Initialize Claude client with backup API keys
         
         Args:
@@ -402,8 +410,8 @@ class ClaudeResearchEngine:
         else:
             self.client = anthropic.Anthropic(api_key=api_key)
             self.api_available = True
-        # Allow overriding model via env var; default to a supported sonnet model
-        self.model = os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-5-20250929')
+        # Allow overriding model via constructor arg, env var, or default
+        self.model = model or os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-5-20250929')
         # Fallback models to try if the requested model is not available to the account
         self.fallback_models = [
             'claude-sonnet-4-5-20250929',
@@ -443,27 +451,33 @@ class ClaudeResearchEngine:
                     break  # Don't retry, try next model
                     
                 except (anthropic.APIStatusError, anthropic.APIError) as ae:
-                    # Check if it's an overload/rate limit error
                     error_msg = str(ae).lower()
-                    
+                    status = getattr(ae, 'status_code', None)
+
+                    # Billing / credit exhaustion — do NOT retry, raise immediately
+                    if (status in (402, 403) or
+                            any(kw in error_msg for kw in
+                                ('credit', 'billing', 'insufficient_credits',
+                                 'payment', 'quota', 'out of credits'))):
+                        raise CreditExhaustedError(
+                            f"Anthropic API credits exhausted (HTTP {status}): {ae}"
+                        ) from ae
+
                     if "overload" in error_msg or "529" in error_msg:
-                        # API overloaded - retry with exponential backoff
                         wait_time = 2 ** attempt  # 1s, 2s, 4s
                         print(f"API overloaded (attempt {attempt+1}/3), waiting {wait_time}s...")
                         time.sleep(wait_time)
                         last_err = ae
-                        continue  # Retry same model
-                        
+                        continue
+
                     elif "rate" in error_msg or "429" in error_msg:
-                        # Rate limited - retry with backoff
                         wait_time = 3 ** attempt  # 1s, 3s, 9s
                         print(f"Rate limited (attempt {attempt+1}/3), waiting {wait_time}s...")
                         time.sleep(wait_time)
                         last_err = ae
-                        continue  # Retry same model
-                    
+                        continue
+
                     else:
-                        # Other API error - try next model
                         last_err = ae
                         break
                     

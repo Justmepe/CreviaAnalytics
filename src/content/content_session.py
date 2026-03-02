@@ -106,7 +106,7 @@ class ContentSession:
             return self._template_fallback()
 
         try:
-            from src.utils.enhanced_data_fetchers import ClaudeResearchEngine
+            from src.utils.enhanced_data_fetchers import ClaudeResearchEngine, CreditExhaustedError
 
             now = datetime.now(timezone.utc)
             date_str = now.strftime('%B %d, %Y')
@@ -145,7 +145,10 @@ class ContentSession:
                 prompt = self._build_breaking_news_prompt(context_json, date_str, time_str)
                 max_tokens = 6000
 
-            engine = ClaudeResearchEngine(api_key)
+            # Use Haiku for content writing (threads/articles) — much cheaper than Sonnet.
+            # Override via CLAUDE_CONTENT_MODEL env var if needed.
+            content_model = os.getenv('CLAUDE_CONTENT_MODEL', 'claude-haiku-4-5-20251001')
+            engine = ClaudeResearchEngine(api_key, model=content_model)
             response = engine._call_model(prompt, max_tokens=max_tokens)
 
             raw = ""
@@ -156,6 +159,10 @@ class ContentSession:
             master = self._parse_master_json(raw)
             logger.info(f"[ContentSession] Master brief: '{master.get('headline', '')[:60]}...'")
             return master
+
+        except CreditExhaustedError:
+            # Re-raise — caller must halt posting, NOT use template fallback
+            raise
 
         except Exception as e:
             logger.error(f"[ContentSession] Claude call failed: {e}. Using template fallback.")

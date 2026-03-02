@@ -39,7 +39,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from src.data.aggregator import DataAggregator
 
 # Keep Claude ONLY for content writing
-from src.utils.enhanced_data_fetchers import ClaudeResearchEngine
+from src.utils.enhanced_data_fetchers import ClaudeResearchEngine, CreditExhaustedError
 
 # Discord notifications
 from src.utils.discord_notifier import DiscordNotifier
@@ -322,6 +322,7 @@ class CryptoAnalysisOrchestrator:
         self.recent_breaking_headlines: list = []  # [(headline_str, timestamp)] for topic similarity
         self.last_btc_price = None            # For price crash/spike detection
         self.last_price_alert_time = 0        # Cooldown for price alerts
+        self.credit_exhausted = False         # Set True when Anthropic credits run out
 
         logger.info("Components initialized")
 
@@ -487,6 +488,10 @@ class CryptoAnalysisOrchestrator:
         Fires at 09:00, 15:00, 21:00, 01:00 UTC alongside regular content.
         Never touches the market intelligence thread/article pipeline.
         """
+        if self.credit_exhausted:
+            logger.warning(f"[Marketing] Skipping {slot['label']} — Anthropic credits exhausted")
+            return
+
         post_type = slot["post_type"]
         label = slot["label"]
 
@@ -549,6 +554,10 @@ class CryptoAnalysisOrchestrator:
 
     def _run_anchor_content(self, slot: Dict):
         """Execute full content pipeline for an anchor time slot."""
+
+        if self.credit_exhausted:
+            logger.warning(f"[Anchor] Skipping {slot['label']} — Anthropic credits exhausted")
+            return
 
         logger.info(f"\n{'='*80}")
         logger.info(f"ANCHOR SLOT: {slot['label']} ({slot['hour']:02d}:00 UTC)")
@@ -966,6 +975,21 @@ class CryptoAnalysisOrchestrator:
             tweet_count = len(content.get('x_thread', []))
             logger.info(f"[ContentSession] Done — '{headline[:60]}...' ({tweet_count} tweets)")
             return content
+        except CreditExhaustedError as e:
+            logger.error(f"[ContentSession] Anthropic credits exhausted: {e}")
+            if not self.credit_exhausted:
+                self.credit_exhausted = True
+                self.discord.send_system_alert(
+                    title="Anthropic Credits Exhausted",
+                    message=(
+                        "The engine has run out of Anthropic API credits.\n\n"
+                        "**All content generation has been paused.**\n\n"
+                        "To resume: top up credits at console.anthropic.com and restart the engine "
+                        "(`pm2 restart crevia-engine --update-env`)."
+                    ),
+                    level='error',
+                )
+            return None
         except Exception as e:
             logger.warning(f"[ContentSession] Failed: {e} — pipeline will use legacy generators")
             return None
@@ -1031,6 +1055,10 @@ class CryptoAnalysisOrchestrator:
 
     def _check_and_post_breaking_news(self):
         """Scan RSS feeds for high-impact news, post immediately if found."""
+
+        if self.credit_exhausted:
+            logger.warning("[BreakingNews] Skipping — Anthropic credits exhausted")
+            return
 
         # Skip if within cooldown after anchor slot
         if self._in_anchor_cooldown():

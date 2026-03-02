@@ -58,11 +58,12 @@ class MarketingPostGenerator:
         """Call Claude API and return text response, or None on failure."""
         if not self.api_key:
             return None
+        model = os.getenv('CLAUDE_CONTENT_MODEL', 'claude-haiku-4-5-20251001')
         try:
             import anthropic
             client = anthropic.Anthropic(api_key=self.api_key)
             msg = client.messages.create(
-                model="claude-sonnet-4-6",
+                model=model,
                 max_tokens=max_tokens,
                 messages=[{"role": "user", "content": prompt}]
             )
