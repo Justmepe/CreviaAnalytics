@@ -277,7 +277,11 @@ def get_content_feed(db: Session, content_type: Optional[str] = None,
                      sector: Optional[str] = None, ticker: Optional[str] = None,
                      page: int = 1, page_size: int = 20):
     """Get paginated content feed with optional filters."""
-    query = db.query(ContentPost).filter(ContentPost.is_published == True)
+    query = (db.query(ContentPost)
+               .filter(ContentPost.is_published == True)
+               # Never surface error posts — engine failures must not reach the feed
+               .filter(~ContentPost.title.ilike('Error%'))
+               .filter(~ContentPost.title.ilike('Error generating%')))
 
     if content_type:
         query = query.filter(ContentPost.content_type == content_type)
@@ -297,8 +301,11 @@ def get_content_feed(db: Session, content_type: Optional[str] = None,
 
 
 def get_content_by_slug(db: Session, slug: str) -> Optional[ContentPost]:
-    """Get a single content post by its slug."""
-    return db.query(ContentPost).filter(ContentPost.slug == slug).first()
+    """Get a single content post by its slug. Returns None for error posts."""
+    post = db.query(ContentPost).filter(ContentPost.slug == slug).first()
+    if post and post.title and post.title.lower().startswith('error'):
+        return None
+    return post
 
 
 def get_latest_snapshot(db: Session) -> Optional[MarketSnapshot]:

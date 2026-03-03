@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { getPost, timeAgo, formatPrice } from '@/lib/api';
 import { notFound } from 'next/navigation';
+import PostBodyGate from '@/components/content/PostBodyGate';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -41,9 +42,46 @@ export default async function PostPage({ params }: PageProps) {
     memo: 'Market Memo',
     news_tweet: 'News Update',
     risk_alert: 'Risk Alert',
+    article: 'Article',
   };
 
   const priceAtGen = post.market_snapshot?.price_at_generation as number | undefined;
+  // Effective tier is computed server-side from post age by the API
+  const effectiveTier = post.tier || 'free';
+
+  // Full body content — rendered inside PostBodyGate
+  const fullBody = (
+    <>
+      {post.content_type === 'thread' && post.tweets && post.tweets.length > 0 ? (
+        <div className="mt-8 space-y-4">
+          {post.tweets.map((tweet) => (
+            <div
+              key={tweet.position}
+              className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs font-bold text-zinc-950">
+                  {tweet.position}
+                </div>
+                <span className="text-xs text-zinc-500">Tweet {tweet.position}</span>
+              </div>
+              <p className="text-sm text-zinc-200 whitespace-pre-wrap leading-relaxed">
+                {tweet.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-8 rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+          <div className="prose prose-invert prose-zinc max-w-none">
+            <div className="text-sm text-zinc-200 whitespace-pre-wrap leading-relaxed">
+              {post.body}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
@@ -60,6 +98,13 @@ export default async function PostPage({ params }: PageProps) {
           <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
             {TYPE_LABELS[post.content_type] || post.content_type}
           </span>
+          {/* Tier badge — only show if content is currently gated */}
+          {effectiveTier !== 'free' && (
+            <span className="rounded-full px-2.5 py-0.5 text-xs font-medium"
+              style={{ background: 'rgba(240,160,48,0.1)', color: '#f0a030', border: '1px solid rgba(240,160,48,0.2)' }}>
+              ⚡ {effectiveTier === 'enterprise' ? 'Premium+' : 'Premium'} · Live
+            </span>
+          )}
           {post.tickers?.map((t) => (
             <Link
               key={t}
@@ -90,36 +135,10 @@ export default async function PostPage({ params }: PageProps) {
         </div>
       )}
 
-      {/* Thread tweets */}
-      {post.content_type === 'thread' && post.tweets && post.tweets.length > 0 ? (
-        <div className="mt-8 space-y-4">
-          {post.tweets.map((tweet) => (
-            <div
-              key={tweet.position}
-              className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs font-bold text-zinc-950">
-                  {tweet.position}
-                </div>
-                <span className="text-xs text-zinc-500">Tweet {tweet.position}</span>
-              </div>
-              <p className="text-sm text-zinc-200 whitespace-pre-wrap leading-relaxed">
-                {tweet.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      ) : (
-        /* Memo / Alert body */
-        <div className="mt-8 rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
-          <div className="prose prose-invert prose-zinc max-w-none">
-            <div className="text-sm text-zinc-200 whitespace-pre-wrap leading-relaxed">
-              {post.body}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Body — gated by tier */}
+      <PostBodyGate post={post} effectiveTier={effectiveTier}>
+        {fullBody}
+      </PostBodyGate>
 
       {/* Footer */}
       <div className="mt-8 flex items-center justify-between border-t border-zinc-800 pt-6">
