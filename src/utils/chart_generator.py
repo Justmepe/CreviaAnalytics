@@ -156,31 +156,32 @@ def generate_chart_image(
             warn_too_much_data=99999,
         )
 
-        # ── Watermark — bottom-left branded stamp ────────────────────────────
-        # Outer pill background
-        fig.text(
-            0.013, 0.022,
-            '  CREVIACOCKPIT  ',
-            ha='left', va='bottom',
-            fontsize=8.5,
+        # ── Watermark — centred diagonal ghost over the main chart axis ────────
+        main_ax = axes[0]
+        main_ax.text(
+            0.5, 0.5,
+            'CREVIACOCKPIT',
+            transform=main_ax.transAxes,
+            ha='center', va='center',
+            fontsize=42,
             fontweight='bold',
             color='#00d68f',
+            alpha=0.045,
             fontfamily='monospace',
-            bbox=dict(
-                boxstyle='round,pad=0.35',
-                facecolor=(0, 0.839, 0.561, 0.08),
-                edgecolor=(0, 0.839, 0.561, 0.30),
-                linewidth=0.8,
-            ),
+            rotation=30,
+            zorder=0,
         )
-        # Sub-label
-        fig.text(
-            0.013, 0.008,
+        main_ax.text(
+            0.5, 0.38,
             'creviacockpit.com',
-            ha='left', va='bottom',
-            fontsize=6.5,
-            color='#4a5878',
+            transform=main_ax.transAxes,
+            ha='center', va='center',
+            fontsize=14,
+            color='#00d68f',
+            alpha=0.045,
             fontfamily='monospace',
+            rotation=30,
+            zorder=0,
         )
 
         fig.savefig(out_path, dpi=120, bbox_inches='tight', facecolor='#08090c')
