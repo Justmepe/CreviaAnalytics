@@ -156,13 +156,30 @@ def generate_chart_image(
             warn_too_much_data=99999,
         )
 
-        # Watermark
+        # ── Watermark — bottom-left branded stamp ────────────────────────────
+        # Outer pill background
         fig.text(
-            0.5, 0.02,
-            'CreviaCockpit · creviacockpit.com',
-            ha='center', va='bottom',
-            fontsize=7,
-            color='#3d4562',
+            0.013, 0.022,
+            '  CREVIACOCKPIT  ',
+            ha='left', va='bottom',
+            fontsize=8.5,
+            fontweight='bold',
+            color='#00d68f',
+            fontfamily='monospace',
+            bbox=dict(
+                boxstyle='round,pad=0.35',
+                facecolor=(0, 0.839, 0.561, 0.08),
+                edgecolor=(0, 0.839, 0.561, 0.30),
+                linewidth=0.8,
+            ),
+        )
+        # Sub-label
+        fig.text(
+            0.013, 0.008,
+            'creviacockpit.com',
+            ha='left', va='bottom',
+            fontsize=6.5,
+            color='#4a5878',
             fontfamily='monospace',
         )
 

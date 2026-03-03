@@ -1291,8 +1291,11 @@ class CryptoAnalysisOrchestrator:
             # ── Publish thread to web feed ─────────────────────────────────────
             if self.web_publisher.enabled:
                 try:
+                    thread_chart_ticker = breaking_assets[0] if breaking_assets else 'BTC'
+                    thread_chart = generate_chart_image(thread_chart_ticker, '4h')
                     web_result = self.web_publisher.publish_thread(
                         thread_data=thread_data, tickers=breaking_assets, sector='global',
+                        image_url=thread_chart,
                         market_snapshot={'headline': headline, 'source': source, 'relevance_score': score},
                     )
                     if web_result:
@@ -1830,9 +1833,13 @@ class CryptoAnalysisOrchestrator:
 
             # Publish to web API
             if self.web_publisher.enabled:
+                thread_tickers = list(updated_analyses.keys())
+                thread_lead = thread_tickers[0] if thread_tickers else 'BTC'
+                thread_chart = generate_chart_image(thread_lead, '4h')
                 web_result = self.web_publisher.publish_thread(
                     thread_data=thread,
-                    tickers=list(updated_analyses.keys()),
+                    tickers=thread_tickers,
+                    image_url=thread_chart,
                     source_file=str(thread_file),
                     market_snapshot=market_context,
                 )
