@@ -27,15 +27,41 @@ CHARTS_DIR.mkdir(parents=True, exist_ok=True)
 # Keep at most this many chart files to avoid filling disk
 MAX_CHART_FILES = 200
 
-# Binance symbol map (ticker → trading pair)
+# Binance SPOT symbol map — only pairs available on api.binance.com/api/v3/klines
+# XAU and TSLA are futures-only on Binance; exclude to avoid silent 400 errors.
 _SYMBOL_MAP = {
     'BTC': 'BTCUSDT', 'ETH': 'ETHUSDT', 'SOL': 'SOLUSDT', 'XRP': 'XRPUSDT',
     'BNB': 'BNBUSDT', 'AVAX': 'AVAXUSDT', 'SUI': 'SUIUSDT', 'LINK': 'LINKUSDT',
     'DOGE': 'DOGEUSDT', 'SHIB': 'SHIBUSDT', 'PEPE': 'PEPEUSDT', 'FLOKI': 'FLOKIUSDT',
     'XMR': 'XMRUSDT', 'ZEC': 'ZECUSDT', 'DASH': 'DASHUSDT',
     'AAVE': 'AAVEUSDT', 'UNI': 'UNIUSDT', 'CRV': 'CRVUSDT', 'LDO': 'LDOUSDT',
-    'XAU': 'XAUUSDT',
 }
+
+# Priority order for picking a representative chart from a list of tickers.
+# When a post covers multiple assets, prefer the most liquid/well-known one.
+_CHART_PRIORITY = [
+    'BTC', 'ETH', 'SOL', 'BNB', 'XRP', 'AVAX', 'LINK', 'SUI',
+    'DOGE', 'SHIB', 'PEPE', 'FLOKI',
+    'AAVE', 'UNI', 'CRV', 'LDO',
+    'XMR', 'ZEC', 'DASH',
+]
+
+
+def pick_chart_ticker(tickers: list[str], fallback: str = 'BTC') -> str:
+    """
+    From a list of asset tickers, return the best one to use as a chart.
+
+    Rules:
+    - Only considers tickers that exist in _SYMBOL_MAP (chartable on Binance spot)
+    - Among chartable tickers, picks the highest-priority one (_CHART_PRIORITY)
+    - Falls back to `fallback` (default BTC) if none are chartable
+    """
+    chartable = [t.upper() for t in tickers if t.upper() in _SYMBOL_MAP]
+    if not chartable:
+        return fallback
+    # Sort by priority index (lower = higher priority); unrecognised tickers go last
+    chartable.sort(key=lambda t: _CHART_PRIORITY.index(t) if t in _CHART_PRIORITY else 999)
+    return chartable[0]
 
 # Dark theme matching the CreviaCockpit UI
 _STYLE = mpf.make_mpf_style(

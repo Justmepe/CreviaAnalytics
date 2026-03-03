@@ -54,7 +54,7 @@ from src.utils.x_http_poster import XHttpPoster
 
 # Web API publishing
 from src.utils.web_publisher import WebPublisher
-from src.utils.chart_generator import generate_chart_image
+from src.utils.chart_generator import generate_chart_image, pick_chart_ticker
 
 # Content deduplication tracker
 from src.utils.content_tracker import ContentTracker
@@ -1291,8 +1291,7 @@ class CryptoAnalysisOrchestrator:
             # ── Publish thread to web feed ─────────────────────────────────────
             if self.web_publisher.enabled:
                 try:
-                    thread_chart_ticker = breaking_assets[0] if breaking_assets else 'BTC'
-                    thread_chart = generate_chart_image(thread_chart_ticker, '4h')
+                    thread_chart = generate_chart_image(pick_chart_ticker(breaking_assets), '4h')
                     web_result = self.web_publisher.publish_thread(
                         thread_data=thread_data, tickers=breaking_assets, sector='global',
                         image_url=thread_chart,
@@ -1333,8 +1332,7 @@ class CryptoAnalysisOrchestrator:
             # ── Publish article to web feed ────────────────────────────────────
             if self.web_publisher.enabled and article_body:
                 try:
-                    breaking_chart_ticker = breaking_assets[0] if breaking_assets else 'BTC'
-                    breaking_chart = generate_chart_image(breaking_chart_ticker, '4h')
+                    breaking_chart = generate_chart_image(pick_chart_ticker(breaking_assets), '4h')
                     web_memo = self.web_publisher.publish_article(
                         title=article_title, body=article_body, sector='global',
                         tickers=breaking_assets,
@@ -1834,8 +1832,7 @@ class CryptoAnalysisOrchestrator:
             # Publish to web API
             if self.web_publisher.enabled:
                 thread_tickers = list(updated_analyses.keys())
-                thread_lead = thread_tickers[0] if thread_tickers else 'BTC'
-                thread_chart = generate_chart_image(thread_lead, '4h')
+                thread_chart = generate_chart_image(pick_chart_ticker(thread_tickers), '4h')
                 web_result = self.web_publisher.publish_thread(
                     thread_data=thread,
                     tickers=thread_tickers,
@@ -2020,7 +2017,7 @@ class CryptoAnalysisOrchestrator:
         # Web API — memo + news tweet
         if self.web_publisher.enabled:
             lead_image = self.rss_engine.select_best_image(events, ticker=ticker)
-            chart_url = generate_chart_image(ticker, '4h')
+            chart_url = generate_chart_image(pick_chart_ticker([ticker]), '4h')
             web_result = self.web_publisher.publish_memo(
                 ticker=ticker, memo=memo,
                 current_price=current_price,
@@ -2189,8 +2186,7 @@ class CryptoAnalysisOrchestrator:
         # Web API — memo + news tweet
         if self.web_publisher.enabled:
             lead_image = self.rss_engine.select_best_image(unique_events, ticker=sector_name)
-            sector_chart_ticker = tickers[0] if tickers else sector_name
-            chart_url = generate_chart_image(sector_chart_ticker, '4h')
+            chart_url = generate_chart_image(pick_chart_ticker(tickers), '4h')
             web_result = self.web_publisher.publish_memo(
                 ticker=sector_name, memo=memo,
                 sector=sector_name.lower(),
