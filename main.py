@@ -54,6 +54,7 @@ from src.utils.x_http_poster import XHttpPoster
 
 # Web API publishing
 from src.utils.web_publisher import WebPublisher
+from src.utils.chart_generator import generate_chart_image
 
 # Content deduplication tracker
 from src.utils.content_tracker import ContentTracker
@@ -767,11 +768,13 @@ class CryptoAnalysisOrchestrator:
             if self.web_publisher.enabled and body:
                 try:
                     mentioned = session_content.get('mentioned_assets', ['BTC', 'ETH']) if session_content else ['BTC', 'ETH']
+                    morning_chart = generate_chart_image('BTC', '1d')
                     web_result = self.web_publisher.publish_article(
                         title=title,
                         body=body,
                         sector='global',
                         tickers=mentioned,
+                        image_url=morning_chart,
                         market_snapshot={'mode': 'morning_scan'},
                     )
                     if web_result:
@@ -1327,9 +1330,12 @@ class CryptoAnalysisOrchestrator:
             # ── Publish article to web feed ────────────────────────────────────
             if self.web_publisher.enabled and article_body:
                 try:
+                    breaking_chart_ticker = breaking_assets[0] if breaking_assets else 'BTC'
+                    breaking_chart = generate_chart_image(breaking_chart_ticker, '4h')
                     web_memo = self.web_publisher.publish_article(
                         title=article_title, body=article_body, sector='global',
                         tickers=breaking_assets,
+                        image_url=breaking_chart,
                         market_snapshot={'headline': headline, 'source': source, 'relevance_score': score},
                     )
                     if web_memo:
@@ -2007,10 +2013,11 @@ class CryptoAnalysisOrchestrator:
         # Web API — memo + news tweet
         if self.web_publisher.enabled:
             lead_image = self.rss_engine.select_best_image(events, ticker=ticker)
+            chart_url = generate_chart_image(ticker, '4h')
             web_result = self.web_publisher.publish_memo(
                 ticker=ticker, memo=memo,
                 current_price=current_price,
-                image_url=lead_image,
+                image_url=chart_url or lead_image,
                 source_file=str(memo_file),
             )
             if web_result:
@@ -2175,11 +2182,13 @@ class CryptoAnalysisOrchestrator:
         # Web API — memo + news tweet
         if self.web_publisher.enabled:
             lead_image = self.rss_engine.select_best_image(unique_events, ticker=sector_name)
+            sector_chart_ticker = tickers[0] if tickers else sector_name
+            chart_url = generate_chart_image(sector_chart_ticker, '4h')
             web_result = self.web_publisher.publish_memo(
                 ticker=sector_name, memo=memo,
                 sector=sector_name.lower(),
                 tickers=tickers,
-                image_url=lead_image,
+                image_url=chart_url or lead_image,
                 source_file=str(memo_file),
             )
             if web_result:
