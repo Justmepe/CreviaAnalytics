@@ -718,9 +718,8 @@ class CryptoAnalysisOrchestrator:
                 logger.error("❌ Could not generate article body - aborting")
                 return
 
-            # Apply PostDecorator — each platform gets its own CTA variant
+            # Apply PostDecorator — Substack gets its own CTA variant
             assets = session_content.get('mentioned_assets', ['BTC', 'ETH']) if session_content else ['BTC', 'ETH']
-            x_body = self.post_decorator.decorate_x_article(body, assets)
             _, sub_body, _ = self.post_decorator.decorate_substack_article(title, body, assets)
 
             # Save to Notion first (write once, post anywhere)
@@ -735,19 +734,8 @@ class CryptoAnalysisOrchestrator:
                 except Exception as e:
                     logger.warning(f"   ⚠️  Notion save failed: {e}")
 
-            # X Article
-            logger.info("\n📤 Step 2: Posting article to X...")
-            if self.x_use_browser and self.x_browser_poster.enabled:
-                try:
-                    x_result = self.x_browser_poster.post_article(title, x_body)
-                    if x_result:
-                        logger.info("   ✅ X Article posted successfully")
-                    else:
-                        logger.error("   ❌ X Article posting returned False")
-                except Exception as e:
-                    logger.error(f"   ❌ X Article exception: {e}", exc_info=True)
-            else:
-                logger.warning("   ⚠️  X Article posting disabled")
+            # X Article — DISABLED: X focuses on threads only
+            logger.info("\n📤 Step 2: X Article skipped (X = threads only)")
 
             # Substack Article
             logger.info("\n📤 Step 3: Posting article to Substack...")
@@ -1294,8 +1282,7 @@ class CryptoAnalysisOrchestrator:
                 'type': 'breaking_news',
             }
 
-            # Decorate article for each platform
-            x_article_body  = self.post_decorator.decorate_x_article(article_body, breaking_assets)
+            # Decorate article for Substack (X Articles paused — X = threads only)
             _, sub_article_body, _ = self.post_decorator.decorate_substack_article(article_title, article_body, breaking_assets)
 
             # ── Dedup gate: skip posting if content already tracked ────────────
@@ -1336,14 +1323,8 @@ class CryptoAnalysisOrchestrator:
                 except Exception as e:
                     logger.warning(f"   ⚠️  Web thread publish exception: {e}")
 
-            # ── Post X Article (main account) ──────────────────────────────────
-            logger.info("\n📤 Step 3: Posting article to X...")
-            if self.x_use_browser and self.x_browser_poster.enabled and article_body:
-                try:
-                    x_result = self.x_browser_poster.post_article(article_title, x_article_body)
-                    logger.info("   ✅ X Article posted" if x_result else "   ❌ X Article returned False")
-                except Exception as e:
-                    logger.error(f"   ❌ X Article exception: {e}", exc_info=True)
+            # ── X Article: DISABLED — X = threads only ────────────────────────
+            logger.info("\n📤 Step 3: X Article skipped (X = threads only)")
 
             # ── Post Substack Article ──────────────────────────────────────────
             logger.info("\n📤 Step 4: Posting article to Substack...")
@@ -1378,19 +1359,14 @@ class CryptoAnalysisOrchestrator:
                 except Exception as e:
                     logger.warning(f"   ⚠️  Web article publish exception: {e}")
 
-            # ── Post to @CreviaCockpit (same pre-generated content, 0 extra Claude calls) ─
+            # ── Post to @CreviaCockpit (thread only — articles paused on X) ───
             if getattr(self.x_cockpit_poster, 'enabled', False):
-                logger.info("\n📤 Cockpit: Posting thread + article to @CreviaCockpit...")
+                logger.info("\n📤 Cockpit: Posting thread to @CreviaCockpit...")
                 try:
                     cockpit_thread = self.x_cockpit_poster.post_thread(thread_data)
                     logger.info("   ✅ @CreviaCockpit thread posted" if (cockpit_thread and cockpit_thread.get('success')) else "   ⚠️  @CreviaCockpit thread failed")
                 except Exception as e:
                     logger.error(f"   ❌ @CreviaCockpit thread exception: {e}")
-                try:
-                    cockpit_art = self.x_cockpit_poster.post_article(article_title, x_article_body)
-                    logger.info("   ✅ @CreviaCockpit article posted" if cockpit_art else "   ⚠️  @CreviaCockpit article failed")
-                except Exception as e:
-                    logger.error(f"   ❌ @CreviaCockpit article exception: {e}")
             else:
                 logger.debug("   @CreviaCockpit poster disabled — skipping")
 
@@ -2038,15 +2014,7 @@ class CryptoAnalysisOrchestrator:
             else:
                 logger.info(f"   {ticker}: News tweet is a duplicate, skipping X")
 
-        # X Article — post full memo as long-form article (browser only, API doesn't support articles)
-        x_article_id = None
-        if getattr(self.x_browser_poster, 'enabled', False):
-            article_title = f"{ticker} Market Analysis"
-            if current_price:
-                article_title = f"{ticker} @ ${current_price:,.2f} — Market Analysis"
-            x_article_id = self.x_browser_poster.post_article(article_title, memo)
-            if x_article_id:
-                logger.info(f"   {ticker}: X Article posted")
+        # X Article — DISABLED: X = threads only; articles go to Substack + Web
 
         # Web API — memo + news tweet
         if self.web_publisher.enabled:
@@ -2209,13 +2177,7 @@ class CryptoAnalysisOrchestrator:
             else:
                 logger.info(f"   {sector_name}: Sector tweet is a duplicate, skipping X")
 
-        # X Article — post full sector memo as long-form article
-        x_article_id = None
-        if self.x_use_browser and self.x_browser_poster.enabled:
-            article_title = f"{sector_name} Sector Analysis"
-            x_article_id = self.x_browser_poster.post_article(article_title, memo)
-            if x_article_id:
-                logger.info(f"   {sector_name}: X Article posted")
+        # X Article — DISABLED: X = threads only; articles go to Substack + Web
 
         # Web API — memo + news tweet
         if self.web_publisher.enabled:
