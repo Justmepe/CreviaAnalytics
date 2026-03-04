@@ -9,6 +9,9 @@ Usage:
     url = generate_chart_image('BTC', '4h')  # -> '/charts/btc_4h_20260303_1200.png'
 """
 
+import matplotlib
+matplotlib.use('Agg')  # Non-interactive backend — required for server/threaded environments
+
 import os
 import logging
 import httpx

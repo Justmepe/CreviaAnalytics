@@ -821,6 +821,22 @@ class CryptoAnalysisOrchestrator:
         SECTOR_ORDER = list(sector_threads.keys())   # preserves Claude's insertion order
         DELAY_BETWEEN = 120  # 2 minutes between sector threads
 
+        # Representative tickers per sector — used for chart + web tickers field
+        SECTOR_TICKERS = {
+            'majors':            ['BTC', 'ETH', 'BNB', 'XRP'],
+            'altcoins':          ['SOL', 'AVAX', 'LINK', 'SUI'],
+            'memecoins':         ['DOGE', 'SHIB', 'PEPE', 'FLOKI'],
+            'privacy':           ['XMR', 'ZEC', 'DASH'],
+            'defi':              ['AAVE', 'UNI', 'CRV', 'LDO'],
+            'commodities':       ['BTC', 'ETH'],
+            'majors_update':     ['BTC', 'ETH'],
+            'alts_flow':         ['SOL', 'AVAX', 'LINK'],
+            'derivatives_flow':  ['BTC', 'ETH'],
+            'day_summary':       ['BTC', 'ETH'],
+            'sector_wrap':       ['BTC', 'ETH'],
+            'overnight_watch':   ['BTC', 'ETH'],
+        }
+
         posted_count = 0
         for sector in SECTOR_ORDER:
             tweets = sector_threads.get(sector, [])
@@ -865,6 +881,24 @@ class CryptoAnalysisOrchestrator:
                     logger.info(f"   ✅ {label} posted (@CreviaCockpit)")
                 else:
                     logger.warning(f"   ⚠️  {label} @CreviaCockpit failed")
+
+            # ── Publish to web feed ───────────────────────────────────────
+            if self.web_publisher.enabled:
+                try:
+                    sector_tickers = SECTOR_TICKERS.get(sector, ['BTC', 'ETH'])
+                    sector_chart = generate_chart_image(pick_chart_ticker(sector_tickers), '4h')
+                    web_result = self.web_publisher.publish_thread(
+                        thread_data=thread_data,
+                        tickers=sector_tickers,
+                        sector=sector,
+                        image_url=sector_chart,
+                    )
+                    if web_result:
+                        logger.info(f"   ✅ {label} published to web: /post/{web_result.get('slug', '?')}")
+                    else:
+                        logger.warning(f"   ⚠️  {label} web publish returned None")
+                except Exception as e:
+                    logger.warning(f"   ⚠️  {label} web publish exception: {e}")
 
             # Wait before next sector (skip delay after the last one)
             if sector != SECTOR_ORDER[-1]:
