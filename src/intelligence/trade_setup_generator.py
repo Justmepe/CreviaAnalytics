@@ -28,7 +28,7 @@ class TradeSetupGenerator:
 
     def __init__(self):
         self._api_key = os.getenv('ANTHROPIC_API_KEY', '')
-        self._model = os.getenv('CLAUDE_MODEL', 'claude-sonnet-4-5-20250929')
+        self._model = os.getenv('CLAUDE_MODEL', 'claude-sonnet-4-6')
         self._enabled = bool(self._api_key) and HAS_ANTHROPIC
 
     def generate_setup(

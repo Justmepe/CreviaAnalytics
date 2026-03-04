@@ -22,7 +22,9 @@ class NewsNarrator:
                 if not api_key:
                     return
                 from src.utils.enhanced_data_fetchers import ClaudeResearchEngine
-                self.editor_engine = ClaudeResearchEngine(api_key)
+                # Use Haiku for news memos/tweets — fast and cost-efficient
+                model = os.getenv('CLAUDE_CONTENT_MODEL', 'claude-haiku-4-5-20251001')
+                self.editor_engine = ClaudeResearchEngine(api_key, model=model)
             except Exception:
                 # If import fails, keep editor_engine as None and rely on fallback
                 self.editor_engine = None

@@ -411,11 +411,11 @@ class ClaudeResearchEngine:
             self.client = anthropic.Anthropic(api_key=api_key)
             self.api_available = True
         # Allow overriding model via constructor arg, env var, or default
-        self.model = model or os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-5-20250929')
+        self.model = model or os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-6')
         # Fallback models to try if the requested model is not available to the account
         self.fallback_models = [
-            'claude-sonnet-4-5-20250929',
-            'claude-sonnet-4-20250514',
+            'claude-sonnet-4-6',
+            'claude-haiku-4-5-20251001',
         ]
         
         # Backup API keys for when scraping fails
