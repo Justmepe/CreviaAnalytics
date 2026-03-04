@@ -22,6 +22,7 @@ import json
 import signal
 import hashlib
 import logging
+import httpx
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, List, Optional
@@ -1292,17 +1293,24 @@ class CryptoAnalysisOrchestrator:
                 return
 
             # ── Post X thread (main account) ───────────────────────────────────
+            # ── Generate chart + pick best image for thread ────────────────────
+            thread_chart = generate_chart_image(pick_chart_ticker(breaking_assets), '4h')
+            thread_image_path = self._pick_breaking_news_image(item, thread_chart)
+
             logger.info("\n📤 Step 2: Posting thread to X...")
             post_result = None
             if getattr(self.x_browser_poster, 'enabled', False):
                 try:
-                    post_result = self.x_browser_poster.post_thread(thread_data)
+                    post_result = self.x_browser_poster.post_thread(thread_data, image_path=thread_image_path)
                     if post_result and post_result.get('success'):
                         logger.info(f"   ✅ X thread posted ({post_result.get('posted_count', 0)} tweets)")
                     else:
                         logger.error(f"   ❌ X thread failed: {post_result}")
                 except Exception as e:
                     logger.error(f"   ❌ X thread exception: {e}", exc_info=True)
+                finally:
+                    # Clean up temp image file (RSS images downloaded to temp)
+                    self._cleanup_temp_image(thread_image_path, thread_chart)
             else:
                 logger.warning("   ⚠️  X browser poster disabled")
 
@@ -1312,7 +1320,6 @@ class CryptoAnalysisOrchestrator:
             # ── Publish thread to web feed ─────────────────────────────────────
             if self.web_publisher.enabled:
                 try:
-                    thread_chart = generate_chart_image(pick_chart_ticker(breaking_assets), '4h')
                     web_result = self.web_publisher.publish_thread(
                         thread_data=thread_data, tickers=breaking_assets, sector='global',
                         image_url=thread_chart,
@@ -1376,6 +1383,64 @@ class CryptoAnalysisOrchestrator:
 
         except Exception as e:
             logger.error(f"❌ CRITICAL: Breaking news posting error: {e}", exc_info=True)
+
+    def _pick_breaking_news_image(self, item: Dict, chart_url: Optional[str]) -> Optional[str]:
+        """
+        Pick the best image for a breaking news X thread attachment.
+
+        Priority:
+        1. RSS article image (already stored on item)
+        2. OG image scraped from the article URL
+        3. Local chart PNG (already saved to web/public/charts/)
+        Returns a local file path string, or None if nothing available.
+        """
+        import tempfile
+
+        # 1. Try the RSS-embedded image URL
+        rss_img_url = item.get('image_url')
+        if not rss_img_url:
+            # Try fetching OG image from article page
+            article_url = item.get('url', '') or item.get('link', '')
+            if article_url:
+                try:
+                    rss_img_url = self.rss_engine.fetch_og_image(article_url)
+                except Exception:
+                    pass
+
+        if rss_img_url:
+            try:
+                resp = httpx.get(rss_img_url, timeout=10, follow_redirects=True)
+                resp.raise_for_status()
+                ctype = resp.headers.get('content-type', 'image/jpeg')
+                ext = '.png' if 'png' in ctype else '.jpg'
+                tmp = Path(tempfile.mktemp(suffix=ext))
+                tmp.write_bytes(resp.content)
+                logger.info(f"[BreakingNews] Using RSS image for X thread: {rss_img_url[:60]}")
+                return str(tmp)
+            except Exception as e:
+                logger.debug(f"[BreakingNews] RSS image download failed: {e}")
+
+        # 2. Fall back to local chart PNG
+        if chart_url:
+            chart_filename = chart_url.lstrip('/').replace('charts/', '')
+            chart_file = Path('web') / 'public' / 'charts' / chart_filename
+            if chart_file.exists():
+                logger.info(f"[BreakingNews] Using chart image for X thread: {chart_filename}")
+                return str(chart_file)
+
+        return None
+
+    def _cleanup_temp_image(self, image_path: Optional[str], chart_url: Optional[str]):
+        """Delete temp downloaded image (not the chart which we want to keep)."""
+        if not image_path:
+            return
+        try:
+            p = Path(image_path)
+            # Only delete if it's a temp file (not our charts directory)
+            if 'tmp' in str(p) or (p.exists() and 'charts' not in str(p)):
+                p.unlink(missing_ok=True)
+        except Exception:
+            pass
 
     def _build_article_body(self, thread_data: Optional[Dict]) -> Optional[str]:
         """Convert thread data into long-form article body."""

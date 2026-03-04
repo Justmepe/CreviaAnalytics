@@ -1444,7 +1444,7 @@ class XBrowserPoster:
             return 'article_posted'
         return None
 
-    def post_thread(self, thread_data: Dict[str, Any]) -> Dict[str, Any]:
+    def post_thread(self, thread_data: Dict[str, Any], image_path: Optional[str] = None) -> Dict[str, Any]:
         """
         Post a true X thread using the thread-composer UI (one browser session).
 
@@ -1453,6 +1453,7 @@ class XBrowserPoster:
 
         Args:
             thread_data: Dict with 'tweets' list, 'type', 'tweet_count'
+            image_path: Optional local file path to attach to the first tweet
 
         Returns:
             Dict with 'success', 'posted_count', 'error'
@@ -1475,9 +1476,9 @@ class XBrowserPoster:
             return result
 
         logger.info(f"[XBrowserPoster] Composing thread ({len(tweets)} tweets) in one session...")
-        return self._post_thread_composer(tweets, thread_data)
+        return self._post_thread_composer(tweets, thread_data, image_path=image_path)
 
-    def _post_thread_composer(self, tweets: List[str], thread_data: Optional[Dict] = None) -> Dict[str, Any]:
+    def _post_thread_composer(self, tweets: List[str], thread_data: Optional[Dict] = None, image_path: Optional[str] = None) -> Dict[str, Any]:
         """
         Post a true X thread using X's thread-composer UI.
 
@@ -1649,6 +1650,25 @@ class XBrowserPoster:
                             _human_type(page, tweet_text)
                             logger.info(f"[XBrowserPoster] Thread [{i+1}/{len(tweets)}] typed ({len(tweet_text)} chars)")
                             time.sleep(random.uniform(0.8, 1.5))
+
+                            # ── Attach image to first tweet ───────────────────────
+                            if i == 0 and image_path:
+                                try:
+                                    file_input = page.locator('input[data-testid="fileInput"]').first
+                                    file_input.set_input_files(str(image_path))
+                                    logger.info(f"[XBrowserPoster] Image upload started: {image_path}")
+                                    # Wait for upload preview
+                                    try:
+                                        page.wait_for_selector(
+                                            '[data-testid="tweetPhoto"], [data-testid="attachments"] img',
+                                            timeout=15000,
+                                        )
+                                        logger.info("[XBrowserPoster] Image uploaded to first tweet ✅")
+                                    except Exception:
+                                        logger.warning("[XBrowserPoster] Image preview timeout — continuing")
+                                    time.sleep(1.5)
+                                except Exception as img_e:
+                                    logger.warning(f"[XBrowserPoster] Image upload failed: {img_e} — continuing without image")
 
                             # Click '+' to add next tweet slot (not after last tweet)
                             if i < len(tweets) - 1:
