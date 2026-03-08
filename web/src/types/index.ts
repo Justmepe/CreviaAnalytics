@@ -47,7 +47,7 @@ export interface PortfolioStats {
 
 export interface ContentPost {
   id: number;
-  content_type: 'thread' | 'memo' | 'news_tweet' | 'risk_alert';
+  content_type: 'thread' | 'memo' | 'news_tweet' | 'risk_alert' | 'article';
   title: string | null;
   slug: string;
   body: string;
@@ -57,6 +57,7 @@ export interface ContentPost {
   tier: string;
   image_url: string | null;
   published_at: string | null;
+  updated_at: string | null;
   tweets: Tweet[] | null;
   market_snapshot: Record<string, unknown> | null;
 }

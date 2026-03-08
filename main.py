@@ -646,6 +646,35 @@ class CryptoAnalysisOrchestrator:
         # Post Substack note for all slots
         self._post_anchor_note(None, slot, session_content=session_content)
 
+        # Publish narrative article to web for ALL slots — creates indexable content for Google News
+        if session_content and self.web_publisher.enabled:
+            try:
+                narrative = session_content.get('narrative', '')
+                title = session_content.get('title') or f"{slot['label']} — {datetime.now(timezone.utc).strftime('%B %d, %Y')}"
+                if not narrative:
+                    # Build narrative from key_insight + sector thread bodies if no long-form
+                    key_insight = session_content.get('key_insight', '')
+                    if key_insight:
+                        narrative = key_insight
+                if narrative:
+                    mentioned = session_content.get('mentioned_assets', ['BTC', 'ETH'])
+                    chart_ticker = mentioned[0] if mentioned else 'BTC'
+                    slot_chart = generate_chart_image(chart_ticker, '4h')
+                    web_art = self.web_publisher.publish_article(
+                        title=title,
+                        body=narrative,
+                        sector='global',
+                        tickers=mentioned,
+                        image_url=slot_chart,
+                        market_snapshot={'mode': mode, 'slot': slot['label']},
+                    )
+                    if web_art:
+                        logger.info(f"   ✅ {slot['label']} article published to web: /post/{web_art.get('slug', '?')}")
+                    else:
+                        logger.warning(f"   ⚠️  {slot['label']} web article publish returned None")
+            except Exception as web_err:
+                logger.warning(f"   ⚠️  {slot['label']} web article exception: {web_err}")
+
         # Store narrative for weekly compilation
         self._store_daily_narrative(mode, session_content)
 

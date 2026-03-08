@@ -39,6 +39,15 @@ SITE_URL = "https://creviacockpit.com"
 # Hashtags mid-thread = clutter penalty — 3-4 max, final tweet only.
 _ALGO_RULES = """
 ALGORITHM-OPTIMISED THREAD FORMAT (2026 X algorithm — follow exactly):
+
+THREAD LENGTH — ADAPTIVE, NOT FIXED:
+• Write as many tweets as the content genuinely requires — typically 6-10, up to 15 for rich sectors.
+• NEVER cut content short to hit a lower count. NEVER pad with filler to hit a higher count.
+• A sector with 6 assets + derivatives + sentiment data warrants 10-12 tweets.
+• A sector with 2 assets and sparse data warrants 5-6 tweets.
+• The array in the JSON output is variable length — write every tweet that adds real value.
+
+TWEET STRUCTURE:
 • Tweet 1 (HOOK): Open with a STARTER KEYWORD matching the sector, then hook + one key metric + "👇"
   Starter keywords per sector:
     BTC/ETH majors      → "BTC Scan:" / "ETH Watch:" / "Majors Scan:"
@@ -53,13 +62,17 @@ ALGORITHM-OPTIMISED THREAD FORMAT (2026 X algorithm — follow exactly):
     Evening outlook     → "Evening Outlook:" / "Night Watch:"
   Example tweet 1: "BTC Scan: Just slipped under $71K with memecoins getting wrecked — shakeout or real breakdown? 👇"
 • Middle tweets: one sharp, data-backed insight per tweet. Lead with a number or emoji, not a word.
+  For asset-heavy sectors: give each asset its own tweet (price, %, key level, one-line read).
+  For derivatives: OI, funding, liquidation data each deserve their own tweet if the numbers are notable.
 • Final tweet (REPLY MAGNET): MUST end with a direct question demanding the reader's opinion.
   Good: "BTC holding $68.5K support — bullish continuation or dead-cat bounce? Drop your take 👇"
   Bad:  "Watch the $68K level closely." (statement, no engagement hook)
+
+FORMAT RULES:
 • NEVER include any URL or link in any tweet — links tank algorithmic reach hard.
-  (The site link is posted as a separate reply by the system — do NOT add creviacockpit.com)
 • Hashtags: 3-4 max, ONLY in the FINAL tweet (e.g. #Bitcoin #BTC #Crypto #Trading). Never mid-thread.
 • Each tweet ≤280 chars. Numbered: 1/ 2/ 3/ etc. NEVER cut a thought mid-sentence.
+• ZERO em-dashes (—) or en-dashes (–). Use commas or periods instead.
 """
 
 
@@ -175,16 +188,16 @@ class ContentSession:
                 max_tokens = 8000
             elif self.mode == 'news_digest':
                 prompt = self._build_news_digest_prompt(context_json, date_str, time_str)
-                max_tokens = 7000
+                max_tokens = 9000
             elif self.mode == 'whale_activity':
                 prompt = self._build_whale_activity_prompt(context_json, date_str, time_str)
-                max_tokens = 6000
+                max_tokens = 9000
             elif self.mode == 'macro_tie_in':
                 prompt = self._build_macro_tie_in_prompt(context_json, date_str, time_str)
-                max_tokens = 6000
+                max_tokens = 9000
             elif self.mode == 'evening_outlook':
                 prompt = self._build_evening_outlook_prompt(context_json, date_str, time_str)
-                max_tokens = 6000
+                max_tokens = 9000
             elif self.mode == 'weekly_review':
                 # Weekly review uses compiled narratives from news_context, not live market JSON
                 prompt = self._build_weekly_review_prompt(self.news_context or '', date_str, time_str)
@@ -259,12 +272,56 @@ Return ONLY this JSON object (no preamble, no markdown):
 {{
   "headline": "Editorial, tension-driven headline for today's full scan — cite the dominant narrative and a specific price or data point",
   "sector_threads": {{
-    "majors":      ["1/ BTC Scan: [hook + key metric] 👇", "2/ BTC data tweet", "3/ ETH data tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
-    "altcoins":    ["1/ Alt Scan: [hook + key mover] 👇", "2/ top alt tweet", "3/ rotation/flow tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
-    "memecoins":   ["1/ Memecoin Pulse: [hook + sentiment read] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
-    "privacy":     ["1/ Privacy Watch: [hook + key narrative] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
-    "defi":        ["1/ DeFi Scan: [hook + TVL or yield read] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
-    "commodities": ["1/ Macro Alert: [hook + gold/macro picture] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
+    "majors": [
+      "1/ BTC Scan: [hook + dominant BTC metric + 👇]",
+      "2/ 💎 BTC: price, 24h %, key support/resistance, one-line read",
+      "3/ ⚡ ETH: price, 24h %, ETH/BTC ratio if notable, one-line read",
+      "4/ 📊 Derivatives: funding rate, OI trend, liquidation pressure",
+      "5/ Fear & Greed + BTC dominance read — what the sentiment picture says",
+      "6/ Key level or scenario tweet — what breaks the thesis",
+      "... (add more tweets for any additional notable data — up to 12 total)",
+      "FINAL/ Direct question + #Bitcoin #BTC #Crypto #ETH"
+    ],
+    "altcoins": [
+      "1/ Alt Scan: [hook + top mover + 👇]",
+      "2/ XRP: price, %, key level, read",
+      "3/ SOL: price, %, ecosystem note if relevant",
+      "4/ BNB: price, % (skip if no data)",
+      "5/ AVAX / SUI / LINK: best performer or most notable move",
+      "6/ Rotation read — are alts leading or lagging BTC?",
+      "... (one tweet per asset that has data, skip empties)",
+      "FINAL/ Direct question + #Altcoins #Crypto #SOL #XRP"
+    ],
+    "memecoins": [
+      "1/ Memecoin Pulse: [hook + sector sentiment + 👇]",
+      "2/ DOGE: price, 24h % + volume note",
+      "3/ SHIB / PEPE / FLOKI: standout mover or biggest drop",
+      "4/ Risk appetite read — what memecoin action says about broader sentiment",
+      "... (add tweets for notable individual movers)",
+      "FINAL/ Direct question + #Memecoins #DOGE #Crypto"
+    ],
+    "privacy": [
+      "1/ Privacy Watch: [hook + narrative context + 👇]",
+      "2/ XMR: price, % + any regulatory/delisting note",
+      "3/ ZEC / DASH / SCRT: notable mover or narrative development",
+      "4/ Privacy sector read — regulatory pressure vs on-chain demand",
+      "FINAL/ Direct question + #Monero #PrivacyCoins #Crypto"
+    ],
+    "defi": [
+      "1/ DeFi Scan: [hook + TVL or yield read + 👇]",
+      "2/ AAVE: price, %, lending rate or TVL note",
+      "3/ UNI / CRV / LDO: standout protocol or notable governance/yield move",
+      "4/ DeFi TVL trend — capital rotating in or out?",
+      "5/ Yield environment vs TradFi rates if macro relevant",
+      "FINAL/ Direct question + #DeFi #Aave #Crypto"
+    ],
+    "commodities": [
+      "1/ Macro Alert: [hook + gold or dollar move + 👇]",
+      "2/ Gold (XAU): price, % + what it says about risk appetite",
+      "3/ TSLA if notable, or macro rate/dollar context",
+      "4/ Cross-asset correlation — how macro is feeding crypto today",
+      "FINAL/ Direct question + #Gold #Macro #Bitcoin #Crypto"
+    ]
   }},
   "narrative": "Full 1500-word professional narrative — specific numbers, no filler, covers all sectors",
   "key_insight": "2-sentence hook: state the dominant market tension, give the trade angle",
@@ -308,9 +365,31 @@ Return ONLY this JSON object (no preamble, no markdown):
 {{
   "headline": "Tension-driven mid-day headline with specific price or % and what it means",
   "sector_threads": {{
-    "majors_update":    ["1/ Majors Scan: [hook + key level change since morning] 👇", "2/ BTC data tweet", "3/ ETH data tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
-    "alts_flow":        ["1/ Rotation Watch: [hook + top mover] 👇", "2/ rotation/flow tweet", "3/ relative strength tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
-    "derivatives_flow": ["1/ Derivatives Watch: [hook + OI/funding read] 👇", "2/ liquidations data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
+    "majors_update": [
+      "1/ Majors Scan: [hook + what changed since morning + key number + 👇]",
+      "2/ 💎 BTC: current price vs morning open, % change, level holding or breaking",
+      "3/ ⚡ ETH: same treatment — what changed and why it matters",
+      "4/ 📊 Mid-day derivatives snapshot: funding shift, OI change since open",
+      "5/ Intraday narrative — is this morning trend continuation or reversal?",
+      "... (add more if significant intraday developments)",
+      "FINAL/ Direct question + hashtags"
+    ],
+    "alts_flow": [
+      "1/ Rotation Watch: [hook + top intraday mover + 👇]",
+      "2/ Best performing alt mid-day: price, %, what's driving it",
+      "3/ Worst performing alt: is it bleeding or just lagging?",
+      "4/ BTC dominance mid-day — alts gaining or losing ground vs BTC?",
+      "5/ Any notable volume spike or rotation signal mid-session",
+      "FINAL/ Direct question + hashtags"
+    ],
+    "derivatives_flow": [
+      "1/ Derivatives Watch: [hook + OI/funding mid-day read + 👇]",
+      "2/ Open interest change since morning — longs adding or covering?",
+      "3/ Funding rates mid-session — crowded long or short?",
+      "4/ Notable liquidation events today (if any)",
+      "5/ What the derivatives tape says about conviction",
+      "FINAL/ Direct question + hashtags"
+    ]
   }},
   "narrative": "800-word professional narrative covering all three sectors — specific numbers, no filler",
   "key_insight": "2-sentence hook: what changed since morning and why it matters",
@@ -355,9 +434,33 @@ Return ONLY this JSON object (no preamble, no markdown):
 {{
   "headline": "Day-wrap headline — cite the dominant move, the asset, and whether it held",
   "sector_threads": {{
-    "day_summary":     ["1/ Closing Bell: [hook + day's dominant move + %] 👇", "2/ BTC/ETH full-day recap tweet", "3/ altcoin/sector recap tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
-    "sector_wrap":     ["1/ Sector Wrap: [hook + best and worst sector today] 👇", "2/ sector performance tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
-    "overnight_watch": ["1/ Night Watch: [hook + key level for overnight] 👇", "2/ level to hold tweet", "3/ Asia session setup tweet", "4/ FINAL tweet ending with a direct question + hashtags"]
+    "day_summary": [
+      "1/ Closing Bell: [hook + day's dominant theme + key price move + 👇]",
+      "2/ 💎 BTC full-day arc: open vs close, dominant move, key level tested",
+      "3/ ⚡ ETH full-day: performance vs BTC, key development",
+      "4/ 📊 Day's derivatives picture: total liquidations, OI change, funding end-of-day",
+      "5/ Fear & Greed end-of-day read vs morning — did sentiment shift?",
+      "6/ Day's defining moment — the single event or level that set the tone",
+      "... (more tweets if significant daily developments warrant it)",
+      "FINAL/ Direct question about tomorrow + hashtags"
+    ],
+    "sector_wrap": [
+      "1/ Sector Wrap: [hook + today's best and worst sector + 👇]",
+      "2/ Best sector today: what performed and why",
+      "3/ Worst sector: what bled and whether it's structural or just noise",
+      "4/ Memecoins vs majors ratio — risk appetite read for the day",
+      "5/ DeFi TVL or yield change on the day if notable",
+      "FINAL/ Direct question + hashtags"
+    ],
+    "overnight_watch": [
+      "1/ Night Watch: [hook + the one level that matters overnight + 👇]",
+      "2/ BTC key level to hold — what happens if it breaks or holds",
+      "3/ ETH overnight watch level + altcoin implications",
+      "4/ Asia session setup — what the macro/time-zone dynamic suggests",
+      "5/ Funding rates overnight — long squeeze or short squeeze territory?",
+      "6/ Key catalyst tomorrow (if known: CPI, FOMC, expiry, unlock)",
+      "FINAL/ Direct question about the overnight setup + hashtags"
+    ]
   }},
   "narrative": "800-word professional day-wrap narrative — what happened, why it mattered, what's next",
   "key_insight": "2-sentence hook: the day's defining move and overnight trade angle",
@@ -385,27 +488,35 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "top_stories": [
-      "1/ News Digest: [hook — dominant headline + key number] 👇",
-      "2/ most significant story — what happened + market impact",
-      "3/ second story + how it connects to the first",
-      "4/ any macro or regulatory angle from today's news",
-      "5/ what it all means for BTC, ETH, and altcoins together",
-      "6/ FINAL tweet: end with a direct question — e.g. 'News flow today is [bullish/bearish/mixed] — how are you positioned? 👇' + 3-4 hashtags"
+      "1/ News Digest [date]: [attention-grabbing hook — the dominant headline + the single most important number from it] 👇",
+      "2/ Story 1 — headline in plain English: what exactly happened, who is involved, what number defines it",
+      "3/ Story 1 market impact — how price reacted, which assets moved and by how much, any volume spike",
+      "4/ Story 2 — second-biggest development: what happened + how it connects to or diverges from story 1",
+      "5/ Story 3 or macro/regulatory angle if present — what it adds to the narrative",
+      "6/ Cross-asset picture — what BTC, ETH, and major alts are doing in the context of today's news collectively",
+      "7/ Sentiment layer — fear/greed shift, Reddit/Twitter tone, whether retail is reacting or ignoring",
+      "8/ The thesis: synthesise all stories into one coherent market read — is today's news flow net bullish, bearish, or noise?",
+      "9/ FINAL tweet: end with a direct engaging question — e.g. 'News flow today is running [bullish/bearish] — are you adding exposure or waiting for the dust to settle? 👇' + 3-4 relevant hashtags",
+      "... (add more tweets if additional stories or angles in the data genuinely warrant it — up to 12 total)"
     ],
     "market_impact": [
-      "1/ Noon Briefing: [hook — how markets reacted to today's news] 👇",
-      "2/ specific price reactions to the biggest stories",
-      "3/ sentiment shift — fear/greed, volume flow, sector rotation",
-      "4/ FINAL tweet: direct question — e.g. 'News-driven move or algo reaction? What's your read? 👇' + hashtags"
+      "1/ Market Reaction: [hook — how markets responded to today's dominant story + key price level] 👇",
+      "2/ Immediate price response — which assets pumped or dumped hardest and by how much",
+      "3/ Volume context — was the reaction backed by real volume or a thin-market move?",
+      "4/ Sector rotation — which sectors benefited, which got sold, and what that implies",
+      "5/ Fear & Greed and sentiment metrics — did the number move on today's news?",
+      "6/ FINAL tweet: direct question — e.g. 'News-driven move or algo reaction to headlines? What is your read? 👇' + hashtags"
     ],
     "what_to_watch": [
-      "1/ Watch: [hook — key catalyst still live into the afternoon] 👇",
-      "2/ upcoming events or pending market reactions from today's news",
-      "3/ key levels that matter given today's news flow",
-      "4/ FINAL tweet: direct question — e.g. 'Which story is the market underreacting to right now? Drop your take 👇' + hashtags"
+      "1/ Still Live: [hook — the key catalyst that has NOT fully resolved yet into this afternoon] 👇",
+      "2/ The pending reaction — what the market has not yet priced in from today's news",
+      "3/ Key level to watch — the price that confirms or denies the narrative from today's stories",
+      "4/ Upcoming events in the next 24 hours relevant to today's news flow (if any in data)",
+      "5/ The risk: what would make today's bullish/bearish read wrong — what is the counter-scenario?",
+      "6/ FINAL tweet: direct question — e.g. 'Which story today is the market most underreacting to? Drop your take 👇' + hashtags"
     ]
   }},
-  "narrative": "700-word digest article: synthesise today's news flow, market reaction, and what it means going forward. Professional tone, no hype.",
+  "narrative": "700-900 word digest article: synthesise today's news flow, market reaction, and what it means going forward. Cover the 3-4 biggest stories, how price reacted, what sentiment shows, and the key thing to watch. Professional tone, no hype.",
   "key_insight": "2-sentence hook: the defining headline and its market implication",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["crypto", "news", "markets"],
@@ -431,27 +542,39 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "whale_sentiment": [
-      "1/ Whale Watch: [hook — dominant whale direction + key flow number] 👇",
-      "2/ aggregate exchange inflows/outflows + which direction is winning",
-      "3/ largest individual moves of the day + what they indicate",
-      "4/ OTC activity or unusual wallet-to-wallet patterns (if present in data)",
-      "5/ correlate whale flow with current price action",
-      "6/ FINAL tweet: direct question — e.g. 'Smart money is [accumulating/distributing] — do you follow the whales or fade them? 👇' + hashtags"
+      "1/ Whale Watch [date]: [hook — dominant whale direction, total flow amount, and what it says about smart money conviction] 👇",
+      "2/ Exchange net flow summary — total BTC/ETH inflows vs outflows in last 12 hours, which direction dominates",
+      "3/ Largest individual transaction: wallet size, amount, direction (exchange deposit = distribution signal, withdrawal = accumulation)",
+      "4/ Second-largest move or cluster pattern if present — are multiple wallets doing the same thing?",
+      "5/ OTC desk or wallet-to-wallet patterns if any — cold storage moves, genesis wallet activity, miner flows",
+      "6/ Correlation with price: is the whale flow confirming current price action or diverging from it?",
+      "7/ Derivatives layer — does futures positioning (OI, funding) align with the on-chain whale read?",
+      "8/ Historical context — what did this same flow pattern precede the last time it appeared?",
+      "9/ The thesis: is smart money accumulating, distributing, or in stasis? State it plainly.",
+      "10/ FINAL tweet: direct engaging question — e.g. 'Smart money is moving [X] BTC off exchanges — are you following the whales or fading this move? 👇' + 3-4 relevant hashtags",
+      "... (include additional tweets for notable altcoin whale activity or DeFi protocol flows if data warrants — up to 13 total)"
     ],
     "cascade_risk": [
-      "1/ On-Chain Alert: [hook — leverage state + key liquidation level] 👇",
-      "2/ current open interest and funding rate picture",
-      "3/ key liquidation clusters sitting above and below current price",
-      "4/ FINAL tweet: direct question — e.g. 'Leveraged longs at risk below $[X]K — are you holding through this or cutting? 👇' + hashtags"
+      "1/ Leverage Watch: [hook — current leverage state, dominant risk direction, key liquidation level] 👇",
+      "2/ Open interest total and trend — growing (more leverage building) or shrinking (deleveraging)?",
+      "3/ Funding rates by exchange — who is paying who, and what the skew tells us about crowded positioning",
+      "4/ Long liquidation cluster above current price — what price triggers a short squeeze cascade",
+      "5/ Short liquidation cluster below current price — what price triggers a long liquidation cascade",
+      "6/ Recent liquidation events in last 12 hours — which side got wrecked and the dollar amount",
+      "7/ The risk-reward: at current funding and OI levels, which direction has the higher cascade risk?",
+      "8/ FINAL tweet: direct question — e.g. '$[X]K is the liquidation magnet — do you think longs or shorts get squeezed first? 👇' + hashtags"
     ],
     "market_read": [
-      "1/ Whale Read: [hook — is on-chain data accumulation, distribution, or neutral?] 👇",
-      "2/ pattern interpretation: what historical comparisons say",
-      "3/ what this positioning implies for price over the next 24-48 hours",
-      "4/ FINAL tweet: direct question — e.g. 'On-chain says [bullish/bearish] but price says the opposite — which do you trust? 👇' + hashtags"
+      "1/ On-Chain Read: [hook — the single most important thing on-chain data tells us about current market positioning] 👇",
+      "2/ Accumulation vs distribution verdict — based on exchange flows + whale behaviour combined",
+      "3/ SOPR or realised profit/loss context if available — are holders selling at profit or loss?",
+      "4/ MVRV or long-term holder behaviour if available — are experienced holders buying or exiting?",
+      "5/ What this positioning pattern historically preceded — reference comparable data periods",
+      "6/ The 24-48 hour implication — what does current on-chain setup suggest about near-term price direction?",
+      "7/ FINAL tweet: direct question — e.g. 'On-chain says [bullish/bearish] but price has not confirmed it yet — which do you trust more? 👇' + hashtags"
     ]
   }},
-  "narrative": "600-word on-chain narrative: what whales did today, why it matters, and what it implies for price. Use data, not vibes.",
+  "narrative": "700-900 word on-chain narrative: what whales did today, the full flow picture, leverage positioning, and what it all implies for price over the next 24-48 hours. Data-led, no vibes.",
   "key_insight": "2-sentence hook: dominant whale behaviour and market implication",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["onchain", "whales", "bitcoin"],
@@ -477,27 +600,37 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "macro_snapshot": [
-      "1/ Macro Alert: [hook — dominant macro theme today + one key number] 👇",
-      "2/ DXY / dollar strength and what it means for BTC correlation right now",
-      "3/ gold and real yields picture — is BTC acting as a hedge or a risk asset today?",
-      "4/ equities (SPX/NDX) risk-on or risk-off — and crypto's beta to that move",
-      "5/ any Fed language, rate expectations, or macro data release today (skip if none)",
-      "6/ FINAL tweet: direct question — e.g. 'Macro is [tailwind/headwind] for crypto right now — are you adjusting your positioning? 👇' + hashtags"
+      "1/ Macro Tie-In [date]: [hook — dominant macro theme today and the single number that defines it] 👇",
+      "2/ DXY: current level, direction today, and what dollar strength/weakness means for BTC specifically right now",
+      "3/ Gold: price and direction today — is BTC tracking it (inflation hedge mode) or diverging (risk asset mode)?",
+      "4/ Real yields: 10Y Treasury or TIPS move today — higher real yields = risk-off pressure on BTC",
+      "5/ SPX and NDX: risk-on or risk-off session, by how much, and crypto's correlation coefficient to that move",
+      "6/ Any Fed language, FOMC minutes, rate expectations shift, or macro data print today — impact on rate-sensitive assets",
+      "7/ Commodity context: oil, copper (risk appetite proxies) — confirming or contradicting the dominant macro theme?",
+      "8/ The synthesis: one macro regime label (risk-on / risk-off / stagflation / rate-pivot) and why today's data earns it",
+      "9/ Crypto implication: given today's macro regime, what is the directional bias for BTC and ETH over next 24-48 hours?",
+      "10/ FINAL tweet: direct engaging question — e.g. 'Macro is running [tailwind/headwind] for crypto right now — are you sizing up or reducing exposure? 👇' + 3-4 relevant hashtags",
+      "... (add a tweet for any major macro event — CPI print, FOMC decision, jobs data — if present in data)"
     ],
     "crypto_correlation": [
-      "1/ Cross-Asset Watch: [hook — how tightly crypto is tracking TradFi today] 👇",
-      "2/ BTC beta to SPX today — moving with it or diverging?",
-      "3/ ETH and altcoin behaviour vs macro risk read",
-      "4/ FINAL tweet: direct question — e.g. 'Crypto decoupling from equities or still following the tape? What do you see? 👇' + hashtags"
+      "1/ Cross-Asset Read: [hook — is crypto tracking TradFi today or doing its own thing, and why that matters] 👇",
+      "2/ BTC 1-day correlation to SPX: tight or loose, and what regime that suggests",
+      "3/ ETH beta vs BTC today — outperforming or underperforming risk, and what that implies for alts",
+      "4/ Altcoin sector behaviour vs macro risk: which sectors are acting as risk-on plays today?",
+      "5/ Dollar/gold/BTC triangle: when all three are moving, who is leading?",
+      "6/ FINAL tweet: direct question — e.g. 'Crypto decoupling from equities today or still following the tape? What is your read? 👇' + hashtags"
     ],
     "positioning": [
-      "1/ TradFi vs Crypto: [hook — current macro regime and what it implies] 👇",
-      "2/ which macro regime are we in right now: risk-on, risk-off, or transition?",
-      "3/ how to think about crypto positioning given today's macro backdrop",
-      "4/ FINAL tweet: direct question — e.g. 'Given macro today, are you adding crypto exposure or waiting for cleaner setup? 👇' + hashtags"
+      "1/ Regime Read: [hook — which macro regime we are in right now and what it means for allocators] 👇",
+      "2/ The current macro regime classification — risk-on, risk-off, transition, or stagflation — and the evidence",
+      "3/ What this regime historically means for BTC: average return, drawdown risk, typical duration",
+      "4/ Altcoin positioning implication: in this regime, do alts outperform or underperform BTC?",
+      "5/ Institutional perspective: what TradFi portfolios are likely doing with crypto exposure in this environment",
+      "6/ The trigger: what single macro event or data print would flip the current regime to the opposite?",
+      "7/ FINAL tweet: direct question — e.g. 'Given today is macro [tailwind/headwind], are you increasing crypto allocation or staying cautious? 👇' + hashtags"
     ]
   }},
-  "narrative": "700-word macro analysis: connect today's traditional market moves to crypto. Cover dollar, gold, rates, equities. Identify the dominant macro theme and its crypto implication.",
+  "narrative": "700-900 word macro analysis: connect today's traditional market moves to crypto. Cover dollar, gold, real yields, equities, and any macro data prints. Identify the dominant macro regime and its concrete implication for BTC, ETH, and alt positioning.",
   "key_insight": "2-sentence hook: the key macro read and its crypto market implication",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["macro", "bitcoin", "markets"],
@@ -523,27 +656,38 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "current_state": [
-      "1/ Evening Outlook: [hook — today's defining move + key price level] 👇",
-      "2/ today's price action: what moved, what held, and why",
-      "3/ current market structure: trending, ranging, or at inflection?",
-      "4/ key support and resistance levels that matter tonight",
-      "5/ next catalyst on the horizon (data release, event, or expiry if known)",
-      "6/ FINAL tweet: direct question — e.g. 'BTC [holding/breaking] $[X]K into the Asia session — bullish carry-through or overnight dump? 👇' + hashtags"
+      "1/ Evening Outlook [date]: [hook — today's single defining move, the exact price it reached, and why it matters] 👇",
+      "2/ Today's full price arc: where we opened, key levels hit intraday, where we are closing and the % move",
+      "3/ The dominant driver today: was it news, liquidation cascade, macro catalyst, or organic accumulation/distribution?",
+      "4/ BTC market structure verdict: is the current trend intact, reversing, or range-bound? One sentence, one verdict.",
+      "5/ ETH behaviour vs BTC today — higher beta move (altcoin season building) or lower beta (risk aversion)?",
+      "6/ Best and worst performing sectors today + what the rotation implies about risk appetite",
+      "7/ Volume and liquidity picture: was today's move high-conviction (volume confirms) or low-conviction (thin-market noise)?",
+      "8/ Current market structure: key support level below + resistance level above, and what each means for overnight",
+      "9/ Next catalyst on the horizon: tomorrow's macro events, options expiry, token unlock, or earnings if any in data",
+      "10/ FINAL tweet: direct engaging question — e.g. 'BTC closing at $[X]K heading into the Asia session — do you think it carries through overnight or fades back? 👇' + 3-4 relevant hashtags",
+      "... (add a tweet for any notable altcoin closing setup or DeFi/derivatives development worth flagging overnight)"
     ],
     "overnight_risk": [
-      "1/ Night Watch: [hook — dominant overnight risk + direction] 👇",
-      "2/ Asia session dynamic — what typically happens with this kind of setup",
-      "3/ active liquidation clusters right now — long squeeze or short squeeze territory?",
-      "4/ FINAL tweet: direct question — e.g. 'Funding rates are [positive/negative] — are you sleeping with stops set or closing positions? 👇' + hashtags"
+      "1/ Night Watch: [hook — the dominant overnight risk, direction of risk, and the level that triggers it] 👇",
+      "2/ Asia session tendency with this type of setup: historically does this pattern hold or fade in Tokyo/Hong Kong hours?",
+      "3/ Funding rate state entering the overnight session — positive (longs paying) or negative (shorts paying), and the implication",
+      "4/ Long liquidation cluster: the price level that triggers a cascade of long stops, and the estimated liquidation volume",
+      "5/ Short liquidation cluster: the price level that triggers a short squeeze, and the estimated liquidation volume",
+      "6/ Dominant overnight risk: is it a breakdown below support, a squeeze above resistance, or sideways chop?",
+      "7/ FINAL tweet: direct question — e.g. 'Funding is [positive/negative] and leveraged [longs/shorts] are the crowded trade — are you sleeping with stops set or closing out? 👇' + hashtags"
     ],
     "key_levels": [
-      "1/ Key Levels: [hook — the two most important levels for tonight] 👇",
-      "2/ BTC: support to hold + resistance to break, with what each means for the trend",
-      "3/ ETH key level + what alts do if BTC moves either way",
-      "4/ FINAL tweet: direct question — e.g. '$[X]K is the line in the sand tonight — do you think it holds? 👇' + hashtags"
+      "1/ Key Levels Tonight: [hook — the ONE level that determines whether bulls or bears win the overnight session] 👇",
+      "2/ BTC primary support: the level, why it matters (previous structure, high-volume node, liquidation cluster), what break means",
+      "3/ BTC primary resistance: the level, what triggers a break, and the next target above if it clears",
+      "4/ ETH key level: the single most important level for ETH tonight and why",
+      "5/ Altcoin domino: if BTC breaks down through support, which alt is most at risk? If BTC breaks up, which alt leads?",
+      "6/ The scenario map: describe BULL scenario (holds support + target) vs BEAR scenario (breaks support + target) in one tweet each",
+      "7/ FINAL tweet: direct question — e.g. '$[X]K is the line in the sand tonight — bulls hold it and we go higher, bears crack it and we revisit $[Y]K. Do you think it holds? 👇' + hashtags"
     ]
   }},
-  "narrative": "600-word evening wrap: today's action, market structure, key levels, and overnight catalysts. Concrete framework — not just description, but actionable context.",
+  "narrative": "700-900 word evening wrap: today's full price action, market structure, sector performance, key levels, overnight risk, and upcoming catalysts. Give traders a concrete framework for the next 12-18 hours — not just description, but context for decisions.",
   "key_insight": "2-sentence hook: today's defining move and the overnight risk that matters most",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["crypto", "bitcoin", "trading"],

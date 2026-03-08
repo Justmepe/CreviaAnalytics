@@ -4,6 +4,8 @@ import { getPost, timeAgo, formatPrice } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import PostBodyGate from '@/components/content/PostBodyGate';
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://creviacockpit.com';
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -12,13 +14,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   try {
     const post = await getPost(slug);
+    const title = post.title || 'Crypto Market Analysis';
+    const description = post.excerpt || 'Crypto market analysis by CreviaCockpit.';
+    const url = `${BASE_URL}/post/${slug}`;
     return {
-      title: post.title || 'Analysis',
-      description: post.excerpt || 'Crypto market analysis by CreviaCockpit.',
+      title,
+      description,
+      alternates: { canonical: url },
       openGraph: {
-        title: post.title || 'CreviaCockpit',
-        description: post.excerpt || '',
-        images: post.image_url ? [post.image_url] : [],
+        title,
+        description,
+        url,
+        type: 'article',
+        publishedTime: post.published_at ?? undefined,
+        authors: ['CreviaCockpit'],
+        siteName: 'CreviaCockpit',
+        images: post.image_url
+          ? [{ url: post.image_url, width: 1200, height: 630, alt: title }]
+          : [{ url: `${BASE_URL}/og-default.png`, width: 1200, height: 630, alt: 'CreviaCockpit' }],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: post.image_url ? [post.image_url] : [`${BASE_URL}/og-default.png`],
       },
     };
   } catch {
@@ -83,8 +102,34 @@ export default async function PostPage({ params }: PageProps) {
     </>
   );
 
+  // JSON-LD structured data for Google News + SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: post.title || 'Crypto Market Analysis',
+    description: post.excerpt || '',
+    datePublished: post.published_at,
+    dateModified: post.updated_at || post.published_at,
+    author: [{ '@type': 'Organization', name: 'CreviaCockpit', url: BASE_URL }],
+    publisher: {
+      '@type': 'Organization',
+      name: 'CreviaCockpit',
+      url: BASE_URL,
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/favicon.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/post/${post.slug}` },
+    ...(post.image_url && {
+      image: [{ '@type': 'ImageObject', url: post.image_url, width: 1200, height: 630 }],
+    }),
+    ...(post.tickers?.length && { keywords: post.tickers.join(', ') }),
+  };
+
   return (
     <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-zinc-500">
         <Link href="/analysis" className="hover:text-emerald-400">Analysis</Link>
