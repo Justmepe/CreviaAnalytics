@@ -617,68 +617,88 @@ class WhaleCollector:
         return self._INFURA_WS_CHAINS
 
     async def _stream_infura_chain(self, chain_cfg: Dict) -> AsyncGenerator[dict, None]:
-        """Subscribe to pending transactions on one Infura-supported chain."""
+        """
+        Subscribe to newBlockHeaders on one Infura chain, then fetch each block's
+        transactions in full and filter by threshold.
+
+        Uses newBlockHeaders instead of newPendingTransactions to avoid the
+        high-volume pattern of fetching every pending tx before value filtering
+        (which causes ~40% failure rate from dropped/replaced transactions).
+        One block header event (~15s) → one eth_getBlockByNumber call with full txns.
+        """
         import websockets  # lazy import
 
-        chain  = chain_cfg['chain']
-        asset  = chain_cfg['asset']
-        ws_uri = chain_cfg['ws'].format(id=self._infura_id)
-        rpc    = chain_cfg['http'].format(id=self._infura_id)
+        chain     = chain_cfg['chain']
+        asset     = chain_cfg['asset']
+        ws_uri    = chain_cfg['ws'].format(id=self._infura_id)
+        rpc       = chain_cfg['http'].format(id=self._infura_id)
         threshold = self.THRESHOLDS.get(chain_cfg['threshold_key'], 500)
-        session = await self._get_session()
+        session   = await self._get_session()
 
         while self._running:
             try:
-                async with websockets.connect(ws_uri, ping_interval=30) as ws:
+                async with websockets.connect(
+                    ws_uri,
+                    ping_interval=20,
+                    ping_timeout=60,
+                    close_timeout=10,
+                ) as ws:
                     await ws.send(json.dumps({
                         'jsonrpc': '2.0', 'id': 1,
                         'method': 'eth_subscribe',
-                        'params': ['newPendingTransactions'],
+                        'params': ['newBlockHeaders'],
                     }))
                     resp = json.loads(await ws.recv())
-                    logger.info('Infura %s pending stream active (sub=%s)', chain, resp.get('result'))
+                    logger.info('Infura %s block-header stream active (sub=%s)', chain, resp.get('result'))
 
                     async for message in ws:
                         try:
-                            msg = json.loads(message)
-                            tx_hash = msg.get('params', {}).get('result', '')
-                            if not tx_hash:
+                            msg       = json.loads(message)
+                            block_hex = msg.get('params', {}).get('result', {}).get('number')
+                            if not block_hex:
                                 continue
 
+                            # Fetch full block with transactions (confirmed only)
                             async with session.post(rpc,
-                                json={'jsonrpc':'2.0','id':2,
-                                      'method':'eth_getTransactionByHash',
-                                      'params':[tx_hash]},
+                                json={'jsonrpc': '2.0', 'id': 2,
+                                      'method': 'eth_getBlockByNumber',
+                                      'params': [block_hex, True]},
                             ) as r:
-                                tx_data = (await r.json()).get('result') or {}
+                                block_data = (await r.json()).get('result') or {}
 
-                            if not tx_data:
-                                continue
-                            value_native = int(tx_data.get('value', '0x0'), 16) / 1e18
-                            if value_native < threshold:
-                                continue
+                            block_num = int(block_hex, 16)
+                            block_ts  = int(block_data.get('timestamp', '0x0'), 16)
 
-                            raw = {
-                                'source': f'infura_pending_{chain.lower()}',
-                                'chain': chain,
-                                'asset': asset,
-                                'amount_native': value_native,
-                                'amount_usd': self._usd_value(asset, value_native),
-                                'from_address': tx_data.get('from', ''),
-                                'to_address': tx_data.get('to', '') or '',
-                                'tx_hash': tx_hash,
-                                'block_number': 0,
-                                'timestamp_unix': int(time.time()),
-                                'confirmed': False,
-                                'pending': True,
-                            }
-                            await self._emit(raw)
-                            yield raw
+                            for tx in block_data.get('transactions', []):
+                                try:
+                                    value_native = int(tx.get('value', '0x0'), 16) / 1e18
+                                    if value_native < threshold:
+                                        continue
+                                    raw = {
+                                        'source':          f'infura_block_{chain.lower()}',
+                                        'chain':           chain,
+                                        'asset':           asset,
+                                        'amount_native':   value_native,
+                                        'amount_usd':      self._usd_value(asset, value_native),
+                                        'from_address':    tx.get('from', ''),
+                                        'to_address':      tx.get('to', '') or '',
+                                        'tx_hash':         tx.get('hash', ''),
+                                        'block_number':    block_num,
+                                        'timestamp_unix':  block_ts,
+                                        'confirmed':       True,
+                                        'pending':         False,
+                                    }
+                                    await self._emit(raw)
+                                    yield raw
+                                except Exception as e:
+                                    logger.debug('Infura %s tx parse error: %s', chain, e)
+
                         except Exception as e:
-                            logger.debug('Infura %s pending parse error: %s', chain, e)
+                            logger.debug('Infura %s block parse error: %s', chain, e)
+
             except Exception as e:
-                logger.warning('Infura %s WS disconnected: %s — reconnecting in 10s', chain, e)
-                await asyncio.sleep(10)
+                logger.warning('Infura %s WS disconnected: %s — reconnecting in 30s', chain, e)
+                await asyncio.sleep(30)
 
     async def _poll_infura_chain_blocks(self, chain_cfg: Dict) -> None:
         """
