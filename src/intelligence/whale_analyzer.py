@@ -28,6 +28,8 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
 from typing import Any, Deque, Dict, List, Optional, Tuple
 
+MAX_RECENT_TXNS = 200   # keep last N whale transactions
+
 logger = logging.getLogger(__name__)
 
 
@@ -151,6 +153,12 @@ class WhaleAnalyzer:
         # Populated from Glassnode netflow when available
         self._flow_chart: Dict[str, Dict] = {}
 
+        # Rolling netflow buffer per asset (one entry per refresh, max 24)
+        self._flow_buffer: Dict[str, Deque] = {}
+
+        # Recent on-chain transactions fed from WhaleCollector via inject_transactions()
+        self._recent_txns: Deque[Dict] = deque(maxlen=MAX_RECENT_TXNS)
+
         self._last_refresh: float = 0.0
 
     # ------------------------------------------------------------------
@@ -169,11 +177,36 @@ class WhaleAnalyzer:
     def get_flow_chart(self, asset: str) -> Optional[Dict]:
         return self._flow_chart.get(asset.upper())
 
-    def get_recent_transactions(self, **kwargs) -> Dict:
-        """Placeholder — real tx feed requires whale_collector (Etherscan/Solscan)."""
-        return {'transactions': [], 'total_usd_moved': 0.0,
-                'generated_at': datetime.now(timezone.utc).isoformat(),
-                '_note': 'Live transaction feed requires ETHERSCAN_API_KEY'}
+    def inject_transactions(self, txns: List[Dict]) -> None:
+        """Called by the whale collector drain loop to push live transactions in."""
+        for tx in txns:
+            self._recent_txns.appendleft(tx)
+
+    def get_recent_transactions(
+        self,
+        limit: int = 20,
+        chain: str = 'all',
+        asset: str = None,
+        flow_type: str = 'all',
+    ) -> Dict:
+        """Return recent whale transactions with optional filters."""
+        txns = list(self._recent_txns)
+
+        if chain != 'all':
+            txns = [t for t in txns if t.get('chain', '').upper() == chain.upper()]
+        if asset:
+            txns = [t for t in txns if t.get('asset', '').upper() == asset.upper()]
+        if flow_type != 'all':
+            txns = [t for t in txns if t.get('flow_type', '') == flow_type]
+
+        txns = txns[:limit]
+        total_usd = sum(t.get('amount_usd', 0) for t in txns)
+
+        return {
+            'transactions': txns,
+            'total_usd_moved': total_usd,
+            'generated_at': datetime.now(timezone.utc).isoformat(),
+        }
 
     # ------------------------------------------------------------------
     # Main refresh  (called every 5 min from background thread)
@@ -199,6 +232,7 @@ class WhaleAnalyzer:
         sentiment = self._compute_sentiment(asset)
         if sentiment:
             self._sentiment[asset] = sentiment
+            self._update_flow_buffer(asset, sentiment)
 
         cascade = self._compute_cascade(asset)
         if cascade:
@@ -524,6 +558,47 @@ class WhaleAnalyzer:
     # ------------------------------------------------------------------
     # Helpers
     # ------------------------------------------------------------------
+
+    def _update_flow_buffer(self, asset: str, sentiment: 'WhaleSentiment') -> None:
+        """Append the latest netflow data point and rebuild the flow chart cache."""
+        if asset not in self._flow_buffer:
+            self._flow_buffer[asset] = deque(maxlen=24)
+
+        netflow_comp = sentiment.components.get('exchange_netflow', {})
+        raw_score = netflow_comp.get('raw_score', 0.0)
+
+        # Convert raw_score (-1..1) back to an approximate USD value
+        # tanh(x/50M)=raw_score → x ≈ 50M * atanh(raw_score)
+        try:
+            import math as _m
+            clamped = max(-0.9999, min(0.9999, raw_score))
+            net_usd = 50_000_000 * _m.atanh(clamped)
+        except Exception:
+            net_usd = 0.0
+
+        now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+        self._flow_buffer[asset].append({
+            'timestamp': now.isoformat(),
+            'net_flow_usd': round(net_usd),
+            'deposit_usd': round(max(0, -net_usd)),
+            'withdrawal_usd': round(max(0, net_usd)),
+            'transaction_count': 1,
+        })
+
+        points = list(self._flow_buffer[asset])
+        net_24h = sum(p['net_flow_usd'] for p in points)
+        largest = max((abs(p['net_flow_usd']) for p in points), default=0.0)
+        bias = 'OUTFLOW' if net_24h < 0 else 'INFLOW' if net_24h > 0 else 'NEUTRAL'
+
+        self._flow_chart[asset] = {
+            'asset': asset,
+            'data': points,
+            'summary': {
+                'net_24h_usd': round(net_24h),
+                'bias': bias,
+                'largest_single': round(largest),
+            },
+        }
 
     def _prune_expired_cascade(self) -> None:
         now = datetime.now(timezone.utc).isoformat()

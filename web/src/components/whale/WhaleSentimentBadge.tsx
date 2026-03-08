@@ -28,23 +28,32 @@ const LABEL_CONFIG: Record<string, { color: string; short: string }> = {
 
 export default function WhaleSentimentBadge({ asset, windowHours = 4, showTooltip = true }: Props) {
   const [data, setData] = useState<SentimentData | null>(null);
+  const [loading, setLoading] = useState(true);
   const [showTip, setShowTip] = useState(false);
 
   useEffect(() => {
     const load = async () => {
       try {
         const token = localStorage.getItem('access_token');
-        if (!token) return;
+        if (!token) { setLoading(false); return; }
         const resp = await fetch(`/api/whale/sentiment/${asset}?window_hours=${windowHours}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (resp.ok) setData(await resp.json());
       } catch { /* silent */ }
+      finally { setLoading(false); }
     };
     load();
     const id = setInterval(load, 300_000);
     return () => clearInterval(id);
   }, [asset, windowHours]);
+
+  if (loading) return (
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+      <div style={{ width: 64, height: 16, borderRadius: 2, background: '#1a2030' }} />
+      <div style={{ width: 36, height: 2, borderRadius: 1, background: '#1a2030' }} />
+    </div>
+  );
 
   if (!data) return null;
 

@@ -57,6 +57,8 @@ export default function WhaleFlowMiniChart({ asset, lazy = false }: Props) {
       finally { setLoading(false); }
     };
     load();
+    const id = setInterval(load, 300_000); // refresh every 5 min
+    return () => clearInterval(id);
   }, [asset, lazy]);
 
   if (loading) {

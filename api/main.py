@@ -3,6 +3,7 @@ FastAPI application — Crevia Analytics API
 Serves content to the Next.js frontend and accepts content from the Python engine.
 """
 
+import asyncio
 import logging
 import os
 import threading
@@ -91,8 +92,52 @@ def _start_whale_engine() -> None:
         t = threading.Thread(target=_loop, daemon=True, name='whale-engine')
         t.start()
 
+        # Start WhaleCollector in a separate asyncio thread and drain its queue
+        _start_whale_collector(analyzer)
+
     except Exception as e:
         logger.error('Failed to start whale engine: %s', e)
+
+
+def _start_whale_collector(analyzer) -> None:
+    """
+    Start WhaleCollector in a dedicated asyncio thread.
+    Drains its queue and injects transactions into WhaleAnalyzer every 10 s.
+    """
+    try:
+        from src.data.whale_collector import WhaleCollector
+
+        collector = WhaleCollector()
+
+        def _run_collector():
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+
+            async def _main():
+                # Start collectors in background
+                loop.create_task(collector.run())
+
+                # Drain queue and push to analyzer every 10 s
+                while True:
+                    await asyncio.sleep(10)
+                    batch: list = []
+                    while not collector.queue.empty():
+                        try:
+                            batch.append(collector.queue.get_nowait())
+                        except Exception:
+                            break
+                    if batch:
+                        analyzer.inject_transactions(batch)
+                        logger.debug('WhaleCollector drained %d txns', len(batch))
+
+            loop.run_until_complete(_main())
+
+        t = threading.Thread(target=_run_collector, daemon=True, name='whale-collector')
+        t.start()
+        logger.info('WhaleCollector thread started')
+
+    except Exception as e:
+        logger.warning('WhaleCollector could not start: %s', e)
 
 
 # ---------------------------------------------------------------------------

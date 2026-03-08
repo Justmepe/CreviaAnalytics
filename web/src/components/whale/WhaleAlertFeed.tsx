@@ -19,6 +19,7 @@ interface WhaleTxn {
   alert_tier: string;
   timestamp: string;
   tx_hash: string;
+  block_number?: number;
   liquidation: boolean;
   pending: boolean;
 }
@@ -79,6 +80,22 @@ function timeAgo(ts: string): string {
   const h = Math.floor(min / 60);
   if (h < 24) return `${h}h ago`;
   return `${Math.floor(h / 24)}d ago`;
+}
+
+const EXPLORER_TX: Record<string, string> = {
+  ETH:      'https://etherscan.io/tx/',
+  POLYGON:  'https://polygonscan.com/tx/',
+  ARBITRUM: 'https://arbiscan.io/tx/',
+  AVALANCHE:'https://snowtrace.io/tx/',
+  LINEA:    'https://lineascan.build/tx/',
+  SOL:      'https://solscan.io/tx/',
+  BTC:      'https://blockstream.info/tx/',
+  TRON:     'https://tronscan.org/#/transaction/',
+};
+
+function explorerUrl(chain: string, hash: string): string {
+  const base = EXPLORER_TX[chain?.toUpperCase()] ?? 'https://etherscan.io/tx/';
+  return `${base}${hash}`;
 }
 
 function shortenAddress(addr: string): string {
@@ -258,7 +275,7 @@ export default function WhaleAlertFeed({ limit = 20, chain = 'all', asset, flowT
                 </div>
                 {tx.tx_hash && (
                   <a
-                    href={`https://etherscan.io/tx/${tx.tx_hash}`}
+                    href={explorerUrl(tx.chain, tx.tx_hash)}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ fontFamily: 'var(--font-mono)', fontSize: 8, color: '#3d7fff', marginTop: 4, display: 'inline-block' }}
