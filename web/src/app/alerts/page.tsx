@@ -6,6 +6,35 @@ import { useAuth } from '@/context/AuthContext';
 import CockpitShell from '@/components/layout/CockpitShell';
 
 // ---------------------------------------------------------------------------
+// Static data
+// ---------------------------------------------------------------------------
+
+const ASSETS = [
+  { symbol: 'BTC',  name: 'Bitcoin',  price: 98420.5,  change24h:  2.4,  emoji: '₿' },
+  { symbol: 'ETH',  name: 'Ethereum', price: 3841.2,   change24h: -1.2,  emoji: 'Ξ' },
+  { symbol: 'SOL',  name: 'Solana',   price: 187.44,   change24h:  5.7,  emoji: '◎' },
+  { symbol: 'BNB',  name: 'BNB',      price: 612.8,    change24h:  0.8,  emoji: 'B' },
+  { symbol: 'XRP',  name: 'XRP',      price: 2.34,     change24h: -3.1,  emoji: '✕' },
+  { symbol: 'DOGE', name: 'Dogecoin', price: 0.3812,   change24h:  8.2,  emoji: 'Ð' },
+  { symbol: 'AVAX', name: 'Avalanche',price: 38.5,     change24h: -0.6,  emoji: 'A' },
+  { symbol: 'LINK', name: 'Chainlink',price: 14.2,     change24h:  1.9,  emoji: '⬡' },
+  { symbol: 'ARB',  name: 'Arbitrum', price: 0.92,     change24h:  3.1,  emoji: 'A' },
+];
+
+const ALERT_TYPES = [
+  { id: 'price_above',     label: 'Price Rises Above', icon: '↑',  category: 'price',   unit: '$' },
+  { id: 'price_below',     label: 'Price Falls Below', icon: '↓',  category: 'price',   unit: '$' },
+  { id: 'pct_change_up',   label: '% Gain (24h)',      icon: '📈', category: 'percent', unit: '%' },
+  { id: 'pct_change_down', label: '% Drop (24h)',       icon: '📉', category: 'percent', unit: '%' },
+];
+
+const FREQUENCIES = [
+  { id: 'once',   label: 'Once only',     desc: 'Alert fires once, then disables'       },
+  { id: 'daily',  label: 'Once per day',  desc: 'Maximum one alert per 24 hours'        },
+  { id: 'always', label: 'Every time',    desc: 'Alert fires each time condition is met' },
+];
+
+// ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
@@ -27,21 +56,17 @@ const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 // Helpers
 // ---------------------------------------------------------------------------
 
-const TYPE_META: Record<string, { label: string; color: string; desc: (v: number) => string }> = {
-  price_above:     { label: 'Above', color: '#00d4aa', desc: (v) => `crosses above $${v.toLocaleString()}` },
-  price_below:     { label: 'Below', color: '#f03e5a', desc: (v) => `drops below $${v.toLocaleString()}`   },
-  pct_change_up:   { label: '+%',    color: '#00d4aa', desc: (v) => `is up ${v}% in 24h`                  },
-  pct_change_down: { label: '-%',    color: '#f03e5a', desc: (v) => `is down ${v}% in 24h`                },
-};
-
-const FREQ_META: Record<string, string> = { once: 'Once', daily: 'Daily', always: 'Always' };
-
-function conditionText(a: Alert) {
-  const m = TYPE_META[a.alert_type];
-  return m ? `${a.asset} ${m.desc(a.threshold_value)}` : `${a.asset} alert`;
+function alertColor(type: string): string {
+  if (type === 'price_above' || type === 'pct_change_up')   return '#3fb950';
+  if (type === 'price_below' || type === 'pct_change_down') return '#f85149';
+  return '#8b949e';
 }
 
-function timeAgo(iso: string) {
+function formatPrice(p: number): string {
+  return p < 10 ? p.toFixed(4) : p.toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
+function timeAgo(iso: string): string {
   const diff = Date.now() - new Date(iso).getTime();
   const m = Math.floor(diff / 60_000);
   if (m < 60)  return `${m}m ago`;
@@ -50,52 +75,51 @@ function timeAgo(iso: string) {
   return `${Math.floor(h / 24)}d ago`;
 }
 
-function dotColor(status: string) {
-  if (status === 'active')    return '#00d4aa';
-  if (status === 'triggered') return '#f0a030';
-  return '#38405a';
-}
-
 // ---------------------------------------------------------------------------
 // Discord message preview
 // ---------------------------------------------------------------------------
 
-function DiscordPreview({ asset, alertType, value }: { asset: string; alertType: string; value: number }) {
-  const m = TYPE_META[alertType] || TYPE_META.price_above;
+function DiscordMessage({ asset, alertType, value }: { asset: string; alertType: string; value: number }) {
+  const a = ASSETS.find(x => x.symbol === asset) || ASSETS[0];
+  const t = ALERT_TYPES.find(x => x.id === alertType) || ALERT_TYPES[0];
+  const color = alertColor(alertType);
+  const condText = `${t.label} ${t.unit}${value?.toLocaleString() ?? ''}`;
+  const now = new Date().toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+
   return (
-    <div style={{ background: '#36393f', borderRadius: 8, overflow: 'hidden', border: '1px solid #202225' }}>
-      <div style={{ background: '#2f3136', padding: '8px 12px', borderBottom: '1px solid #202225', display: 'flex', alignItems: 'center', gap: 8 }}>
-        <div style={{ width: 24, height: 24, borderRadius: '50%', background: '#00d4aa', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#0d1117' }}>C</div>
-        <div>
-          <div style={{ fontSize: 11, fontWeight: 600, color: '#dcddde' }}>Crevia Analytics</div>
-          <div style={{ fontSize: 9, color: '#72767d' }}>#price-alerts</div>
+    <div style={{ fontFamily: "'gg sans', Whitney, Arial, sans-serif", fontSize: 14 }}>
+      <div style={{ background: '#36393f', borderRadius: 8, overflow: 'hidden', border: '1px solid #202225', maxWidth: 440 }}>
+        <div style={{ background: '#2f3136', padding: '8px 12px', display: 'flex', alignItems: 'center', gap: 6, borderBottom: '1px solid #202225' }}>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#5865F2' }} />
+          <span style={{ color: '#dcddde', fontSize: 12, fontWeight: 600 }}>AlertBot <span style={{ color: '#72767d', fontWeight: 400 }}>— #price-alerts</span></span>
         </div>
-      </div>
-      <div style={{ padding: '12px 14px' }}>
-        <div style={{ display: 'flex', gap: 10 }}>
-          <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#00d4aa', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>🔔</div>
-          <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 12, fontWeight: 600, color: '#00d4aa', marginBottom: 3 }}>
-              Crevia Alerts <span style={{ fontSize: 9, color: '#72767d', fontWeight: 400, background: '#5865f2', padding: '1px 4px', borderRadius: 2, marginLeft: 4 }}>BOT</span>
-            </div>
-            <div style={{ background: '#2f3136', borderLeft: '3px solid #00d4aa', borderRadius: '0 4px 4px 0', padding: '10px 12px' }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: '#ffffff', marginBottom: 6 }}>🔔 Crevia Alert Triggered</div>
-              <div style={{ fontSize: 11, color: '#dcddde', marginBottom: 10 }}>
-                <strong>{asset}</strong> {m.desc(value)}
+        <div style={{ padding: '12px 16px' }}>
+          <div style={{ display: 'flex', gap: 10 }}>
+            <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg,#5865F2,#7289da)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>🔔</div>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: 'flex', gap: 6, alignItems: 'baseline', marginBottom: 4 }}>
+                <span style={{ color: '#ffffff', fontWeight: 700, fontSize: 15 }}>AlertBot</span>
+                <span style={{ color: '#72767d', fontSize: 11 }}>Today at {now}</span>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8 }}>
-                {[
-                  { name: 'Current Price', value: alertType.startsWith('pct') ? '—' : `$${value.toLocaleString()}` },
-                  { name: '24h Change',    value: '+3.2%' },
-                  { name: 'Frequency',     value: 'Once' },
-                ].map(f => (
-                  <div key={f.name}>
-                    <div style={{ fontSize: 9, fontWeight: 700, color: '#b9bbbe', textTransform: 'uppercase', marginBottom: 1 }}>{f.name}</div>
-                    <div style={{ fontSize: 11, color: '#dcddde' }}>{f.value}</div>
+              <div style={{ background: '#2f3136', borderRadius: 4, borderLeft: `4px solid ${color}`, padding: '10px 12px', marginTop: 4 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color, fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{t.icon} ALERT TRIGGERED</span>
+                  <span style={{ color: '#72767d', fontSize: 11 }}>#{asset}/USD</span>
+                </div>
+                <div style={{ color: '#dcddde', fontSize: 22, fontWeight: 800, margin: '6px 0 2px' }}>{a.emoji} {a.name} ({asset})</div>
+                <div style={{ color: '#b9bbbe', fontSize: 13, marginBottom: 8 }}>Condition: <span style={{ color: '#ffffff' }}>{condText}</span></div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                  <div>
+                    <div style={{ color: '#72767d', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Current Price</div>
+                    <div style={{ color: '#ffffff', fontWeight: 700 }}>${formatPrice(a.price)}</div>
                   </div>
-                ))}
+                  <div>
+                    <div style={{ color: '#72767d', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>24h Change</div>
+                    <div style={{ color: a.change24h > 0 ? '#3ba55d' : '#ed4245', fontWeight: 700 }}>{a.change24h > 0 ? '+' : ''}{a.change24h}%</div>
+                  </div>
+                </div>
+                <div style={{ marginTop: 10, paddingTop: 8, borderTop: '1px solid #40444b', color: '#72767d', fontSize: 11 }}>⏰ creviacockpit.com</div>
               </div>
-              <div style={{ fontSize: 9, color: '#72767d', marginTop: 8 }}>Crevia Analytics · creviacockpit.com</div>
             </div>
           </div>
         </div>
@@ -105,42 +129,42 @@ function DiscordPreview({ asset, alertType, value }: { asset: string; alertType:
 }
 
 // ---------------------------------------------------------------------------
-// Webhook modal
+// Webhook settings modal
 // ---------------------------------------------------------------------------
 
-function WebhookModal({ onClose, token }: { onClose: () => void; token: string }) {
-  const [url, setUrl]           = useState('');
+function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; token: string; onSaved: () => void }) {
+  const [input, setInput]       = useState('');
   const [masked, setMasked]     = useState<string | null>(null);
-  const [hasWebhook, setHasWH]  = useState(false);
+  const [hasWH, setHasWH]       = useState(false);
   const [saving, setSaving]     = useState(false);
   const [testing, setTesting]   = useState(false);
-  const [msg, setMsg]           = useState<{ type: 'ok' | 'err'; text: string } | null>(null);
+  const [testOk, setTestOk]     = useState<boolean | null>(null);
 
   useEffect(() => {
     fetch(`${API}/api/alerts/webhook`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json()).then(d => { setHasWH(d.has_webhook); setMasked(d.masked_url); }).catch(() => {});
   }, [token]);
 
+  const isValid = input.startsWith('https://discord.com/api/webhooks/');
+
   const save = async () => {
-    if (!url.includes('discord.com/api/webhooks/')) { setMsg({ type: 'err', text: 'Must be a valid Discord webhook URL' }); return; }
+    if (!isValid) return;
     setSaving(true);
     try {
-      const r = await fetch(`${API}/api/alerts/webhook`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ webhook_url: url }) });
+      const r = await fetch(`${API}/api/alerts/webhook`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ webhook_url: input }) });
       if (!r.ok) throw new Error();
-      setHasWH(true); setMasked(url.slice(0, 40) + '...' + url.slice(-8)); setUrl('');
-      setMsg({ type: 'ok', text: 'Webhook saved' });
-    } catch { setMsg({ type: 'err', text: 'Failed to save' }); }
+      setHasWH(true); setMasked(input.slice(0, 40) + '...' + input.slice(-8)); setInput('');
+      onSaved();
+    } catch { /* ignored */ }
     finally { setSaving(false); }
   };
 
   const test = async () => {
-    setTesting(true); setMsg(null);
+    setTesting(true); setTestOk(null);
     try {
       const r = await fetch(`${API}/api/alerts/webhook/test`, { method: 'POST', headers: { Authorization: `Bearer ${token}` } });
-      const d = await r.json();
-      if (!r.ok) throw new Error(d.detail || 'Test failed');
-      setMsg({ type: 'ok', text: 'Test message sent to Discord!' });
-    } catch (e: unknown) { setMsg({ type: 'err', text: e instanceof Error ? e.message : 'Webhook test failed' }); }
+      setTestOk(r.ok);
+    } catch { setTestOk(false); }
     finally { setTesting(false); }
   };
 
@@ -148,35 +172,63 @@ function WebhookModal({ onClose, token }: { onClose: () => void; token: string }
     <div style={overlayStyle} onClick={onClose}>
       <div style={{ ...modalStyle, maxWidth: 500 }} onClick={e => e.stopPropagation()}>
         <div style={modalHeaderStyle}>
-          <span style={modalTitleStyle}>Discord Webhook</span>
+          <div>
+            <div style={modalTitleStyle}>Discord Webhook</div>
+            <div style={{ color: '#8b949e', fontSize: 12, marginTop: 2 }}>Receive alerts in your Discord server</div>
+          </div>
           <button onClick={onClose} style={closeBtnStyle}>✕</button>
         </div>
-        <div style={{ padding: '16px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: hasWebhook ? 'rgba(0,212,170,0.07)' : 'rgba(240,163,48,0.07)', border: `1px solid ${hasWebhook ? 'rgba(0,212,170,0.2)' : 'rgba(240,163,48,0.2)'}`, borderRadius: 6, padding: '10px 14px' }}>
-            <span style={{ fontSize: 18 }}>{hasWebhook ? '✅' : '⚠️'}</span>
-            <div>
-              <div style={{ fontSize: 11, fontWeight: 600, color: '#e2e6f0' }}>{hasWebhook ? 'Webhook Connected' : 'No Webhook Configured'}</div>
-              {masked && <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#788098', marginTop: 2 }}>{masked}</div>}
+        <div style={{ padding: 24, display: 'flex', flexDirection: 'column', gap: 18 }}>
+          {/* Status */}
+          {hasWH && masked && (
+            <div style={{ background: 'rgba(63,185,80,0.1)', border: '1px solid rgba(63,185,80,0.3)', borderRadius: 8, padding: '10px 14px', display: 'flex', gap: 10, alignItems: 'center' }}>
+              <span>✅</span>
+              <div>
+                <div style={{ color: '#3fb950', fontWeight: 600, fontSize: 13 }}>Webhook Connected</div>
+                <div style={{ fontFamily: 'monospace', fontSize: 10, color: '#8b949e', marginTop: 2 }}>{masked}</div>
+              </div>
             </div>
+          )}
+
+          {/* How-to */}
+          <div style={{ background: '#161b22', border: '1px solid #1f6feb', borderRadius: 8, padding: '12px 14px' }}>
+            <div style={{ color: '#58a6ff', fontWeight: 600, fontSize: 13, marginBottom: 6 }}>ℹ How to get your Webhook URL</div>
+            <ol style={{ color: '#8b949e', fontSize: 12, margin: 0, paddingLeft: 16, lineHeight: 1.8 }}>
+              <li>Open your Discord server → Channel Settings</li>
+              <li>Go to <strong style={{ color: '#c9d1d9' }}>Integrations → Webhooks</strong></li>
+              <li>Click <strong style={{ color: '#c9d1d9' }}>New Webhook</strong> and copy the URL</li>
+              <li>Paste it below and click Save</li>
+            </ol>
           </div>
 
           <div>
-            <div style={labelStyle}>Webhook URL</div>
-            <input value={url} onChange={e => setUrl(e.target.value)} placeholder="https://discord.com/api/webhooks/..." style={inputStyle} />
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#38405a', marginTop: 4 }}>
-              Discord: Channel Settings → Integrations → Webhooks → New Webhook → Copy URL
+            <label style={labelStyle}>Webhook URL</label>
+            <input
+              value={input} onChange={e => { setInput(e.target.value); setTestOk(null); }}
+              placeholder="https://discord.com/api/webhooks/..."
+              style={{ ...inputStyle, borderColor: isValid && input ? '#00d4aa' : input && !isValid ? '#f85149' : '#30363d', fontFamily: 'monospace', fontSize: 12 }}
+            />
+            {input && !isValid && <div style={{ color: '#f85149', fontSize: 11, marginTop: 4 }}>⚠ Must start with https://discord.com/api/webhooks/</div>}
+          </div>
+
+          {hasWH && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <button onClick={test} disabled={testing} style={{ ...btnSecondaryStyle, fontSize: 12 }}>
+                {testing ? '🔄 Sending…' : '🧪 Test Webhook'}
+              </button>
+              {testOk === true  && <span style={{ color: '#3fb950', fontSize: 12 }}>✓ Test message sent!</span>}
+              {testOk === false && <span style={{ color: '#f85149', fontSize: 12 }}>✗ Test failed — check URL</span>}
             </div>
-          </div>
+          )}
 
-          {msg && <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: msg.type === 'ok' ? '#00d4aa' : '#f03e5a', padding: '8px 10px', background: msg.type === 'ok' ? 'rgba(0,212,170,0.07)' : 'rgba(240,62,90,0.07)', borderRadius: 4 }}>{msg.text}</div>}
-
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase', color: '#38405a' }}>Preview</div>
-          <DiscordPreview asset="BTC" alertType="price_above" value={72000} />
-
-          <div style={{ display: 'flex', gap: 8 }}>
-            <button onClick={save} disabled={saving || !url} style={{ ...btnPrimaryStyle, flex: 1, opacity: saving || !url ? 0.5 : 1 }}>{saving ? 'Saving…' : 'Save Webhook'}</button>
-            {hasWebhook && <button onClick={test} disabled={testing} style={{ ...btnSecondaryStyle, flex: 1, opacity: testing ? 0.5 : 1 }}>{testing ? 'Testing…' : 'Send Test'}</button>}
-          </div>
+          <div style={{ color: '#8b949e', fontSize: 11, textTransform: 'uppercase', letterSpacing: 1 }}>Message Format Preview</div>
+          <DiscordMessage asset="BTC" alertType="price_above" value={100000} />
+        </div>
+        <div style={{ padding: '16px 24px', borderTop: '1px solid #21262d', display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
+          <button onClick={onClose} style={btnSecondaryStyle}>Cancel</button>
+          <button onClick={save} disabled={!isValid || !input || saving} style={{ ...btnPrimaryStyle, opacity: !isValid || !input ? 0.5 : 1 }}>
+            {saving ? 'Saving…' : 'Save Webhook'}
+          </button>
         </div>
       </div>
     </div>
@@ -187,30 +239,20 @@ function WebhookModal({ onClose, token }: { onClose: () => void; token: string }
 // Create alert modal (3 steps)
 // ---------------------------------------------------------------------------
 
-const ASSETS = ['BTC', 'ETH', 'SOL', 'BNB', 'XRP', 'ADA', 'DOGE', 'AVAX', 'DOT', 'LINK', 'ARB', 'OP', 'INJ', 'TIA'];
-const ALERT_TYPES = [
-  { value: 'price_above',     label: 'Price above',   icon: '↑',  color: '#00d4aa' },
-  { value: 'price_below',     label: 'Price below',   icon: '↓',  color: '#f03e5a' },
-  { value: 'pct_change_up',   label: '% Change up',   icon: '+%', color: '#00d4aa' },
-  { value: 'pct_change_down', label: '% Change down', icon: '-%', color: '#f03e5a' },
-];
-const FREQS = [
-  { value: 'once',   label: 'Once',   desc: 'Fire once then deactivate'     },
-  { value: 'daily',  label: 'Daily',  desc: 'Re-arm every 24 hours'         },
-  { value: 'always', label: 'Always', desc: '5-min cooldown between fires'  },
-];
-
 function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCreated: (a: Alert) => void; token: string }) {
-  const [step, setStep]         = useState(1);
-  const [asset, setAsset]       = useState('BTC');
-  const [alertType, setType]    = useState('price_above');
-  const [value, setValue]       = useState('');
-  const [frequency, setFreq]    = useState('once');
-  const [note, setNote]         = useState('');
-  const [submitting, setSub]    = useState(false);
-  const [err, setErr]           = useState('');
+  const [step, setStep]       = useState(1);
+  const [asset, setAsset]     = useState('BTC');
+  const [type, setType]       = useState('price_above');
+  const [value, setValue]     = useState('');
+  const [freq, setFreq]       = useState('once');
+  const [note, setNote]       = useState('');
+  const [submitting, setSub]  = useState(false);
+  const [err, setErr]         = useState('');
 
-  const isPct = alertType.startsWith('pct_');
+  const selectedAsset = ASSETS.find(a => a.symbol === asset);
+  const selectedType  = ALERT_TYPES.find(t => t.id === type);
+  const isPct = type.startsWith('pct_');
+  const canNext2 = !selectedType || (value !== '' && parseFloat(value) > 0);
 
   const submit = async () => {
     setSub(true); setErr('');
@@ -218,7 +260,7 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
       const r = await fetch(`${API}/api/alerts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ asset, alert_type: alertType, threshold_value: parseFloat(value), frequency, note: note || null }),
+        body: JSON.stringify({ asset, alert_type: type, threshold_value: parseFloat(value), frequency: freq, note: note || null }),
       });
       const data = await r.json();
       if (!r.ok) throw new Error(data.detail || 'Failed');
@@ -229,103 +271,111 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
 
   return (
     <div style={overlayStyle} onClick={onClose}>
-      <div style={{ ...modalStyle, maxWidth: 480 }} onClick={e => e.stopPropagation()}>
+      <div style={{ ...modalStyle, maxWidth: 520 }} onClick={e => e.stopPropagation()}>
         <div style={modalHeaderStyle}>
-          <span style={modalTitleStyle}>New Alert</span>
-          <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            {[1, 2, 3].map(s => (
-              <div key={s} style={{ width: 18, height: 18, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 8, fontWeight: 700, background: step >= s ? '#00d4aa' : '#1a2030', color: step >= s ? '#0d1117' : '#38405a', fontFamily: 'var(--font-mono)' }}>{s}</div>
-            ))}
-            <button onClick={onClose} style={{ ...closeBtnStyle, marginLeft: 6 }}>✕</button>
+          <div>
+            <div style={modalTitleStyle}>Create Alert</div>
+            <div style={{ color: '#8b949e', fontSize: 12, marginTop: 2 }}>Step {step} of 3</div>
           </div>
+          <button onClick={onClose} style={closeBtnStyle}>✕</button>
+        </div>
+        {/* Progress bar */}
+        <div style={{ height: 2, background: '#21262d' }}>
+          <div style={{ height: '100%', background: '#00d4aa', transition: 'width 0.3s', width: `${(step / 3) * 100}%` }} />
         </div>
 
-        <div style={{ padding: '16px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ padding: 24 }}>
+          {/* ── Step 1: Asset + type ── */}
           {step === 1 && (
             <>
-              <div>
-                <div style={labelStyle}>Asset</div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 6 }}>
-                  {ASSETS.map(a => (
-                    <button key={a} onClick={() => setAsset(a)} style={{ ...chipStyle, background: asset === a ? '#00d4aa' : '#151c28', color: asset === a ? '#0d1117' : '#788098', border: `1px solid ${asset === a ? '#00d4aa' : '#1a2030'}` }}>{a}</button>
-                  ))}
-                </div>
+              <label style={labelStyle}>Select Asset</label>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8, marginBottom: 24 }}>
+                {ASSETS.slice(0, 9).map(a => (
+                  <button key={a.symbol} onClick={() => setAsset(a.symbol)} style={{ padding: '10px 8px', borderRadius: 8, cursor: 'pointer', textAlign: 'center', border: `1px solid ${asset === a.symbol ? '#00d4aa' : '#21262d'}`, background: asset === a.symbol ? 'rgba(0,212,170,0.1)' : '#161b22', color: asset === a.symbol ? '#00d4aa' : '#c9d1d9' }}>
+                    <div style={{ fontSize: 18 }}>{a.emoji}</div>
+                    <div style={{ fontSize: 12, fontWeight: 700 }}>{a.symbol}</div>
+                    <div style={{ fontSize: 10, color: a.change24h > 0 ? '#3fb950' : '#f85149' }}>{a.change24h > 0 ? '+' : ''}{a.change24h}%</div>
+                  </button>
+                ))}
               </div>
-              <div>
-                <div style={labelStyle}>Alert Type</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 6 }}>
-                  {ALERT_TYPES.map(t => (
-                    <button key={t.value} onClick={() => setType(t.value)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 12px', borderRadius: 6, border: `1px solid ${alertType === t.value ? t.color + '55' : '#1a2030'}`, background: alertType === t.value ? t.color + '11' : '#10141c', cursor: 'pointer' }}>
-                      <span style={{ fontSize: 14, width: 22, textAlign: 'center', color: t.color, fontWeight: 700 }}>{t.icon}</span>
-                      <span style={{ fontSize: 12, color: alertType === t.value ? '#e2e6f0' : '#788098' }}>{t.label}</span>
-                    </button>
-                  ))}
-                </div>
+
+              <label style={labelStyle}>Alert Condition</label>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {ALERT_TYPES.map(t => (
+                  <button key={t.id} onClick={() => setType(t.id)} style={{ padding: '10px 14px', borderRadius: 8, cursor: 'pointer', textAlign: 'left', border: `1px solid ${type === t.id ? alertColor(t.id) : '#21262d'}`, background: type === t.id ? `${alertColor(t.id)}15` : '#161b22', color: type === t.id ? alertColor(t.id) : '#c9d1d9', display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span style={{ fontSize: 16 }}>{t.icon}</span>
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 600 }}>{t.label}</div>
+                      <div style={{ fontSize: 11, color: '#8b949e', textTransform: 'capitalize' }}>{t.category}</div>
+                    </div>
+                  </button>
+                ))}
               </div>
-              <button onClick={() => setStep(2)} style={btnPrimaryStyle}>Next →</button>
             </>
           )}
 
+          {/* ── Step 2: Value + frequency ── */}
           {step === 2 && (
             <>
-              <div>
-                <div style={labelStyle}>{isPct ? 'Percentage Threshold (%)' : 'Price Level (USD)'}</div>
-                <input type="number" value={value} onChange={e => setValue(e.target.value)} placeholder={isPct ? 'e.g. 5 (for 5%)' : 'e.g. 72000'} style={inputStyle} autoFocus />
-                {!isPct && value && <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#38405a', marginTop: 4 }}>{asset} {TYPE_META[alertType]?.desc(parseFloat(value) || 0)}</div>}
+              <label style={labelStyle}>{isPct ? 'Percentage Threshold' : 'Target Price'}</label>
+              <div style={{ position: 'relative', marginBottom: 8 }}>
+                <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#8b949e', fontFamily: 'monospace', fontSize: 16 }}>{selectedType?.unit}</span>
+                <input
+                  type="number" value={value} onChange={e => setValue(e.target.value)} autoFocus
+                  placeholder={isPct ? 'e.g. 5' : `e.g. ${((selectedAsset?.price || 0) * 1.05).toFixed(0)}`}
+                  style={{ ...inputStyle, paddingLeft: 32, fontSize: 16, fontFamily: 'monospace' }}
+                />
               </div>
-              <div>
-                <div style={labelStyle}>Frequency</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 6 }}>
-                  {FREQS.map(f => (
-                    <button key={f.value} onClick={() => setFreq(f.value)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 12px', borderRadius: 6, border: `1px solid ${frequency === f.value ? '#00d4aa55' : '#1a2030'}`, background: frequency === f.value ? 'rgba(0,212,170,0.08)' : '#10141c', cursor: 'pointer' }}>
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 12, color: frequency === f.value ? '#e2e6f0' : '#788098' }}>{f.label}</div>
-                        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#38405a', marginTop: 1 }}>{f.desc}</div>
-                      </div>
-                      {frequency === f.value && <span style={{ color: '#00d4aa' }}>✓</span>}
+              {/* Quick-select buttons for price alerts */}
+              {!isPct && selectedAsset && (
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 20 }}>
+                  {[0.9, 0.95, 1.05, 1.1, 1.2].map(m => (
+                    <button key={m} onClick={() => setValue((selectedAsset.price * m).toFixed(selectedAsset.price < 1 ? 4 : 0))} style={{ padding: '4px 10px', borderRadius: 20, fontSize: 11, cursor: 'pointer', border: '1px solid #30363d', background: '#161b22', color: '#8b949e' }}>
+                      {m < 1 ? `${((m - 1) * 100).toFixed(0)}%` : `+${((m - 1) * 100).toFixed(0)}%`}
                     </button>
                   ))}
                 </div>
+              )}
+              {isPct && <div style={{ marginBottom: 20 }} />}
+
+              <label style={labelStyle}>Alert Frequency</label>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
+                {FREQUENCIES.map(f => (
+                  <button key={f.id} onClick={() => setFreq(f.id)} style={{ padding: '12px 14px', borderRadius: 8, cursor: 'pointer', textAlign: 'left', border: `1px solid ${freq === f.id ? '#00d4aa' : '#21262d'}`, background: freq === f.id ? 'rgba(0,212,170,0.1)' : '#161b22', color: freq === f.id ? '#00d4aa' : '#c9d1d9' }}>
+                    <div style={{ fontWeight: 600, fontSize: 13 }}>{f.label}</div>
+                    <div style={{ color: '#8b949e', fontSize: 11, marginTop: 2 }}>{f.desc}</div>
+                  </button>
+                ))}
               </div>
-              <div>
-                <div style={labelStyle}>Note (optional)</div>
-                <input value={note} onChange={e => setNote(e.target.value)} placeholder="e.g. SL alert for long position" style={inputStyle} />
-              </div>
-              <div style={{ display: 'flex', gap: 8 }}>
-                <button onClick={() => setStep(1)} style={btnSecondaryStyle}>← Back</button>
-                <button onClick={() => { if (value && parseFloat(value) > 0) setStep(3); }} disabled={!value || parseFloat(value) <= 0} style={{ ...btnPrimaryStyle, flex: 1, opacity: !value || parseFloat(value) <= 0 ? 0.5 : 1 }}>Preview →</button>
-              </div>
+
+              <label style={labelStyle}>Note (Optional)</label>
+              <input type="text" value={note} onChange={e => setNote(e.target.value)} placeholder="e.g. Buy zone target, take profit level…" style={inputStyle} />
             </>
           )}
 
+          {/* ── Step 3: Preview ── */}
           {step === 3 && (
             <>
-              <div style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 6, padding: '12px 14px' }}>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase', color: '#38405a', marginBottom: 8 }}>Summary</div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                  {[
-                    { label: 'Asset', value: asset },
-                    { label: 'Type', value: ALERT_TYPES.find(t => t.value === alertType)?.label || alertType },
-                    { label: isPct ? 'Threshold' : 'Price Level', value: isPct ? `${value}%` : `$${parseFloat(value).toLocaleString()}` },
-                    { label: 'Frequency', value: FREQS.find(f => f.value === frequency)?.label || frequency },
-                  ].map(r => (
-                    <div key={r.label}>
-                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 8.5, color: '#38405a', marginBottom: 2 }}>{r.label}</div>
-                      <div style={{ fontSize: 12, color: '#e2e6f0' }}>{r.value}</div>
-                    </div>
-                  ))}
-                </div>
-                {note && <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#788098', marginTop: 8, borderTop: '1px solid #1a2030', paddingTop: 8 }}>{note}</div>}
+              <div style={{ background: '#161b22', border: '1px solid #21262d', borderRadius: 8, padding: '12px 14px', marginBottom: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                <div><div style={{ color: '#8b949e', fontSize: 11 }}>Asset</div><div style={{ color: '#f0f6fc', fontWeight: 600 }}>{asset} — {selectedAsset?.name}</div></div>
+                <div><div style={{ color: '#8b949e', fontSize: 11 }}>Condition</div><div style={{ color: alertColor(type), fontWeight: 600, fontSize: 13 }}>{selectedType?.icon} {selectedType?.label}</div></div>
+                {value && <div><div style={{ color: '#8b949e', fontSize: 11 }}>Target</div><div style={{ color: '#f0f6fc', fontWeight: 600 }}>{selectedType?.unit}{parseFloat(value).toLocaleString()}</div></div>}
+                <div><div style={{ color: '#8b949e', fontSize: 11 }}>Frequency</div><div style={{ color: '#f0f6fc', fontWeight: 600 }}>{FREQUENCIES.find(f => f.id === freq)?.label}</div></div>
               </div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase', color: '#38405a' }}>Discord Preview</div>
-              <DiscordPreview asset={asset} alertType={alertType} value={parseFloat(value)} />
-              {err && <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: '#f03e5a' }}>{err}</div>}
-              <div style={{ display: 'flex', gap: 8 }}>
-                <button onClick={() => setStep(2)} style={btnSecondaryStyle}>← Back</button>
-                <button onClick={submit} disabled={submitting} style={{ ...btnPrimaryStyle, flex: 1, opacity: submitting ? 0.5 : 1 }}>{submitting ? 'Creating…' : 'Create Alert'}</button>
-              </div>
+              <div style={{ color: '#8b949e', fontSize: 11, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 }}>Discord Message Preview</div>
+              <DiscordMessage asset={asset} alertType={type} value={parseFloat(value)} />
+              {err && <div style={{ color: '#f85149', fontSize: 12, marginTop: 12 }}>{err}</div>}
             </>
           )}
+        </div>
+
+        <div style={{ padding: '16px 24px', borderTop: '1px solid #21262d', display: 'flex', justifyContent: 'space-between' }}>
+          {step > 1
+            ? <button onClick={() => setStep(s => s - 1)} style={btnSecondaryStyle}>Back</button>
+            : <div />}
+          {step < 3
+            ? <button onClick={() => setStep(s => s + 1)} disabled={step === 2 && !canNext2} style={{ ...btnPrimaryStyle, opacity: step === 2 && !canNext2 ? 0.5 : 1 }}>Continue →</button>
+            : <button onClick={submit} disabled={submitting} style={{ ...btnPrimaryStyle, opacity: submitting ? 0.5 : 1 }}>{submitting ? 'Creating…' : '✓ Create Alert'}</button>}
         </div>
       </div>
     </div>
@@ -336,16 +386,15 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
 // Shared styles
 // ---------------------------------------------------------------------------
 
-const overlayStyle: React.CSSProperties = { position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)' };
-const modalStyle: React.CSSProperties   = { background: '#0d1117', border: '1px solid #1a2030', borderRadius: 10, width: '95%', maxHeight: '90vh', overflowY: 'auto' };
-const modalHeaderStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', borderBottom: '1px solid #1a2030' };
-const modalTitleStyle: React.CSSProperties  = { fontFamily: 'var(--font-bebas)', fontSize: 20, letterSpacing: '2px', color: '#e2e6f0' };
-const closeBtnStyle: React.CSSProperties    = { background: 'none', border: 'none', color: '#38405a', fontSize: 16, cursor: 'pointer', padding: 4 };
-const labelStyle: React.CSSProperties      = { fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase' as const, color: '#788098', marginBottom: 4 };
-const inputStyle: React.CSSProperties      = { width: '100%', background: '#10141c', border: '1px solid #1a2030', borderRadius: 6, padding: '9px 12px', color: '#e2e6f0', fontFamily: 'var(--font-mono)', fontSize: 12, outline: 'none', boxSizing: 'border-box' as const };
-const btnPrimaryStyle: React.CSSProperties = { background: '#00d4aa', color: '#0d1117', border: 'none', borderRadius: 6, padding: '10px 16px', fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.8px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' as const };
-const btnSecondaryStyle: React.CSSProperties = { background: '#10141c', color: '#788098', border: '1px solid #1a2030', borderRadius: 6, padding: '10px 16px', fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.8px', cursor: 'pointer', textTransform: 'uppercase' as const };
-const chipStyle: React.CSSProperties = { padding: '4px 10px', borderRadius: 4, fontFamily: 'var(--font-mono)', fontSize: 10, cursor: 'pointer', fontWeight: 600 };
+const overlayStyle: React.CSSProperties = { position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)', padding: 20 };
+const modalStyle: React.CSSProperties   = { background: '#0d1117', border: '1px solid #21262d', borderRadius: 12, width: '100%', maxHeight: '90vh', overflowY: 'auto' };
+const modalHeaderStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px 16px', borderBottom: '1px solid #21262d' };
+const modalTitleStyle: React.CSSProperties  = { color: '#f0f6fc', fontSize: 17, fontWeight: 700 };
+const closeBtnStyle: React.CSSProperties    = { background: 'none', border: 'none', color: '#8b949e', fontSize: 20, cursor: 'pointer', lineHeight: 1 };
+const labelStyle: React.CSSProperties      = { color: '#8b949e', fontSize: 12, textTransform: 'uppercase' as const, letterSpacing: 1, display: 'block', marginBottom: 8 };
+const inputStyle: React.CSSProperties      = { width: '100%', padding: '12px 14px', borderRadius: 8, background: '#161b22', border: '1px solid #30363d', color: '#f0f6fc', fontSize: 14, outline: 'none', boxSizing: 'border-box' as const };
+const btnPrimaryStyle: React.CSSProperties = { padding: '10px 24px', borderRadius: 8, border: 'none', background: '#00d4aa', color: '#0d1117', cursor: 'pointer', fontSize: 14, fontWeight: 700 };
+const btnSecondaryStyle: React.CSSProperties = { padding: '10px 20px', borderRadius: 8, border: '1px solid #30363d', background: 'none', color: '#c9d1d9', cursor: 'pointer', fontSize: 14 };
 
 // ---------------------------------------------------------------------------
 // Main page
@@ -356,10 +405,11 @@ export default function AlertsPage() {
   const router = useRouter();
   const [alerts, setAlerts]           = useState<Alert[]>([]);
   const [fetching, setFetching]       = useState(true);
-  const [tab, setTab]                 = useState<'active' | 'triggered' | 'all'>('active');
+  const [tab, setTab]                 = useState<'active' | 'triggered'>('active');
   const [showCreate, setShowCreate]   = useState(false);
   const [showWebhook, setShowWebhook] = useState(false);
   const [webhookOk, setWebhookOk]     = useState(false);
+  const [ticker, setTicker]           = useState(0);
   const tokenRef = useRef('');
 
   useEffect(() => {
@@ -378,6 +428,14 @@ export default function AlertsPage() {
     fetch(`${API}/api/alerts/webhook`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json()).then(d => setWebhookOk(d.has_webhook)).catch(() => {});
   }, [user]);
+
+  // Subtle live price animation
+  useEffect(() => {
+    const id = setInterval(() => setTicker(t => t + 1), 3000);
+    return () => clearInterval(id);
+  }, []);
+
+  const liveAssets = ASSETS.map((a, i) => ({ ...a, price: a.price * (1 + Math.sin(ticker + i) * 0.0003) }));
 
   const handleDelete = useCallback(async (id: number) => {
     await fetch(`${API}/api/alerts/${id}`, { method: 'DELETE', headers: { Authorization: `Bearer ${tokenRef.current}` } });
@@ -398,147 +456,168 @@ export default function AlertsPage() {
 
   if (loading || !user) {
     return (
-      <div style={{ minHeight: '100vh', background: '#070809', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#38405a', letterSpacing: '1px' }}>LOADING…</span>
+      <div style={{ minHeight: '100vh', background: '#0d1117', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: 12, color: '#8b949e', letterSpacing: 2 }}>LOADING…</span>
       </div>
     );
   }
 
-  const active    = alerts.filter(a => a.status === 'active');
-  const triggered = alerts.filter(a => a.status === 'triggered');
-  const filtered  = tab === 'active' ? active : tab === 'triggered' ? triggered : alerts;
+  const activeAlerts    = alerts.filter(a => a.status === 'active');
+  const triggeredAlerts = alerts.filter(a => a.status === 'triggered');
+  const listed          = tab === 'active' ? activeAlerts : triggeredAlerts;
 
   return (
     <CockpitShell>
-      <div style={{ padding: '14px 16px' }}>
+      <div style={{ fontFamily: "'IBM Plex Mono', 'Cascadia Code', monospace", color: '#c9d1d9', minHeight: '100vh', background: '#0d1117' }}>
+        <style>{`
+          .alert-card:hover { border-color: #30363d !important; }
+          button { transition: opacity 0.15s; }
+          button:hover { opacity: 0.85; }
+          input:focus { border-color: #00d4aa !important; }
+          ::-webkit-scrollbar { width: 4px; }
+          ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+        `}</style>
 
-        {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
-          <div>
-            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: 26, letterSpacing: '2px', color: '#e2e6f0', lineHeight: 1 }}>My Alerts</div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: '#38405a', marginTop: 4 }}>Price alerts · delivered to your Discord channel</div>
-          </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <button onClick={() => setShowWebhook(true)} style={{ ...btnSecondaryStyle, display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: webhookOk ? '#00d4aa' : '#38405a', display: 'inline-block' }} />
-              Discord
-            </button>
-            <button onClick={() => setShowCreate(true)} style={btnPrimaryStyle}>+ New Alert</button>
-          </div>
-        </div>
-
-        {/* Summary cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, marginBottom: 14 }}>
-          {[
-            { label: 'Active',    value: String(active.length),    color: '#00d4aa' },
-            { label: 'Triggered', value: String(triggered.length), color: '#f0a030' },
-            { label: 'Total',     value: String(alerts.length),    color: '#3d7fff' },
-            { label: 'Discord',   value: webhookOk ? 'On' : 'Off', color: webhookOk ? '#00d4aa' : '#38405a' },
-          ].map(c => (
-            <div key={c.label} style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 6, padding: '11px 13px' }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 8.5, letterSpacing: '1px', textTransform: 'uppercase', color: '#38405a', marginBottom: 4 }}>{c.label}</div>
-              <div style={{ fontFamily: 'var(--font-bebas)', fontSize: 22, lineHeight: 1, color: c.color }}>{c.value}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Main grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 12, alignItems: 'start' }}>
-
-          {/* Alert list */}
-          <div style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 8, overflow: 'hidden' }}>
-            <div style={{ display: 'flex', borderBottom: '1px solid #1a2030' }}>
-              {(['active', 'triggered', 'all'] as const).map(t => (
-                <button key={t} onClick={() => setTab(t)} style={{ flex: 1, padding: '9px 14px', fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase', color: tab === t ? '#e2e6f0' : '#38405a', background: 'none', border: 'none', borderBottom: `2px solid ${tab === t ? '#00d4aa' : 'transparent'}`, cursor: 'pointer', marginBottom: -1 }}>
-                  {t} ({t === 'active' ? active.length : t === 'triggered' ? triggered.length : alerts.length})
-                </button>
-              ))}
-            </div>
-
-            {fetching ? (
-              <div style={{ padding: '40px 20px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 10, color: '#38405a' }}>Loading…</div>
-            ) : filtered.length === 0 ? (
-              <div style={{ padding: '40px 20px', textAlign: 'center' }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>🔔</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: '#38405a', marginBottom: 12 }}>No {tab} alerts</div>
-                {tab === 'active' && <button onClick={() => setShowCreate(true)} style={{ ...btnPrimaryStyle, fontSize: 9 }}>Create First Alert</button>}
+        {/* ── Price ticker ── */}
+        <div style={{ background: '#161b22', borderBottom: '1px solid #21262d', padding: '8px 0', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', gap: 32, padding: '0 24px', overflowX: 'auto', scrollbarWidth: 'none' }}>
+            {liveAssets.map(a => (
+              <div key={a.symbol} style={{ display: 'flex', gap: 8, alignItems: 'center', flexShrink: 0 }}>
+                <span style={{ color: '#8b949e', fontSize: 11 }}>{a.symbol}</span>
+                <span style={{ color: '#f0f6fc', fontSize: 12, fontWeight: 600 }}>${formatPrice(a.price)}</span>
+                <span style={{ color: a.change24h > 0 ? '#3fb950' : '#f85149', fontSize: 11 }}>{a.change24h > 0 ? '▲' : '▼'}{Math.abs(a.change24h)}%</span>
               </div>
-            ) : filtered.map(alert => {
-              const typeMeta = TYPE_META[alert.alert_type];
+            ))}
+          </div>
+        </div>
+
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 24px' }}>
+
+          {/* ── Header ── */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#00d4aa', boxShadow: '0 0 8px #00d4aa' }} />
+                <h1 style={{ margin: 0, color: '#f0f6fc', fontSize: 22, fontWeight: 700, fontFamily: "'IBM Plex Sans', sans-serif" }}>Price Alerts</h1>
+              </div>
+              <p style={{ margin: 0, color: '#8b949e', fontSize: 13 }}>
+                {activeAlerts.length} active · {triggeredAlerts.length} triggered ·{' '}
+                <span style={{ color: webhookOk ? '#3fb950' : '#f85149' }}>
+                  {webhookOk ? '⬡ Discord connected' : '⬡ Discord not connected'}
+                </span>
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: 10 }}>
+              <button onClick={() => setShowWebhook(true)} style={{ padding: '10px 16px', borderRadius: 8, border: '1px solid #30363d', background: '#161b22', color: '#c9d1d9', cursor: 'pointer', fontSize: 13, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <span style={{ fontSize: 16 }}>🔔</span> Discord Setup
+              </button>
+              <button onClick={() => setShowCreate(true)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', background: '#00d4aa', color: '#0d1117', cursor: 'pointer', fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 6 }}>
+                + New Alert
+              </button>
+            </div>
+          </div>
+
+          {/* ── No-webhook warning ── */}
+          {!webhookOk && (
+            <div onClick={() => setShowWebhook(true)} style={{ background: '#161b22', border: '1px solid #f85149', borderRadius: 8, padding: '12px 16px', marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+              <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+                <span style={{ fontSize: 18 }}>⚠️</span>
+                <div>
+                  <div style={{ color: '#f85149', fontWeight: 600, fontSize: 13 }}>Discord Webhook Not Configured</div>
+                  <div style={{ color: '#8b949e', fontSize: 12 }}>Add a Discord webhook to receive alert notifications</div>
+                </div>
+              </div>
+              <span style={{ color: '#8b949e', fontSize: 20 }}>→</span>
+            </div>
+          )}
+
+          {/* ── Tabs ── */}
+          <div style={{ display: 'flex', gap: 0, marginBottom: 20, borderBottom: '1px solid #21262d' }}>
+            {([
+              { id: 'active' as const,    label: 'Active',    count: activeAlerts.length    },
+              { id: 'triggered' as const, label: 'Triggered', count: triggeredAlerts.length },
+            ]).map(t => (
+              <button key={t.id} onClick={() => setTab(t.id)} style={{ padding: '10px 20px', border: 'none', background: 'none', cursor: 'pointer', fontSize: 14, color: tab === t.id ? '#00d4aa' : '#8b949e', borderBottom: `2px solid ${tab === t.id ? '#00d4aa' : 'transparent'}`, fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: tab === t.id ? 600 : 400, marginBottom: -1 }}>
+                {t.label}
+                {t.count > 0 && <span style={{ marginLeft: 8, background: tab === t.id ? '#00d4aa' : '#21262d', color: tab === t.id ? '#0d1117' : '#8b949e', padding: '1px 7px', borderRadius: 20, fontSize: 11 }}>{t.count}</span>}
+              </button>
+            ))}
+          </div>
+
+          {/* ── Alert list ── */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {fetching ? (
+              <div style={{ textAlign: 'center', padding: '60px 20px', color: '#8b949e', fontSize: 13 }}>Loading…</div>
+            ) : listed.length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '60px 20px', color: '#8b949e' }}>
+                <div style={{ fontSize: 40, marginBottom: 12 }}>🔔</div>
+                <div style={{ fontSize: 16, color: '#c9d1d9', marginBottom: 4 }}>No {tab} alerts</div>
+                <div style={{ fontSize: 13, marginBottom: 16 }}>{tab === 'active' ? 'Create your first alert to get started' : 'Triggered alerts will appear here'}</div>
+                {tab === 'active' && <button onClick={() => setShowCreate(true)} style={btnPrimaryStyle}>+ New Alert</button>}
+              </div>
+            ) : listed.map(alert => {
+              const aData  = liveAssets.find(a => a.symbol === alert.asset);
+              const tData  = ALERT_TYPES.find(t => t.id === alert.alert_type);
+              const color  = alertColor(alert.alert_type);
+
               return (
-                <div
-                  key={alert.id}
-                  style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 14px', borderBottom: '1px solid #0f1318', opacity: alert.status === 'paused' ? 0.5 : 1 }}
-                  onMouseEnter={e => (e.currentTarget.style.background = '#151a26')}
-                  onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
-                >
-                  <div style={{ width: 6, height: 6, borderRadius: '50%', marginTop: 6, flexShrink: 0, background: dotColor(alert.status) }} />
+                <div key={alert.id} className="alert-card" style={{ background: '#161b22', border: '1px solid #21262d', borderRadius: 10, padding: '16px 20px', display: 'flex', alignItems: 'center', gap: 16 }}>
+                  {/* Color stripe */}
+                  <div style={{ width: 3, height: 48, borderRadius: 2, background: color, flexShrink: 0 }} />
+
+                  {/* Asset badge */}
+                  <div style={{ width: 44, height: 44, borderRadius: 10, background: `${color}20`, border: `1px solid ${color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ fontSize: 20 }}>{aData?.emoji ?? '?'}</span>
+                  </div>
+
+                  {/* Details */}
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4, flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: 12, fontWeight: 500, color: '#e2e6f0' }}>{conditionText(alert)}</span>
-                      {typeMeta && <span style={{ fontFamily: 'var(--font-mono)', fontSize: 7.5, letterSpacing: '0.5px', textTransform: 'uppercase', padding: '1px 5px', borderRadius: 2, background: typeMeta.color + '15', color: typeMeta.color, border: `1px solid ${typeMeta.color}33` }}>{typeMeta.label}</span>}
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 7.5, color: '#38405a', padding: '1px 5px', borderRadius: 2, background: '#10141c', border: '1px solid #1a2030' }}>{FREQ_META[alert.frequency]}</span>
-                      {alert.status === 'triggered' && <span style={{ fontFamily: 'var(--font-mono)', fontSize: 7.5, letterSpacing: '0.5px', textTransform: 'uppercase', padding: '1px 5px', borderRadius: 2, background: 'rgba(240,160,48,0.1)', color: '#f0a030', border: '1px solid rgba(240,160,48,0.2)' }}>Triggered</span>}
+                      <span style={{ color: '#f0f6fc', fontWeight: 700, fontSize: 14 }}>{alert.asset}</span>
+                      <span style={{ color, fontSize: 12, background: `${color}20`, padding: '2px 8px', borderRadius: 20 }}>
+                        {tData?.icon} {tData?.label}
+                      </span>
+                      {webhookOk && <span style={{ color: '#8b949e', fontSize: 11 }}>⬡ Discord</span>}
                     </div>
-                    {alert.note && <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#38405a', lineHeight: 1.5 }}>{alert.note}</div>}
-                    {alert.last_triggered && <div style={{ fontFamily: 'var(--font-mono)', fontSize: 8.5, color: '#38405a', marginTop: 2 }}>Last fired: {timeAgo(alert.last_triggered)}</div>}
+                    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+                      <span style={{ color: '#8b949e', fontSize: 12 }}>Target: <span style={{ color: '#c9d1d9' }}>{tData?.unit}{alert.threshold_value.toLocaleString()}</span></span>
+                      <span style={{ color: '#8b949e', fontSize: 12 }}>{FREQUENCIES.find(f => f.id === alert.frequency)?.label}</span>
+                      {alert.last_triggered && <span style={{ color: '#3fb950', fontSize: 12 }}>✓ Triggered {timeAgo(alert.last_triggered)}</span>}
+                      {alert.note && <span style={{ color: '#8b949e', fontSize: 11, fontStyle: 'italic' }}>{alert.note}</span>}
+                    </div>
                   </div>
-                  <div style={{ display: 'flex', gap: 4, flexShrink: 0, alignItems: 'center' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 8.5, color: '#38405a', marginRight: 4 }}>{timeAgo(alert.created_at)}</div>
-                    {alert.status !== 'triggered' && (
-                      <button onClick={() => handleToggle(alert.id)} title={alert.status === 'active' ? 'Pause' : 'Resume'} style={{ background: 'none', border: '1px solid #1a2030', borderRadius: 4, color: '#38405a', fontSize: 11, cursor: 'pointer', padding: '3px 7px', lineHeight: 1 }}>
-                        {alert.status === 'active' ? '⏸' : '▶'}
+
+                  {/* Live price */}
+                  {aData && (
+                    <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                      <div style={{ color: '#f0f6fc', fontWeight: 600, fontSize: 14 }}>${formatPrice(aData.price)}</div>
+                      <div style={{ color: aData.change24h > 0 ? '#3fb950' : '#f85149', fontSize: 12 }}>{aData.change24h > 0 ? '+' : ''}{aData.change24h}%</div>
+                    </div>
+                  )}
+
+                  {/* Actions */}
+                  <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
+                    {alert.status === 'active' && (
+                      <button onClick={() => handleToggle(alert.id)} style={{ padding: '6px 12px', borderRadius: 6, border: '1px solid #30363d', background: 'none', color: '#8b949e', cursor: 'pointer', fontSize: 12 }}>
+                        ⏸ Pause
                       </button>
                     )}
-                    <button onClick={() => handleDelete(alert.id)} title="Delete" style={{ background: 'none', border: '1px solid #1a2030', borderRadius: 4, color: '#38405a', fontSize: 11, cursor: 'pointer', padding: '3px 7px', lineHeight: 1 }}>✕</button>
+                    {alert.status === 'paused' && (
+                      <button onClick={() => handleToggle(alert.id)} style={{ padding: '6px 12px', borderRadius: 6, border: '1px solid #30363d', background: 'none', color: '#8b949e', cursor: 'pointer', fontSize: 12 }}>
+                        ▶ Resume
+                      </button>
+                    )}
+                    <button onClick={() => handleDelete(alert.id)} style={{ padding: '6px 10px', borderRadius: 6, border: '1px solid rgba(248,81,73,0.3)', background: 'rgba(248,81,73,0.1)', color: '#f85149', cursor: 'pointer', fontSize: 12 }}>✕</button>
                   </div>
                 </div>
               );
             })}
           </div>
-
-          {/* Right sidebar */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <div style={{ background: webhookOk ? 'rgba(0,212,170,0.04)' : 'rgba(88,101,242,0.06)', border: `1px solid ${webhookOk ? 'rgba(0,212,170,0.15)' : 'rgba(88,101,242,0.2)'}`, borderRadius: 8, padding: '16px', textAlign: 'center' }}>
-              <div style={{ fontSize: 28, marginBottom: 8 }}>{webhookOk ? '✅' : '🔔'}</div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: webhookOk ? '#00d4aa' : '#788098', marginBottom: 6 }}>{webhookOk ? 'Discord Connected' : 'Connect Discord'}</div>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: 9.5, color: '#38405a', lineHeight: 1.6, marginBottom: 12 }}>
-                {webhookOk ? 'Alerts fire to your Discord channel when conditions are met.' : 'Add your Discord webhook to receive alerts directly in your server.'}
-              </p>
-              <button onClick={() => setShowWebhook(true)} style={{ ...btnPrimaryStyle, fontSize: 9 }}>{webhookOk ? 'Manage Webhook' : 'Set Up Webhook →'}</button>
-            </div>
-
-            <div style={{ background: '#10141c', border: '1px solid #1a2030', borderRadius: 8, overflow: 'hidden' }}>
-              <div style={{ padding: '11px 14px', borderBottom: '1px solid #1a2030' }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#788098' }}>Alert Types</span>
-              </div>
-              {[
-                { icon: '↑↓', type: 'Price Above / Below', desc: 'Trigger on price cross',         avail: true  },
-                { icon: '%%', type: '% Change 24h',        desc: 'Percentage move threshold',      avail: true  },
-                { icon: '🐋', type: 'Whale Move',          desc: 'Large on-chain transaction',     avail: false },
-                { icon: '📡', type: 'Regime Change',       desc: 'Market regime shift detection',  avail: false },
-                { icon: '⚡', type: 'Setup Alert',         desc: 'New AI trade setup detected',    avail: false },
-              ].map(item => (
-                <div key={item.type} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 14px', borderBottom: '1px solid #0f1318', opacity: item.avail ? 1 : 0.45 }}>
-                  <span style={{ fontSize: 13, flexShrink: 0, width: 20, textAlign: 'center' }}>{item.icon}</span>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 11.5, fontWeight: 500, color: '#e2e6f0' }}>{item.type}</div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: '#38405a', marginTop: 1 }}>{item.desc}</div>
-                  </div>
-                  {!item.avail && <span style={{ fontFamily: 'var(--font-mono)', fontSize: 7.5, color: '#9b7cf4', border: '1px solid rgba(155,124,244,0.3)', borderRadius: 2, padding: '1px 5px', flexShrink: 0 }}>Soon</span>}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
-      {showCreate && (
-        <CreateModal token={tokenRef.current} onClose={() => setShowCreate(false)} onCreated={a => setAlerts(prev => [a, ...prev])} />
-      )}
-      {showWebhook && (
-        <WebhookModal token={tokenRef.current} onClose={() => { setShowWebhook(false); refreshWebhook(); }} />
-      )}
+      {showCreate  && <CreateModal   token={tokenRef.current} onClose={() => setShowCreate(false)}  onCreated={a => setAlerts(prev => [a, ...prev])} />}
+      {showWebhook && <WebhookSettings token={tokenRef.current} onClose={() => { setShowWebhook(false); refreshWebhook(); }} onSaved={refreshWebhook} />}
     </CockpitShell>
   );
 }
