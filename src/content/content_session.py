@@ -141,7 +141,19 @@ class ContentSession:
             elif self.mode == 'closing_bell':
                 prompt = self._build_closing_prompt(context_json, date_str, time_str)
                 max_tokens = 8000
-            else:  # breaking_news
+            elif self.mode == 'news_digest':
+                prompt = self._build_news_digest_prompt(context_json, date_str, time_str)
+                max_tokens = 7000
+            elif self.mode == 'whale_activity':
+                prompt = self._build_whale_activity_prompt(context_json, date_str, time_str)
+                max_tokens = 6000
+            elif self.mode == 'macro_tie_in':
+                prompt = self._build_macro_tie_in_prompt(context_json, date_str, time_str)
+                max_tokens = 6000
+            elif self.mode == 'evening_outlook':
+                prompt = self._build_evening_outlook_prompt(context_json, date_str, time_str)
+                max_tokens = 6000
+            else:  # breaking_news (kept for compatibility)
                 prompt = self._build_breaking_news_prompt(context_json, date_str, time_str)
                 max_tokens = 6000
 
@@ -325,6 +337,162 @@ Return ONLY this JSON object (no preamble, no markdown):
   "mentioned_assets": ["BTC", "ETH", ...]
 }}"""
 
+    def _build_news_digest_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior crypto market analyst at CreviaCockpit writing the NOON NEWS DIGEST for {date_str} at {time_str}.
+
+Aggregate everything that happened in the last 12 hours into ONE cohesive digest thread. Do NOT treat each story individually — synthesise the narrative. Focus on what the news means for crypto markets collectively.
+
+MARKET DATA + NEWS (JSON):
+{context_json}
+
+OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
+{{
+  "sector_threads": {{
+    "top_stories": [
+      "1/ 🗞️ NOON DIGEST — Here's everything that moved markets in the last 12 hours (thread 🧵)",
+      "2/ tweet about most significant story and market impact",
+      "3/ tweet about second story + how it connects",
+      "4/ tweet about any macro/regulatory angle",
+      "5/ tweet synthesising what it all means for BTC, ETH, altcoins",
+      "6/ tweet on what to watch going into the afternoon"
+    ],
+    "market_impact": [
+      "1/ 📊 MARKET IMPACT — How today's news flow shifted the tape (thread 🧵)",
+      "2/ tweet on price reactions to news",
+      "3/ tweet on sentiment shift + volume signals",
+      "4/ tweet on sector winners/losers from today's news"
+    ],
+    "what_to_watch": [
+      "1/ 👀 WHAT TO WATCH — Key catalysts still live today (thread 🧵)",
+      "2/ tweet on upcoming events or pending reactions",
+      "3/ tweet on levels that matter given today's news",
+      "4/ brief CTA — link to full digest on CreviaCockpit"
+    ]
+  }},
+  "narrative": "700-word digest article: synthesise today's news flow, market reaction, and what it means going forward. Professional tone, no hype.",
+  "key_insight": "2-sentence hook: the defining headline and its market implication",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["crypto", "news", "markets"],
+  "mentioned_assets": ["BTC", "ETH", ...]
+}}"""
+
+    def _build_whale_activity_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior on-chain analyst at CreviaCockpit writing the WHALE ACTIVITY REPORT for {date_str} at {time_str}.
+
+Aggregate whale moves from the last 6-12 hours and synthesise what the smart money is actually doing. Correlate large flows with price action, sentiment, and exchange positioning. Do NOT list every transaction — tell the story.
+
+MARKET DATA + ON-CHAIN DATA (JSON):
+{context_json}
+
+OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
+{{
+  "sector_threads": {{
+    "whale_sentiment": [
+      "1/ 🐋 WHALE WATCH — What smart money did today (thread 🧵)",
+      "2/ tweet on aggregate exchange inflows/outflows + dominant direction",
+      "3/ tweet on largest individual moves + what they signal",
+      "4/ tweet on OTC activity or unusual wallet-to-wallet transfers",
+      "5/ tweet correlating whale flow with price action",
+      "6/ tweet on what current positioning implies for near-term price"
+    ],
+    "cascade_risk": [
+      "1/ ⚠️ CASCADE RISK — Liquidation zones and leveraged positions (thread 🧵)",
+      "2/ tweet on current open interest + funding rates",
+      "3/ tweet on key liquidation clusters above/below market",
+      "4/ tweet on which whales look leveraged long vs short"
+    ],
+    "market_read": [
+      "1/ 📖 WHALE READ — What the data says (thread 🧵)",
+      "2/ tweet with our interpretation: accumulation, distribution, or neutral?",
+      "3/ tweet on historical pattern comparison",
+      "4/ CTA — live whale feed on CreviaCockpit"
+    ]
+  }},
+  "narrative": "600-word on-chain narrative: what whales did today, why it matters, and what it implies for price. Use data, not vibes.",
+  "key_insight": "2-sentence hook: dominant whale behaviour and market implication",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["onchain", "whales", "bitcoin"],
+  "mentioned_assets": ["BTC", "ETH", ...]
+}}"""
+
+    def _build_macro_tie_in_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior macro analyst at CreviaCockpit writing the MACRO TIE-IN for {date_str} at {time_str}.
+
+Connect today's macro developments (gold, dollar, equities, Fed, CPI, yield curve) to crypto. Find the correlation. Explain what traditional finance is signalling and what it means for Bitcoin, ETH, and risk assets broadly.
+
+MARKET DATA + MACRO DATA (JSON):
+{context_json}
+
+OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
+{{
+  "sector_threads": {{
+    "macro_snapshot": [
+      "1/ 🌍 MACRO TIE-IN — What traditional markets are signalling for crypto (thread 🧵)",
+      "2/ tweet on DXY / dollar strength and BTC correlation today",
+      "3/ tweet on gold / real yields and what they imply for BTC as a hedge",
+      "4/ tweet on equities (SPX/NDX) risk-on/risk-off signal",
+      "5/ tweet on Fed language, rates expectations, or macro data drop (if any today)",
+      "6/ tweet synthesising: is macro tailwind or headwind for crypto right now?"
+    ],
+    "crypto_correlation": [
+      "1/ 📈 CRYPTO CORRELATION — How macro is moving the tape (thread 🧵)",
+      "2/ tweet on BTC beta to SPX today",
+      "3/ tweet on ETH/altcoin performance relative to macro risk",
+      "4/ tweet on stablecoin flows as a risk indicator"
+    ],
+    "positioning": [
+      "1/ 🎯 POSITIONING — What to do with macro in mind (thread 🧵)",
+      "2/ tweet on which macro regime we're in (risk-on, risk-off, transition)",
+      "3/ tweet on how to position crypto portfolio given macro backdrop",
+      "4/ CTA — macro + crypto intelligence on CreviaCockpit"
+    ]
+  }},
+  "narrative": "700-word macro analysis: connect today's traditional market moves to crypto. Cover dollar, gold, rates, equities. Identify the dominant macro theme and its crypto implication.",
+  "key_insight": "2-sentence hook: the key macro signal and its crypto market implication",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["macro", "bitcoin", "markets"],
+  "mentioned_assets": ["BTC", "ETH", "GOLD", "DXY"]
+}}"""
+
+    def _build_evening_outlook_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior crypto analyst at CreviaCockpit writing the EVENING OUTLOOK for {date_str} at {time_str}.
+
+Summarise today's market action and lay out what might happen overnight and tomorrow. Cover key levels, upcoming catalysts (CPI, FOMC, options expiry, token unlocks), and the dominant overnight risk. Give traders a clear framework for the next 12-18 hours.
+
+MARKET DATA + CONTEXT (JSON):
+{context_json}
+
+OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
+{{
+  "sector_threads": {{
+    "current_state": [
+      "1/ 🌙 EVENING OUTLOOK — Where we stand and what's next (thread 🧵)",
+      "2/ tweet on today's defining price action: what moved, what held",
+      "3/ tweet on current market structure: are we trending or ranging?",
+      "4/ tweet on key support/resistance levels that matter overnight",
+      "5/ tweet on upcoming catalyst (tomorrow's data, events, or scheduled catalyst)",
+      "6/ tweet on the overnight risk: which direction is more dangerous?"
+    ],
+    "overnight_risk": [
+      "1/ ⚡ OVERNIGHT RISK — What could move markets while you sleep (thread 🧵)",
+      "2/ tweet on Asia session dynamic + any scheduled Asian catalyst",
+      "3/ tweet on liquidation clusters that are live right now",
+      "4/ tweet on funding rates signal: crowded longs or shorts?"
+    ],
+    "key_levels": [
+      "1/ 📍 KEY LEVELS — What to watch for BTC and ETH overnight (thread 🧵)",
+      "2/ tweet on BTC key level(s) — support holding or resistance to break",
+      "3/ tweet on ETH key level(s) + altcoin context",
+      "4/ CTA — set your alerts on CreviaCockpit"
+    ]
+  }},
+  "narrative": "600-word evening wrap: today's action, market structure, key levels, and overnight catalysts. Give traders a concrete framework — not just description, but actionable context.",
+  "key_insight": "2-sentence hook: today's defining move and the overnight risk that matters most",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["crypto", "bitcoin", "trading"],
+  "mentioned_assets": ["BTC", "ETH", ...]
+}}"""
+
     def _build_breaking_news_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
         return f"""You are a senior crypto market analyst at CreviaCockpit breaking a news story on {date_str} at {time_str}.
 
@@ -483,11 +651,18 @@ Return ONLY this JSON object (no preamble, no markdown):
         For other modes: uses thread_tweets directly.
         """
         # Sector-based modes — use first sector thread as the representative x_thread
-        SECTOR_MODES = {'morning_scan', 'mid_day_update', 'closing_bell'}
+        SECTOR_MODES = {
+            'morning_scan', 'mid_day_update', 'closing_bell',
+            'news_digest', 'whale_activity', 'macro_tie_in', 'evening_outlook',
+        }
         FIRST_SECTOR = {
-            'morning_scan':   'majors',
-            'mid_day_update': 'majors_update',
-            'closing_bell':   'day_summary',
+            'morning_scan':    'majors',
+            'mid_day_update':  'majors_update',
+            'closing_bell':    'day_summary',
+            'news_digest':     'top_stories',
+            'whale_activity':  'whale_sentiment',
+            'macro_tie_in':    'macro_snapshot',
+            'evening_outlook': 'current_state',
         }
         if self.mode in SECTOR_MODES:
             sector_threads = master.get('sector_threads', {})
@@ -515,9 +690,13 @@ Return ONLY this JSON object (no preamble, no markdown):
         Tweets cleaned to ≤280 chars each.
         """
         SECTOR_KEYS_BY_MODE: Dict[str, List[str]] = {
-            'morning_scan':   ['majors', 'altcoins', 'memecoins', 'privacy', 'defi', 'commodities'],
-            'mid_day_update': ['majors_update', 'alts_flow', 'derivatives_flow'],
-            'closing_bell':   ['day_summary', 'sector_wrap', 'overnight_watch'],
+            'morning_scan':    ['majors', 'altcoins', 'memecoins', 'privacy', 'defi', 'commodities'],
+            'mid_day_update':  ['majors_update', 'alts_flow', 'derivatives_flow'],
+            'closing_bell':    ['day_summary', 'sector_wrap', 'overnight_watch'],
+            'news_digest':     ['top_stories', 'market_impact', 'what_to_watch'],
+            'whale_activity':  ['whale_sentiment', 'cascade_risk', 'market_read'],
+            'macro_tie_in':    ['macro_snapshot', 'crypto_correlation', 'positioning'],
+            'evening_outlook': ['current_state', 'overnight_risk', 'key_levels'],
         }
 
         expected = SECTOR_KEYS_BY_MODE.get(self.mode)

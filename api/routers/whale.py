@@ -37,6 +37,11 @@ def set_whale_engine(engine) -> None:
     logger.info('WhaleAnalyzer engine registered with router')
 
 
+def get_whale_engine():
+    """Return the live WhaleAnalyzer engine (or None if not yet started)."""
+    return _engine
+
+
 def _get_engine():
     if _engine is None:
         raise HTTPException(

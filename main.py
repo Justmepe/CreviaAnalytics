@@ -137,10 +137,10 @@ COMMODITIES_ASSETS = ['XAU', 'TSLA']                                          # 
 
 ANCHOR_SLOTS = [
     {"hour": 8,  "mode": "morning_scan",    "label": "Morning Scan",    "full_article": True},
-    {"hour": 12, "mode": "mid_day_update",  "label": "Midday Pulse",    "full_article": False},
-    {"hour": 16, "mode": "mid_day_update",  "label": "Afternoon Update", "full_article": False},
-    {"hour": 20, "mode": "mid_day_update",  "label": "Evening Brief",   "full_article": False},
-    {"hour": 0,  "mode": "closing_bell",    "label": "Closing Bell",    "full_article": False},
+    {"hour": 12, "mode": "news_digest",     "label": "News Digest",     "full_article": True},
+    {"hour": 15, "mode": "whale_activity",  "label": "Whale Activity",  "full_article": True},
+    {"hour": 18, "mode": "macro_tie_in",    "label": "Macro Tie-In",    "full_article": False},
+    {"hour": 21, "mode": "evening_outlook", "label": "Evening Outlook", "full_article": False},
 ]
 ANCHOR_WINDOW_MINUTES = 15        # Minutes BEFORE slot hour to trigger early
 ANCHOR_CATCHUP_MINUTES = 180      # Minutes AFTER slot to catch up (3h covers PM2 restarts)
@@ -393,10 +393,11 @@ class CryptoAnalysisOrchestrator:
                             self.last_thread_time = current_time
                         else:
                             logger.debug(f"Anchor {anchor['label']} already ran today ({today})")
-                    elif current_time - self.last_breaking_check > BREAKING_NEWS_INTERVAL:
-                        self._check_and_post_breaking_news()
-                        self._check_price_alert()
-                        self.last_breaking_check = current_time
+                    # Breaking news individual posts disabled — aggregated into noon News Digest
+                    # elif current_time - self.last_breaking_check > BREAKING_NEWS_INTERVAL:
+                    #     self._check_and_post_breaking_news()
+                    #     self._check_price_alert()
+                    #     self.last_breaking_check = current_time
 
                     # Marketing posts — standalone sales posts, run independently of anchors
                     mkt_slot = self._get_current_marketing_slot()
@@ -602,8 +603,10 @@ class CryptoAnalysisOrchestrator:
 
         sector_threads = session_content.get('sector_threads', {}) if session_content else {}
 
-        # 3. Morning scan: 6 sector threads → long-form article
-        if slot["mode"] == "morning_scan":
+        mode = slot["mode"]
+
+        # 3. Morning scan: 6 sector threads → long-form Substack article
+        if mode == "morning_scan":
             if sector_threads:
                 logger.info(f"[MorningScan] Posting {len(sector_threads)} sector threads...")
                 majors_tweets = sector_threads.get('majors', [])
@@ -628,17 +631,24 @@ class CryptoAnalysisOrchestrator:
             logger.info(f"Anchor slot {slot['label']} complete")
             return
 
-        # 4. Mid-day / closing bell: sector threads → Substack note
+        # 4. News Digest / Whale Activity → sector threads + full article
+        if mode in ("news_digest", "whale_activity"):
+            if sector_threads:
+                logger.info(f"[{slot['label']}] Posting {len(sector_threads)} sector threads...")
+                self._post_sector_threads(sector_threads, session_content)
+                self._post_anchor_article(None, session_content=session_content)
+            else:
+                logger.warning(f"[{slot['label']}] No sector_threads — skipping threads")
+                self._post_anchor_article(None, session_content=session_content)
+            logger.info(f"Anchor slot {slot['label']} complete")
+            return
+
+        # 5. Macro Tie-In / Evening Outlook → sector threads + Substack note
         if sector_threads:
             logger.info(f"[{slot['label']}] Posting {len(sector_threads)} sector threads...")
-            # Store first thread tweet as morning context for closing reference
-            first_sector_tweets = next(iter(sector_threads.values()), [])
-            if first_sector_tweets and slot["mode"] == "mid_day_update":
-                self.morning_context = first_sector_tweets[0][:200]
             self._post_sector_threads(sector_threads, session_content)
             self._post_anchor_note(None, slot, session_content=session_content)
         else:
-            # Fallback: no sector_threads — use legacy single thread
             logger.warning(f"[{slot['label']}] No sector_threads — falling back to single thread")
             thread_data = self._run_thread_generation(
                 thread_mode=slot["mode"],
@@ -648,9 +658,7 @@ class CryptoAnalysisOrchestrator:
             if thread_data:
                 self._post_anchor_note(thread_data, slot, session_content=session_content)
 
-        # 5. Generate individual asset + sector memos
         self._run_news_memo_generation()
-
         logger.info(f"Anchor slot {slot['label']} complete")
 
     def _post_anchor_article(self, thread_data: Dict, session_content: Optional[Dict] = None):
@@ -808,6 +816,22 @@ class CryptoAnalysisOrchestrator:
             'day_summary':       '🌅  DAY SUMMARY',
             'sector_wrap':       '🔍  SECTOR WRAP',
             'overnight_watch':   '🌙  OVERNIGHT WATCH',
+            # News Digest (12:00)
+            'top_stories':       '🗞️  NEWS DIGEST',
+            'market_impact':     '📊  MARKET IMPACT',
+            'what_to_watch':     '👀  WHAT TO WATCH',
+            # Whale Activity (15:00)
+            'whale_sentiment':   '🐋  WHALE WATCH',
+            'cascade_risk':      '⚠️  CASCADE RISK',
+            'market_read':       '📖  WHALE READ',
+            # Macro Tie-In (18:00)
+            'macro_snapshot':    '🌍  MACRO TIE-IN',
+            'crypto_correlation':'📈  CRYPTO CORRELATION',
+            'positioning':       '🎯  POSITIONING',
+            # Evening Outlook (21:00)
+            'current_state':     '🌙  EVENING OUTLOOK',
+            'overnight_risk':    '⚡  OVERNIGHT RISK',
+            'key_levels':        '📍  KEY LEVELS',
         }
         SECTOR_ORDER = list(sector_threads.keys())   # preserves Claude's insertion order
         DELAY_BETWEEN = 120  # 2 minutes between sector threads
@@ -826,6 +850,22 @@ class CryptoAnalysisOrchestrator:
             'day_summary':       ['BTC', 'ETH'],
             'sector_wrap':       ['BTC', 'ETH'],
             'overnight_watch':   ['BTC', 'ETH'],
+            # News Digest
+            'top_stories':       ['BTC', 'ETH'],
+            'market_impact':     ['BTC', 'ETH'],
+            'what_to_watch':     ['BTC', 'ETH'],
+            # Whale Activity
+            'whale_sentiment':   ['BTC', 'ETH', 'SOL'],
+            'cascade_risk':      ['BTC', 'ETH'],
+            'market_read':       ['BTC', 'ETH'],
+            # Macro Tie-In
+            'macro_snapshot':    ['BTC', 'ETH'],
+            'crypto_correlation':['BTC', 'ETH'],
+            'positioning':       ['BTC', 'ETH'],
+            # Evening Outlook
+            'current_state':     ['BTC', 'ETH'],
+            'overnight_risk':    ['BTC', 'ETH'],
+            'key_levels':        ['BTC', 'ETH'],
         }
 
         posted_count = 0
@@ -1016,6 +1056,15 @@ class CryptoAnalysisOrchestrator:
                 'privacy_coins': [analyses.get(t, {}) for t in PRIVACY_ASSETS if t in analyses],
                 'commodities': [analyses.get(t, {}) for t in COMMODITIES_ASSETS if t in analyses],
             }
+
+            # Mode-specific extra context
+            if mode == 'news_digest':
+                analysis_data['news_feed'] = self._collect_recent_news(hours=12)
+            elif mode == 'whale_activity':
+                analysis_data['whale_data'] = self._collect_whale_context()
+            elif mode in ('macro_tie_in', 'evening_outlook'):
+                analysis_data['macro_news'] = self._collect_recent_news(hours=6)
+
             logger.info(f"[ContentSession] Running {mode} master brief (single Claude call)...")
             session = ContentSession(analysis_data, mode=mode, news_context=news_context)
             content = session.generate_all()
@@ -1100,6 +1149,45 @@ class CryptoAnalysisOrchestrator:
 
         except Exception as e:
             logger.warning(f"Price alert check error: {e}")
+
+    def _collect_recent_news(self, hours: int = 12) -> list:
+        """Collect RSS news articles from the last N hours for digest/macro prompts."""
+        try:
+            cutoff = time.time() - hours * 3600
+            articles = []
+            rss_articles = getattr(self.rss_engine, 'articles', []) if hasattr(self, 'rss_engine') else []
+            for item in rss_articles:
+                pub = item.get('published_at')
+                if pub:
+                    ts = pub.timestamp() if hasattr(pub, 'timestamp') else pub
+                    if ts >= cutoff:
+                        articles.append({
+                            'title': item.get('title', ''),
+                            'summary': item.get('summary', '')[:300],
+                            'source': item.get('source', ''),
+                            'currencies': item.get('currencies', []),
+                        })
+            return articles[:50]  # cap at 50 articles
+        except Exception as e:
+            logger.warning(f"[_collect_recent_news] Error: {e}")
+            return []
+
+    def _collect_whale_context(self) -> dict:
+        """Collect whale analyzer data for the whale_activity content session."""
+        try:
+            from api.routers.whale import get_whale_engine
+            engine = get_whale_engine()
+            if not engine:
+                return {}
+            summary = engine.get_summary()
+            recent = engine.get_recent_transactions(limit=20, chain='all', flow_type='all')
+            return {
+                'summary': summary,
+                'recent_transactions': recent,
+            }
+        except Exception as e:
+            logger.warning(f"[_collect_whale_context] Error: {e}")
+            return {}
 
     def _check_and_post_breaking_news(self):
         """Scan RSS feeds for high-impact news, post immediately if found."""
