@@ -14,11 +14,11 @@ export async function GET() {
     });
     if (res.ok) {
       const data = await res.json();
-      // Google News only indexes articles published in the last 2 days
-      const twoDaysAgo = Date.now() - 2 * 24 * 60 * 60 * 1000;
+      // Include up to 30 days — Google News crawler picks what's fresh
+      const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
       posts = (data.items || data.posts || []).filter((p: { published_at: string; content_type: string }) => {
         const publishedMs = new Date(p.published_at).getTime();
-        return publishedMs > twoDaysAgo && ['article', 'thread', 'memo'].includes(p.content_type);
+        return publishedMs > thirtyDaysAgo && ['article', 'thread', 'memo'].includes(p.content_type);
       });
     }
   } catch {
