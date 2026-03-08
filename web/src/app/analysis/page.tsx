@@ -218,7 +218,7 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
           {items.length > 0 ? (
             <div className="analysis-content-grid">
               {featuredItem && (
-                <div style={{ gridColumn: 'span 2' }}>
+                <div style={{ gridColumn: 'span 3' }}>
                   <ContentCard post={featuredItem} featured />
                 </div>
               )}

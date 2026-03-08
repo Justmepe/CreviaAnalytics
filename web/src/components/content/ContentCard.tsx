@@ -15,6 +15,7 @@ const SECTOR_CONFIG: Record<string, { label: string; bg: string; color: string; 
 const TYPE_CONFIG: Record<string, { label: string }> = {
   thread:     { label: 'Thread' },
   memo:       { label: 'Memo' },
+  article:    { label: 'Article' },
   news_tweet: { label: 'News' },
   risk_alert: { label: 'Alert' },
 };
@@ -29,40 +30,26 @@ const SIGNAL_CONFIG: Record<string, { label: string; color: string; dotColor: st
   RANGE_BOUND:      { label: 'Range Bound',       color: '#f0a030', dotColor: '#f0a030' },
 };
 
-/* ── Title sanitizer ─────────────────────────────────────── */
 const RAW_TITLE_PATTERNS = [
-  /^#\s+/,                              // Leading # markdown
-  /^Prices?:/i,                         // "Prices: AAVE: $123..."
-  /^[A-Z]{2,6}:\s+\$[\d.]+/,           // "AAVE: $123.4567 | ..."
-  /\$[\d.,]+\s*\|\s*[A-Z]{2,6}:/,      // Price table pattern
+  /^#\s+/,
+  /^Prices?:/i,
+  /^[A-Z]{2,6}:\s+\$[\d.]+/,
+  /\$[\d.,]+\s*\|\s*[A-Z]{2,6}:/,
 ];
 
 function sanitizeTitle(title: string | null | undefined, post: ContentPost): string {
   if (!title) return buildFallbackTitle(post);
-
-  let t = title.trim();
-
-  // Strip leading markdown # artifacts
-  t = t.replace(/^#+\s*/, '');
-
-  // Check for raw data patterns
-  const isRaw = RAW_TITLE_PATTERNS.some(p => p.test(t));
-  if (isRaw) return buildFallbackTitle(post);
-
+  let t = title.trim().replace(/^#+\s*/, '');
+  if (RAW_TITLE_PATTERNS.some(p => p.test(t))) return buildFallbackTitle(post);
   return t || buildFallbackTitle(post);
 }
 
 function buildFallbackTitle(post: ContentPost): string {
-  // Try to extract first clean sentence from excerpt
   if (post.excerpt) {
     const clean = post.excerpt.replace(/^#+\s*/, '').replace(/Prices?:[^.]*\.\s*/gi, '').trim();
     const firstSentence = clean.split(/[.!?]/)[0]?.trim();
-    if (firstSentence && firstSentence.length > 20 && firstSentence.length < 120) {
-      return firstSentence;
-    }
+    if (firstSentence && firstSentence.length > 20 && firstSentence.length < 120) return firstSentence;
   }
-
-  // Generate synthetic title from metadata
   const typeLabel = TYPE_CONFIG[post.content_type]?.label ?? 'Analysis';
   const sectorLabel = SECTOR_CONFIG[post.sector ?? 'global']?.label ?? 'Market';
   const tickers = post.tickers?.slice(0, 2).join(' & ') ?? '';
@@ -70,15 +57,14 @@ function buildFallbackTitle(post: ContentPost): string {
   return `${sectorLabel} Market ${typeLabel}`;
 }
 
-/* ── Excerpt sanitizer ───────────────────────────────────── */
 function sanitizeExcerpt(excerpt: string | null | undefined): string {
   if (!excerpt) return '';
   return excerpt
-    .replace(/^#+\s*/gm, '')               // Strip markdown headers
-    .replace(/Prices?:[^\n]*/gi, '')        // Strip raw price lines
+    .replace(/^#+\s*/gm, '')
+    .replace(/Prices?:[^\n]*/gi, '')
     .trim()
     .slice(0, 160)
-    .replace(/\s+\S*$/, '…');              // Trim to word boundary + ellipsis
+    .replace(/\s+\S*$/, '…');
 }
 
 interface Props {
@@ -94,11 +80,8 @@ export default function ContentCard({ post, featured = false }: Props) {
   const displayExcerpt = sanitizeExcerpt(post.excerpt);
   const isThread = post.content_type === 'thread';
   const isLocked = (post as { is_locked?: boolean }).is_locked;
-
-  // Pick signal from post metadata if available
   const signalKey = (post as { signal?: string }).signal;
   const signal = signalKey ? SIGNAL_CONFIG[signalKey] : null;
-
   const tweetCount = post.tweets?.length;
   const imageUrl = post.image_url || null;
 
@@ -108,97 +91,119 @@ export default function ContentCard({ post, featured = false }: Props) {
       className={`group block rounded-[6px] relative overflow-hidden transition-all duration-200${
         featured ? ' bg-gradient-to-br from-[#111520] to-[#13181f]' : ' bg-[#111520]'
       }`}
-      style={{
-        border: '1px solid #1c2235',
-        textDecoration: 'none',
-      }}
+      style={{ border: '1px solid #1c2235', textDecoration: 'none' }}
     >
-      {/* Top accent line on hover */}
+      {/* Hover accent line */}
       <span
         className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{ background: `linear-gradient(90deg, transparent, ${sector.accentLine}, transparent)` }}
       />
 
-      {/* Chart thumbnail */}
-      {imageUrl && (
-        <div
-          className="relative w-full overflow-hidden"
-          style={{ height: featured ? 200 : 140, background: '#0d1117' }}
-        >
+      {/* Featured card: compact chart banner at top */}
+      {featured && imageUrl && (
+        <div className="relative w-full overflow-hidden" style={{ height: 120, background: '#0d1117' }}>
           <Image
             src={imageUrl}
             alt={`${post.tickers?.[0] || 'Market'} chart`}
             fill
-            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+            sizes="100vw"
             className="object-cover"
-            style={{ objectPosition: 'center top' }}
+            style={{ objectPosition: 'center 30%' }}
             unoptimized
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, transparent 50%, #111520 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, transparent 30%, #13181f 100%)' }}
           />
         </div>
       )}
 
-      <div className="p-5 flex flex-col gap-3 h-full">
-        {/* ── Top row: tags + time ── */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1.5 flex-wrap">
-            {/* Type badge */}
-            <span
-              className="font-mono-cc text-[10px] font-medium tracking-[0.8px] uppercase px-2 py-0.5 rounded-[3px]"
-              style={{ background: '#181c24', color: '#6b7494', border: '1px solid #1e2330' }}
+      {/* Card body */}
+      <div className="p-4 flex flex-col gap-2.5">
+
+        {/* Top row with mini chart inset for non-featured cards */}
+        <div className="flex gap-3 items-start">
+          {/* Text content */}
+          <div className="flex-1 min-w-0 flex flex-col gap-2">
+            {/* Tags + time */}
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span
+                  className="font-mono-cc text-[10px] font-medium tracking-[0.8px] uppercase px-2 py-0.5 rounded-[3px]"
+                  style={{ background: '#181c24', color: '#6b7494', border: '1px solid #1e2330' }}
+                >
+                  {typeConfig.label}
+                </span>
+                <span
+                  className="font-mono-cc text-[10px] font-medium tracking-[0.8px] uppercase px-2 py-0.5 rounded-[3px]"
+                  style={{ background: sector.bg, color: sector.color }}
+                >
+                  {sector.label}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                {tweetCount && isThread && (
+                  <span className="font-mono-cc text-[10px]" style={{ color: '#3d4562' }}>
+                    {tweetCount} posts
+                  </span>
+                )}
+                <span className="font-mono-cc text-[10px]" style={{ color: '#3d4562', letterSpacing: '0.5px' }}>
+                  {timeAgo(post.published_at)}
+                </span>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h3
+              className={`font-sans leading-snug group-hover:text-[#00d68f] transition-colors${
+                featured ? ' text-[16px] font-semibold' : ' text-[13px] font-semibold'
+              }`}
+              style={{ color: '#e8eaf0', letterSpacing: '-0.2px' }}
             >
-              {typeConfig.label}
-            </span>
-            {/* Sector badge */}
-            <span
-              className="font-mono-cc text-[10px] font-medium tracking-[0.8px] uppercase px-2 py-0.5 rounded-[3px]"
-              style={{ background: sector.bg, color: sector.color }}
-            >
-              {sector.label}
-            </span>
-          </div>
-          <div className="flex items-center gap-2 shrink-0">
-            {tweetCount && isThread && (
-              <span className="font-mono-cc text-[10px]" style={{ color: '#3d4562' }}>
-                {tweetCount} posts
-              </span>
+              {displayTitle}
+            </h3>
+
+            {/* Excerpt */}
+            {displayExcerpt && (
+              <p
+                className="text-[12px] leading-relaxed"
+                style={{
+                  color: '#6b7494', fontWeight: 300,
+                  display: '-webkit-box', WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                }}
+              >
+                {displayExcerpt}
+              </p>
             )}
-            <span className="font-mono-cc text-[10px]" style={{ color: '#3d4562', letterSpacing: '0.5px' }}>
-              {timeAgo(post.published_at)}
-            </span>
           </div>
+
+          {/* Mini chart thumbnail — only on non-featured cards */}
+          {!featured && imageUrl && (
+            <div
+              className="relative shrink-0 rounded-[3px] overflow-hidden"
+              style={{ width: 80, height: 60, background: '#0d1117', border: '1px solid #1c2235' }}
+            >
+              <Image
+                src={imageUrl}
+                alt={`${post.tickers?.[0] || 'Market'} chart`}
+                fill
+                sizes="80px"
+                className="object-cover"
+                style={{ objectPosition: 'center 30%' }}
+                unoptimized
+              />
+            </div>
+          )}
         </div>
 
-        {/* ── Headline ── */}
-        <h3
-          className={`font-sans leading-snug group-hover:text-[#00d68f] transition-colors${
-            featured ? ' text-[17px] font-semibold' : ' text-[14px] font-semibold'
-          }`}
-          style={{ color: '#e8eaf0', letterSpacing: '-0.2px' }}
-        >
-          {displayTitle}
-        </h3>
-
-        {/* ── Excerpt ── */}
-        {displayExcerpt && (
-          <p
-            className="text-[13px] leading-relaxed"
-            style={{ color: '#6b7494', fontWeight: 300, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
-          >
-            {displayExcerpt}
-          </p>
-        )}
-
-        {/* ── Asset chips ── */}
+        {/* Tickers */}
         {post.tickers && post.tickers.length > 0 && (
-          <div className="flex gap-1.5 flex-wrap mt-auto">
+          <div className="flex gap-1.5 flex-wrap">
             {post.tickers.slice(0, 5).map((ticker) => (
               <span
                 key={ticker}
-                className="font-mono-cc text-[11px] font-medium px-2 py-0.5 rounded-[3px] flex items-center gap-1"
+                className="font-mono-cc text-[10px] font-medium px-2 py-0.5 rounded-[3px]"
                 style={{ background: '#181c24', color: '#6b7494', border: '1px solid #1e2330' }}
               >
                 {ticker}
@@ -207,19 +212,15 @@ export default function ContentCard({ post, featured = false }: Props) {
           </div>
         )}
 
-        {/* ── Footer ── */}
+        {/* Footer */}
         <div
-          className="flex items-center justify-between pt-3 mt-auto"
+          className="flex items-center justify-between pt-2 mt-1"
           style={{ borderTop: '1px solid #1e2330' }}
         >
           {isLocked ? (
             <span
               className="font-mono-cc text-[10px] tracking-[1px] uppercase px-2 py-0.5 rounded-[3px]"
-              style={{
-                color: '#f0a030',
-                background: 'rgba(240,160,48,0.08)',
-                border: '1px solid rgba(240,160,48,0.2)',
-              }}
+              style={{ color: '#f0a030', background: 'rgba(240,160,48,0.08)', border: '1px solid rgba(240,160,48,0.2)' }}
             >
               ⚡ Pro · Live Now
             </span>
@@ -228,16 +229,12 @@ export default function ContentCard({ post, featured = false }: Props) {
               className="font-mono-cc text-[10px] tracking-[0.8px] uppercase flex items-center gap-1.5"
               style={{ color: signal.color }}
             >
-              <span
-                className="inline-block w-[5px] h-[5px] rounded-full"
-                style={{ background: signal.dotColor }}
-              />
+              <span className="inline-block w-[5px] h-[5px] rounded-full" style={{ background: signal.dotColor }} />
               {signal.label}
             </span>
           ) : (
             <span />
           )}
-
           <span
             className="font-mono-cc text-[10px] tracking-[0.8px] uppercase flex items-center gap-1 transition-colors duration-200"
             style={{ color: '#3d4562' }}

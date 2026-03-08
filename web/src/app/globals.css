@@ -176,8 +176,8 @@
 /* Analysis page 2-col shell (class already in JSX) */
 .analysis-shell { display: grid; grid-template-columns: 1fr 360px; }
 
-/* Analysis content grid — 2-col inside the shell (3-col would overflow the left panel) */
-.analysis-content-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+/* Analysis content grid — 3-col matching reference design */
+.analysis-content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
 /* Intelligence page 2-col shell */
 .intel-shell { display: grid; grid-template-columns: 1fr 320px; max-width: 1280px; }
