@@ -118,11 +118,11 @@ class NewsNarrator:
         } for a in top_articles]
         context_str = json.dumps(context_items, indent=2)
 
-        # If no API key, use fallback formatter
-        if not os.getenv('ANTHROPIC_API_KEY'):
-            return self._fallback_formatter(ticker, top_articles, current_price)
+        # News memos are file-only artifacts — use template formatter to avoid Claude token burn
+        # (Claude is reserved for the 5 daily anchor content sessions)
+        return self._fallback_formatter(ticker, top_articles, current_price)
 
-        # Else try AI path
+        # Else try AI path (disabled — re-enable if memos are ever published)
         try:
             self._init_editor_engine()
             if self.editor_engine is None:
@@ -170,8 +170,8 @@ Output: Plain text only.
         top = articles[:5]
         titles = [a.get('title', '') for a in top]
 
-        # Try AI path first
-        if os.getenv('ANTHROPIC_API_KEY'):
+        # News tweets use template fallback — Claude reserved for anchor content sessions
+        if False and os.getenv('ANTHROPIC_API_KEY'):
             try:
                 self._init_editor_engine()
                 if self.editor_engine:

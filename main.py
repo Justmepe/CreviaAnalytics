@@ -123,6 +123,8 @@ GLASSNODE_API_KEY = os.getenv('GLASSNODE_API_KEY', '')
 RESEARCH_INTERVAL = int(os.getenv('RESEARCH_INTERVAL', '60'))
 ANALYSIS_INTERVAL = int(os.getenv('ANALYSIS_INTERVAL', '300'))
 THREAD_GENERATION_INTERVAL = int(os.getenv('THREAD_INTERVAL', '3600'))
+# Trade setup generation throttle — Sonnet is expensive; once per hour per asset is plenty
+TRADE_SETUP_INTERVAL = int(os.getenv('TRADE_SETUP_INTERVAL', '3600'))
 
 # Assets to track (22 total)
 MAJOR_ASSETS = ['BTC', 'ETH', 'XRP', 'SOL', 'BNB', 'AVAX', 'SUI', 'LINK']  # 8 large-caps
@@ -326,6 +328,7 @@ class CryptoAnalysisOrchestrator:
         self.recent_breaking_headlines: list = []  # [(headline_str, timestamp)] for topic similarity
         self.last_btc_price = None            # For price crash/spike detection
         self.last_price_alert_time = 0        # Cooldown for price alerts
+        self.last_trade_setup_time: Dict[str, float] = {}  # Per-asset throttle for TradeSetupGenerator
         self.credit_exhausted = False         # Set True when Anthropic credits run out
 
         logger.info("Components initialized")
@@ -1713,12 +1716,19 @@ class CryptoAnalysisOrchestrator:
             except Exception as sm_err:
                 logger.warning(f"Smart money tracker error: {sm_err}")
 
-            # 9. Trade setup generation (Claude AI — for major assets)
+            # 9. Trade setup generation (Claude Sonnet — throttled to once per hour per asset)
             generated_setups = []
             try:
                 if self.trade_setup_gen._enabled and self.web_publisher.enabled:
                     setup_count = 0
+                    now_ts = time.time()
                     for ticker in MAJOR_ASSETS:
+                        # Skip if this asset was generated within TRADE_SETUP_INTERVAL
+                        last_ts = self.last_trade_setup_time.get(ticker, 0)
+                        if now_ts - last_ts < TRADE_SETUP_INTERVAL:
+                            logger.debug(f"   Trade Setup [{ticker}]: throttled (next in {int(TRADE_SETUP_INTERVAL - (now_ts - last_ts))}s)")
+                            continue
+
                         research = self.latest_research.get(ticker, {})
                         price_data = research.get('price', {})
                         if not price_data.get('price_usd'):
@@ -1749,8 +1759,9 @@ class CryptoAnalysisOrchestrator:
                             self.web_publisher.publish_trade_setup(setup)
                             generated_setups.append(setup)
                             setup_count += 1
+                            self.last_trade_setup_time[ticker] = now_ts
 
-                    logger.info(f"   Trade Setups: {setup_count} generated for major assets")
+                    logger.info(f"   Trade Setups: {setup_count} generated (throttle: {TRADE_SETUP_INTERVAL}s/asset)")
                 else:
                     logger.info("   Trade Setups: Skipped (generator or publisher not enabled)")
             except Exception as ts_err:
