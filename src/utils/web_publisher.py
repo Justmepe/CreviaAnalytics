@@ -158,6 +158,32 @@ class WebPublisher:
             print(f"[WebPublisher] Article published: /post/{result.get('slug', '?')}")
         return result
 
+    def publish_newsletter(self, title: str, body: str,
+                           sector: str = 'global',
+                           tickers: Optional[List[str]] = None,
+                           image_url: Optional[str] = None,
+                           market_snapshot: Optional[dict] = None) -> Optional[dict]:
+        """
+        Publish a full newsletter article as content_type='news_tweet' so it
+        appears on the /news page (not the /analysis page).
+        Used by the news_digest anchor slot.
+        """
+        if not self.enabled:
+            return None
+        payload = {
+            'ticker': 'global',
+            'body': body,
+            'title': title,
+            'sector': sector,
+            'tickers': tickers or ['BTC', 'ETH'],
+            'image_url': image_url,
+            'market_snapshot': market_snapshot,
+        }
+        result = self._post('/api/content/publish/news', payload)
+        if result:
+            print(f"[WebPublisher] Newsletter published: /post/{result.get('slug', '?')}")
+        return result
+
     def publish_news_tweet(self, ticker: str, tweet_text: str,
                            current_price: Optional[float] = None,
                            sector: Optional[str] = None,

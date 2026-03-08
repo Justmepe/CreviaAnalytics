@@ -187,11 +187,14 @@ def create_article_post(db: Session, title: str, body: str,
 
 
 def create_news_tweet_post(db: Session, ticker: str, body: str,
+                           title: Optional[str] = None,
                            current_price: Optional[float] = None,
                            sector: Optional[str] = None,
-                           tickers: Optional[List[str]] = None) -> ContentPost:
-    """Store a news tweet as a ContentPost."""
-    title = body[:200]
+                           tickers: Optional[List[str]] = None,
+                           image_url: Optional[str] = None,
+                           market_snapshot: Optional[dict] = None) -> ContentPost:
+    """Store a news tweet / newsletter as a ContentPost."""
+    title = title or body[:200]
     excerpt = body[:160]
 
     if not sector:
@@ -214,6 +217,9 @@ def create_news_tweet_post(db: Session, ticker: str, body: str,
     if current_price is not None:
         snapshot['price_at_generation'] = current_price
 
+    if market_snapshot:
+        snapshot.update(market_snapshot)
+
     post = ContentPost(
         content_type='news_tweet',
         title=title,
@@ -223,6 +229,7 @@ def create_news_tweet_post(db: Session, ticker: str, body: str,
         tickers=tickers or [ticker],
         sector=sector,
         tier='free',
+        image_url=image_url,
         market_snapshot=snapshot if snapshot else None,
     )
     db.add(post)

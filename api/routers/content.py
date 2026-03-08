@@ -84,9 +84,12 @@ def publish_news_tweet(req: PublishNewsTweetRequest, db: Session = Depends(get_d
         db=db,
         ticker=req.ticker,
         body=req.body,
+        title=req.title,
         current_price=req.current_price,
         sector=req.sector,
         tickers=req.tickers if req.tickers else [req.ticker],
+        image_url=req.image_url,
+        market_snapshot=req.market_snapshot,
     )
     return post
 

@@ -659,14 +659,26 @@ class CryptoAnalysisOrchestrator:
                 if narrative:
                     mentioned = session_content.get('mentioned_assets', ['BTC', 'ETH'])
                     slot_chart = generate_chart_image(pick_chart_ticker(mentioned), '4h')
-                    web_art = self.web_publisher.publish_article(
-                        title=title,
-                        body=narrative,
-                        sector='global',
-                        tickers=mentioned,
-                        image_url=slot_chart,
-                        market_snapshot={'mode': mode, 'slot': slot['label']},
-                    )
+                    # news_digest → publishes as news_tweet (shows on /news page)
+                    # all other slots → article (shows on /analysis page)
+                    if mode == 'news_digest':
+                        web_art = self.web_publisher.publish_newsletter(
+                            title=title,
+                            body=narrative,
+                            sector='global',
+                            tickers=mentioned,
+                            image_url=slot_chart,
+                            market_snapshot={'mode': mode, 'slot': slot['label']},
+                        )
+                    else:
+                        web_art = self.web_publisher.publish_article(
+                            title=title,
+                            body=narrative,
+                            sector='global',
+                            tickers=mentioned,
+                            image_url=slot_chart,
+                            market_snapshot={'mode': mode, 'slot': slot['label']},
+                        )
                     if web_art:
                         logger.info(f"   ✅ {slot['label']} article published to web: /post/{web_art.get('slug', '?')}")
                     else:

@@ -43,9 +43,12 @@ class PublishArticleRequest(BaseModel):
 class PublishNewsTweetRequest(BaseModel):
     ticker: str
     body: str
+    title: Optional[str] = None
     current_price: Optional[float] = None
     sector: Optional[str] = None
     tickers: List[str] = []
+    image_url: Optional[str] = None
+    market_snapshot: Optional[Dict[str, Any]] = None
 
 
 class PublishMarketSnapshotRequest(BaseModel):
