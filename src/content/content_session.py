@@ -185,6 +185,10 @@ class ContentSession:
             elif self.mode == 'evening_outlook':
                 prompt = self._build_evening_outlook_prompt(context_json, date_str, time_str)
                 max_tokens = 6000
+            elif self.mode == 'weekly_review':
+                # Weekly review uses compiled narratives from news_context, not live market JSON
+                prompt = self._build_weekly_review_prompt(self.news_context or '', date_str, time_str)
+                max_tokens = 12000
             else:  # breaking_news (kept for compatibility)
                 prompt = self._build_breaking_news_prompt(context_json, date_str, time_str)
                 max_tokens = 6000
@@ -543,6 +547,45 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
   "key_insight": "2-sentence hook: today's defining move and the overnight risk that matters most",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["crypto", "bitcoin", "trading"],
+  "mentioned_assets": ["BTC", "ETH", ...]
+}}"""
+
+    def _build_weekly_review_prompt(self, compiled_narratives: str, date_str: str, time_str: str) -> str:
+        return f"""You are a senior crypto market analyst at CreviaCockpit writing the WEEK IN REVIEW for the week ending {date_str}.
+
+Your job: synthesise everything that happened this week into ONE authoritative long-form article (2000-2500 words) AND a punchy 6-tweet summary thread for X.
+
+THIS WEEK'S CONTENT (compiled daily narratives — use these as your source of truth):
+{compiled_narratives}
+
+{_ALGO_RULES}
+
+ARTICLE REQUIREMENTS:
+- Title: compelling, tension-driven, cites the week's dominant theme and a specific price or data point
+- Structure: Introduction (dominant weekly theme) → Market Structure (BTC/ETH/alts weekly arc) → Key Stories (3-4 most important events) → On-Chain & Macro (what the data showed) → Week Ahead (key catalysts for next week) → Closing thought
+- Length: 2000-2500 words. Professional, Bloomberg-quality. No hype. No em-dashes.
+- Every claim backed by numbers from the narratives above.
+
+THREAD REQUIREMENTS (the X summary):
+- Tweet 1: "Weekly Recap:" + hook summarising the week's dominant theme + key number + "👇"
+- Tweets 2-5: one sharp insight per tweet from the week (biggest move, key story, on-chain read, macro tie-in)
+- Tweet 6 (FINAL): direct question to drive replies — e.g. "This week [X] happened — what's your biggest conviction going into next week? 👇" + 4 hashtags
+
+Return ONLY this JSON (no preamble, no markdown):
+{{
+  "headline": "Week in Review headline — tension-driven, cites dominant theme + key number",
+  "thread_tweets": [
+    "1/ Weekly Recap: [hook + key number] 👇",
+    "2/ tweet",
+    "3/ tweet",
+    "4/ tweet",
+    "5/ tweet",
+    "6/ FINAL tweet ending with direct question + hashtags"
+  ],
+  "narrative": "Full 2000-2500 word article covering the week. Professional, no hype, no em-dashes.",
+  "key_insight": "2-sentence hook: the week's defining move and what it sets up for next week",
+  "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
+  "tags": ["crypto", "bitcoin", "weekinreview", "markets"],
   "mentioned_assets": ["BTC", "ETH", ...]
 }}"""
 

@@ -138,12 +138,14 @@ COMMODITIES_ASSETS = ['XAU', 'TSLA']                                          # 
 # =============================================================================
 
 ANCHOR_SLOTS = [
-    {"hour": 8,  "mode": "morning_scan",    "label": "Morning Scan",    "full_article": True},
-    {"hour": 12, "mode": "news_digest",     "label": "News Digest",     "full_article": True},
-    {"hour": 15, "mode": "whale_activity",  "label": "Whale Activity",  "full_article": True},
+    {"hour": 8,  "mode": "morning_scan",    "label": "Morning Scan",    "full_article": False},
+    {"hour": 12, "mode": "news_digest",     "label": "News Digest",     "full_article": False},
+    {"hour": 15, "mode": "whale_activity",  "label": "Whale Activity",  "full_article": False},
     {"hour": 18, "mode": "macro_tie_in",    "label": "Macro Tie-In",    "full_article": False},
     {"hour": 21, "mode": "evening_outlook", "label": "Evening Outlook", "full_article": False},
 ]
+# Weekly deep-dive — Sunday 20:00 UTC, compiles the week into one long-form Substack article
+WEEKLY_SLOT = {"weekday": 6, "hour": 20, "mode": "weekly_review", "label": "Week in Review"}
 ANCHOR_WINDOW_MINUTES = 15        # Minutes BEFORE slot hour to trigger early
 ANCHOR_CATCHUP_MINUTES = 180      # Minutes AFTER slot to catch up (3h covers PM2 restarts)
 BREAKING_NEWS_INTERVAL = 900      # 15 min between breaking news checks
@@ -329,7 +331,11 @@ class CryptoAnalysisOrchestrator:
         self.last_btc_price = None            # For price crash/spike detection
         self.last_price_alert_time = 0        # Cooldown for price alerts
         self.last_trade_setup_time: Dict[str, float] = {}  # Per-asset throttle for TradeSetupGenerator
+        self.last_weekly_review_date: Optional[str] = None  # YYYY-MM-DD of last weekly review run
         self.credit_exhausted = False         # Set True when Anthropic credits run out
+
+        # Weekly narrative store — path where each day's narrative is accumulated
+        self.weekly_narratives_path = Path('data/weekly_narratives.json')
 
         logger.info("Components initialized")
 
@@ -401,6 +407,15 @@ class CryptoAnalysisOrchestrator:
                     #     self._check_and_post_breaking_news()
                     #     self._check_price_alert()
                     #     self.last_breaking_check = current_time
+
+                    # Weekly Review — Sunday 20:00 UTC, runs once per week
+                    ws = WEEKLY_SLOT
+                    if now_utc.weekday() == ws["weekday"] and now_utc.hour == ws["hour"]:
+                        today = now_utc.strftime('%Y-%m-%d')
+                        if self.last_weekly_review_date != today:
+                            logger.info(f"WEEKLY REVIEW TRIGGERED: {ws['label']}")
+                            self._run_weekly_review()
+                            self.last_weekly_review_date = today
 
                     # Marketing posts — standalone sales posts, run independently of anchors
                     mkt_slot = self._get_current_marketing_slot()
@@ -608,58 +623,31 @@ class CryptoAnalysisOrchestrator:
 
         mode = slot["mode"]
 
-        # 3. Morning scan: 6 sector threads → long-form Substack article
-        if mode == "morning_scan":
-            if sector_threads:
-                logger.info(f"[MorningScan] Posting {len(sector_threads)} sector threads...")
+        # 3. All slots: post sector threads to X + Substack note (no daily articles)
+        if sector_threads:
+            logger.info(f"[{slot['label']}] Posting {len(sector_threads)} sector threads...")
+            if mode == "morning_scan":
                 majors_tweets = sector_threads.get('majors', [])
                 if majors_tweets:
                     self.morning_context = majors_tweets[0][:200]
-                self._post_sector_threads(sector_threads, session_content)
-                self._post_anchor_article(None, session_content=session_content)
-            else:
-                logger.warning("[MorningScan] No sector_threads — falling back to single thread")
-                thread_data = self._run_thread_generation(
-                    thread_mode="morning_scan",
-                    previous_context=self.morning_context,
-                    session_content=session_content,
-                )
-                if thread_data:
-                    tweets = thread_data.get('tweets', [])
-                    if tweets:
-                        self.morning_context = tweets[0][:200]
-                    self._post_anchor_article(thread_data, session_content=session_content)
-
-            self._run_news_memo_generation()
-            logger.info(f"Anchor slot {slot['label']} complete")
-            return
-
-        # 4. News Digest / Whale Activity → sector threads + full article
-        if mode in ("news_digest", "whale_activity"):
-            if sector_threads:
-                logger.info(f"[{slot['label']}] Posting {len(sector_threads)} sector threads...")
-                self._post_sector_threads(sector_threads, session_content)
-                self._post_anchor_article(None, session_content=session_content)
-            else:
-                logger.warning(f"[{slot['label']}] No sector_threads — skipping threads")
-                self._post_anchor_article(None, session_content=session_content)
-            logger.info(f"Anchor slot {slot['label']} complete")
-            return
-
-        # 5. Macro Tie-In / Evening Outlook → sector threads + Substack note
-        if sector_threads:
-            logger.info(f"[{slot['label']}] Posting {len(sector_threads)} sector threads...")
             self._post_sector_threads(sector_threads, session_content)
-            self._post_anchor_note(None, slot, session_content=session_content)
         else:
             logger.warning(f"[{slot['label']}] No sector_threads — falling back to single thread")
             thread_data = self._run_thread_generation(
-                thread_mode=slot["mode"],
+                thread_mode=mode if mode in ('morning_scan', 'mid_day_update', 'closing_bell') else 'morning_scan',
                 previous_context=self.morning_context,
                 session_content=session_content,
             )
-            if thread_data:
-                self._post_anchor_note(thread_data, slot, session_content=session_content)
+            if thread_data and mode == "morning_scan":
+                tweets = thread_data.get('tweets', [])
+                if tweets:
+                    self.morning_context = tweets[0][:200]
+
+        # Post Substack note for all slots
+        self._post_anchor_note(None, slot, session_content=session_content)
+
+        # Store narrative for weekly compilation
+        self._store_daily_narrative(mode, session_content)
 
         self._run_news_memo_generation()
         logger.info(f"Anchor slot {slot['label']} complete")
@@ -1152,6 +1140,127 @@ class CryptoAnalysisOrchestrator:
 
         except Exception as e:
             logger.warning(f"Price alert check error: {e}")
+
+    def _store_daily_narrative(self, mode: str, session_content: Optional[Dict]) -> None:
+        """
+        Append today's narrative to weekly_narratives.json so the Sunday
+        Week in Review can compile them into one long-form article.
+        Keeps only the last 35 entries (7 days × 5 slots).
+        """
+        if not session_content:
+            return
+        narrative = session_content.get('narrative', '') or session_content.get('key_insight', '')
+        headline  = session_content.get('headline', '')
+        if not narrative:
+            return
+        try:
+            self.weekly_narratives_path.parent.mkdir(parents=True, exist_ok=True)
+            entries: list = []
+            if self.weekly_narratives_path.exists():
+                try:
+                    entries = json.loads(self.weekly_narratives_path.read_text(encoding='utf-8'))
+                except Exception:
+                    entries = []
+            entries.append({
+                'date':      datetime.now(timezone.utc).strftime('%Y-%m-%d'),
+                'time':      datetime.now(timezone.utc).strftime('%H:%M UTC'),
+                'mode':      mode,
+                'headline':  headline,
+                'narrative': narrative[:3000],  # cap per entry so file stays manageable
+            })
+            # Keep last 35 entries (7 days × 5 slots)
+            entries = entries[-35:]
+            self.weekly_narratives_path.write_text(json.dumps(entries, indent=2), encoding='utf-8')
+            logger.debug(f"[WeeklyStore] Stored {mode} narrative ({len(narrative)} chars). Total entries: {len(entries)}")
+        except Exception as e:
+            logger.warning(f"[WeeklyStore] Failed to store narrative: {e}")
+
+    def _run_weekly_review(self) -> None:
+        """
+        Sunday 20:00 UTC — compile the week's narratives into one long-form
+        Substack article and a summary thread on X.
+        """
+        if self.credit_exhausted:
+            logger.warning("[WeeklyReview] Skipping — Anthropic credits exhausted")
+            return
+
+        logger.info(f"\n{'='*80}")
+        logger.info("WEEKLY REVIEW: Compiling week into long-form article")
+        logger.info(f"{'='*80}")
+
+        # Load stored narratives
+        entries: list = []
+        try:
+            if self.weekly_narratives_path.exists():
+                entries = json.loads(self.weekly_narratives_path.read_text(encoding='utf-8'))
+        except Exception as e:
+            logger.warning(f"[WeeklyReview] Could not load narratives: {e}")
+
+        if not entries:
+            logger.warning("[WeeklyReview] No narratives stored yet — skipping")
+            return
+
+        logger.info(f"[WeeklyReview] Compiling {len(entries)} entries from the past week")
+
+        # Pass compiled narratives as news_context to ContentSession
+        compiled = "\n\n---\n\n".join(
+            f"[{e['date']} {e['time']} | {e['mode'].upper()}]\nHeadline: {e['headline']}\n{e['narrative']}"
+            for e in entries
+        )
+
+        try:
+            session = ContentSession(
+                analysis_data={
+                    'market_context': self.latest_research.get('global', {}),
+                    'majors': {},
+                    'defi': [], 'memecoins': [], 'privacy_coins': [], 'commodities': [],
+                },
+                mode='weekly_review',
+                news_context=compiled,
+            )
+            content = session.generate_all()
+        except Exception as e:
+            logger.error(f"[WeeklyReview] ContentSession failed: {e}")
+            return
+
+        if self.credit_exhausted:
+            return
+
+        title    = content.get('headline', f"Week in Review — {datetime.now(timezone.utc).strftime('%B %d, %Y')}")
+        article  = content.get('x_article', {})
+        body     = article.get('body', '') or content.get('narrative', '')
+        tweets   = content.get('x_thread', [])
+
+        # Post X thread summarising the week
+        if tweets and self.x_use_browser and self.x_poster:
+            try:
+                logger.info(f"[WeeklyReview] Posting X thread ({len(tweets)} tweets)...")
+                self.x_poster.post_thread(tweets)
+                logger.info("   ✅ X thread posted")
+            except Exception as e:
+                logger.error(f"   ❌ X thread error: {e}")
+
+        # Post full Substack article
+        if body and self.substack_use_browser and self.substack_browser.enabled:
+            _, sub_body, _ = self.post_decorator.decorate_substack_article(title, body, ['BTC', 'ETH'])
+            try:
+                logger.info("[WeeklyReview] Posting Substack article...")
+                result = self.substack_browser.post_article(title, sub_body)
+                if result:
+                    logger.info(f"   ✅ Substack article posted: '{title}'")
+                else:
+                    logger.error("   ❌ Substack article returned False")
+            except Exception as e:
+                logger.error(f"   ❌ Substack article error: {e}")
+
+        # Clear the weekly narratives file so next week starts fresh
+        try:
+            self.weekly_narratives_path.write_text('[]', encoding='utf-8')
+            logger.info("[WeeklyReview] Narratives file cleared for next week")
+        except Exception:
+            pass
+
+        logger.info("[WeeklyReview] Complete")
 
     def _collect_recent_news(self, hours: int = 12) -> list:
         """Collect RSS news articles from the last N hours for digest/macro prompts."""
