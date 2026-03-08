@@ -259,8 +259,8 @@ Return ONLY this JSON object (no preamble, no markdown):
     "altcoins":    ["1/ Alt Scan: [hook + key mover] 👇", "2/ top alt tweet", "3/ rotation/flow tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
     "memecoins":   ["1/ Memecoin Pulse: [hook + sentiment read] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
     "privacy":     ["1/ Privacy Watch: [hook + key narrative] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
-    "defi":        ["1/ DeFi Scan: [hook + TVL or yield signal] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
-    "commodities": ["1/ Macro Alert: [hook + gold/macro signal] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
+    "defi":        ["1/ DeFi Scan: [hook + TVL or yield read] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
+    "commodities": ["1/ Macro Alert: [hook + gold/macro picture] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
   }},
   "narrative": "Full 1500-word professional narrative — specific numbers, no filler, covers all sectors",
   "key_insight": "2-sentence hook: state the dominant market tension, give the trade angle",
@@ -306,7 +306,7 @@ Return ONLY this JSON object (no preamble, no markdown):
   "sector_threads": {{
     "majors_update":    ["1/ Majors Scan: [hook + key level change since morning] 👇", "2/ BTC data tweet", "3/ ETH data tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
     "alts_flow":        ["1/ Rotation Watch: [hook + top mover] 👇", "2/ rotation/flow tweet", "3/ relative strength tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
-    "derivatives_flow": ["1/ Derivatives Watch: [hook + OI/funding signal] 👇", "2/ liquidations data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
+    "derivatives_flow": ["1/ Derivatives Watch: [hook + OI/funding read] 👇", "2/ liquidations data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
   }},
   "narrative": "800-word professional narrative covering all three sectors — specific numbers, no filler",
   "key_insight": "2-sentence hook: what changed since morning and why it matters",
@@ -391,7 +391,7 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
     "market_impact": [
       "1/ Noon Briefing: [hook — how markets reacted to today's news] 👇",
       "2/ specific price reactions to the biggest stories",
-      "3/ sentiment shift — fear/greed, volume signals, sector rotation",
+      "3/ sentiment shift — fear/greed, volume flow, sector rotation",
       "4/ FINAL tweet: direct question — e.g. 'News-driven move or algo reaction? What's your read? 👇' + hashtags"
     ],
     "what_to_watch": [
@@ -429,14 +429,14 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
     "whale_sentiment": [
       "1/ Whale Watch: [hook — dominant whale direction + key flow number] 👇",
       "2/ aggregate exchange inflows/outflows + which direction is winning",
-      "3/ largest individual moves of the day + what they signal",
+      "3/ largest individual moves of the day + what they indicate",
       "4/ OTC activity or unusual wallet-to-wallet patterns (if present in data)",
       "5/ correlate whale flow with current price action",
       "6/ FINAL tweet: direct question — e.g. 'Smart money is [accumulating/distributing] — do you follow the whales or fade them? 👇' + hashtags"
     ],
     "cascade_risk": [
       "1/ On-Chain Alert: [hook — leverage state + key liquidation level] 👇",
-      "2/ current open interest and funding rate signal",
+      "2/ current open interest and funding rate picture",
       "3/ key liquidation clusters sitting above and below current price",
       "4/ FINAL tweet: direct question — e.g. 'Leveraged longs at risk below $[X]K — are you holding through this or cutting? 👇' + hashtags"
     ],
@@ -457,7 +457,7 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
     def _build_macro_tie_in_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
         return f"""You are a senior macro analyst at CreviaCockpit writing the MACRO TIE-IN for {date_str} at {time_str}.
 
-Connect today's macro developments (gold, dollar, equities, Fed, CPI, yield curve) to crypto. Find the correlation. Explain what traditional finance is signalling and what it means for Bitcoin, ETH, and risk assets broadly.
+Connect today's macro developments (gold, dollar, equities, Fed, CPI, yield curve) to crypto. Find the correlation. Explain what traditional finance is showing and what it means for Bitcoin, ETH, and risk assets broadly.
 
 MARKET DATA + MACRO DATA (JSON):
 {context_json}
@@ -475,7 +475,7 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
     "macro_snapshot": [
       "1/ Macro Alert: [hook — dominant macro theme today + one key number] 👇",
       "2/ DXY / dollar strength and what it means for BTC correlation right now",
-      "3/ gold and real yields signal — is BTC acting as a hedge or a risk asset today?",
+      "3/ gold and real yields picture — is BTC acting as a hedge or a risk asset today?",
       "4/ equities (SPX/NDX) risk-on or risk-off — and crypto's beta to that move",
       "5/ any Fed language, rate expectations, or macro data release today (skip if none)",
       "6/ FINAL tweet: direct question — e.g. 'Macro is [tailwind/headwind] for crypto right now — are you adjusting your positioning? 👇' + hashtags"
@@ -483,7 +483,7 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
     "crypto_correlation": [
       "1/ Cross-Asset Watch: [hook — how tightly crypto is tracking TradFi today] 👇",
       "2/ BTC beta to SPX today — moving with it or diverging?",
-      "3/ ETH and altcoin behaviour vs macro risk signal",
+      "3/ ETH and altcoin behaviour vs macro risk read",
       "4/ FINAL tweet: direct question — e.g. 'Crypto decoupling from equities or still following the tape? What do you see? 👇' + hashtags"
     ],
     "positioning": [
@@ -494,7 +494,7 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
     ]
   }},
   "narrative": "700-word macro analysis: connect today's traditional market moves to crypto. Cover dollar, gold, rates, equities. Identify the dominant macro theme and its crypto implication.",
-  "key_insight": "2-sentence hook: the key macro signal and its crypto market implication",
+  "key_insight": "2-sentence hook: the key macro read and its crypto market implication",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["macro", "bitcoin", "markets"],
   "mentioned_assets": ["BTC", "ETH", "GOLD", "DXY"]
@@ -564,7 +564,7 @@ THREAD STRUCTURE (strict):
   Tweet 6-7 (optional): Risk factors, related assets, broader macro angle
 
 TWEET RULES:
-1. Open tweet 1 with 🚨 and "Breaking:" — this signals breaking news to the algorithm.
+1. Open tweet 1 with 🚨 and "Breaking:" — this flags breaking news to the algorithm.
 2. Use relevant asset emojis: 💎 BTC  ⚡ ETH  🪙 alts  🏦 DeFi — match to the affected asset.
 3. Every claim must have a number — no "significant move" without a price or %.
 4. Numbered: 1/ 2/ 3/ etc. Each tweet ≤280 chars.
@@ -878,7 +878,7 @@ Return ONLY this JSON object (no preamble, no markdown):
             f"Total crypto market capitalization stands at ${mcap/1e12:.2f} trillion, "
             f"with Bitcoin dominance at {btc_dom:.1f}%. "
             f"The Fear & Greed Index reads {fg} ({fg_label}), "
-            f"signalling {'elevated risk appetite' if fg > 60 else 'cautious positioning' if fg < 40 else 'neutral sentiment'}. "
+            f"showing {'elevated risk appetite' if fg > 60 else 'cautious positioning' if fg < 40 else 'neutral sentiment'}. "
             f"Traders should monitor key levels and remain disciplined with position sizing."
         )
 
@@ -886,7 +886,7 @@ Return ONLY this JSON object (no preamble, no markdown):
             'headline': headline,
             'thread_tweets': thread_tweets,
             'narrative': narrative,
-            'key_insight': f"BTC at ${btc_price:,.0f} ({btc_chg:+.1f}%). F&G: {fg} ({fg_label}). Watch dominance for rotation signals.",
+            'key_insight': f"BTC at ${btc_price:,.0f} ({btc_chg:+.1f}%). F&G: {fg} ({fg_label}). Watch dominance for rotation flow.",
             'directional_signal': 'BULLISH' if btc_chg > 1 else 'BEARISH' if btc_chg < -1 else 'NEUTRAL',
             'tags': ['crypto', 'bitcoin', 'trading', 'markets'],
             'mentioned_assets': list(majors.keys())[:6],

@@ -661,7 +661,7 @@ CRITICAL RULES - READ CAREFULLY:
 TONE & STYLE:
 - Professional, data-driven analysis (Bloomberg Terminal meets X/Twitter)
 - Use emojis strategically but professionally:
-  📊 for data/metrics, 🚀 for bullish signals, 🐻 for bearish, ⚠️ for risk warnings
+  📊 for data/metrics, 🚀 for bullish moves, 🐻 for bearish, ⚠️ for risk warnings
   🐸 for memecoins, 🕶️ for privacy coins, 🧩 for DeFi, 💎 for majors
 - Each tweet STRICTLY 180-255 chars — Twitter enforces 280 and cuts off mid-word if exceeded
 - Number tweets clearly: 1/, 2/, 3/, etc.
@@ -795,14 +795,14 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
              else "2/ 💎 MAJORS\n\nPrice data loading..."),
 
             (f"3/ 📈 DERIVATIVES\n\n"
-             f"Liquidations signal {'long squeeze pressure' if liq > 100e6 else 'moderate leverage'} "
+             f"Liquidations show {'long squeeze pressure' if liq > 100e6 else 'moderate leverage'} "
              f"(${liq/1e6:.0f}M 24h).\n"
              f"Watch funding rates for directional bias."),
 
             (f"4/ 🧩 DEFI & ALTS\n\n"
              + (", ".join(str(t.get('ticker', '')) for t in defi[:4] if isinstance(t, dict) and t)
                 if defi else "DeFi sector data loading.")
-             + "\n\nMonitor TVL flows for capital rotation signals."),
+             + "\n\nMonitor TVL flows for capital rotation indicators."),
 
             (f"5/ 🐸 MEMECOINS\n\n"
              + (", ".join(str(t.get('ticker', '')) for t in memes[:4] if isinstance(t, dict) and t)
@@ -814,7 +814,7 @@ Return ONLY the complete thread with numbered tweets. No preamble or explanation
              f"{'Elevated greed: risk of pullback. Reduce leverage.' if fg > 70 else 'Fear territory: accumulation opportunity for patient traders.' if fg < 30 else 'Neutral sentiment. Wait for directional confirmation.'}"),
 
             (f"7/ 📌 BOTTOM LINE\n\n"
-             f"BTC dominance at {btc_dom:.1f}% signals "
+             f"BTC dominance at {btc_dom:.1f}% shows "
              f"{'alt season potential' if btc_dom < 45 else 'capital consolidation in majors' if btc_dom > 55 else 'mixed rotation'}.\n\n"
              f"Follow for real-time analysis."),
         ]
