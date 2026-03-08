@@ -10,7 +10,7 @@ async function fetchAllPostSlugs(): Promise<{ slug: string; published_at: string
     });
     if (!res.ok) return [];
     const data = await res.json();
-    return (data.posts || []).map((p: { slug: string; published_at: string; content_type: string }) => ({
+    return (data.items || data.posts || []).map((p: { slug: string; published_at: string; content_type: string }) => ({
       slug: p.slug,
       published_at: p.published_at,
       content_type: p.content_type,
