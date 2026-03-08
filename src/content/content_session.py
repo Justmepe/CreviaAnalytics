@@ -30,6 +30,38 @@ logger = logging.getLogger(__name__)
 
 SITE_URL = "https://creviacockpit.com"
 
+# ── Algorithm-optimised thread rules (injected into every prompt) ─────────────
+# Based on 2026 X algorithm (Grok/Phoenix ranking model):
+# Replies = #1 signal (13–27× a like). Questions drive replies.
+# Media = huge reach boost (charts attached separately by main.py).
+# Burst-posting = author diversity penalty — already fixed (5 posts/day, spaced).
+# External links in main tweet = hard reach penalty — links go in first reply.
+# Hashtags mid-thread = clutter penalty — 3-4 max, final tweet only.
+_ALGO_RULES = """
+ALGORITHM-OPTIMISED THREAD FORMAT (2026 X algorithm — follow exactly):
+• Tweet 1 (HOOK): Open with a STARTER KEYWORD matching the sector, then hook + one key metric + "👇"
+  Starter keywords per sector:
+    BTC/ETH majors      → "BTC Scan:" / "ETH Watch:" / "Majors Scan:"
+    Altcoins            → "Alt Scan:" / "Rotation Watch:"
+    Memecoins           → "Memecoin Pulse:" / "Meme Watch:"
+    Privacy coins       → "Privacy Watch:" / "Privacy Scan:"
+    DeFi                → "DeFi Scan:" / "DeFi Watch:"
+    Commodities/macro   → "Macro Alert:" / "Cross-Asset Watch:"
+    News digest         → "News Digest:" / "Noon Briefing:"
+    Whale activity      → "Whale Watch:" / "On-Chain Alert:"
+    Macro tie-in        → "Macro Tie-In:" / "TradFi vs Crypto:"
+    Evening outlook     → "Evening Outlook:" / "Night Watch:"
+  Example tweet 1: "BTC Scan: Just slipped under $71K with memecoins getting wrecked — shakeout or real breakdown? 👇"
+• Middle tweets: one sharp, data-backed insight per tweet. Lead with a number or emoji, not a word.
+• Final tweet (REPLY MAGNET): MUST end with a direct question demanding the reader's opinion.
+  Good: "BTC holding $68.5K support — bullish continuation or dead-cat bounce? Drop your take 👇"
+  Bad:  "Watch the $68K level closely." (statement, no engagement hook)
+• NEVER include any URL or link in any tweet — links tank algorithmic reach hard.
+  (The site link is posted as a separate reply by the system — do NOT add creviacockpit.com)
+• Hashtags: 3-4 max, ONLY in the FINAL tweet (e.g. #Bitcoin #BTC #Crypto #Trading). Never mid-thread.
+• Each tweet ≤280 chars. Numbered: 1/ 2/ 3/ etc. NEVER cut a thought mid-sentence.
+"""
+
 
 class ContentSession:
     """
@@ -207,18 +239,15 @@ DATA DISCIPLINE — READ THIS FIRST:
 - Only the Fear & Greed index from market_context.fear_greed_index is real — do not create variants of it.
 
 RULES FOR EVERY TWEET:
-1. Use EXACT numbers from the data — never say "rising" without a % to back it up
+{_ALGO_RULES}
+1. Use EXACT numbers from the data — never say "rising" without a % to back it up.
 2. Use emojis deliberately:
    💎 BTC  ⚡ ETH  🪙 alts  🐸 memecoins  🔒 privacy  🏦 DeFi  🌍 macro
    📊 metric  ⬆️ bullish / ⬇️ bearish  🎯 key level  ⚠️ risk/warning
-3. Each tweet ≤280 chars, numbered: 1/ 2/ 3/ etc.
-4. TWEET 1 of every thread = sector header + date + 2-3 top metrics from the data + "👇"
-   Example: "1/ 🏛️ MAJORS SCAN | {date_str}\\n\\nBTC Dom: 61.4% | Mcap: $2.7T | F&G: 71\\n\\nHere's where the big two stand 👇"
-5. Middle tweets: one tweet per asset that HAS data — price, 24h %, one key level, one-line read. Skip assets with no data.
-6. Final tweet: what to watch next — a key level or condition. Do NOT label it "Signal:" or "Trade:". State it as an observation.
-7. ADAPTIVE LENGTH: Write as many tweets as the content genuinely requires — no minimum, no maximum. A sector with 2 assets may need 3 tweets; one with 6 assets may need 8. NEVER cram multiple ideas into one tweet to hit a count. NEVER cut a thought mid-sentence. A tweet is complete when the idea is complete and fits in ≤280 chars. Each sector thread is POSTED SEPARATELY so keep each self-contained.
-8. DO NOT repeat the same data point or insight across different sector threads.
-9. ZERO em-dashes (—) or en-dashes (–). ZERO hype. ZERO filler. ZERO "Signal:" / "Trade:" labels.
+3. Middle tweets: one tweet per asset that HAS data — price, 24h %, one key level, one-line read. Skip assets with no data.
+4. ADAPTIVE LENGTH: Write as many tweets as the content genuinely requires. NEVER cram multiple ideas into one tweet. NEVER cut a thought mid-sentence. Each sector thread is POSTED SEPARATELY — keep each self-contained.
+5. DO NOT repeat the same data point or insight across different sector threads.
+6. ZERO em-dashes (—) or en-dashes (–). ZERO hype. ZERO filler. ZERO "Signal:" / "Trade:" labels.
 
 ALSO write: a full 1500-word narrative article covering all sectors (for X Article + Substack).
 
@@ -226,12 +255,12 @@ Return ONLY this JSON object (no preamble, no markdown):
 {{
   "headline": "Editorial, tension-driven headline for today's full scan — cite the dominant narrative and a specific price or data point",
   "sector_threads": {{
-    "majors":      ["1/ tweet ≤280 chars", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
-    "altcoins":    ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
-    "memecoins":   ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
-    "privacy":     ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
-    "defi":        ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
-    "commodities": ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"]
+    "majors":      ["1/ BTC Scan: [hook + key metric] 👇", "2/ BTC data tweet", "3/ ETH data tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
+    "altcoins":    ["1/ Alt Scan: [hook + key mover] 👇", "2/ top alt tweet", "3/ rotation/flow tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
+    "memecoins":   ["1/ Memecoin Pulse: [hook + sentiment read] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
+    "privacy":     ["1/ Privacy Watch: [hook + key narrative] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
+    "defi":        ["1/ DeFi Scan: [hook + TVL or yield signal] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
+    "commodities": ["1/ Macro Alert: [hook + gold/macro signal] 👇", "2/ data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
   }},
   "narrative": "Full 1500-word professional narrative — specific numbers, no filler, covers all sectors",
   "key_insight": "2-sentence hook: state the dominant market tension, give the trade angle",
@@ -260,16 +289,14 @@ DATA DISCIPLINE:
 - Do NOT reference any index not in the JSON (no "alt index", "rotation index", etc.)
 
 RULES FOR EVERY TWEET:
-1. Use EXACT numbers — never say "higher" without a % or price
-2. Compare to earlier levels where data allows ("was $X this morning, now $Y")
+{_ALGO_RULES}
+1. Use EXACT numbers — never say "higher" without a % or price.
+2. Compare to earlier levels where data allows ("was $X this morning, now $Y").
 3. Use emojis deliberately:
    💎 BTC  ⚡ ETH  🪙 alts  📊 metrics  ⬆️ bullish / ⬇️ bearish  🎯 key level  ⚠️ risk  🔄 rotation
-4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
-5. Tweet 1 of each thread: sector header + time + 2-3 top metrics + "👇"
-6. Final tweet: key level or condition to watch — no "Signal:" or "Trade:" labels
-7. ADAPTIVE LENGTH: Write as many tweets as the content requires. NEVER cut a sentence or thought mid-way. A tweet is complete when the idea is complete and fits ≤280 chars. No artificial minimum or maximum.
-8. DO NOT repeat the same data point across threads
-9. ZERO em-dashes (—) or en-dashes (–). Zero hype. Authoritative analyst voice.
+4. ADAPTIVE LENGTH: Write as many tweets as the content requires. NEVER cut a sentence or thought mid-way.
+5. DO NOT repeat the same data point across threads.
+6. ZERO em-dashes (—) or en-dashes (–). Zero hype. Authoritative analyst voice.
 
 ALSO write: an 800-word narrative covering all three sectors (for Substack + X Article).
 
@@ -277,9 +304,9 @@ Return ONLY this JSON object (no preamble, no markdown):
 {{
   "headline": "Tension-driven mid-day headline with specific price or % and what it means",
   "sector_threads": {{
-    "majors_update":    ["1/ tweet ≤280 chars", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
-    "alts_flow":        ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
-    "derivatives_flow": ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"]
+    "majors_update":    ["1/ Majors Scan: [hook + key level change since morning] 👇", "2/ BTC data tweet", "3/ ETH data tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
+    "alts_flow":        ["1/ Rotation Watch: [hook + top mover] 👇", "2/ rotation/flow tweet", "3/ relative strength tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
+    "derivatives_flow": ["1/ Derivatives Watch: [hook + OI/funding signal] 👇", "2/ liquidations data tweet", "3/ FINAL tweet ending with a direct question + hashtags"]
   }},
   "narrative": "800-word professional narrative covering all three sectors — specific numbers, no filler",
   "key_insight": "2-sentence hook: what changed since morning and why it matters",
@@ -308,17 +335,15 @@ DATA DISCIPLINE:
 - Do NOT reference any index not in the JSON (no "alt index", "rotation index", etc.)
 
 RULES FOR EVERY TWEET:
-1. Use EXACT numbers — day's open vs close, % moves, key levels
-2. Retrospective tone: "Today, X happened because Y"
+{_ALGO_RULES}
+1. Use EXACT numbers — day's open vs close, % moves, key levels.
+2. Retrospective tone: "Today, X happened because Y".
 3. Use emojis:
    💎 BTC  ⚡ ETH  🪙 alts  🏦 DeFi  🐸 memes  🔒 privacy  🌍 macro
    📊 metrics  ⬆️⬇️ direction  🎯 levels  ⚠️ risk  🌙 overnight
-4. Each tweet ≤280 chars, numbered 1/ 2/ 3/ etc.
-5. Tweet 1 of each thread: sector header + date + 2-3 key day metrics + "👇"
-6. Final tweet of overnight_watch: the level to hold vs the level that breaks the thesis. No "Signal:" labels.
-7. ADAPTIVE LENGTH: Write as many tweets as the content requires. NEVER cut a sentence or thought mid-way. A tweet is complete when the idea is complete and fits ≤280 chars. No artificial minimum or maximum.
-8. DO NOT repeat data points across threads
-9. ZERO em-dashes (—) or en-dashes (–). Zero hype. Zero filler.
+4. ADAPTIVE LENGTH: Write as many tweets as the content requires. NEVER cut a sentence or thought mid-way.
+5. DO NOT repeat data points across threads.
+6. ZERO em-dashes (—) or en-dashes (–). Zero hype. Zero filler.
 
 ALSO write: an 800-word narrative day wrap (for Substack + X Article).
 
@@ -326,9 +351,9 @@ Return ONLY this JSON object (no preamble, no markdown):
 {{
   "headline": "Day-wrap headline — cite the dominant move, the asset, and whether it held",
   "sector_threads": {{
-    "day_summary":     ["1/ tweet ≤280 chars", "2/ tweet", "3/ tweet", "4/ tweet", "5/ tweet"],
-    "sector_wrap":     ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"],
-    "overnight_watch": ["1/ tweet", "2/ tweet", "3/ tweet", "4/ tweet"]
+    "day_summary":     ["1/ Closing Bell: [hook + day's dominant move + %] 👇", "2/ BTC/ETH full-day recap tweet", "3/ altcoin/sector recap tweet", "4/ FINAL tweet ending with a direct question + hashtags"],
+    "sector_wrap":     ["1/ Sector Wrap: [hook + best and worst sector today] 👇", "2/ sector performance tweet", "3/ FINAL tweet ending with a direct question + hashtags"],
+    "overnight_watch": ["1/ Night Watch: [hook + key level for overnight] 👇", "2/ level to hold tweet", "3/ Asia session setup tweet", "4/ FINAL tweet ending with a direct question + hashtags"]
   }},
   "narrative": "800-word professional day-wrap narrative — what happened, why it mattered, what's next",
   "key_insight": "2-sentence hook: the day's defining move and overnight trade angle",
@@ -340,33 +365,40 @@ Return ONLY this JSON object (no preamble, no markdown):
     def _build_news_digest_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
         return f"""You are a senior crypto market analyst at CreviaCockpit writing the NOON NEWS DIGEST for {date_str} at {time_str}.
 
-Aggregate everything that happened in the last 12 hours into ONE cohesive digest thread. Do NOT treat each story individually — synthesise the narrative. Focus on what the news means for crypto markets collectively.
+Aggregate everything that happened in the last 12 hours into ONE cohesive digest. Do NOT treat each story individually — synthesise the narrative. Focus on what the news means for crypto markets collectively.
 
 MARKET DATA + NEWS (JSON):
 {context_json}
+
+{_ALGO_RULES}
+
+DATA DISCIPLINE:
+- Every number MUST come from the JSON. Do NOT invent prices, indices, or percentages.
+- If no meaningful news data → focus on market reaction to whatever is in the data.
+- ZERO em-dashes or en-dashes. Zero hype. Zero filler.
 
 OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "top_stories": [
-      "1/ 🗞️ NOON DIGEST — Here's everything that moved markets in the last 12 hours (thread 🧵)",
-      "2/ tweet about most significant story and market impact",
-      "3/ tweet about second story + how it connects",
-      "4/ tweet about any macro/regulatory angle",
-      "5/ tweet synthesising what it all means for BTC, ETH, altcoins",
-      "6/ tweet on what to watch going into the afternoon"
+      "1/ News Digest: [hook — dominant headline + key number] 👇",
+      "2/ most significant story — what happened + market impact",
+      "3/ second story + how it connects to the first",
+      "4/ any macro or regulatory angle from today's news",
+      "5/ what it all means for BTC, ETH, and altcoins together",
+      "6/ FINAL tweet: end with a direct question — e.g. 'News flow today is [bullish/bearish/mixed] — how are you positioned? 👇' + 3-4 hashtags"
     ],
     "market_impact": [
-      "1/ 📊 MARKET IMPACT — How today's news flow shifted the tape (thread 🧵)",
-      "2/ tweet on price reactions to news",
-      "3/ tweet on sentiment shift + volume signals",
-      "4/ tweet on sector winners/losers from today's news"
+      "1/ Noon Briefing: [hook — how markets reacted to today's news] 👇",
+      "2/ specific price reactions to the biggest stories",
+      "3/ sentiment shift — fear/greed, volume signals, sector rotation",
+      "4/ FINAL tweet: direct question — e.g. 'News-driven move or algo reaction? What's your read? 👇' + hashtags"
     ],
     "what_to_watch": [
-      "1/ 👀 WHAT TO WATCH — Key catalysts still live today (thread 🧵)",
-      "2/ tweet on upcoming events or pending reactions",
-      "3/ tweet on levels that matter given today's news",
-      "4/ brief CTA — link to full digest on CreviaCockpit"
+      "1/ Watch: [hook — key catalyst still live into the afternoon] 👇",
+      "2/ upcoming events or pending market reactions from today's news",
+      "3/ key levels that matter given today's news flow",
+      "4/ FINAL tweet: direct question — e.g. 'Which story is the market underreacting to right now? Drop your take 👇' + hashtags"
     ]
   }},
   "narrative": "700-word digest article: synthesise today's news flow, market reaction, and what it means going forward. Professional tone, no hype.",
@@ -384,28 +416,35 @@ Aggregate whale moves from the last 6-12 hours and synthesise what the smart mon
 MARKET DATA + ON-CHAIN DATA (JSON):
 {context_json}
 
+{_ALGO_RULES}
+
+DATA DISCIPLINE:
+- Every number MUST come from the JSON. Do NOT invent prices, indices, or flow amounts.
+- If whale_data is empty → use derivatives data (OI, funding rates, liquidations) as the proxy.
+- ZERO em-dashes or en-dashes. Zero hype. No "massive", "insane", "huge". Report data.
+
 OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "whale_sentiment": [
-      "1/ 🐋 WHALE WATCH — What smart money did today (thread 🧵)",
-      "2/ tweet on aggregate exchange inflows/outflows + dominant direction",
-      "3/ tweet on largest individual moves + what they signal",
-      "4/ tweet on OTC activity or unusual wallet-to-wallet transfers",
-      "5/ tweet correlating whale flow with price action",
-      "6/ tweet on what current positioning implies for near-term price"
+      "1/ Whale Watch: [hook — dominant whale direction + key flow number] 👇",
+      "2/ aggregate exchange inflows/outflows + which direction is winning",
+      "3/ largest individual moves of the day + what they signal",
+      "4/ OTC activity or unusual wallet-to-wallet patterns (if present in data)",
+      "5/ correlate whale flow with current price action",
+      "6/ FINAL tweet: direct question — e.g. 'Smart money is [accumulating/distributing] — do you follow the whales or fade them? 👇' + hashtags"
     ],
     "cascade_risk": [
-      "1/ ⚠️ CASCADE RISK — Liquidation zones and leveraged positions (thread 🧵)",
-      "2/ tweet on current open interest + funding rates",
-      "3/ tweet on key liquidation clusters above/below market",
-      "4/ tweet on which whales look leveraged long vs short"
+      "1/ On-Chain Alert: [hook — leverage state + key liquidation level] 👇",
+      "2/ current open interest and funding rate signal",
+      "3/ key liquidation clusters sitting above and below current price",
+      "4/ FINAL tweet: direct question — e.g. 'Leveraged longs at risk below $[X]K — are you holding through this or cutting? 👇' + hashtags"
     ],
     "market_read": [
-      "1/ 📖 WHALE READ — What the data says (thread 🧵)",
-      "2/ tweet with our interpretation: accumulation, distribution, or neutral?",
-      "3/ tweet on historical pattern comparison",
-      "4/ CTA — live whale feed on CreviaCockpit"
+      "1/ Whale Read: [hook — is on-chain data accumulation, distribution, or neutral?] 👇",
+      "2/ pattern interpretation: what historical comparisons say",
+      "3/ what this positioning implies for price over the next 24-48 hours",
+      "4/ FINAL tweet: direct question — e.g. 'On-chain says [bullish/bearish] but price says the opposite — which do you trust? 👇' + hashtags"
     ]
   }},
   "narrative": "600-word on-chain narrative: what whales did today, why it matters, and what it implies for price. Use data, not vibes.",
@@ -423,28 +462,35 @@ Connect today's macro developments (gold, dollar, equities, Fed, CPI, yield curv
 MARKET DATA + MACRO DATA (JSON):
 {context_json}
 
+{_ALGO_RULES}
+
+DATA DISCIPLINE:
+- Every number MUST come from the JSON. Do NOT invent DXY levels, gold prices, or SPX moves.
+- If macro data is sparse → use BTC/ETH price action vs commodities as the correlation lens.
+- ZERO em-dashes or en-dashes. Zero hype. Analyst voice, not speculation.
+
 OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "macro_snapshot": [
-      "1/ 🌍 MACRO TIE-IN — What traditional markets are signalling for crypto (thread 🧵)",
-      "2/ tweet on DXY / dollar strength and BTC correlation today",
-      "3/ tweet on gold / real yields and what they imply for BTC as a hedge",
-      "4/ tweet on equities (SPX/NDX) risk-on/risk-off signal",
-      "5/ tweet on Fed language, rates expectations, or macro data drop (if any today)",
-      "6/ tweet synthesising: is macro tailwind or headwind for crypto right now?"
+      "1/ Macro Alert: [hook — dominant macro theme today + one key number] 👇",
+      "2/ DXY / dollar strength and what it means for BTC correlation right now",
+      "3/ gold and real yields signal — is BTC acting as a hedge or a risk asset today?",
+      "4/ equities (SPX/NDX) risk-on or risk-off — and crypto's beta to that move",
+      "5/ any Fed language, rate expectations, or macro data release today (skip if none)",
+      "6/ FINAL tweet: direct question — e.g. 'Macro is [tailwind/headwind] for crypto right now — are you adjusting your positioning? 👇' + hashtags"
     ],
     "crypto_correlation": [
-      "1/ 📈 CRYPTO CORRELATION — How macro is moving the tape (thread 🧵)",
-      "2/ tweet on BTC beta to SPX today",
-      "3/ tweet on ETH/altcoin performance relative to macro risk",
-      "4/ tweet on stablecoin flows as a risk indicator"
+      "1/ Cross-Asset Watch: [hook — how tightly crypto is tracking TradFi today] 👇",
+      "2/ BTC beta to SPX today — moving with it or diverging?",
+      "3/ ETH and altcoin behaviour vs macro risk signal",
+      "4/ FINAL tweet: direct question — e.g. 'Crypto decoupling from equities or still following the tape? What do you see? 👇' + hashtags"
     ],
     "positioning": [
-      "1/ 🎯 POSITIONING — What to do with macro in mind (thread 🧵)",
-      "2/ tweet on which macro regime we're in (risk-on, risk-off, transition)",
-      "3/ tweet on how to position crypto portfolio given macro backdrop",
-      "4/ CTA — macro + crypto intelligence on CreviaCockpit"
+      "1/ TradFi vs Crypto: [hook — current macro regime and what it implies] 👇",
+      "2/ which macro regime are we in right now: risk-on, risk-off, or transition?",
+      "3/ how to think about crypto positioning given today's macro backdrop",
+      "4/ FINAL tweet: direct question — e.g. 'Given macro today, are you adding crypto exposure or waiting for cleaner setup? 👇' + hashtags"
     ]
   }},
   "narrative": "700-word macro analysis: connect today's traditional market moves to crypto. Cover dollar, gold, rates, equities. Identify the dominant macro theme and its crypto implication.",
@@ -457,36 +503,43 @@ OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
     def _build_evening_outlook_prompt(self, context_json: str, date_str: str, time_str: str) -> str:
         return f"""You are a senior crypto analyst at CreviaCockpit writing the EVENING OUTLOOK for {date_str} at {time_str}.
 
-Summarise today's market action and lay out what might happen overnight and tomorrow. Cover key levels, upcoming catalysts (CPI, FOMC, options expiry, token unlocks), and the dominant overnight risk. Give traders a clear framework for the next 12-18 hours.
+Summarise today's market action and lay out what might happen overnight and tomorrow. Cover key levels, upcoming catalysts (CPI, FOMC, options expiry, token unlocks), and the dominant overnight risk. Give traders a concrete framework for the next 12-18 hours.
 
 MARKET DATA + CONTEXT (JSON):
 {context_json}
+
+{_ALGO_RULES}
+
+DATA DISCIPLINE:
+- Every number MUST come from the JSON. Do NOT invent prices, levels, or catalyst dates.
+- If no upcoming catalyst data is available → focus on current structure and levels.
+- ZERO em-dashes or en-dashes. Zero hype. Traders need levels, not sentiment.
 
 OUTPUT — strict JSON, no markdown, no commentary outside the JSON:
 {{
   "sector_threads": {{
     "current_state": [
-      "1/ 🌙 EVENING OUTLOOK — Where we stand and what's next (thread 🧵)",
-      "2/ tweet on today's defining price action: what moved, what held",
-      "3/ tweet on current market structure: are we trending or ranging?",
-      "4/ tweet on key support/resistance levels that matter overnight",
-      "5/ tweet on upcoming catalyst (tomorrow's data, events, or scheduled catalyst)",
-      "6/ tweet on the overnight risk: which direction is more dangerous?"
+      "1/ Evening Outlook: [hook — today's defining move + key price level] 👇",
+      "2/ today's price action: what moved, what held, and why",
+      "3/ current market structure: trending, ranging, or at inflection?",
+      "4/ key support and resistance levels that matter tonight",
+      "5/ next catalyst on the horizon (data release, event, or expiry if known)",
+      "6/ FINAL tweet: direct question — e.g. 'BTC [holding/breaking] $[X]K into the Asia session — bullish carry-through or overnight dump? 👇' + hashtags"
     ],
     "overnight_risk": [
-      "1/ ⚡ OVERNIGHT RISK — What could move markets while you sleep (thread 🧵)",
-      "2/ tweet on Asia session dynamic + any scheduled Asian catalyst",
-      "3/ tweet on liquidation clusters that are live right now",
-      "4/ tweet on funding rates signal: crowded longs or shorts?"
+      "1/ Night Watch: [hook — dominant overnight risk + direction] 👇",
+      "2/ Asia session dynamic — what typically happens with this kind of setup",
+      "3/ active liquidation clusters right now — long squeeze or short squeeze territory?",
+      "4/ FINAL tweet: direct question — e.g. 'Funding rates are [positive/negative] — are you sleeping with stops set or closing positions? 👇' + hashtags"
     ],
     "key_levels": [
-      "1/ 📍 KEY LEVELS — What to watch for BTC and ETH overnight (thread 🧵)",
-      "2/ tweet on BTC key level(s) — support holding or resistance to break",
-      "3/ tweet on ETH key level(s) + altcoin context",
-      "4/ CTA — set your alerts on CreviaCockpit"
+      "1/ Key Levels: [hook — the two most important levels for tonight] 👇",
+      "2/ BTC: support to hold + resistance to break, with what each means for the trend",
+      "3/ ETH key level + what alts do if BTC moves either way",
+      "4/ FINAL tweet: direct question — e.g. '$[X]K is the line in the sand tonight — do you think it holds? 👇' + hashtags"
     ]
   }},
-  "narrative": "600-word evening wrap: today's action, market structure, key levels, and overnight catalysts. Give traders a concrete framework — not just description, but actionable context.",
+  "narrative": "600-word evening wrap: today's action, market structure, key levels, and overnight catalysts. Concrete framework — not just description, but actionable context.",
   "key_insight": "2-sentence hook: today's defining move and the overnight risk that matters most",
   "directional_signal": "BULLISH | BEARISH | NEUTRAL | RANGE_BOUND",
   "tags": ["crypto", "bitcoin", "trading"],
@@ -511,15 +564,16 @@ THREAD STRUCTURE (strict):
   Tweet 6-7 (optional): Risk factors, related assets, broader macro angle
 
 TWEET RULES:
-1. Open tweet 1 with 🚨 — this signals breaking news
-2. Use relevant asset emojis: 💎 BTC  ⚡ ETH  🪙 alts  🏦 DeFi — match the emoji to the affected asset
-3. Every claim must have a number — no "significant move" without a price or %
-4. Numbered: 1/ 2/ 3/ etc. Each tweet ≤280 chars
+1. Open tweet 1 with 🚨 and "Breaking:" — this signals breaking news to the algorithm.
+2. Use relevant asset emojis: 💎 BTC  ⚡ ETH  🪙 alts  🏦 DeFi — match to the affected asset.
+3. Every claim must have a number — no "significant move" without a price or %.
+4. Numbered: 1/ 2/ 3/ etc. Each tweet ≤280 chars.
 5. ZERO em-dashes (—) or en-dashes (–). Use commas or periods instead.
 6. ZERO hype words: no "massive", "insane", "moon", "explode", "huge". Report facts.
 7. ZERO "Signal:" / "Trade:" labels. State the observation directly.
-8. Sound like a Bloomberg terminal alert, not a Telegram pump group
-9. Final tweet: state the key level to watch and what its breach means — no labels, just the condition
+8. NEVER include any URL or link in any tweet.
+9. Hashtags: 3-4 max in the FINAL tweet only.
+10. FINAL tweet: end with a direct question that demands a reply — e.g. "Is this a buying opportunity or a warning sign? Drop your read 👇" + hashtags. Sound like Bloomberg terminal, not Telegram.
 
 Return ONLY this JSON object (no preamble, no markdown):
 {{
