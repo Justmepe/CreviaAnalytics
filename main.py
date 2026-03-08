@@ -658,8 +658,7 @@ class CryptoAnalysisOrchestrator:
                         narrative = key_insight
                 if narrative:
                     mentioned = session_content.get('mentioned_assets', ['BTC', 'ETH'])
-                    chart_ticker = mentioned[0] if mentioned else 'BTC'
-                    slot_chart = generate_chart_image(chart_ticker, '4h')
+                    slot_chart = generate_chart_image(pick_chart_ticker(mentioned), '4h')
                     web_art = self.web_publisher.publish_article(
                         title=title,
                         body=narrative,
@@ -787,7 +786,7 @@ class CryptoAnalysisOrchestrator:
             if self.web_publisher.enabled and body:
                 try:
                     mentioned = session_content.get('mentioned_assets', ['BTC', 'ETH']) if session_content else ['BTC', 'ETH']
-                    morning_chart = generate_chart_image('BTC', '1d')
+                    morning_chart = generate_chart_image(pick_chart_ticker(mentioned), '1d')
                     web_result = self.web_publisher.publish_article(
                         title=title,
                         body=body,

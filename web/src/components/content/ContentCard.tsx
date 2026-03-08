@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { timeAgo } from '@/lib/api';
 import type { ContentPost } from '@/types';
 
@@ -99,6 +100,7 @@ export default function ContentCard({ post, featured = false }: Props) {
   const signal = signalKey ? SIGNAL_CONFIG[signalKey] : null;
 
   const tweetCount = post.tweets?.length;
+  const imageUrl = post.image_url || null;
 
   return (
     <Link
@@ -116,6 +118,28 @@ export default function ContentCard({ post, featured = false }: Props) {
         className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{ background: `linear-gradient(90deg, transparent, ${sector.accentLine}, transparent)` }}
       />
+
+      {/* Chart thumbnail */}
+      {imageUrl && (
+        <div
+          className="relative w-full overflow-hidden"
+          style={{ height: featured ? 200 : 140, background: '#0d1117' }}
+        >
+          <Image
+            src={imageUrl}
+            alt={`${post.tickers?.[0] || 'Market'} chart`}
+            fill
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+            className="object-cover"
+            style={{ objectPosition: 'center top' }}
+            unoptimized
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, transparent 50%, #111520 100%)' }}
+          />
+        </div>
+      )}
 
       <div className="p-5 flex flex-col gap-3 h-full">
         {/* ── Top row: tags + time ── */}

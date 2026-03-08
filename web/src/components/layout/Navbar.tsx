@@ -15,7 +15,7 @@ const COCKPIT_PATHS = [
 const publicNavLinks = [
   { href: '/', label: 'Home' },
   { href: '/news', label: 'News' },
-  { href: '/analysis', label: 'Feed' },
+  { href: '/analysis', label: 'Analysis' },
   { href: '/market', label: 'Market' },
   { href: '/intelligence', label: 'Intelligence' },
   { href: '/tools/risk-calculator', label: 'Risk Calc' },
@@ -25,7 +25,7 @@ const publicNavLinks = [
 const authedNavLinks = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/news', label: 'News' },
-  { href: '/analysis', label: 'Feed' },
+  { href: '/analysis', label: 'Analysis' },
   { href: '/market', label: 'Market' },
   { href: '/intelligence', label: 'Intelligence' },
   { href: '/tools/risk-calculator', label: 'Risk Calc' },
