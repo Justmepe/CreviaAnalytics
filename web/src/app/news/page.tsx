@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import ContentCard from '@/components/content/ContentCard';
-import LiveFeedSidebar from '@/components/feed/LiveFeedSidebar';
 import { getContentFeed } from '@/lib/api';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://creviacockpit.com';
@@ -20,20 +19,20 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 const SLOTS = [
-  { value: '',          label: 'All',           emoji: '📡' },
-  { value: 'article',   label: 'Articles',      emoji: '📰' },
-  { value: 'memo',      label: 'Memos',         emoji: '📋' },
-  { value: 'news_tweet',label: 'News Briefs',   emoji: '⚡' },
+  { value: '',           label: 'All',         emoji: '📡' },
+  { value: 'article',    label: 'Articles',    emoji: '📰' },
+  { value: 'memo',       label: 'Memos',       emoji: '📋' },
+  { value: 'news_tweet', label: 'News Briefs', emoji: '⚡' },
 ];
 
 const SECTORS = [
-  { value: '',           label: 'All Sectors' },
-  { value: 'global',     label: 'Global' },
-  { value: 'majors',     label: 'BTC / ETH' },
-  { value: 'memecoins',  label: 'Memecoins' },
-  { value: 'defi',       label: 'DeFi' },
-  { value: 'privacy',    label: 'Privacy' },
-  { value: 'commodities',label: 'Macro' },
+  { value: '',            label: 'All Sectors' },
+  { value: 'global',      label: 'Global' },
+  { value: 'majors',      label: 'BTC / ETH' },
+  { value: 'memecoins',   label: 'Memecoins' },
+  { value: 'defi',        label: 'DeFi' },
+  { value: 'privacy',     label: 'Privacy' },
+  { value: 'commodities', label: 'Macro' },
 ];
 
 interface PageProps {
@@ -48,7 +47,7 @@ export default async function NewsPage({ searchParams }: PageProps) {
 
   let content = null;
   try {
-    content = await getContentFeed({ content_type: contentType, sector, page, page_size: 20 });
+    content = await getContentFeed({ content_type: contentType, sector, page, page_size: 21 });
   } catch {
     // API not reachable
   }
@@ -72,98 +71,90 @@ export default async function NewsPage({ searchParams }: PageProps) {
 
   return (
     <div style={{ background: '#08090c', minHeight: '100vh' }}>
+      <div className="news-page-shell">
 
-      {/* ── 2-column page shell ── */}
-      <div className="analysis-shell">
-
-        {/* ── LEFT: News content ── */}
-        <div
-          style={{
-            borderRight: '1px solid #1a2030',
-            padding: '24px 28px',
-            minWidth: 0,
-          }}
-        >
-          {/* Header */}
-          <div className="flex items-baseline justify-between mb-7">
-            <div className="flex items-baseline gap-4">
-              <h1
-                className="font-bebas tracking-[2px] text-[28px]"
-                style={{ color: '#e8eaf0' }}
-              >
+        {/* ── Page header ── */}
+        <div className="news-page-header">
+          <div className="news-page-header-inner">
+            <div className="flex items-baseline gap-4 mb-2">
+              <h1 className="font-bebas tracking-[2px] text-[34px]" style={{ color: '#e8eaf0' }}>
                 Crypto News & Analysis
               </h1>
               <span
-                className="font-mono-cc text-[11px] tracking-[1px] uppercase flex items-center gap-1.5"
+                className="font-mono text-[10px] tracking-[1px] uppercase flex items-center gap-1.5"
                 style={{ color: '#3d4562' }}
               >
                 <span
-                  className="inline-block w-[6px] h-[6px] rounded-full"
+                  className="inline-block w-1.5 h-1.5 rounded-full"
                   style={{ background: '#00d68f', animation: 'livePulse 2s ease-in-out infinite' }}
                 />
-                Updated 5x daily
+                5 reports daily
               </span>
             </div>
+            <p className="text-sm" style={{ color: '#4a5272' }}>
+              Published at 08:00 · 12:00 · 15:00 · 18:00 · 21:00 UTC — majors, whale flows, macro, and evening levels.
+            </p>
           </div>
+        </div>
 
-          <p className="text-sm mb-6" style={{ color: '#4a5272', maxWidth: 560 }}>
-            Market intelligence published at 08:00, 12:00, 15:00, 18:00, and 21:00 UTC — covering
-            majors, whale flows, macro cross-asset, and evening levels.
-          </p>
-
-          {/* Filters */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {SLOTS.map((t) => {
-              const isActive = (contentType || '') === t.value;
-              return (
-                <a
-                  key={t.value}
-                  href={buildUrl(t.value, undefined)}
-                  className="font-mono-cc text-[11px] tracking-[0.5px] uppercase px-3 py-1.5 rounded-[4px] transition-colors"
-                  style={{
-                    background: isActive ? 'rgba(0,214,143,0.08)' : '#111520',
-                    color: isActive ? '#00d68f' : '#6b7494',
-                    border: isActive ? '1px solid rgba(0,214,143,0.2)' : '1px solid #1c2235',
-                    textDecoration: 'none',
-                  }}
-                >
-                  {t.emoji} {t.label}
-                </a>
-              );
-            })}
-            <div style={{ width: '1px', background: '#1c2235', margin: '0 4px' }} />
-            {SECTORS.map((s) => {
-              const isActive = (sector || '') === s.value;
-              return (
-                <a
-                  key={s.value}
-                  href={buildUrl(undefined, s.value)}
-                  className="font-mono-cc text-[11px] tracking-[0.5px] uppercase px-3 py-1.5 rounded-[4px] transition-colors"
-                  style={{
-                    background: isActive ? 'rgba(0,214,143,0.08)' : '#111520',
-                    color: isActive ? '#00d68f' : '#6b7494',
-                    border: isActive ? '1px solid rgba(0,214,143,0.2)' : '1px solid #1c2235',
-                    textDecoration: 'none',
-                  }}
-                >
-                  {s.label}
-                </a>
-              );
-            })}
+        {/* ── Filter bar ── */}
+        <div className="news-filter-bar">
+          <div className="news-filter-inner">
+            <div className="flex flex-wrap items-center gap-2">
+              {SLOTS.map((t) => {
+                const isActive = (contentType || '') === t.value;
+                return (
+                  <a
+                    key={t.value}
+                    href={buildUrl(t.value, undefined)}
+                    className="font-mono text-[11px] tracking-[0.5px] uppercase px-3 py-1.5 rounded-sm transition-colors"
+                    style={{
+                      background: isActive ? 'rgba(0,214,143,0.08)' : '#111520',
+                      color: isActive ? '#00d68f' : '#6b7494',
+                      border: isActive ? '1px solid rgba(0,214,143,0.2)' : '1px solid #1c2235',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {t.emoji} {t.label}
+                  </a>
+                );
+              })}
+              <div style={{ width: '1px', height: 20, background: '#1c2235', margin: '0 4px' }} />
+              {SECTORS.map((s) => {
+                const isActive = (sector || '') === s.value;
+                return (
+                  <a
+                    key={s.value}
+                    href={buildUrl(undefined, s.value)}
+                    className="font-mono text-[11px] tracking-[0.5px] uppercase px-3 py-1.5 rounded-sm transition-colors"
+                    style={{
+                      background: isActive ? 'rgba(0,214,143,0.08)' : 'transparent',
+                      color: isActive ? '#00d68f' : '#6b7494',
+                      border: isActive ? '1px solid rgba(0,214,143,0.2)' : '1px solid transparent',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {s.label}
+                  </a>
+                );
+              })}
+            </div>
           </div>
+        </div>
 
-          {/* Content */}
+        {/* ── Content area ── */}
+        <div className="news-content-area">
           {items.length > 0 ? (
             <>
-              {/* Featured article */}
+              {/* Featured — full width */}
               {featuredItem && (
-                <div className="mb-6">
+                <div className="mb-8">
                   <ContentCard post={featuredItem} featured />
                 </div>
               )}
 
-              {/* Grid */}
-              <div className="analysis-content-grid">
+              {/* 3-column grid */}
+              <div className="news-grid">
                 {restItems.map((post, i) => (
                   <div
                     key={post.id}
@@ -176,18 +167,18 @@ export default async function NewsPage({ searchParams }: PageProps) {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div className="mt-10 flex justify-center gap-2">
+                <div className="mt-12 flex justify-center gap-2">
                   {page > 1 && (
                     <a
                       href={buildUrl(undefined, undefined, page - 1)}
-                      className="font-mono-cc text-[11px] uppercase px-4 py-2 rounded-[4px] transition-colors hover:border-[#3d4562]"
+                      className="font-mono text-[11px] uppercase px-4 py-2 rounded-sm transition-colors"
                       style={{ border: '1px solid #1c2235', color: '#6b7494', textDecoration: 'none' }}
                     >
                       ← Previous
                     </a>
                   )}
                   <span
-                    className="font-mono-cc text-[11px] px-4 py-2 rounded-[4px]"
+                    className="font-mono text-[11px] px-4 py-2 rounded-sm"
                     style={{ background: '#111520', color: '#6b7494' }}
                   >
                     Page {page} of {totalPages}
@@ -195,7 +186,7 @@ export default async function NewsPage({ searchParams }: PageProps) {
                   {page < totalPages && (
                     <a
                       href={buildUrl(undefined, undefined, page + 1)}
-                      className="font-mono-cc text-[11px] uppercase px-4 py-2 rounded-[4px] transition-colors hover:border-[#3d4562]"
+                      className="font-mono text-[11px] uppercase px-4 py-2 rounded-sm transition-colors"
                       style={{ border: '1px solid #1c2235', color: '#6b7494', textDecoration: 'none' }}
                     >
                       Next →
@@ -206,45 +197,73 @@ export default async function NewsPage({ searchParams }: PageProps) {
             </>
           ) : (
             <div
-              className="rounded-[6px] p-12 text-center"
+              className="rounded-md p-16 text-center"
               style={{ border: '1px solid #1c2235', background: '#111520' }}
             >
-              <p className="font-syne text-base" style={{ color: '#6b7494' }}>
+              <p className="font-syne text-base mb-2" style={{ color: '#6b7494' }}>
                 No articles yet.
               </p>
-              <p className="mt-2 text-sm" style={{ color: '#3d4562', fontWeight: 300 }}>
+              <p className="text-sm" style={{ color: '#3d4562', fontWeight: 300 }}>
                 The content engine publishes 5 reports daily — check back at 08:00 UTC.
               </p>
             </div>
           )}
-
-          {/* Schema for SEO */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'CollectionPage',
-                name: 'Crypto News & Market Analysis',
-                description: 'Daily crypto market intelligence from CreviaCockpit — 5 scheduled reports per day.',
-                url: `${BASE_URL}/news`,
-                publisher: { '@type': 'Organization', name: 'CreviaCockpit', url: BASE_URL },
-              }),
-            }}
-          />
         </div>
 
-        {/* ── RIGHT: Live feed sidebar ── */}
-        <LiveFeedSidebar />
       </div>
 
-      {/* Responsive styles */}
+      {/* Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Crypto News & Market Analysis',
+            description: 'Daily crypto market intelligence from CreviaCockpit — 5 scheduled reports per day.',
+            url: `${BASE_URL}/news`,
+            publisher: { '@type': 'Organization', name: 'CreviaCockpit', url: BASE_URL },
+          }),
+        }}
+      />
+
       <style>{`
-        @media (max-width: 1100px) {
-          .analysis-shell { grid-template-columns: 1fr 300px !important; }
+        .news-page-shell {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 24px;
         }
-        @media (max-width: 860px) {
-          .analysis-shell { grid-template-columns: 1fr !important; }
+        .news-page-header {
+          padding: 40px 0 24px;
+          border-bottom: 1px solid #12182a;
+          margin-bottom: 0;
+        }
+        .news-filter-bar {
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          background: rgba(8,9,12,0.95);
+          backdrop-filter: blur(8px);
+          border-bottom: 1px solid #12182a;
+          padding: 12px 0;
+          margin: 0 -24px;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        .news-content-area {
+          padding: 32px 0 64px;
+        }
+        .news-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        @media (max-width: 900px) {
+          .news-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+          .news-grid { grid-template-columns: 1fr; }
+          .news-page-shell { padding: 0 16px; }
         }
       `}</style>
     </div>
