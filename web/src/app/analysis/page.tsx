@@ -276,19 +276,12 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
           )}
         </div>
 
-        {/* ── RIGHT: Live feed sidebar ── */}
-        <LiveFeedSidebar />
+        {/* ── RIGHT: Live feed sidebar — wrapper ensures exactly 1 grid item ── */}
+        <div style={{ minWidth: 0 }}>
+          <LiveFeedSidebar />
+        </div>
       </div>
 
-      {/* Responsive styles */}
-      <style>{`
-        @media (max-width: 1100px) {
-          .analysis-shell { grid-template-columns: 1fr 300px !important; }
-        }
-        @media (max-width: 860px) {
-          .analysis-shell { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </div>
     </AuthShell>
   );

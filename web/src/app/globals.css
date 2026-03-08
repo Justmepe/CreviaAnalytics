@@ -173,8 +173,11 @@
 .analysis-grid  { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
 .cta-wrapper    { padding: 0 80px 80px; }
 
-/* Analysis page 2-col shell (class already in JSX) */
-.analysis-shell { display: grid; grid-template-columns: 1fr 360px; }
+/* Analysis page 2-col shell */
+.analysis-shell { display: grid; grid-template-columns: 1fr 360px; width: 100%; }
+@media (max-width: 1100px) { .analysis-shell { grid-template-columns: 1fr 300px; } }
+@media (max-width: 860px)  { .analysis-shell { grid-template-columns: 1fr; } }
+@media (max-width: 860px)  { .analysis-shell > div:first-child { border-right: none !important; } }
 
 /* Analysis content grid — 3-col matching reference design */
 .analysis-content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
