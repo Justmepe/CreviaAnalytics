@@ -86,19 +86,27 @@ class _RateLimiter:
 
 class _InfuraBudget:
     """
-    Tracks Infura HTTP calls and enforces a per-hour cap to protect the monthly
-    credit budget (default 3M/month → ~4,000/hour with headroom).
+    Tracks Infura HTTP calls against the daily credit budget.
 
-    Also enforces a minimum interval between block fetches per chain so fast
-    chains like Polygon (2s blocks) don't exhaust credits via eth_getBlockByNumber.
+    Infura free tier: 3M credits/DAY (= 125,000/hour).
+    Projected usage at full block rate:
+      ETH ~300/hr + Polygon ~1,800/hr + Linea ~240/hr + Arbitrum/Avalanche ~480/hr
+      = ~2,820/hr = ~67,680/day  →  2.3% of 3M budget.
+
+    Defaults are therefore intentionally permissive — we let every block through.
+    CHAIN_MIN_INTERVAL=2 just prevents duplicate notifications on the same block.
+    HOURLY_CAP=100000 is a safety net against runaway loops, not normal throttling.
+
+    Override via env vars if needed (e.g. during staging with a restricted key):
+      INFURA_HOURLY_CAP=3000
+      INFURA_CHAIN_MIN_INTERVAL=30
     """
 
-    # Max HTTP calls per hour across all Infura chains combined
-    HOURLY_CAP = int(os.getenv('INFURA_HOURLY_CAP', '3000'))
+    # Safety net: 100k/hr = 2.4M/day, still within the 3M/day budget
+    HOURLY_CAP = int(os.getenv('INFURA_HOURLY_CAP', '100000'))
 
-    # Minimum seconds between block fetches per chain (e.g. 30s caps Polygon
-    # from 43,200/day → ~2,880/day)
-    CHAIN_MIN_INTERVAL = float(os.getenv('INFURA_CHAIN_MIN_INTERVAL', '30'))
+    # 2s minimum prevents duplicate block-header events for the same block
+    CHAIN_MIN_INTERVAL = float(os.getenv('INFURA_CHAIN_MIN_INTERVAL', '2'))
 
     def __init__(self):
         self._hour_start: float = time.monotonic()
@@ -770,8 +778,8 @@ class WhaleCollector:
         session   = await self._get_session()
         last_block: int = 0
 
-        # Use CHAIN_MIN_INTERVAL as the poll sleep so the budget tracker stays consistent
-        poll_interval = max(15, _InfuraBudget.CHAIN_MIN_INTERVAL)
+        # Poll every 15s — fast enough to catch most blocks on Arbitrum/Avalanche
+        poll_interval = 15
 
         while self._running:
             await asyncio.sleep(poll_interval)
