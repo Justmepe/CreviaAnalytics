@@ -6,37 +6,30 @@ import { useAuth } from '@/context/AuthContext';
 import CockpitShell from '@/components/layout/CockpitShell';
 
 // ---------------------------------------------------------------------------
-// Static data
+// Canonical 22 assets (order = display order). Emojis are UI-only decoration.
 // ---------------------------------------------------------------------------
 
-const ASSETS = [
-  { symbol: 'BTC',  name: 'Bitcoin',  price: 98420.5,  change24h:  2.4,  emoji: '₿' },
-  { symbol: 'ETH',  name: 'Ethereum', price: 3841.2,   change24h: -1.2,  emoji: 'Ξ' },
-  { symbol: 'SOL',  name: 'Solana',   price: 187.44,   change24h:  5.7,  emoji: '◎' },
-  { symbol: 'BNB',  name: 'BNB',      price: 612.8,    change24h:  0.8,  emoji: 'B' },
-  { symbol: 'XRP',  name: 'XRP',      price: 2.34,     change24h: -3.1,  emoji: '✕' },
-  { symbol: 'DOGE', name: 'Dogecoin', price: 0.3812,   change24h:  8.2,  emoji: 'Ð' },
-  { symbol: 'AVAX', name: 'Avalanche',price: 38.5,     change24h: -0.6,  emoji: 'A' },
-  { symbol: 'LINK', name: 'Chainlink',price: 14.2,     change24h:  1.9,  emoji: '⬡' },
-  { symbol: 'ARB',  name: 'Arbitrum', price: 0.92,     change24h:  3.1,  emoji: 'A' },
-];
+const SYMBOL_EMOJI: Record<string, string> = {
+  BTC: '₿', ETH: 'Ξ', BNB: 'B', SOL: '◎', AAVE: 'A', UNI: '🦄',
+  CRV: 'C', LDO: 'L', LINK: '⬡', MKR: 'M', XMR: 'X', ZEC: 'Z',
+  DASH: 'D', DOGE: 'Ð', SHIB: 'S', PEPE: 'P', FLOKI: 'F', DOT: '●',
+  ADA: 'A', AVAX: 'A', ATOM: '⚛', SUI: 'S',
+};
 
-const ALERT_TYPES = [
-  { id: 'price_above',     label: 'Price Rises Above', icon: '↑',  category: 'price',   unit: '$' },
-  { id: 'price_below',     label: 'Price Falls Below', icon: '↓',  category: 'price',   unit: '$' },
-  { id: 'pct_change_up',   label: '% Gain (24h)',      icon: '📈', category: 'percent', unit: '%' },
-  { id: 'pct_change_down', label: '% Drop (24h)',       icon: '📉', category: 'percent', unit: '%' },
-];
-
-const FREQUENCIES = [
-  { id: 'once',   label: 'Once only',     desc: 'Alert fires once, then disables'       },
-  { id: 'daily',  label: 'Once per day',  desc: 'Maximum one alert per 24 hours'        },
-  { id: 'always', label: 'Every time',    desc: 'Alert fires each time condition is met' },
+const ALL_SYMBOLS = [
+  'BTC','ETH','BNB','SOL','AAVE','UNI','CRV','LDO','LINK','MKR',
+  'XMR','ZEC','DASH','DOGE','SHIB','PEPE','FLOKI','DOT','ADA','AVAX','ATOM','SUI',
 ];
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
+
+interface AssetPrice {
+  ticker: string;
+  price_usd: number | null;
+  change_24h: number | null;
+}
 
 interface Alert {
   id: number;
@@ -62,7 +55,8 @@ function alertColor(type: string): string {
   return '#8b949e';
 }
 
-function formatPrice(p: number): string {
+function formatPrice(p: number | null): string {
+  if (p == null) return '—';
   return p < 10 ? p.toFixed(4) : p.toLocaleString(undefined, { maximumFractionDigits: 2 });
 }
 
@@ -75,16 +69,33 @@ function timeAgo(iso: string): string {
   return `${Math.floor(h / 24)}d ago`;
 }
 
+const ALERT_TYPES = [
+  { id: 'price_above',     label: 'Price Rises Above', icon: '↑',  category: 'price',   unit: '$' },
+  { id: 'price_below',     label: 'Price Falls Below', icon: '↓',  category: 'price',   unit: '$' },
+  { id: 'pct_change_up',   label: '% Gain (24h)',      icon: '📈', category: 'percent', unit: '%' },
+  { id: 'pct_change_down', label: '% Drop (24h)',      icon: '📉', category: 'percent', unit: '%' },
+];
+
+const FREQUENCIES = [
+  { id: 'once',   label: 'Once only',    desc: 'Alert fires once, then disables'         },
+  { id: 'daily',  label: 'Once per day', desc: 'Maximum one alert per 24 hours'          },
+  { id: 'always', label: 'Every time',   desc: 'Alert fires each time condition is met'  },
+];
+
 // ---------------------------------------------------------------------------
 // Discord message preview
 // ---------------------------------------------------------------------------
 
-function DiscordMessage({ asset, alertType, value }: { asset: string; alertType: string; value: number }) {
-  const a = ASSETS.find(x => x.symbol === asset) || ASSETS[0];
-  const t = ALERT_TYPES.find(x => x.id === alertType) || ALERT_TYPES[0];
+function DiscordMessage({
+  asset, alertType, value, prices,
+}: {
+  asset: string; alertType: string; value: number; prices: AssetPrice[];
+}) {
+  const a     = prices.find(p => p.ticker === asset);
+  const t     = ALERT_TYPES.find(x => x.id === alertType) || ALERT_TYPES[0];
   const color = alertColor(alertType);
   const condText = `${t.label} ${t.unit}${value?.toLocaleString() ?? ''}`;
-  const now = new Date().toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+  const now   = new Date().toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
 
   return (
     <div style={{ fontFamily: "'gg sans', Whitney, Arial, sans-serif", fontSize: 14 }}>
@@ -106,16 +117,20 @@ function DiscordMessage({ asset, alertType, value }: { asset: string; alertType:
                   <span style={{ color, fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{t.icon} ALERT TRIGGERED</span>
                   <span style={{ color: '#72767d', fontSize: 11 }}>#{asset}/USD</span>
                 </div>
-                <div style={{ color: '#dcddde', fontSize: 22, fontWeight: 800, margin: '6px 0 2px' }}>{a.emoji} {a.name} ({asset})</div>
+                <div style={{ color: '#dcddde', fontSize: 20, fontWeight: 800, margin: '6px 0 2px' }}>
+                  {SYMBOL_EMOJI[asset] ?? asset[0]} {asset}
+                </div>
                 <div style={{ color: '#b9bbbe', fontSize: 13, marginBottom: 8 }}>Condition: <span style={{ color: '#ffffff' }}>{condText}</span></div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                   <div>
                     <div style={{ color: '#72767d', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Current Price</div>
-                    <div style={{ color: '#ffffff', fontWeight: 700 }}>${formatPrice(a.price)}</div>
+                    <div style={{ color: '#ffffff', fontWeight: 700 }}>${formatPrice(a?.price_usd ?? null)}</div>
                   </div>
                   <div>
                     <div style={{ color: '#72767d', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>24h Change</div>
-                    <div style={{ color: a.change24h > 0 ? '#3ba55d' : '#ed4245', fontWeight: 700 }}>{a.change24h > 0 ? '+' : ''}{a.change24h}%</div>
+                    <div style={{ color: (a?.change_24h ?? 0) > 0 ? '#3ba55d' : '#ed4245', fontWeight: 700 }}>
+                      {a?.change_24h != null ? `${a.change_24h > 0 ? '+' : ''}${a.change_24h.toFixed(2)}%` : '—'}
+                    </div>
                   </div>
                 </div>
                 <div style={{ marginTop: 10, paddingTop: 8, borderTop: '1px solid #40444b', color: '#72767d', fontSize: 11 }}>⏰ creviacockpit.com</div>
@@ -132,13 +147,17 @@ function DiscordMessage({ asset, alertType, value }: { asset: string; alertType:
 // Webhook settings modal
 // ---------------------------------------------------------------------------
 
-function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; token: string; onSaved: () => void }) {
-  const [input, setInput]       = useState('');
-  const [masked, setMasked]     = useState<string | null>(null);
-  const [hasWH, setHasWH]       = useState(false);
-  const [saving, setSaving]     = useState(false);
-  const [testing, setTesting]   = useState(false);
-  const [testOk, setTestOk]     = useState<boolean | null>(null);
+function WebhookSettings({
+  onClose, token, onSaved, prices,
+}: {
+  onClose: () => void; token: string; onSaved: () => void; prices: AssetPrice[];
+}) {
+  const [input, setInput]     = useState('');
+  const [masked, setMasked]   = useState<string | null>(null);
+  const [hasWH, setHasWH]     = useState(false);
+  const [saving, setSaving]   = useState(false);
+  const [testing, setTesting] = useState(false);
+  const [testOk, setTestOk]   = useState<boolean | null>(null);
 
   useEffect(() => {
     fetch(`${API}/api/alerts/webhook`, { headers: { Authorization: `Bearer ${token}` } })
@@ -151,7 +170,11 @@ function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; tok
     if (!isValid) return;
     setSaving(true);
     try {
-      const r = await fetch(`${API}/api/alerts/webhook`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ webhook_url: input }) });
+      const r = await fetch(`${API}/api/alerts/webhook`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ webhook_url: input }),
+      });
       if (!r.ok) throw new Error();
       setHasWH(true); setMasked(input.slice(0, 40) + '...' + input.slice(-8)); setInput('');
       onSaved();
@@ -179,7 +202,6 @@ function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; tok
           <button onClick={onClose} style={closeBtnStyle}>✕</button>
         </div>
         <div style={{ padding: 24, display: 'flex', flexDirection: 'column', gap: 18 }}>
-          {/* Status */}
           {hasWH && masked && (
             <div style={{ background: 'rgba(63,185,80,0.1)', border: '1px solid rgba(63,185,80,0.3)', borderRadius: 8, padding: '10px 14px', display: 'flex', gap: 10, alignItems: 'center' }}>
               <span>✅</span>
@@ -189,8 +211,6 @@ function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; tok
               </div>
             </div>
           )}
-
-          {/* How-to */}
           <div style={{ background: '#161b22', border: '1px solid #1f6feb', borderRadius: 8, padding: '12px 14px' }}>
             <div style={{ color: '#58a6ff', fontWeight: 600, fontSize: 13, marginBottom: 6 }}>ℹ How to get your Webhook URL</div>
             <ol style={{ color: '#8b949e', fontSize: 12, margin: 0, paddingLeft: 16, lineHeight: 1.8 }}>
@@ -200,7 +220,6 @@ function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; tok
               <li>Paste it below and click Save</li>
             </ol>
           </div>
-
           <div>
             <label style={labelStyle}>Webhook URL</label>
             <input
@@ -210,7 +229,6 @@ function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; tok
             />
             {input && !isValid && <div style={{ color: '#f85149', fontSize: 11, marginTop: 4 }}>⚠ Must start with https://discord.com/api/webhooks/</div>}
           </div>
-
           {hasWH && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <button onClick={test} disabled={testing} style={{ ...btnSecondaryStyle, fontSize: 12 }}>
@@ -220,9 +238,8 @@ function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; tok
               {testOk === false && <span style={{ color: '#f85149', fontSize: 12 }}>✗ Test failed — check URL</span>}
             </div>
           )}
-
           <div style={{ color: '#8b949e', fontSize: 11, textTransform: 'uppercase', letterSpacing: 1 }}>Message Format Preview</div>
-          <DiscordMessage asset="BTC" alertType="price_above" value={100000} />
+          <DiscordMessage asset="BTC" alertType="price_above" value={100000} prices={prices} />
         </div>
         <div style={{ padding: '16px 24px', borderTop: '1px solid #21262d', display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
           <button onClick={onClose} style={btnSecondaryStyle}>Cancel</button>
@@ -239,7 +256,11 @@ function WebhookSettings({ onClose, token, onSaved }: { onClose: () => void; tok
 // Create alert modal (3 steps)
 // ---------------------------------------------------------------------------
 
-function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCreated: (a: Alert) => void; token: string }) {
+function CreateModal({
+  onClose, onCreated, token, prices,
+}: {
+  onClose: () => void; onCreated: (a: Alert) => void; token: string; prices: AssetPrice[];
+}) {
   const [step, setStep]       = useState(1);
   const [asset, setAsset]     = useState('BTC');
   const [type, setType]       = useState('price_above');
@@ -249,10 +270,10 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
   const [submitting, setSub]  = useState(false);
   const [err, setErr]         = useState('');
 
-  const selectedAsset = ASSETS.find(a => a.symbol === asset);
-  const selectedType  = ALERT_TYPES.find(t => t.id === type);
-  const isPct = type.startsWith('pct_');
-  const canNext2 = !selectedType || (value !== '' && parseFloat(value) > 0);
+  const aData        = prices.find(p => p.ticker === asset);
+  const selectedType = ALERT_TYPES.find(t => t.id === type);
+  const isPct        = type.startsWith('pct_');
+  const canNext2     = value !== '' && parseFloat(value) > 0;
 
   const submit = async () => {
     setSub(true); setErr('');
@@ -279,24 +300,29 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
           </div>
           <button onClick={onClose} style={closeBtnStyle}>✕</button>
         </div>
-        {/* Progress bar */}
         <div style={{ height: 2, background: '#21262d' }}>
           <div style={{ height: '100%', background: '#00d4aa', transition: 'width 0.3s', width: `${(step / 3) * 100}%` }} />
         </div>
 
-        <div style={{ padding: 24 }}>
+        <div style={{ padding: 24, maxHeight: '65vh', overflowY: 'auto' }}>
           {/* ── Step 1: Asset + type ── */}
           {step === 1 && (
             <>
               <label style={labelStyle}>Select Asset</label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8, marginBottom: 24 }}>
-                {ASSETS.slice(0, 9).map(a => (
-                  <button key={a.symbol} onClick={() => setAsset(a.symbol)} style={{ padding: '10px 8px', borderRadius: 8, cursor: 'pointer', textAlign: 'center', border: `1px solid ${asset === a.symbol ? '#00d4aa' : '#21262d'}`, background: asset === a.symbol ? 'rgba(0,212,170,0.1)' : '#161b22', color: asset === a.symbol ? '#00d4aa' : '#c9d1d9' }}>
-                    <div style={{ fontSize: 18 }}>{a.emoji}</div>
-                    <div style={{ fontSize: 12, fontWeight: 700 }}>{a.symbol}</div>
-                    <div style={{ fontSize: 10, color: a.change24h > 0 ? '#3fb950' : '#f85149' }}>{a.change24h > 0 ? '+' : ''}{a.change24h}%</div>
-                  </button>
-                ))}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6, marginBottom: 24 }}>
+                {ALL_SYMBOLS.map(sym => {
+                  const p = prices.find(x => x.ticker === sym);
+                  const chg = p?.change_24h ?? null;
+                  return (
+                    <button key={sym} onClick={() => setAsset(sym)} style={{ padding: '8px 6px', borderRadius: 8, cursor: 'pointer', textAlign: 'center', border: `1px solid ${asset === sym ? '#00d4aa' : '#21262d'}`, background: asset === sym ? 'rgba(0,212,170,0.1)' : '#161b22', color: asset === sym ? '#00d4aa' : '#c9d1d9' }}>
+                      <div style={{ fontSize: 16 }}>{SYMBOL_EMOJI[sym] ?? sym[0]}</div>
+                      <div style={{ fontSize: 11, fontWeight: 700 }}>{sym}</div>
+                      <div style={{ fontSize: 9, color: chg == null ? '#8b949e' : chg > 0 ? '#3fb950' : '#f85149' }}>
+                        {chg == null ? '—' : `${chg > 0 ? '+' : ''}${chg.toFixed(1)}%`}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
 
               <label style={labelStyle}>Alert Condition</label>
@@ -318,25 +344,31 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
           {step === 2 && (
             <>
               <label style={labelStyle}>{isPct ? 'Percentage Threshold' : 'Target Price'}</label>
+              {aData?.price_usd && !isPct && (
+                <div style={{ fontFamily: 'monospace', fontSize: 11, color: '#8b949e', marginBottom: 6 }}>
+                  Current: <span style={{ color: '#c9d1d9' }}>${formatPrice(aData.price_usd)}</span>
+                  {aData.change_24h != null && <span style={{ color: aData.change_24h > 0 ? '#3fb950' : '#f85149', marginLeft: 8 }}>{aData.change_24h > 0 ? '+' : ''}{aData.change_24h.toFixed(2)}% 24h</span>}
+                </div>
+              )}
               <div style={{ position: 'relative', marginBottom: 8 }}>
                 <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#8b949e', fontFamily: 'monospace', fontSize: 16 }}>{selectedType?.unit}</span>
                 <input
                   type="number" value={value} onChange={e => setValue(e.target.value)} autoFocus
-                  placeholder={isPct ? 'e.g. 5' : `e.g. ${((selectedAsset?.price || 0) * 1.05).toFixed(0)}`}
+                  placeholder={isPct ? 'e.g. 5' : aData?.price_usd ? `e.g. ${(aData.price_usd * 1.05).toFixed(aData.price_usd < 1 ? 4 : 0)}` : 'enter target'}
                   style={{ ...inputStyle, paddingLeft: 32, fontSize: 16, fontFamily: 'monospace' }}
                 />
               </div>
-              {/* Quick-select buttons for price alerts */}
-              {!isPct && selectedAsset && (
+              {/* Quick-select % buttons using live price */}
+              {!isPct && aData?.price_usd && (
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 20 }}>
                   {[0.9, 0.95, 1.05, 1.1, 1.2].map(m => (
-                    <button key={m} onClick={() => setValue((selectedAsset.price * m).toFixed(selectedAsset.price < 1 ? 4 : 0))} style={{ padding: '4px 10px', borderRadius: 20, fontSize: 11, cursor: 'pointer', border: '1px solid #30363d', background: '#161b22', color: '#8b949e' }}>
+                    <button key={m} onClick={() => setValue((aData.price_usd! * m).toFixed(aData.price_usd! < 1 ? 4 : 0))} style={{ padding: '4px 10px', borderRadius: 20, fontSize: 11, cursor: 'pointer', border: '1px solid #30363d', background: '#161b22', color: '#8b949e' }}>
                       {m < 1 ? `${((m - 1) * 100).toFixed(0)}%` : `+${((m - 1) * 100).toFixed(0)}%`}
                     </button>
                   ))}
                 </div>
               )}
-              {isPct && <div style={{ marginBottom: 20 }} />}
+              {(isPct || !aData?.price_usd) && <div style={{ marginBottom: 20 }} />}
 
               <label style={labelStyle}>Alert Frequency</label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
@@ -357,13 +389,13 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
           {step === 3 && (
             <>
               <div style={{ background: '#161b22', border: '1px solid #21262d', borderRadius: 8, padding: '12px 14px', marginBottom: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-                <div><div style={{ color: '#8b949e', fontSize: 11 }}>Asset</div><div style={{ color: '#f0f6fc', fontWeight: 600 }}>{asset} — {selectedAsset?.name}</div></div>
+                <div><div style={{ color: '#8b949e', fontSize: 11 }}>Asset</div><div style={{ color: '#f0f6fc', fontWeight: 600 }}>{asset}{aData?.price_usd ? ` · $${formatPrice(aData.price_usd)}` : ''}</div></div>
                 <div><div style={{ color: '#8b949e', fontSize: 11 }}>Condition</div><div style={{ color: alertColor(type), fontWeight: 600, fontSize: 13 }}>{selectedType?.icon} {selectedType?.label}</div></div>
                 {value && <div><div style={{ color: '#8b949e', fontSize: 11 }}>Target</div><div style={{ color: '#f0f6fc', fontWeight: 600 }}>{selectedType?.unit}{parseFloat(value).toLocaleString()}</div></div>}
                 <div><div style={{ color: '#8b949e', fontSize: 11 }}>Frequency</div><div style={{ color: '#f0f6fc', fontWeight: 600 }}>{FREQUENCIES.find(f => f.id === freq)?.label}</div></div>
               </div>
               <div style={{ color: '#8b949e', fontSize: 11, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 }}>Discord Message Preview</div>
-              <DiscordMessage asset={asset} alertType={type} value={parseFloat(value)} />
+              <DiscordMessage asset={asset} alertType={type} value={parseFloat(value)} prices={prices} />
               {err && <div style={{ color: '#f85149', fontSize: 12, marginTop: 12 }}>{err}</div>}
             </>
           )}
@@ -386,14 +418,14 @@ function CreateModal({ onClose, onCreated, token }: { onClose: () => void; onCre
 // Shared styles
 // ---------------------------------------------------------------------------
 
-const overlayStyle: React.CSSProperties = { position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)', padding: 20 };
-const modalStyle: React.CSSProperties   = { background: '#0d1117', border: '1px solid #21262d', borderRadius: 12, width: '100%', maxHeight: '90vh', overflowY: 'auto' };
+const overlayStyle: React.CSSProperties    = { position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)', padding: 20 };
+const modalStyle: React.CSSProperties      = { background: '#0d1117', border: '1px solid #21262d', borderRadius: 12, width: '100%', maxHeight: '90vh', overflowY: 'auto' };
 const modalHeaderStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px 16px', borderBottom: '1px solid #21262d' };
 const modalTitleStyle: React.CSSProperties  = { color: '#f0f6fc', fontSize: 17, fontWeight: 700 };
 const closeBtnStyle: React.CSSProperties    = { background: 'none', border: 'none', color: '#8b949e', fontSize: 20, cursor: 'pointer', lineHeight: 1 };
 const labelStyle: React.CSSProperties      = { color: '#8b949e', fontSize: 12, textTransform: 'uppercase' as const, letterSpacing: 1, display: 'block', marginBottom: 8 };
 const inputStyle: React.CSSProperties      = { width: '100%', padding: '12px 14px', borderRadius: 8, background: '#161b22', border: '1px solid #30363d', color: '#f0f6fc', fontSize: 14, outline: 'none', boxSizing: 'border-box' as const };
-const btnPrimaryStyle: React.CSSProperties = { padding: '10px 24px', borderRadius: 8, border: 'none', background: '#00d4aa', color: '#0d1117', cursor: 'pointer', fontSize: 14, fontWeight: 700 };
+const btnPrimaryStyle: React.CSSProperties   = { padding: '10px 24px', borderRadius: 8, border: 'none', background: '#00d4aa', color: '#0d1117', cursor: 'pointer', fontSize: 14, fontWeight: 700 };
 const btnSecondaryStyle: React.CSSProperties = { padding: '10px 20px', borderRadius: 8, border: '1px solid #30363d', background: 'none', color: '#c9d1d9', cursor: 'pointer', fontSize: 14 };
 
 // ---------------------------------------------------------------------------
@@ -404,6 +436,7 @@ export default function AlertsPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
   const [alerts, setAlerts]           = useState<Alert[]>([]);
+  const [prices, setPrices]           = useState<AssetPrice[]>([]);
   const [fetching, setFetching]       = useState(true);
   const [tab, setTab]                 = useState<'active' | 'triggered'>('active');
   const [showCreate, setShowCreate]   = useState(false);
@@ -415,6 +448,18 @@ export default function AlertsPage() {
   useEffect(() => {
     if (!loading && !user) router.replace('/auth/login');
   }, [user, loading, router]);
+
+  // Fetch real prices from the market API (public endpoint — no auth needed)
+  useEffect(() => {
+    const load = () =>
+      fetch(`${API}/api/market/prices`)
+        .then(r => r.json())
+        .then((d: AssetPrice[]) => { if (Array.isArray(d)) setPrices(d); })
+        .catch(() => {});
+    load();
+    const id = setInterval(load, 60_000); // refresh every 60 s
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     if (!user) return;
@@ -429,13 +474,15 @@ export default function AlertsPage() {
       .then(r => r.json()).then(d => setWebhookOk(d.has_webhook)).catch(() => {});
   }, [user]);
 
-  // Subtle live price animation
+  // Subtle live price animation (micro-jitter so ticker feels live)
   useEffect(() => {
     const id = setInterval(() => setTicker(t => t + 1), 3000);
     return () => clearInterval(id);
   }, []);
 
-  const liveAssets = ASSETS.map((a, i) => ({ ...a, price: a.price * (1 + Math.sin(ticker + i) * 0.0003) }));
+  const livePrice = useCallback((p: AssetPrice, i: number) =>
+    p.price_usd != null ? p.price_usd * (1 + Math.sin(ticker + i) * 0.0002) : null,
+  [ticker]);
 
   const handleDelete = useCallback(async (id: number) => {
     await fetch(`${API}/api/alerts/${id}`, { method: 'DELETE', headers: { Authorization: `Bearer ${tokenRef.current}` } });
@@ -466,6 +513,11 @@ export default function AlertsPage() {
   const triggeredAlerts = alerts.filter(a => a.status === 'triggered');
   const listed          = tab === 'active' ? activeAlerts : triggeredAlerts;
 
+  // Ticker bar: show ALL_SYMBOLS that have price data, in canonical order
+  const tickerAssets = ALL_SYMBOLS
+    .map((sym, i) => ({ sym, p: prices.find(x => x.ticker === sym), i }))
+    .filter(x => x.p?.price_usd != null);
+
   return (
     <CockpitShell>
       <div style={{ fontFamily: "'IBM Plex Mono', 'Cascadia Code', monospace", color: '#c9d1d9', minHeight: '100vh', background: '#0d1117' }}>
@@ -481,13 +533,27 @@ export default function AlertsPage() {
         {/* ── Price ticker ── */}
         <div style={{ background: '#161b22', borderBottom: '1px solid #21262d', padding: '8px 0', overflow: 'hidden' }}>
           <div style={{ display: 'flex', gap: 32, padding: '0 24px', overflowX: 'auto', scrollbarWidth: 'none' }}>
-            {liveAssets.map(a => (
-              <div key={a.symbol} style={{ display: 'flex', gap: 8, alignItems: 'center', flexShrink: 0 }}>
-                <span style={{ color: '#8b949e', fontSize: 11 }}>{a.symbol}</span>
-                <span style={{ color: '#f0f6fc', fontSize: 12, fontWeight: 600 }}>${formatPrice(a.price)}</span>
-                <span style={{ color: a.change24h > 0 ? '#3fb950' : '#f85149', fontSize: 11 }}>{a.change24h > 0 ? '▲' : '▼'}{Math.abs(a.change24h)}%</span>
-              </div>
-            ))}
+            {tickerAssets.length === 0
+              ? ALL_SYMBOLS.map(s => (
+                  <div key={s} style={{ display: 'flex', gap: 8, alignItems: 'center', flexShrink: 0 }}>
+                    <span style={{ color: '#8b949e', fontSize: 11 }}>{s}</span>
+                    <span style={{ color: '#38405a', fontSize: 12 }}>—</span>
+                  </div>
+                ))
+              : tickerAssets.map(({ sym, p, i }) => {
+                  const live = livePrice(p!, i);
+                  return (
+                    <div key={sym} style={{ display: 'flex', gap: 8, alignItems: 'center', flexShrink: 0 }}>
+                      <span style={{ color: '#8b949e', fontSize: 11 }}>{sym}</span>
+                      <span style={{ color: '#f0f6fc', fontSize: 12, fontWeight: 600 }}>${formatPrice(live)}</span>
+                      {p!.change_24h != null && (
+                        <span style={{ color: p!.change_24h > 0 ? '#3fb950' : '#f85149', fontSize: 11 }}>
+                          {p!.change_24h > 0 ? '▲' : '▼'}{Math.abs(p!.change_24h).toFixed(1)}%
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
           </div>
         </div>
 
@@ -511,7 +577,7 @@ export default function AlertsPage() {
               <button onClick={() => setShowWebhook(true)} style={{ padding: '10px 16px', borderRadius: 8, border: '1px solid #30363d', background: '#161b22', color: '#c9d1d9', cursor: 'pointer', fontSize: 13, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <span style={{ fontSize: 16 }}>🔔</span> Discord Setup
               </button>
-              <button onClick={() => setShowCreate(true)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', background: '#00d4aa', color: '#0d1117', cursor: 'pointer', fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <button onClick={() => setShowCreate(true)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', background: '#00d4aa', color: '#0d1117', cursor: 'pointer', fontSize: 13, fontWeight: 700 }}>
                 + New Alert
               </button>
             </div>
@@ -534,7 +600,7 @@ export default function AlertsPage() {
           {/* ── Tabs ── */}
           <div style={{ display: 'flex', gap: 0, marginBottom: 20, borderBottom: '1px solid #21262d' }}>
             {([
-              { id: 'active' as const,    label: 'Active',    count: activeAlerts.length    },
+              { id: 'active'    as const, label: 'Active',    count: activeAlerts.length    },
               { id: 'triggered' as const, label: 'Triggered', count: triggeredAlerts.length },
             ]).map(t => (
               <button key={t.id} onClick={() => setTab(t.id)} style={{ padding: '10px 20px', border: 'none', background: 'none', cursor: 'pointer', fontSize: 14, color: tab === t.id ? '#00d4aa' : '#8b949e', borderBottom: `2px solid ${tab === t.id ? '#00d4aa' : 'transparent'}`, fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: tab === t.id ? 600 : 400, marginBottom: -1 }}>
@@ -555,28 +621,24 @@ export default function AlertsPage() {
                 <div style={{ fontSize: 13, marginBottom: 16 }}>{tab === 'active' ? 'Create your first alert to get started' : 'Triggered alerts will appear here'}</div>
                 {tab === 'active' && <button onClick={() => setShowCreate(true)} style={btnPrimaryStyle}>+ New Alert</button>}
               </div>
-            ) : listed.map(alert => {
-              const aData  = liveAssets.find(a => a.symbol === alert.asset);
+            ) : listed.map((alert, i) => {
+              const pData  = prices.find(p => p.ticker === alert.asset);
               const tData  = ALERT_TYPES.find(t => t.id === alert.alert_type);
               const color  = alertColor(alert.alert_type);
+              const lp     = pData ? livePrice(pData, i) : null;
 
               return (
                 <div key={alert.id} className="alert-card" style={{ background: '#161b22', border: '1px solid #21262d', borderRadius: 10, padding: '16px 20px', display: 'flex', alignItems: 'center', gap: 16 }}>
-                  {/* Color stripe */}
                   <div style={{ width: 3, height: 48, borderRadius: 2, background: color, flexShrink: 0 }} />
 
-                  {/* Asset badge */}
                   <div style={{ width: 44, height: 44, borderRadius: 10, background: `${color}20`, border: `1px solid ${color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <span style={{ fontSize: 20 }}>{aData?.emoji ?? '?'}</span>
+                    <span style={{ fontSize: 20 }}>{SYMBOL_EMOJI[alert.asset] ?? alert.asset[0]}</span>
                   </div>
 
-                  {/* Details */}
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4, flexWrap: 'wrap' }}>
                       <span style={{ color: '#f0f6fc', fontWeight: 700, fontSize: 14 }}>{alert.asset}</span>
-                      <span style={{ color, fontSize: 12, background: `${color}20`, padding: '2px 8px', borderRadius: 20 }}>
-                        {tData?.icon} {tData?.label}
-                      </span>
+                      <span style={{ color, fontSize: 12, background: `${color}20`, padding: '2px 8px', borderRadius: 20 }}>{tData?.icon} {tData?.label}</span>
                       {webhookOk && <span style={{ color: '#8b949e', fontSize: 11 }}>⬡ Discord</span>}
                     </div>
                     <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -587,26 +649,19 @@ export default function AlertsPage() {
                     </div>
                   </div>
 
-                  {/* Live price */}
-                  {aData && (
-                    <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                      <div style={{ color: '#f0f6fc', fontWeight: 600, fontSize: 14 }}>${formatPrice(aData.price)}</div>
-                      <div style={{ color: aData.change24h > 0 ? '#3fb950' : '#f85149', fontSize: 12 }}>{aData.change24h > 0 ? '+' : ''}{aData.change24h}%</div>
-                    </div>
-                  )}
+                  {/* Live price from DB */}
+                  <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                    <div style={{ color: '#f0f6fc', fontWeight: 600, fontSize: 14 }}>{lp != null ? `$${formatPrice(lp)}` : '—'}</div>
+                    {pData?.change_24h != null && (
+                      <div style={{ color: pData.change_24h > 0 ? '#3fb950' : '#f85149', fontSize: 12 }}>
+                        {pData.change_24h > 0 ? '+' : ''}{pData.change_24h.toFixed(2)}%
+                      </div>
+                    )}
+                  </div>
 
-                  {/* Actions */}
                   <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
-                    {alert.status === 'active' && (
-                      <button onClick={() => handleToggle(alert.id)} style={{ padding: '6px 12px', borderRadius: 6, border: '1px solid #30363d', background: 'none', color: '#8b949e', cursor: 'pointer', fontSize: 12 }}>
-                        ⏸ Pause
-                      </button>
-                    )}
-                    {alert.status === 'paused' && (
-                      <button onClick={() => handleToggle(alert.id)} style={{ padding: '6px 12px', borderRadius: 6, border: '1px solid #30363d', background: 'none', color: '#8b949e', cursor: 'pointer', fontSize: 12 }}>
-                        ▶ Resume
-                      </button>
-                    )}
+                    {alert.status === 'active'  && <button onClick={() => handleToggle(alert.id)} style={{ padding: '6px 12px', borderRadius: 6, border: '1px solid #30363d', background: 'none', color: '#8b949e', cursor: 'pointer', fontSize: 12 }}>⏸ Pause</button>}
+                    {alert.status === 'paused'  && <button onClick={() => handleToggle(alert.id)} style={{ padding: '6px 12px', borderRadius: 6, border: '1px solid #30363d', background: 'none', color: '#8b949e', cursor: 'pointer', fontSize: 12 }}>▶ Resume</button>}
                     <button onClick={() => handleDelete(alert.id)} style={{ padding: '6px 10px', borderRadius: 6, border: '1px solid rgba(248,81,73,0.3)', background: 'rgba(248,81,73,0.1)', color: '#f85149', cursor: 'pointer', fontSize: 12 }}>✕</button>
                   </div>
                 </div>
@@ -616,8 +671,8 @@ export default function AlertsPage() {
         </div>
       </div>
 
-      {showCreate  && <CreateModal   token={tokenRef.current} onClose={() => setShowCreate(false)}  onCreated={a => setAlerts(prev => [a, ...prev])} />}
-      {showWebhook && <WebhookSettings token={tokenRef.current} onClose={() => { setShowWebhook(false); refreshWebhook(); }} onSaved={refreshWebhook} />}
+      {showCreate  && <CreateModal   token={tokenRef.current} prices={prices} onClose={() => setShowCreate(false)}  onCreated={a => setAlerts(prev => [a, ...prev])} />}
+      {showWebhook && <WebhookSettings token={tokenRef.current} prices={prices} onClose={() => { setShowWebhook(false); refreshWebhook(); }} onSaved={refreshWebhook} />}
     </CockpitShell>
   );
 }
