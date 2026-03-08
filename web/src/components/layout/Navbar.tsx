@@ -18,6 +18,7 @@ const publicNavLinks = [
   { href: '/analysis', label: 'Feed' },
   { href: '/market', label: 'Market' },
   { href: '/intelligence', label: 'Intelligence' },
+  { href: '/tools/risk-calculator', label: 'Risk Calc' },
   { href: '/pricing', label: 'Pricing' },
 ];
 
@@ -27,6 +28,7 @@ const authedNavLinks = [
   { href: '/analysis', label: 'Feed' },
   { href: '/market', label: 'Market' },
   { href: '/intelligence', label: 'Intelligence' },
+  { href: '/tools/risk-calculator', label: 'Risk Calc' },
   { href: '/journal', label: 'Journal' },
 ];
 
