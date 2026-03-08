@@ -15,18 +15,18 @@ const COCKPIT_PATHS = [
 const publicNavLinks = [
   { href: '/', label: 'Home' },
   { href: '/news', label: 'News' },
+  { href: '/analysis', label: 'Feed' },
   { href: '/market', label: 'Market' },
   { href: '/intelligence', label: 'Intelligence' },
-  { href: '/tools/risk-calculator', label: 'Risk Calc' },
   { href: '/pricing', label: 'Pricing' },
 ];
 
 const authedNavLinks = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/news', label: 'News' },
+  { href: '/analysis', label: 'Feed' },
   { href: '/market', label: 'Market' },
   { href: '/intelligence', label: 'Intelligence' },
-  { href: '/tools/risk-calculator', label: 'Risk Calc' },
   { href: '/journal', label: 'Journal' },
 ];
 
