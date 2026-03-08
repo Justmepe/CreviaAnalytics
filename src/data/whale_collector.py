@@ -84,6 +84,55 @@ class _RateLimiter:
         self._last = time.monotonic()
 
 
+class _InfuraBudget:
+    """
+    Tracks Infura HTTP calls and enforces a per-hour cap to protect the monthly
+    credit budget (default 3M/month → ~4,000/hour with headroom).
+
+    Also enforces a minimum interval between block fetches per chain so fast
+    chains like Polygon (2s blocks) don't exhaust credits via eth_getBlockByNumber.
+    """
+
+    # Max HTTP calls per hour across all Infura chains combined
+    HOURLY_CAP = int(os.getenv('INFURA_HOURLY_CAP', '3000'))
+
+    # Minimum seconds between block fetches per chain (e.g. 30s caps Polygon
+    # from 43,200/day → ~2,880/day)
+    CHAIN_MIN_INTERVAL = float(os.getenv('INFURA_CHAIN_MIN_INTERVAL', '30'))
+
+    def __init__(self):
+        self._hour_start: float = time.monotonic()
+        self._hour_count: int   = 0
+        self._last_fetch: Dict[str, float] = {}  # chain → last fetch timestamp
+
+    def allowed(self, chain: str) -> bool:
+        """Return True if this chain is allowed to make an Infura call right now."""
+        now = time.monotonic()
+
+        # Reset hourly counter every 60 minutes
+        if now - self._hour_start >= 3600:
+            self._hour_start = now
+            self._hour_count = 0
+
+        if self._hour_count >= self.HOURLY_CAP:
+            return False
+
+        last = self._last_fetch.get(chain, 0.0)
+        if now - last < self.CHAIN_MIN_INTERVAL:
+            return False
+
+        return True
+
+    def record(self, chain: str, n_calls: int = 1) -> None:
+        """Record that n_calls were made for chain."""
+        self._hour_count += n_calls
+        self._last_fetch[chain] = time.monotonic()
+
+    @property
+    def hour_count(self) -> int:
+        return self._hour_count
+
+
 # ---------------------------------------------------------------------------
 # WhaleCollector
 # ---------------------------------------------------------------------------
@@ -111,6 +160,9 @@ class WhaleCollector:
         self._etherscan_key  = os.getenv('ETHERSCAN_API_KEY', '')
         self._solscan_key    = os.getenv('SOLSCAN_API_KEY', '')
         self._infura_id      = os.getenv('INFURA_PROJECT_ID', '')
+
+        # Infura credit budget tracker
+        self._infura_budget  = _InfuraBudget()
 
     @property
     def queue(self) -> asyncio.Queue:
@@ -658,6 +710,10 @@ class WhaleCollector:
                             if not block_hex:
                                 continue
 
+                            # Credit budget gate — skip if min interval not met or hourly cap hit
+                            if not self._infura_budget.allowed(chain):
+                                continue
+
                             # Fetch full block with transactions (confirmed only)
                             async with session.post(rpc,
                                 json={'jsonrpc': '2.0', 'id': 2,
@@ -666,6 +722,7 @@ class WhaleCollector:
                             ) as r:
                                 block_data = (await r.json()).get('result') or {}
 
+                            self._infura_budget.record(chain, n_calls=1)
                             block_num = int(block_hex, 16)
                             block_ts  = int(block_data.get('timestamp', '0x0'), 16)
 
@@ -713,8 +770,15 @@ class WhaleCollector:
         session   = await self._get_session()
         last_block: int = 0
 
+        # Use CHAIN_MIN_INTERVAL as the poll sleep so the budget tracker stays consistent
+        poll_interval = max(15, _InfuraBudget.CHAIN_MIN_INTERVAL)
+
         while self._running:
+            await asyncio.sleep(poll_interval)
             try:
+                if not self._infura_budget.allowed(chain):
+                    continue
+
                 # Get latest block number
                 async with session.post(rpc,
                     json={'jsonrpc':'2.0','id':1,'method':'eth_blockNumber','params':[]}) as r:
@@ -722,7 +786,6 @@ class WhaleCollector:
                 block_num = int(data.get('result', '0x0'), 16)
 
                 if block_num <= last_block:
-                    await asyncio.sleep(15)
                     continue
 
                 # Fetch full block with transactions
@@ -731,6 +794,7 @@ class WhaleCollector:
                           'params':[hex(block_num), True]}) as r:
                     block_data = (await r.json()).get('result') or {}
 
+                self._infura_budget.record(chain, n_calls=2)  # blockNumber + getBlockByNumber
                 last_block = block_num
                 txs = block_data.get('transactions', [])
 
@@ -912,6 +976,17 @@ class WhaleCollector:
             async for _ in self.watch_aave_health_factors():
                 pass
 
+        async def _log_infura_budget():
+            """Log Infura credit usage every 30 minutes."""
+            while self._running:
+                await asyncio.sleep(1800)
+                cap = _InfuraBudget.HOURLY_CAP
+                used = self._infura_budget.hour_count
+                logger.info(
+                    'Infura budget: %d/%d calls this hour (%.0f%%)',
+                    used, cap, used / cap * 100 if cap else 0,
+                )
+
         tasks = [
             _poll_eth_loop(),
             _poll_btc_loop(),
@@ -922,6 +997,7 @@ class WhaleCollector:
         ]
         if self._infura_id:
             tasks.append(_drain_infura())
+            tasks.append(_log_infura_budget())
 
         try:
             await asyncio.gather(*tasks)
