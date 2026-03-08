@@ -20,12 +20,12 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
       {
-        // Allow Google News bot full access to news content
+        // Allow Google News bot full access to news and analysis content
         userAgent: 'Googlebot-News',
-        allow: '/post/',
+        allow: ['/post/', '/news', '/analysis'],
       },
     ],
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: [`${BASE_URL}/sitemap.xml`, `${BASE_URL}/news-sitemap.xml`],
     host: BASE_URL,
   };
 }

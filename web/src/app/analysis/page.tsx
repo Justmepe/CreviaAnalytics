@@ -4,9 +4,23 @@ import LiveFeedSidebar from '@/components/feed/LiveFeedSidebar';
 import { getContentFeed } from '@/lib/api';
 import AuthShell from '@/components/layout/AuthShell';
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://creviacockpit.com';
+
 export const metadata: Metadata = {
-  title: 'Analysis Feed',
-  description: 'Crypto market analysis threads, memos, and alerts from CreviaCockpit.',
+  title: 'Crypto Market Analysis',
+  description: 'Real-time crypto market analysis — memos, articles, and risk alerts covering BTC, ETH, DeFi, memecoins, privacy coins, and macro. Updated 5x daily.',
+  alternates: { canonical: `${BASE_URL}/analysis` },
+  openGraph: {
+    title: 'Crypto Market Analysis | CreviaCockpit',
+    description: 'Real-time crypto market analysis — memos, articles, and risk alerts covering BTC, ETH, DeFi, and macro. Updated 5x daily.',
+    url: `${BASE_URL}/analysis`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Crypto Market Analysis | CreviaCockpit',
+    description: 'Real-time crypto market analysis — memos, articles, and risk alerts. Updated 5x daily.',
+  },
 };
 
 export const revalidate = 60;
@@ -283,6 +297,19 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
         </div>
       </div>
 
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'Crypto Market Analysis',
+          description: 'Real-time crypto market analysis — memos, articles, and risk alerts from CreviaCockpit.',
+          url: `${BASE_URL}/analysis`,
+          publisher: { '@type': 'Organization', name: 'CreviaCockpit', url: BASE_URL },
+        }),
+      }}
+    />
     </div>
     </AuthShell>
   );
