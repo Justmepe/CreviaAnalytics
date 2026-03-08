@@ -38,6 +38,7 @@ const NAV_SECTIONS = [
     section: 'Intelligence',
     items: [
       { href: '/whale-tracker',         icon: '🐋', label: 'Whale Tracker',        live: true  },
+      { href: '/portfolio',             icon: '💼', label: 'Portfolio',             live: true  },
       { href: '/alerts',                icon: '🔔', label: 'My Alerts',            live: false },
     ],
   },
