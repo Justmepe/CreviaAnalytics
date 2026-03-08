@@ -21,6 +21,7 @@ from api.routers import waitlist
 from api.routers import portfolio
 from api.routers import feed
 from api.routers import whale as whale_router
+from api.routers import alerts as alerts_router
 
 logger = logging.getLogger(__name__)
 
@@ -50,6 +51,7 @@ app.include_router(waitlist.router)
 app.include_router(portfolio.router)
 app.include_router(feed.router)
 app.include_router(whale_router.router)
+app.include_router(alerts_router.router)
 
 
 # ---------------------------------------------------------------------------
@@ -145,10 +147,13 @@ def _start_whale_collector(analyzer) -> None:
 # ---------------------------------------------------------------------------
 
 @app.on_event('startup')
-def on_startup():
-    """Create DB tables and start whale engine background thread."""
+async def on_startup():
+    """Create DB tables, start background engines."""
     create_tables()
     _start_whale_engine()
+    # Alert checker runs on the main event loop
+    from api.services.alert_checker import run_alert_checker
+    asyncio.create_task(run_alert_checker())
 
 
 @app.get('/api/health')

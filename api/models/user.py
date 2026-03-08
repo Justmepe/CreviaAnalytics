@@ -52,6 +52,9 @@ class User(Base):
     api_calls_today = Column(Integer, default=0)
     api_calls_month = Column(Integer, default=0)
 
+    # Discord alert webhook
+    discord_webhook_url = Column(String(500))
+
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 

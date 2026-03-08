@@ -60,6 +60,7 @@ class SwingPoint:
     index: int  # Position in dataframe
     confirmed: bool = False
     structure_level: str = "external"  # "external" (major structure) or "internal" (within-leg moves)
+    is_high: bool = True  # True = swing high, False = swing low (Phase 3 ATR methods)
     
     def __repr__(self):
         # Ensure timestamp is datetime before formatting
@@ -1252,8 +1253,330 @@ class StructureEngine:
         }
     
     
+    # ==================== PHASE 3: ATR-ADAPTIVE ALGORITHMS ====================
+    # Sourced from research library: Part 21 (ATR swing), Part 39 (os_state), Part 60 (trendlines)
+
+    # ATR multiplier per timeframe for swing lookback (Part 21)
+    _ATR_LOOSEN: Dict[str, float] = {
+        '1m': 0.3, '3m': 0.35, '5m': 0.4, '15m': 0.5,
+        '30m': 0.55, '1h': 0.6, '4h': 0.65, '1d': 0.7,
+        'Major': 0.5, 'Minor': 0.35,
+    }
+    # ATR multiplier for trendline touch validation (Part 60)
+    _TL_ATR_MULT: Dict[str, float] = {
+        '1m': 0.8, '3m': 0.75, '5m': 0.7, '15m': 0.5,
+        '30m': 0.45, '1h': 0.4, '4h': 0.35, '1d': 0.3,
+        'Major': 0.5, 'Minor': 0.7,
+    }
+
+    def _atr_depth(self, atr: float, price: float, tf: str, multiplier: float = 1.0) -> int:
+        """
+        Part 21: ATR-proportional swing lookback.
+        Converts ATR into a candle lookback that scales with volatility.
+        """
+        if price <= 0 or atr <= 0:
+            return 3
+        symbol_point = price * 1e-4  # ~0.01% of price as unit
+        loosen = self._ATR_LOOSEN.get(tf, 0.5)
+        raw = (atr / symbol_point) * multiplier
+        depth = max(2, int(raw * loosen))
+        # Cap at 2× the fixed LOOKBACK_MAP value to avoid ridiculous windows
+        cap = self.LOOKBACK_MAP.get(tf, 5) * 2
+        return min(depth, cap)
+
+    def identify_swing_points_atr(
+        self,
+        df: pd.DataFrame,
+        timeframe: str = '4h',
+    ) -> List[SwingPoint]:
+        """
+        Part 21: ATR-adaptive swing detection.
+        Replaces the fixed LOOKBACK_MAP with a volatility-scaled lookback.
+        Delegates classification to the existing _classify_swings() method.
+        """
+        if len(df) < 10:
+            return []
+
+        # Calculate ATR
+        mom_df = self._calculate_momentum(df)
+        atr = float(mom_df['atr'].iloc[-1]) if 'atr' in mom_df.columns else 0.0
+        last_price = float(df['close'].iloc[-1])
+        lookback = self._atr_depth(atr, last_price, timeframe)
+
+        highs = df['high'].values
+        lows = df['low'].values
+        timestamps = df.index.tolist()
+
+        raw_swings: List[SwingPoint] = []
+        for i in range(lookback, len(df) - lookback):
+            window_h = highs[i - lookback: i + lookback + 1]
+            window_l = lows[i - lookback: i + lookback + 1]
+
+            is_swing_high = highs[i] == window_h.max()
+            is_swing_low = lows[i] == window_l.min()
+
+            if is_swing_high and not is_swing_low:
+                sp = SwingPoint(
+                    swing_type=SwingType.HH,   # temp type; _classify_swings relies on HH/LH to identify highs
+                    price=float(highs[i]),
+                    timestamp=timestamps[i],
+                    index=i,
+                    structure_level='external',
+                    is_high=True,
+                )
+                raw_swings.append(sp)
+            elif is_swing_low and not is_swing_high:
+                sp = SwingPoint(
+                    swing_type=SwingType.LL,   # temp type; _classify_swings relies on LL/HL to identify lows
+                    price=float(lows[i]),
+                    timestamp=timestamps[i],
+                    index=i,
+                    structure_level='external',
+                    is_high=False,
+                )
+                raw_swings.append(sp)
+
+        # Re-use existing classification
+        return self._classify_swings(raw_swings)
+
+    # ── os_state BOS/CHoCH state machine (Part 39) ───────────────────────────
+
+    def detect_bos_choch_os_state(
+        self,
+        swings: List[SwingPoint],
+    ) -> List[Dict[str, Any]]:
+        """
+        Part 39: os_state (+1/-1) state machine for BOS/CHoCH detection.
+        Cleaner than threshold-based logic:
+          - Same direction break → BOS (continuation)
+          - Opposite direction break → CHoCH (reversal)
+
+        Returns list of break events: [{type, level, swing_idx, direction}]
+        """
+        events: List[Dict[str, Any]] = []
+        os_state: int = 0  # 0 = uninitialised
+
+        # Separate highs and lows in order
+        highs = [s for s in swings if getattr(s, 'is_high', True) and s.swing_type in (SwingType.HH, SwingType.LH, SwingType.UNDEFINED)]
+        lows  = [s for s in swings if not getattr(s, 'is_high', True) and s.swing_type in (SwingType.HL, SwingType.LL, SwingType.UNDEFINED)]
+
+        # Walk swings in chronological order
+        prev_high: Optional[SwingPoint] = None
+        prev_low: Optional[SwingPoint] = None
+
+        for s in sorted(swings, key=lambda x: x.index):
+            is_high = getattr(s, 'is_high', s.swing_type in (SwingType.HH, SwingType.LH))
+
+            if is_high:
+                if prev_high is not None and s.price > prev_high.price:
+                    # Bullish break
+                    direction = +1
+                    if os_state == 0:
+                        os_state = direction
+                        ev_type = 'NONE'
+                    elif direction == os_state:
+                        ev_type = 'BOS'
+                    else:
+                        ev_type = 'CHOCH'
+                        os_state = direction
+                    if ev_type != 'NONE':
+                        events.append({
+                            'type': ev_type,
+                            'direction': 'bullish',
+                            'level': prev_high.price,
+                            'swing_idx': s.index,
+                            'timestamp': s.timestamp,
+                        })
+                prev_high = s
+            else:
+                if prev_low is not None and s.price < prev_low.price:
+                    # Bearish break
+                    direction = -1
+                    if os_state == 0:
+                        os_state = direction
+                        ev_type = 'NONE'
+                    elif direction == os_state:
+                        ev_type = 'BOS'
+                    else:
+                        ev_type = 'CHOCH'
+                        os_state = direction
+                    if ev_type != 'NONE':
+                        events.append({
+                            'type': ev_type,
+                            'direction': 'bearish',
+                            'level': prev_low.price,
+                            'swing_idx': s.index,
+                            'timestamp': s.timestamp,
+                        })
+                prev_low = s
+
+        return events
+
+    # ── Objective trendlines (Part 60) ────────────────────────────────────────
+
+    def fit_trendlines(
+        self,
+        df: pd.DataFrame,
+        timeframe: str = '4h',
+        min_touches: int = 2,
+    ) -> Dict[str, List[Dict[str, Any]]]:
+        """
+        Part 60: Fit objective trendlines to swing highs (resistance) and swing
+        lows (support) using ATR-validated touch counts.
+
+        Returns:
+            {
+                'support':    [{'slope', 'intercept', 'start_idx', 'end_idx',
+                                'start_price', 'end_price', 'touches', 'type'}, ...],
+                'resistance': [...]
+            }
+        """
+        if len(df) < 20:
+            return {'support': [], 'resistance': []}
+
+        mom_df = self._calculate_momentum(df)
+        atr = float(mom_df['atr'].iloc[-1]) if 'atr' in mom_df.columns else 0.0
+        tl_atr_mult = self._TL_ATR_MULT.get(timeframe, 0.5)
+        touch_threshold = atr * tl_atr_mult
+
+        # Use ATR-adaptive swings for anchor points
+        swings = self.identify_swing_points_atr(df, timeframe)
+
+        highs = [s for s in swings if getattr(s, 'is_high', s.swing_type in (SwingType.HH, SwingType.LH))]
+        lows  = [s for s in swings if not getattr(s, 'is_high', s.swing_type in (SwingType.HL, SwingType.LL))]
+
+        support_lines    = self._fit_trendline_set(df, lows,  'support',    touch_threshold, min_touches)
+        resistance_lines = self._fit_trendline_set(df, highs, 'resistance', touch_threshold, min_touches)
+
+        return {'support': support_lines, 'resistance': resistance_lines}
+
+    def _fit_trendline_set(
+        self,
+        df: pd.DataFrame,
+        anchors: List[SwingPoint],
+        line_type: str,
+        touch_threshold: float,
+        min_touches: int,
+    ) -> List[Dict[str, Any]]:
+        """
+        Internal: try each pair of anchor points as a trendline seed, count
+        validated touches within ATR band, keep lines with >= min_touches.
+        """
+        if len(anchors) < 2:
+            return []
+
+        highs  = df['high'].values
+        lows   = df['low'].values
+        n      = len(df)
+        lines: List[Dict[str, Any]] = []
+
+        for i in range(len(anchors) - 1):
+            for j in range(i + 1, len(anchors)):
+                a, b = anchors[i], anchors[j]
+                if a.index == b.index:
+                    continue
+
+                slope = (b.price - a.price) / (b.index - a.index)
+                intercept = a.price - slope * a.index
+
+                # Direction validation (Part 60 rule)
+                if line_type == 'support' and slope < 0:
+                    continue  # support must be ascending or flat
+                if line_type == 'resistance' and slope > 0:
+                    continue  # resistance must be descending or flat
+
+                # Count touches between the two anchor indices (inclusive)
+                touches = 0
+                for k in range(a.index, min(b.index + 1, n)):
+                    expected = slope * k + intercept
+                    if line_type == 'support':
+                        dist = abs(lows[k] - expected)
+                    else:
+                        dist = abs(highs[k] - expected)
+                    if dist <= touch_threshold:
+                        touches += 1
+
+                if touches >= min_touches:
+                    end_idx = min(b.index, n - 1)
+                    lines.append({
+                        'type': line_type,
+                        'slope': round(slope, 6),
+                        'intercept': round(intercept, 4),
+                        'start_idx': a.index,
+                        'end_idx': end_idx,
+                        'start_price': round(a.price, 4),
+                        'end_price': round(slope * end_idx + intercept, 4),
+                        'touches': touches,
+                    })
+
+        # De-duplicate: keep highest-touch line per start anchor
+        seen: set = set()
+        unique: List[Dict[str, Any]] = []
+        for tl in sorted(lines, key=lambda x: -x['touches']):
+            key = tl['start_idx']
+            if key not in seen:
+                seen.add(key)
+                unique.append(tl)
+
+        return unique
+
+    # ── MTF harmony index (Parts 48/52) ──────────────────────────────────────
+
+    _MTF_WEIGHTS: Dict[str, float] = {
+        '1d': 0.40, '4h': 0.35, '1h': 0.30, '15m': 0.25, '5m': 0.10,
+        'Major': 0.35, 'Minor': 0.25,
+    }
+
+    def compute_mtf_harmony(
+        self,
+        tf_structures: Dict[str, 'StructureState'],
+    ) -> Dict[str, Any]:
+        """
+        Parts 48/52: Weighted multi-TF harmony index.
+        tf_structures: {timeframe_str → StructureState}
+        Returns harmony score (0-1), consensus direction, and per-TF breakdown.
+        """
+        bull_score = 0.0
+        bear_score = 0.0
+        total_weight = 0.0
+        breakdown: Dict[str, str] = {}
+
+        for tf, state in tf_structures.items():
+            w = self._MTF_WEIGHTS.get(tf, 0.2)
+            direction = state.market_structure.value  # 'bullish' / 'bearish' / other
+            if direction == 'bullish':
+                bull_score += w
+            elif direction == 'bearish':
+                bear_score += w
+            total_weight += w
+            breakdown[tf] = direction
+
+        if total_weight == 0:
+            return {'harmony': 0.0, 'direction': 'neutral', 'breakdown': breakdown}
+
+        bull_norm = bull_score / total_weight
+        bear_norm = bear_score / total_weight
+
+        if bull_norm > bear_norm:
+            consensus = 'bullish'
+            harmony = bull_norm
+        elif bear_norm > bull_norm:
+            consensus = 'bearish'
+            harmony = bear_norm
+        else:
+            consensus = 'neutral'
+            harmony = 0.5
+
+        return {
+            'harmony': round(harmony, 3),
+            'direction': consensus,
+            'bull_weight': round(bull_norm, 3),
+            'bear_weight': round(bear_norm, 3),
+            'breakdown': breakdown,
+        }
+
     # ==================== UTILITY METHODS ====================
-    
+
     def get_current_structure_state(self, timeframe: str = 'major') -> Optional[StructureState]:
         """Get current structure state for timeframe"""
         if timeframe == 'major':
