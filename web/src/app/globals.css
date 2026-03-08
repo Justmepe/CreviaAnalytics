@@ -173,14 +173,41 @@
 .analysis-grid  { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
 .cta-wrapper    { padding: 0 80px 80px; }
 
-/* Analysis page 2-col shell — left column is exactly (100% - sidebar), never wider */
-.analysis-shell { display: grid; grid-template-columns: minmax(0, 1fr) 360px; width: 100%; overflow-x: hidden; }
-@media (max-width: 1100px) { .analysis-shell { grid-template-columns: minmax(0, 1fr) 300px; } }
-@media (max-width: 860px)  { .analysis-shell { grid-template-columns: 1fr; } }
-@media (max-width: 860px)  { .analysis-shell > div:first-child { border-right: none !important; } }
+/* ── Analysis page: 2-col shell ──────────────────────────────────────────────
+   Left col = all remaining space (minmax(0,1fr) hard-caps it — never grows past viewport - sidebar)
+   Right col = fixed sidebar width that shrinks at each breakpoint
+   ──────────────────────────────────────────────────────────────────────────── */
+.analysis-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px; /* large desktop / 27"+ */
+  width: 100%;
+  overflow-x: hidden;
+}
 
-/* Analysis content grid — 3-col, minmax(0,1fr) prevents cards from overflowing left column */
+/* Standard desktop 1280-1440px */
+@media (max-width: 1440px) { .analysis-shell { grid-template-columns: minmax(0, 1fr) 340px; } }
+/* Small desktop / 15" laptop 1100-1280px */
+@media (max-width: 1280px) { .analysis-shell { grid-template-columns: minmax(0, 1fr) 300px; } }
+/* 13" laptop / tablet landscape 900-1100px */
+@media (max-width: 1100px) { .analysis-shell { grid-template-columns: minmax(0, 1fr) 270px; } }
+/* Tablet portrait 768-900px — hide sidebar, single content column */
+@media (max-width: 900px) {
+  .analysis-shell { grid-template-columns: 1fr; }
+  .analysis-shell > div:first-child { border-right: none !important; }
+}
+
+/* ── Analysis content grid ───────────────────────────────────────────────────
+   Cards adapt: 3-col on large screens, 2-col on mid, 1-col on small
+   ──────────────────────────────────────────────────────────────────────────── */
 .analysis-content-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+/* 13" laptop with sidebar — 3 cols is too tight, drop to 2 */
+@media (max-width: 1100px) { .analysis-content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Tablet no-sidebar — can fit 3 again */
+@media (max-width: 900px)  { .analysis-content-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Tablet portrait */
+@media (max-width: 768px)  { .analysis-content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Mobile */
+@media (max-width: 540px)  { .analysis-content-grid { grid-template-columns: 1fr; } }
 
 /* Intelligence page 2-col shell */
 .intel-shell { display: grid; grid-template-columns: 1fr 320px; max-width: 1280px; }
@@ -207,7 +234,6 @@
   .faq-section           { grid-template-columns: 1fr !important; gap: 24px !important; }
   .intel-shell           { grid-template-columns: 1fr !important; }
   .how-section           { grid-template-columns: 1fr !important; gap: 32px !important; }
-  .analysis-content-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 /* ── MOBILE  (≤768px) ──────────────────────────────────────── */
@@ -251,7 +277,6 @@
   /* Analysis */
   .latest-section        { padding-bottom: 40px !important; }
   .analysis-grid         { grid-template-columns: 1fr !important; }
-  .analysis-content-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .cta-wrapper           { padding-bottom: 40px !important; }
 
   /* Pricing trial ladder: stack to 1-col on mobile */
@@ -260,8 +285,6 @@
   .pricing-trial-grid > div:last-child { border-bottom: none !important; }
 
   /* Sidebar shells: stack vertically, remove side border */
-  .analysis-shell                   { grid-template-columns: 1fr !important; }
-  .analysis-shell > div:first-child { border-right: none !important; }
   .intel-shell                      { grid-template-columns: 1fr !important; }
   .intel-shell > div:first-child    { border-right: none !important; }
   .whale-intel-grid                 { grid-template-columns: 1fr !important; }
@@ -281,5 +304,4 @@
 @media (max-width: 480px) {
   .hero-brand            { font-size: 44px !important; }
   .hero-h1               { font-size: 22px !important; }
-  .analysis-content-grid { grid-template-columns: 1fr !important; }
 }
