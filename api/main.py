@@ -134,7 +134,7 @@ def _start_whale_collector(analyzer) -> None:
 
         t = threading.Thread(target=_run_collector, daemon=True, name='whale-collector')
         t.start()
-        logger.info('WhaleCollector thread started')
+        logger.warning('WhaleCollector thread started')
 
     except Exception as e:
         logger.warning('WhaleCollector could not start: %s', e)

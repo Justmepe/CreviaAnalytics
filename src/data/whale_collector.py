@@ -701,7 +701,7 @@ class WhaleCollector:
                         'params': ['newBlockHeaders'],
                     }))
                     resp = json.loads(await ws.recv())
-                    logger.info('Infura %s block-header stream active (sub=%s)', chain, resp.get('result'))
+                    logger.warning('Infura %s block-header stream ACTIVE (sub=%s)', chain, resp.get('result'))
 
                     async for message in ws:
                         try:
