@@ -1,0 +1,146 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Configurable thresholds and parameters for the whale tracking system. Edit here to tune signal sensitivity without touching code.",
+    "last_updated": "2026-03-08"
+  },
+
+  "transaction_thresholds": {
+    "_note": "Minimum size for a transaction to be collected and stored. Tune down to increase volume, up to reduce noise.",
+    "BTC":  { "native": 100,       "usd_fallback": 1000000, "unit": "BTC" },
+    "ETH":  { "native": 500,       "usd_fallback": 1000000, "unit": "ETH" },
+    "SOL":  { "native": 10000,     "usd_fallback": 1000000, "unit": "SOL" },
+    "USDT": { "native": 5000000,   "usd_fallback": 5000000, "unit": "USDT" },
+    "USDC": { "native": 5000000,   "usd_fallback": 5000000, "unit": "USDC" }
+  },
+
+  "alert_tiers": {
+    "_note": "Different alert tiers for push notifications vs feed rows vs silent collection.",
+    "MEGA": {
+      "usd_min": 50000000,
+      "action": "immediate_push_notification",
+      "label": "🚨 Mega Whale",
+      "color": "#EF4444"
+    },
+    "LARGE": {
+      "usd_min": 10000000,
+      "action": "feed_row_highlighted",
+      "label": "🐋 Large Whale",
+      "color": "#F59E0B"
+    },
+    "STANDARD": {
+      "usd_min": 1000000,
+      "action": "feed_row_normal",
+      "label": "Whale",
+      "color": "#94A3B8"
+    }
+  },
+
+  "sentiment_weights": {
+    "_note": "Weights for the composite WhaleSentiment score. Must sum to 1.0.",
+    "exchange_netflow":    0.40,
+    "funding_rate":        0.25,
+    "open_interest_trend": 0.20,
+    "stablecoin_ratio":    0.15
+  },
+
+  "sentiment_thresholds": {
+    "ACCUMULATING":      { "min": 0.6,  "max": 1.0  },
+    "MILD_ACCUMULATION": { "min": 0.2,  "max": 0.6  },
+    "NEUTRAL":           { "min": -0.2, "max": 0.2  },
+    "MILD_DISTRIBUTION": { "min": -0.6, "max": -0.2 },
+    "DISTRIBUTING":      { "min": -1.0, "max": -0.6 }
+  },
+
+  "cascade_detection": {
+    "_note": "All thresholds for the cascade risk detector. Require signals_required conditions to fire.",
+    "signals_required": 3,
+    "confidence_min_to_surface": 75,
+    "oi_percentile_threshold": 90,
+    "oi_lookback_days": 30,
+    "aave_health_factor_warning": 1.25,
+    "aave_health_factor_critical": 1.10,
+    "price_proximity_to_liq_pct": 3.0,
+    "deposit_velocity_multiplier": 2.0,
+    "deposit_velocity_window_hours": 4,
+    "warning_ttl_hours": 2,
+    "cooldown_after_trigger_hours": 2,
+    "risk_levels": {
+      "LOW":      { "signals_met": 3, "color": "#FCD34D" },
+      "MEDIUM":   { "signals_met": 4, "color": "#F97316" },
+      "HIGH":     { "signals_met": 5, "color": "#EF4444" },
+      "CRITICAL": { "signals_met": 6, "color": "#7F1D1D" }
+    }
+  },
+
+  "spoofing_detection": {
+    "min_order_size_usd": 500000,
+    "vanish_window_seconds": 15,
+    "confidence_min_to_surface": 70,
+    "monitored_exchanges": ["binance", "coinbase", "bybit"],
+    "monitored_orderbook_levels": 10,
+    "repetition_bonus": 0.15,
+    "timing_correlation_bonus": 0.20
+  },
+
+  "otc_detection": {
+    "_note": "Wallet-to-wallet transfers with no exchange involvement above this threshold are flagged as suspected OTC.",
+    "min_usd": 10000000,
+    "flow_type_label": "otc_suspected",
+    "sentiment_treatment": "bullish"
+  },
+
+  "polling_cadence_seconds": {
+    "ETH":  30,
+    "BTC":  60,
+    "SOL":  30,
+    "TRON": 30,
+    "hyperliquid_ws": "continuous",
+    "aave_health_factors": 60
+  },
+
+  "caching": {
+    "whale_recent_ttl_seconds": 30,
+    "sentiment_ttl_seconds": 300,
+    "cascade_ttl_seconds": 60,
+    "address_label_etherscan_ttl_days": 7,
+    "address_label_stale_hot_wallet_days": 30
+  },
+
+  "api_rate_limits": {
+    "etherscan_free_rps": 5,
+    "etherscan_pro_rps": 30,
+    "blockstream_rps": 10,
+    "solscan_rps": 5,
+    "tron_grid_rps": 15
+  },
+
+  "frontend": {
+    "whale_feed_poll_interval_ms": 60000,
+    "sentiment_badge_poll_interval_ms": 300000,
+    "cascade_banner_auto_dismiss_ms": 7200000,
+    "feed_max_rows": 20,
+    "flow_type_colors": {
+      "exchange_deposit":    "#F59E0B",
+      "exchange_withdrawal": "#22C55E",
+      "otc_suspected":       "#A855F7",
+      "wallet_to_wallet":    "#94A3B8"
+    },
+    "sentiment_colors": {
+      "ACCUMULATING":      "#22C55E",
+      "MILD_ACCUMULATION": "#86EFAC",
+      "NEUTRAL":           "#94A3B8",
+      "MILD_DISTRIBUTION": "#F59E0B",
+      "DISTRIBUTING":      "#EF4444"
+    }
+  },
+
+  "tier_gates": {
+    "whale_feed":             "premium_plus",
+    "cascade_warning_banner": "premium",
+    "sentiment_badge":        "premium",
+    "flow_chart":             "premium",
+    "websocket_alerts":       "premium_plus",
+    "api_access":             "premium_plus"
+  }
+}

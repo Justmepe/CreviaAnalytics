@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Canonical response schemas for all Whale Analysis API endpoints. Used for frontend type generation, backend validation, and documentation.",
+    "last_updated": "2026-03-08"
+  },
+
+  "schemas": {
+
+    "WhaleTransaction": {
+      "_description": "A single normalized large on-chain transaction. Core unit of the system.",
+      "id":               { "type": "string",  "example": "ETH:0xabc123...",          "description": "Unique ID: chain:txhash" },
+      "chain":            { "type": "string",  "enum": ["ETH","BTC","SOL","TRON"],    "description": "Source blockchain" },
+      "asset":            { "type": "string",  "example": "ETH",                      "description": "Token symbol" },
+      "amount_native":    { "type": "number",  "example": 500.0,                      "description": "Raw amount in native units" },
+      "amount_usd":       { "type": "number",  "example": 1240000.0,                  "description": "USD value at time of transaction" },
+      "from_address":     { "type": "string",  "example": "0x3f5CE5...",              "description": "Sender address" },
+      "to_address":       { "type": "string",  "example": "0xBE0eB5...",              "description": "Receiver address" },
+      "from_label":       { "type": "string",  "nullable": true, "example": "Unknown Wallet", "description": "Human-readable label or null" },
+      "to_label":         { "type": "string",  "nullable": true, "example": "Binance Hot Wallet 1" },
+      "from_category":    { "type": "string",  "nullable": true, "enum": ["cex","dex","fund","whale","miner","legal",null] },
+      "to_category":      { "type": "string",  "nullable": true, "enum": ["cex","dex","fund","whale","miner","legal",null] },
+      "flow_type":        { "type": "string",  "enum": ["exchange_deposit","exchange_withdrawal","otc_suspected","wallet_to_wallet"], "description": "Classified movement type" },
+      "is_otc_suspected": { "type": "boolean", "example": false,                      "description": "True if wallet-to-wallet > $10M with no exchange involvement" },
+      "timestamp":        { "type": "string",  "format": "datetime", "example": "2026-03-08T11:30:00Z" },
+      "block_number":     { "type": "integer", "example": 21450001 },
+      "tx_hash":          { "type": "string",  "example": "0xd3ad..." },
+      "alert_tier":       { "type": "string",  "enum": ["MEGA","LARGE","STANDARD"],   "description": "Assigned based on USD value" }
+    },
+
+    "WhaleSentiment": {
+      "_description": "Composite whale sentiment score for a given asset over a time window.",
+      "asset":            { "type": "string",  "example": "BTC" },
+      "score":            { "type": "number",  "minimum": -1.0, "maximum": 1.0, "example": 0.72 },
+      "label":            { "type": "string",  "enum": ["ACCUMULATING","MILD_ACCUMULATION","NEUTRAL","MILD_DISTRIBUTION","DISTRIBUTING"] },
+      "confidence":       { "type": "integer", "minimum": 0, "maximum": 100, "example": 84 },
+      "key_signal":       { "type": "string",  "example": "Strong withdrawal trend from Binance over 4h — 12,400 BTC net outflow" },
+      "window_hours":     { "type": "integer", "example": 4 },
+      "components": {
+        "_description": "Breakdown of each signal component feeding the composite score.",
+        "exchange_netflow": {
+          "raw_score":    { "type": "number", "example": 0.81 },
+          "weight":       { "type": "number", "example": 0.40 },
+          "weighted":     { "type": "number", "example": 0.324 },
+          "detail":       { "type": "string", "example": "Net -12,400 BTC from exchanges (withdrawals dominating)" }
+        },
+        "funding_rate": {
+          "raw_score":    { "type": "number", "example": 0.65 },
+          "weight":       { "type": "number", "example": 0.25 },
+          "weighted":     { "type": "number", "example": 0.163 },
+          "detail":       { "type": "string", "example": "Funding rate -0.02% — negative funding with withdrawals = squeeze setup" }
+        },
+        "open_interest_trend": {
+          "raw_score":    { "type": "number", "example": 0.55 },
+          "weight":       { "type": "number", "example": 0.20 },
+          "weighted":     { "type": "number", "example": 0.110 },
+          "detail":       { "type": "string", "example": "OI rising +8% while whales accumulating — leveraged conviction" }
+        },
+        "stablecoin_ratio": {
+          "raw_score":    { "type": "number", "example": 0.30 },
+          "weight":       { "type": "number", "example": 0.15 },
+          "weighted":     { "type": "number", "example": 0.045 },
+          "detail":       { "type": "string", "example": "$320M USDT flowing into exchanges — moderate dry powder" }
+        }
+      },
+      "computed_at":      { "type": "string", "format": "datetime", "example": "2026-03-08T11:30:00Z" }
+    },
+
+    "CascadeWarning": {
+      "_description": "Active liquidation cascade risk warning. Null response means no current risk detected.",
+      "asset":                  { "type": "string",  "example": "BTC" },
+      "risk_level":             { "type": "string",  "enum": ["LOW","MEDIUM","HIGH","CRITICAL"] },
+      "confidence":             { "type": "integer", "minimum": 0, "maximum": 100, "example": 82 },
+      "estimated_usd_at_risk":  { "type": "number",  "example": 38000000, "description": "Total USD in positions that would liquidate" },
+      "liq_wall_price":         { "type": "number",  "example": 76000.0 },
+      "current_price":          { "type": "number",  "example": 78250.0 },
+      "price_distance_pct":     { "type": "number",  "example": 2.88, "description": "% distance from current price to liq wall" },
+      "direction":              { "type": "string",  "enum": ["LONG_SQUEEZE","SHORT_SQUEEZE"] },
+      "key_signals":            { "type": "array", "items": { "type": "string" }, "example": ["OI at 92nd percentile", "Deposit velocity 2.4x baseline", "4 Aave positions below HF 1.2"] },
+      "human_summary":          { "type": "string",  "example": "⚠ Liq wall at $76,000 — $38M at risk. Shorts may get squeezed if BTC loses $76k support." },
+      "expires_at":             { "type": "string",  "format": "datetime" },
+      "created_at":             { "type": "string",  "format": "datetime" }
+    },
+
+    "SpoofAlert": {
+      "_description": "Detected order book spoofing event.",
+      "asset":              { "type": "string",  "example": "ETH" },
+      "exchange":           { "type": "string",  "example": "binance" },
+      "side":               { "type": "string",  "enum": ["bid","ask"] },
+      "order_size_usd":     { "type": "number",  "example": 2400000 },
+      "price_level":        { "type": "number",  "example": 3180.0 },
+      "appeared_at":        { "type": "string",  "format": "datetime" },
+      "vanished_at":        { "type": "string",  "format": "datetime" },
+      "duration_seconds":   { "type": "integer", "example": 8 },
+      "confidence":         { "type": "integer", "example": 78 },
+      "interpretation":     { "type": "string",  "example": "Large ask wall at $3,180 appeared and vanished in 8s — possible sell wall spoofing" }
+    },
+
+    "FlowChartDataPoint": {
+      "_description": "Single hourly bucket for the netflow chart. Array of these powers WhaleFlowMiniChart.",
+      "timestamp":          { "type": "string", "format": "datetime" },
+      "net_flow_usd":       { "type": "number", "example": -4200000, "description": "Negative = net withdrawal (bullish), positive = net deposit (bearish)" },
+      "deposit_usd":        { "type": "number", "example": 800000 },
+      "withdrawal_usd":     { "type": "number", "example": 5000000 },
+      "transaction_count":  { "type": "integer", "example": 14 }
+    }
+  },
+
+  "endpoints": {
+
+    "GET /api/whale/recent": {
+      "description": "Returns recent large on-chain transactions, optionally filtered.",
+      "auth": "premium_plus",
+      "query_params": {
+        "limit":     { "type": "integer", "default": 20, "max": 100 },
+        "chain":     { "type": "string",  "enum": ["ETH","BTC","SOL","TRON","all"], "default": "all" },
+        "asset":     { "type": "string",  "example": "ETH" },
+        "flow_type": { "type": "string",  "enum": ["exchange_deposit","exchange_withdrawal","otc_suspected","wallet_to_wallet","all"], "default": "all" }
+      },
+      "response": {
+        "transactions": { "type": "array", "items": "$ref:WhaleTransaction" },
+        "total_usd_moved": { "type": "number" },
+        "generated_at": { "type": "string", "format": "datetime" }
+      },
+      "cache_ttl_seconds": 30
+    },
+
+    "GET /api/whale/sentiment/{asset}": {
+      "description": "Returns composite whale sentiment score for a given asset.",
+      "auth": "premium",
+      "path_params": {
+        "asset": { "type": "string", "enum": ["BTC","ETH","SOL"], "required": true }
+      },
+      "query_params": {
+        "window_hours": { "type": "integer", "default": 4, "options": [1, 4, 12, 24] }
+      },
+      "response": "$ref:WhaleSentiment",
+      "cache_ttl_seconds": 300
+    },
+
+    "GET /api/whale/cascade-risk": {
+      "description": "Returns active cascade warning if one exists, or null.",
+      "auth": "premium",
+      "query_params": {
+        "asset": { "type": "string", "enum": ["BTC","ETH","SOL","all"], "default": "all" }
+      },
+      "response": {
+        "warnings": { "type": "array", "items": "$ref:CascadeWarning", "description": "Empty array if no active warnings" },
+        "checked_at": { "type": "string", "format": "datetime" }
+      },
+      "cache_ttl_seconds": 60
+    },
+
+    "GET /api/whale/flow-chart/{asset}": {
+      "description": "Returns hourly netflow data for the past 24h, powering WhaleFlowMiniChart.",
+      "auth": "premium",
+      "path_params": {
+        "asset": { "type": "string", "enum": ["BTC","ETH","SOL"], "required": true }
+      },
+      "response": {
+        "asset": { "type": "string" },
+        "data":  { "type": "array", "items": "$ref:FlowChartDataPoint" },
+        "summary": {
+          "net_24h_usd":    { "type": "number" },
+          "bias":           { "type": "string", "enum": ["INFLOW","OUTFLOW","NEUTRAL"] },
+          "largest_single": { "type": "number" }
+        }
+      },
+      "cache_ttl_seconds": 3600
+    },
+
+    "WS /ws/whale/alerts": {
+      "description": "WebSocket connection for real-time cascade warnings and MEGA-tier whale alerts.",
+      "auth": "premium_plus",
+      "message_types": {
+        "cascade_warning": { "payload": "$ref:CascadeWarning" },
+        "mega_whale":      { "payload": "$ref:WhaleTransaction" },
+        "spoof_alert":     { "payload": "$ref:SpoofAlert" },
+        "heartbeat":       { "payload": { "ts": "datetime" } }
+      },
+      "reconnect_strategy": "exponential_backoff_5s",
+      "heartbeat_interval_seconds": 30
+    }
+  }
+}

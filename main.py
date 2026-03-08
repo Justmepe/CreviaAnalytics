@@ -117,6 +117,7 @@ BINANCE_SECRET = os.getenv('BINANCE_SECRET_KEY', '')
 COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY', '')
 COINGLASS_API_KEY = os.getenv('COINGLASS_API_KEY', '')
 ETHERSCAN_API_KEY = os.getenv('ETHERSCAN_API_KEY', '')
+GLASSNODE_API_KEY = os.getenv('GLASSNODE_API_KEY', '')
 
 # Intervals
 RESEARCH_INTERVAL = int(os.getenv('RESEARCH_INTERVAL', '60'))
@@ -193,7 +194,8 @@ class CryptoAnalysisOrchestrator:
             binance_secret=BINANCE_SECRET,
             coingecko_key=COINGECKO_API_KEY,
             coinglass_key=COINGLASS_API_KEY,
-            etherscan_key=ETHERSCAN_API_KEY
+            etherscan_key=ETHERSCAN_API_KEY,
+            glassnode_key=GLASSNODE_API_KEY,
         )
 
         # Health check

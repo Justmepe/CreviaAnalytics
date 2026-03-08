@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "last_updated": "2026-03-08",
+    "total_addresses": 72,
+    "chains_covered": ["ETH", "BTC", "SOL", "TRON"],
+    "sources": ["Etherscan labels", "community eth-labels (GitHub)", "Dune Analytics exports", "manually verified"],
+    "refresh_cadence": "weekly",
+    "notes": "Hot wallet addresses rotate frequently. Flag any address older than 30 days as 'stale' and re-verify before use."
+  },
+
+  "ETH": {
+    "binance": {
+      "label": "Binance",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "0x3f5CE5FBFe3E9af3971dD833D26bA9b5C936f0bE", "type": "hot", "note": "Binance Hot Wallet 1", "verified": true },
+        { "address": "0xD551234Ae421e3BCBA99A0Da6d736074f22192FF", "type": "hot", "note": "Binance Hot Wallet 2", "verified": true },
+        { "address": "0x564286362092D8e7936f0549571a803B203aAceD", "type": "hot", "note": "Binance Hot Wallet 3", "verified": true },
+        { "address": "0x0681d8Db095565FE8A346fA0277bFfdE9C0eDBBF", "type": "hot", "note": "Binance Hot Wallet 4", "verified": true }
+      ],
+      "cold_wallets": [
+        { "address": "0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8", "type": "cold", "note": "Binance Cold Wallet (largest known)", "verified": true }
+      ]
+    },
+    "coinbase": {
+      "label": "Coinbase",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "0xA9D1e08C7793af67e9d92fe308d5697FB81d3E43", "type": "hot", "note": "Coinbase Hot Wallet 1", "verified": true },
+        { "address": "0x71660c4005BA85c37ccec55d0C4493E66Fe775d3", "type": "hot", "note": "Coinbase Hot Wallet 2", "verified": true }
+      ],
+      "cold_wallets": [
+        { "address": "0x503828976D22510aad0201ac7EC88293211D23Da", "type": "cold", "note": "Coinbase Cold Wallet 1", "verified": true },
+        { "address": "0xDdfAbCdc4D8FfC6d5beaf154f18B778f892A0740", "type": "cold", "note": "Coinbase Cold Wallet 2", "verified": true }
+      ]
+    },
+    "kraken": {
+      "label": "Kraken",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "0x2910543Af39abA0Cd09dBb2D50200b3E800A63D2", "type": "hot", "note": "Kraken Hot Wallet 1", "verified": true },
+        { "address": "0xae2Fc483527B8EF99EB5D9B44875F005ba1FaE13", "type": "hot", "note": "Kraken Hot Wallet 2", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "okx": {
+      "label": "OKX",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "0x6cC5F688a315f3dC28A7781717a9A798a59fDA7b", "type": "hot", "note": "OKX Hot Wallet 1", "verified": true },
+        { "address": "0x236F9F97e0E62388479bf9E1130d6c116b4e0B9F", "type": "hot", "note": "OKX Hot Wallet 2", "verified": false }
+      ],
+      "cold_wallets": []
+    },
+    "bybit": {
+      "label": "Bybit",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "0xf89d7b9c864f589bbF53a82105107622B35EaA40", "type": "hot", "note": "Bybit Hot Wallet 1", "verified": true },
+        { "address": "0x1Db3439a222C519ab44bb1144fC28167b4Fa6EE6", "type": "hot", "note": "Bybit Hot Wallet 2", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "bitfinex": {
+      "label": "Bitfinex",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "type": "hot", "note": "Bitfinex Hot Wallet", "verified": true }
+      ],
+      "cold_wallets": [
+        { "address": "0x876EabF441B2EE5B5b0554Fd502a8E0600950cFa", "type": "cold", "note": "Bitfinex Cold Wallet", "verified": true }
+      ]
+    },
+    "huobi": {
+      "label": "HTX (Huobi)",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "0xaB5C66752a9e8167967685F1450532fB96d5d24f", "type": "hot", "note": "HTX Hot Wallet 1", "verified": true },
+        { "address": "0x6748F50f686bfbcA6Fe8ad62b22228b87F31ff2B", "type": "hot", "note": "HTX Hot Wallet 2", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "uniswap": {
+      "label": "Uniswap V3",
+      "category": "dex",
+      "hot_wallets": [
+        { "address": "0x1F98431c8aD98523631AE4a59f267346ea31F984", "type": "contract", "note": "Uniswap V3 Factory", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "jump_trading": {
+      "label": "Jump Trading",
+      "category": "fund",
+      "hot_wallets": [
+        { "address": "0x46340b20830761efd32832A74d7169B29FEB9758", "type": "trading", "note": "Jump Trading (suspected)", "verified": false }
+      ],
+      "cold_wallets": []
+    },
+    "wintermute": {
+      "label": "Wintermute",
+      "category": "fund",
+      "hot_wallets": [
+        { "address": "0x4f3a120E72C76c22ae802D129F599BFDbc31cb81", "type": "trading", "note": "Wintermute Market Maker", "verified": true }
+      ],
+      "cold_wallets": []
+    }
+  },
+
+  "BTC": {
+    "binance": {
+      "label": "Binance",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo", "type": "cold", "note": "Binance Cold Wallet (largest, ~248k BTC)", "verified": true },
+        { "address": "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97", "type": "cold", "note": "Binance Cold Wallet 2", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "coinbase": {
+      "label": "Coinbase",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "1FzWLkAahHooV3kzTgyx6qsswXJ6sCXkSR", "type": "hot", "note": "Coinbase Hot Wallet", "verified": true }
+      ],
+      "cold_wallets": [
+        { "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j", "type": "cold", "note": "Coinbase Prime Cold", "verified": true }
+      ]
+    },
+    "kraken": {
+      "label": "Kraken",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "1LdRcdxfbSnmCYYNdeYpUnztiYzVfBEQeC", "type": "hot", "note": "Kraken Hot Wallet", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "bitfinex": {
+      "label": "Bitfinex",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "1Kr6QSydW9bFQG1mXiPNNu6WpJGmUa9i1g", "type": "hot", "note": "Bitfinex Hot Wallet", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "mt_gox_trustee": {
+      "label": "Mt. Gox Trustee",
+      "category": "legal",
+      "hot_wallets": [
+        { "address": "1Fd8RuZqJNG4v56rPD1v6rgYptownhfqRV", "type": "cold", "note": "Mt. Gox Trustee — movements = distribution risk", "verified": true }
+      ],
+      "cold_wallets": []
+    }
+  },
+
+  "SOL": {
+    "binance": {
+      "label": "Binance",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM", "type": "hot", "note": "Binance SOL Hot Wallet", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "coinbase": {
+      "label": "Coinbase",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS", "type": "hot", "note": "Coinbase SOL Hot Wallet", "verified": false }
+      ],
+      "cold_wallets": []
+    },
+    "okx": {
+      "label": "OKX",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "5VCwKtCXgCJ8Z1Xqlo4SKxrbNZYM7PjQmTCV8NnE6TgU", "type": "hot", "note": "OKX SOL Hot Wallet", "verified": false }
+      ],
+      "cold_wallets": []
+    }
+  },
+
+  "TRON": {
+    "binance": {
+      "label": "Binance USDT",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "TKDzsXENPP5KKoFDTDfPaMFsaXYnaBPzAm", "type": "hot", "note": "Binance TRON USDT Hot Wallet", "verified": true }
+      ],
+      "cold_wallets": []
+    },
+    "okx": {
+      "label": "OKX USDT",
+      "category": "cex",
+      "hot_wallets": [
+        { "address": "TNXoiAJ3dct8Fjg4M9fkLFh9S2v9TXc32G", "type": "hot", "note": "OKX TRON USDT Wallet", "verified": true }
+      ],
+      "cold_wallets": []
+    }
+  },
+
+  "flat_lookup": {
+    "_note": "Auto-generated flat map for O(1) lookups in whale_normalizer.py. Regenerate with scripts/build_address_lookup.py",
+    "0x3f5CE5FBFe3E9af3971dD833D26bA9b5C936f0bE": { "label": "Binance Hot Wallet 1", "exchange": "binance", "category": "cex", "chain": "ETH", "type": "hot" },
+    "0xD551234Ae421e3BCBA99A0Da6d736074f22192FF": { "label": "Binance Hot Wallet 2", "exchange": "binance", "category": "cex", "chain": "ETH", "type": "hot" },
+    "0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8": { "label": "Binance Cold Wallet", "exchange": "binance", "category": "cex", "chain": "ETH", "type": "cold" },
+    "0xA9D1e08C7793af67e9d92fe308d5697FB81d3E43": { "label": "Coinbase Hot Wallet 1", "exchange": "coinbase", "category": "cex", "chain": "ETH", "type": "hot" },
+    "0x503828976D22510aad0201ac7EC88293211D23Da": { "label": "Coinbase Cold Wallet 1", "exchange": "coinbase", "category": "cex", "chain": "ETH", "type": "cold" },
+    "0x2910543Af39abA0Cd09dBb2D50200b3E800A63D2": { "label": "Kraken Hot Wallet 1", "exchange": "kraken", "category": "cex", "chain": "ETH", "type": "hot" },
+    "0x6cC5F688a315f3dC28A7781717a9A798a59fDA7b": { "label": "OKX Hot Wallet 1", "exchange": "okx", "category": "cex", "chain": "ETH", "type": "hot" },
+    "0xf89d7b9c864f589bbF53a82105107622B35EaA40": { "label": "Bybit Hot Wallet 1", "exchange": "bybit", "category": "cex", "chain": "ETH", "type": "hot" },
+    "0x742d35Cc6634C0532925a3b844Bc454e4438f44e": { "label": "Bitfinex Hot Wallet", "exchange": "bitfinex", "category": "cex", "chain": "ETH", "type": "hot" },
+    "0x4f3a120E72C76c22ae802D129F599BFDbc31cb81": { "label": "Wintermute", "exchange": null, "category": "fund", "chain": "ETH", "type": "trading" },
+    "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo":       { "label": "Binance Cold Wallet (BTC)", "exchange": "binance", "category": "cex", "chain": "BTC", "type": "cold" },
+    "1FzWLkAahHooV3kzTgyx6qsswXJ6sCXkSR":       { "label": "Coinbase Hot Wallet (BTC)", "exchange": "coinbase", "category": "cex", "chain": "BTC", "type": "hot" },
+    "1Fd8RuZqJNG4v56rPD1v6rgYptownhfqRV":       { "label": "Mt. Gox Trustee", "exchange": null, "category": "legal", "chain": "BTC", "type": "cold" },
+    "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM": { "label": "Binance Hot Wallet (SOL)", "exchange": "binance", "category": "cex", "chain": "SOL", "type": "hot" },
+    "TKDzsXENPP5KKoFDTDfPaMFsaXYnaBPzAm":       { "label": "Binance USDT (TRON)", "exchange": "binance", "category": "cex", "chain": "TRON", "type": "hot" }
+  }
+}

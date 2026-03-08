@@ -3,6 +3,11 @@ FastAPI application — Crevia Analytics API
 Serves content to the Next.js frontend and accepts content from the Python engine.
 """
 
+import logging
+import os
+import threading
+import time
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -14,6 +19,9 @@ from api.routers import stream
 from api.routers import waitlist
 from api.routers import portfolio
 from api.routers import feed
+from api.routers import whale as whale_router
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title='Crevia Analytics API',
@@ -40,12 +48,62 @@ app.include_router(stream.router)
 app.include_router(waitlist.router)
 app.include_router(portfolio.router)
 app.include_router(feed.router)
+app.include_router(whale_router.router)
 
+
+# ---------------------------------------------------------------------------
+# Whale engine background thread
+# ---------------------------------------------------------------------------
+
+def _start_whale_engine() -> None:
+    """
+    Initialise DataAggregator with all available API keys, then
+    run WhaleAnalyzer.refresh_all() every 5 minutes in a daemon thread.
+
+    Uses the same env vars as main.py so no new config is needed.
+    """
+    try:
+        from src.data.aggregator import DataAggregator
+        from src.intelligence.whale_analyzer import WhaleAnalyzer
+
+        aggregator = DataAggregator(
+            binance_key     = os.getenv('BINANCE_API_KEY', ''),
+            binance_secret  = os.getenv('BINANCE_SECRET_KEY', ''),
+            coingecko_key   = os.getenv('COINGECKO_API_KEY', ''),
+            etherscan_key   = os.getenv('ETHERSCAN_API_KEY', ''),
+            glassnode_key   = os.getenv('GLASSNODE_API_KEY', ''),
+            coinglass_key   = os.getenv('COINGLASS_API_KEY', ''),
+        )
+
+        analyzer = WhaleAnalyzer(aggregator=aggregator)
+        whale_router.set_whale_engine(analyzer)
+        logger.info('WhaleAnalyzer engine initialised — starting background refresh loop')
+
+        def _loop():
+            # First run immediately, then every 5 minutes
+            while True:
+                try:
+                    analyzer.refresh_all(['BTC', 'ETH', 'SOL'])
+                except Exception as e:
+                    logger.error('WhaleAnalyzer refresh error: %s', e)
+                time.sleep(300)   # 5 minutes
+
+        t = threading.Thread(target=_loop, daemon=True, name='whale-engine')
+        t.start()
+
+    except Exception as e:
+        logger.error('Failed to start whale engine: %s', e)
+
+
+# ---------------------------------------------------------------------------
+# Startup
+# ---------------------------------------------------------------------------
 
 @app.on_event('startup')
 def on_startup():
-    """Create tables on first run if they don't exist."""
+    """Create DB tables and start whale engine background thread."""
     create_tables()
+    _start_whale_engine()
 
 
 @app.get('/api/health')
