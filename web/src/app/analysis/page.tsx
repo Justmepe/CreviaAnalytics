@@ -73,6 +73,7 @@ export default async function AnalysisPage({ searchParams }: PageProps) {
             borderRight: '1px solid #1a2030',
             padding: '24px 28px',
             minWidth: 0,
+            overflow: 'hidden',
           }}
         >
           {/* Section Header */}

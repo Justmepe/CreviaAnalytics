@@ -173,14 +173,14 @@
 .analysis-grid  { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
 .cta-wrapper    { padding: 0 80px 80px; }
 
-/* Analysis page 2-col shell */
-.analysis-shell { display: grid; grid-template-columns: 1fr 360px; width: 100%; }
-@media (max-width: 1100px) { .analysis-shell { grid-template-columns: 1fr 300px; } }
+/* Analysis page 2-col shell — left column is exactly (100% - sidebar), never wider */
+.analysis-shell { display: grid; grid-template-columns: minmax(0, 1fr) 360px; width: 100%; overflow-x: hidden; }
+@media (max-width: 1100px) { .analysis-shell { grid-template-columns: minmax(0, 1fr) 300px; } }
 @media (max-width: 860px)  { .analysis-shell { grid-template-columns: 1fr; } }
 @media (max-width: 860px)  { .analysis-shell > div:first-child { border-right: none !important; } }
 
-/* Analysis content grid — 3-col matching reference design */
-.analysis-content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+/* Analysis content grid — 3-col, minmax(0,1fr) prevents cards from overflowing left column */
+.analysis-content-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
 /* Intelligence page 2-col shell */
 .intel-shell { display: grid; grid-template-columns: 1fr 320px; max-width: 1280px; }
