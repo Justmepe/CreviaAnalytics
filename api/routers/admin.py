@@ -1,0 +1,196 @@
+"""
+Admin Content Portal — write with Claude, publish to site
+"""
+
+import json
+import os
+import logging
+from typing import Optional, List
+from datetime import datetime, timezone
+
+from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
+
+from api.database import get_db
+from api.config import ADMIN_EMAIL
+from api.middleware.auth import get_current_user
+from api.models.user import User
+from api.models.content import ContentPost
+from api.services.content_service import create_article_post
+
+logger = logging.getLogger(__name__)
+
+router = APIRouter(prefix='/api/admin', tags=['admin'])
+
+# ---------------------------------------------------------------------------
+# Auth dependency
+# ---------------------------------------------------------------------------
+
+async def require_admin(user: User = Depends(get_current_user)) -> User:
+    if not ADMIN_EMAIL or user.email != ADMIN_EMAIL:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail='Admin access required')
+    return user
+
+
+# ---------------------------------------------------------------------------
+# Schemas
+# ---------------------------------------------------------------------------
+
+class ChatMessage(BaseModel):
+    role: str   # 'user' | 'assistant'
+    content: str
+
+class ChatRequest(BaseModel):
+    messages: List[ChatMessage]
+
+class PublishRequest(BaseModel):
+    title: str
+    body: str
+    content_type: str = 'article'   # article | memo | news_tweet
+    sector: str = 'global'
+    tickers: Optional[List[str]] = None
+    tier: str = 'free'              # free | pro | enterprise
+
+class PostResponse(BaseModel):
+    id: int
+    title: str
+    content_type: str
+    sector: str
+    tickers: list
+    tier: str
+    slug: str
+    published_at: datetime
+    word_count: int
+
+    class Config:
+        from_attributes = True
+
+
+# ---------------------------------------------------------------------------
+# Claude chat (streaming)
+# ---------------------------------------------------------------------------
+
+SYSTEM_PROMPT = (
+    "You are a professional crypto market analyst and writer for Crevia Analytics, "
+    "a crypto intelligence platform. Write high-quality, insightful market analysis "
+    "content in a clear, authoritative tone. Use markdown formatting. "
+    "Focus on actionable insights, market context, and key data points. "
+    "Keep analysis concise and relevant to traders and investors."
+)
+
+
+@router.post('/chat')
+async def admin_chat(req: ChatRequest, _: User = Depends(require_admin)):
+    """Stream Claude Sonnet 4.6 responses for content writing."""
+    try:
+        import anthropic
+    except ImportError:
+        raise HTTPException(status_code=500, detail='anthropic package not installed')
+
+    client = anthropic.Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY', ''))
+
+    messages = [{'role': m.role, 'content': m.content} for m in req.messages]
+
+    async def stream_response():
+        try:
+            with client.messages.stream(
+                model='claude-sonnet-4-6',
+                max_tokens=4096,
+                system=SYSTEM_PROMPT,
+                messages=messages,
+            ) as stream:
+                for text in stream.text_stream:
+                    yield f"data: {json.dumps({'text': text})}\n\n"
+            yield "data: [DONE]\n\n"
+        except Exception as e:
+            yield f"data: {json.dumps({'error': str(e)})}\n\n"
+
+    return StreamingResponse(
+        stream_response(),
+        media_type='text/event-stream',
+        headers={
+            'Cache-Control': 'no-cache',
+            'X-Accel-Buffering': 'no',
+        },
+    )
+
+
+# ---------------------------------------------------------------------------
+# Publish
+# ---------------------------------------------------------------------------
+
+@router.post('/publish', response_model=PostResponse)
+def admin_publish(req: PublishRequest, db: Session = Depends(get_db),
+                  _: User = Depends(require_admin)):
+    """Publish an article/memo directly to the site."""
+    post = create_article_post(
+        db=db,
+        title=req.title,
+        body=req.body,
+        sector=req.sector,
+        tickers=req.tickers or ['BTC', 'ETH'],
+        source_file='admin-portal',
+    )
+    # Override content_type and tier if requested
+    post.content_type = req.content_type
+    post.tier = req.tier
+    db.commit()
+    db.refresh(post)
+
+    word_count = len(post.body.split()) if post.body else 0
+    return PostResponse(
+        id=post.id,
+        title=post.title,
+        content_type=post.content_type,
+        sector=post.sector,
+        tickers=post.tickers or [],
+        tier=post.tier,
+        slug=post.slug,
+        published_at=post.published_at,
+        word_count=word_count,
+    )
+
+
+# ---------------------------------------------------------------------------
+# List & delete posts
+# ---------------------------------------------------------------------------
+
+@router.get('/posts', response_model=List[PostResponse])
+def list_posts(limit: int = 20, db: Session = Depends(get_db),
+               _: User = Depends(require_admin)):
+    """List recent posts published through the admin portal."""
+    posts = (
+        db.query(ContentPost)
+        .filter(ContentPost.source_file == 'admin-portal')
+        .order_by(ContentPost.published_at.desc())
+        .limit(limit)
+        .all()
+    )
+    return [
+        PostResponse(
+            id=p.id,
+            title=p.title,
+            content_type=p.content_type,
+            sector=p.sector,
+            tickers=p.tickers or [],
+            tier=p.tier,
+            slug=p.slug,
+            published_at=p.published_at,
+            word_count=len(p.body.split()) if p.body else 0,
+        )
+        for p in posts
+    ]
+
+
+@router.delete('/posts/{post_id}')
+def delete_post(post_id: int, db: Session = Depends(get_db),
+                _: User = Depends(require_admin)):
+    """Delete a post by ID."""
+    post = db.query(ContentPost).filter(ContentPost.id == post_id).first()
+    if not post:
+        raise HTTPException(status_code=404, detail='Post not found')
+    db.delete(post)
+    db.commit()
+    return {'deleted': post_id}

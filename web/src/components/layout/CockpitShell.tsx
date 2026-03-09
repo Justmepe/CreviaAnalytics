@@ -47,6 +47,7 @@ const NAV_SECTIONS = [
     items: [
       { href: '/account',               icon: '⚙',  label: 'Settings',            live: false },
       { href: '/billing',               icon: '💳', label: 'Billing',              live: false },
+      { href: '/admin',                 icon: '🛠', label: 'Admin Portal',         live: false },
     ],
   },
 ];

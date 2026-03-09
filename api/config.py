@@ -33,6 +33,9 @@ JWT_ALGORITHM = 'HS256'
 JWT_ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24  # 24 hours
 JWT_REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 30  # 30 days
 
+# Admin portal
+ADMIN_EMAIL = os.getenv('ADMIN_EMAIL', '')
+
 # Content tier delay (seconds)
 ENTERPRISE_WINDOW = 3600      # First hour: Enterprise only
 PRO_WINDOW = 21600            # 1-6 hours: Pro

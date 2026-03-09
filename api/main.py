@@ -22,6 +22,7 @@ from api.routers import portfolio
 from api.routers import feed
 from api.routers import whale as whale_router
 from api.routers import alerts as alerts_router
+from api.routers import admin as admin_router
 
 logger = logging.getLogger(__name__)
 
@@ -52,6 +53,7 @@ app.include_router(portfolio.router)
 app.include_router(feed.router)
 app.include_router(whale_router.router)
 app.include_router(alerts_router.router)
+app.include_router(admin_router.router)
 
 
 # ---------------------------------------------------------------------------
