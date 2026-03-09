@@ -13,6 +13,10 @@ interface Post {
   id: number; title: string; content_type: string; sector: string;
   tickers: string[]; tier: string; slug: string; published_at: string; word_count: number;
 }
+interface InboxItem {
+  id: number; scan_type: string; headline: string;
+  suggested_prompt: string | null; status: string; created_at: string;
+}
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -32,6 +36,10 @@ function Badge({ label, color }: { label: string; color: string }) {
   );
 }
 
+const SCAN_COLORS: Record<string, string> = {
+  morning_scan: '#3fb950', mid_day: '#79c0ff',
+  closing_bell: '#e3b341', breaking_news: '#f85149',
+};
 const TIER_COLORS: Record<string, string> = {
   free: '#3fb950', pro: '#79c0ff', enterprise: '#e3b341',
 };
@@ -69,6 +77,10 @@ export default function AdminPortal() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [postsLoading, setPostsLoading] = useState(false);
 
+  // Inbox
+  const [inbox, setInbox] = useState<InboxItem[]>([]);
+  const [inboxLoading, setInboxLoading] = useState(false);
+
   const wordCount = body.trim() ? body.trim().split(/\s+/).length : 0;
 
   // Scroll chat to bottom
@@ -86,6 +98,41 @@ export default function AdminPortal() {
   }, []);
 
   useEffect(() => { loadPosts(); }, [loadPosts]);
+
+  const loadInbox = useCallback(async () => {
+    setInboxLoading(true);
+    try {
+      const r = await fetch(`${API}/api/admin/inbox?status=pending`, {
+        headers: { Authorization: `Bearer ${token()}` },
+      });
+      if (r.ok) setInbox(await r.json());
+    } finally { setInboxLoading(false); }
+  }, []);
+
+  useEffect(() => {
+    loadInbox();
+    const id = setInterval(loadInbox, 30_000);
+    return () => clearInterval(id);
+  }, [loadInbox]);
+
+  const dismissInbox = async (id: number) => {
+    await fetch(`${API}/api/admin/inbox/${id}`, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token()}` },
+    });
+    setInbox(prev => prev.filter(i => i.id !== id));
+  };
+
+  const loadInboxIntoChat = (item: InboxItem) => {
+    if (item.suggested_prompt) {
+      setChatInput(item.suggested_prompt);
+    }
+    // Mark as done
+    fetch(`${API}/api/admin/inbox/${item.id}?status=done`, {
+      method: 'PATCH',
+      headers: { Authorization: `Bearer ${token()}` },
+    }).then(() => setInbox(prev => prev.filter(i => i.id !== item.id)));
+  };
 
   // ---------------------------------------------------------------------------
   // Claude chat
@@ -242,6 +289,38 @@ export default function AdminPortal() {
         <span style={s.headerTitle}>Admin Content Portal</span>
         <a href="/dashboard" style={s.headerBack}>← Dashboard</a>
       </div>
+
+      {/* Inbox — engine queued tasks */}
+      {(inbox.length > 0 || inboxLoading) && (
+        <div style={s.inboxBar}>
+          <span style={s.inboxLabel}>
+            ◈ ENGINE INBOX
+            <span style={{ color: '#f85149', marginLeft: 6 }}>● {inbox.length} pending</span>
+          </span>
+          <div style={s.inboxItems}>
+            {inbox.map(item => (
+              <div key={item.id} style={s.inboxCard}>
+                <Badge
+                  label={item.scan_type.replace(/_/g, ' ')}
+                  color={SCAN_COLORS[item.scan_type] ?? '#8b949e'}
+                />
+                <span style={s.inboxHeadline}>{item.headline}</span>
+                <span style={s.inboxTime}>
+                  {new Date(item.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </span>
+                <button
+                  style={s.writeBtn}
+                  onClick={() => loadInboxIntoChat(item)}
+                  title="Load into Claude chat"
+                >
+                  Write with Claude →
+                </button>
+                <button style={s.dismissBtn} onClick={() => dismissInbox(item.id)} title="Dismiss">✕</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Main 2-column layout */}
       <div style={s.main}>
@@ -622,6 +701,67 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: 12,
     fontWeight: 700,
     letterSpacing: 0.5,
+  },
+
+  // Inbox bar
+  inboxBar: {
+    background: '#161b22',
+    borderBottom: '1px solid #30363d',
+    padding: '10px 16px',
+  },
+  inboxLabel: {
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: 10,
+    color: '#8b949e',
+    letterSpacing: 1,
+    fontWeight: 700,
+    textTransform: 'uppercase' as const,
+    marginBottom: 8,
+    gap: 4,
+  },
+  inboxItems: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: 6,
+  },
+  inboxCard: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+    background: '#0d1117',
+    border: '1px solid #30363d',
+    borderRadius: 6,
+    padding: '8px 12px',
+    flexWrap: 'wrap' as const,
+  },
+  inboxHeadline: {
+    flex: 1,
+    fontSize: 12,
+    color: '#e6edf3',
+    minWidth: 200,
+  },
+  inboxTime: { fontSize: 10, color: '#484f58' },
+  writeBtn: {
+    background: '#238636',
+    color: '#fff',
+    border: 'none',
+    borderRadius: 4,
+    padding: '4px 12px',
+    cursor: 'pointer',
+    fontFamily: 'inherit',
+    fontSize: 11,
+    fontWeight: 600,
+    whiteSpace: 'nowrap' as const,
+  },
+  dismissBtn: {
+    background: 'transparent',
+    color: '#484f58',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: 12,
+    padding: '2px 6px',
+    fontFamily: 'inherit',
   },
 
   // Posts

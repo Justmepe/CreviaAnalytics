@@ -26,4 +26,5 @@ def create_tables():
     from api.models import journal  # noqa: F401
     from api.models import feed  # noqa: F401
     from api.models import alerts  # noqa: F401
+    from api.models import admin_inbox  # noqa: F401
     Base.metadata.create_all(bind=engine)

@@ -14,10 +14,11 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from api.database import get_db
-from api.config import ADMIN_EMAIL
+from api.config import ADMIN_EMAIL, WEB_API_SECRET
 from api.middleware.auth import get_current_user
 from api.models.user import User
 from api.models.content import ContentPost
+from api.models.admin_inbox import AdminInboxItem
 from api.services.content_service import create_article_post
 
 logger = logging.getLogger(__name__)
@@ -194,3 +195,86 @@ def delete_post(post_id: int, db: Session = Depends(get_db),
     db.delete(post)
     db.commit()
     return {'deleted': post_id}
+
+
+# ---------------------------------------------------------------------------
+# Admin Inbox — engine posts tasks here; admin writes with Claude and publishes
+# ---------------------------------------------------------------------------
+
+class InboxItemCreate(BaseModel):
+    scan_type: str                      # morning_scan | breaking_news | mid_day | closing_bell
+    headline: Optional[str] = None      # short description
+    raw_data: Optional[dict] = None     # structured analysis data
+    suggested_prompt: Optional[str] = None  # pre-filled Claude prompt
+
+class InboxItemResponse(BaseModel):
+    id: int
+    scan_type: str
+    headline: Optional[str]
+    raw_data: Optional[dict]
+    suggested_prompt: Optional[str]
+    status: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+def _verify_engine(x_api_secret: str = None):
+    if x_api_secret != WEB_API_SECRET:
+        raise HTTPException(status_code=403, detail='Invalid API secret')
+
+
+@router.post('/inbox', response_model=InboxItemResponse)
+def create_inbox_item(
+    req: InboxItemCreate,
+    db: Session = Depends(get_db),
+    x_api_secret: Optional[str] = None,
+):
+    """Engine posts analysis data here instead of calling Claude directly."""
+    _verify_engine(x_api_secret)
+    item = AdminInboxItem(
+        scan_type=req.scan_type,
+        headline=req.headline or f'{req.scan_type.replace("_", " ").title()} — {datetime.now(timezone.utc).strftime("%H:%M UTC")}',
+        raw_data=req.raw_data,
+        suggested_prompt=req.suggested_prompt,
+        status='pending',
+    )
+    db.add(item)
+    db.commit()
+    db.refresh(item)
+    return item
+
+
+@router.get('/inbox', response_model=List[InboxItemResponse])
+def list_inbox(status: Optional[str] = 'pending', db: Session = Depends(get_db),
+               _: User = Depends(require_admin)):
+    """List inbox items (default: pending only)."""
+    q = db.query(AdminInboxItem)
+    if status and status != 'all':
+        q = q.filter(AdminInboxItem.status == status)
+    return q.order_by(AdminInboxItem.created_at.desc()).limit(50).all()
+
+
+@router.patch('/inbox/{item_id}')
+def update_inbox_status(item_id: int, status: str, db: Session = Depends(get_db),
+                        _: User = Depends(require_admin)):
+    """Mark inbox item as done or dismissed."""
+    item = db.query(AdminInboxItem).filter(AdminInboxItem.id == item_id).first()
+    if not item:
+        raise HTTPException(status_code=404, detail='Inbox item not found')
+    item.status = status
+    db.commit()
+    return {'id': item_id, 'status': status}
+
+
+@router.delete('/inbox/{item_id}')
+def delete_inbox_item(item_id: int, db: Session = Depends(get_db),
+                      _: User = Depends(require_admin)):
+    """Delete an inbox item."""
+    item = db.query(AdminInboxItem).filter(AdminInboxItem.id == item_id).first()
+    if not item:
+        raise HTTPException(status_code=404, detail='Inbox item not found')
+    db.delete(item)
+    db.commit()
+    return {'deleted': item_id}
