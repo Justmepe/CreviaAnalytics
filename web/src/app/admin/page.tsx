@@ -290,12 +290,24 @@ export default function AdminPortal() {
         <a href="/dashboard" style={s.headerBack}>← Dashboard</a>
       </div>
 
-      {/* Inbox — engine queued tasks */}
-      {(inbox.length > 0 || inboxLoading) && (
-        <div style={s.inboxBar}>
+      {/* Inbox — engine queued tasks (always visible so test button is accessible) */}
+      <div style={s.inboxBar}>
           <span style={s.inboxLabel}>
             ◈ ENGINE INBOX
-            <span style={{ color: '#f85149', marginLeft: 6 }}>● {inbox.length} pending</span>
+            {inbox.length > 0 && <span style={{ color: '#f85149', marginLeft: 6 }}>● {inbox.length} pending</span>}
+            {inbox.length === 0 && <span style={{ color: '#484f58', marginLeft: 6 }}>no pending tasks</span>}
+            <button
+              style={{ ...s.refreshBtn, marginLeft: 8 }}
+              onClick={async () => {
+                await fetch(`${API}/api/admin/inbox/test-notify`, {
+                  method: 'POST',
+                  headers: { Authorization: `Bearer ${token()}` },
+                });
+                alert('Test notification sent to Discord!');
+              }}
+            >
+              Test Discord ↗
+            </button>
           </span>
           <div style={s.inboxItems}>
             {inbox.map(item => (
@@ -320,7 +332,6 @@ export default function AdminPortal() {
             ))}
           </div>
         </div>
-      )}
 
       {/* Main 2-column layout */}
       <div style={s.main}>

@@ -35,6 +35,7 @@ JWT_REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 30  # 30 days
 
 # Admin portal
 ADMIN_EMAIL = os.getenv('ADMIN_EMAIL', '')
+ADMIN_DISCORD_WEBHOOK = os.getenv('ADMIN_DISCORD_WEBHOOK', '')
 
 # Content tier delay (seconds)
 ENTERPRISE_WINDOW = 3600      # First hour: Enterprise only

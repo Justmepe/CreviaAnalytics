@@ -14,7 +14,7 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from api.database import get_db
-from api.config import ADMIN_EMAIL, WEB_API_SECRET
+from api.config import ADMIN_EMAIL, WEB_API_SECRET, ADMIN_DISCORD_WEBHOOK
 from api.middleware.auth import get_current_user
 from api.models.user import User
 from api.models.content import ContentPost
@@ -220,6 +220,47 @@ class InboxItemResponse(BaseModel):
         from_attributes = True
 
 
+_SCAN_COLORS = {
+    'morning_scan':  0x3fb950,   # green
+    'mid_day':       0x79c0ff,   # blue
+    'closing_bell':  0xe3b341,   # yellow
+    'breaking_news': 0xf85149,   # red
+}
+_SCAN_EMOJI = {
+    'morning_scan':  '🌅',
+    'mid_day':       '☀️',
+    'closing_bell':  '🌙',
+    'breaking_news': '🚨',
+}
+
+def _notify_discord(scan_type: str, headline: str, item_id: int) -> None:
+    """Fire-and-forget Discord embed to Peter's admin webhook."""
+    if not ADMIN_DISCORD_WEBHOOK:
+        return
+    try:
+        import httpx
+        emoji = _SCAN_EMOJI.get(scan_type, '📋')
+        color = _SCAN_COLORS.get(scan_type, 0x8b949e)
+        embed = {
+            'title': f'{emoji} {scan_type.replace("_", " ").title()} — Ready to Write',
+            'description': headline,
+            'color': color,
+            'fields': [
+                {
+                    'name': 'Action',
+                    'value': '[Open Admin Portal →](https://creviacockpit.com/admin)',
+                    'inline': True,
+                },
+            ],
+            'footer': {'text': 'Crevia Analytics · Admin Inbox'},
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+        }
+        with httpx.Client(timeout=5.0) as client:
+            client.post(ADMIN_DISCORD_WEBHOOK, json={'embeds': [embed]})
+    except Exception as e:
+        logger.warning('Admin Discord notify failed: %s', e)
+
+
 def _verify_engine(x_api_secret: str = None):
     if x_api_secret != WEB_API_SECRET:
         raise HTTPException(status_code=403, detail='Invalid API secret')
@@ -243,7 +284,20 @@ def create_inbox_item(
     db.add(item)
     db.commit()
     db.refresh(item)
+
+    # Notify Peter via Discord
+    _notify_discord(item.scan_type, item.headline or '', item.id)
+
     return item
+
+
+@router.post('/inbox/test-notify')
+def test_inbox_notify(_: User = Depends(require_admin)):
+    """Send a test Discord notification to verify the webhook is configured."""
+    if not ADMIN_DISCORD_WEBHOOK:
+        raise HTTPException(status_code=400, detail='ADMIN_DISCORD_WEBHOOK not configured')
+    _notify_discord('morning_scan', 'Test notification — Admin inbox webhook is working ✓', 0)
+    return {'sent': True}
 
 
 @router.get('/inbox', response_model=List[InboxItemResponse])
