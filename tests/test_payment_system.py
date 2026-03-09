@@ -46,10 +46,30 @@ from unittest.mock import MagicMock, patch, PropertyMock
 # ── project root on path ───────────────────────────────────────────────────────
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-PASS = "  ✅ PASS"
-FAIL = "  ❌ FAIL"
-SKIP = "  ⚠️  SKIP"
+PASS = "  [PASS]"
+FAIL = "  [FAIL]"
+SKIP = "  [SKIP]"
 results = []
+
+
+import contextlib
+
+
+@contextlib.contextmanager
+def _with_web3(w3_factory):
+    """Context manager: installs a fake web3 module and restores state on exit."""
+    fake_web3_mod = MagicMock()
+    fake_web3_mod.Web3 = MagicMock(side_effect=w3_factory)
+    fake_web3_mod.Web3.HTTPProvider = MagicMock()
+    old = sys.modules.get('web3')
+    sys.modules['web3'] = fake_web3_mod
+    try:
+        yield
+    finally:
+        if old is None:
+            sys.modules.pop('web3', None)
+        else:
+            sys.modules['web3'] = old
 
 
 def record(name, passed, detail=""):
@@ -98,7 +118,7 @@ def _make_db(intent=None, user=None, sub=None):
 # Section 1 — payment_service unit tests
 # ══════════════════════════════════════════════════════════════
 
-print("\n─── payment_service unit tests ───────────────────────────────────────────")
+print("\n--- payment_service unit tests -------------------------------------------")
 
 # ── Test 1: create_payment_intent ─────────────────────────────────────────────
 
@@ -178,42 +198,27 @@ try:
     env = {'PAYMENT_RECEIVE_WALLET': TREASURY, 'BASE_RPC_URL': 'http://mock'}
 
     # Test 3: valid transfer
-    with patch.dict(os.environ, env), patch('api.services.payment_service.Web3') as W3:
-        W3.return_value = _make_web3_mock()
-        W3.HTTPProvider = MagicMock()
-        W3.to_checksum_address = lambda x: x
+    with patch.dict(os.environ, env), _with_web3(lambda *a, **kw: _make_web3_mock()):
         result = _check_transfer_on_chain('0xTXHASH', _make_intent())
         record("_check_transfer_on_chain — valid Transfer event accepted", result is True)
 
     # Test 4: wrong recipient
-    with patch.dict(os.environ, env), patch('api.services.payment_service.Web3') as W3:
-        W3.return_value = _make_web3_mock(to='0xWRONG')
-        W3.HTTPProvider = MagicMock()
-        W3.to_checksum_address = lambda x: x
+    with patch.dict(os.environ, env), _with_web3(lambda *a, **kw: _make_web3_mock(to='0xWRONG')):
         result = _check_transfer_on_chain('0xTXHASH', _make_intent())
         record("_check_transfer_on_chain — wrong recipient rejected", result is False)
 
     # Test 5: wrong sender (MetaMask path enforces sender_address)
-    with patch.dict(os.environ, env), patch('api.services.payment_service.Web3') as W3:
-        W3.return_value = _make_web3_mock(frm='0xOTHERSENDER')
-        W3.HTTPProvider = MagicMock()
-        W3.to_checksum_address = lambda x: x
+    with patch.dict(os.environ, env), _with_web3(lambda *a, **kw: _make_web3_mock(frm='0xOTHERSENDER')):
         result = _check_transfer_on_chain('0xTXHASH', _make_intent(sender=SENDER))
         record("_check_transfer_on_chain — wrong sender rejected", result is False)
 
     # Test 6: underpayment
-    with patch.dict(os.environ, env), patch('api.services.payment_service.Web3') as W3:
-        W3.return_value = _make_web3_mock(value=50_000_000)  # $50 instead of $100
-        W3.HTTPProvider = MagicMock()
-        W3.to_checksum_address = lambda x: x
+    with patch.dict(os.environ, env), _with_web3(lambda *a, **kw: _make_web3_mock(value=50_000_000)):
         result = _check_transfer_on_chain('0xTXHASH', _make_intent())
         record("_check_transfer_on_chain — underpayment rejected", result is False)
 
     # Test 7: overpayment accepted
-    with patch.dict(os.environ, env), patch('api.services.payment_service.Web3') as W3:
-        W3.return_value = _make_web3_mock(value=150_000_000)  # $150 for $100 tier
-        W3.HTTPProvider = MagicMock()
-        W3.to_checksum_address = lambda x: x
+    with patch.dict(os.environ, env), _with_web3(lambda *a, **kw: _make_web3_mock(value=150_000_000)):
         result = _check_transfer_on_chain('0xTXHASH', _make_intent())
         record("_check_transfer_on_chain — overpayment accepted", result is True)
 
@@ -332,10 +337,7 @@ try:
         w3.to_checksum_address = lambda x: x
         return w3
 
-    with patch.dict(os.environ, env), patch('api.services.payment_service.Web3') as W3:
-        W3.side_effect = _w3_valid
-        W3.HTTPProvider = MagicMock()
-        W3.to_checksum_address = lambda x: x
+    with patch.dict(os.environ, env), _with_web3(_w3_valid):
         result = verify_usdc_transfer(db, intent_id=1, tx_hash='0xVALID')
 
     passed = result is True and valid_intent.status == 'paid' and user_mock.tier == 'basic'
@@ -471,7 +473,7 @@ except Exception as e:
 # Section 2 — FastAPI endpoint tests (TestClient)
 # ══════════════════════════════════════════════════════════════
 
-print("\n─── FastAPI endpoint tests ────────────────────────────────────────────────")
+print("\n--- FastAPI endpoint tests -----------------------------------------------")
 
 try:
     from fastapi.testclient import TestClient
@@ -487,83 +489,89 @@ try:
     except Exception as e:
         record("API: POST /api/payments/intent — returns 401 without auth", False, str(e))
 
+    # FastAPI DI requires app.dependency_overrides — patch() doesn't intercept Depends()
+    from api.database import get_db as real_get_db
+    from api.middleware.auth import get_current_user as real_get_current_user
+    from api.models.user import User
+    from api.models.payment import SubscriptionRecord, PaymentIntent
+
     # ── Test 20: /api/payments/trial — creates trial ──────────────────────────
     try:
-        from api.middleware.auth import create_access_token
-        from api.models.user import User
+        fake_user_20 = MagicMock(spec=User)
+        fake_user_20.id = 99
+        fake_user_20.tier = 'free'
+        fake_user_20.subscription_status = 'none'
 
-        # Create a fake user and patch get_current_user + DB
-        fake_user = MagicMock(spec=User)
-        fake_user.id = 99
-        fake_user.email = 'testpay@test.com'
-        fake_user.tier = 'free'
-        fake_user.subscription_status = 'none'
+        fake_sub_20 = MagicMock(spec=SubscriptionRecord)
+        fake_sub_20.is_trial = True
+        fake_sub_20.status = 'trial'
+        fake_sub_20.trial_ends_at = datetime.now(timezone.utc) + timedelta(days=7)
 
-        token = create_access_token(99, 'testpay@test.com')
-        headers = {'Authorization': f'Bearer {token}'}
+        mock_db_20 = MagicMock()
+        mock_db_20.query.return_value.filter.return_value.first.return_value = None  # no existing sub
 
-        with patch('api.routers.payments.get_current_user', return_value=fake_user), \
-             patch('api.routers.payments.activate_trial') as mock_trial:
-
-            from api.models.payment import SubscriptionRecord
-            fake_sub = MagicMock(spec=SubscriptionRecord)
-            fake_sub.is_trial = True
-            fake_sub.status = 'trial'
-            fake_sub.trial_ends_at = datetime.now(timezone.utc) + timedelta(days=7)
-            mock_trial.return_value = fake_sub
-
-            resp = client.post('/api/payments/trial', json={'tier': 'pro'}, headers=headers)
-            data = resp.json()
-            passed = resp.status_code == 200 and data.get('status') == 'trial_started'
-            record("API: POST /api/payments/trial — 200 + trial_started status", passed,
-                   f"status={resp.status_code} body={data}")
+        with patch('api.routers.payments.activate_trial', return_value=fake_sub_20):
+            app.dependency_overrides[real_get_current_user] = lambda: fake_user_20
+            app.dependency_overrides[real_get_db] = lambda: mock_db_20
+            try:
+                resp = client.post('/api/payments/trial', json={'tier': 'pro'})
+                data = resp.json()
+                passed = resp.status_code == 200 and data.get('status') == 'trial_started'
+                record("API: POST /api/payments/trial — 200 + trial_started status", passed,
+                       f"status={resp.status_code} body={data}")
+            finally:
+                app.dependency_overrides.clear()
     except Exception as e:
+        app.dependency_overrides.clear()
         record("API: POST /api/payments/trial — 200 + trial_started status", False, str(e))
 
     # ── Test 21: /api/payments/nexapay/webhook — valid webhook ───────────────
     try:
-        SECRET = 'webhook-secret-abc'
-        payload = {
-            'event': 'payment.completed',
-            'orderId': '123',
-            'txHash': '0xVALIDTX',
-            'status': 'completed',
-        }
-        body = json.dumps(payload).encode()
-        sig = hmac_lib.new(SECRET.encode(), body, hashlib.sha256).hexdigest()
+        SECRET_21 = 'webhook-secret-abc'
+        payload_21 = {'event': 'payment.completed', 'orderId': '123', 'txHash': '0xVALIDTX', 'status': 'completed'}
+        body_21 = json.dumps(payload_21).encode()
+        sig_21 = hmac_lib.new(SECRET_21.encode(), body_21, hashlib.sha256).hexdigest()
 
-        from api.models.payment import PaymentIntent
-        fake_intent = MagicMock(spec=PaymentIntent)
-        fake_intent.id = 123
-        fake_intent.user_id = 1
-        fake_intent.tier = 'pro'
-        fake_intent.status = 'pending'
+        fake_intent_21 = MagicMock(spec=PaymentIntent)
+        fake_intent_21.id = 123
+        fake_intent_21.user_id = 1
+        fake_intent_21.tier = 'pro'
+        fake_intent_21.status = 'pending'
 
-        with patch.dict(os.environ, {'NEXAPAY_SECRET': SECRET}), \
-             patch('api.routers.payments.activate_subscription') as mock_activate, \
-             patch('api.routers.payments.get_db') as mock_get_db:
+        mock_db_21 = MagicMock()
+        _pi_call_count_21 = [0]
+        def _qs21(model):
+            chain = MagicMock()
+            chain.filter.return_value = chain
+            mname = getattr(model, '__name__', '') if hasattr(model, '__name__') else str(model)
+            if 'PaymentIntent' in mname:
+                _pi_call_count_21[0] += 1
+                # 1st query: intent lookup by orderId → return intent
+                # 2nd query: duplicate-tx check (status='paid') → return None (not a duplicate)
+                chain.first.return_value = fake_intent_21 if _pi_call_count_21[0] == 1 else None
+            else:
+                chain.first.return_value = None
+            return chain
+        mock_db_21.query.side_effect = _qs21
+        mock_db_21.commit = MagicMock()
 
-            mock_db = MagicMock()
-            def _qs(model):
-                chain = MagicMock()
-                chain.filter.return_value = chain
-                mname = getattr(model, '__name__', '') if hasattr(model, '__name__') else str(model)
-                chain.first.return_value = fake_intent if 'PaymentIntent' in mname else None
-                return chain
-            mock_db.query.side_effect = _qs
-            mock_db.commit = MagicMock()
-            mock_get_db.return_value = iter([mock_db])
-
-            resp = client.post(
-                '/api/payments/nexapay/webhook',
-                content=body,
-                headers={'Content-Type': 'application/json', 'X-NexaPay-Signature': sig},
-            )
-            data = resp.json()
-            passed = resp.status_code == 200 and data.get('action') == 'activated'
-            record("API: POST /api/payments/nexapay/webhook — valid webhook activates subscription",
-                   passed, f"status={resp.status_code} action={data.get('action')}")
+        with patch.dict(os.environ, {'NEXAPAY_SECRET': SECRET_21}), \
+             patch('api.routers.payments.activate_subscription') as mock_act_21:
+            app.dependency_overrides[real_get_db] = lambda: mock_db_21
+            try:
+                resp = client.post(
+                    '/api/payments/nexapay/webhook',
+                    content=body_21,
+                    headers={'Content-Type': 'application/json', 'X-NexaPay-Signature': sig_21},
+                )
+                data = resp.json()
+                passed = resp.status_code == 200 and data.get('action') == 'activated'
+                record("API: POST /api/payments/nexapay/webhook — valid webhook activates subscription",
+                       passed, f"status={resp.status_code} action={data.get('action')}")
+            finally:
+                app.dependency_overrides.clear()
     except Exception as e:
+        app.dependency_overrides.clear()
         record("API: POST /api/payments/nexapay/webhook — valid webhook activates subscription", False, str(e))
 
     # ── Test 22: /api/payments/nexapay/webhook — bad signature ───────────────
@@ -582,37 +590,29 @@ try:
 
     # ── Test 23: /api/payments/subscription — returns subscription state ──────
     try:
-        from api.middleware.auth import create_access_token
-        from api.models.user import User
-        from api.models.payment import SubscriptionRecord
+        fake_user_23 = MagicMock(spec=User)
+        fake_user_23.id = 50
 
-        fake_user = MagicMock(spec=User)
-        fake_user.id = 50
-        fake_user.email = 'subcheck@test.com'
-        token = create_access_token(50, 'subcheck@test.com')
-        headers = {'Authorization': f'Bearer {token}'}
+        fake_sub_23 = MagicMock(spec=SubscriptionRecord)
+        fake_sub_23.tier = 'basic'
+        fake_sub_23.status = 'active'
+        fake_sub_23.is_trial = False
+        fake_sub_23.current_period_end = datetime.now(timezone.utc) + timedelta(days=25)
+        fake_sub_23.payment_pathway = 'metamask'
 
-        fake_sub = MagicMock(spec=SubscriptionRecord)
-        fake_sub.tier = 'basic'
-        fake_sub.status = 'active'
-        fake_sub.is_trial = False
-        fake_sub.current_period_end = datetime.now(timezone.utc) + timedelta(days=25)
-        fake_sub.payment_pathway = 'metamask'
+        mock_db_23 = MagicMock()
+        def _qs23(model):
+            chain = MagicMock()
+            chain.filter.return_value = chain
+            mname = getattr(model, '__name__', '') if hasattr(model, '__name__') else str(model)
+            chain.first.return_value = fake_sub_23 if 'SubscriptionRecord' in mname else None
+            return chain
+        mock_db_23.query.side_effect = _qs23
 
-        with patch('api.routers.payments.get_current_user', return_value=fake_user), \
-             patch('api.routers.payments.get_db') as mock_get_db:
-
-            mock_db = MagicMock()
-            def _qs2(model):
-                chain = MagicMock()
-                chain.filter.return_value = chain
-                mname = getattr(model, '__name__', '') if hasattr(model, '__name__') else str(model)
-                chain.first.return_value = fake_sub if 'SubscriptionRecord' in mname else None
-                return chain
-            mock_db.query.side_effect = _qs2
-            mock_get_db.return_value = iter([mock_db])
-
-            resp = client.get('/api/payments/subscription', headers=headers)
+        app.dependency_overrides[real_get_current_user] = lambda: fake_user_23
+        app.dependency_overrides[real_get_db] = lambda: mock_db_23
+        try:
+            resp = client.get('/api/payments/subscription')
             data = resp.json()
             passed = (
                 resp.status_code == 200 and
@@ -622,7 +622,10 @@ try:
             )
             record("API: GET /api/payments/subscription — returns correct state", passed,
                    f"body={data}")
+        finally:
+            app.dependency_overrides.clear()
     except Exception as e:
+        app.dependency_overrides.clear()
         record("API: GET /api/payments/subscription — returns correct state", False, str(e))
 
 except ImportError as e:
@@ -634,7 +637,7 @@ except ImportError as e:
 # Summary
 # ══════════════════════════════════════════════════════════════
 
-print("\n" + "═" * 70)
+print("\n" + "=" * 70)
 passed_count = sum(1 for _, p in results if p)
 total = len(results)
 failed = [(name, ) for name, p in results if not p]
@@ -643,7 +646,7 @@ print(f"  Results: {passed_count}/{total} passed")
 if failed:
     print(f"\n  Failed tests:")
     for (name,) in failed:
-        print(f"    ✗  {name}")
+        print(f"    x  {name}")
 
-print("═" * 70 + "\n")
+print("=" * 70 + "\n")
 sys.exit(0 if passed_count == total else 1)
