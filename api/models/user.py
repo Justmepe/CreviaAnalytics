@@ -52,6 +52,9 @@ class User(Base):
     api_calls_today = Column(Integer, default=0)
     api_calls_month = Column(Integer, default=0)
 
+    # Preferred USDC wallet for payments and future auto-renewal
+    wallet_address = Column(String(42))
+
     # Discord alert webhook
     discord_webhook_url = Column(String(500))
 

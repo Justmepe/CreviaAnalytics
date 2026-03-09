@@ -7,6 +7,7 @@ import LiveMarketBar from "@/components/layout/LiveMarketBar";
 import Footer from "@/components/layout/Footer";
 import { AuthProvider } from "@/context/AuthContext";
 import { MarketPricesProvider } from "@/context/MarketPricesContext";
+import { Web3Providers } from "@/components/providers/Web3Providers";
 import { getLatestPrices } from "@/lib/api";
 
 const bebasNeue = Bebas_Neue({
@@ -120,6 +121,7 @@ export default async function RootLayout({
         className={`${bebasNeue.variable} ${dmMono.variable} ${dmSans.variable} ${instrumentSerif.variable} ${syne.variable} font-sans antialiased`}
         style={{ background: '#08090c', color: '#dfe3f0' }}
       >
+        <Web3Providers>
         <MarketPricesProvider initialPrices={initialPrices}>
           <AuthProvider>
             <Navbar />
@@ -130,6 +132,7 @@ export default async function RootLayout({
             <Footer />
           </AuthProvider>
         </MarketPricesProvider>
+        </Web3Providers>
       </body>
     </html>
   );

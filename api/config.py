@@ -37,6 +37,13 @@ JWT_REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 30  # 30 days
 ADMIN_EMAIL = os.getenv('ADMIN_EMAIL', '')
 ADMIN_DISCORD_WEBHOOK = os.getenv('ADMIN_DISCORD_WEBHOOK', '')
 
+# Payments — USDC on Base L2
+PAYMENT_RECEIVE_WALLET = os.getenv('PAYMENT_RECEIVE_WALLET', '')   # Treasury wallet on Base
+BASE_RPC_URL = os.getenv('BASE_RPC_URL', 'https://mainnet.base.org')
+NEXAPAY_API_KEY = os.getenv('NEXAPAY_API_KEY', '')
+NEXAPAY_SECRET = os.getenv('NEXAPAY_SECRET', '')                   # HMAC webhook validation
+NEXAPAY_MERCHANT_ID = os.getenv('NEXAPAY_MERCHANT_ID', '')
+
 # Content tier delay (seconds)
 ENTERPRISE_WINDOW = 3600      # First hour: Enterprise only
 PRO_WINDOW = 21600            # 1-6 hours: Pro

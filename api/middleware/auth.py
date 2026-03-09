@@ -113,7 +113,7 @@ async def get_optional_user(
 
 def require_tier(min_tier: str):
     """Dependency factory that requires a minimum subscription tier."""
-    tier_levels = {"free": 0, "pro": 1, "enterprise": 2}
+    tier_levels = {"free": 0, "basic": 1, "pro": 2, "enterprise": 3}
 
     async def check_tier(user: User = Depends(get_current_user)):
         user_level = tier_levels.get(user.tier, 0)
