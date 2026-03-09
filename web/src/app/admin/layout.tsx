@@ -11,7 +11,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   useEffect(() => {
     const token = localStorage.getItem('access_token');
-    if (!token) { router.replace('/login'); return; }
+    if (!token) { router.replace('/auth/login'); return; }
 
     fetch(`${API}/api/admin/posts?limit=1`, {
       headers: { Authorization: `Bearer ${token}` },
