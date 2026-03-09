@@ -10,7 +10,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem('crevia_access_token');
     if (!token) { router.replace('/auth/login'); return; }
 
     fetch(`${API}/api/admin/posts?limit=1`, {

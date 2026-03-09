@@ -18,7 +18,7 @@ interface Post {
 // Helpers
 // ---------------------------------------------------------------------------
 
-function token() { return localStorage.getItem('access_token') ?? ''; }
+function token() { return localStorage.getItem('crevia_access_token') ?? ''; }
 
 function Badge({ label, color }: { label: string; color: string }) {
   return (
