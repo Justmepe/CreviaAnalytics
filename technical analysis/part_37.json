@@ -1,0 +1,73 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 37,
+  "total_parts": 65,
+  "title": "Sentiment Tilt Meter",
+  "subtitle": "Composite Candle Sentiment Score: CBR + CPP + VAD with Multi-TF Fusion and Exponential Smoothing",
+  "source_url": "https://www.mql5.com/en/articles/19137",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Indicator",
+  "verdict": "HIGH EXTRACT — CBR/CPP/VAD sentiment score formula is an entirely new signal type. Composite micro-score aggregation, exponential smoothing, flip threshold. Tested on Crash 300/1000. Different from VWV — captures candle geometry sentiment, not velocity.",
+
+  "core_concept": {
+    "name": "Sentiment Tilt Meter",
+    "description": "Each candle receives a micro-score from 3 geometric features. Scores are averaged over a lookback window, fused across timeframes (weighted), then exponentially smoothed. Output is a -100 to +100 sentiment score. Flip of ≥60 points = signal.",
+    "three_features": {
+      "CBR": "Candle Body Ratio — body size relative to total range, sign from direction. `cbr = (body/range) * (+1 if bullish else -1)`",
+      "CPP": "Close Position Percent — where close sits in the high-low range. `cpp = ((close-low)/(high-low) - 0.5) * 2` → -1 to +1",
+      "VAD": "Volatility-Adjusted Distance — range vs ATR. `vad = ((range/atr) - 1.0) * (sign of close vs open)`"
+    },
+    "mini_score": "mini = (CBR * 0.4) + (CPP * 0.3) + (VAD * 0.3); clamp to [-1, +1]",
+    "confidence_factors": {
+      "prior_bar_confirm": "× 1.0 if prior bar direction matches, × 0.6 otherwise",
+      "vol_quiet":         "× 0.6 when ATR unusually low (quiet market)"
+    },
+    "smoothing": "score = alpha * raw + (1-alpha) * prev; alpha=0.28",
+    "final_scale": "score * 100 → range -100 to +100",
+    "relevance_to_creviaderiv": "STM provides a sentiment score that complements our binary gates. Adding STM as a continuous gate (score > 30 for BUY) allows partial satisfaction. CBR and CPP are new features not in our VWV. CPP alone is a useful entry timing feature."
+  },
+
+  "formulas": {
+    "CBR": "(abs(close - open) / (high - low)) * (1 if close > open else -1)",
+    "CPP": "((close - low) / (high - low) - 0.5) * 2",
+    "VAD": "((high - low) / atr - 1.0) * (1 if close > open else -1)",
+    "mini_score": "clip((CBR*0.4 + CPP*0.3 + VAD*0.3), -1, 1)",
+    "confidence": "mini * (1.0 if prev_bar_aligned else 0.6) * (0.6 if atr < quiet_threshold else 1.0)",
+    "smoothed": "alpha * mean(last_lookback_scores) + (1-alpha) * prev_smoothed",
+    "final": "smoothed * 100"
+  },
+
+  "config": {
+    "InpLookback":          { "default": 20,    "description": "Bars for score averaging" },
+    "InpATRPeriod":         { "default": 14,    "description": "ATR period" },
+    "InpSmoothAlpha":       { "default": 0.28,  "description": "EMA smoothing factor" },
+    "InpFlipThreshold":     { "default": 60.0,  "description": "Score change magnitude to trigger flip signal" },
+    "InpPositiveZone":      { "default": 30.0,  "description": "Bullish threshold" },
+    "InpNegativeZone":      { "default": -30.0, "description": "Bearish threshold" },
+    "InpVolQuietThreshold": { "default": 0.4,   "description": "Quiet market ATR ratio" },
+    "InpMinMomentum":       { "default": 0.5,   "description": "Minimum momentum for signal" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "CBR (Candle Body Ratio): captures body size relative to range with direction",
+      "CPP (Close Position Percent): where close sits in the candle range — key for entry timing",
+      "VAD (Volatility-Adjusted Distance): body vs ATR with direction",
+      "Weighted composite: CBR×0.4 + CPP×0.3 + VAD×0.3",
+      "Exponential smoothing with alpha=0.28",
+      "Confidence reduction (0.6×) when prior bar doesn't confirm"
+    ],
+    "discard": ["MQL5 chart rendering", "Flip threshold as signal trigger — use score level instead for our gate"],
+    "improve": [
+      "Use CPP alone for entry timing: CPP > 0.5 (closed in top half of range) for BUY departure = price closed strong",
+      "Use STM score as gate: require score > 30 for BUY signals on Crash/Boom",
+      "Replace VWV with STM for candle quality assessment: STM captures CBR + CPP + VAD vs our VWV single dimension"
+    ]
+  },
+
+  "cpp_for_entry_timing": {
+    "formula": "cpp = ((close - low) / (high - low) - 0.5) * 2",
+    "values": { "1.0": "close at the high = strongest bullish bar", "-1.0": "close at the low = strongest bearish bar", "0.0": "close at midpoint" },
+    "gate_rule": "BUY departure: require cpp > 0.3 (closed in top 65% of range). SELL: cpp < -0.3."
+  }
+}

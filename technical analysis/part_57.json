@@ -1,0 +1,37 @@
+{
+  "part": 57,
+  "title": "Market State Classification Module",
+  "source_url": "https://www.mql5.com/en/articles/20996",
+  "verdict": "HIGH EXTRACT - 4-state: Compression/Transition/Expansion/Trend. CLV-based. Hierarchical check.",
+  "four_states": {
+    "Compression": "range contracting",
+    "Transition": "default state",
+    "Expansion": "range >= avg*1.80 AND CLV >= 0.60",
+    "Trend": "HH+HL or LH+LL"
+  },
+  "classification_order": [
+    "1. Expansion: range>=avg*1.80 AND CLV>=0.60",
+    "2. Compression: recent_avg<=prev_avg*0.70",
+    "3. Trend: CLV mean strong AND swing score",
+    "4. Transition: default"
+  ],
+  "config": {
+    "InpLookbackBars": 60,
+    "InpCompressionBars": 16,
+    "InpRangeShrinkRatio": 0.7,
+    "InpExpansionMult": 1.8,
+    "InpCLVStrong": 0.6
+  },
+  "keep_discard": {
+    "keep": [
+      "4-state system",
+      "CLV directional bias",
+      "Range shrink 0.70 compression threshold",
+      "Expansion detection (our RANGING does not have Expansion state)"
+    ],
+    "improve": [
+      "Compression -> expect breakout: widen scanning window",
+      "Expansion -> momentum entry: accept departure with lower confirmation bar count"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 18,
+  "total_parts": 65,
+  "title": "Introducing Quarters Theory (III) — Quarters Board",
+  "subtitle": "Interactive Button-Controlled Quarter Level Management with Real-Time Trend Classification",
+  "source_url": "https://www.mql5.com/en/articles/17442",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-04",
+  "type": "Expert Advisor (UI Tool)",
+  "verdict": "LOW EXTRACT — UI/button management has no relevance to Python pipeline. One useful addition: SMA(50) trend classification added to the quarter level display. Quarters Theory trilogy complete; architecture fully understood after Parts 15-16.",
+
+  "tool_classification": {
+    "category": "ui_management_tool",
+    "generates_signals": false,
+    "signal_type": "none",
+    "executes_trades": false,
+    "runs": "continuously",
+    "timeframe_agnostic": true
+  },
+
+  "core_concept": {
+    "name": "Interactive Quarters Board",
+    "description": "Extends Parts 15-16 with button-based chart controls. Toggles large quarters, small quarters, and overshoot zones on/off without editing source code. Adds SMA(50) trend classification (Uptrend/Downtrend/Sideways) alongside the quarter level display.",
+    "new_vs_parts_15_16": "Parts 15 and 16 had static bool inputs. Part 18 makes them interactive runtime toggles. No new calculation logic — same quarter level formulas. The only additive content is the SMA(50) trend label.",
+    "relevance_to_creviaderiv": "Minimal. We don't use MQL5 chart objects. The SMA trend classification is already subsumed by our StructureEngine (market_structure = BULLISH/BEARISH/RANGING is strictly better than SMA comparison)."
+  },
+
+  "level_formulas": {
+    "same_as_part_15": true,
+    "major": "floor(price / MajorStep) * MajorStep",
+    "large_quarters": "MajorStep / 4.0 intervals",
+    "small_quarters": "MajorStep / 40.0 intervals",
+    "overshoot": "quarter_level +/- MajorStep / 40.0"
+  },
+
+  "trend_classification_addition": {
+    "method": "SMA(50) comparison",
+    "logic": "if bid > sma50: 'Uptrend' elif bid < sma50: 'Downtrend' else: 'Sideways'",
+    "weakness": "SMA(50) lags significantly. Our StructureEngine HH/HL/LH/LL classification is structurally superior."
+  },
+
+  "config": {
+    "MajorStep":     { "type": "float",   "default": 0.1000, "description": "Base price interval" },
+    "PanelX":        { "type": "integer", "default": 10,     "description": "Panel position" },
+    "PanelY":        { "type": "integer", "default": 10,     "description": "Panel position" },
+    "PanelWidth":    { "type": "integer", "default": 250,    "description": "Panel width" },
+    "ButtonHeight":  { "type": "integer", "default": 30,     "description": "Button height" },
+    "ButtonSpacing": { "type": "integer", "default": 5,      "description": "Gap between buttons" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "SMA(50) as a minimal trend filter — confirms direction for quarter level trade decisions",
+      "Trend label alongside S/R levels — contextual framing for level interactions"
+    ],
+    "discard": [
+      "Interactive button UI — no relevance to Python pipeline",
+      "All MQL5 chart object management",
+      "SMA trend classification (use StructureEngine instead)"
+    ],
+    "improve": [
+      "Quarters trilogy is complete: combine Parts 15+16+18 into one QuarterLevelService class",
+      "Replace SMA trend with StructureEngine market_structure for level context"
+    ]
+  },
+
+  "quarters_trilogy_summary": {
+    "part_15": "COMPUTE — quarter level formulas (QuarterLevelCalculator)",
+    "part_16": "MONITOR — intrusion detection + deduplication (QuarterLevelMonitor)",
+    "part_18": "DISPLAY — UI toggles (discard for Python). SMA trend label = minor addition.",
+    "our_version": "QuarterLevelService: compute levels + monitor intrusions + integrate with zone quality scoring. No UI layer."
+  }
+}

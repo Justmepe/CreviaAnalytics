@@ -1,0 +1,51 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 41,
+  "total_parts": 65,
+  "title": "Building a Statistical Price-Level EA in MQL5",
+  "subtitle": "Z-Score Entry/Exit from TP Distribution — Mean/Median/Mode/SD/Percentiles",
+  "source_url": "https://www.mql5.com/en/articles/19589",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor",
+  "verdict": "MEDIUM EXTRACT — z-score as entry trigger (price far from mean = reversal), P25/P75 interquartile as S/R zone, KDE for mode detection. More relevant for ranging markets than trending. Skewness/kurtosis as distribution quality metrics.",
+
+  "core_concept": {
+    "typical_price": "TP = (High + Low + Close) / 3",
+    "z_score_signal": "z = (latest_TP - mean_TP) / std_TP; long if z <= -ZScoreSignalEnter; short if z >= +ZScoreSignalEnter",
+    "z_score_exit": "exit when |z| <= ZScoreSignalExit (price returns toward mean)",
+    "reference_levels": ["Mean TP", "Median TP", "Mode TP (KDE)", "Mean ± 1SD", "Mean ± 2SD", "P25", "P75"]
+  },
+
+  "formulas": {
+    "mean":     "np.mean(tp)",
+    "median":   "np.median(tp)",
+    "std":      "np.std(tp)",
+    "p25_p75":  "np.percentile(tp, [25, 75])",
+    "z_score":  "(tp[-1] - mean) / std",
+    "skewness": "from scipy.stats import skew; skew(tp)",
+    "kurtosis": "from scipy.stats import kurtosis; kurtosis(tp)"
+  },
+
+  "config": {
+    "Lookback":            { "default": 1000, "description": "Historical bars" },
+    "ZScoreSignalEnter":   { "default": 2.0,  "description": "Entry threshold (2 SD from mean)" },
+    "ZScoreSignalExit":    { "default": 0.8,  "description": "Exit threshold" },
+    "TouchTolerancePips":  { "default": 3.0,  "description": "Proximity for level touch" },
+    "UseATRforThresholds": { "default": true, "description": "ATR-scale touch tolerance" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Z-score as deviation gate: z > 2.0 = price far from mean = potential mean reversion",
+      "P25/P75 as statistical S/R zone — value area concept",
+      "KDE for mode detection (most common price) as fair value",
+      "Skewness/kurtosis as distribution quality metrics (for instrument calibration)"
+    ],
+    "discard": ["Mean reversion strategy as primary — doesn't fit our trend-following approach", "Fixed pip tolerance (use ATR)"],
+    "improve": [
+      "Use P25/P75 as zone boundaries for 'value area' — demand zone entering below P25, supply above P75",
+      "Z-score > 2.0 at our supply zone = double confirmation (statistical overextension + structural zone)",
+      "Skewness: if skew > 0, distribution biased upward — weight BUY signals heavier"
+    ]
+  }
+}

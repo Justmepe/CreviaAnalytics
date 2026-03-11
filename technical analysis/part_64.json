@@ -1,0 +1,62 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 64,
+  "total_parts": 65,
+  "title": "Engineering Trading Discipline into Code (Part 1): Structural Discipline in Live Trading",
+  "source_url": "https://www.mql5.com/en/articles/21273",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Architecture)",
+  "verdict": "HIGH EXTRACT \u2014 IConstraint interface pattern, TryOpenOrder() gateway, MaxTradesPerDay/DailyProfitTarget/MaxDailyLoss. Directly implements missing discipline in our execute_signal(). Our system has no daily trade count enforcement.",
+  "key_parameters": {
+    "MaxTradesPerDay": {
+      "default": 5,
+      "description": "Hard stop on trade entries per session"
+    },
+    "DailyProfitTarget": {
+      "default": 2.0,
+      "description": "Daily profit target in % of balance \u2014 halt trading when reached"
+    },
+    "MaxDailyLoss": {
+      "default": 3.0,
+      "description": "Daily loss limit in % of balance \u2014 halt trading when breached"
+    }
+  },
+  "iconstraint_interface": {
+    "IsBreached": "Returns True if this constraint is currently violated",
+    "ResetIfNewDay": "Resets counters when trading day changes (iTime D1 comparison)",
+    "UpdateOnTransaction": "Updates internal state on each DEAL_ENTRY_IN trade",
+    "Reason": "Human-readable string explaining breach for logging"
+  },
+  "try_open_order_gateway": {
+    "pattern": "All trade requests MUST call TryOpenOrder() which checks all constraints before executing",
+    "logic": "for constraint in constraints: if constraint.IsBreached(): log(constraint.Reason()); return False",
+    "benefit": "Single enforcement point \u2014 no bypass possible, no scattered if-statements"
+  },
+  "daily_reset": {
+    "method": "Compare iTime(_Symbol, PERIOD_D1, 0) to stored dayStartTime",
+    "scope": "Only DEAL_ENTRY_IN trades count (exits, partials, pending do NOT count)"
+  },
+  "keep_discard": {
+    "keep": [
+      "IConstraint interface: IsBreached/ResetIfNewDay/UpdateOnTransaction/Reason",
+      "TryOpenOrder() gateway as single enforcement point",
+      "MaxTradesPerDay=5 as practical daily limit",
+      "DailyProfitTarget% halts trading when profitable \u2014 protect gains",
+      "MaxDailyLoss% hard stop \u2014 protect account"
+    ],
+    "discard": [
+      "MQL5 specific implementation",
+      "HistoryDealSelect scope"
+    ],
+    "improve": [
+      "Implement DisciplineEngine class in Python that wraps execute_signal()",
+      "Per-symbol trade count (not just global count)",
+      "Weekend reset logic for forex (M-F sessions)"
+    ]
+  },
+  "creviaderiv_application": {
+    "missing_in_current": "TradingOrchestrator.execute_signal() has no daily count/loss/profit enforcement",
+    "add_to_config": "DISCIPLINE_CONFIG = {max_trades_per_day: 5, daily_profit_target_pct: 2.0, daily_loss_limit_pct: 3.0}",
+    "implementation": "DisciplineEngine.try_execute(signal) checks constraints before MT5 order"
+  }
+}

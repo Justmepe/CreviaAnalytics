@@ -1,0 +1,51 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 34,
+  "total_parts": 65,
+  "title": "Turning Raw Market Data into Predictive Models Using an Advanced Ingestion Pipeline",
+  "subtitle": "MQL5→Flask Data Pipeline, Feature Engineering (MACD/RSI/ATR/Kalman/Prophet), Gradient Boosting",
+  "source_url": "https://www.mql5.com/en/articles/18979",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Python ML Pipeline",
+  "verdict": "MEDIUM EXTRACT — spike detection feature engineering, Kalman slope, Prophet delta, chunked data upload pattern, label threshold THRESH=0.15%. We already have Python-native access — skip the bridge. Feature set is reusable.",
+
+  "feature_engineering": {
+    "spike":         "df['spike'] = (df['range'] > df['range'].rolling(50).mean() * 2).astype(int)",
+    "range":         "df['range'] = df['high'] - df['low']",
+    "returns":       "df['returns'] = df['close'].pct_change()",
+    "volatility_10": "df['vol'] = df['returns'].rolling(10).std()",
+    "macd":          "via ta library or manual",
+    "rsi":           "14-period",
+    "atr":           "14-period",
+    "kalman_slope":  "Kalman filter trend slope — noise-reduced price direction",
+    "prophet_delta": "Facebook Prophet 1h forecast - current price = expected move"
+  },
+
+  "labeling": {
+    "lookahead": 10,
+    "threshold": 0.0015,
+    "logic": "label=1 if close[+10] > close * 1.0015; label=-1 if close[+10] < close * 0.9985; else label=0"
+  },
+
+  "models": {
+    "primary": "GradientBoostingClassifier(n_estimators=400, lr=0.05, max_depth=3)",
+    "fallback": "RandomForestClassifier(n_estimators=100)",
+    "prophet": "Per-symbol time-series forecast (cached 1h)"
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Spike feature: range > 2× rolling(50) mean = simple, effective spike flag",
+      "Label threshold: 0.15% = 15pip move = our minimum meaningful signal",
+      "GBC config: 400 estimators, lr=0.05, depth=3 — validated hyperparameters",
+      "Kalman slope as noise-reduced trend direction (alternative to EMA3)",
+      "Chunked upload pattern with 14MB payload limit"
+    ],
+    "discard": ["Flask bridge — we have direct Python access", "Prophet (heavy dependency, slow)"],
+    "improve": [
+      "Add CRT candle type as feature: 'LR'/'SR'/'IB'/'OB' encoded as integer",
+      "Add zone_quality as feature: zone strength score 0-100",
+      "Add structure_state: BULLISH=1, BEARISH=-1, RANGING=0"
+    ]
+  }
+}

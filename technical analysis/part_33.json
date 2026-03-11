@@ -1,0 +1,63 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 33,
+  "total_parts": 65,
+  "title": "Candle Range Theory Tool",
+  "subtitle": "ATR-Based Candle Classification: Large Range / Small Range / Inside Bar / Outside Bar",
+  "source_url": "https://www.mql5.com/en/articles/18911",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Indicator + EA",
+  "verdict": "HIGH EXTRACT — Candle Range Theory (CRT) 4-class classification is a direct pre-filter for our entry gate. Small Range candles signal compression → breakout likely. Inside Bars signal consolidation. Large Range = expansion (momentum). All ATR-normalized and instrument-agnostic.",
+
+  "core_concept": {
+    "name": "Candle Range Theory (CRT)",
+    "description": "Classify every completed candle into one of 4 mutually exclusive types based on True Range vs ATR.",
+    "four_types": {
+      "LR": "Large Range: TR >= largeMult * ATR (default 1.5×) — expansion candle, strong directional move",
+      "SR": "Small Range: TR <= smallMult * ATR (default 0.5×) — compression, low energy, setup forming",
+      "IB": "Inside Bar: high < prev_high AND low > prev_low — consolidation inside prior range",
+      "OB": "Outside Bar: high > prev_high AND low < prev_low — engulfs prior range"
+    },
+    "true_range": "TR = max(High-Low, |High-PrevClose|, |Low-PrevClose|)",
+    "relevance_to_creviaderiv": "SR candles before a zone touch = setup compression = breakout imminent. LR departure candle = highest quality departure. IB at zone = consolidation before continuation. OB = volatility spike, skip (no directional clarity)."
+  },
+
+  "classification_logic": {
+    "priority": "IB and OB are mutually exclusive structural patterns. LR and SR are range-based. Check IB/OB first as they override.",
+    "code": "is_ib = high[i] < high[i-1] and low[i] > low[i-1]; is_ob = high[i] > high[i-1] and low[i] < low[i-1]; is_lr = tr[i] >= large_mult * atr[i]; is_sr = tr[i] <= small_mult * atr[i]"
+  },
+
+  "config": {
+    "ATR_Period": { "default": 14,  "description": "ATR lookback" },
+    "largeMult":  { "default": 1.5, "description": "LR threshold: TR >= 1.5*ATR" },
+    "smallMult":  { "default": 0.5, "description": "SR threshold: TR <= 0.5*ATR" }
+  },
+
+  "signal_implications": {
+    "LR_departure": "Strong momentum — highest confidence departure candle",
+    "SR_pre_zone":  "Compression before touch — setup building, zone likely to hold",
+    "IB_at_zone":   "Consolidation — price absorbed by zone, continuation pending",
+    "OB_skip":      "Engulfs prior range — too noisy, no directional clarity"
+  },
+
+  "keep_discard": {
+    "keep": [
+      "4-class CRT system (LR, SR, IB, OB) with ATR normalization",
+      "True Range formula using prev_close gap",
+      "largeMult=1.5, smallMult=0.5 as calibrated defaults",
+      "Classification at every bar (pre-filter for entry gate)"
+    ],
+    "discard": ["MQL5 visual rectangles/arrows", "Alert-only EA component"],
+    "improve": [
+      "Add CRT context to zone interaction: log candle_type for the zone-touch bar",
+      "SR sequence detection: 3+ consecutive SR candles before zone = high compression = strong signal expected",
+      "LR departure: if departure candle is LR → departure_strength = 4 (highest, above marubozu=3)"
+    ]
+  },
+
+  "creviaderiv_integration": {
+    "pre_entry_filter": "candle_type = classify_crt(bar, prev_bar, atr); if candle_type == 'OB': skip (no direction); if candle_type in ('LR','SR','IB'): continue to gate chain",
+    "departure_strength_upgrade": "if departure_candle_type == 'LR': departure_strength = 4; elif pattern in (MARUBOZU): departure_strength = 3; ...",
+    "compression_signal": "if last 3 bars are SR: signal_confidence += 10 (compression before zone touch = tighter coil)"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "part": 54,
+  "title": "EMA and Smoothed Price Action (Heikin-Ashi)",
+  "source_url": "https://www.mql5.com/en/articles/20851",
+  "verdict": "MEDIUM - HA pre-filter before EMA. ha_close=(O+H+L+C)/4, ha_open recursive. Cleaner EMA signals.",
+  "ha_close_formula": "(open+high+low+close)/4",
+  "keep_discard": {
+    "keep": [
+      "HA formulas",
+      "HA as M1 pre-filter for EMA3"
+    ],
+    "discard": [
+      "EMA50/20 primary signals"
+    ],
+    "improve": [
+      "Apply HA smoothing to M1 before EMA3 calc"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 40,
+  "total_parts": 65,
+  "title": "Market DNA Passport",
+  "subtitle": "17-Metric Instrument Fingerprint — Retracement Frequencies, Smoothness Index, Cosine Mutation Detection",
+  "source_url": "https://www.mql5.com/en/articles/19460",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Analysis)",
+  "verdict": "HIGH EXTRACT — 17-metric DNA profile is a comprehensive instrument calibration tool. Retracement frequency distribution (38%/50%/62%/>70%) tells us where HL retracements typically land for each instrument. Smoothness index indicates trending vs ranging. Cosine distance for regime mutation detection. Directly upgrades our symbol-specific config.",
+
+  "seventeen_metrics": {
+    "candlestick_structure": {
+      "wick_body_ratio_avg": "mean(total_shadows / body) — high = reversal candles; low = trend candles",
+      "pct_close_near_high": "fraction of bars closing in top 20% of range — bullish bias",
+      "pct_close_near_low":  "fraction of bars closing in bottom 20% of range — bearish bias",
+      "pct_doji":            "fraction with body < 10% of range — indecision frequency"
+    },
+    "volatility": {
+      "atr_norm":       "ATR / Close — normalized ATR (instrument-agnostic)",
+      "atr_pips":       "ATR in pips",
+      "pct_spikes":     "fraction of bars with TR > spike_mult * ATR (default spike_mult=2.0)",
+      "vol_clustering": "fraction of large bars followed by large bars — volatility persistence"
+    },
+    "structure": {
+      "swing_cycle_bars_avg":    "mean bars between fractal extremes — swing pace",
+      "fractal_density":         "fraction of bars that are fractal extremes — choppy(high) vs trendy(low)",
+      "breakout_follow_through": "fraction of fractal breakouts reaching ATR×0.5 within 50 bars"
+    },
+    "retracement_frequencies": {
+      "retr_38_freq":  "fraction of swings retracing 33-45% (shallow — strong trend)",
+      "retr_50_freq":  "fraction of swings retracing 45-55% (classic 50%)",
+      "retr_62_freq":  "fraction of swings retracing 55-68% (deep — moderate trend)",
+      "retr_gt70_freq":"fraction retracing >70% (very deep — weak impulse)"
+    },
+    "session_contribution": {
+      "asia_range_share":   "Asia session % of daily range",
+      "london_range_share": "London session % of daily range",
+      "ny_range_share":     "NY session % of daily range"
+    },
+    "composite": {
+      "smoothness_index": "0-1; 1=very smooth/trending, 0=choppy/ranging. Computed from fractal_density + vol_clustering"
+    }
+  },
+
+  "retracement_detection": {
+    "algorithm": "For each swing impulse: scan next 50 bars, find max retracement = (retrace_dist / impulse_size); bucket into 38/50/62/>70% bands",
+    "use_for_creviaderiv": "If instrument's retr_50_freq > 0.4 (40% of swings retrace to 50%), set default HL zone depth to 50% Fibonacci. If retr_38_freq dominant, shallower zones."
+  },
+
+  "cosine_mutation_detection": {
+    "formula": "distance = 1 - dot(A, B) / (norm(A) * norm(B)); flag if distance > 0.12",
+    "use": "Compare current 300-bar DNA vs prior 300-bar DNA. If cosine distance > 0.12 = regime shift. Adjust config or pause trading."
+  },
+
+  "config": {
+    "InpBars":          { "default": 1200, "description": "Sample size" },
+    "InpFractalDepth":  { "default": 5,    "description": "Fractal neighborhood size" },
+    "InpSpikeATRMult":  { "default": 2.0,  "description": "Spike threshold" },
+    "InpRetrWindowBars":{ "default": 50,   "description": "Forward retracement scan window" },
+    "InpMutationThresh":{ "default": 0.12, "description": "Cosine distance alert threshold" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "All 17 metrics as per-symbol calibration data — run once per symbol, cache results",
+      "Retracement frequency distribution — tells us where HL typically lands per instrument",
+      "smoothness_index — trending instruments need different zone settings than choppy",
+      "Cosine distance for regime mutation detection",
+      "breakout_follow_through — measures how often price follows through after zone break"
+    ],
+    "discard": ["MQL5 display panel", "Session range shares (less relevant for synthetics)"],
+    "improve": [
+      "Run MarketDNA once per symbol at startup, store in symbol_config",
+      "Use retracement frequencies to calibrate zone depth per symbol",
+      "Use smoothness_index to switch between impulsive-only (smooth) and corrective-allowed (choppy) mode",
+      "Use mutation detection to trigger config review when regime shifts"
+    ]
+  },
+
+  "creviaderiv_symbol_calibration": {
+    "per_symbol_config_additions": {
+      "smoothness_index": "If > 0.7: prefer impulsive zones. If < 0.4: consider ranging config.",
+      "dominant_retracement": "Set HL zone depth to match most common retracement (38/50/62%)",
+      "fractal_density": "High density (> 0.15): use tighter fractal lookback. Low density: wider lookback.",
+      "pct_spikes": "High spike frequency (> 0.05): use velocity percentile (Part 29) not fixed threshold"
+    }
+  }
+}

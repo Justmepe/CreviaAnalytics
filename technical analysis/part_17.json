@@ -1,0 +1,123 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 17,
+  "total_parts": 65,
+  "title": "TrendLoom EA Tool",
+  "subtitle": "Multi-Timeframe SMA Voting System — 7 Strategy Presets for Trend Direction",
+  "source_url": "https://www.mql5.com/en/articles/17329",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-03",
+  "type": "Expert Advisor (Analysis Tool)",
+  "verdict": "PARTIAL EXTRACT — the multi-TF voting/scoring pattern is reusable; SMA(50) as the sole indicator is too weak. The supermajority threshold concept (2-of-3 required, not 3-of-3) is a useful architecture variation.",
+
+  "tool_classification": {
+    "category": "multi_timeframe_trend_filter",
+    "generates_signals": true,
+    "signal_type": "directional_bias",
+    "executes_trades": false,
+    "runs": "on_button_press",
+    "timeframe_agnostic": true
+  },
+
+  "core_concept": {
+    "name": "Multi-Timeframe SMA Voting",
+    "description": "Three timeframes each vote +1 (bullish), -1 (bearish), or 0 (neutral) based on whether close is above/below SMA(50). Sum the votes. >= 2 = BUY, <= -2 = SELL, else NEUTRAL. Supermajority (2-of-3) required.",
+    "voting_formula": "sum = sum(+1 if close[tf] > sma50[tf] else -1 if close[tf] < sma50[tf] else 0 for tf in [tf1, tf2, tf3]); result = 'BUY' if sum >= 2 else 'SELL' if sum <= -2 else 'NEUTRAL'",
+    "supermajority_logic": "Requires 2 of 3 timeframes to agree. This is softer than our current AND gate (3-of-3) but harder than OR (1-of-3). Allows for dissent on one timeframe — realistic in transition periods.",
+    "relevance_to_creviaderiv": "Our M15+M1 split is a 2-timeframe system. The voting architecture is reusable for multi-indicator scoring — sum gate values to produce a confidence score rather than hard AND rejection."
+  },
+
+  "seven_strategy_presets": [
+    { "name": "Short-Term Focus",          "timeframes": ["M1",  "M5",  "M15"] },
+    { "name": "Scalping/Intraday",         "timeframes": ["M5",  "M15", "H1"]  },
+    { "name": "Swing Trading",             "timeframes": ["M15", "H1",  "H4"]  },
+    { "name": "Trend Trading",             "timeframes": ["H1",  "H4",  "D1"]  },
+    { "name": "MTF Trend Confirmation",    "timeframes": ["H1",  "H4",  "W1"]  },
+    { "name": "Short Scalper / Mid-Trend", "timeframes": ["M5",  "H1",  "D1"]  },
+    { "name": "Long-Term Trend",           "timeframes": ["H1",  "D1",  "W1"]  }
+  ],
+
+  "signal_logic": {
+    "per_timeframe": "signal[tf] = +1 if close[tf] > sma50[tf] else -1 if close[tf] < sma50[tf] else 0",
+    "aggregate": "vote_sum = sum(signal[tf] for tf in selected_timeframes)",
+    "final": {
+      "BUY":     "vote_sum >= 2",
+      "SELL":    "vote_sum <= -2",
+      "NEUTRAL": "-1 <= vote_sum <= 1"
+    }
+  },
+
+  "config": {
+    "PanelX":               { "type": "integer", "default": 10,          "description": "Panel X position" },
+    "PanelY":               { "type": "integer", "default": 10,          "description": "Panel Y position" },
+    "PanelWidth":           { "type": "integer", "default": 250,         "description": "Panel width in pixels" },
+    "btnWidth":             { "type": "integer", "default": 220,         "description": "Button width" },
+    "btnHeight":            { "type": "integer", "default": 30,          "description": "Button height" },
+    "PanelBackgroundColor": { "type": "color",   "default": "clrDimGray","description": "Panel background" },
+    "PanelHeaderColor":     { "type": "color",   "default": "clrBlueViolet", "description": "Panel header" },
+    "AnalysisTextColor":    { "type": "color",   "default": "clrLime",   "description": "Signal text color" }
+  },
+
+  "indicators_used": {
+    "sma_period": 50,
+    "price_source": "close of last completed candle (shift=1)",
+    "note": "SMA(50) only — single indicator, three timeframes. No volume, volatility, structure, or oscillator."
+  },
+
+  "logic": {
+    "steps": [
+      { "step": 1, "name": "select_strategy", "description": "User clicks one of 7 buttons to select timeframe combination" },
+      { "step": 2, "name": "fetch_bars",       "description": "Get last completed candle close for each of 3 selected TFs" },
+      { "step": 3, "name": "compute_sma",      "description": "Calculate SMA(50) on close prices for each TF" },
+      { "step": 4, "name": "vote",             "description": "Each TF casts +1/-1/0 vote based on price vs SMA" },
+      { "step": 5, "name": "aggregate",        "description": "Sum votes. Apply supermajority threshold." },
+      { "step": 6, "name": "display",          "description": "Show BUY/SELL/NEUTRAL text on panel" }
+    ]
+  },
+
+  "components_to_build": [
+    {
+      "name": "MultiTFVoter",
+      "type": "filter",
+      "priority": 2,
+      "contract": "vote(bars_by_tf: dict, indicator_fn, threshold: int) -> (direction, score)",
+      "returns": "('BUY'|'SELL'|'NEUTRAL', int score -N to +N)",
+      "note": "Generalize: accepts any indicator function, not just SMA. Pluggable."
+    }
+  ],
+
+  "backtesting": {
+    "tested_on": ["Volatility 75 (1-second)"],
+    "verdict": "Author claims 'wonderful and profitable outcomes' — no statistics provided",
+    "caveat": "No win rate, profit factor, or drawdown data. Purely anecdotal.",
+    "note": "Author explicitly says tool is supplemental, not standalone signal provider."
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Voting architecture: +1/-1/0 per timeframe, sum to score — reusable for multi-indicator scoring",
+      "Supermajority threshold (2-of-3): softer than AND gate, realistic for transition periods",
+      "7 strategy presets as a concept — clear TF groupings for different trading styles",
+      "Score as output (not just binary) — score of +3 vs +2 are different confidence levels"
+    ],
+    "discard": [
+      "SMA(50) as sole indicator — too weak, no structure or volume context",
+      "GUI button panel — unnecessary for our Python pipeline",
+      "On-button-press execution — we run continuously, not on demand",
+      "No SL/TP — directional bias only"
+    ],
+    "improve": [
+      "Replace SMA with our structural indicators: market_structure=BULLISH (+1), ADX rising (+1), EMA3 cross (+1) — same voting but better indicators",
+      "Add confidence score output: vote_sum as signal quality metric (3=high, 2=medium, 1=low, 0=skip)",
+      "Add weighted votes: H1 vote counts 2x M15 vote counts 1x — higher timeframes get more weight",
+      "Apply voting to gate chain: instead of binary PASS/FAIL, each gate contributes +1 to signal confidence score"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "gate_chain_as_voter": "Our current entry gate chain is a strict AND: all gates must pass. Alternative architecture: each gate is a voter (+1 if pass, 0 if fail). Sum votes. Signal if sum >= threshold. This allows partial gate satisfaction and produces a confidence score.",
+    "confidence_score_idea": "vote_sum = 0..5 (zone_touch + ema_cross + adx_rising + vwv_strong + departure_candle). Signal if >= 4. Report score in signal output. Higher score = larger position size.",
+    "supermajority_for_mtf": "Our M15+M1 architecture: M15 structure=bullish (+2, weighted), M1 EMA cross=bullish (+1), M1 ADX=rising (+1). Require >= 3. This handles cases where M1 gives mixed signals while M15 structure is clear.",
+    "seven_preset_concept": "Define our own strategy presets: 'Scalp' (M1+M5), 'Intraday' (M15+H1), 'Swing' (H1+H4+D1). Each preset has different gate thresholds and position sizing."
+  }
+}

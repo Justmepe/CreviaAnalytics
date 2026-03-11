@@ -1,0 +1,214 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 1,
+  "total_parts": 65,
+  "title": "Chart Projector",
+  "subtitle": "Overlay Yesterday's Price Action as a Ghost Chart onto Today",
+  "source_url": "https://www.mql5.com/en/articles/16014",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Script",
+  "verdict": "BUILD",
+
+  "tool_classification": {
+    "category": "visual_analysis",
+    "generates_signals": false,
+    "executes_trades": false,
+    "runs": "on_demand",
+    "updates_live": false,
+    "timeframe_agnostic": true,
+    "symbol_agnostic": true
+  },
+
+  "depends_on": {
+    "other_parts": [],
+    "shared_components": ["BrokerDataAdapter", "SessionManager", "ChartRenderer", "ToolConfig"]
+  },
+
+  "data_requirements": [
+    {
+      "name": "yesterday_intraday_bars",
+      "timeframe": "active_chart_timeframe",
+      "fields": ["time", "open", "high", "low", "close"],
+      "range": "yesterday_start to today_start",
+      "source": "BrokerDataAdapter.get_ohlc"
+    },
+    {
+      "name": "today_intraday_bars",
+      "timeframe": "active_chart_timeframe",
+      "fields": ["time"],
+      "range": "today_start to today_end",
+      "source": "BrokerDataAdapter.get_ohlc",
+      "note": "Only timestamps needed — used to know where to plot ghost candles on x-axis"
+    },
+    {
+      "name": "yesterday_daily_bar",
+      "timeframe": "D1",
+      "fields": ["high", "low"],
+      "range": "yesterday_start to yesterday_end",
+      "source": "BrokerDataAdapter.get_ohlc",
+      "note": "Used to draw horizontal S/R lines at prev day High and Low"
+    },
+    {
+      "name": "timeframe_seconds",
+      "type": "integer",
+      "examples": { "M1": 60, "M5": 300, "M15": 900, "H1": 3600, "D1": 86400 },
+      "note": "Used to calculate the x-width of each ghost candle body rectangle"
+    }
+  ],
+
+  "config": {
+    "ghost_color":          { "type": "string",  "default": "rgba(128,128,128,0.4)", "description": "Color of all ghost elements. Use alpha for transparency." },
+    "line_style":           { "type": "enum",    "default": "dotted", "options": ["dotted", "dashed", "solid"], "description": "Visual style of ghost lines" },
+    "line_width":           { "type": "integer", "default": 2, "min": 1, "max": 5, "description": "Thickness of ghost lines" },
+    "show_high_low":        { "type": "boolean", "default": true, "description": "Draw horizontal lines at prev day High and Low" },
+    "shift_bars":           { "type": "integer", "default": 0, "description": "Shift ghost left(-) or right(+) by N bars. Used to correct broker timezone offset." },
+    "lookback_days":        { "type": "integer", "default": 1, "min": 1, "max": 5, "description": "IMPROVEMENT on original: how many days back to ghost. Original was hardcoded to 1." }
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "identify_session_boundaries",
+        "description": "Get yesterday's start/end and today's start/end from SessionManager",
+        "inputs": ["timezone", "utc_offset"],
+        "outputs": ["yesterday_start", "yesterday_end", "today_start", "today_end"]
+      },
+      {
+        "step": 2,
+        "name": "fetch_yesterday_bars",
+        "description": "Pull all intraday bars for yesterday on the active timeframe",
+        "inputs": ["symbol", "timeframe", "yesterday_start", "yesterday_end"],
+        "outputs": ["bars_yesterday"]
+      },
+      {
+        "step": 3,
+        "name": "fetch_today_bars",
+        "description": "Pull today's bar timestamps — only time field needed",
+        "inputs": ["symbol", "timeframe", "today_start", "today_end"],
+        "outputs": ["bars_today"]
+      },
+      {
+        "step": 4,
+        "name": "project_ghost_bars",
+        "description": "For each today bar position, map it to a yesterday bar using modulo cycling. Combine today's time with yesterday's OHLC.",
+        "inputs": ["bars_yesterday", "bars_today", "shift_bars", "timeframe_seconds"],
+        "outputs": ["ghost_bars"],
+        "key_logic": "ghost_bars[i].time = today_bars[i].time + shift_bars * timeframe_seconds | ghost_bars[i].ohlc = yesterday_bars[i % len(yesterday_bars)].ohlc"
+      },
+      {
+        "step": 5,
+        "name": "render_ghost_candles",
+        "description": "Draw each ghost bar as a wick line (low to high) and a body rectangle (open to close)",
+        "inputs": ["ghost_bars", "config"],
+        "outputs": ["chart_objects"]
+      },
+      {
+        "step": 6,
+        "name": "render_high_low_lines",
+        "condition": "config.show_high_low == true",
+        "description": "Draw full-width horizontal lines at yesterday's daily High and Low with price labels",
+        "inputs": ["yesterday_daily_bar", "config"],
+        "outputs": ["chart_objects"]
+      }
+    ]
+  },
+
+  "components_to_build": [
+    {
+      "name": "BrokerDataAdapter",
+      "type": "interface",
+      "priority": 1,
+      "shared_across_parts": "all",
+      "contract": "get_ohlc(symbol, timeframe, from_time, to_time) -> List[OHLC]",
+      "implementations": ["CSVAdapter", "OANDAAdapter", "AlpacaAdapter", "BinanceAdapter"]
+    },
+    {
+      "name": "SessionManager",
+      "type": "utility",
+      "priority": 2,
+      "shared_across_parts": "all",
+      "contract": "get_day(offset) -> {start: datetime, end: datetime}",
+      "note": "Must handle weekend gaps, holidays, partial sessions, timezone normalisation"
+    },
+    {
+      "name": "ChartProjector",
+      "type": "logic",
+      "priority": 3,
+      "shared_across_parts": false,
+      "contract": "project(bars_yesterday, bars_today, config) -> List[GhostBar]"
+    },
+    {
+      "name": "ChartRenderer",
+      "type": "renderer",
+      "priority": 4,
+      "shared_across_parts": "all",
+      "methods": [
+        "draw_ghost_candles(ghost_bars, config)",
+        "draw_hline(price, label, config)"
+      ]
+    },
+    {
+      "name": "ToolConfig",
+      "type": "schema",
+      "priority": 5,
+      "shared_across_parts": "all",
+      "note": "Shared config object extended per tool. Part 1 defines the base fields."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "Ghost overlay concept — proven price action technique",
+      "Yesterday H/L horizontal lines — most valuable output",
+      "Modulo cycling logic — handles short/irregular sessions cleanly",
+      "All 6 config parameters adapted to our schema"
+    ],
+    "discard": [
+      "All MQL5 ObjectCreate / OBJ_TREND / OBJ_HLINE rendering calls",
+      "iBarShift, iTime, iOpen, iHigh, iLow, iClose data API calls",
+      "ENUM_TIMEFRAMES and MQL5 constants",
+      "MetaTrader script_show_inputs UI popup"
+    ],
+    "improve": [
+      "Add alpha/opacity support — original uses solid grey, no transparency",
+      "Add live refresh on bar close — original runs once only",
+      "Extend lookback to configurable N days — original hardcoded to 1",
+      "Add price labels to H/L lines — original draws unlabelled lines",
+      "Handle broker timezone offsets at data layer — original uses ShiftBars workaround"
+    ]
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Comparing Price Action (Sept 19 vs 20)",
+      "url": "https://c.mql5.com/2/100/image_2024-11-04_121741.png",
+      "insight": "Shows the PROBLEM — manual S/R lines are subjective. Tool automates this."
+    },
+    {
+      "fig": 2,
+      "title": "MetaEditor New Script Window",
+      "url": null,
+      "insight": "Confirms tool type: Script (runs once, not live indicator)"
+    },
+    {
+      "fig": 3,
+      "title": "Script Input Dialog",
+      "url": "https://c.mql5.com/2/100/image_2024-11-04_132609.png",
+      "insight": "Shows all 6 configurable parameters as presented to user"
+    },
+    {
+      "fig": 4,
+      "title": "Animated Chart Projection Result",
+      "url": "https://c.mql5.com/2/100/chart_projector_gif.gif",
+      "insight": "Ghost candles visible behind today's price. Price clearly respects prev H/L lines."
+    },
+    {
+      "fig": 5,
+      "title": "Static Chart Projection Result",
+      "url": "https://c.mql5.com/2/100/chart_projection_results__1.png",
+      "insight": "Still frame showing ghost bars distinct from live candles. Grey dotted style works well."
+    }
+  ]
+}

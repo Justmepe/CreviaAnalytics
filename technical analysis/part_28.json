@@ -1,0 +1,50 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 28,
+  "total_parts": 65,
+  "title": "Opening Range Breakout Tool",
+  "subtitle": "3-Stage Breakout Confirmation — Break → Retest → Re-break with ATR SL/TP",
+  "source_url": "https://www.mql5.com/en/articles/18486",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor",
+  "verdict": "MEDIUM EXTRACT — 3-stage breakout confirmation pattern (break → retest → re-break) is a useful false-breakout filter. Opening range concept maps to our session-based scanning window. ATR×1.5 SL validates our floor.",
+
+  "core_concept": {
+    "opening_range": "High/Low of first RangeMinutes (default 15) after session open, OR high/low of last-bar-of-prior-session + first-bar-of-current-session.",
+    "three_stage_breakout": {
+      "stage_1": "Price closes beyond range boundary (initial break)",
+      "stage_2": "Price returns and touches the boundary (retest)",
+      "stage_3": "Price closes beyond boundary again (re-break) → ENTRY"
+    },
+    "purpose_of_3_stages": "Filters false breakouts — requires genuine momentum (twice), not just a spike",
+    "relevance_to_creviaderiv": "Our zone interaction + departure candle is a 2-stage check (touch zone, close away). Adding a retest requirement makes it 3-stage, more selective. Opening range as a session-based zone is another zone type we could add."
+  },
+
+  "config": {
+    "RangeMinutes":   { "default": 15,  "description": "Minutes to capture opening range" },
+    "TF":             { "default": "M1","description": "Candle size for range capture" },
+    "ATRPeriod":      { "default": 14,  "description": "ATR period" },
+    "ATRMultiplier":  { "default": 1.5, "description": "SL/TP multiplier" }
+  },
+
+  "sl_tp": {
+    "sl": "ATR * 1.5 from entry (validates our min_sl = 2*ATR floor — 1.5 is slightly more aggressive)",
+    "tp": "ATR * 1.5 (1:1 RR) — too low for our min 1.5 RRR"
+  },
+
+  "keep_discard": {
+    "keep": [
+      "3-stage breakout confirmation (break → retest → re-break) as false-breakout filter",
+      "Opening range as a session-zone type (high/low of first 15min = key reference levels)",
+      "ATR×1.5 SL as a validated industry setting"
+    ],
+    "discard": [
+      "1:1 RR hardcoded (we need min 1.5 RRR)",
+      "Opening range is a specific strategy — not our primary approach"
+    ],
+    "improve": [
+      "Apply 3-stage logic to zone retests: first touch → pullback → second touch = higher confidence entry",
+      "Add session opening range as a supplemental zone type in ZoneIdentifier"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 62,
+  "total_parts": 65,
+  "title": "Building an Adaptive Parallel Channel Detection and Breakout System in MQL5",
+  "source_url": "https://www.mql5.com/en/articles/21443",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Analysis)",
+  "verdict": "HIGH EXTRACT \u2014 Parallel channel = parallel trendlines. MaxSlopeDifference for slope similarity. Liquidity sweep rejection (wick out + close back = false break). Retest mode = our zone retest confirmation logic. Direct upgrade to EntryEngine zone break confirmation.",
+  "channel_detection": {
+    "step_1": "Find swing highs and swing lows with ATR filter",
+    "step_2": "Try all pairs of highs for upper boundary, pairs of lows for lower boundary",
+    "step_3": "Reject if |slope_upper - slope_lower| > MaxSlopeDifference (not parallel)",
+    "step_4": "Accept if both boundaries have >= MinTouchPointsRequired touches within TouchToleranceATR",
+    "step_5": "Score by touch count; keep highest-scoring channel per lookback window"
+  },
+  "config": {
+    "MaxSlopeDifference": {
+      "default": 0.1,
+      "description": "Max slope divergence between upper/lower boundaries"
+    },
+    "MinChannelWidthATR": {
+      "default": 1.0,
+      "description": "Minimum channel width in ATR units"
+    },
+    "TouchToleranceATR": {
+      "default": 0.2,
+      "description": "Touch proximity in ATR units"
+    },
+    "MinTouchPointsRequired": {
+      "default": 2,
+      "description": "Min touches per boundary"
+    },
+    "SwingLookback": {
+      "default": 5,
+      "description": "Fractal lookback window"
+    },
+    "SwingSizeATRFactor": {
+      "default": 0.5,
+      "description": "Minimum swing size in ATR"
+    },
+    "LookbackBars": {
+      "default": 150,
+      "description": "Historical bars to search for channels"
+    },
+    "MinRecentTouches": {
+      "default": 1,
+      "description": "Recent interaction required for validity"
+    }
+  },
+  "liquidity_sweep_rejection": {
+    "rule": "Wick beyond boundary + close back inside = liquidity sweep, NOT a breakout",
+    "implementation": "if bar.high > channel_top AND bar.close < channel_top: mark as sweep, reject breakout"
+  },
+  "retest_mode": {
+    "states": [
+      "BREAKOUT_PENDING",
+      "RETEST_WAITING",
+      "CONFIRMED"
+    ],
+    "logic": "Price breaks boundary -> PENDING state -> if price returns to near boundary and bounces -> CONFIRMED"
+  },
+  "keep_discard": {
+    "keep": [
+      "MaxSlopeDifference=0.1 for parallel boundary validation",
+      "Liquidity sweep rejection (wick + close back = false break)",
+      "Retest mode = zone retest confirmation",
+      "TouchToleranceATR=0.2 (tighter than our 0.5)"
+    ],
+    "discard": [
+      "MQL5 channel rendering",
+      "Full channel detection (use zone system instead)"
+    ],
+    "improve": [
+      "Apply liquidity sweep rejection to all zone invalidations in EntryEngine",
+      "Retest mode: after zone break, wait for price to return to zone before entry",
+      "MaxSlopeDifference validates if two trendlines are truly parallel (channel vs wedge)"
+    ]
+  }
+}

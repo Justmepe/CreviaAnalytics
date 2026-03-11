@@ -1,0 +1,64 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 38,
+  "total_parts": 65,
+  "title": "Tick Buffer VWAP and Short-Window Imbalance Engine",
+  "subtitle": "Circular Ring Buffer for Ticks, Rolling VWAP, Uptick/Downtick Flow Formula, Spread Filter",
+  "source_url": "https://www.mql5.com/en/articles/19290",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Tick-Based)",
+  "verdict": "MEDIUM EXTRACT — Flow formula (up-down)/(up+down) is a new order flow metric. Spread filter (spread < ATR×0.5) is a new quality gate. Rolling VWAP from ticks is superior to session VWAP. Tick-level granularity not available for our synthetic instruments.",
+
+  "core_concept": {
+    "flow_formula": "Flow = (upticks - downticks) / (upticks + downticks)",
+    "values": "+1 = all ticks up (pure buying), -1 = all ticks down (pure selling), 0 = balanced",
+    "signal_gate": "flow > InpFlowTh (0.30) for bullish, flow < -InpFlowTh for bearish",
+    "hysteresis": "Reset trigger at flow_threshold * hysteresis_factor (0.30 * 0.80 = 0.24) — prevents rapid toggling",
+    "spread_filter": "spread < ATR * InpCheapSpreadFrac (0.50) — only trade when spread is 'cheap'",
+    "vwap_rolling": "Rolling VWAP over last InpVWAPminutes (1440 min = 24h). Price above = premium. Price below = discount.",
+    "relevance_to_creviaderiv": "Flow formula captures order flow direction (not available in OHLCV bar data). For Deriv synthetics, tick volume is proportional to time not activity — flow would be meaningless. For FTMO forex, this adds genuine order flow context."
+  },
+
+  "ring_buffer": {
+    "structure": "Circular buffer: 4 arrays (timestamps, bid, ask, last_price, volume). Size = InpRingSize (20000 ticks)",
+    "insert": "g_head = (g_head + 1) % g_size — O(1) insertion",
+    "window_calc": "For any window: iterate from head backward until timestamp < cutoff"
+  },
+
+  "vwap_formula": "vwap = sum(price[i] * volume[i]) / sum(volume[i]) for all ticks in window",
+
+  "config": {
+    "InpVWAPminutes":     { "default": 1440,   "description": "24h rolling VWAP window" },
+    "InpImbWindowSec":    { "default": 30,     "description": "Flow calculation window (seconds)" },
+    "InpCheapSpreadFrac": { "default": 0.50,   "description": "Spread < ATR × this = cheap" },
+    "InpFlowTh":          { "default": 0.30,   "description": "Flow threshold for signal" },
+    "InpFlowHystFactor":  { "default": 0.80,   "description": "Hysteresis reset multiplier" },
+    "InpStopATRmult":     { "default": 1.2,    "description": "SL = ATR × 1.2" },
+    "InpRingSize":        { "default": 20000,  "description": "Tick buffer capacity" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Flow formula: (up-dn)/(up+dn) — order flow direction metric",
+      "Hysteresis pattern: signal at threshold, reset at threshold×0.8",
+      "Spread filter: spread < ATR×0.5 as trade quality gate",
+      "Rolling VWAP concept (24h window, not session-based)"
+    ],
+    "discard": [
+      "Tick-level implementation for synthetics (tick volume = time on Deriv, not activity)",
+      "Ring buffer (our Python already handles bar data efficiently)",
+      "30-second imbalance window (bar-level is sufficient for our M1 strategy)"
+    ],
+    "improve": [
+      "Spread filter is immediately applicable: before any entry, check spread < ATR * 0.5",
+      "Flow formula adapted for bar data: uptick_bars = bars where close > open; flow = (uptick_bars - downtick_bars) / total_bars over last N bars",
+      "Hysteresis pattern: apply to our ADX gate — ADX_entry_threshold=20, ADX_reset_threshold=17 (not requiring ADX to re-fall to 0)"
+    ]
+  },
+
+  "bar_level_flow": {
+    "description": "Adapt flow to bar data for non-tick environments",
+    "formula": "for last N bars: up = sum(1 for b in bars if b.close > b.open); dn = N - up; flow = (up - dn) / N",
+    "note": "Less precise than tick flow but available on all bar-based data sources"
+  }
+}

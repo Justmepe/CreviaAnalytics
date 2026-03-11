@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreviaCockpit — Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #08090c;
+  --bg-2:        #0d0f14;
+  --surface:     #111520;
+  --surface-2:   #161b28;
+  --border:      #1c2235;
+  --border-2:    #242c42;
+  --text-1:      #dfe3f0;
+  --text-2:      #7a839e;
+  --text-3:      #3d4562;
+  --red:         #f03e5a;
+  --red-dim:     rgba(240,62,90,0.12);
+  --green:       #00d68f;
+  --green-dim:   rgba(0,214,143,0.1);
+  --amber:       #f0a030;
+  --amber-dim:   rgba(240,160,48,0.1);
+  --blue:        #4a8cf0;
+  --blue-dim:    rgba(74,140,240,0.1);
+  --purple:      #9b7cf4;
+}
+
+html { font-size: 14px; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NAV ──────────────────────────────────────────── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 52px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+}
+
+.nav-logo .logo-icon {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, #00d68f, #4a8cf0);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800; color: #08090c;
+}
+
+.nav-logo span { color: var(--text-1); }
+.nav-logo span em { color: var(--green); font-style: normal; }
+
+.nav-links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--text-2);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover { color: var(--text-1); background: var(--surface); }
+.nav-links a.active { color: var(--text-1); background: var(--surface-2); }
+
+.nav-actions { display: flex; gap: 8px; align-items: center; }
+
+.btn-ghost {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
+  background: none;
+  border: 1px solid var(--border-2);
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.btn-ghost:hover { color: var(--text-1); border-color: var(--text-3); }
+
+.btn-primary {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #08090c;
+  background: var(--green);
+  border: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+/* ── TICKER BAR ───────────────────────────────────── */
+.ticker {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 34px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+  padding: 0 28px;
+  overflow: hidden;
+}
+
+.ticker-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.live-pulse {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,214,143,0.4); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(0,214,143,0); }
+}
+
+.ticker-items {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  border-right: 1px solid var(--border);
+  height: 34px;
+}
+
+.ticker-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ticker-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-1);
+}
+
+.ticker-change {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+.up { color: var(--green); }
+.down { color: var(--red); }
+
+.regime-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.regime-badge .label { color: var(--text-3); }
+.regime-risk-off {
+  color: var(--red);
+  background: var(--red-dim);
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(240,62,90,0.25);
+}
+
+/* ── PAGE LAYOUT ──────────────────────────────────── */
+.page {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: auto;
+  gap: 0;
+  min-height: calc(100vh - 86px);
+}
+
+.main-col {
+  border-right: 1px solid var(--border);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-col {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--bg-2);
+}
+
+/* ── REGIME CARD ──────────────────────────────────── */
+.regime-card {
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-left: 3px solid var(--red);
+  border-radius: 6px;
+  padding: 22px 24px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.regime-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at top left, rgba(240,62,90,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.regime-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.regime-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.regime-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.regime-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.3px;
+}
+
+.regime-status-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.regime-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--red);
+  background: var(--red-dim);
+  border: 1px solid rgba(240,62,90,0.3);
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.regime-duration {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+}
+
+.regime-stats {
+  display: flex;
+  gap: 24px;
+  text-align: right;
+}
+
+.regime-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 4px;
+}
+
+.regime-stat-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.regime-stat-value.conf { color: var(--amber); }
+.regime-stat-value.acc  { color: var(--green); }
+
+.regime-quote {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-2);
+  font-style: italic;
+  border-left: 2px solid var(--border-2);
+  padding-left: 12px;
+  margin-bottom: 20px;
+}
+
+/* Signals grid */
+.signals-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 10px;
+}
+
+.signals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.signal-row {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.signal-row-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-2);
+}
+
+.signal-row-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-1);
+}
+
+.signal-bar-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.signal-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--red);
+  transition: width 1s ease;
+}
+
+.signal-weight {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+  align-self: flex-end;
+}
+
+/* What this means / Trader Action */
+.regime-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.regime-action-box {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 14px;
+}
+
+.regime-action-box.action-box {
+  border-color: rgba(240,62,90,0.25);
+  background: rgba(240,62,90,0.04);
+}
+
+.box-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 8px;
+}
+
+.box-text {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.action-box .box-text {
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* ── SECTION HEADER ───────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: 0.2px;
+}
+
+.section-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s;
+}
+.section-link:hover { color: var(--green); }
+
+/* ── CORRELATION MATRIX ───────────────────────────── */
+.corr-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px;
+  animation: fadeIn 0.5s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.corr-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.corr-row {
+  display: grid;
+  grid-template-columns: 140px 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+}
+
+.corr-pair {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-2);
+}
+
+.corr-pair strong {
+  color: var(--text-1);
+  font-weight: 500;
+}
+
+.corr-bar-track {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.corr-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1.2s ease;
+}
+
+.corr-strong-pos { background: var(--green); }
+.corr-mod-pos    { background: var(--blue); }
+.corr-neutral    { background: var(--text-3); }
+
+.corr-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 48px;
+  text-align: right;
+}
+
+.corr-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.tag-strong-pos { background: var(--green-dim); color: var(--green); border: 1px solid rgba(0,214,143,0.2); }
+.tag-mod-pos    { background: var(--blue-dim);  color: var(--blue);  border: 1px solid rgba(74,140,240,0.2); }
+.tag-watch      { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(240,160,48,0.2); }
+.tag-neutral    { background: var(--surface-2); color: var(--text-3); border: 1px solid var(--border); }
+
+.corr-note {
+  font-size: 12px;
+  color: var(--text-3);
+  font-style: italic;
+  margin-top: 4px;
+  padding-left: 2px;
+}
+
+/* ── OPPORTUNITIES ────────────────────────────────── */
+.opps-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.opps-row {
+  display: grid;
+  grid-template-columns: 48px 1fr auto auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  transition: background 0.15s;
+}
+
+.opps-row.locked-row {
+  filter: blur(3.5px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.opps-row:not(.locked-row):hover { background: var(--surface-2); }
+
+.asset-avatar {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: #08090c;
+  flex-shrink: 0;
+}
+
+.av-btc  { background: linear-gradient(135deg, #f7931a, #e87d16); }
+.av-eth  { background: linear-gradient(135deg, #627eea, #4f67c8); }
+.av-sol  { background: linear-gradient(135deg, #9945ff, #14f195); }
+.av-bnb  { background: linear-gradient(135deg, #f3ba2f, #d4a228); }
+
+.opp-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.opp-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.opp-price {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-1);
+  text-align: right;
+}
+
+.opp-change {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-align: right;
+  min-width: 56px;
+}
+
+.opp-signal {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  min-width: 72px;
+  text-align: center;
+}
+
+.sig-long  { background: var(--green-dim); color: var(--green); border: 1px solid rgba(0,214,143,0.25); }
+.sig-short { background: var(--red-dim);   color: var(--red);   border: 1px solid rgba(240,62,90,0.25); }
+.sig-watch { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(240,160,48,0.25); }
+
+/* Lock overlay */
+.lock-overlay {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.lock-overlay-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(8,9,12,0.65);
+  backdrop-filter: blur(1px);
+  z-index: 10;
+}
+
+.lock-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-2);
+  background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+
+.lock-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.lock-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text-2);
+  text-align: center;
+  max-width: 240px;
+  line-height: 1.5;
+}
+
+.lock-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ── TRADE SETUPS ─────────────────────────────────── */
+.setups-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.setup-row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.setup-row.locked-row { filter: blur(3.5px); user-select: none; pointer-events: none; }
+.setup-row:not(.locked-row):hover { background: var(--surface-2); }
+
+.setup-dir {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.dir-long  { background: var(--green-dim); color: var(--green); }
+.dir-short { background: var(--red-dim);   color: var(--red);   }
+
+.setup-asset {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.setup-detail {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+  margin-top: 3px;
+  display: flex;
+  gap: 12px;
+}
+
+.setup-detail span { display: flex; align-items: center; gap: 4px; }
+.detail-key { color: var(--text-3); }
+.detail-val { color: var(--text-2); }
+
+.setup-rr {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--amber);
+  text-align: right;
+}
+
+.setup-rr-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 2px;
+}
+
+/* ── SIDEBAR ──────────────────────────────────────── */
+.sidebar-section {
+  animation: fadeIn 0.5s ease 0.15s forwards;
+  opacity: 0;
+}
+
+.sidebar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 10px;
+}
+
+/* Smart money */
+.smart-money-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.sm-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sm-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  opacity: 0.35;
+}
+
+.sm-row-icon {
+  width: 28px; height: 28px;
+  border-radius: 5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.sm-row-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text-2);
+  flex: 1;
+}
+
+.sm-row-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.sm-empty-note {
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--text-3);
+  font-style: italic;
+  text-align: center;
+  background: var(--bg-2);
+}
+
+/* Fear & Greed dial */
+.fg-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.fg-dial {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.fg-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--red);
+  display: block;
+}
+
+.fg-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-top: 4px;
+  display: block;
+}
+
+.fg-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--amber) 50%, var(--red) 100%);
+  position: relative;
+  margin: 12px 0;
+}
+
+.fg-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px; height: 12px;
+  background: var(--text-1);
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  left: 5.5%;
+}
+
+.fg-scale {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--text-3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.fg-note {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* BTC Dom card */
+.dom-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 18px;
+}
+
+.dom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dom-asset {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.dom-pct {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.dom-bar-track {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.dom-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1.2s ease;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .page { grid-template-columns: 1fr; }
+  .side-col { border-top: 1px solid var(--border); }
+  .signals-grid { grid-template-columns: 1fr; }
+  .regime-actions { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .ticker { padding: 0 16px; overflow-x: auto; }
+  .main-col, .side-col { padding: 16px; }
+  .corr-row { grid-template-columns: 100px 1fr auto; }
+  .corr-tag { display: none; }
+  .opps-row { grid-template-columns: 36px 1fr auto; }
+  .opp-change { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon">CC</div>
+    <span>Crevia<em>Cockpit</em></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Market</a></li>
+    <li><a href="#" class="active">Intelligence</a></li>
+    <li><a href="#">Risk Calc</a></li>
+    <li><a href="#">Analysis</a></li>
+    <li><a href="#">Pricing</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-ghost">Sign In</button>
+    <button class="btn-primary">Join Waitlist</button>
+  </div>
+</nav>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <div class="ticker-live"><span class="live-pulse"></span>Live</div>
+  <div class="ticker-items">
+    <div class="ticker-item">
+      <span class="ticker-label">BTC</span>
+      <span class="ticker-value">$68,296</span>
+      <span class="ticker-change up">+5.07%</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-label">ETH</span>
+      <span class="ticker-value">$2,058</span>
+      <span class="ticker-change up">+9.16%</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-label">MCAP</span>
+      <span class="ticker-value">$2.43T</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-label">BTC.D</span>
+      <span class="ticker-value">56.2%</span>
+      <span class="ticker-change up">↑</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-label">F&amp;G</span>
+      <span class="ticker-value" style="color:var(--red)">11</span>
+      <span class="ticker-change down">Extreme Fear</span>
+    </div>
+    <div class="regime-badge">
+      <span class="label">Regime</span>
+      <span class="regime-risk-off">Risk-Off · 60%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── PAGE ── -->
+<div class="page">
+
+  <!-- MAIN COLUMN -->
+  <div class="main-col">
+
+    <!-- REGIME CARD -->
+    <div class="regime-card">
+      <div class="regime-header">
+        <div class="regime-title-group">
+          <span class="regime-eyebrow">Market Regime Detected</span>
+          <div class="regime-title">Risk-Off Conditions Active</div>
+          <div class="regime-status-row">
+            <span class="regime-status">Risk-Off</span>
+            <span class="regime-duration">Active for 5h 21m</span>
+          </div>
+        </div>
+        <div class="regime-stats">
+          <div>
+            <div class="regime-stat-label">Confidence</div>
+            <div class="regime-stat-value conf">60%</div>
+          </div>
+          <div>
+            <div class="regime-stat-label">Accuracy</div>
+            <div class="regime-stat-value acc">78%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="regime-quote">
+        "Market showing risk aversion. Capital flowing to BTC and stablecoins."
+      </div>
+
+      <div class="signals-label">Supporting Signals</div>
+      <div class="signals-grid">
+        <div class="signal-row">
+          <div class="signal-row-label">Fear dominates sentiment</div>
+          <div class="signal-row-value">11 <span style="font-size:10px;color:var(--text-3)">/ 100</span></div>
+          <div class="signal-bar-track"><div class="signal-bar-fill" style="width:11%"></div></div>
+          <div class="signal-weight">25% weight</div>
+        </div>
+        <div class="signal-row">
+          <div class="signal-row-label">BTC dominance — flight to safety</div>
+          <div class="signal-row-value">56.2%</div>
+          <div class="signal-bar-track"><div class="signal-bar-fill" style="width:56.2%; background:var(--amber)"></div></div>
+          <div class="signal-weight">20% weight</div>
+        </div>
+        <div class="signal-row">
+          <div class="signal-row-label">Funding rate — shorts paying longs</div>
+          <div class="signal-row-value">−0.0009%</div>
+          <div class="signal-bar-track"><div class="signal-bar-fill" style="width:40%; background:var(--blue)"></div></div>
+          <div class="signal-weight">15% weight</div>
+        </div>
+        <div class="signal-row">
+          <div class="signal-row-label">Liquidation pressure</div>
+          <div class="signal-row-value" style="color:var(--red)">Elevated</div>
+          <div class="signal-bar-track"><div class="signal-bar-fill" style="width:70%"></div></div>
+          <div class="signal-weight">12% weight</div>
+        </div>
+      </div>
+
+      <div class="regime-actions">
+        <div class="regime-action-box">
+          <div class="box-label">What This Means</div>
+          <div class="box-text">Typically precedes a 5–15% correction in alts within 48–72h. Capital rotating defensively.</div>
+        </div>
+        <div class="regime-action-box action-box">
+          <div class="box-label">Trader Action</div>
+          <div class="box-text">Reduce altcoin exposure. Tighten stops. Consider BTC or stables.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORRELATION MATRIX -->
+    <div class="corr-card">
+      <div class="section-header">
+        <span class="section-title">Correlation Matrix</span>
+        <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3)">Rolling 7d</span>
+      </div>
+      <div class="corr-grid">
+        <div class="corr-row">
+          <span class="corr-pair"><strong>Liq</strong> ↔ Volume</span>
+          <div class="corr-bar-track"><div class="corr-bar-fill corr-strong-pos" style="width:100%"></div></div>
+          <span class="corr-value up">+1.00</span>
+          <span class="corr-tag tag-strong-pos">Very Strong</span>
+        </div>
+        <div class="corr-row">
+          <span class="corr-pair"><strong>Price</strong> ↔ OI</span>
+          <div class="corr-bar-track"><div class="corr-bar-fill corr-strong-pos" style="width:100%"></div></div>
+          <span class="corr-value up">+1.00</span>
+          <span class="corr-tag tag-watch">Watch — Overleveraged</span>
+        </div>
+        <div class="corr-row">
+          <span class="corr-pair"><strong>Liq</strong> ↔ OI</span>
+          <div class="corr-bar-track"><div class="corr-bar-fill corr-mod-pos" style="width:87%"></div></div>
+          <span class="corr-value" style="color:var(--blue)">+0.87</span>
+          <span class="corr-tag tag-mod-pos">Moderate</span>
+        </div>
+      </div>
+      <p class="corr-note">⚠ Elevated liquidation signals detected — positions being flushed. Monitor closely.</p>
+    </div>
+
+    <!-- TOP OPPORTUNITIES -->
+    <div>
+      <div class="section-header">
+        <span class="section-title">Top Opportunities</span>
+        <a href="#" class="section-link">Full Scanner →</a>
+      </div>
+      <div class="lock-overlay">
+        <!-- Blurred ghost rows visible behind lock -->
+        <div class="opps-card">
+          <div class="opps-row locked-row">
+            <div class="asset-avatar av-btc">BTC</div>
+            <div>
+              <div class="opp-name">Bitcoin</div>
+              <div class="opp-sub">Breakout Setup · 4H</div>
+            </div>
+            <div><div class="opp-price">$68,296</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3);text-align:right">Entry zone</div></div>
+            <div class="opp-change up">+5.07%</div>
+            <span class="opp-signal sig-long">Long</span>
+          </div>
+          <div class="opps-row locked-row">
+            <div class="asset-avatar av-eth">ETH</div>
+            <div>
+              <div class="opp-name">Ethereum</div>
+              <div class="opp-sub">Support Retest · 1D</div>
+            </div>
+            <div><div class="opp-price">$2,058</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3);text-align:right">Watch $1,900</div></div>
+            <div class="opp-change down">−2.1%</div>
+            <span class="opp-signal sig-watch">Watch</span>
+          </div>
+          <div class="opps-row locked-row">
+            <div class="asset-avatar av-sol">SOL</div>
+            <div>
+              <div class="opp-name">Solana</div>
+              <div class="opp-sub">Momentum Fade · 4H</div>
+            </div>
+            <div><div class="opp-price">$87.34</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3);text-align:right">Resistance</div></div>
+            <div class="opp-change down">−1.4%</div>
+            <span class="opp-signal sig-short">Short</span>
+          </div>
+        </div>
+        <div class="lock-overlay-content">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-title">Pro Required</div>
+          <div class="lock-sub">Opportunity Scanner is available on the Pro plan. See live setups across all 16+ assets.</div>
+          <div class="lock-actions">
+            <button class="btn-primary">Upgrade to Pro</button>
+            <button class="btn-ghost">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRADE SETUPS -->
+    <div>
+      <div class="section-header">
+        <span class="section-title">Latest Trade Setups</span>
+        <a href="#" class="section-link">View All →</a>
+      </div>
+      <div class="lock-overlay">
+        <div class="setups-card">
+          <div class="setup-row locked-row">
+            <div class="setup-dir dir-long">Long</div>
+            <div>
+              <div class="setup-asset">BTC / USDT</div>
+              <div class="setup-detail">
+                <span><span class="detail-key">Entry</span><span class="detail-val">$66,800</span></span>
+                <span><span class="detail-key">TP</span><span class="detail-val">$72,500</span></span>
+                <span><span class="detail-key">SL</span><span class="detail-val">$64,200</span></span>
+              </div>
+            </div>
+            <div>
+              <div class="setup-rr">2.8R</div>
+              <div class="setup-rr-label">Risk/Reward</div>
+            </div>
+          </div>
+          <div class="setup-row locked-row">
+            <div class="setup-dir dir-short">Short</div>
+            <div>
+              <div class="setup-asset">ETH / USDT</div>
+              <div class="setup-detail">
+                <span><span class="detail-key">Entry</span><span class="detail-val">$2,100</span></span>
+                <span><span class="detail-key">TP</span><span class="detail-val">$1,880</span></span>
+                <span><span class="detail-key">SL</span><span class="detail-val">$2,200</span></span>
+              </div>
+            </div>
+            <div>
+              <div class="setup-rr">2.2R</div>
+              <div class="setup-rr-label">Risk/Reward</div>
+            </div>
+          </div>
+          <div class="setup-row locked-row">
+            <div class="setup-dir dir-long">Long</div>
+            <div>
+              <div class="setup-asset">SOL / USDT</div>
+              <div class="setup-detail">
+                <span><span class="detail-key">Entry</span><span class="detail-val">$82.00</span></span>
+                <span><span class="detail-key">TP</span><span class="detail-val">$97.50</span></span>
+                <span><span class="detail-key">SL</span><span class="detail-val">$77.00</span></span>
+              </div>
+            </div>
+            <div>
+              <div class="setup-rr">3.1R</div>
+              <div class="setup-rr-label">Risk/Reward</div>
+            </div>
+          </div>
+        </div>
+        <div class="lock-overlay-content">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-title">Pro Required</div>
+          <div class="lock-sub">AI Trade Setups with entry, target, stop-loss, and risk/reward — live for Pro members.</div>
+          <div class="lock-actions">
+            <button class="btn-primary">Upgrade to Pro</button>
+            <button class="btn-ghost">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-col -->
+
+  <!-- SIDEBAR -->
+  <div class="side-col">
+
+    <!-- Fear & Greed -->
+    <div class="sidebar-section">
+      <div class="sidebar-label">Fear &amp; Greed Index</div>
+      <div class="fg-card">
+        <div class="fg-dial">
+          <span class="fg-number">11</span>
+          <span class="fg-label">Extreme Fear</span>
+        </div>
+        <div class="fg-bar">
+          <div class="fg-marker"></div>
+        </div>
+        <div class="fg-scale">
+          <span>Fear</span>
+          <span>Neutral</span>
+          <span>Greed</span>
+        </div>
+        <p class="fg-note" style="margin-top:12px;">Historically a buying zone. Often signals capitulation — consider DCA entry.</p>
+      </div>
+    </div>
+
+    <!-- Smart Money -->
+    <div class="sidebar-section" style="animation-delay:0.2s">
+      <div class="sidebar-label">Smart Money Activity</div>
+      <div class="smart-money-card">
+        <div class="sm-placeholder">
+          <div class="sm-row">
+            <div class="sm-row-icon">📈</div>
+            <div class="sm-row-label">Funding Rate Spike</div>
+            <div class="sm-row-val">—</div>
+          </div>
+          <div class="sm-row">
+            <div class="sm-row-icon">💧</div>
+            <div class="sm-row-label">Liquidation Cascade</div>
+            <div class="sm-row-val">—</div>
+          </div>
+          <div class="sm-row">
+            <div class="sm-row-icon">🌊</div>
+            <div class="sm-row-label">Capital Flow Alert</div>
+            <div class="sm-row-val">—</div>
+          </div>
+        </div>
+        <div class="sm-empty-note">No smart money signals active. Signals fire when funding rates, liquidations, or capital flows become notable.</div>
+      </div>
+    </div>
+
+    <!-- BTC Dominance Breakdown -->
+    <div class="sidebar-section" style="animation-delay:0.3s">
+      <div class="sidebar-label">Market Dominance</div>
+      <div class="dom-card">
+        <div class="dom-row">
+          <span class="dom-asset">Bitcoin</span>
+          <span class="dom-pct" style="color:var(--amber)">56.2%</span>
+        </div>
+        <div class="dom-bar-track">
+          <div class="dom-bar-fill" style="width:56.2%;background:var(--amber)"></div>
+        </div>
+
+        <div class="dom-row" style="margin-top:10px">
+          <span class="dom-asset">Ethereum</span>
+          <span class="dom-pct">17.4%</span>
+        </div>
+        <div class="dom-bar-track">
+          <div class="dom-bar-fill" style="width:17.4%;background:var(--blue)"></div>
+        </div>
+
+        <div class="dom-row" style="margin-top:10px">
+          <span class="dom-asset">Stablecoins</span>
+          <span class="dom-pct">8.9%</span>
+        </div>
+        <div class="dom-bar-track">
+          <div class="dom-bar-fill" style="width:8.9%;background:var(--text-3)"></div>
+        </div>
+
+        <div class="dom-row" style="margin-top:10px">
+          <span class="dom-asset">Others</span>
+          <span class="dom-pct">17.5%</span>
+        </div>
+        <div class="dom-bar-track">
+          <div class="dom-bar-fill" style="width:17.5%;background:var(--surface-2)"></div>
+        </div>
+
+        <p style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3);margin-top:12px;line-height:1.5;">
+          BTC dominance elevated. Risk-off rotation in progress — alts losing relative share.
+        </p>
+      </div>
+    </div>
+
+  </div><!-- /side-col -->
+</div><!-- /page -->
+
+</body>
+</html>

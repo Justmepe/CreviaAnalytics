@@ -1,0 +1,39 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 45,
+  "total_parts": 65,
+  "title": "Creating a Dynamic Level-Analysis Panel in MQL5",
+  "subtitle": "Single-Level Historical Probability — Touch/Breakout/Reversal Classification",
+  "source_url": "https://www.mql5.com/en/articles/19842",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Analysis)",
+  "verdict": "MEDIUM EXTRACT — empirical level probability framework: bullish/bearish touch count, breakout vs reversal classification at any price level. Touch probability formula directly applicable to zone quality scoring.",
+
+  "core_concept": {
+    "description": "Given a user-defined price level, scan 500 bars. Count bullish touches (closed above after touch), bearish touches (closed below), bullish breakouts, bearish breakouts. Calculate empirical probabilities.",
+    "touch_detection": "High >= level - tolerance AND Low <= level + tolerance",
+    "breakout_definition": "prevClose crosses level AND currClose exceeds level by BreakPips",
+    "bullish_touch_prob": "(bull_touch_count / total_touches) * 100",
+    "bias_classification": "Both touch AND breakout bullish dominate = SUPPORT; bearish = RESISTANCE; mixed = NEUTRAL"
+  },
+
+  "config": {
+    "BarsToCheck": {"default": 500},
+    "TouchPips": {"default": 10, "description": "Tolerance around level"},
+    "BreakPips": {"default": 20, "description": "Pips beyond level to confirm breakout"}
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Touch probability formula: (bull_touches / total_touches) * 100",
+      "Bias classification: support vs resistance vs neutral based on historical touch behavior",
+      "Breakout vs reversal classification at each zone interaction"
+    ],
+    "discard": ["Manual level input — use our automated zone levels", "Fixed pip tolerances — use ATR"],
+    "improve": [
+      "Apply to our supply/demand zones: compute historical touch_prob for each zone automatically",
+      "Add touch_prob to zone quality score: zone with 75%+ bullish touch history = stronger demand zone",
+      "Track breakout_vs_reversal per zone: if zone has 60% breakout history, it may be failing soon"
+    ]
+  }
+}

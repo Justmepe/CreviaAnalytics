@@ -1,0 +1,45 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 31,
+  "total_parts": 65,
+  "title": "Python Candlestick Recognition Engine (I) — Manual Detection",
+  "subtitle": "7 Candlestick Patterns with MQL5-Python Bridge, Flask Server, Pandas DataFrame",
+  "source_url": "https://www.mql5.com/en/articles/18789",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "EA + Python Flask",
+  "verdict": "MEDIUM EXTRACT — all 7 pattern formulas collected. Architecture is pure Python via Flask (bridge pattern). Morning/Evening Star 3-candle detection is the key new addition vs Part 24/26. We already have Python-native architecture.",
+
+  "patterns": {
+    "hammer":       { "condition": "bot_wick >= 2*body AND top_wick <= body", "signal": "bullish_reversal" },
+    "shooting_star":{ "condition": "top_wick >= 2*body AND bot_wick <= body", "signal": "bearish_reversal" },
+    "doji":         { "condition": "body <= 0.1 * full_range", "signal": "indecision" },
+    "bullish_engulfing": { "condition": "prev_red AND curr_open < prev_close AND curr_close > prev_open", "signal": "bullish" },
+    "bearish_engulfing": { "condition": "prev_green AND curr_open > prev_close AND curr_close < prev_open", "signal": "bearish" },
+    "bullish_harami": { "condition": "prev_red(large) AND curr_green(small, body inside prev body)", "signal": "bullish_reversal" },
+    "bearish_harami": { "condition": "prev_green(large) AND curr_red(small, body inside prev body)", "signal": "bearish_reversal" },
+    "morning_star": {
+      "condition": "bar[-3] large_bearish AND bar[-2] small_body(<50% of bar[-3]) AND bar[-1] large_bullish AND bar[-1].close > bar[-3].midpoint",
+      "signal": "bullish_reversal",
+      "note": "3-candle pattern — checks bars [-3], [-2], [-1]"
+    },
+    "evening_star": {
+      "condition": "bar[-3] large_bullish AND bar[-2] small_body(<50% of bar[-3]) AND bar[-1] large_bearish AND bar[-1].close < bar[-3].midpoint",
+      "signal": "bearish_reversal",
+      "note": "3-candle pattern — inverse of morning star"
+    }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Morning Star 3-candle formula: bar[-3] large bearish, bar[-2] small (<50% body), bar[-1] large bullish above midpoint",
+      "Evening Star inverse formula",
+      "Harami: current body enclosed within prior body (inside body pattern)",
+      "Complete 7-pattern reference"
+    ],
+    "discard": ["Flask server bridge — Python-native already", "MQL5 EA component"],
+    "improve": [
+      "Morning/Evening Star at zone boundary: 3-candle confirmation at demand/supply zone = very high confidence",
+      "Add all patterns to classify_candle() from Part 24 as extended cases"
+    ]
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 3,
+  "total_parts": 65,
+  "title": "Analytics Master EA",
+  "subtitle": "Continuous Market Metrics, Fibonacci S/R, ATR Volatility, Account Info and Lot Sizing",
+  "source_url": "https://www.mql5.com/en/articles/16434",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor",
+  "verdict": "BUILD — but split into components, not one monolithic EA",
+
+  "series_evolution": {
+    "part_1": "Script — visual ghost overlay, runs once",
+    "part_2": "Script — text data panel, runs once",
+    "part_3": "EA — same data panel but now runs continuously, adds ATR, account info, Fibonacci S/R, lot sizing, 2-hour auto-refresh",
+    "key_transition": "Part 3 is the first LIVE tool in the series. It introduced the concept that the dashboard should refresh automatically — not just on demand. This is the architectural moment where we stop thinking in single-shot scripts and start thinking in event-driven services."
+  },
+
+  "tool_classification": {
+    "category": "live_analytics_dashboard",
+    "generates_signals": true,
+    "signal_type": "directional_bias_with_pressure",
+    "signal_values": ["Bullish", "Bearish", "Neutral", "Bullish with bullish pressure", "Bearish with bearish pressure"],
+    "executes_trades": false,
+    "runs": "continuously",
+    "update_interval_hours": 2,
+    "update_trigger": "OnTick with time gate (TimeCurrent - lastUpdateTime >= 7200)",
+    "updates_live": true,
+    "timeframe_agnostic": false,
+    "fixed_timeframe": "D1 for price data, H1 for ATR",
+    "symbol_agnostic": true
+  },
+
+  "depends_on": {
+    "other_parts": [1, 2],
+    "shared_components": [
+      "BrokerDataAdapter",
+      "DailyContextProvider",
+      "SessionManager",
+      "ChartRenderer",
+      "DataTableRenderer",
+      "AnalyticsEngine",
+      "ATRCalculator",
+      "AccountDataProvider",
+      "MarketDataProvider",
+      "LotSizeCalculator",
+      "ScheduledRefreshManager",
+      "ToolConfig"
+    ],
+    "note": "Part 3 is a superset of Part 2 — it adds 5 entirely new data streams and a continuous update mechanism"
+  },
+
+  "new_data_introduced": [
+    {
+      "name": "atr_value",
+      "source": "ATRCalculator",
+      "timeframe": "H1",
+      "period": 14,
+      "purpose": "Measure intraday volatility — used in lot sizing and market assessment",
+      "note": "H1 ATR captures hourly price range. More responsive than D1 ATR for intraday trading."
+    },
+    {
+      "name": "account_balance",
+      "source": "AccountDataProvider",
+      "purpose": "Base for lot size calculation and risk management"
+    },
+    {
+      "name": "account_equity",
+      "source": "AccountDataProvider",
+      "purpose": "Real-time account value including open P&L — important for drawdown monitoring"
+    },
+    {
+      "name": "market_spread",
+      "source": "MarketDataProvider",
+      "formula": "ask_price - bid_price",
+      "purpose": "Transaction cost visibility — wide spreads make small trades uneconomical"
+    },
+    {
+      "name": "min_lot_size",
+      "source": "MarketDataProvider",
+      "purpose": "Broker minimum — lot size calculation must respect this floor"
+    },
+    {
+      "name": "max_lot_size",
+      "source": "MarketDataProvider",
+      "purpose": "Broker maximum — displayed for reference, lot calculation capped here"
+    },
+    {
+      "name": "possible_lot_size",
+      "source": "LotSizeCalculator",
+      "purpose": "Suggested position size based on risk%, stop loss distance, and account balance"
+    }
+  ],
+
+  "data_requirements": [
+    {
+      "name": "prev_day_ohlcv",
+      "timeframe": "D1",
+      "fields": ["open", "high", "low", "close", "volume"],
+      "range": "yesterday (D1 bar index 1)",
+      "source": "DailyContextProvider"
+    },
+    {
+      "name": "current_day_volume",
+      "timeframe": "D1",
+      "fields": ["volume"],
+      "range": "today (D1 bar index 0)",
+      "source": "DailyContextProvider"
+    },
+    {
+      "name": "atr_h1_14",
+      "timeframe": "H1",
+      "period": 14,
+      "source": "ATRCalculator"
+    },
+    {
+      "name": "account_info",
+      "fields": ["balance", "equity"],
+      "source": "AccountDataProvider"
+    },
+    {
+      "name": "live_market_info",
+      "fields": ["bid", "ask", "spread", "min_lot", "max_lot", "tick_size"],
+      "source": "MarketDataProvider"
+    }
+  ],
+
+  "config": {
+    "risk_percentage":       { "type": "float",   "default": 1.0, "description": "% of account balance to risk per trade. Used in lot size calculation." },
+    "stop_loss_multiplier":  { "type": "float",   "default": 1.0, "description": "Multiplier applied to S/R distance when computing stop loss. 1.0 = full range." },
+    "atr_period":            { "type": "integer", "default": 14,  "description": "Number of H1 bars used in ATR volatility calculation." },
+    "update_interval_hours": { "type": "integer", "default": 2,   "description": "How often to recalculate and redisplay all metrics." }
+  },
+
+  "outputs": {
+    "chart_lines": [
+      {
+        "name": "PrevDayHigh",
+        "type": "trend_line",
+        "price": "prev_day_high",
+        "color": "red",
+        "extends": "24 hours back from current time"
+      },
+      {
+        "name": "PrevDayLow",
+        "type": "trend_line",
+        "price": "prev_day_low",
+        "color": "blue",
+        "extends": "24 hours back from current time"
+      }
+    ],
+    "data_table": {
+      "type": "on_chart_text_panel",
+      "refresh": "every_2_hours",
+      "fields": [
+        "prev_day_open", "prev_day_close", "prev_day_high", "prev_day_low",
+        "prev_day_volume", "current_day_volume", "market_direction",
+        "support", "resistance",
+        "account_balance", "account_equity",
+        "market_spread", "min_lot_size", "max_lot_size",
+        "atr_volatility", "last_update_time", "possible_lot_size"
+      ]
+    }
+  },
+
+  "logic": {
+    "lifecycle": {
+      "OnInit":   "Initialise lastUpdateTime = 0. All data fetched on first tick.",
+      "OnTick":   "Every price tick calls UpdateMetrics(). UpdateMetrics only recalculates if 2 hours have elapsed since last run.",
+      "OnDeinit": "Delete all chart objects on EA removal."
+    },
+    "steps": [
+      {
+        "step": 1,
+        "name": "time_gate_check",
+        "description": "Only proceed if (current_time - last_update_time) >= 7200 seconds. Prevents recalculation on every tick.",
+        "our_improvement": "Replace tick-based time gate with a proper scheduler that fires on bar close or configurable interval."
+      },
+      {
+        "step": 2,
+        "name": "fetch_daily_data",
+        "description": "Fetch prev day and today's D1 OHLCV from DailyContextProvider. Same as Parts 1 and 2.",
+        "inputs": ["symbol", "D1 bars 0 and 1"],
+        "outputs": ["prev_day_ohlcv", "current_day_volume"]
+      },
+      {
+        "step": 3,
+        "name": "calculate_fibonacci_support_resistance",
+        "description": "NEW in Part 3 — extends S/R BEYOND the previous day's range using 0.382 Fibonacci ratio.",
+        "formula": {
+          "support":    "prev_day_low    - (prev_day_high - prev_day_low) * 0.382",
+          "resistance": "prev_day_high   + (prev_day_high - prev_day_low) * 0.382"
+        },
+        "vs_part_2": "Part 2 set support=prev_low, resistance=prev_high (raw levels). Part 3 PROJECTS beyond those levels — the S/R is now a Fibonacci extension, not the raw H/L. These are completely different things and our build must expose this as a config choice.",
+        "note": "0.382 is the first major Fibonacci retracement level. Extending the range by 38.2% gives projected support/resistance where price might find its next equilibrium."
+      },
+      {
+        "step": 4,
+        "name": "analyze_market_direction",
+        "description": "Close vs open (Bullish/Bearish/Neutral) PLUS wick pressure context",
+        "logic": {
+          "base": "close > open → Bullish | close < open → Bearish | equal → Neutral",
+          "pressure_addon": "high > open AND high > close → append 'with bullish pressure' | low < open AND low < close → append 'with bearish pressure'"
+        },
+        "improvement_vs_part_2": "Adds contextual wick analysis. A Bullish candle with a high wick (high above both open and close) suggests buying pressure exhausted — subtle but useful nuance.",
+        "flaw": "Still magnitude-blind. 'Bullish with bullish pressure' tells you nothing about range size."
+      },
+      {
+        "step": 5,
+        "name": "calculate_lot_size",
+        "description": "Risk-based position sizing using account balance, risk%, and S/R distance as stop loss proxy",
+        "formula": {
+          "stop_loss_distance": "abs(support - resistance) * stop_loss_multiplier",
+          "risk_amount":        "account_balance * (risk_percentage / 100)",
+          "lot_size":           "risk_amount / (stop_loss_distance / tick_size)"
+        },
+        "floor": "If calculated lot < min_lot_size, use min_lot_size",
+        "critical_flaw": "Using the Fibonacci S/R distance as the stop loss distance is dangerous — these levels are projected beyond the actual range, so the stop loss distance will be LARGER than the actual daily range, producing SMALLER lot sizes than expected. The formula is internally consistent but the inputs are not what a trader would naturally use."
+      },
+      {
+        "step": 6,
+        "name": "fetch_account_metrics",
+        "description": "Get live account balance and equity from broker",
+        "inputs": ["broker_account_connection"],
+        "outputs": ["account_balance", "account_equity"]
+      },
+      {
+        "step": 7,
+        "name": "fetch_market_metrics",
+        "description": "Get live bid, ask, spread, and lot limits from broker symbol info",
+        "inputs": ["symbol"],
+        "outputs": ["bid", "ask", "spread", "min_lot", "max_lot"]
+      },
+      {
+        "step": 8,
+        "name": "calculate_atr_volatility",
+        "description": "Compute ATR(14) on H1 timeframe to measure intraday volatility",
+        "inputs": ["symbol", "H1 bars", "period=14"],
+        "outputs": ["atr_value"],
+        "note": "ATR is the Average True Range — the average of (high-low, abs(high-prev_close), abs(low-prev_close)) over 14 H1 bars. Higher = more volatile session."
+      },
+      {
+        "step": 9,
+        "name": "render_data_table_and_lines",
+        "description": "Format all 17 metrics into the on-chart panel. Delete old trend lines and redraw at current prices.",
+        "inputs": ["all above outputs"],
+        "outputs": ["on_chart_panel", "two_trend_lines", "last_update_timestamp"]
+      }
+    ]
+  },
+
+  "sr_strategy_comparison": {
+    "part_2": {
+      "support":    "prev_day_low  (raw level)",
+      "resistance": "prev_day_high (raw level)",
+      "meaning":    "Yesterday's actual traded range boundaries"
+    },
+    "part_3": {
+      "support":    "prev_day_low  - (range * 0.382)",
+      "resistance": "prev_day_high + (range * 0.382)",
+      "meaning":    "Projected levels BEYOND the range — where price might go next"
+    },
+    "our_build": "Expose BOTH as config options. raw_hl=True for Part 2 behaviour, fib_extension=True for Part 3 behaviour. Default: raw_hl. This is a meaningful trading choice — raw H/L for conservative, Fibonacci extension for aggressive projection."
+  },
+
+  "components_to_build": [
+    {
+      "name": "ATRCalculator",
+      "type": "logic",
+      "priority": 1,
+      "shared_across_parts": "many",
+      "contract": "get_atr(symbol, timeframe, period, bar_offset=0) -> float",
+      "note": "Pure function. Takes OHLC bars, returns ATR value. No broker dependency — input is just price data."
+    },
+    {
+      "name": "AccountDataProvider",
+      "type": "interface",
+      "priority": 2,
+      "shared_across_parts": "many",
+      "contract": "get_account() -> {balance: float, equity: float, currency: str}",
+      "note": "Broker-specific. Each broker adapter implements this. For backtesting, returns simulated values."
+    },
+    {
+      "name": "MarketDataProvider",
+      "type": "interface",
+      "priority": 3,
+      "shared_across_parts": "many",
+      "contract": "get_market_info(symbol) -> {bid, ask, spread, min_lot, max_lot, tick_size, tick_value}",
+      "note": "Live data — refreshed on each call. Broker-specific implementation."
+    },
+    {
+      "name": "LotSizeCalculator",
+      "type": "logic",
+      "priority": 4,
+      "shared_across_parts": "many",
+      "contract": "calculate(balance, risk_pct, stop_loss_distance, tick_size, min_lot) -> float",
+      "note": "Pure function. No broker dependency. Unit testable. The most reused component in the toolkit — appears in almost every EA part."
+    },
+    {
+      "name": "FibonacciSRCalculator",
+      "type": "logic",
+      "priority": 5,
+      "shared_across_parts": "many",
+      "contract": "calculate(high, low, mode='extension', ratio=0.382) -> {support, resistance}",
+      "modes": ["raw", "extension", "retracement"],
+      "note": "Exposes both Part 2 (raw) and Part 3 (extension) behaviours via mode parameter."
+    },
+    {
+      "name": "ScheduledRefreshManager",
+      "type": "utility",
+      "priority": 6,
+      "shared_across_parts": "many",
+      "contract": "should_refresh(last_update_time, interval_seconds) -> bool",
+      "our_improvement": "Also support bar_close trigger as an alternative to time-based gate."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "The Script → EA evolution concept — live refresh is architecturally correct",
+      "ATR as volatility measure — standard, well-understood, reused in many future parts",
+      "Fibonacci S/R extension — more nuanced than raw H/L, worth exposing as an option",
+      "Account balance and equity in the dashboard — essential for live trading context",
+      "Market spread visibility — real transaction cost transparency",
+      "Lot size calculation structure — risk% × balance ÷ stop distance is industry standard",
+      "The 17-metric dashboard format — comprehensive daily briefing, good UX",
+      "AnalyzeMarketDirection with wick pressure context — improvement over Part 2"
+    ],
+    "discard": [
+      "Tick-based time gate (OnTick with 2-hour check) — inefficient, fires on every tick just to check a clock",
+      "ObjectsDeleteAll(0) on every refresh — deletes ALL chart objects including ones from other tools",
+      "DrawContinuousTrendLine using OBJ_TREND — MT5 specific, replaced by ChartRenderer",
+      "All MQL5 data APIs (iTime, iOpen, iHigh, iLow, iClose, iVolume, iATR, AccountInfoDouble etc.)",
+      "Hard-coding 0.382 — expose as config param (some traders prefer 0.236, 0.5, 0.618)"
+    ],
+    "improve": [
+      "Replace tick-gate with proper bar-close event or configurable interval scheduler",
+      "Namespaced object deletion — only delete objects created by this tool, not all chart objects",
+      "Make Fibonacci ratio configurable — default 0.382 but allow 0.236, 0.5, 0.618, 1.0",
+      "Add equity-to-balance ratio — if equity < 95% of balance, warn about open drawdown",
+      "Add spread warning threshold — flag when spread exceeds X% of ATR (unusually wide)",
+      "Volume normalisation (same fix as Part 2 — time-normalise current day volume)",
+      "ATR: expose timeframe and period as config, default H1/14 but allow D1/14 or H4/14"
+    ]
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Data Presentation (Part 2 recap)",
+      "url": "https://c.mql5.com/2/157/text_summary__3.png",
+      "insight": "Shows the Part 2 output to contrast with what Part 3 adds. Same data panel structure but Part 3 adds 10 more metrics."
+    },
+    {
+      "fig": 2,
+      "title": "Analytics Comment Result (Part 2 recap)",
+      "url": "https://c.mql5.com/2/157/Test_Result1__2.png",
+      "insight": "Part 2's chart with S/R lines. Used as a before/after baseline — Part 3 generates the same lines plus the extra metrics."
+    },
+    {
+      "fig": 3,
+      "title": "Volatility Formula",
+      "url": "https://c.mql5.com/2/157/P003__2.PNG",
+      "insight": "Standard deviation formula shown. The EA simplifies this by using ATR as a volatility proxy — ATR is more practical for trading than statistical standard deviation."
+    },
+    {
+      "fig": 4,
+      "title": "Market Spread Formula",
+      "url": "https://c.mql5.com/2/157/Market_Spread_Formula__2.png",
+      "insight": "Spread = Ask - Bid. Simple but important. Confirms the spread is calculated live from market data, not estimated."
+    },
+    {
+      "fig": 5,
+      "title": "Analytics Master EA (GIF)",
+      "url": "https://c.mql5.com/2/157/P002GIF__2.gif",
+      "insight": "Animated attachment of the EA to chart. Shows the full 17-metric panel appearing in the top-left. The red and blue trend lines are visible at prev day High and Low."
+    },
+    {
+      "fig": 6,
+      "title": "Analytics Result with Timestamps",
+      "url": "https://c.mql5.com/2/157/P009__2.png",
+      "insight": "Static screenshot showing the full panel with Last Update Time stamps visible. Confirms the 2-hour refresh cycle is working correctly — two different timestamps shown in sequence."
+    }
+  ],
+
+  "important_notes_from_comments": [
+    "Tool does NOT open trades — it is analysis only. Confirmed by the author in forum reply.",
+    "Updates every 2 hours — direction signal can flip between bullish/bearish on each refresh.",
+    "Audible alerts not implemented — suggested by a user as a valuable feature to add.",
+    "MT4 version does not exist and will not be made — MT4 is discontinued."
+  ]
+}

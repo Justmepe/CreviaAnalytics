@@ -1,0 +1,65 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 63,
+  "total_parts": 65,
+  "title": "Automating Rising and Falling Wedge Detection in MQL5",
+  "source_url": "https://www.mql5.com/en/articles/21518",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Indicator",
+  "verdict": "MEDIUM \u2014 Wedge = converging trendlines. Rising wedge: both slopes positive + lower slope > upper slope. Falling wedge: both negative + upper slope < lower slope. Convergence check (apex beyond current bar) prevents invalid patterns. Good for zone context classification.",
+  "wedge_detection": {
+    "rising_wedge": "upperSlope > 0 AND lowerSlope > 0 AND lowerSlope > upperSlope (lower boundary rising faster)",
+    "falling_wedge": "upperSlope < 0 AND lowerSlope < 0 AND upperSlope < lowerSlope (upper boundary falling faster)",
+    "slope_formula": "slope = (pN.price - p1.price) / (pN.index - p1.index + 1e-10)",
+    "apex_formula": "apexX = (p1l.price - p1h.price + upper*p1h.index - lower*p1l.index) / (upper - lower + 1e-10)",
+    "apex_validation": "apexX must be AFTER current bar (apex in future = still converging, valid wedge)"
+  },
+  "config": {
+    "PivotLeft": {
+      "default": 5,
+      "description": "Bars left of pivot for confirmation"
+    },
+    "PivotRight": {
+      "default": 5,
+      "description": "Bars right of pivot (delayed confirmation = anti-repainting)"
+    },
+    "MinTouches": {
+      "default": 3,
+      "description": "Minimum pivot touches per boundary"
+    },
+    "LineExtensionBars": {
+      "default": 30,
+      "description": "Forward projection distance"
+    },
+    "MaxWedges": {
+      "default": 20,
+      "description": "Maximum concurrent formations"
+    },
+    "BreakoutBuffer": {
+      "default": 3,
+      "description": "Points*3 beyond line for breakout trigger"
+    }
+  },
+  "classification": {
+    "rising_wedge": "Bearish \u2014 price coiling up into resistance, expect downside break",
+    "falling_wedge": "Bullish \u2014 price coiling down into support, expect upside break",
+    "breakout_direction": "Rising wedge breaks DOWN; Falling wedge breaks UP"
+  },
+  "keep_discard": {
+    "keep": [
+      "Slope comparison formula: slope = (pN-p1)/(index_N - index_1)",
+      "Convergence check: apex must be beyond current bar",
+      "PivotRight=5 anti-repainting (wait for 5 right-side bars before confirming)",
+      "MinTouches=3 per boundary"
+    ],
+    "discard": [
+      "Visual rendering",
+      "MaxWedges limit (not applicable to our system)"
+    ],
+    "improve": [
+      "Wedge type in zone context: zone inside falling wedge = high-probability demand zone",
+      "Wedge + zone at convergence point = maximum compression entry",
+      "Use slope comparison to classify our M15 structure: converging trendlines = wedge market"
+    ]
+  }
+}

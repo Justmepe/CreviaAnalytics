@@ -1,0 +1,297 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 2,
+  "total_parts": 65,
+  "title": "Analytical Comment Script",
+  "subtitle": "Previous Day Market Summary, S/R Lines, Volume Analysis and Direction Prediction",
+  "source_url": "https://www.mql5.com/en/articles/15927",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Script",
+  "verdict": "BUILD",
+
+  "relationship_to_part_1": {
+    "description": "Directly builds on Part 1. Part 1 gave us the visual ghost overlay. Part 2 adds the textual analytical layer — a data table and written commentary sitting beside that visual. Together they form the foundation of the daily briefing concept.",
+    "shared_data": ["prevDayHigh", "prevDayLow", "prevDayOpen", "prevDayClose"],
+    "extends": "The S/R lines in Part 2 (prev day H/L as horizontal lines) are the exact same lines Part 1 draws with ShowHighLow=true. Part 2 just adds colour coding (green = support, red = resistance) and labels them explicitly."
+  },
+
+  "tool_classification": {
+    "category": "analytical_dashboard",
+    "generates_signals": true,
+    "signal_type": "directional_bias",
+    "signal_values": ["Bullish", "Bearish", "Neutral"],
+    "executes_trades": false,
+    "runs": "on_demand",
+    "updates_live": false,
+    "timeframe_agnostic": false,
+    "fixed_timeframe": "D1",
+    "symbol_agnostic": true,
+    "tested_on": ["USDSEK", "Crash 900 Index", "USDCNH", "Boom 300 Index"]
+  },
+
+  "depends_on": {
+    "other_parts": [1],
+    "note": "S/R line drawing is identical to Part 1 ShowHighLow=true. Data fetching pattern is the same. Part 2 is an extension not a replacement.",
+    "shared_components": ["BrokerDataAdapter", "SessionManager", "ChartRenderer", "AnalyticsEngine", "ToolConfig"]
+  },
+
+  "data_requirements": [
+    {
+      "name": "prev_day_ohlcv",
+      "timeframe": "D1",
+      "fields": ["open", "high", "low", "close", "volume"],
+      "range": "yesterday only (D1 bar index 1)",
+      "source": "BrokerDataAdapter.get_ohlc"
+    },
+    {
+      "name": "current_day_volume",
+      "timeframe": "D1",
+      "fields": ["volume"],
+      "range": "today (D1 bar index 0)",
+      "source": "BrokerDataAdapter.get_ohlc",
+      "note": "Tool performs best as day progresses — volume reading is partial until session closes"
+    }
+  ],
+
+  "config": {
+    "table_text_color":  { "type": "string",  "default": "#0000FF", "description": "Color of text in the on-chart data table" },
+    "table_x_offset":    { "type": "integer", "default": 10, "description": "Horizontal pixel offset of the table from the chart edge" },
+    "table_y_offset":    { "type": "integer", "default": 50, "description": "Vertical pixel offset of the table from the chart top" },
+    "support_color":     { "type": "string",  "default": "#00FF00", "description": "Color of the support horizontal line (prev day Low)" },
+    "resistance_color":  { "type": "string",  "default": "#FF0000", "description": "Color of the resistance horizontal line (prev day High)" }
+  },
+
+  "outputs": {
+    "chart_objects": [
+      {
+        "name": "SupportLine",
+        "type": "horizontal_line",
+        "price": "prev_day_low",
+        "color": "support_color",
+        "label": "Support"
+      },
+      {
+        "name": "ResistanceLine",
+        "type": "horizontal_line",
+        "price": "prev_day_high",
+        "color": "resistance_color",
+        "label": "Resistance"
+      }
+    ],
+    "data_table": {
+      "type": "on_chart_text_panel",
+      "position": "top_left",
+      "fields": [
+        "prev_day_open",
+        "prev_day_close",
+        "prev_day_high",
+        "prev_day_low",
+        "prev_day_volume",
+        "current_day_volume",
+        "support_price",
+        "resistance_price",
+        "market_nature",
+        "volume_commentary",
+        "market_commentary"
+      ]
+    }
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "fetch_prev_day_data",
+        "description": "Fetch all OHLCV fields for yesterday's D1 bar",
+        "inputs": ["symbol", "D1 bar index 1"],
+        "outputs": ["prev_day_open", "prev_day_high", "prev_day_low", "prev_day_close", "prev_day_volume"]
+      },
+      {
+        "step": 2,
+        "name": "fetch_current_day_volume",
+        "description": "Fetch today's D1 volume (partial — grows throughout the day)",
+        "inputs": ["symbol", "D1 bar index 0"],
+        "outputs": ["current_day_volume"]
+      },
+      {
+        "step": 3,
+        "name": "set_support_resistance",
+        "description": "Set support = prev_day_low, resistance = prev_day_high. Draw coloured horizontal lines.",
+        "inputs": ["prev_day_high", "prev_day_low"],
+        "outputs": ["key_support", "key_resistance", "chart_lines"],
+        "note": "Same as Part 1 ShowHighLow=true but with explicit green/red colour coding"
+      },
+      {
+        "step": 4,
+        "name": "classify_market_nature",
+        "description": "Compare prev_day_close vs prev_day_open to determine session direction",
+        "inputs": ["prev_day_open", "prev_day_close"],
+        "outputs": ["market_nature"],
+        "logic": {
+          "Bullish":  "prev_day_close > prev_day_open",
+          "Bearish":  "prev_day_close < prev_day_open",
+          "Neutral":  "prev_day_close == prev_day_open"
+        }
+      },
+      {
+        "step": 5,
+        "name": "volume_sentiment_analysis",
+        "description": "Compare current day volume vs previous day volume to infer participation trend",
+        "inputs": ["current_day_volume", "prev_day_volume"],
+        "outputs": ["volume_commentary"],
+        "logic": {
+          "higher": "current > prev → Bullish sentiment may continue",
+          "lower":  "current < prev → Bearish sentiment may follow",
+          "equal":  "current == prev → Sentiment uncertain"
+        },
+        "caveat": "Volume comparison is time-of-day dependent. At 9am, today's volume will always be lower than yesterday's full-day volume. Normalise by elapsed session percentage for accuracy."
+      },
+      {
+        "step": 6,
+        "name": "generate_market_commentary",
+        "description": "Produce a plain-English sentence describing the market based on market_nature",
+        "inputs": ["market_nature"],
+        "outputs": ["market_commentary"]
+      },
+      {
+        "step": 7,
+        "name": "render_data_table",
+        "description": "Format all outputs into a structured text panel displayed on the chart",
+        "inputs": ["all above outputs", "config.table_x_offset", "config.table_y_offset", "config.table_text_color"],
+        "outputs": ["on_chart_text_panel"]
+      }
+    ]
+  },
+
+  "signal_quality_analysis": {
+    "volume_signal_flaw": {
+      "description": "Comparing raw current-day volume to full previous-day volume is misleading early in the session",
+      "fix": "Normalise: volume_pace = current_day_volume / (elapsed_minutes / total_session_minutes). Compare volume_pace to prev_day_volume.",
+      "priority": "HIGH"
+    },
+    "direction_signal_simplicity": {
+      "description": "Bullish/Bearish based only on one day's open vs close is a very weak signal. A single large candle can flip the reading incorrectly.",
+      "fix": "Consider multi-day trend context or combine with volume pace to weight the signal.",
+      "priority": "MEDIUM"
+    },
+    "no_magnitude_consideration": {
+      "description": "A 1-pip bullish close and a 200-pip bullish close both produce 'Bullish'. Range magnitude is ignored.",
+      "fix": "Add ATR-relative range classification: small / normal / large move.",
+      "priority": "LOW"
+    }
+  },
+
+  "components_to_build": [
+    {
+      "name": "BrokerDataAdapter",
+      "type": "interface",
+      "priority": 1,
+      "shared_across_parts": "all",
+      "note": "Already defined in Part 1. Must add volume field to get_ohlc response."
+    },
+    {
+      "name": "AnalyticsEngine",
+      "type": "logic",
+      "priority": 2,
+      "shared_across_parts": "many",
+      "methods": [
+        "classify_market_nature(open, close) -> str",
+        "volume_commentary(current_vol, prev_vol, elapsed_pct) -> str",
+        "market_commentary(market_nature) -> str"
+      ],
+      "note": "Pure functions, no side effects. Easy to unit test."
+    },
+    {
+      "name": "DataTableRenderer",
+      "type": "renderer",
+      "priority": 3,
+      "shared_across_parts": "many",
+      "note": "Renders a key-value data panel on the chart at configurable position. Used by many future parts."
+    },
+    {
+      "name": "ChartRenderer",
+      "type": "renderer",
+      "priority": 4,
+      "shared_across_parts": "all",
+      "note": "Already defined in Part 1. Part 2 uses draw_hline with colour and label."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "The 7-field data table concept — OHLCV + support + resistance in one panel",
+      "Bullish/Bearish/Neutral classification of prev day — simple and useful",
+      "Colour-coded S/R lines (green=support, red=resistance) — intuitive convention",
+      "Volume comparison logic structure — the idea is correct even if raw implementation is flawed",
+      "Plain-English commentary generation — good for dashboards, alerts, and logging"
+    ],
+    "discard": [
+      "Raw volume comparison without time-normalisation — misleading early in session",
+      "MQL5 Comment() function — replaced by our DataTableRenderer",
+      "ObjectCreate OBJ_HLINE calls — replaced by ChartRenderer.draw_hline",
+      "iBarShift, iVolume, iHigh, iLow, iOpen, iClose MQL5 API calls",
+      "Trade.mqh include — imported but never used in this script (author oversight)"
+    ],
+    "improve": [
+      "Time-normalise volume: compare volume_pace not raw volume",
+      "Add range magnitude: ATR-relative classification of yesterday's candle size",
+      "Add price distance: how far is current price from support/resistance in pips and ATR",
+      "Make commentary dynamic: update as price moves, not just on script run",
+      "Add multi-day context: is today's open above/below last 3 days' average?",
+      "Merge with Part 1: the S/R lines are duplicated — one unified DailyContext module should serve both"
+    ]
+  },
+
+  "part_1_overlap": {
+    "duplicated_logic": [
+      "Fetching prev_day_high and prev_day_low from D1 bar",
+      "Drawing horizontal lines at those levels"
+    ],
+    "recommendation": "Create a shared DailyContextProvider that both Part 1 and Part 2 call. It returns {open, high, low, close, volume, support, resistance} and is the single source of truth for all daily-level data across the toolkit."
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Essential Levels",
+      "url": "https://c.mql5.com/2/102/trendlines1.png",
+      "insight": "Chart with green support and red resistance horizontal lines drawn at prev day Low and High. Shows price reacting to both levels — this is the visual proof that the levels are meaningful."
+    },
+    {
+      "fig": 2,
+      "title": "Quick Chart Reference (Data Table)",
+      "url": "https://c.mql5.com/2/102/text_summary.png",
+      "insight": "The on-chart Comment() text panel. Shows the table format: Open, Close, High, Low, Volume fields listed vertically. Simple but immediately useful as a daily briefing panel."
+    },
+    {
+      "fig": 3,
+      "title": "Tool Test Result 1 (Boom 300 Index)",
+      "url": "https://c.mql5.com/2/102/Test_Result1.png",
+      "insight": "Static screenshot showing bearish reading confirmed by price action."
+    },
+    {
+      "fig": 4,
+      "title": "Setting Parameters (GIF)",
+      "url": "https://c.mql5.com/2/102/changing_parameters.gif",
+      "insight": "Shows the 5 input parameter dialog. Confirms colours and offsets are user-configurable."
+    },
+    {
+      "fig": 5,
+      "title": "Tool Test Result 2 - USDSEK (GIF)",
+      "url": "https://c.mql5.com/2/102/analytic_tool_result.gif",
+      "insight": "Bullish reading. Initial slight bearish move followed by strong bullish impulse — tool prediction aligned."
+    },
+    {
+      "fig": 6,
+      "title": "Tool Test Result 3 - Crash 900 Index (GIF)",
+      "url": "https://c.mql5.com/2/102/Tooltestresult.gif",
+      "insight": "Bearish reading confirmed. Swift bearish move with no reversal — tool called it correctly."
+    },
+    {
+      "fig": 7,
+      "title": "Tool Test Result 4 - USDCNH (GIF)",
+      "url": "https://c.mql5.com/2/102/analytics_result_tool3.gif",
+      "insight": "Bullish reading. Market respected support and resistance levels and moved upward as predicted."
+    }
+  ]
+}

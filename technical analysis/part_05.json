@@ -1,0 +1,299 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 5,
+  "total_parts": 65,
+  "title": "Volatility Navigator EA",
+  "subtitle": "RSI + Bollinger Bands + ATR Confluence — Dynamic Entry, SL and TP via ATR Multiplier",
+  "source_url": "https://www.mql5.com/en/articles/16560",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2024-12-16",
+  "type": "Expert Advisor",
+  "verdict": "EXTRACT — take the ATR-based SL/TP calculation and indicator confluence gate pattern",
+
+  "series_evolution": {
+    "part_1": "Script — ghost overlay, runs once",
+    "part_2": "Script — data panel, runs once",
+    "part_3": "EA — live dashboard, auto-refreshes every 2 hours",
+    "part_4": "EA — Part 3 + Telegram notifications",
+    "part_5": "EA — first ENTRY-FOCUSED tool. Shifts from analysis/display to actual signal generation with SL/TP. The series pivots here from dashboards to trading engines."
+  },
+
+  "tool_classification": {
+    "category": "entry_signal_generator",
+    "generates_signals": true,
+    "signal_type": "directional_entry_with_sl_tp",
+    "executes_trades": false,
+    "runs": "continuously",
+    "update_trigger": "OnTick",
+    "timeframe_agnostic": true,
+    "symbol_agnostic": true,
+    "tested_on": ["Crash 900 Index", "Volatility 500 Index"]
+  },
+
+  "depends_on": {
+    "other_parts": [1, 2, 3, 4],
+    "shared_components": ["BrokerDataAdapter", "ATRCalculator", "ChartRenderer", "NotificationService"],
+    "new_this_part": ["RSICalculator", "BollingerBandsCalculator", "SignalEngine", "LevelDrawer"]
+  },
+
+  "core_concept": {
+    "name": "Three-Indicator Confluence Gate",
+    "description": "Only enter when all three independent indicators confirm the same direction simultaneously. RSI confirms momentum exhaustion (overbought/oversold), Bollinger Bands confirm price at statistical extreme, ATR confirms volatility is sufficient for a meaningful move.",
+    "buy_conditions": [
+      "Close < Lower Bollinger Band  (price at statistical low extreme)",
+      "RSI < 30                       (momentum oversold confirmation)",
+      "ATR > threshold                (volatility sufficient for move)"
+    ],
+    "sell_conditions": [
+      "Close > Upper Bollinger Band  (price at statistical high extreme)",
+      "RSI > 70                       (momentum overbought confirmation)",
+      "ATR > threshold                (volatility sufficient for move)"
+    ],
+    "relevance_to_creviaderiv": "This is the conceptual ancestor of our EMA + ADX + VWV confluence gate. The principle is identical: require simultaneous confirmation from momentum, structure, and volatility filters before entering."
+  },
+
+  "data_requirements": [
+    {
+      "name": "rsi_series",
+      "indicator": "RSI",
+      "period": 14,
+      "source": "close prices",
+      "field": "current_value"
+    },
+    {
+      "name": "bollinger_bands",
+      "indicator": "Bollinger Bands",
+      "period": 20,
+      "deviation": 2.0,
+      "fields": ["upper_band", "lower_band", "middle_band"]
+    },
+    {
+      "name": "atr_series",
+      "indicator": "ATR",
+      "period": 14,
+      "field": "current_value"
+    },
+    {
+      "name": "current_close",
+      "type": "scalar",
+      "source": "latest closed bar close price"
+    }
+  ],
+
+  "config": {
+    "rsi_period":         { "type": "integer", "default": 14,   "description": "RSI lookback period" },
+    "overbought_level":   { "type": "float",   "default": 70.0, "description": "RSI threshold for sell signal" },
+    "oversold_level":     { "type": "float",   "default": 30.0, "description": "RSI threshold for buy signal" },
+    "bb_period":          { "type": "integer", "default": 20,   "description": "Bollinger Bands MA period" },
+    "bb_deviation":       { "type": "float",   "default": 2.0,  "description": "BB standard deviation multiplier" },
+    "atr_period":         { "type": "integer", "default": 14,   "description": "ATR lookback period" },
+    "atr_multiplier":     { "type": "float",   "default": 1.5,  "description": "ATR multiplier for SL distance. TP = SL × 2 (2:1 RR)." },
+    "signal_sound":       { "type": "string",  "default": "alert.wav", "description": "Audio file to play on signal. Replaced in our build by NotificationService." }
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "compute_indicators",
+        "description": "Compute RSI, Bollinger Bands (upper, middle, lower), and ATR on each tick/bar",
+        "inputs": ["ohlcv_series"],
+        "outputs": ["rsi", "bb_upper", "bb_lower", "bb_mid", "atr"]
+      },
+      {
+        "step": 2,
+        "name": "evaluate_buy_signal",
+        "description": "Check all three buy conditions simultaneously",
+        "conditions": [
+          "close < bb_lower",
+          "rsi < oversold_level",
+          "atr > min_atr_threshold"
+        ],
+        "output": "is_buy_signal: bool"
+      },
+      {
+        "step": 3,
+        "name": "evaluate_sell_signal",
+        "description": "Check all three sell conditions simultaneously",
+        "conditions": [
+          "close > bb_upper",
+          "rsi > overbought_level",
+          "atr > min_atr_threshold"
+        ],
+        "output": "is_sell_signal: bool"
+      },
+      {
+        "step": 4,
+        "name": "calculate_levels",
+        "description": "Compute entry, SL, and TP from current close and ATR",
+        "formulas": {
+          "entry": "current_close",
+          "sl_buy":  "entry - (atr * atr_multiplier)",
+          "tp_buy":  "entry + (atr * atr_multiplier * 2)",
+          "sl_sell": "entry + (atr * atr_multiplier)",
+          "tp_sell": "entry - (atr * atr_multiplier * 2)"
+        },
+        "rr_ratio": "2:1 (hardcoded — TP distance = 2× SL distance)"
+      },
+      {
+        "step": 5,
+        "name": "draw_levels",
+        "description": "Draw three horizontal lines on chart: entry (green), SL (red), TP (blue)",
+        "inputs": ["entry", "sl", "tp"],
+        "outputs": ["chart_objects"]
+      },
+      {
+        "step": 6,
+        "name": "alert",
+        "description": "Play audio alert and optionally print to console",
+        "inputs": ["signal_type", "entry", "sl", "tp"],
+        "outputs": ["sound", "console_log"]
+      }
+    ]
+  },
+
+  "sl_tp_calculation": {
+    "critical_note": "This is the key insight for CreviaDeriv. The ATR-based SL/TP pattern is the RIGHT approach for dynamic risk sizing.",
+    "sl_formula": "SL = entry ± (ATR × multiplier)",
+    "tp_formula": "TP = entry ∓ (ATR × multiplier × RR_ratio)",
+    "rr_ratio_hardcoded": 2.0,
+    "atr_multiplier_default": 1.5,
+    "weakness": "Fixed 2:1 RR ignores zone structure — our system improves by targeting opposing zones for P1 and swing levels for P2/P3",
+    "creviaderiv_comparison": {
+      "similarity": "ATR floor for minimum SL distance — we already have this in _calculate_precision_sl() with min 2×ATR floor",
+      "difference_1": "We use structural swings (external HL/LH) as SL anchor, not raw ATR. ATR is only the FLOOR.",
+      "difference_2": "We have 4 TP targets (P1=opposing zone, P2=swing, P3=leg×1.5, P4=2:1 RR). This tool has only P4 equivalent.",
+      "takeaway": "Our approach is strictly superior. This tool's ATR multiplier concept validates our 2×ATR floor design."
+    }
+  },
+
+  "outputs": {
+    "chart_lines": [
+      { "name": "entry_line", "color": "green", "price": "entry", "label": "Entry" },
+      { "name": "sl_line",    "color": "red",   "price": "sl",    "label": "Stop Loss" },
+      { "name": "tp_line",    "color": "blue",  "price": "tp",    "label": "Take Profit" }
+    ],
+    "chart_arrows": [
+      { "type": "buy_arrow",  "color": "green" },
+      { "type": "sell_arrow", "color": "red" }
+    ],
+    "text_label": "Buy Signal / Sell Signal at entry level",
+    "audio_alert": "alert.wav"
+  },
+
+  "components_to_build": [
+    {
+      "name": "RSICalculator",
+      "type": "indicator",
+      "priority": 1,
+      "contract": "rsi(prices: List[float], period: int) -> List[float]",
+      "note": "Pure function. Period 14 default. Returns series, caller takes last value."
+    },
+    {
+      "name": "BollingerBandsCalculator",
+      "type": "indicator",
+      "priority": 2,
+      "contract": "bollinger_bands(prices, period, deviation) -> {upper, middle, lower}",
+      "note": "Upper = SMA + (StdDev × deviation). Lower = SMA - (StdDev × deviation)."
+    },
+    {
+      "name": "SignalEngine",
+      "type": "logic",
+      "priority": 3,
+      "contract": "evaluate(rsi, bb_upper, bb_lower, atr, close, config) -> Signal | None",
+      "note": "Stateless. Called every bar. Returns Signal(type, entry, sl, tp) or None."
+    },
+    {
+      "name": "LevelDrawer",
+      "type": "renderer",
+      "priority": 4,
+      "contract": "draw_entry_sl_tp(entry, sl, tp, direction) -> chart_objects",
+      "note": "Shared across many future parts. Entry=green, SL=red, TP=blue convention."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "Three-indicator confluence gate pattern — exactly right architecture for entry filters",
+      "ATR-based SL/TP calculation — dynamic risk sizing, not fixed pip values",
+      "2:1 minimum RR constraint — we use MIN_RRR=1.5, similar philosophy",
+      "Separation of signal generation from trade execution — signals only, human/system decides to act",
+      "Green/Red/Blue colour convention for Entry/SL/TP lines"
+    ],
+    "discard": [
+      "RSI + BB as primary entry triggers — in CreviaDeriv, zones (supply/demand) are the trigger, not RSI",
+      "Fixed ATR×1.5 SL — we anchor to structural swings, use ATR only as floor",
+      "Fixed 2:1 TP — we use 4 TP targets based on zone and swing structure",
+      "MQL5 indicator handles (iRSI, iBands, iATR) — replaced by Python TA-Lib or pandas-ta",
+      "ObjectCreate chart drawing — replaced by ChartRenderer / matplotlib in our build",
+      "Audio alert.wav — replaced by NotificationService (Telegram/webhook)"
+    ],
+    "improve": [
+      "Replace RSI+BB entry trigger with zone interaction (supply/demand zone touch)",
+      "Replace ATR SL with structural SL (nearest external swing), ATR as floor only",
+      "Replace single 2:1 TP with multi-target system (P1=opposing zone, P2=swing, P3, P4)",
+      "Add ATR threshold properly: compare ATR to symbol-specific minimum, not a hardcoded value",
+      "Add timeframe filter: require M15 structure alignment before taking M1 entry",
+      "Add volume/VWV confirmation — this tool has no volume gate",
+      "Add position management: trailing SL after P1 hit, partial close on each target"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "sl_calculation_validation": "This article confirms the ATR-based SL approach is standard practice. Our improvement: structural anchor + ATR floor is strictly better than raw ATR multiplier.",
+    "rr_ratio_validation": "2:1 RR as minimum is standard. Our MIN_RRR=1.5 is even more permissive — correct given our structural TP targets often exceed 2:1 naturally.",
+    "indicator_confluence_validation": "Requiring 3 simultaneous confirmations before entry is the right philosophy. Our EMA3 crossover + ADX rising + departure is the same pattern, just with better-fitted indicators for structure-based trading.",
+    "atr_for_stop_loss": "Formula: SL = entry ± (ATR × 1.5). This maps to our ATR floor: min_sl = 2 × ATR. The multiplier differs but the concept is identical — prevent stops being placed in noise."
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Bollinger Bands Visualization",
+      "url": "https://c.mql5.com/2/105/BB.png",
+      "insight": "Shows price touching lower band — the setup for a buy signal. Price at 2-standard-deviation extreme."
+    },
+    {
+      "fig": 2,
+      "title": "RSI Formula",
+      "url": "https://c.mql5.com/2/105/RSI3.PNG",
+      "insight": "RSI = 100 - (100 / (1 + RS)). RS = Average Gain / Average Loss over period."
+    },
+    {
+      "fig": 3,
+      "title": "RSI Chart Example",
+      "url": "https://c.mql5.com/2/105/rsi5.png",
+      "insight": "RSI below 30 = oversold zone. Used as momentum confirmation gate for buy entry."
+    },
+    {
+      "fig": 4,
+      "title": "ATR Formula",
+      "url": "https://c.mql5.com/2/105/ATR_Calculation.PNG",
+      "insight": "ATR = max(High-Low, |High-PrevClose|, |Low-PrevClose|). The TRUE range handles gaps correctly."
+    },
+    {
+      "fig": 5,
+      "title": "Signal Generation Diagram (Crash 900)",
+      "url": "https://c.mql5.com/2/105/Crash900VN1.png",
+      "insight": "Shows all three lines drawn on chart after signal. Entry (green), SL (red), TP (blue). Visually clean."
+    },
+    {
+      "fig": 6,
+      "title": "Visual Alerts Example",
+      "url": "https://c.mql5.com/2/105/Signal_and_Alerts.png",
+      "insight": "Alert popup and sound trigger on signal. Shows the notification pathway."
+    },
+    {
+      "fig": 7,
+      "title": "Volatility 500 Test Results",
+      "url": "https://c.mql5.com/2/105/vn2result500.png",
+      "insight": "Static result showing signal levels on Volatility 500 index. Signals appear on correct extremes."
+    },
+    {
+      "fig": 8,
+      "title": "Animated Test Result (GIF)",
+      "url": "https://c.mql5.com/2/105/VOLATILITY_NAVIGATORGIF.gif",
+      "insight": "Shows real-time signal generation and price approaching TP level. Confirms dynamic ATR sizing works across different volatility regimes."
+    }
+  ]
+}

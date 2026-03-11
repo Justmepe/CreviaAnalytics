@@ -1,0 +1,37 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 42,
+  "total_parts": 65,
+  "title": "Interactive Chart Testing with Button Logic and Statistical Levels",
+  "subtitle": "Volume-Weighted Statistics, Asymmetric Z-Score Thresholds, KDE Mode Detection",
+  "source_url": "https://www.mql5.com/en/articles/19697",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Interactive)",
+  "verdict": "LOW-MEDIUM EXTRACT — extends Part 41 with volume-weighted statistics and asymmetric thresholds (long z >= 2.0, short z <= -0.8). Interactive UI irrelevant for Python. KDE bandwidth=1.0 for mode estimation.",
+
+  "extensions_vs_part_41": {
+    "volume_weighted_stats": "UseWeightedByVol=true: weight each TP by its volume. VWAP-style distribution.",
+    "asymmetric_thresholds": "Long entry: z >= +2.0; Short entry: z <= -0.8 (asymmetric — easier to go short). Suggests bearish bias in the tested instrument.",
+    "kde_mode": "KDEGridPoints=100, BandwidthFactor=1.0 (Silverman's rule). Mode = peak of density estimate."
+  },
+
+  "formulas": {
+    "vwap_tp": "vwap = sum(tp[i] * vol[i]) / sum(vol[i]) — volume-weighted mean",
+    "kde_bandwidth": "h = 1.06 * std(data) * n^(-0.2) * BandwidthFactor — Silverman's rule",
+    "kde_mode": "Find peak of gaussian KDE evaluated over KDEGridPoints grid"
+  },
+
+  "config": {
+    "UseWeightedByVol":    { "default": true, "description": "Volume-weighted statistics" },
+    "ZScoreSignalEnter_Long":  { "default": 2.0,  "description": "Long entry z-score (above mean)" },
+    "ZScoreSignalEnter_Short": { "default": -0.8, "description": "Short entry z-score" },
+    "KDEGridPoints":       { "default": 100,  "description": "KDE resolution" },
+    "KDEBandwidthFactor":  { "default": 1.0,  "description": "Silverman bandwidth multiplier" }
+  },
+
+  "keep_discard": {
+    "keep": ["Volume-weighted mean (VWAP approach for stats)", "Asymmetric threshold concept (instrument may have directional bias)", "KDE for mode with Silverman bandwidth"],
+    "discard": ["Interactive button UI", "Asymmetric thresholds (we'd calibrate per instrument from DNA data)"],
+    "improve": ["Use volume-weighted TP for all statistical computations (Part 41 + 42 combined)", "Calibrate z-score thresholds per instrument using DNA smoothness_index"]
+  }
+}

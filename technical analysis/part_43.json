@@ -1,0 +1,51 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 43,
+  "total_parts": 65,
+  "title": "Candlestick Probability and Breakouts",
+  "subtitle": "Historical Win Rate Tracking per Pattern — Next-Bar, Within-N, and Breakout Probabilities",
+  "source_url": "https://www.mql5.com/en/articles/19738",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Analysis)",
+  "verdict": "HIGH EXTRACT — pattern win rate calculation framework directly applicable to scoring our departure candle patterns. Three probability metrics: next-bar, within-N, and breakout confirmation. Volume-weighted versions. LookAheadBars=5 for forward test.",
+
+  "probability_metrics": {
+    "next_bar_pct":    "(successes at next bar / total occurrences) × 100",
+    "within_n_pct":    "(successes within N bars / total occurrences) × 100",
+    "breakout_pct":    "(confirmed breakouts / total breakouts) × 100",
+    "volume_weighted": "weight each occurrence by its tick_volume for volume-weighted versions"
+  },
+
+  "breakout_definition": {
+    "bullish": "price moves > BreakoutPips (5) above pattern high within BreakoutConfirmBars (1) and closes above",
+    "bearish": "price moves > BreakoutPips (5) below pattern low within BreakoutConfirmBars (1) and closes below"
+  },
+
+  "config": {
+    "LookbackBars":       { "default": 2000, "description": "Historical bars for probability calculation" },
+    "LookAheadBars":      { "default": 5,    "description": "Forward window for follow-through" },
+    "BreakoutPips":       { "default": 5,    "description": "Threshold for breakout confirmation" },
+    "BreakoutConfirmBars":{ "default": 1,    "description": "Bars required for validation" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Three probability metrics (next-bar, within-N, breakout) — comprehensive pattern evaluation",
+      "LookAheadBars=5 as forward test window",
+      "Volume-weighted probabilities",
+      "Pattern win rate as training data for ML classifier (Part 34/35)"
+    ],
+    "discard": ["Chart display", "Manual pattern catalog approach (use ta-lib from Part 32)"],
+    "improve": [
+      "Run pattern probability analysis per symbol at startup — cache results as part of MarketDNA (Part 40)",
+      "Use pattern win rates to weight departure_strength: if pin bar has 72% next-bar win rate on this instrument, departure_strength = 3; if only 55%, = 1",
+      "Calibrate LookAheadBars to match our TP1 distance in bars"
+    ]
+  },
+
+  "creviaderiv_application": {
+    "per_symbol_pattern_win_rates": "Run over 2000 bars per symbol. Cache win rates. Use to weight departure_strength.",
+    "example": "If EURUSD bullish_engulfing has 65% within-5-bars win rate → departure_strength 3. If only 52% → 1.",
+    "integration": "win_rate_dict = load_cached_pattern_win_rates(symbol); departure_strength = win_rate_to_strength(win_rate_dict.get(pattern_type, 0.5))"
+  }
+}

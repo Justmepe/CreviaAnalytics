@@ -1,0 +1,62 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 25,
+  "total_parts": 65,
+  "title": "Dual EMA Fractal Breaker",
+  "subtitle": "EMA14/EMA200 Trend Filter with Fractal Breakout Entry",
+  "source_url": "https://www.mql5.com/en/articles/18297",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-07",
+  "type": "Expert Advisor",
+  "verdict": "LOW-MEDIUM EXTRACT — EMA14/200 cross as trend filter validates our EMA3 crossover use. Fractal support/resistance breakout entry is comparable to our zone interaction. The EMA200 as absolute trend filter (price above = only buy) is a stronger macro filter than we currently use.",
+
+  "core_concept": {
+    "name": "Fractal Breakout + Dual EMA Trend Filter",
+    "description": "Price breaks above the most recent fractal high (resistance) AND both EMA14 > EMA200 AND price > both EMAs = BUY. Break below fractal low AND EMA14 < EMA200 AND price < both EMAs = SELL.",
+    "ema200_macro_filter": "EMA200 acts as absolute trend filter — never buy when price below EMA200, never sell when price above. This prevents counter-trend trades entirely.",
+    "ema14_momentum": "EMA14 crossover of EMA200 confirms momentum shift. Both together create a dual-confirmation trend filter.",
+    "relevance_to_creviaderiv": "Our EMA3 is fast (tracks M1 price action closely). EMA200 on M15 would add a macro filter — only take BUY signals when M15 close > EMA200. Currently we use market_structure (BULLISH/BEARISH) from StructureEngine as our macro filter, which is more sophisticated than EMA200."
+  },
+
+  "signal_logic": {
+    "buy": [
+      "price crosses above most recent fractal resistance level",
+      "price > EMA14 AND price > EMA200",
+      "EMA14 > EMA200 (uptrend confirmed)"
+    ],
+    "sell": [
+      "price crosses below most recent fractal support level",
+      "price < EMA14 AND price < EMA200",
+      "EMA14 < EMA200 (downtrend confirmed)"
+    ]
+  },
+
+  "config": {
+    "InpEMA14Period":  { "default": 14,  "description": "Fast EMA — momentum" },
+    "InpEMA200Period": { "default": 200, "description": "Slow EMA — macro trend filter" },
+    "InpHistoryBars":  { "default": 200, "description": "Bars to scan" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "EMA200 as absolute macro trend filter (price side = trade direction)",
+      "Fractal level breakout as entry trigger pattern",
+      "Dual EMA logic: EMA14 > EMA200 = uptrend; price must be above both"
+    ],
+    "discard": [
+      "EMA14 as momentum indicator — our EMA3 is more responsive",
+      "Simple fractal breakout without zone quality context",
+      "No SL/TP defined"
+    ],
+    "improve": [
+      "Replace EMA200 with our market_structure (BULLISH/BEARISH) — already implemented",
+      "Fractal breakout → zone touch: more precise than just crossing a level",
+      "Add EMA200 as an optional supplemental macro filter on M15"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "ema200_macro": "EMA200 on M15 = long-term bias. If market_structure=BULLISH but price < EMA200 M15, the structure break is very fresh and risky. Use EMA200 as a 'maturity' filter: prefer trades where market_structure aligns with EMA200 side.",
+    "fractal_breakout_vs_zone": "Fractal breakout = price exceeds a prior extreme. Our zone touch = price enters a supply/demand zone. Zone touch is more precise — it has upper and lower boundaries, not just a single level."
+  }
+}

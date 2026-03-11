@@ -1,0 +1,6 @@
+{
+  "part": 47,
+  "title": "Tracking Forex Sessions and Breakouts",
+  "source_url": "https://www.mql5.com/en/articles/19944",
+  "verdict": "MEDIUM - Session range high/low as S/R, breakout confirmation. Validates SYMBOL_SCANNING_WINDOWS."
+}

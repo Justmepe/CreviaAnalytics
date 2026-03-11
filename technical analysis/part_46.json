@@ -1,0 +1,31 @@
+{
+  "part": 46,
+  "title": "Fibonacci Retracement EA",
+  "source_url": "https://www.mql5.com/en/articles/19945",
+  "verdict": "MEDIUM EXTRACT - Fib levels 0/23.6/38.2/50/61.8/78.6/100%, auto swing anchoring, TP targets at 100%/161.8% extension.",
+  "fib_levels": [
+    0.0,
+    0.236,
+    0.382,
+    0.5,
+    0.618,
+    0.786,
+    1.0
+  ],
+  "fib_formula": "fib_price = swing_high - ratio*(swing_high-swing_low)",
+  "keep_discard": {
+    "keep": [
+      "Fib levels array",
+      "38.2%=shallow retracement (strong trend)",
+      "61.8%=deep retracement"
+    ],
+    "discard": [
+      "Manual UI",
+      "MQL5 rendering"
+    ],
+    "improve": [
+      "TP1 at 38.2% extension, TP2 at 61.8%, TP3 at 100%",
+      "Quarter level + Fib confluence = highest probability TP"
+    ]
+  }
+}

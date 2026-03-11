@@ -1,0 +1,15 @@
+{
+  "part": 56,
+  "title": "Session Acceptance and Rejection with CPI",
+  "source_url": "https://www.mql5.com/en/articles/20995",
+  "verdict": "MEDIUM - Two-candle model: sh2 breaks level, sh1 confirms/rejects. CPI direction must support. Zone REJECTION=zone still valid.",
+  "keep_discard": {
+    "keep": [
+      "Two-candle break+retest model",
+      "CPI directional filter at level"
+    ],
+    "improve": [
+      "Apply to zone breakout: break+CPI=acceptance; probe+CPI reversal=rejection(zone valid)"
+    ]
+  }
+}

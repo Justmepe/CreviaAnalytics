@@ -1,0 +1,234 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 12,
+  "total_parts": 65,
+  "title": "External Flow (III) TrendMap",
+  "subtitle": "Fibonacci Retracement + VWAP Confluence — Signal via MQL5-Python Bridge",
+  "source_url": "https://www.mql5.com/en/articles/17121",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-02-13",
+  "type": "Expert Advisor + Python Server",
+  "verdict": "EXTRACT — Fibonacci + VWAP confluence framework and swing high/low detection. The signal logic reveals a powerful idea: VWAP relative to Fibonacci midpoint = directional bias.",
+
+  "series_evolution": {
+    "part_9":  "Bridge established. Signal = close vs 10-day average (very weak)",
+    "part_10": "VWAP replaces naive average. Signal = close vs VWAP. S/R added.",
+    "part_12": "Major upgrade: Fibonacci levels added alongside VWAP. Signal = VWAP position relative to Fibonacci 50% midpoint. Swing high/low detection introduced. This is where the series starts building real structural analysis."
+  },
+
+  "tool_classification": {
+    "category": "fibonacci_vwap_confluence_signal",
+    "generates_signals": true,
+    "signal_type": "fibonacci_zone_entry",
+    "executes_trades": false,
+    "timeframe": "H1 (configurable)",
+    "architecture": "mql5_python_bridge"
+  },
+
+  "core_concept": {
+    "name": "VWAP Position Relative to Fibonacci Midpoint",
+    "description": "If VWAP sits BELOW the 50% Fibonacci level (midpoint between swing H and L), the market has a bullish bias — buy when price approaches the 38.2% support. If VWAP is ABOVE the midpoint, bearish bias — sell when price approaches 61.8% resistance.",
+    "buy_conditions": [
+      "VWAP < midpoint (midpoint = (swingHigh + swingLow) / 2)",
+      "Current price approaches 38.2% Fibonacci level (support)"
+    ],
+    "sell_conditions": [
+      "VWAP > midpoint",
+      "Current price approaches 61.8% Fibonacci level (resistance)"
+    ],
+    "fibonacci_levels": [0.0, 23.6, 38.2, 50.0, 61.8, 78.6, 100.0],
+    "key_levels_for_signals": { "support": "38.2%", "midpoint": "50%", "resistance": "61.8%" },
+    "relevance_to_creviaderiv": "The Fibonacci + VWAP confluence concept is the bridge between price memory (Fib) and fair value (VWAP). This is our zone identification problem: where did institutional buying/selling occur and is the market still biased in that direction? Our ZoneIdentifier (supply/demand) is the structural equivalent — more precise than Fibonacci but same concept."
+  },
+
+  "data_requirements": [
+    {
+      "name": "h1_ohlcv_100_bars",
+      "timeframe": "H1",
+      "fields": ["high", "low", "close", "volume"],
+      "range": "last 100+ bars",
+      "note": "For swing high/low detection and VWAP calculation"
+    },
+    {
+      "name": "swing_high_low",
+      "type": "derived",
+      "derived_from": "h1_ohlcv_100_bars",
+      "method": "highest high and lowest low in the lookback window"
+    }
+  ],
+
+  "config": {
+    "timeframe":        { "type": "enum",    "default": "H1",  "description": "Analysis timeframe" },
+    "num_bars":         { "type": "integer", "default": 100,   "description": "Lookback bars for swing detection and VWAP" },
+    "timer_interval":   { "type": "integer", "default": 3600,  "unit": "seconds", "description": "How often to recalculate" },
+    "python_url":       { "type": "string",  "default": "http://127.0.0.1:5110/analyze", "description": "Flask endpoint" },
+    "http_timeout_ms":  { "type": "integer", "default": 5000,  "description": "WebRequest timeout" }
+  },
+
+  "fibonacci_calculation": {
+    "swing_high": "max(high) over last num_bars",
+    "swing_low":  "min(low)  over last num_bars",
+    "range_":     "swing_high - swing_low",
+    "levels": {
+      "0%":    "swing_high",
+      "23.6%": "swing_high - 0.236 * range",
+      "38.2%": "swing_high - 0.382 * range",
+      "50%":   "swing_high - 0.500 * range  (midpoint)",
+      "61.8%": "swing_high - 0.618 * range",
+      "78.6%": "swing_high - 0.786 * range",
+      "100%":  "swing_low"
+    }
+  },
+
+  "signal_logic": {
+    "midpoint": "(swing_high + swing_low) / 2  — same as 50% Fibonacci level",
+    "bias": "BULLISH if vwap < midpoint  |  BEARISH if vwap > midpoint",
+    "buy_trigger":  "bias=BULLISH AND current_close approaches fib_38.2 (support zone)",
+    "sell_trigger": "bias=BEARISH AND current_close approaches fib_61.8 (resistance zone)",
+    "note": "Approaches = price within tolerance of the level, not exact touch"
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "detect_swing_hl",
+        "description": "Find swing high and low over num_bars lookback",
+        "formulas": {
+          "swing_high": "max(highs[-num_bars:])",
+          "swing_low":  "min(lows[-num_bars:])"
+        }
+      },
+      {
+        "step": 2,
+        "name": "calculate_fibonacci_levels",
+        "description": "Derive all 7 Fibonacci retracement levels from swing H/L",
+        "range_calc": "range = swing_high - swing_low",
+        "level_formula": "fib_level[pct] = swing_high - pct * range"
+      },
+      {
+        "step": 3,
+        "name": "calculate_vwap",
+        "description": "Compute VWAP over the same lookback window",
+        "formula": "vwap = (typical_price * volume).cumsum() / volume.cumsum()"
+      },
+      {
+        "step": 4,
+        "name": "determine_bias",
+        "description": "Compare VWAP to midpoint (50% Fibonacci level)",
+        "bias_bullish": "vwap < midpoint",
+        "bias_bearish": "vwap > midpoint"
+      },
+      {
+        "step": 5,
+        "name": "evaluate_entry_zone",
+        "description": "Check if price is near the key Fibonacci level for the bias direction",
+        "buy_zone":  "close near fib_38.2 (support) when bias is bullish",
+        "sell_zone": "close near fib_61.8 (resistance) when bias is bearish"
+      },
+      {
+        "step": 6,
+        "name": "send_to_python",
+        "description": "Serialise swing H/L, Fibonacci levels, VWAP, price data as JSON, POST to Flask"
+      },
+      {
+        "step": 7,
+        "name": "return_signal",
+        "description": "Python returns signal JSON, MQL5 draws Fibonacci lines, VWAP line, and signal arrow"
+      }
+    ]
+  },
+
+  "outputs": {
+    "chart_objects": [
+      "Horizontal lines for all 7 Fibonacci levels (blue dotted, labelled)",
+      "VWAP line (yellow solid)",
+      "Buy arrow (green) or Sell arrow (red) at signal",
+      "Alert on new signal change"
+    ],
+    "python_file_output": "vwap_fib_plot_{SYMBOL}_{TIMESTAMP}.png — Matplotlib visualization",
+    "json_response": {
+      "signal": "BUY | SELL | HOLD",
+      "explanation": "string",
+      "fibonacci_levels": "dict of all 7 levels",
+      "vwap": "float",
+      "swing_high": "float",
+      "swing_low": "float"
+    }
+  },
+
+  "components_to_build": [
+    {
+      "name": "FibonacciCalculator",
+      "type": "indicator",
+      "priority": 1,
+      "contract": "fibonacci(swing_high, swing_low) -> Dict[str, float]",
+      "levels": [0.0, 0.236, 0.382, 0.5, 0.618, 0.786, 1.0],
+      "note": "Pure function. Returns dict: {'0%': price, '23.6%': price, ...}"
+    },
+    {
+      "name": "SwingHighLowDetector",
+      "type": "indicator",
+      "priority": 2,
+      "contract": "swing_hl(highs, lows, lookback) -> (swing_high, swing_low)",
+      "note": "Simple: swing_high=max(highs[-lookback:]), swing_low=min(lows[-lookback:]). No fractal needed."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "VWAP vs Fibonacci midpoint bias framework — elegant: one number (VWAP relative to 50%) gives directional bias",
+      "38.2% as support, 61.8% as resistance for entry zones — textbook Fibonacci entries",
+      "Fibonacci level derivation formulas — correct and standard",
+      "Swing H/L as Fibonacci anchors — correct application (measure from recent significant range)",
+      "JSON response including all levels — machine-parseable, useful for downstream tools"
+    ],
+    "discard": [
+      "The HTTP bridge — Python-native bypasses this",
+      "Simple swing H/L = window max/min — doesn't detect fractal swings, just absolute extremes",
+      "38.2% touch as trigger without structural confirmation — price can touch a Fib level many times without reversing",
+      "Matplotlib file output — we use our ChartRenderer"
+    ],
+    "improve": [
+      "Replace window max/min swing detection with our fractal-based StructureEngine swings — more structurally meaningful",
+      "Replace 38.2%/61.8% touch with ZONE TOUCH — supply/demand zones near those Fib levels are the real signal",
+      "Add VWV gate — is there velocity at the Fibonacci level? Touches without energy are traps",
+      "Add multi-timeframe Fibonacci: H4 Fib gives the major levels, H1 Fib gives the entry zone",
+      "Add trend confirmation: StructureEngine.market_structure must align with Fibonacci bias",
+      "Replace simple VWAP with session-anchored VWAP for intraday trading"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "fib_50_as_bias_filter": "VWAP vs Fibonacci 50% is a clean bias filter. We can add this: if VWAP > zone_mid (midpoint of our demand/supply zone), bias = bullish. Combines our zone-based structure with VWAP fair value — superior to either alone.",
+    "fib_zones_vs_sd_zones": "Fibonacci levels (38.2%, 61.8%) and our supply/demand zones serve the same purpose: mark where institutional activity concentrated. Our zones are derived from actual price structure (impulsive/corrective moves), making them more precise than mechanical Fibonacci ratios. But when Fibonacci levels COINCIDE with our zones, that's a confluence signal worth extra weight.",
+    "swing_hl_improvement": "This tool uses window max/min for swing H/L. Our StructureEngine detects fractal swings with proper HH/HL/LH/LL classification. Our swing detection is strictly more sophisticated."
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Fibonacci + VWAP Interaction",
+      "url": "https://c.mql5.com/2/117/FVWAP__1.png",
+      "insight": "Shows VWAP line intersecting Fibonacci levels. When VWAP is near 38.2% = bullish zone; near 61.8% = bearish zone."
+    },
+    {
+      "fig": 2,
+      "title": "System Flowchart",
+      "url": "https://c.mql5.com/2/116/Flowchart.png",
+      "insight": "Same MQL5-Python bridge as Parts 9-10. Data flow identical, only the Python analysis differs."
+    },
+    {
+      "fig": 3,
+      "title": "Matplotlib Fibonacci + VWAP Plot",
+      "url": "https://c.mql5.com/2/117/FIBVWAP_PLOT__1.png",
+      "insight": "Python-generated chart showing price, all 7 Fibonacci levels as horizontal lines, VWAP as curved line. Useful visualization format."
+    },
+    {
+      "fig": 4,
+      "title": "Live Test on Boom 300 Index (GIF)",
+      "url": "https://c.mql5.com/2/117/B300.gif",
+      "insight": "M1 chart with signal arrows aligned to Fibonacci support zones. Shows signals appearing at 38.2% level bounces."
+    }
+  ]
+}

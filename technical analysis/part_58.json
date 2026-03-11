@@ -1,0 +1,36 @@
+{
+  "part": 58,
+  "title": "Range Contraction Maturity Classification",
+  "source_url": "https://www.mql5.com/en/articles/21109",
+  "verdict": "HIGH EXTRACT - 4-stage maturity: None/Early/Building/Mature. Additive scoring. Mature = breakout imminent.",
+  "maturity_stages": [
+    "None",
+    "Early (basic contraction+overlap)",
+    "Building (tightening+tests)",
+    "Mature (full convergence)"
+  ],
+  "scoring_components": [
+    "Contraction strength",
+    "Candle overlap ratio (intersection/union)",
+    "Absolute tightness",
+    "Boundary test count",
+    "Rejection candles at boundary"
+  ],
+  "config": {
+    "InpWindowBars": 30,
+    "InpPrevWindowBars": 30,
+    "InpRangeShrinkRatio": 0.7
+  },
+  "keep_discard": {
+    "keep": [
+      "4-stage maturity scoring",
+      "Candle overlap = intersection/union consecutive ranges",
+      "Boundary test frequency",
+      "Rejection detection"
+    ],
+    "improve": [
+      "Zone quality += 20 when mature consolidation detected near zone touch",
+      "Mature before zone = coiled spring = highest confidence"
+    ]
+  }
+}

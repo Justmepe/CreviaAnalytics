@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CREVIA SIGNAL — Crypto Intelligence Brief // March 11, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08090d;
+    --bg2: #0d0f17;
+    --bg3: #12151f;
+    --border: #1e2235;
+    --border-glow: #2a3060;
+    --accent: #00f5c8;
+    --accent2: #7b61ff;
+    --accent3: #ff6b35;
+    --accent4: #f7c948;
+    --red: #ff4757;
+    --green: #00e5a0;
+    --text: #c8cfe8;
+    --text-dim: #5a607a;
+    --text-bright: #eef0fa;
+    --mono: 'Space Mono', monospace;
+    --display: 'Syne', sans-serif;
+    --dm: 'DM Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* SCANLINES */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 245, 200, 0.015) 2px,
+      rgba(0, 245, 200, 0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ─── HEADER ─── */
+  .masthead {
+    border: 1px solid var(--border-glow);
+    background: linear-gradient(135deg, #0a0d1a 0%, #0e1225 60%, #081218 100%);
+    padding: 32px 36px 28px;
+    margin-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .masthead::after {
+    content: 'LIVE FEED ACTIVE';
+    position: absolute;
+    top: 14px; right: 18px;
+    font-family: var(--dm);
+    font-size: 9px;
+    color: var(--green);
+    letter-spacing: 2px;
+    animation: blink 2s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .brand {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -1px;
+    color: var(--text-bright);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .brand span { color: var(--accent); }
+
+  .tagline {
+    font-family: var(--dm);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .header-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+
+  .meta-item label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .meta-item .val {
+    font-family: var(--dm);
+    font-size: 13px;
+    color: var(--text-bright);
+  }
+
+  /* ─── ALERT BANNER ─── */
+  .alert-bar {
+    background: linear-gradient(90deg, rgba(255,71,87,0.12), rgba(255,71,87,0.05));
+    border: 1px solid rgba(255,71,87,0.3);
+    border-left: 3px solid var(--red);
+    padding: 10px 16px;
+    font-family: var(--dm);
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .alert-bar strong { color: #ff8c98; }
+
+  /* ─── PRICE TICKER ─── */
+  .ticker-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .ticker-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    position: relative;
+  }
+
+  .ticker-card .sym {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .ticker-card .price {
+    font-family: var(--dm);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-bright);
+    margin: 4px 0 2px;
+  }
+
+  .ticker-card .chg {
+    font-family: var(--dm);
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  .chg.up { color: var(--green); }
+  .chg.down { color: var(--red); }
+
+  .ticker-card .bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .bar.up { background: var(--green); opacity: 0.5; }
+  .bar.down { background: var(--red); opacity: 0.5; }
+
+  /* ─── MAIN GRID ─── */
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .grid-3col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+
+  /* ─── SECTION PANEL ─── */
+  .panel {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 22px 20px 20px;
+    margin-bottom: 2px;
+  }
+
+  .panel-full {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 22px 24px 22px;
+    margin-bottom: 2px;
+  }
+
+  .panel-accent {
+    border-color: rgba(0, 245, 200, 0.2);
+    background: linear-gradient(135deg, #0d1521, #0a1018);
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-family: var(--dm);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+  }
+
+  .section-h {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-bright);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+
+  .section-h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text-bright);
+    margin-bottom: 8px;
+  }
+
+  p { margin-bottom: 10px; color: var(--text); font-size: 12.5px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ─── METRICS GRID ─── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .metric {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+  }
+
+  .metric label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .metric .mval {
+    font-family: var(--dm);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-bright);
+  }
+
+  .metric .msub {
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .mval.red { color: var(--red); }
+  .mval.green { color: var(--green); }
+  .mval.yellow { color: var(--accent4); }
+  .mval.purple { color: var(--accent2); }
+
+  /* ─── FEAR GAUGE ─── */
+  .fear-gauge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg3);
+    border: 1px solid rgba(255,71,87,0.2);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+
+  .gauge-num {
+    font-family: var(--dm);
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .gauge-label {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+
+  .gauge-bar-wrap {
+    flex: 1;
+    background: var(--bg);
+    height: 6px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  .gauge-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--red), var(--accent4), var(--green));
+    width: 8%;
+    position: relative;
+  }
+
+  /* ─── WHALE TABLE ─── */
+  .whale-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--dm);
+    font-size: 11px;
+    margin-top: 12px;
+  }
+
+  .whale-table th {
+    text-align: left;
+    padding: 6px 10px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .whale-table td {
+    padding: 9px 10px;
+    color: var(--text);
+    border-bottom: 1px solid rgba(30,34,53,0.5);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .whale-table tr:last-child td { border-bottom: none; }
+
+  .whale-table .tag {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 2px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .tag.buy { background: rgba(0,229,160,0.12); color: var(--green); }
+  .tag.sell { background: rgba(255,71,87,0.12); color: var(--red); }
+  .tag.rotate { background: rgba(123,97,255,0.12); color: var(--accent2); }
+  .tag.neutral { background: rgba(247,201,72,0.12); color: var(--accent4); }
+
+  /* ─── COIN ROWS ─── */
+  .coin-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .coin-row:last-child { border-bottom: none; }
+
+  .coin-sym {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text-bright);
+    width: 40px;
+  }
+
+  .coin-name {
+    font-family: var(--dm);
+    font-size: 10px;
+    color: var(--text-dim);
+    flex: 1;
+  }
+
+  .coin-price {
+    font-family: var(--dm);
+    font-size: 13px;
+    color: var(--text-bright);
+    text-align: right;
+    min-width: 70px;
+  }
+
+  .coin-chg {
+    font-family: var(--dm);
+    font-size: 12px;
+    min-width: 55px;
+    text-align: right;
+  }
+
+  .coin-chg.up { color: var(--green); }
+  .coin-chg.down { color: var(--red); }
+
+  /* ─── SIGNAL ITEMS ─── */
+  .signal {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .signal:last-child { border-bottom: none; }
+
+  .signal-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .signal-dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .signal-dot.red { background: var(--red); box-shadow: 0 0 6px var(--red); }
+  .signal-dot.yellow { background: var(--accent4); box-shadow: 0 0 6px var(--accent4); }
+  .signal-dot.purple { background: var(--accent2); }
+
+  .signal-body {}
+  .signal-title {
+    font-family: var(--dm);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-bright);
+    margin-bottom: 2px;
+  }
+  .signal-text {
+    font-size: 11.5px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    background: rgba(0,245,200,0.05);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 12px;
+  }
+
+  .callout-warn {
+    background: rgba(255,107,53,0.06);
+    border-left: 3px solid var(--accent3);
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 12px;
+    color: var(--text);
+  }
+
+  /* ─── RATE BARS ─── */
+  .rate-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 7px 0;
+    font-family: var(--dm);
+    font-size: 11px;
+  }
+
+  .rate-sym {
+    width: 36px;
+    color: var(--text-bright);
+    font-weight: 500;
+  }
+
+  .rate-bar-wrap {
+    flex: 1;
+    height: 4px;
+    background: var(--bg3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .rate-bar {
+    height: 100%;
+    border-radius: 2px;
+  }
+
+  .rate-bar.neg { background: var(--red); }
+  .rate-bar.pos { background: var(--green); }
+  .rate-bar.mild-neg { background: rgba(255,71,87,0.6); }
+
+  .rate-val { width: 80px; text-align: right; }
+  .rate-val.red { color: var(--red); }
+  .rate-val.green { color: var(--green); }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    margin-top: 36px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    text-align: center;
+  }
+
+  .footer .brand-sm {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+
+  .footer .brand-sm span { color: var(--accent); opacity: 0.7; }
+
+  .footer p {
+    font-size: 11px;
+    color: var(--text-dim);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .footer .disc {
+    margin-top: 12px;
+    font-size: 10px;
+    color: #3a3f58;
+    font-family: var(--dm);
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── DIVIDER ─── */
+  .gap { margin-bottom: 2px; }
+  .gap-lg { margin-bottom: 16px; }
+
+  /* ─── HIGHLIGHT ─── */
+  .hl-green { color: var(--green); }
+  .hl-red { color: var(--red); }
+  .hl-accent { color: var(--accent); }
+  .hl-yellow { color: var(--accent4); }
+  .hl-purple { color: var(--accent2); }
+  .hl-orange { color: var(--accent3); }
+
+  /* ─── SEPARATOR ─── */
+  .sep {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 16px 0;
+  }
+
+  /* chart visual placeholder */
+  .spark {
+    display: inline-block;
+    font-family: var(--dm);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  strong { color: var(--text-bright); font-weight: 700; }
+  em { color: var(--accent4); font-style: normal; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="brand">CREVIA <span>SIGNAL</span></div>
+    <div class="tagline">Crypto Intelligence Brief &nbsp;|&nbsp; Issue #058 &nbsp;|&nbsp; March 11, 2026</div>
+    <div class="header-meta">
+      <div class="meta-item">
+        <label>Publication</label>
+        <div class="val">creviacockpit.com</div>
+      </div>
+      <div class="meta-item">
+        <label>Total Market Cap</label>
+        <div class="val">$2.38T <span class="hl-red">▼ –4.2% 7D</span></div>
+      </div>
+      <div class="meta-item">
+        <label>BTC Dominance</label>
+        <div class="val">56.5% — Bitcoin Season</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT BAR -->
+  <div class="alert-bar">
+    ⚠ &nbsp; <strong>HIGH ALERT:</strong> Fear &amp; Greed Index at 8 — Extreme Fear. $334M liquidated in 48 hours. FOMC decision March 18. CPI print <strong>today (March 11)</strong>. Position sizing accordingly.
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker-row">
+    <div class="ticker-card">
+      <div class="sym">BTC</div>
+      <div class="price">$69,967</div>
+      <div class="chg up">+2.67% 7D</div>
+      <div class="bar up"></div>
+    </div>
+    <div class="ticker-card">
+      <div class="sym">ETH</div>
+      <div class="price">$1,953</div>
+      <div class="chg down">–1.50% 24H</div>
+      <div class="bar down"></div>
+    </div>
+    <div class="ticker-card">
+      <div class="sym">SOL</div>
+      <div class="price">$82.85</div>
+      <div class="chg down">–1.67% 24H</div>
+      <div class="bar down"></div>
+    </div>
+    <div class="ticker-card">
+      <div class="sym">XRP</div>
+      <div class="price">$1.412</div>
+      <div class="chg down">–0.65% 24H</div>
+      <div class="bar down"></div>
+    </div>
+    <div class="ticker-card">
+      <div class="sym">GOLD</div>
+      <div class="price">$5,300+</div>
+      <div class="chg up">ATH Territory</div>
+      <div class="bar up"></div>
+    </div>
+  </div>
+
+  <!-- MARKET OVERVIEW -->
+  <div class="panel-full panel-accent gap">
+    <div class="section-label">01 // Market Overview</div>
+    <div class="section-h">The Setup: Relief Rally in a Deleveraged Market</div>
+    <p>The crypto market enters the second week of March 2026 caught between two opposing forces: persistent macro fear and early signs of structural bottoming. After Bitcoin fell back hard to the <span class="hl-red">$65,000–$67,000</span> range on renewed geopolitical tensions and Trump's 15% global tariff announcement, the market staged a modest recovery — BTC is currently trading at approximately <span class="hl-accent">$69,967</span> as of March 11, holding above the critical $70,000 psychological level tested multiple times in recent weeks.</p>
+    <p>The total crypto market cap stands at <span class="hl-accent">$2.38 trillion</span>, down significantly from cycle highs above $3.5T in late 2025. Bitcoin dominance remains elevated at <span class="hl-yellow">56.5%</span>, well within "Bitcoin Season" territory on the CMC Altcoin Season Index (35/100), confirming that capital is not yet rotating into altcoins at any meaningful scale. A historic milestone was crossed on March 9: <strong>Bitcoin's 20 millionth coin was mined</strong>, leaving just ~1 million BTC remaining to be issued over coming decades — a supply scarcity event receiving surprisingly muted market attention given current sentiment.</p>
+    <p>The broad market narrative for March is best characterized as a <strong>deleveraged, range-bound reset</strong> with macro events — today's CPI release, March 18 FOMC decision, and the Clarity Act legislative process — serving as the key catalysts that will determine whether this is a consolidation floor or a continuation of the downtrend that began when BTC peaked near $126,000 in October 2025.</p>
+    <div class="callout">
+      📍 <strong>Key Milestone:</strong> Bitcoin's 20 millionth coin mined March 9, 2026. Only ~1M BTC remain to be issued — ever. Annual supply issuance is now under 0.9% of total supply and falling with each halving. The next halving is projected for 2028.
+    </div>
+  </div>
+
+  <!-- SENTIMENT -->
+  <div class="grid-2col gap">
+    <div class="panel">
+      <div class="section-label">02 // Market Sentiment</div>
+      <div class="section-h">Extreme Fear — Historically a Contrarian Signal</div>
+      <div class="fear-gauge">
+        <div>
+          <div class="gauge-num">8</div>
+        </div>
+        <div style="flex:1;">
+          <div class="gauge-label">EXTREME FEAR</div>
+          <div style="font-size:10px; color:var(--text-dim); font-family:var(--dm);">Fear &amp; Greed Index — 5th percentile of all readings since 2018</div>
+          <div class="gauge-bar-wrap">
+            <div class="gauge-bar-fill"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-dim); font-family:var(--dm); margin-top:4px;">
+            <span>FEAR</span><span>GREED</span>
+          </div>
+        </div>
+      </div>
+      <p>The Fear &amp; Greed Index has anchored below 15 for multiple consecutive sessions — a depth of sustained fear not seen since the June 2022 bear market bottom. Polymarket prediction markets show <span class="hl-red">62%</span> of participants expecting BTC to fall below $50,000 at some point in 2026, and over 75% pricing in a visit below $55,000.</p>
+      <p>This level of bearish consensus is historically notable as a <em>poor timing tool</em>, not confirmation of further downside. The last two comparable extreme fear readings — June 2022 and March 2020 — marked cycle bottoms within weeks of the readings. Sentiment extremes create the asymmetric setups that whale wallets exploit. On-chain data already shows divergence.</p>
+      <div class="callout-warn">
+        ⚡ <strong>Contrarian signal active.</strong> 43% of Bitcoin supply is now at a loss — historically a marker of late-stage capitulation, not early decline. Stablecoin inflows are rising, suggesting sidelined capital is accumulating at current levels.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="section-label">03 // Macro Environment</div>
+      <div class="section-h">Fed, CPI &amp; Tariffs — The Triple Headwind</div>
+      <div class="metrics-grid">
+        <div class="metric">
+          <label>Fed Funds Rate</label>
+          <div class="mval yellow">3.50–3.75%</div>
+          <div class="msub">2.5% in cuts priced for 2026</div>
+        </div>
+        <div class="metric">
+          <label>FOMC Decision</label>
+          <div class="mval">March 18</div>
+          <div class="msub">Watch for guidance on cuts</div>
+        </div>
+        <div class="metric">
+          <label>CPI Release</label>
+          <div class="mval yellow">Today</div>
+          <div class="msub">February data — market moving</div>
+        </div>
+        <div class="metric">
+          <label>USD Index</label>
+          <div class="mval red">+3.5%</div>
+          <div class="msub">vs late January — persistent headwind</div>
+        </div>
+        <div class="metric">
+          <label>US Tariffs</label>
+          <div class="mval red">+15% Global</div>
+          <div class="msub">Trump's new round — risk-off trigger</div>
+        </div>
+        <div class="metric">
+          <label>VIX</label>
+          <div class="mval">21%</div>
+          <div class="msub">Pulled back from 28% Monday high</div>
+        </div>
+      </div>
+      <p style="margin-top:12px;">The USD's persistent strength (+3.5% since late January) continues to compress risk asset prices globally. In past cycles, meaningful Bitcoin recoveries have coincided with dollar weakness or Fed pivots. The March 18 FOMC meeting is now the single most important scheduled event for crypto in the near term. Markets currently price approximately 2.5% in total cuts for 2026, but if February CPI (released today) comes in hot, rate-cut expectations will be pushed further out — negative for risk assets.</p>
+      <p>The Clarity Act of 2026, which would definitively delineate SEC vs. CFTC jurisdiction over digital assets, remains under congressional review. Its passage could unlock institutional capital from pension funds and insurance companies currently on the sidelines due to regulatory ambiguity.</p>
+    </div>
+  </div>
+
+  <!-- MAJORS BREAKDOWN -->
+  <div class="panel-full gap">
+    <div class="section-label">04 // Majors Breakdown</div>
+    <div class="section-h">Bitcoin, Ethereum, Solana, XRP — Deep Dive</div>
+
+    <div class="coin-row">
+      <div class="coin-sym">BTC</div>
+      <div style="flex:1;">
+        <div class="section-h2" style="margin-bottom:4px;">Bitcoin — $69,967</div>
+        <p style="margin-bottom:4px;">BTC staged a short-squeeze rally from the mid-$60K range following compressed shorts and renewed institutional accumulation. MicroStrategy added <strong>17,994 BTC</strong> at an average of $70,946 last week — bringing total corporate holdings to 738,731 BTC and total institutional purchases for the week to $1.28B (513% WoW increase per SoSoValue). The 20 millionth Bitcoin mined provides a supply narrative catalyst that will compound over time. Key resistance: $73,300. Key support: $67,800. Below $65,000, a path toward $59,500 opens. BTC/gold ratio analysis from Mercado Bitcoin suggests a potential cycle bottom forming in March, with recovery beginning now.</p>
+      </div>
+      <div class="coin-price">$69,967</div>
+      <div class="coin-chg up">+2.67% 7D</div>
+    </div>
+
+    <div class="coin-row">
+      <div class="coin-sym">ETH</div>
+      <div style="flex:1;">
+        <div class="section-h2" style="margin-bottom:4px;">Ethereum — $1,953</div>
+        <p style="margin-bottom:4px;">Ethereum remains under pressure but carries structural tailwinds. The <strong>Glamsterdam v1.17.1 upgrade</strong> executed March 10, part of the ongoing scaling roadmap. Two major 2026 roadmap upgrades — Glamsterdam and Hegota — target network sustainability and transaction efficiency. ETH holds ~68% of all DeFi TVL (~$88–95B of the $130–140B total). Whale rotation INTO ETH is the notable signal this week (see Whale Activity). ETH's 30-day implied volatility remains steady. Put skews have weakened on Deribit, with increased call activity at higher strikes — a subtle bullish posture building in options markets. The market cap/DeFi usage gap remains wide. ETF products saw net redemptions through February.</p>
+      </div>
+      <div class="coin-price">$1,953</div>
+      <div class="coin-chg down">–1.50% 24H</div>
+    </div>
+
+    <div class="coin-row">
+      <div class="coin-sym">SOL</div>
+      <div style="flex:1;">
+        <div class="section-h2" style="margin-bottom:4px;">Solana — $82.85</div>
+        <p style="margin-bottom:4px;">Solana has had a punishing stretch — down approximately <span class="hl-red">39%</span> from January levels and currently 46% below its 200-day moving average. However, a decisive catalyst is approaching: the <strong>Alpenglow protocol upgrade</strong> (developed by Anza, a Solana Labs spinoff), which replaces Proof of History and Tower BFT with Votor (100–150ms block finality) and Rotor (enhanced data dissemination). If delivered in Q1, this shifts the Solana narrative from "meme chain" to institutional-grade infrastructure. SOL ETF inflows tripled week-over-week ($43M), providing a floor. Key watch: $80 critical support. Break below $80 on NFP miss or macro shock warrants immediate exit of leveraged positions.</p>
+      </div>
+      <div class="coin-price">$82.85</div>
+      <div class="coin-chg down">–1.67% 24H</div>
+    </div>
+
+    <div class="coin-row">
+      <div class="coin-sym">XRP</div>
+      <div style="flex:1;">
+        <div class="section-h2" style="margin-bottom:4px;">XRP — $1.412</div>
+        <p style="margin-bottom:4px;">XRP trades with a mild negative funding rate, reflecting bearish derivative positioning. The Clarity Act is the primary structural catalyst for XRP and ISO 20022-compliant assets — Ripple CEO Brad Garlinghouse has signaled high confidence in the bill's progression. Recovery toward the $2.80–$3.60 range is analysts' base case for 2026 if market sentiment stabilizes. Current resistance: $1.44 (rejection zone). Support: $1.30.</p>
+      </div>
+      <div class="coin-price">$1.412</div>
+      <div class="coin-chg down">–0.65% 24H</div>
+    </div>
+  </div>
+
+  <!-- ALTCOINS + PRIVACY in 2 cols -->
+  <div class="grid-2col gap">
+    <div class="panel">
+      <div class="section-label">05 // Altcoin Landscape</div>
+      <div class="section-h">Selective Rotation, Broad Weakness</div>
+      <p>With the Altcoin Season Index at 35/100, altcoins remain largely in Bitcoin Season territory. CryptoQuant data shows <span class="hl-red">38% of altcoins</span> trading near cycle lows, as liquidity concentrates in BTC during periods of uncertainty. Capital historically flows into Bitcoin first — sustained altcoin recovery requires BTC to consolidate above $70,000+ before rotation begins.</p>
+
+      <div class="sep"></div>
+
+      <div class="signal">
+        <div class="signal-dot yellow"></div>
+        <div class="signal-body">
+          <div class="signal-title">DOT — Deflationary Pivot This Week</div>
+          <div class="signal-text">Polkadot executed a tokenomic shift slashing annual inflation from 10% to ~3.1%, introducing a hard supply cap. Halving-like supply event being closely watched as a price catalyst.</div>
+        </div>
+      </div>
+
+      <div class="signal">
+        <div class="signal-dot green"></div>
+        <div class="signal-body">
+          <div class="signal-title">MANTRA (OM) — Surged on Token Migration</div>
+          <div class="signal-text">MANTRA surged this week following its token migration and redenomination. The chain holds a VASP license from Dubai's VARA — one of the cleaner institutional RWA infrastructure plays.</div>
+        </div>
+      </div>
+
+      <div class="signal">
+        <div class="signal-dot purple"></div>
+        <div class="signal-body">
+          <div class="signal-title">UNI — Retracing from 2026 Open</div>
+          <div class="signal-text">Uniswap trading near $3.75–$3.84, down approximately 40% from its $6.43 2026 opening. v4 "Hooks" launch remains the core product catalyst. Oversold technically.</div>
+        </div>
+      </div>
+
+      <div class="signal">
+        <div class="signal-dot red"></div>
+        <div class="signal-body">
+          <div class="signal-title">Altcoin Long-Tail — High Caution</div>
+          <div class="signal-text">Small-cap altcoins face maximum headwinds: thin liquidity, ETF rotation away from risk, and negative funding. Any rally likely event-driven (launch, upgrade) rather than broad-based.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="section-label">06 // Privacy Coins</div>
+      <div class="section-h">The Anti-Surveillance Premium</div>
+      <p>Privacy coins are among the standout performers of the recent cycle — <strong>ZEC surged 700%+ since September 2025</strong>, and XMR rose ~54%. This happened against a backdrop of BTC and ETH slumping to multi-month lows, giving the move a strikingly inverse quality: investors buying privacy rather than yield.</p>
+
+      <div class="sep"></div>
+
+      <div class="signal">
+        <div class="signal-dot green"></div>
+        <div class="signal-body">
+          <div class="signal-title">ZEC (Zcash) — Leading Privacy Coin by Market Cap</div>
+          <div class="signal-text">~25–30% of ZEC's circulating supply now sits in shielded addresses — its highest ever. Over a third of all transactions touch the encrypted Orchard pool. The SEC closed its investigation without enforcement in early 2026 — a significant de-risking event for US institutions. ZEC futures OI is ending a two-month downtrend, with accumulation signals building. Headwind: 10+ countries including Japan, South Korea, India restrict or ban ZEC on regulated exchanges. EU AMLR expected by 2027 is driving preemptive delistings.</div>
+        </div>
+      </div>
+
+      <div class="signal">
+        <div class="signal-dot yellow"></div>
+        <div class="signal-body">
+          <div class="signal-title">XMR (Monero) — Structural Demand, Delisted from CEXs</div>
+          <div class="signal-text">+54% since August. XMR remains the strongest privacy use-case coin despite aggressive exchange delistings. Rising retail adoption via P2P and DEX routes. Relative strength persists even when large caps lag.</div>
+        </div>
+      </div>
+
+      <div class="signal">
+        <div class="signal-dot purple"></div>
+        <div class="signal-body">
+          <div class="signal-title">DASH — Integrating ZEC's Orchard Privacy</div>
+          <div class="signal-text">Dash integrating Zcash's Orchard shielded pool into its Evolution L2 chain (March 2026 launch pending audits). Also live on NEAR Intents across 35+ blockchains. 31,601 active addresses — leading PoW peers. +337% since recent lows.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEFI -->
+  <div class="panel-full gap">
+    <div class="section-label">07 // DeFi Ecosystem</div>
+    <div class="section-h">Mature Infrastructure, Selective Flows</div>
+    <div class="grid-2col" style="gap:2px; margin-bottom:14px;">
+      <div class="metric">
+        <label>Total DeFi TVL</label>
+        <div class="mval green">$130–140B</div>
+        <div class="msub">Up from $50B post-FTX low — but below peak bull levels</div>
+      </div>
+      <div class="metric">
+        <label>Ethereum DeFi Share</label>
+        <div class="mval accent">~68%</div>
+        <div class="msub">~$88–95B locked on Ethereum mainnet + L2s</div>
+      </div>
+      <div class="metric">
+        <label>Solana DeFi TVL</label>
+        <div class="mval yellow">$9.2B</div>
+        <div class="msub">Clear secondary hub, rivals combined ETH L2s</div>
+      </div>
+      <div class="metric">
+        <label>On-chain Lending Market</label>
+        <div class="mval">$73.6B</div>
+        <div class="msub">Record high by late 2025; DeFi holds ~⅔</div>
+      </div>
+    </div>
+    <p>DeFi in 2026 has transitioned from high-yield speculative environment to mature, institutional-grade infrastructure. The global DeFi market is projected at $60.73B for 2026 on a revenue basis, with a 43.3% CAGR forecast through 2030. Ethereum remains the primary hub for institutional activity, while Solana has emerged as a genuine secondary ecosystem for retail-facing DeFi.</p>
+    <p>Notable incident: CertiK flagged a flash loan exploit on <strong>Inverse Finance</strong> (March 2), where an attacker used ~$30M in flash-loaned funds to manipulate sDOLA balances and liquidate 27 users, profiting ~$240K. A reminder that DeFi protocol risk remains real even as the ecosystem matures.</p>
+  </div>
+
+  <!-- DEFI PRIMITIVES -->
+  <div class="panel-full gap">
+    <div class="section-label">08 // DeFi Primitives</div>
+    <div class="section-h">Perps, AMMs, Lending — The Core Stack</div>
+    <div class="grid-3col" style="gap:16px;">
+      <div>
+        <div class="section-h2" style="color: var(--accent);">Perpetual Futures</div>
+        <p>Perps are evolving from isolated leverage tools into core DeFi primitives — integrated with lending, collateral management, and cross-protocol hedging. Coinbase Institutional research explicitly calls out equity perps as the next growth vector: 24/7 access + capital efficiency for a generation of global retail traders locked out of US equity hours. Platforms like Hyperliquid and dYdX continue building order-book-grade perps on-chain.</p>
+      </div>
+      <div>
+        <div class="section-h2" style="color: var(--accent2);">AMMs &amp; DEX Infrastructure</div>
+        <p>Uniswap v4's "Hooks" architecture enables customized liquidity pool logic — conditional fees, dynamic rebalancing, and novel trading mechanics without forking the core protocol. Curve's crvUSD stablecoin deepens its own DeFi flywheel. Total DEX volume remains healthy relative to bear market periods — Solana DEXs in particular maintained elevated volumes even through the February correction.</p>
+      </div>
+      <div>
+        <div class="section-h2" style="color: var(--accent4);">Lending &amp; Structured Products</div>
+        <p>Compound III's isolated markets reduce systemic contagion risk. Ethena's USDe (delta-neutral synthetic dollar) represents a new class of yield-bearing stable instruments that sidestep fiat banking rails entirely. Maple Finance and Goldfinch continue bridging DeFi capital to real-world credit. EigenLayer, Linea, zkSync Era, and Base have all added meaningfully to the L2 DeFi TVL stack in early 2026.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:14px;">
+      🔮 <strong>Prediction Markets</strong> are identified as a major 2026 growth vector by Coinbase Institutional. Potential US tax changes may tilt users to derivative-anchored prediction markets. Aggregators could emerge as dominant interface layers, consolidating billions in weekly volume. Polymarket is already processing significant flows around the current macro events.
+    </div>
+  </div>
+
+  <!-- TOKENIZED COMMODITIES -->
+  <div class="panel-full gap">
+    <div class="section-label">09 // Tokenized Commodities & RWA</div>
+    <div class="section-h">Digital Gold Hits $6B+ — The Standout Trade of 2026</div>
+    <div class="metrics-grid" style="margin-bottom:14px;">
+      <div class="metric">
+        <label>Tokenized Gold Market Cap</label>
+        <div class="mval green">$6.1B+</div>
+        <div class="msub">+53% in 6 weeks — quadrupled since Jan 1</div>
+      </div>
+      <div class="metric">
+        <label>XAUT (Tether Gold)</label>
+        <div class="mval">$3.57B</div>
+        <div class="msub">~$5,280/token — 96.7% combined XAUT+PAXG share</div>
+      </div>
+      <div class="metric">
+        <label>PAXG (Paxos Gold)</label>
+        <div class="mval">$2.31B</div>
+        <div class="msub">$5,337/token — OCC regulated, NYDFS compliant</div>
+      </div>
+      <div class="metric">
+        <label>2025 Tokenized Gold Volume</label>
+        <div class="mval yellow">$178B</div>
+        <div class="msub">2nd largest gold investment vehicle globally by volume</div>
+      </div>
+      <div class="metric">
+        <label>RWA on Ethereum</label>
+        <div class="mval green">$15B+</div>
+        <div class="msub">March 3 record — 58% of total RWA market</div>
+      </div>
+      <div class="metric">
+        <label>Total On-Chain RWA</label>
+        <div class="mval">~$21B</div>
+        <div class="msub">ARK projects $11T by 2030</div>
+      </div>
+    </div>
+    <p>Tokenized gold has become <strong>the defining trade of the crypto bear market</strong> — a 24/7 liquid, fractional, blockchain-settled alternative to physical gold at a time when spot gold is breaking above $5,300/oz on Middle East tensions and central bank accumulation (China bought for 11 consecutive months). During the Iran conflict in late February/early March, PAXG and XAUT saw combined daily volumes exceed <span class="hl-green">$1 billion</span> as investors sought safe-haven exposure that traditional gold markets — closed on weekends — could not provide.</p>
+    <p>Wintermute has launched institutional OTC trading for PAXG and XAUT, with CEO Evgeny Gaevoy projecting the sector could expand 2.8x to $15B in 2026. BlackRock's BUIDL (tokenized US Treasuries, $1.71B) rounds out the top 3 RWA tokens. Ondo Finance and Franklin Templeton continue leading the tokenized bond space. The key risk: counterparty concentration (XAUT + PAXG = 96.7% of tokenized gold), and ongoing debate about whether token holders have enforceable property rights to underlying physical bullion in a bankruptcy scenario.</p>
+    <p>OI in futures tied to gold tokens (XAUT and PAXG) has dropped as crypto majors recovered — suggesting investors may be rotating back into BTC/ETH as gold rally momentum pauses. Watch this spread.</p>
+  </div>
+
+  <!-- DERIVATIVES METRICS -->
+  <div class="panel-full gap">
+    <div class="section-label">10 // Derivatives Metrics</div>
+    <div class="section-h">Liquidations, OI, Funding Rates — The Positioning Picture</div>
+
+    <div class="grid-2col" style="gap:16px;">
+      <div>
+        <div class="section-h2">Open Interest</div>
+        <div class="metrics-grid" style="grid-template-columns:1fr 1fr; margin-bottom:12px;">
+          <div class="metric">
+            <label>Binance OI (48H change)</label>
+            <div class="mval red">–25%</div>
+            <div class="msub">130,800 BTC → 97,680 BTC</div>
+          </div>
+          <div class="metric">
+            <label>Leverage Ratio</label>
+            <div class="mval red">0.146</div>
+            <div class="msub">Lowest since April 2025 correction</div>
+          </div>
+        </div>
+        <p>Open interest on Binance has dropped roughly 25% since the start of the year, reflecting the broadest deleveraging since the April 2025 correction. The Estimated Leverage Ratio at 0.146 — below the 0.15 threshold historically marking heavy deleveraging phases — indicates that speculative positioning has been substantially purged from the system. This is a double-edged signal: less leverage means less cascade risk on the downside, but also less fuel for rally legs on the upside.</p>
+        <p>Total crypto derivatives OI has declined more than $10B from recent peaks. The combination of shrinking OI and negative funding makes the current technical battle at $70K critical — less cushion against sharp swings in either direction.</p>
+      </div>
+
+      <div>
+        <div class="section-h2">Funding Rates</div>
+        <div style="margin:12px 0;">
+          <div class="rate-row">
+            <div class="rate-sym">BTC</div>
+            <div class="rate-bar-wrap"><div class="rate-bar mild-neg" style="width:35%;"></div></div>
+            <div class="rate-val red">Mildly –</div>
+          </div>
+          <div class="rate-row">
+            <div class="rate-sym">ETH</div>
+            <div class="rate-bar-wrap"><div class="rate-bar mild-neg" style="width:40%;"></div></div>
+            <div class="rate-val red">Mildly –</div>
+          </div>
+          <div class="rate-row">
+            <div class="rate-sym">SOL</div>
+            <div class="rate-bar-wrap"><div class="rate-bar neg" style="width:55%;"></div></div>
+            <div class="rate-val red">Negative</div>
+          </div>
+          <div class="rate-row">
+            <div class="rate-sym">XRP</div>
+            <div class="rate-bar-wrap"><div class="rate-bar neg" style="width:50%;"></div></div>
+            <div class="rate-val red">Negative</div>
+          </div>
+        </div>
+        <p>Negative funding rates dominate across every major pair on Binance Futures — meaning short sellers are paying longs a premium to stay short. This creates classic short-squeeze conditions if any positive macro catalyst materializes (Fed dovish signal, CPI miss, tariff pause). Annualized BTC and ETH perp funding is mildly positive from earlier in the week following the relief rally — watch for rates to confirm direction. Put skews on Deribit have weakened, with growing call calendar diagonal spread activity — options desks are building upside exposure cautiously.</p>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+    <div class="section-h2">Liquidations — 48-Hour Window</div>
+    <div class="metrics-grid" style="grid-template-columns: repeat(4, 1fr); margin-top:8px;">
+      <div class="metric">
+        <label>Total Liquidated</label>
+        <div class="mval red">$334M</div>
+        <div class="msub">March 8 peak (CoinGlass)</div>
+      </div>
+      <div class="metric">
+        <label>Short-Side Liq. (March 5)</label>
+        <div class="mval green">$110M</div>
+        <div class="msub">Short-squeeze cascade triggered</div>
+      </div>
+      <div class="metric">
+        <label>BTC ETF Outflows</label>
+        <div class="mval red">–$7.8B</div>
+        <div class="msub">Since November 2025 (~12% AUM)</div>
+      </div>
+      <div class="metric">
+        <label>Stablecoin Inflows</label>
+        <div class="mval green">↑ Rising</div>
+        <div class="msub">Sidelined capital accumulating</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;">The liquidation dynamic is nuanced: early March saw $110M in short liquidations (March 5 short-squeeze as BTC pushed through $71K), while March 8 saw $334M in predominantly long liquidations as prices slid back. The retail long/short ratio on Binance shows retail traders disproportionately long on every major asset — creating a notable divergence with institutional short positioning captured in funding data. This gap historically resolves in one of two ways: a liquidation cascade that forces retail longs to capitulate below $66,500, or a short squeeze that punishes the institutional short consensus and triggers a rapid recovery. The March 18 FOMC and today's CPI data are the catalysts.</p>
+    <div class="callout-warn">
+      ⚠ <strong>Watch level:</strong> BTC $65,000 support is critical. Break below opens path to $59,500 Head &amp; Shoulders target. Hold above $70K and the short-squeeze setup toward $73,300–$75,000 re-activates.
+    </div>
+  </div>
+
+  <!-- WHALE ACTIVITY -->
+  <div class="panel-full gap">
+    <div class="section-label">11 // Whale Activity — Last 48 Hours</div>
+    <div class="section-h">BTC Distributing, ETH Accumulating — A Strategic Split</div>
+
+    <table class="whale-table">
+      <tr>
+        <th>Event</th>
+        <th>Asset</th>
+        <th>Size</th>
+        <th>Direction</th>
+        <th>Market Impact</th>
+      </tr>
+      <tr>
+        <td>High-profile wallet swaps 240 BTC for 8,152 ETH, then borrows $36M USDT to buy 17,284 more ETH via collateral loop</td>
+        <td>BTC → ETH</td>
+        <td>$16M+ pivot; $36M leveraged</td>
+        <td><span class="tag rotate">ROTATE</span></td>
+        <td>Creates leveraged liquidation zone at ~$1,705 ETH. Signals high conviction in ETH near-term direction. Amplifies volatility around that level.</td>
+      </tr>
+      <tr>
+        <td>Wallets holding 100K–1M BTC added ~13,460 BTC since Feb 19 without any selling</td>
+        <td>BTC</td>
+        <td>~$945M accumulation</td>
+        <td><span class="tag buy">ACCUM</span></td>
+        <td>Structural supply removal at current prices. Mid-tier whale cohort accumulating — historically a pre-recovery signal ahead of retail FOMO.</td>
+      </tr>
+      <tr>
+        <td>MicroStrategy acquires 17,994 BTC at avg $70,946 — total corporate purchases week: $1.28B (+513% WoW)</td>
+        <td>BTC</td>
+        <td>$1.28B corporate</td>
+        <td><span class="tag buy">BUY</span></td>
+        <td>Largest weekly institutional buy in months. Provides price floor narrative. MicroStrategy now holds 738,731 BTC total.</td>
+      </tr>
+      <tr>
+        <td>Whale swaps 1,000 ETH ($1.94M) for 358.49 XAUT tokenized gold — booked ~$60K loss on the trade</td>
+        <td>ETH → XAUT</td>
+        <td>$1.94M</td>
+        <td><span class="tag neutral">HEDGE</span></td>
+        <td>Rotation toward safe-haven gold exposure. Suggests some large holders are rebalancing defensively rather than buying dips.</td>
+      </tr>
+      <tr>
+        <td>Retail wallets (less than 0.1 BTC) increased supply share to highest since mid-2024</td>
+        <td>BTC</td>
+        <td>Distributed</td>
+        <td><span class="tag buy">ACCUM</span></td>
+        <td>Retail accumulation provides a floor and can spark short-term momentum, but lacks the scale to sustain rallies against whale distribution in BTC.</td>
+      </tr>
+      <tr>
+        <td>Trader "Machi Big Brother" — ~$74M total losses on ETH long leverage since September 2025, $8.5K Hyperliquid account remaining</td>
+        <td>ETH</td>
+        <td>–$74M</td>
+        <td><span class="tag sell">WIPEOUT</span></td>
+        <td>High-profile leveraged long destruction. Serves as a caution signal on holding leveraged ETH longs in current environment without active risk management.</td>
+      </tr>
+      <tr>
+        <td>Whales add ~140M PUMP (Pump.fun) tokens (~$280K) in a single day following tariff optimism</td>
+        <td>PUMP</td>
+        <td>~$280K</td>
+        <td><span class="tag buy">SPEC BUY</span></td>
+        <td>Whales front-running altcoin rotation into infrastructure plays if macro sentiment improves. Small position; early signal rather than conviction trade.</td>
+      </tr>
+    </table>
+
+    <div class="callout" style="margin-top:14px;">
+      🐋 <strong>Key Divergence:</strong> Bitcoin whales are net distributing into strength while Ethereum whales are net accumulating aggressively. This BTC-to-ETH rotation is the primary whale flow of the week. If sustained, it sets up ETH to outperform BTC on the next risk-on leg — but the leveraged ETH accumulation loop also creates a concentrated liquidation zone at ~$1,705 that makes ETH vulnerable to violent downside if macro deteriorates.
+    </div>
+  </div>
+
+  <!-- WATCH LIST -->
+  <div class="panel-full gap">
+    <div class="section-label">12 // Key Events This Week</div>
+    <div class="section-h">Calendar — What Moves the Market</div>
+    <div class="grid-2col" style="gap:2px;">
+      <div>
+        <div class="signal">
+          <div class="signal-dot red"></div>
+          <div class="signal-body">
+            <div class="signal-title">🔴 TODAY — US CPI (February) — March 11</div>
+            <div class="signal-text">The single most market-moving data point of the week. January CPI surprised to the upside. A second hot print delays Fed cuts and pressures risk assets. A soft print could trigger a BTC rally toward $73K+.</div>
+          </div>
+        </div>
+        <div class="signal">
+          <div class="signal-dot yellow"></div>
+          <div class="signal-body">
+            <div class="signal-title">🟡 FOMC Rate Decision — March 18</div>
+            <div class="signal-text">Fed funds currently 3.50–3.75%. Markets price 2.5% in cuts for full year 2026. Guidance and tone matter more than the decision itself. A pause + dovish language = crypto bullish.</div>
+          </div>
+        </div>
+        <div class="signal">
+          <div class="signal-dot purple"></div>
+          <div class="signal-body">
+            <div class="signal-title">🟣 Clarity Act — Congressional Review</div>
+            <div class="signal-text">SEC vs CFTC jurisdiction clarity. Ripple CEO high-confidence on passage. Could unlock pension fund / insurance capital. 92 crypto ETF applications have a SEC decision deadline of March 27.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="signal">
+          <div class="signal-dot green"></div>
+          <div class="signal-body">
+            <div class="signal-title">🟢 Solana Alpenglow Upgrade — Q1 Target</div>
+            <div class="signal-text">Sub-second finality (100–150ms). Replaces PoH + Tower BFT. A successful mainnet delivery transforms SOL's institutional narrative. Watch for delay announcements carefully.</div>
+          </div>
+        </div>
+        <div class="signal">
+          <div class="signal-dot green"></div>
+          <div class="signal-body">
+            <div class="signal-title">🟢 Dash × ZEC Orchard Privacy — March Launch</div>
+            <div class="signal-text">Dash integrates Zcash's Orchard shielded pool into Evolution chain pending security audits. Bullish for DASH's privacy narrative and potential RWA private settlement use cases.</div>
+          </div>
+        </div>
+        <div class="signal">
+          <div class="signal-dot yellow"></div>
+          <div class="signal-body">
+            <div class="signal-title">🟡 DC Blockchain Summit + Digital Asset Summit NY</div>
+            <div class="signal-text">Both industry events attract regulators, asset managers, and crypto firms. Public statements from officials and institutional announcements at these events are high-impact market movers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTLOOK -->
+  <div class="panel-full panel-accent gap">
+    <div class="section-label">13 // Outlook &amp; Positioning</div>
+    <div class="section-h">Base Case, Bull Case, Bear Case — March 2026</div>
+    <div class="grid-3col" style="gap:2px;">
+      <div class="panel" style="background: rgba(0,229,160,0.04); border-color: rgba(0,229,160,0.2);">
+        <div class="section-h2" style="color: var(--green);">🟢 Bull Case</div>
+        <p>CPI cools + Fed signals dovish tone March 18. BTC reclaims $73,300 and compresses shorts. Institutional inflows resume. Altcoin season index breaks above 40. ETH whale rotation pays off, ETH pushes toward $2,200. SOL Alpenglow delivers on time — SOL re-rates to $120+. Tokenized gold OI rotates back into BTC/ETH risk. Clarity Act passes Senate, unlocking institutional flows. Macro: <strong>BTC $80K–$90K by end of March, ETH $2,500+.</strong></p>
+      </div>
+      <div class="panel" style="background: rgba(247,201,72,0.04); border-color: rgba(247,201,72,0.2);">
+        <div class="section-h2" style="color: var(--accent4);">🟡 Base Case</div>
+        <p>CPI in-line with expectations. Fed pauses with neutral language. BTC consolidates $67K–$73K range through March, with gradual deleveraging continuing. ETH outperforms BTC on rotation but struggles to break $2,200. SOL Alpenglow delayed — SOL stays range-bound $80–$100. Privacy coins hold gains. DeFi TVL stable. RWA tokenization continues as structural tailwind regardless of crypto price action. <strong>BTC exits March near $71K–$75K.</strong></p>
+      </div>
+      <div class="panel" style="background: rgba(255,71,87,0.04); border-color: rgba(255,71,87,0.2);">
+        <div class="section-h2" style="color: var(--red);">🔴 Bear Case</div>
+        <p>CPI hot print today → delayed cut expectations. Tariff tensions escalate further. BTC fails $65K support, H&amp;S pattern activates toward $59,500. ETH leveraged whale position liquidated below $1,705 — cascade. SOL loses $80. $334M liquidation event repeats or escalates. ETF outflows accelerate beyond $7.8B. Clarity Act stalls in Congress. Standard Chartered's $50K year-end forecast becomes market consensus. <strong>BTC tests $55,000–$60,000 range.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand-sm">CREVIA <span>SIGNAL</span></div>
+    <p>Crypto intelligence for builders, traders, and digital-native investors. Published via <strong>Crevia Cockpit</strong> — the crypto analytics and whale tracking platform at creviacockpit.com.</p>
+    <div class="disc">This newsletter is for informational purposes only. Nothing herein constitutes financial advice. Cryptocurrency markets are highly volatile. Do your own research before making investment decisions. Data sourced from CoinGlass, CryptoQuant, CoinGecko, CoinDesk Research, Coinstats, DefiLlama, SoSoValue, and RWA.xyz.</div>
+    <div style="margin-top:20px; font-family: var(--dm); font-size:10px; color: var(--border-glow); letter-spacing:2px;">
+      ISSUE #058 · MARCH 11, 2026 · 00:00 UTC · CREVIA COCKPIT INTELLIGENCE DIVISION
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

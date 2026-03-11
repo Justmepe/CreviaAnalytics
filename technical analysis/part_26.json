@@ -1,0 +1,74 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 26,
+  "total_parts": 65,
+  "title": "Pin Bar, Engulfing Patterns and RSI Divergence (Multi-Pattern) Tool",
+  "subtitle": "Dual Confirmation — Candlestick Pattern AND RSI Divergence Required Simultaneously",
+  "source_url": "https://www.mql5.com/en/articles/17962",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-05",
+  "type": "Expert Advisor",
+  "verdict": "HIGH EXTRACT — dual-confirmation architecture (candlestick pattern AND RSI divergence both required), pin bar detection with 10% body minimum, engulfing definition, RSI divergence scan window 5-15 bars.",
+
+  "core_concept": {
+    "name": "Candlestick + RSI Divergence Dual Confirmation",
+    "description": "Signal requires BOTH a candlestick pattern (pin bar OR engulfing) AND RSI divergence at the same bar. Neither alone is sufficient. Returns +1 (bullish) or -1 (bearish) only when both conditions fire simultaneously.",
+    "dual_requirement": "candlestick_signal != 0 AND rsi_divergence_signal != 0 AND signs match",
+    "relevance_to_creviaderiv": "Our departure candle (single candlestick check) could be upgraded to require divergence confirmation. When price touches a zone AND shows a pin bar AND RSI is diverging = very high confidence signal. Maps to our gate chain architecture."
+  },
+
+  "pin_bar_formula": {
+    "bullish": "bot_shadow >= 2.0 * body AND top_shadow < 0.5 * body AND body > 0.1 * full_range",
+    "bearish": "top_shadow >= 2.0 * body AND bot_shadow < 0.5 * body AND body > 0.1 * full_range",
+    "note": "Body must be > 10% of range — prevents detecting pin bars on micro-candles"
+  },
+
+  "engulfing_formula": {
+    "bullish": "prev bearish AND curr_open <= prev_close AND curr_close >= prev_open AND curr_body > prev_body",
+    "bearish": "prev bullish AND curr_open >= prev_close AND curr_close <= prev_open AND curr_body > prev_body"
+  },
+
+  "rsi_divergence_scan": {
+    "window": "5-15 bars back",
+    "bullish_divergence": "price making lower lows BUT RSI above oversold (30) and rising — momentum weakening before reversal",
+    "bearish_divergence": "price making higher highs BUT RSI below overbought (70) and falling",
+    "note": "Different from Part 13 (RSI Sentinel) — this uses fixed 5-15 bar scan, not swing-based. Simpler but less precise."
+  },
+
+  "config": {
+    "RSI_Period":    { "default": 14,   "description": "RSI calculation period" },
+    "RSI_Overbought":{ "default": 70.0, "description": "Overbought threshold for bearish divergence" },
+    "RSI_Oversold":  { "default": 30.0, "description": "Oversold threshold for bullish divergence" },
+    "SL_Pips":       { "default": 20.0, "description": "Fixed SL in pips — too simplistic" },
+    "TP_Pips":       { "default": 20.0, "description": "Fixed TP in pips — 1:1 RR" },
+    "EntryBuffer":   { "default": 5.0,  "unit": "points", "description": "Entry offset from signal price" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Dual-confirmation architecture: BOTH candle pattern AND RSI divergence required",
+      "Pin bar 10% body minimum (body > 0.1 * range)",
+      "RSI scan window 5-15 bars for divergence check",
+      "Return +1/-1/0 from each sub-function for clean combination logic"
+    ],
+    "discard": [
+      "Fixed SL/TP in pips (20 pips hardcoded) — use our structural SL",
+      "1:1 RR hardcoded — our min RRR=1.5",
+      "Simple 5-15 bar RSI scan — use swing-based divergence from Part 13 instead"
+    ],
+    "improve": [
+      "Replace fixed RSI scan with Part 13 swing-based divergence detection",
+      "Use our structural SL/TP instead of fixed pips",
+      "Add dual confirmation as optional high-confidence mode: zone_touch + candle_pattern + rsi_divergence = max signal strength"
+    ]
+  },
+
+  "creviaderiv_upgrade": {
+    "triple_confirmation_signal": {
+      "gate_1": "zone_touch (existing Gate A)",
+      "gate_2": "departure candle pattern (Pin Bar or Engulfing — upgrade from simple directional)",
+      "gate_3": "RSI divergence at zone touch (swing-based from Part 13)",
+      "result": "All 3 = HIGH confidence signal. Gates 1+2 only = MEDIUM. Skip if only gate 1."
+    }
+  }
+}

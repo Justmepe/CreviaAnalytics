@@ -1,0 +1,96 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 24,
+  "total_parts": 65,
+  "title": "Price Action Quantification Analysis Tool",
+  "subtitle": "Automated Detection and Win-Rate Tracking for Pin Bars, Doji, Engulfing, Marubozu Patterns",
+  "source_url": "https://www.mql5.com/en/articles/18207",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-07",
+  "type": "Expert Advisor",
+  "verdict": "EXTRACT — all four candlestick pattern formulas (exact ratios), win-rate tracking pattern, ATR-normalized minimum body size. Direct upgrade for our departure candle gate.",
+
+  "core_concept": {
+    "name": "Candlestick Pattern Quantification",
+    "description": "Detect 4 candlestick pattern types geometrically using body/shadow ratios. Track win rate by checking if the next bar moves in the expected direction. ATR-based minimum body size ensures only meaningful candles are considered.",
+    "relevance_to_creviaderiv": "Our departure candle gate checks (close > open for BUY, close < open for SELL). This is a minimal check. Upgrading to pin bar or engulfing detection adds pattern strength — a bullish engulfing departure is more reliable than a small green candle."
+  },
+
+  "pattern_formulas": {
+    "helpers": {
+      "candle_body": "abs(close - open)",
+      "full_range":  "high - low",
+      "top_shadow":  "high - max(open, close)",
+      "bot_shadow":  "min(open, close) - low"
+    },
+
+    "pin_bar": {
+      "bearish": "top_shadow >= WickBodyRatio * candle_body AND bot_shadow < SmallWickCap * candle_body",
+      "bullish": "bot_shadow >= WickBodyRatio * candle_body AND top_shadow < SmallWickCap * candle_body",
+      "default_ratio": 2.0,
+      "default_cap":   0.3,
+      "meaning": "Rejection candle — strong wick in one direction, small body, minimal shadow on other side"
+    },
+
+    "doji": {
+      "condition": "candle_body <= MaxDojiRatio * full_range AND top_shadow > candle_body AND bot_shadow > candle_body",
+      "default_max_doji_ratio": 0.1,
+      "meaning": "Indecision candle — body ≤10% of range, shadows on both sides exceed body"
+    },
+
+    "engulfing": {
+      "bullish": "prev_bearish AND curr_open <= prev_close AND curr_close >= prev_open AND curr_body > prev_body",
+      "bearish": "prev_bullish AND curr_open >= prev_close AND curr_close <= prev_open AND curr_body > prev_body",
+      "meaning": "Current candle completely engulfs prior body — momentum shift signal"
+    },
+
+    "marubozu": {
+      "condition": "candle_body >= MarubozuRatio * full_range AND top_shadow <= (1-MarubozuRatio)*full_range AND bot_shadow <= (1-MarubozuRatio)*full_range",
+      "default_ratio": 0.9,
+      "meaning": "Dominant momentum candle — body ≥90% of range, minimal wicks. Strong directional commitment."
+    }
+  },
+
+  "config": {
+    "InpLookbackBars":  { "default": 200,  "description": "Bars to scan" },
+    "InpMinBodySizePts":{ "default": 10,   "description": "Minimum candle body in points — filters micro-candles" },
+    "InpWickBodyRatio": { "default": 2.0,  "description": "Pin bar wick-to-body threshold" },
+    "InpATRPeriod":     { "default": 14,   "description": "ATR period for volatility context" }
+  },
+
+  "win_rate_tracking": {
+    "method": "On detection, mark pattern. Check next completed candle direction. If direction matches signal = win.",
+    "bullish_win": "next_close > current_close",
+    "bearish_win": "next_close < current_close",
+    "note": "Single-bar forward test only. Not a full trade simulation."
+  },
+
+  "keep_discard": {
+    "keep": [
+      "All four pattern formulas (pin bar, doji, engulfing, marubozu) with exact ratio parameters",
+      "InpMinBodySizePts as ATR-normalized minimum (replace fixed points with ATR fraction)",
+      "Win-rate tracking per pattern type",
+      "WickBodyRatio=2.0 and MarubozuRatio=0.9 as calibrated defaults"
+    ],
+    "discard": [
+      "InpMinBodySizePts fixed points — replace with min_body = ATR * 0.1",
+      "Single-bar forward test for win rate — too short for realistic SL/TP evaluation"
+    ],
+    "improve": [
+      "ATR-normalize min body: min_body = ATR(14) * 0.1 — scales with instrument",
+      "Upgrade departure candle gate: require engulfing or pin bar AT zone, not just any directional candle",
+      "Pattern strength score: marubozu=3, engulfing=2, pin_bar=2, directional=1 → add to signal confidence"
+    ]
+  },
+
+  "creviaderiv_departure_upgrade": {
+    "current": "close > open (BUY) or close < open (SELL)",
+    "upgrade": {
+      "marubozu_departure": "body >= ATR*0.5 AND wicks < 10% of range → confidence=HIGH",
+      "engulfing_departure": "engulfs prior candle body → confidence=MEDIUM-HIGH",
+      "pin_bar_departure":   "bot_shadow >= 2*body (bullish pin at demand zone) → confidence=MEDIUM",
+      "simple_directional":  "just close > open → confidence=LOW (current baseline)"
+    },
+    "implementation": "departure_strength = classify_departure_candle(open, high, low, close, atr) → 'strong'/'medium'/'weak'"
+  }
+}

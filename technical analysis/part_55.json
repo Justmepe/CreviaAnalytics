@@ -1,0 +1,23 @@
+{
+  "part": 55,
+  "title": "CPI Mini-Candle",
+  "source_url": "https://www.mql5.com/en/articles/20949",
+  "verdict": "HIGH - CPI=(2*close-high-low)/(high-low). Same as CPP. Thresholds: Strong>=0.60, Mild>=0.20, Neutral<0.20.",
+  "zones": {
+    "strong_buy": ">=0.60",
+    "mild_buy": "0.20 to 0.60",
+    "neutral": "-0.20 to 0.20",
+    "mild_sell": "-0.60 to -0.20",
+    "strong_sell": "<=-0.60"
+  },
+  "keep_discard": {
+    "keep": [
+      "CPI formula",
+      "5-zone thresholds",
+      "MinRangePoints noise gate"
+    ],
+    "improve": [
+      "CPI as departure gate: >=0.60=strength 4, >=0.20=2, else skip"
+    ]
+  }
+}

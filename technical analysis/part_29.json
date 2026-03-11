@@ -1,0 +1,76 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 29,
+  "total_parts": 65,
+  "title": "Boom and Crash Interceptor EA",
+  "subtitle": "Velocity Percentile + ATR Surge + SMA Trend Alignment for Spike Detection",
+  "source_url": "https://www.mql5.com/en/articles/18616",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor",
+  "verdict": "HIGH EXTRACT — velocity percentile spike detection is a better VWV. ATR surge multiplier (ATR > prev_ATR × 1.5) is a new volatility expansion filter. VelocityPctile > 100 = extreme selectivity concept. Directly relevant to our Crash/Boom trading on Deriv.",
+
+  "core_concept": {
+    "name": "Boom/Crash Spike Detection via Velocity Percentile",
+    "description": "Compute price deltas over a rolling window (96 bars). Sort by magnitude. Flag a spike when |current_delta| > the (100-VelocityPctile) percentile of historical deltas. VelocityPctile=120 demands moves more extreme than ANY in the 96-bar history.",
+    "four_filters": [
+      "Velocity percentile threshold (|delta| > historical extreme)",
+      "ATR surge: current_ATR > prev_ATR × 1.5 (volatility expanding)",
+      "SMA trend alignment (SMA rising for bull, falling for bear)",
+      "Optional pivot-zone filter"
+    ],
+    "relevance_to_creviaderiv": "Crash/Boom indices are defined by spikes. Our VWV uses range_atr energy for synthetics. Adding velocity percentile threshold makes the filter adaptive — only fires on genuinely extreme moves, not just any above-average move."
+  },
+
+  "velocity_percentile": {
+    "formula": "deltas = [abs(price[i] - price[i-1]) for i in range(window)]; deltas.sort(); threshold = deltas[int((100-pctile)/100 * len(deltas))]",
+    "VelocityPctile_120": "Demands move > max(deltas in window) — only the most extreme spike triggers",
+    "VelocityPctile_80": "80th percentile — top 20% of moves trigger",
+    "recommendation": "Use 95-100 for Boom/Crash (spike-only). Use 70-80 for general momentum detection."
+  },
+
+  "atr_surge": {
+    "formula": "current_ATR > prev_ATR * ATRMultiplier",
+    "default_multiplier": 1.5,
+    "meaning": "Volatility must be expanding, not just elevated. Confirms the spike is happening NOW, not a residual from prior volatility."
+  },
+
+  "config": {
+    "VelocityHistoryBars": { "default": 96,    "description": "Lookback bars for velocity distribution" },
+    "VelocityPctile":      { "default": 120.0, "description": "Percentile threshold — > 100 = most extreme in window" },
+    "ATRPeriod":           { "default": 14,    "description": "ATR period" },
+    "ATRMultiplier":       { "default": 1.5,   "description": "ATR surge multiplier" },
+    "UseZoneFilter":       { "default": true,  "description": "Enable pivot zone filter" },
+    "SessionStartHour":    { "default": 7,     "description": "Trading session start" },
+    "SessionEndHour":      { "default": 17,    "description": "Trading session end" }
+  },
+
+  "risk": {
+    "sl": "entry ± ATR × 2",
+    "tp": "pivot level (structural target)"
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Velocity percentile approach: adaptive threshold vs fixed ATR multiplier",
+      "VelocityPctile > 100 concept: more extreme than any historical bar in window",
+      "ATR surge filter: current_ATR > prev_ATR × 1.5 (expanding volatility check)",
+      "4-filter AND gate for Boom/Crash (all 4 required)"
+    ],
+    "discard": [
+      "SMA as trend filter — use market_structure",
+      "Fixed session hours — use our SYMBOL_SCANNING_WINDOWS"
+    ],
+    "improve": [
+      "Replace VWV fixed threshold with velocity percentile for adaptive spike detection",
+      "Add ATR surge filter to VWV gate: VWV strong AND ATR expanding = double confirmation",
+      "VelocityPctile calibration: Crash/Boom use 95+, Volatility indices use 75, forex use 70"
+    ]
+  },
+
+  "creviaderiv_vwv_upgrade": {
+    "current_vwv": "velocity = (close - open) / ATR; strong if > threshold",
+    "upgrade_with_percentile": "deltas = rolling abs price changes; velocity_score = percentile_rank(|current_delta|, deltas); strong if velocity_score > 90th percentile",
+    "atr_surge_add": "atr_expanding = atr[-1] > atr[-4] * 1.3  # ATR grew 30% in last 4 bars",
+    "combined": "vwv_strong = velocity_score > 0.90 AND atr_expanding  # for Crash/Boom"
+  }
+}

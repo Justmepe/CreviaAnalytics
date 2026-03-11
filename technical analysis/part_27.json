@@ -1,0 +1,83 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 27,
+  "total_parts": 65,
+  "title": "Liquidity Sweep with MA Filter Tool",
+  "subtitle": "Two-Candle False Break Detection with Optional MA Trend Alignment",
+  "source_url": "https://www.mql5.com/en/articles/18379",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-08",
+  "type": "Expert Advisor",
+  "verdict": "HIGH EXTRACT — liquidity sweep detection logic is directly relevant to our zone invalidation/interaction framework. The 2-candle false break pattern captures stop-hunt reversals at supply/demand zones. Both strict and less-strict modes are useful.",
+
+  "core_concept": {
+    "name": "Liquidity Sweep (False Break)",
+    "description": "Price temporarily breaks beyond a key level (sweeping stop-loss orders), then immediately reverses. Detected by a 2-candle pattern: candle 1 forms a high/low extreme, candle 2 penetrates it intrabar but closes in the opposite direction — recovering back through candle 1's body.",
+    "institutional_logic": "Large players push price beyond known levels to trigger retail stops, then enter in the opposite direction at better prices. The sweep is the stop hunt. The reversal is their entry.",
+    "relevance_to_creviaderiv": "Our zones are stop-loss clusters (supply/demand). When price wicks below a demand zone (sweeping longs' stops) then recovers = bullish liquidity sweep at demand zone = highest confidence BUY setup. This is the 'wick into zone + rejection' we look for."
+  },
+
+  "detection_logic": {
+    "less_strict_bullish": [
+      "current bar: close > open (bullish body)",
+      "current bar: low < prev_low (swept below prior low)",
+      "current bar: close > prev_open (recovered above prior candle's open)",
+      "prev bar: close != open (not a doji)"
+    ],
+    "less_strict_bearish": [
+      "current bar: close < open (bearish body)",
+      "current bar: high > prev_high (swept above prior high)",
+      "current bar: close < prev_open (fell below prior candle's open)",
+      "prev bar: close != open (not a doji)"
+    ],
+    "strict_bullish_extra":   "current close > prev_high (full recovery above prior high)",
+    "strict_bearish_extra":   "current close < prev_low (full break below prior low)"
+  },
+
+  "ma_filter": {
+    "purpose": "Align sweeps with MA trend direction",
+    "types": ["SMA", "EMA", "LWMA", "VWMA", "RMA", "HMA"],
+    "default_period": 20,
+    "logic": "if UseMAFilter: bullish_sweep requires close > ma; bearish_sweep requires close < ma",
+    "our_version": "Replace MA filter with market_structure: bullish_sweep only valid when market_structure == BULLISH"
+  },
+
+  "config": {
+    "UseMAFilter":       { "default": false,      "description": "Enable MA trend filter" },
+    "MALength":          { "default": 20,          "description": "MA period" },
+    "MAType":            { "default": "SMA",        "description": "MA type (SMA/EMA/LWMA/VWMA/RMA/HMA)" },
+    "SignalStrict":      { "default": "LessStrict", "description": "Detection rigor (LessStrict/Strict)" },
+    "ColorChangeOnly":   { "default": false,        "description": "Require color reversal (extra filter)" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Bullish/bearish sweep 2-candle detection logic (both strict and less-strict)",
+      "No-doji filter on prior candle",
+      "Strict mode for high-confidence setups",
+      "MA filter pattern — replace MA with our market_structure"
+    ],
+    "discard": [
+      "Fixed MA filter — use StructureEngine market_structure instead",
+      "No SL/TP logic",
+      "MQL5 visual markers"
+    ],
+    "improve": [
+      "Combine sweep detection with zone proximity: bullish sweep INSIDE demand zone = maximum confluence",
+      "Strict mode at supply/demand zones: require close > prev_high for zone sweep confirmation",
+      "Add sweep depth metric: how far price penetrated before reversing (deeper sweep = more liquidity taken = stronger reversal)"
+    ]
+  },
+
+  "creviaderiv_upgrade": {
+    "zone_sweep_entry": {
+      "description": "Highest-confidence entry pattern: price wicks into zone (liquidity sweep) then closes back out",
+      "detection": "is_bullish_sweep(current_bar, prev_bar) AND price_was_inside_demand_zone(current_bar.low, zone)",
+      "advantage": "The sweep confirms stops have been taken. Institutional buyers are now in. Our departure candle IS a sweep candle — but explicitly checking the prior low penetration + recovery makes it explicit.",
+      "implementation": {
+        "sweep_into_zone": "curr.low < zone.lower AND curr.close > zone.lower AND curr.close > curr.open",
+        "full_recovery": "curr.close > prev.open (strict) OR curr.close > zone.mid (moderate)"
+      }
+    }
+  }
+}

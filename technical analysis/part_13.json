@@ -1,0 +1,190 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 13,
+  "total_parts": 65,
+  "title": "RSI Sentinel Tool",
+  "subtitle": "RSI Divergence Detection — Regular and Hidden, Bullish and Bearish, with Backtest Accuracy Reporting",
+  "source_url": "https://www.mql5.com/en/articles/17198",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-02-14",
+  "type": "Indicator / EA",
+  "verdict": "EXTRACT — divergence detection framework (4 types), swing-based comparison logic, and backtesting accuracy reporting. RSI divergence is a powerful secondary confirmation gate.",
+
+  "tool_classification": {
+    "category": "divergence_signal_detector",
+    "generates_signals": true,
+    "signal_type": "reversal_and_continuation_divergence",
+    "executes_trades": false,
+    "runs": "continuously",
+    "timeframe_agnostic": true
+  },
+
+  "core_concept": {
+    "name": "RSI Divergence — Four Types",
+    "description": "Instead of using RSI as overbought/oversold levels, use RSI RELATIVE MOMENTUM vs PRICE DIRECTION. Divergence = RSI and price disagreeing about direction. Four types cover both reversals (regular) and continuations (hidden).",
+    "four_divergence_types": {
+      "regular_bullish":  "Price makes lower low,  RSI makes higher low  → likely upward reversal",
+      "regular_bearish":  "Price makes higher high, RSI makes lower high → likely downward reversal",
+      "hidden_bullish":   "Price makes higher low,  RSI makes lower low  → uptrend continuation",
+      "hidden_bearish":   "Price makes lower high,  RSI makes higher high → downtrend continuation"
+    },
+    "buy_conditions": ["Regular bullish OR hidden bullish divergence detected"],
+    "sell_conditions": ["Regular bearish OR hidden bearish divergence detected"],
+    "relevance_to_creviaderiv": "RSI divergence can be a powerful ADDITIONAL gate or zone quality filter. If price returns to a demand zone AND shows regular bullish RSI divergence, the confluence dramatically raises signal quality. Our current gate chain doesn't include divergence — this is an upgrade opportunity."
+  },
+
+  "data_requirements": [
+    {
+      "name": "rsi_series",
+      "indicator": "RSI",
+      "period": 14,
+      "source": "close prices",
+      "range": "lookback bars"
+    },
+    {
+      "name": "swing_lows",
+      "type": "derived",
+      "method": "IsSignificantSwingLow: bar is local minimum within left/right window, price difference >= InpMinSwingDiffPct"
+    },
+    {
+      "name": "swing_highs",
+      "type": "derived",
+      "method": "IsSignificantSwingHigh: bar is local maximum within left/right window, price difference >= InpMinSwingDiffPct"
+    }
+  ],
+
+  "config": {
+    "rsi_period":              { "type": "integer", "default": 14,    "description": "RSI calculation period" },
+    "swing_left":              { "type": "integer", "default": 1,     "description": "Bars left of pivot to check for swing detection" },
+    "swing_right":             { "type": "integer", "default": 1,     "description": "Bars right of pivot to check" },
+    "lookback":                { "type": "integer", "default": 100,   "description": "Total bars scanned for divergences" },
+    "eval_bars":               { "type": "integer", "default": 5,     "description": "Bars to wait after signal before evaluating accuracy" },
+    "min_bars_between_signals":{ "type": "integer", "default": 1,     "description": "Minimum bars between signals (deduplication)" },
+    "arrow_offset":            { "type": "float",   "default": 3.0,   "unit": "points", "description": "Arrow placement offset from swing extreme" },
+    "min_swing_diff_pct":      { "type": "float",   "default": 0.05,  "unit": "%", "description": "Min % price diff between two swing extremes to qualify as a real swing" },
+    "min_rsi_diff":            { "type": "float",   "default": 1.0,   "description": "Min RSI point difference between two swings to qualify as divergence" },
+    "use_rsi_threshold":       { "type": "bool",    "default": false,  "description": "Require RSI <= 30 on the earlier bullish swing for validation" }
+  },
+
+  "divergence_detection_algorithm": {
+    "step_1_find_swings": "Scan last lookback bars for significant local minima and maxima (IsSignificantSwingLow/High)",
+    "step_2_select_recent_pair": "Take the two most recent swing lows (for bullish) or swing highs (for bearish)",
+    "step_3_compare_price": "Compare price at swing1 vs price at swing2",
+    "step_4_compare_rsi": "Compare RSI at swing1 vs RSI at swing2",
+    "step_5_classify": {
+      "regular_bullish":  "price[1] < price[2] AND rsi[1] > rsi[2] AND rsi_diff >= min_rsi_diff",
+      "regular_bearish":  "price[1] > price[2] AND rsi[1] < rsi[2] AND rsi_diff >= min_rsi_diff",
+      "hidden_bullish":   "price[1] > price[2] AND rsi[1] < rsi[2] AND rsi_diff >= min_rsi_diff",
+      "hidden_bearish":   "price[1] < price[2] AND rsi[1] > rsi[2] AND rsi_diff >= min_rsi_diff"
+    },
+    "step_6_deduplicate": "Check min_bars_between_signals to prevent cluster signals"
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "compute_rsi",
+        "description": "Calculate RSI(14) for last lookback bars"
+      },
+      {
+        "step": 2,
+        "name": "detect_swing_pivots",
+        "description": "Find significant local extrema using swing_left/right window and min_swing_diff_pct filter",
+        "is_swing_low":  "lows[i] == min(lows[i-left:i+right+1]) AND (lows[i-1] - lows[i]) / lows[i] >= min_swing_diff_pct",
+        "is_swing_high": "highs[i] == max(highs[i-left:i+right+1]) AND (highs[i] - highs[i+1]) / highs[i] >= min_swing_diff_pct"
+      },
+      {
+        "step": 3,
+        "name": "classify_divergence",
+        "description": "Compare most recent two swing lows (for bullish) or two swing highs (for bearish)"
+      },
+      {
+        "step": 4,
+        "name": "validate_rsi_difference",
+        "description": "RSI difference between the two swings must be >= min_rsi_diff (prevents false divergence from tiny RSI moves)"
+      },
+      {
+        "step": 5,
+        "name": "draw_and_log",
+        "description": "Draw arrow at signal bar, update dashboard labels with signal counts"
+      },
+      {
+        "step": 6,
+        "name": "accuracy_evaluation",
+        "description": "After eval_bars: check if price moved in signal direction. Track regular vs hidden accuracy separately."
+      }
+    ]
+  },
+
+  "backtest_accuracy_reporting": {
+    "method": "Check price N bars after signal vs entry price",
+    "metrics": ["total signals", "signals evaluated", "overall accuracy %", "regular divergence accuracy %", "hidden divergence accuracy %"],
+    "note": "Simple direction check only — not profit-weighted. A 1-pip win counts same as 100-pip win."
+  },
+
+  "components_to_build": [
+    {
+      "name": "DivergenceDetector",
+      "type": "indicator",
+      "priority": 1,
+      "contract": "detect(rsi_series, price_highs, price_lows, config) -> List[DivergenceSignal]",
+      "returns": "List of DivergenceSignal(type, bar_idx, price, rsi_at_signal, divergence_type)",
+      "note": "Pure function. Returns all 4 divergence types in one pass."
+    },
+    {
+      "name": "SwingDetector",
+      "type": "indicator",
+      "priority": 2,
+      "contract": "find_swings(highs, lows, left_window, right_window, min_diff_pct) -> (swing_highs, swing_lows)",
+      "note": "Simple fractals: local extrema within window. Returns bar indices of valid swings."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "All 4 divergence types (regular bullish/bearish + hidden bullish/bearish) — complete framework",
+      "Swing-based RSI comparison (not tick-level) — more meaningful and noise-resistant",
+      "min_rsi_diff filter — prevents false divergence from tiny RSI fluctuations",
+      "min_swing_diff_pct filter — percentage-based, works across instruments (vs fixed pip threshold)",
+      "Separate tracking of regular vs hidden accuracy — hidden divergence has different reliability profile",
+      "Backtest accuracy report at close — useful for validation"
+    ],
+    "discard": [
+      "min_bars_between_signals = 1 — too loose, clusters signals. Use 5-10 bars minimum.",
+      "Single-timeframe only — add multi-TF: divergence on H1 confirmed by M15 entry",
+      "No SL/TP — signals only, no risk management",
+      "MQL5-specific chart objects and alerts"
+    ],
+    "improve": [
+      "Add divergence as a ZONE QUALITY FILTER: demand zone + regular bullish RSI divergence = high confidence",
+      "Add multi-timeframe: H1 divergence sets context, M15 entry on confirmation",
+      "Add divergence strength score: how many bars between swings? Wider divergence = stronger signal",
+      "Add confluence counting: how many divergence types agree? All 4 pointing bullish = very strong",
+      "Weight accuracy by pip outcome not just direction (1-pip win ≠ 100-pip win)"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "divergence_as_zone_quality_filter": "Our current zone quality score (impulsive=80, corrective=40) could include divergence: +20 bonus if RSI shows regular bullish divergence at a demand zone. This gives a structural + momentum confluence score.",
+    "hidden_divergence_for_continuation": "We only look for reversal setups (zone touch = potential reversal). Hidden divergence identifies CONTINUATION setups — price pulls back to a level but RSI stays strong. This is the zone retest in an active trend. High relevance for our HL/LH zone identification.",
+    "swing_detection_upgrade": "The article explicitly flags their swing detection as needing external library support for precision. Our StructureEngine fractal detection (with configurable lookback and trendline-first filtering) is the proper implementation they're pointing toward."
+  },
+
+  "article_figures": [
+    { "fig": 1, "title": "Bullish Divergence", "url": "https://c.mql5.com/2/119/image1.png",
+      "insight": "Price makes lower low, RSI makes higher low. Classic reversal setup." },
+    { "fig": 2, "title": "Bearish Divergence", "url": "https://c.mql5.com/2/119/DIVERGENCE__1.png",
+      "insight": "Price makes higher high, RSI makes lower high. Momentum weakening before price." },
+    { "fig": 3, "title": "Hidden Bullish Divergence", "url": "https://c.mql5.com/2/119/HIDDEN_BULLISH_DIVERGENCE__1.png",
+      "insight": "Price makes higher low (uptrend intact), RSI makes lower low. Trend continuation." },
+    { "fig": 4, "title": "Hidden Bearish Divergence", "url": "https://c.mql5.com/2/119/Bearish_Divergence.png",
+      "insight": "Price makes lower high (downtrend intact), RSI makes higher high. Continuation of downtrend." },
+    { "fig": 5, "title": "Live Bullish Signal (GIF)", "url": "https://c.mql5.com/2/119/Bullish_convergence.gif",
+      "insight": "1-min chart showing regular bullish divergence followed by reversal." },
+    { "fig": 6, "title": "Boom 500 Bearish Test", "url": "https://c.mql5.com/2/119/TEST_RESULT.png",
+      "insight": "Bearish divergence on Boom 500 synthetic index. Confirms tool works on synthetics." },
+    { "fig": 7, "title": "Historical Backtest (GIF)", "url": "https://c.mql5.com/2/119/Backtesting.gif",
+      "insight": "Full backtest run showing signal arrows and accuracy metrics printed at end." }
+  ]
+}

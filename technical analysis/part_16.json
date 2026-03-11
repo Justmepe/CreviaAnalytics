@@ -1,0 +1,120 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 16,
+  "total_parts": 65,
+  "title": "Introducing Quarters Theory (II) — Intrusion Detector EA",
+  "subtitle": "Real-Time Price Proximity Detection for Quarter Levels with Alert Deduplication",
+  "source_url": "https://www.mql5.com/en/articles/17321",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-03",
+  "type": "Expert Advisor (Monitoring Tool)",
+  "verdict": "EXTRACT — intrusion proximity check pattern, alert deduplication technique, multi-level simultaneous monitoring, contextual commentary per zone type. No buy/sell signals — pure monitoring.",
+
+  "tool_classification": {
+    "category": "price_level_monitor",
+    "generates_signals": false,
+    "signal_type": "proximity_alert_only",
+    "executes_trades": false,
+    "runs": "continuously_on_tick",
+    "timeframe_agnostic": true
+  },
+
+  "core_concept": {
+    "name": "Quarter Level Intrusion Detection",
+    "description": "On every tick, check if current bid price is within AlertTolerance distance of any quarter level (major, large quarter, overshoot, small quarter). Fire a contextual alert on first intrusion, suppress re-alerts while price lingers at level (intrusionAlerted flag). Reset flag when price leaves tolerance zone.",
+    "intrusion_definition": "abs(currentPrice - level) <= AlertTolerance",
+    "alert_deduplication": "Boolean flag per level: set True on first alert, reset to False only when price moves outside tolerance zone.",
+    "no_signals": "This EA does NOT generate buy/sell signals. It monitors and alerts. Trade decision is made by the trader based on contextual commentary.",
+    "relevance_to_creviaderiv": "The intrusion check pattern is exactly our zone interaction detection. The alert deduplication (intrusionAlerted flag) maps to our 'single signal per zone touch' logic. The contextual commentary per zone type maps to how we classify zone interactions differently for supply vs demand."
+  },
+
+  "intrusion_detection_algorithm": {
+    "step_1": "On each tick: get current bid price",
+    "step_2": "Compute active quarter levels from current price and MajorStep",
+    "step_3_check": "For each level in [major_lower, major_upper, large_q1, large_q2, large_q3, overshoots, small_quarters]: if abs(price - level) <= alert_tolerance AND NOT already_alerted[level]: fire_alert(level, context_message(level)); already_alerted[level] = True",
+    "step_4_reset": "When price moves beyond tolerance: already_alerted[level] = False",
+    "multi_level": "All levels checked simultaneously per tick — price can simultaneously intrude multiple zones"
+  },
+
+  "config": {
+    "MajorStep":              { "type": "float",   "default": 0.1000, "description": "Major range interval (1000-pip equivalent)" },
+    "AlertTolerance":         { "type": "float",   "default": 0.0025, "description": "Proximity threshold — approximately 25 pips for standard forex" },
+    "DrawLargeQuarters":      { "type": "bool",    "default": true,   "description": "Draw large quarter lines" },
+    "DrawSmallQuarters":      { "type": "bool",    "default": false,  "description": "Draw small quarter subdivisions" },
+    "DrawOvershootAreas":     { "type": "bool",    "default": true,   "description": "Draw overshoot/undershoot zones" },
+    "MajorLineWidth":         { "type": "integer", "default": 4,      "description": "Thickness of major boundary lines" },
+    "LargeQuarterLineWidth":  { "type": "integer", "default": 3,      "description": "Thickness of large quarter lines" }
+  },
+
+  "contextual_commentary": {
+    "major_support":    "Key support level. Break below signals range shift.",
+    "major_resistance": "Pivotal resistance. Breakout above may start new range.",
+    "large_quarter":    "Decisive break could trigger next 250-PIP move.",
+    "overshoot":        "Test of breakout; reversal likely if momentum fails.",
+    "undershoot":       "Insufficient bullish force; possible bearish reversal.",
+    "small_quarter":    "Minor fluctuation."
+  },
+
+  "logic": {
+    "steps": [
+      { "step": 1, "name": "compute_levels", "description": "DrawQuarters(): calculate major, large quarter, overshoot, small quarter levels from current price" },
+      { "step": 2, "name": "check_intrusions", "description": "For each level: abs(price - level) <= AlertTolerance AND NOT alerted" },
+      { "step": 3, "name": "fire_alert", "description": "On first intrusion: display contextual message, set alerted flag" },
+      { "step": 4, "name": "reset_flag", "description": "When price leaves tolerance zone: clear alerted flag for that level" },
+      { "step": 5, "name": "update_display", "description": "Update on-chart label table with current price and active zones" }
+    ]
+  },
+
+  "key_functions": {
+    "DrawHorizontalLine": "draw_line(name, price, color, width, style) — creates/replaces horizontal chart object, pre-deletes to prevent duplicates",
+    "DrawQuarters": "compute all levels from current price + MajorStep, draw all lines",
+    "intrusion_check": "abs(currentPrice - level) <= AlertTolerance",
+    "deduplication": "intrusionAlerted[level] = True on first hit, reset to False when price exits zone"
+  },
+
+  "components_to_build": [
+    {
+      "name": "QuarterLevelMonitor",
+      "type": "monitoring_service",
+      "priority": 2,
+      "contract": "check_intrusions(price, levels, tolerance, state) -> List[Intrusion]",
+      "returns": "List[Intrusion(level, zone_type, is_new)] where is_new=True on first touch",
+      "note": "Stateful — tracks which levels have been alerted to enable deduplication."
+    }
+  ],
+
+  "backtesting": {
+    "tested_on": ["NZD/USD H1", "USD/CAD H1"],
+    "verdict": "Live examples only — no formal win rate or statistics",
+    "caveat": "Results shown are discretionary trade examples following alerts. No systematic backtest."
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Intrusion proximity check: abs(price - level) <= tolerance — foundational pattern",
+      "Alert deduplication via boolean flag per level — prevents signal spam while price lingers",
+      "Flag reset when price leaves zone — clean state management",
+      "Contextual commentary per zone type — different response for overshoot vs major vs small quarter",
+      "Simultaneous multi-level monitoring — all levels checked on every tick"
+    ],
+    "discard": [
+      "No buy/sell signals — this tool is monitoring-only; we need to extend with signal generation",
+      "AlertTolerance = 0.0025 fixed — use ATR-normalized tolerance for cross-instrument use",
+      "Forex-only language — 'pips' framing; our version must be instrument-agnostic",
+      "MQL5 chart object rendering"
+    ],
+    "improve": [
+      "ATR-normalized AlertTolerance: tolerance = ATR × 0.5 instead of fixed 0.0025",
+      "Add signal classification at overshoot: overshoot intrusion + RSI divergence = high-confidence reversal signal",
+      "Track intrusion duration: how many bars has price been in the tolerance zone? Longer = stronger test",
+      "Add intrusion strength: depth of penetration beyond zone = momentum measure"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "zone_interaction_is_intrusion": "Our _is_interacting() check is exactly this intrusion pattern: abs(price - zone_mid) <= zone_half_width. The deduplication flag maps to our single-signal-per-zone-touch logic.",
+    "atr_normalized_tolerance": "Their 0.0025 fixed tolerance is naive — 25 pips on EUR/USD but meaningless for Crash 300 at 9000. Our zone_half_width derived from price range is the correct instrument-agnostic version.",
+    "contextual_commentary_maps_to_zone_type": "Their 'overshoot = reversal likely if momentum fails' maps directly to our zone type classification: impulsive zone at quarter level = higher reversal probability. The commentary IS our zone quality scoring.",
+    "intrusion_duration_idea": "Novel concept: track bars_inside_zone. Short touch (1-2 bars) = quick rejection = stronger signal. Long lingering (5+ bars) = zone being eroded = potentially weaker. Add bars_inside_zone to zone interaction state."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 36,
+  "total_parts": 65,
+  "title": "Unlocking Direct Python Access to MetaTrader 5 Market Streams",
+  "subtitle": "mt5.initialize() Connection, Parquet Storage, Incremental Bar Updates, 72.88% Win Rate Deployment",
+  "source_url": "https://www.mql5.com/en/articles/19065",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Python + MT5 API",
+  "verdict": "LOW-MEDIUM EXTRACT for us — we already use Python-native MT5 connection via our BrokerDataAdapter. The z_spike feature (first difference / 20-bar rolling std) and EMA envelope (EMA×0.997, EMA×1.003) are the new additions worth extracting.",
+
+  "connection_pattern": {
+    "library": "MetaTrader5 (official Python library)",
+    "init": "mt5.initialize(login=LOGIN_ID, password=PASSWORD, server=SERVER)",
+    "data_pull": "mt5.copy_rates_range(symbol, mt5.TIMEFRAME_M1, start, end)",
+    "storage": "Parquet with zstandard compression — efficient for large bar histories",
+    "incremental": "On each poll: fetch last N bars, deduplicate by time, append to Parquet"
+  },
+
+  "new_features": {
+    "z_spike": "df['first_diff'] = df['close'].diff(); df['z_spike'] = df['first_diff'] / df['first_diff'].rolling(20).std()",
+    "ema_envelope_low":  "df['env_low'] = df['close'].ewm(span=period).mean() * 0.997",
+    "ema_envelope_high": "df['env_high'] = df['close'].ewm(span=period).mean() * 1.003"
+  },
+
+  "keep_discard": {
+    "keep": [
+      "z_spike: first difference normalized by 20-bar rolling std = standard normal score of price move",
+      "EMA envelope bands: EMA ± 0.3% as dynamic S/R brackets",
+      "Parquet + zstandard for efficient large bar history storage",
+      "Incremental update pattern (deduplicate by timestamp)"
+    ],
+    "discard": ["MT5 connection setup — we already have BrokerDataAdapter", "Flask endpoint architecture"],
+    "improve": [
+      "z_spike is a normalized velocity measure — superior to our (close-open)/ATR for detecting extreme moves",
+      "Add z_spike as VWV feature: z_spike > 2.0 = significant move (2 standard deviations)",
+      "EMA envelope could define micro-zones: price touching env_low = potential bounce level"
+    ]
+  },
+
+  "z_spike_vs_vwv": {
+    "current_vwv": "(close - open) / ATR — measures body energy relative to ATR",
+    "z_spike":     "first_diff / rolling_std(20) — measures bar-to-bar move in standard deviations",
+    "difference": "VWV measures candle body momentum. z_spike measures price change magnitude vs recent volatility. z_spike is more sensitive to sudden directional moves; VWV is better for sustained momentum.",
+    "use_both": "z_spike for spike detection (Crash/Boom). VWV for trend momentum (Forex)."
+  }
+}

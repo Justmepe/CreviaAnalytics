@@ -1,0 +1,159 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 14,
+  "total_parts": 65,
+  "title": "Parabolic Stop and Reverse Tool",
+  "subtitle": "Parabolic SAR Reversal Detection with Multi-Bar Confirmation and Gap Validation",
+  "source_url": "https://www.mql5.com/en/articles/17234",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-02",
+  "type": "Expert Advisor",
+  "verdict": "EXTRACT — multi-bar confirmation window pattern, SAR gap consistency check, pending signal mechanism. SAR itself is a weak standalone trigger but the confirmation architecture is reusable.",
+
+  "tool_classification": {
+    "category": "reversal_signal_detector",
+    "generates_signals": true,
+    "signal_type": "trend_reversal",
+    "executes_trades": false,
+    "runs": "continuously",
+    "timeframe_agnostic": true
+  },
+
+  "core_concept": {
+    "name": "Parabolic SAR Reversal",
+    "description": "SAR = Stop and Reverse. When SAR dots flip from above price to below (or vice versa) after consecutive confirming bars, the tool flags a potential reversal. A 'pending signal mechanism' captures the SAR level and monitors for price confirmation within 3 bars.",
+    "sar_meaning": "SAR dot below price = uptrend (bullish). SAR dot above price = downtrend (bearish). Flip = reversal signal.",
+    "buy_conditions": [
+      "Current bar is bullish (close > open)",
+      "Current SAR dot is below close",
+      "Previous 2 bars are bearish with SAR dots ABOVE their closes",
+      "Gap between consecutive SAR dots within MaxDotGapPercentage"
+    ],
+    "sell_conditions": [
+      "Current bar is bearish (close < open)",
+      "Current SAR dot is above close",
+      "Previous 2 bars are bullish with SAR dots BELOW their closes",
+      "Gap between consecutive SAR dots within MaxDotGapPercentage"
+    ],
+    "pending_mechanism": "On signal, capture SAR reversal level. Monitor next 3 bars. If price reaches that level = confirmed. If not = warn of possible fake signal.",
+    "relevance_to_creviaderiv": "SAR alone is too slow for M1 entry — it lags. However: the multi-bar confirmation window (require N prior bars in prior direction before accepting reversal) is exactly our departure candle concept at a higher level. The gap consistency check is a novel filter we don't have."
+  },
+
+  "data_requirements": [
+    {
+      "name": "psar_series",
+      "indicator": "Parabolic SAR",
+      "step": 0.1,
+      "maximum": 1.0,
+      "source": "OHLC prices",
+      "range": "lookback bars (at least MinConsecutiveDots + 1)"
+    },
+    {
+      "name": "ohlc",
+      "type": "bar data",
+      "fields": ["open", "high", "low", "close"]
+    }
+  ],
+
+  "config": {
+    "SARStep":             { "type": "float",   "default": 0.1,  "description": "Acceleration factor — how fast SAR accelerates toward price" },
+    "SARMaximum":          { "type": "float",   "default": 1.0,  "description": "Maximum acceleration cap" },
+    "MinConsecutiveDots":  { "type": "integer", "default": 2,    "description": "Number of prior bars that must confirm the previous trend before reversal is valid" },
+    "MaxDotGapPercentage": { "type": "float",   "default": 1.0,  "unit": "%", "description": "Max allowed gap between consecutive SAR dots as % of close price — filters erratic SAR behavior" },
+    "EnableAlerts":        { "type": "bool",    "default": true,  "description": "Popup notification on signal" },
+    "EnableSound":         { "type": "bool",    "default": true,  "description": "Audio alert" },
+    "EnableArrows":        { "type": "bool",    "default": true,  "description": "Draw Wingdings arrow at signal bar" },
+    "ArrowWidth":          { "type": "integer", "default": 2,    "description": "Arrow thickness" }
+  },
+
+  "reversal_detection_algorithm": {
+    "step_1": "Compute Parabolic SAR for current + prior bars (step=SARStep, max=SARMaximum)",
+    "step_2_buy_check": {
+      "a": "current bar: close > open (bullish body)",
+      "b": "current sar: sar[0] < close[0] (dot below price = bullish SAR)",
+      "c": "prior N bars: for i in 1..MinConsecutiveDots: close[i] < open[i] AND sar[i] > close[i]",
+      "d": "gap check: abs(sar[0] - sar[1]) / close[0] <= MaxDotGapPercentage / 100"
+    },
+    "step_2_sell_check": {
+      "a": "current bar: close < open (bearish body)",
+      "b": "current sar: sar[0] > close[0] (dot above price = bearish SAR)",
+      "c": "prior N bars: for i in 1..MinConsecutiveDots: close[i] > open[i] AND sar[i] < close[i]",
+      "d": "gap check: abs(sar[0] - sar[1]) / close[0] <= MaxDotGapPercentage / 100"
+    },
+    "step_3_pending": "Store signal level (SAR value at flip). Monitor next 3 bars for price to reach that level.",
+    "step_4_confirm_or_warn": "If price reaches stored SAR level within 3 bars: confirmed signal. Else: warn 'possible fake signal'."
+  },
+
+  "logic": {
+    "steps": [
+      { "step": 1, "name": "compute_sar", "description": "Calculate Parabolic SAR with configured step/max" },
+      { "step": 2, "name": "check_prior_trend", "description": "Verify MinConsecutiveDots bars confirm the prior trend (bearish before buy, bullish before sell)" },
+      { "step": 3, "name": "check_current_flip", "description": "Current bar must show body in new direction AND SAR has flipped sides" },
+      { "step": 4, "name": "validate_gap", "description": "SAR dot spacing must be within MaxDotGapPercentage — filters erratic/noisy SAR" },
+      { "step": 5, "name": "pending_monitor", "description": "Capture SAR reversal level. Over next 3 bars, check if price confirms." },
+      { "step": 6, "name": "alert_or_warn", "description": "Confirmed: draw arrow + alert. Unconfirmed: warn of fake signal." }
+    ]
+  },
+
+  "sar_formula_notes": {
+    "acceleration_factor": "AF starts at SARStep on first extreme point, increases by SARStep each bar a new EP is set, capped at SARMaximum",
+    "default_comparison": {
+      "original_mql5_default": "step=0.02, max=0.2",
+      "this_tool": "step=0.1, max=1.0 — 5x more aggressive, faster-moving SAR, more responsive but noisier"
+    },
+    "sensitivity_note": "Higher step = SAR accelerates faster = dots closer to price = more reversals detected but also more noise. Their 0.1/1.0 is very aggressive vs standard 0.02/0.2."
+  },
+
+  "backtesting": {
+    "tested_on": ["Volatility 25 Index", "Step Index"],
+    "verdict": "Positive results shown with live examples",
+    "caveat": "Some signals require additional filtering. Larger timeframes recommended to reduce false signals.",
+    "note": "No quantified win rate or pip statistics provided — purely visual backtest."
+  },
+
+  "components_to_build": [
+    {
+      "name": "PsarCalculator",
+      "type": "indicator",
+      "priority": 2,
+      "contract": "compute_psar(highs, lows, step, maximum) -> np.ndarray",
+      "note": "Standard SAR algorithm — already in ta-lib and pandas_ta. Don't implement from scratch."
+    },
+    {
+      "name": "SarReversalDetector",
+      "type": "signal_detector",
+      "priority": 1,
+      "contract": "detect(psar, opens, closes, config) -> Optional[Signal]",
+      "returns": "Signal with direction and pending SAR level",
+      "note": "The multi-bar confirmation window and gap check are the novel parts."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "Multi-bar confirmation window: N prior bars in prior direction before accepting reversal (MinConsecutiveDots)",
+      "Gap consistency check: SAR dot spacing as % of price — filters erratic indicator behavior",
+      "Pending signal mechanism: capture level, monitor N bars for confirmation",
+      "Fake signal warning: explicit timeout if price doesn't reach expected level"
+    ],
+    "discard": [
+      "SAR as primary entry trigger — too lagging for M1 precision entry",
+      "SARStep=0.1, SARMaximum=1.0 — too aggressive; standard 0.02/0.2 is more appropriate",
+      "3-bar confirmation window — too short for M15 structure; 5-10 bars on M15 is better",
+      "No SL/TP — signals only"
+    ],
+    "improve": [
+      "Use SAR as TRAILING SL manager not entry trigger: once in trade, SAR dot = dynamic stop level",
+      "Combine SAR flip direction with zone interaction: SAR flips bullish AT demand zone = confluence",
+      "Use SAR for position management: trail SL to SAR value after P1 is hit",
+      "Normalize gap check: MaxDotGapPercentage in ATR units not % of close (works better across instruments)"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "sar_as_trailing_stop": "After P1 hit, trail SL to SAR dot value. SAR naturally moves with price acceleration. This adds a dynamic SL that tightens as trend develops — superior to fixed ATR trail.",
+    "multi_bar_confirmation_pattern": "MinConsecutiveDots is the same pattern as our departure candle gate — require the condition to hold for N bars, not just flash once. Validates our gate architecture.",
+    "gap_check_novel_filter": "SAR dot gap as % of close is a new filter type we don't use. Could generalize: 'indicator value jump % threshold' filter to detect when any indicator behaves erratically.",
+    "pending_mechanism_maps_to_zone_touch": "Their pending signal that monitors price reaching a stored level is exactly our zone interaction check: zone has a level, we wait for price to reach it."
+  }
+}

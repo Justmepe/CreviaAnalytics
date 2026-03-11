@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreviaCockpit — Analysis + Live Feed</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #070809;
+  --bg-2:       #0c0e12;
+  --surface:    #10141c;
+  --surface-2:  #151a26;
+  --border:     #1a2030;
+  --border-2:   #222c42;
+  --text-1:     #e2e6f0;
+  --text-2:     #788098;
+  --text-3:     #38405a;
+  --green:      #00e5a0;
+  --green-2:    #00b87e;
+  --green-dim:  rgba(0,229,160,0.08);
+  --red:        #ff3d5a;
+  --red-dim:    rgba(255,61,90,0.08);
+  --amber:      #f0a030;
+  --amber-dim:  rgba(240,160,48,0.08);
+  --blue:       #3d7fff;
+  --blue-dim:   rgba(61,127,255,0.08);
+  --purple:     #9b7cf4;
+}
+
+html { font-size: 14px; }
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; height: 52px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7,8,9,0.92);
+  backdrop-filter: blur(20px);
+}
+.nav-logo { display:flex; align-items:center; gap:8px; text-decoration:none; }
+.logo-mark {
+  width:28px; height:28px; border-radius:6px;
+  background:linear-gradient(135deg,var(--green),#0090ff);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Bebas Neue',sans-serif; font-size:12px; color:#070809; letter-spacing:1px;
+}
+.logo-text { font-family:'DM Sans',sans-serif; font-weight:500; font-size:14px; color:var(--text-1); }
+.logo-text em { color:var(--green); font-style:normal; }
+.nav-links { display:flex; gap:2px; list-style:none; }
+.nav-links a {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase;
+  color:var(--text-3); text-decoration:none; padding:6px 12px; border-radius:4px;
+  transition:color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color:var(--text-2); background:var(--surface); }
+.nav-links a.active { color:var(--text-1); background:var(--surface-2); }
+.nav-right { display:flex; gap:8px; align-items:center; }
+.btn-ghost {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase;
+  color:var(--text-2); background:none; border:1px solid var(--border-2);
+  padding:6px 14px; border-radius:4px; cursor:pointer; transition:all 0.2s;
+}
+.btn-ghost:hover { color:var(--text-1); border-color:var(--text-3); }
+.btn-cta {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase;
+  color:#070809; background:var(--green); border:none; padding:7px 16px; border-radius:4px;
+  cursor:pointer; font-weight:500; box-shadow:0 0 18px rgba(0,229,160,0.2); transition:all 0.2s;
+}
+.btn-cta:hover { background:var(--green-2); }
+
+/* ── TICKER ── */
+.ticker {
+  position:fixed; top:52px; left:0; right:0; z-index:199;
+  display:flex; align-items:center; height:30px;
+  background:rgba(12,14,18,0.92); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border); padding:0 28px;
+}
+.t-live { display:flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.2px; color:var(--green); text-transform:uppercase; margin-right:16px; flex-shrink:0; }
+.pulse { width:5px; height:5px; border-radius:50%; background:var(--green); animation:pulseAnim 2s ease-in-out infinite; }
+@keyframes pulseAnim { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,229,160,0.5);}50%{opacity:0.5;box-shadow:0 0 0 5px rgba(0,229,160,0);} }
+.t-item { display:flex; align-items:center; gap:5px; padding:0 12px; border-right:1px solid var(--border); height:30px; }
+.tl { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); text-transform:uppercase; }
+.tv { font-family:'DM Mono',monospace; font-size:10px; font-weight:500; color:var(--text-1); }
+.tu { color:var(--green); font-family:'DM Mono',monospace; font-size:9px; }
+.td { color:var(--red); font-family:'DM Mono',monospace; font-size:9px; }
+.regime-chip { margin-left:12px; display:flex; align-items:center; gap:6px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.8px; text-transform:uppercase; }
+.rl { color:var(--text-3); }
+.chip-acc { color:var(--green); background:var(--green-dim); border:1px solid rgba(0,229,160,0.2); padding:1px 7px; border-radius:3px; }
+
+/* ══ PAGE LAYOUT ══ */
+.page-shell {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  min-height: calc(100vh - 82px);
+  margin-top: 82px;
+}
+
+/* ══ LEFT — existing analysis grid (unchanged) ══ */
+.analysis-col {
+  border-right: 1px solid var(--border);
+  padding: 24px 28px;
+}
+
+.analysis-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ah-left { display:flex; align-items:center; gap:14px; }
+.ah-title {
+  font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:3px; color:var(--text-1);
+}
+.ah-badges { display:flex; align-items:center; gap:6px; }
+.badge-pro  { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.8px; text-transform:uppercase; color:var(--green); background:var(--green-dim); border:1px solid rgba(0,229,160,0.2); padding:3px 8px; border-radius:3px; display:flex; align-items:center; gap:4px; }
+.badge-free { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.8px; text-transform:uppercase; color:var(--text-3); background:var(--surface); border:1px solid var(--border); padding:3px 8px; border-radius:3px; }
+.badge-sep  { color:var(--text-3); font-size:10px; }
+.view-all-link { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase; color:var(--text-3); text-decoration:none; display:flex; align-items:center; gap:5px; transition:color 0.2s; }
+.view-all-link:hover { color:var(--green); }
+
+/* Filter pills */
+.filter-row { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:20px; align-items:center; }
+.fpill {
+  font-family:'DM Mono',monospace; font-size:9.5px; letter-spacing:0.5px; text-transform:uppercase;
+  color:var(--text-3); background:none; border:1px solid var(--border);
+  padding:4px 12px; border-radius:20px; cursor:pointer; transition:all 0.15s;
+}
+.fpill:hover { color:var(--text-2); border-color:var(--border-2); }
+.fpill.active { color:var(--text-1); background:var(--surface-2); border-color:var(--border-2); }
+.fpill.f-defi.active    { color:var(--green); border-color:rgba(0,229,160,0.3); background:var(--green-dim); }
+.fpill.f-meme.active    { color:var(--amber); border-color:rgba(240,160,48,0.3); background:var(--amber-dim); }
+.fpill.f-privacy.active { color:var(--purple); border-color:rgba(155,124,244,0.3); background:rgba(155,124,244,0.08); }
+.fpill.f-majors.active  { color:var(--blue); border-color:rgba(61,127,255,0.3); background:var(--blue-dim); }
+.filter-sep { width:1px; height:18px; background:var(--border-2); }
+
+/* ── CARDS GRID — UNCHANGED FROM ORIGINAL ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  animation: cardIn 0.35s ease forwards; opacity: 0;
+}
+@keyframes cardIn { from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);} }
+.card:hover { border-color:var(--border-2); box-shadow:0 4px 20px rgba(0,0,0,0.4); }
+.card:nth-child(1){animation-delay:0s}.card:nth-child(2){animation-delay:0.04s}
+.card:nth-child(3){animation-delay:0.08s}.card:nth-child(4){animation-delay:0.12s}
+.card:nth-child(5){animation-delay:0.16s}.card:nth-child(6){animation-delay:0.2s}
+.card:nth-child(7){animation-delay:0.24s}.card:nth-child(8){animation-delay:0.28s}
+.card:nth-child(9){animation-delay:0.32s}
+
+.card-top { display:flex; align-items:center; justify-content:space-between; }
+.card-tags { display:flex; gap:4px; align-items:center; }
+.ctag {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.5px; text-transform:uppercase;
+  padding:2px 7px; border-radius:3px; font-weight:500;
+}
+.ct-news    { background:var(--surface-2); color:var(--text-3); border:1px solid var(--border); }
+.ct-memo    { background:var(--surface-2); color:var(--text-3); border:1px solid var(--border); }
+.ct-thread  { background:var(--surface-2); color:var(--text-3); border:1px solid var(--border); }
+.ct-defi    { background:var(--green-dim);  color:var(--green);  }
+.ct-privacy { background:rgba(155,124,244,0.08); color:var(--purple); }
+.ct-meme    { background:var(--amber-dim);  color:var(--amber);  }
+.ct-majors  { background:var(--blue-dim);   color:var(--blue);   }
+.ct-global  { background:var(--red-dim);    color:var(--red);    }
+
+.card-time { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); }
+
+.card-headline { font-size:13px; font-weight:600; line-height:1.4; color:var(--text-1); letter-spacing:-0.1px; }
+.card-body     { font-size:11.5px; color:var(--text-2); line-height:1.55; }
+
+.card-coins { display:flex; gap:4px; flex-wrap:wrap; }
+.ccoin {
+  font-family:'DM Mono',monospace; font-size:9.5px; font-weight:500;
+  padding:2px 7px; border-radius:3px;
+  background:var(--bg-2); border:1px solid var(--border); color:var(--text-3);
+}
+
+.card-footer {
+  display:flex; justify-content:flex-end; padding-top:6px; border-top:1px solid var(--border);
+}
+.card-read { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); letter-spacing:0.8px; text-transform:uppercase; display:flex; align-items:center; gap:4px; transition:color 0.2s; }
+.card:hover .card-read { color:var(--text-2); }
+
+/* ══ RIGHT — LIVE SOCIAL FEED ══ */
+.feed-col {
+  position: sticky;
+  top: 82px;
+  height: calc(100vh - 82px);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-2);
+  overflow: hidden;
+}
+
+/* Feed header */
+.feed-header {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--bg-2);
+}
+
+.fh-row1 {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+}
+
+.fh-title-group { display:flex; align-items:center; gap:10px; }
+.fh-title {
+  font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px; color:var(--text-1);
+}
+.fh-live {
+  display:flex; align-items:center; gap:4px;
+  font-family:'DM Mono',monospace; font-size:9px; color:var(--green); letter-spacing:1px; text-transform:uppercase;
+}
+
+.fh-actions { display:flex; gap:6px; align-items:center; }
+
+.fh-btn {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.5px; text-transform:uppercase;
+  color:var(--text-3); background:none; border:1px solid var(--border);
+  padding:4px 9px; border-radius:3px; cursor:pointer; transition:all 0.15s;
+}
+.fh-btn:hover { color:var(--text-2); border-color:var(--border-2); }
+.fh-btn.paused { color:var(--amber); border-color:rgba(240,160,48,0.3); background:var(--amber-dim); }
+
+/* Tabs */
+.feed-tabs { display:flex; gap:0; border-bottom:1px solid var(--border); margin:0 -16px; padding:0 16px; }
+.ftab {
+  font-family:'DM Mono',monospace; font-size:9.5px; letter-spacing:0.5px; text-transform:uppercase;
+  color:var(--text-3); background:none; border:none; border-bottom:2px solid transparent;
+  padding:8px 10px; cursor:pointer; transition:all 0.15s; margin-bottom:-1px;
+}
+.ftab:hover { color:var(--text-2); }
+.ftab.active { color:var(--text-1); border-bottom-color:var(--green); }
+
+/* Compose box */
+.compose-box {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--bg);
+}
+
+.compose-inner {
+  display: flex; gap: 10px; align-items: flex-start;
+}
+
+.compose-avatar {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--green), #0090ff);
+  display: flex; align-items: center; justify-content: center;
+  font-family:'DM Mono',monospace; font-size:9px; font-weight:500; color:#070809;
+}
+
+.compose-right { flex: 1; }
+
+.compose-input {
+  width: 100%; background: none; border: none; outline: none;
+  font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 300;
+  color: var(--text-1); resize: none; min-height: 36px;
+  placeholder-color: var(--text-3); line-height: 1.5;
+}
+.compose-input::placeholder { color: var(--text-3); }
+
+.compose-footer {
+  display: flex; align-items: center; justify-content: space-between; margin-top: 8px;
+}
+
+.compose-tools { display:flex; gap:6px; }
+.compose-tool {
+  font-size: 13px; cursor: pointer; opacity: 0.4;
+  transition: opacity 0.15s; background:none; border:none; padding:2px 4px;
+}
+.compose-tool:hover { opacity: 0.8; }
+
+.compose-actions { display:flex; align-items:center; gap:8px; }
+.char-count { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); }
+.post-btn {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.8px; text-transform:uppercase;
+  color:#070809; background:var(--green); border:none; padding:5px 14px; border-radius:3px;
+  cursor:pointer; font-weight:500; transition:all 0.15s;
+}
+.post-btn:hover { background:var(--green-2); }
+.post-btn:disabled { opacity:0.3; cursor:default; }
+
+/* ── FEED SCROLL AREA ── */
+.feed-scroll {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.feed-scroll::-webkit-scrollbar { width: 2px; }
+.feed-scroll::-webkit-scrollbar-thumb { background: var(--border); }
+
+/* ── POST ITEM ── */
+.post {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 0;
+  transition: background 0.15s;
+  animation: postIn 0.35s ease forwards;
+  position: relative;
+}
+@keyframes postIn { from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);} }
+.post:hover { background: var(--surface); }
+.post.new-post { animation: postNew 0.5s ease forwards; }
+@keyframes postNew {
+  0%  { opacity:0; background:rgba(0,229,160,0.05); transform:translateY(-8px); }
+  40% { background:rgba(0,229,160,0.08); }
+  100%{ opacity:1; background:transparent; transform:translateY(0); }
+}
+
+.post-header { display:flex; align-items:flex-start; gap:10px; margin-bottom:8px; }
+
+.post-avatar {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'DM Mono',monospace; font-size:9px; font-weight:500;
+}
+.av-cc    { background:linear-gradient(135deg,var(--green),#0090ff); color:#070809; }
+.av-user1 { background:linear-gradient(135deg,#f7931a,#e07c10); color:#070809; }
+.av-user2 { background:linear-gradient(135deg,#627eea,#4f67c8); color:#fff; }
+.av-user3 { background:linear-gradient(135deg,#9945ff,#14f195); color:#fff; }
+.av-user4 { background:linear-gradient(135deg,#f03e5a,#c02040); color:#fff; }
+.av-user5 { background:linear-gradient(135deg,#f0a030,#c07820); color:#070809; }
+.av-user6 { background:linear-gradient(135deg,#00c8d4,#0090aa); color:#070809; }
+
+.post-meta { flex:1; }
+.post-name-row { display:flex; align-items:center; gap:6px; }
+.post-name {
+  font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:var(--text-1);
+}
+.post-handle { font-family:'DM Mono',monospace; font-size:10px; color:var(--text-3); }
+.post-verified {
+  font-size:10px;
+  background:var(--green-dim); color:var(--green); border:1px solid rgba(0,229,160,0.2);
+  padding:0px 5px; border-radius:2px; font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.5px; text-transform:uppercase;
+}
+.post-time { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); margin-top:1px; }
+
+.post-more {
+  background:none; border:none; color:var(--text-3); cursor:pointer; font-size:14px;
+  padding:0 4px; line-height:1; transition:color 0.15s;
+}
+.post-more:hover { color:var(--text-2); }
+
+/* post body */
+.post-body {
+  font-size:12.5px; color:var(--text-1); line-height:1.6; margin-bottom:10px;
+  padding-left: 40px;
+}
+.post-body .hi  { color:var(--green); font-weight:500; }
+.post-body .warn{ color:var(--amber); font-weight:500; }
+.post-body .tag { color:var(--blue); }
+.post-body .cash { color:var(--green); font-family:'DM Mono',monospace; font-size:11.5px; }
+
+/* signal card inside post */
+.post-signal-card {
+  margin: 0 0 10px 40px;
+  background: var(--bg); border:1px solid var(--border-2); border-radius:6px;
+  padding:12px 14px; display:flex; flex-direction:column; gap:8px;
+}
+.psc-header { display:flex; align-items:center; justify-content:space-between; }
+.psc-type { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--text-3); }
+.psc-badge {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.5px; text-transform:uppercase;
+  padding:2px 7px; border-radius:3px;
+}
+.psc-regime  { color:var(--red); background:var(--red-dim); border:1px solid rgba(255,61,90,0.2); }
+.psc-bullish { color:var(--green); background:var(--green-dim); border:1px solid rgba(0,229,160,0.2); }
+.psc-neutral { color:var(--amber); background:var(--amber-dim); border:1px solid rgba(240,160,48,0.2); }
+.psc-value { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--text-1); line-height:1; }
+.psc-sub   { font-family:'DM Mono',monospace; font-size:10px; color:var(--text-2); }
+
+/* image/chart preview in post */
+.post-chart {
+  margin: 0 0 10px 40px;
+  background:var(--bg); border:1px solid var(--border); border-radius:5px;
+  height:80px; overflow:hidden; position:relative;
+  display:flex; align-items:center; justify-content:center;
+}
+.post-chart svg { width:100%; height:100%; }
+.post-chart-label { position:absolute; bottom:6px; right:8px; font-family:'DM Mono',monospace; font-size:8px; color:var(--text-3); }
+
+/* quoted post */
+.post-quote {
+  margin: 0 0 10px 40px;
+  background:var(--bg); border:1px solid var(--border-2); border-radius:5px;
+  padding:10px 12px;
+}
+.pq-name  { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:var(--text-2); margin-bottom:3px; }
+.pq-body  { font-size:11.5px; color:var(--text-3); line-height:1.5; }
+
+/* reactions bar */
+.post-actions {
+  display: flex; align-items: center; gap: 0;
+  padding-left: 36px;
+}
+
+.pact {
+  display:flex; align-items:center; gap:5px;
+  font-family:'DM Mono',monospace; font-size:10px; color:var(--text-3);
+  background:none; border:none; cursor:pointer; padding:5px 10px; border-radius:4px;
+  transition:all 0.15s; flex:1; justify-content:center;
+}
+.pact:hover { background:var(--surface-2); }
+.pact.liked { color:var(--red); }
+.pact.liked .pact-icon { filter:none; }
+.pact.reposted { color:var(--green); }
+.pact-icon { font-size:13px; line-height:1; }
+.pact-count { font-size:10px; }
+
+/* reply thread indent */
+.post.is-reply {
+  padding-left: 40px;
+  border-left: 2px solid var(--border-2);
+  margin-left: 16px;
+  background: rgba(0,0,0,0.15);
+}
+.post.is-reply .post-body { padding-left:0; }
+.post.is-reply .post-actions { padding-left:0; }
+
+/* thread connector line */
+.post.has-replies::after {
+  content:'';
+  position:absolute; left:29px; top:46px; bottom:-1px;
+  width:1px; background:var(--border-2);
+}
+
+/* divider */
+.feed-date-label {
+  padding:6px 16px;
+  font-family:'DM Mono',monospace; font-size:8.5px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--text-3); background:var(--bg); border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:5;
+}
+
+/* follow suggestion */
+.follow-suggestion {
+  padding:12px 16px; border-bottom:1px solid var(--border);
+  background:var(--surface); display:flex; align-items:center; gap:10px;
+}
+.fs-text { flex:1; }
+.fs-name { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:var(--text-1); display:flex; align-items:center; gap:6px; }
+.fs-handle { font-family:'DM Mono',monospace; font-size:10px; color:var(--text-3); }
+.fs-desc   { font-size:11px; color:var(--text-2); margin-top:1px; }
+.follow-btn {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.5px; text-transform:uppercase;
+  color:var(--green); background:var(--green-dim); border:1px solid rgba(0,229,160,0.2);
+  padding:5px 12px; border-radius:3px; cursor:pointer; transition:all 0.15s; flex-shrink:0;
+  font-weight:500;
+}
+.follow-btn:hover { background:rgba(0,229,160,0.15); }
+.follow-btn.following {
+  color:var(--text-3); background:var(--surface-2); border-color:var(--border);
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width:1100px) {
+  .page-shell { grid-template-columns:1fr 300px; }
+  .cards-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:860px) {
+  .page-shell { grid-template-columns:1fr; }
+  .feed-col { position:relative; top:0; height:500px; border-top:1px solid var(--border); }
+  nav { padding:0 16px; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">CC</div>
+    <span class="logo-text">Crevia<em>Cockpit</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Market</a></li>
+    <li><a href="#">Intelligence</a></li>
+    <li><a href="#">Risk Calc</a></li>
+    <li><a href="#" class="active">Analysis</a></li>
+    <li><a href="#">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-ghost">Sign In</button>
+    <button class="btn-cta">Join Waitlist</button>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="t-live"><span class="pulse"></span>Live</div>
+  <div class="t-item"><span class="tl">BTC</span><span class="tv">$67,813</span><span class="tu">+5.07%</span></div>
+  <div class="t-item"><span class="tl">ETH</span><span class="tv">$2,024</span><span class="tu">+9.16%</span></div>
+  <div class="t-item"><span class="tl">MCAP</span><span class="tv">$2.43T</span></div>
+  <div class="t-item"><span class="tl">BTC.D</span><span class="tv">56.1%</span></div>
+  <div class="t-item"><span class="tl">F&amp;G</span><span class="tv" style="color:var(--red)">11</span><span class="td">Extreme Fear</span></div>
+  <div class="regime-chip"><span class="rl">Regime</span><span class="chip-acc">Accumulation · 68%</span></div>
+</div>
+
+<div class="page-shell">
+
+  <!-- ══ LEFT: EXISTING ANALYSIS GRID (unchanged) ══ -->
+  <div class="analysis-col">
+    <div class="analysis-header">
+      <div class="ah-left">
+        <span class="ah-title">Latest Analysis</span>
+        <div class="ah-badges">
+          <span class="badge-pro"><span class="pulse"></span>Pro · Live</span>
+          <span class="badge-sep">|</span>
+          <span class="badge-free">Free · 6h Delay</span>
+        </div>
+      </div>
+      <a href="#" class="view-all-link">View All →</a>
+    </div>
+
+    <div class="filter-row">
+      <button class="fpill active" onclick="filterCards(this,'all')">All</button>
+      <button class="fpill" onclick="filterCards(this,'threads')">Threads</button>
+      <button class="fpill" onclick="filterCards(this,'memos')">Memos</button>
+      <button class="fpill" onclick="filterCards(this,'news')">News</button>
+      <button class="fpill" onclick="filterCards(this,'alerts')">Alerts</button>
+      <div class="filter-sep"></div>
+      <button class="fpill f-majors" onclick="filterCards(this,'majors')">Majors</button>
+      <button class="fpill f-meme" onclick="filterCards(this,'meme')">Memecoins</button>
+      <button class="fpill f-privacy" onclick="filterCards(this,'privacy')">Privacy</button>
+      <button class="fpill f-defi" onclick="filterCards(this,'defi')">DeFi</button>
+    </div>
+
+    <div class="cards-grid" id="cardsGrid">
+
+      <div class="card" data-type="news" data-sector="defi">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-news">News</span><span class="ctag ct-defi">DeFi</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">Aave Labs shuts down Avara umbrella brand and family wallet to refocus on its core DeFi lending protocol</div>
+        <div class="card-body">The strategic pivot marks a return to basics for one of DeFi's largest platforms. Meanwhile, C...</div>
+        <div class="card-coins"><span class="ccoin">AAVE</span><span class="ccoin">UNI</span><span class="ccoin">CRV</span><span class="ccoin">LDO</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="memos" data-sector="defi">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-memo">Memo</span><span class="ctag ct-defi">DeFi</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">AAVE Holds Support, UNI and CRV Under Continued Pressure</div>
+        <div class="card-body">DeFi sector underperforming majors. AAVE showing relative strength but sector sentiment remains weak...</div>
+        <div class="card-coins"><span class="ccoin">AAVE</span><span class="ccoin">UNI</span><span class="ccoin">CRV</span><span class="ccoin">LDO</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="news" data-sector="privacy">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-news">News</span><span class="ctag ct-privacy">Privacy</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">India orders crypto exchanges to delist privacy coins including Monero, Zcash, and Dash</div>
+        <div class="card-body">The crackdown marks a major regulatory blow to the privacy crypto sector. Sharp sell-offs triggered...</div>
+        <div class="card-coins"><span class="ccoin">XMR</span><span class="ccoin">ZEC</span><span class="ccoin">DASH</span><span class="ccoin">SCRT</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="memos" data-sector="privacy">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-memo">Memo</span><span class="ctag ct-privacy">Privacy</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">XMR Holds While Alts Bleed — What's Behind Privacy Token Resilience?</div>
+        <div class="card-body">Privacy coins decoupling from broader altcoin weakness. XMR up vs. market while ZEC and DASH lag...</div>
+        <div class="card-coins"><span class="ccoin">XMR</span><span class="ccoin">ZEC</span><span class="ccoin">DASH</span><span class="ccoin">SCRT</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="news" data-sector="meme">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-news">News</span><span class="ctag ct-meme">Memecoins</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">Major memecoins SHIB and DOGE face recovery struggles as investors rotate into newer tokens</div>
+        <div class="card-body">Market watching for bounce signals amid ongoing memec rotation toward APEMARS and DeepSnitch AI...</div>
+        <div class="card-coins"><span class="ccoin">DOGE</span><span class="ccoin">SHIB</span><span class="ccoin">PEPE</span><span class="ccoin">FLOKI</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="memos" data-sector="meme">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-memo">Memo</span><span class="ctag ct-meme">Memecoins</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">Meme Season on Pause — DOGE Holds but PEPE and SHIB Fade Fast</div>
+        <div class="card-body">Speculative appetite drying up as fear dominates. DOGE showing most resilience in the sector...</div>
+        <div class="card-coins"><span class="ccoin">DOGE</span><span class="ccoin">SHIB</span><span class="ccoin">PEPE</span><span class="ccoin">FLOKI</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="news" data-sector="majors">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-news">News</span><span class="ctag ct-majors">Majors</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">Ethereum faces dust attack surge post-Fusaka upgrade while Vitalik Buterin issues layer-2 warning</div>
+        <div class="card-body">ETH trading at $2,137. Meanwhile, Tether scales back $20B funding round...</div>
+        <div class="card-coins"><span class="ccoin">ETH</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="memos" data-sector="majors">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-memo">Memo</span><span class="ctag ct-majors">Majors</span></div>
+          <span class="card-time">21d ago</span>
+        </div>
+        <div class="card-headline">ETH Holds Near $1,883 — Upgrade Momentum vs. Macro Headwinds</div>
+        <div class="card-body">Upcoming upgrade driving developer activity but macro pressure suppressing price. Watch $1,900 as key pivot...</div>
+        <div class="card-coins"><span class="ccoin">ETH</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+      <div class="card" data-type="threads" data-sector="global">
+        <div class="card-top">
+          <div class="card-tags"><span class="ctag ct-thread">Thread</span><span class="ctag ct-global">Global</span></div>
+          <span class="card-time">12 posts · 21d ago</span>
+        </div>
+        <div class="card-headline">📊 Daily Crypto Market Scan — Feb 23, 2026 · 08:27 UTC</div>
+        <div class="card-body">The crypto market is deep in Extreme Fear territory. BTC dominance holds above 56% as altcoins bleed. Gold and Silver surging...</div>
+        <div class="card-coins"><span class="ccoin">BTC</span><span class="ccoin">ETH</span><span class="ccoin">SOL</span><span class="ccoin">BNB</span><span class="ccoin">DOGE</span></div>
+        <div class="card-footer"><span class="card-read">Read →</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ RIGHT: LIVE SOCIAL FEED ══ -->
+  <div class="feed-col">
+
+    <!-- Header -->
+    <div class="feed-header">
+      <div class="fh-row1">
+        <div class="fh-title-group">
+          <span class="fh-title">Cockpit Feed</span>
+          <span class="fh-live"><span class="pulse"></span>Live</span>
+        </div>
+        <div class="fh-actions">
+          <button class="fh-btn" id="pauseBtn" onclick="togglePause()">⏸ Pause</button>
+        </div>
+      </div>
+      <div class="feed-tabs">
+        <button class="ftab active" onclick="switchTab(this)">For You</button>
+        <button class="ftab" onclick="switchTab(this)">Following</button>
+        <button class="ftab" onclick="switchTab(this)">Signals</button>
+        <button class="ftab" onclick="switchTab(this)">Whales</button>
+      </div>
+    </div>
+
+    <!-- Compose -->
+    <div class="compose-box">
+      <div class="compose-inner">
+        <div class="compose-avatar">You</div>
+        <div class="compose-right">
+          <textarea class="compose-input" id="composeInput" placeholder="Share your read on the market..." rows="2" oninput="updateCharCount(this)"></textarea>
+          <div class="compose-footer">
+            <div class="compose-tools">
+              <button class="compose-tool" title="Add chart">📊</button>
+              <button class="compose-tool" title="Mention asset">$</button>
+              <button class="compose-tool" title="Tag user">@</button>
+              <button class="compose-tool" title="Poll">📋</button>
+            </div>
+            <div class="compose-actions">
+              <span class="char-count" id="charCount">280</span>
+              <button class="post-btn" id="postBtn" onclick="submitPost()" disabled>Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feed scroll -->
+    <div class="feed-scroll" id="feedScroll">
+
+      <div class="feed-date-label">Live now</div>
+
+      <!-- POST: CreviaCockpit regime update -->
+      <div class="post has-replies new-post" id="post-regime">
+        <div class="post-header">
+          <div class="post-avatar av-cc">CC</div>
+          <div class="post-meta">
+            <div class="post-name-row">
+              <span class="post-name">CreviaCockpit</span>
+              <span class="post-verified">Signal</span>
+            </div>
+            <span class="post-time">just now</span>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-body">
+          <span class="cash">$BTC</span> regime updated to <span class="hi">Accumulation</span> at 68% confidence. Shift from Risk-Off — capital returning to spot.<br><br>
+          Funding rates flipped neutral. Exchange outflows accelerating. <span class="warn">Watch $69K resistance.</span>
+        </div>
+        <div class="post-signal-card">
+          <div class="psc-header">
+            <span class="psc-type">Market Regime</span>
+            <span class="psc-badge psc-bullish">Accumulation · 68%</span>
+          </div>
+          <div class="psc-value">68%</div>
+          <div class="psc-sub">Confidence · 78% historical accuracy</div>
+        </div>
+        <div class="post-actions">
+          <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count" id="r-regime">4</span></button>
+          <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count" id="rp-regime">12</span></button>
+          <button class="pact" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count" id="l-regime">38</span></button>
+          <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span><span class="pact-count"></span></button>
+        </div>
+      </div>
+
+      <!-- REPLY to regime post -->
+      <div class="post is-reply">
+        <div class="post-header">
+          <div class="post-avatar av-user1">JK</div>
+          <div class="post-meta">
+            <div class="post-name-row">
+              <span class="post-name">jayk_trades</span>
+            </div>
+            <span class="post-time">1m ago</span>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-body">Called it last night. The <span class="cash">$ETH</span> outflows from Coinbase were the tell. Already sized into a long.</div>
+        <div class="post-actions">
+          <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">1</span></button>
+          <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">3</span></button>
+          <button class="pact liked" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">14</span></button>
+          <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+        </div>
+      </div>
+
+      <!-- USER POST with chart -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-avatar av-user2">MR</div>
+          <div class="post-meta">
+            <div class="post-name-row">
+              <span class="post-name">macro_rita</span>
+            </div>
+            <span class="post-time">4m ago</span>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-body">
+          <span class="cash">$BTC</span> dominance cooling from 56.2% peak — first real sign of rotation. Watching ETH/BTC ratio. Break above 0.032 = alt season confirmation. <span class="tag">#BTC</span> <span class="tag">#ETH</span>
+        </div>
+        <div class="post-chart">
+          <svg viewBox="0 0 320 80" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#00e5a0" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <polygon points="0,60 40,52 80,58 120,40 160,44 200,28 240,22 280,18 320,14 320,80 0,80" fill="url(#cg1)"/>
+            <polyline points="0,60 40,52 80,58 120,40 160,44 200,28 240,22 280,18 320,14" fill="none" stroke="#00e5a0" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="320" cy="14" r="3" fill="#00e5a0"/>
+          </svg>
+          <span class="post-chart-label">BTC 4H</span>
+        </div>
+        <div class="post-actions">
+          <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">7</span></button>
+          <button class="pact reposted" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">21</span></button>
+          <button class="pact" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">56</span></button>
+          <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+        </div>
+      </div>
+
+      <!-- FOLLOW SUGGESTION -->
+      <div class="follow-suggestion">
+        <div class="post-avatar av-user3" style="width:32px;height:32px;">SV</div>
+        <div class="fs-text">
+          <div class="fs-name">sol_viper <span class="post-verified">Pro</span></div>
+          <div class="fs-handle">@sol_viper</div>
+          <div class="fs-desc">SOL analyst · 2.4k followers · Posts trade setups</div>
+        </div>
+        <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+      </div>
+
+      <!-- THREAD POST FROM CC -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-avatar av-cc">CC</div>
+          <div class="post-meta">
+            <div class="post-name-row">
+              <span class="post-name">CreviaCockpit</span>
+              <span class="post-verified">Signal</span>
+            </div>
+            <span class="post-time">9m ago · Thread 7/14</span>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-body">
+          DeFi TVL holding $48B despite price weakness. <span class="cash">$AAVE</span> utilisation rate actually increasing — users borrowing against BTC as collateral.<br><br>
+          <span class="hi">Bullish divergence</span> — price down but usage up.
+        </div>
+        <div class="post-actions">
+          <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">9</span></button>
+          <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">17</span></button>
+          <button class="pact" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">44</span></button>
+          <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+        </div>
+      </div>
+
+      <!-- USER POST quoting CC thread -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-avatar av-user4">TA</div>
+          <div class="post-meta">
+            <div class="post-name-row"><span class="post-name">the_altcoin_anon</span></div>
+            <span class="post-time">11m ago</span>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-body">This is exactly why I'm not selling <span class="cash">$AAVE</span> right now. TVL divergence from price = accumulation. Smart money doesn't exit when usage is up.</div>
+        <div class="post-quote">
+          <div class="pq-name">CreviaCockpit · Thread 7/14</div>
+          <div class="pq-body">DeFi TVL holding $48B despite price weakness. $AAVE utilisation rate actually increasing — bullish divergence.</div>
+        </div>
+        <div class="post-actions">
+          <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">3</span></button>
+          <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">8</span></button>
+          <button class="pact liked" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">29</span></button>
+          <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+        </div>
+      </div>
+
+      <div class="feed-date-label">30 minutes ago</div>
+
+      <!-- FOLLOW SUGGESTION 2 -->
+      <div class="follow-suggestion">
+        <div class="post-avatar av-user5" style="width:32px;height:32px;">WH</div>
+        <div class="fs-text">
+          <div class="fs-name">whale_hunter_k</div>
+          <div class="fs-handle">@whale_hunter_k</div>
+          <div class="fs-desc">On-chain analyst · Tracks large wallets</div>
+        </div>
+        <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+      </div>
+
+      <!-- CC WHALE ALERT POST -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-avatar av-cc">CC</div>
+          <div class="post-meta">
+            <div class="post-name-row">
+              <span class="post-name">CreviaCockpit</span>
+              <span class="post-verified">Signal</span>
+            </div>
+            <span class="post-time">28m ago</span>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-body">
+          🐋 <strong>Whale alert:</strong> <span class="hi">42,000 ETH</span> withdrawn from Binance → Cold Wallet.<br>
+          Third large ETH withdrawal this week. <span class="warn">Exchange supply dropping.</span> Accumulation pattern strengthening.
+        </div>
+        <div class="post-actions">
+          <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">11</span></button>
+          <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">34</span></button>
+          <button class="pact" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">72</span></button>
+          <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+        </div>
+      </div>
+
+      <!-- USER REPLY to whale -->
+      <div class="post is-reply">
+        <div class="post-header">
+          <div class="post-avatar av-user6">NP</div>
+          <div class="post-meta">
+            <div class="post-name-row"><span class="post-name">neon_positions</span></div>
+            <span class="post-time">25m ago</span>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-body">Combined with negative funding this is a textbook squeeze setup. My target is $72K within 48h.</div>
+        <div class="post-actions">
+          <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">2</span></button>
+          <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">5</span></button>
+          <button class="pact" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">18</span></button>
+          <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+        </div>
+      </div>
+
+    </div><!-- /feed-scroll -->
+  </div><!-- /feed-col -->
+
+</div><!-- /page-shell -->
+
+<script>
+// ── FILTER CARDS (left grid) ──
+function filterCards(btn, type) {
+  document.querySelectorAll('.fpill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(c => {
+    if (type === 'all') { c.style.display = ''; return; }
+    c.style.display = (c.dataset.type === type || c.dataset.sector === type) ? '' : 'none';
+  });
+}
+
+// ── FEED TABS ──
+function switchTab(btn) {
+  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── PAUSE ──
+let paused = false;
+let feedTimer;
+
+function togglePause() {
+  paused = !paused;
+  const btn = document.getElementById('pauseBtn');
+  btn.textContent = paused ? '▶ Resume' : '⏸ Pause';
+  btn.classList.toggle('paused', paused);
+  if (!paused) startLiveFeed();
+  else clearTimeout(feedTimer);
+}
+
+// ── REACTIONS ──
+function react(btn, type) {
+  const countEl = btn.querySelector('.pact-count');
+  const count = parseInt(countEl?.textContent || '0');
+  if (type === 'like') {
+    btn.classList.toggle('liked');
+    if (countEl) countEl.textContent = btn.classList.contains('liked') ? count + 1 : count - 1;
+  } else if (type === 'repost') {
+    btn.classList.toggle('reposted');
+    if (countEl) countEl.textContent = btn.classList.contains('reposted') ? count + 1 : count - 1;
+  } else if (type === 'reply') {
+    document.getElementById('composeInput').focus();
+    document.getElementById('composeInput').placeholder = 'Write your reply...';
+  }
+}
+
+// ── FOLLOW ──
+function toggleFollow(btn) {
+  const following = btn.classList.toggle('following');
+  btn.textContent = following ? 'Following' : 'Follow';
+}
+
+// ── COMPOSE ──
+function updateCharCount(el) {
+  const remaining = 280 - el.value.length;
+  document.getElementById('charCount').textContent = remaining;
+  document.getElementById('charCount').style.color = remaining < 20 ? 'var(--red)' : 'var(--text-3)';
+  document.getElementById('postBtn').disabled = el.value.trim().length === 0;
+}
+
+function submitPost() {
+  const input = document.getElementById('composeInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  const scroll = document.getElementById('feedScroll');
+  const firstDivider = scroll.querySelector('.feed-date-label');
+
+  const post = document.createElement('div');
+  post.className = 'post new-post';
+  post.innerHTML = `
+    <div class="post-header">
+      <div class="post-avatar av-cc" style="background:linear-gradient(135deg,#f0a030,#c07820);color:#070809;">You</div>
+      <div class="post-meta">
+        <div class="post-name-row"><span class="post-name">You</span></div>
+        <span class="post-time">just now</span>
+      </div>
+      <button class="post-more">···</button>
+    </div>
+    <div class="post-body">${escapeHtml(text).replace(/\$([A-Z]+)/g,'<span class="cash">$$$1</span>').replace(/#(\w+)/g,'<span class="tag">#$1</span>')}</div>
+    <div class="post-actions">
+      <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">0</span></button>
+      <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">0</span></button>
+      <button class="pact" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">0</span></button>
+      <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+    </div>`;
+
+  scroll.insertBefore(post, firstDivider ? firstDivider.nextSibling : scroll.firstChild);
+  input.value = '';
+  input.placeholder = 'Share your read on the market...';
+  document.getElementById('charCount').textContent = '280';
+  document.getElementById('postBtn').disabled = true;
+  scroll.scrollTop = 0;
+}
+
+function escapeHtml(t) {
+  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── LIVE FEED AUTO POSTS ──
+const livePosts = [
+  {
+    av:'av-user1', name:'jayk_trades', handle:'', time:'just now',
+    body:'<span class="cash">$SOL</span> breaking out of the wedge on 4H. Volume confirming. Target <span class="hi">$95</span> if <span class="warn">$88</span> holds as support.',
+    likes:8, reposts:4, replies:2
+  },
+  {
+    av:'av-cc', name:'CreviaCockpit', badge:'Signal', time:'just now',
+    body:'⚡ New trade setup: <span class="cash">$ETH</span> Long fired.<br>Entry $2,020 · TP $2,180 · SL $1,940 · <span class="hi">2.2R</span>',
+    likes:31, reposts:19, replies:6
+  },
+  {
+    av:'av-user3', name:'sol_viper', time:'just now',
+    body:'Everyone watching <span class="cash">$BTC</span> but the real play is <span class="cash">$XMR</span> right now. Privacy delistings in India actually bullish for P2P premium. Under the radar.',
+    likes:22, reposts:11, replies:5
+  },
+  {
+    av:'av-user5', name:'whale_hunter_k', time:'just now',
+    body:'🐋 Another 680 <span class="cash">$BTC</span> just hit Bybit from an unknown wallet. That\'s 5k+ BTC deposited to exchanges in the last 2 hours. <span class="warn">Sell pressure incoming — be careful here.</span>',
+    likes:45, reposts:28, replies:9
+  },
+  {
+    av:'av-user6', name:'neon_positions', time:'just now',
+    body:'Funding rates on <span class="cash">$ETH</span> just flipped positive for first time in 4 days. Shorts being squeezed out. This move has legs.',
+    likes:17, reposts:9, replies:3
+  }
+];
+
+let liveIdx = 0;
+
+function injectLivePost() {
+  if (paused) return;
+  const p = livePosts[liveIdx % livePosts.length];
+  liveIdx++;
+
+  const scroll = document.getElementById('feedScroll');
+  const firstDivider = scroll.querySelector('.feed-date-label');
+
+  const div = document.createElement('div');
+  div.className = 'post new-post';
+  div.innerHTML = `
+    <div class="post-header">
+      <div class="post-avatar ${p.av}">${p.name.slice(0,2).toUpperCase()}</div>
+      <div class="post-meta">
+        <div class="post-name-row">
+          <span class="post-name">${p.name}</span>
+          ${p.badge ? `<span class="post-verified">${p.badge}</span>` : ''}
+        </div>
+        <span class="post-time">${p.time}</span>
+      </div>
+      <button class="post-more">···</button>
+    </div>
+    <div class="post-body">${p.body}</div>
+    <div class="post-actions">
+      <button class="pact" onclick="react(this,'reply')"><span class="pact-icon">💬</span><span class="pact-count">${p.replies}</span></button>
+      <button class="pact" onclick="react(this,'repost')"><span class="pact-icon">🔁</span><span class="pact-count">${p.reposts}</span></button>
+      <button class="pact" onclick="react(this,'like')"><span class="pact-icon">🔥</span><span class="pact-count">${p.likes}</span></button>
+      <button class="pact" onclick="react(this,'bookmark')"><span class="pact-icon">🔖</span></button>
+    </div>`;
+
+  scroll.insertBefore(div, firstDivider ? firstDivider.nextSibling : scroll.firstChild);
+  setTimeout(() => div.classList.remove('new-post'), 600);
+
+  // trim old posts
+  const all = scroll.querySelectorAll('.post:not(.is-reply)');
+  if (all.length > 18) all[all.length-1].remove();
+
+  feedTimer = setTimeout(injectLivePost, 9000);
+}
+
+function startLiveFeed() {
+  feedTimer = setTimeout(injectLivePost, 9000);
+}
+
+startLiveFeed();
+</script>
+
+</body>
+</html>

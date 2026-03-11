@@ -1,0 +1,47 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 49,
+  "title": "Integrating Trend, Momentum, and Volatility Indicators",
+  "source_url": "https://www.mql5.com/en/articles/20168",
+  "verdict": "MEDIUM EXTRACT - 3-group weighted voting (Trend:3x, Momentum:2x, Volatility:1x). ADX threshold=25. RSI28 complement.",
+  "indicator_groups": {
+    "trend_3x": [
+      "EMA50",
+      "EMA200",
+      "ADX14(threshold=25)"
+    ],
+    "momentum_2x": [
+      "RSI14",
+      "RSI28",
+      "MACD",
+      "Stochastic",
+      "Momentum14",
+      "CCI20",
+      "WilliamsR"
+    ],
+    "volatility_1x": [
+      "ATR14",
+      "BollingerBands"
+    ]
+  },
+  "adx_threshold": {
+    "original": 25,
+    "our_current": 20,
+    "recommendation": 22
+  },
+  "keep_discard": {
+    "keep": [
+      "3-group weighted voting",
+      "ADX=25 threshold consideration",
+      "RSI28 as macro RSI complement"
+    ],
+    "discard": [
+      "Volatility as directional vote (ATR/BB have no direction)",
+      "EMA50/200 (use market_structure)"
+    ],
+    "improve": [
+      "Separate filter votes from directional votes",
+      "ADX threshold 22 as compromise"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 65,
+  "total_parts": 65,
+  "title": "Engineering Trading Discipline into Code (Part 2): Building a Daily Trade Limit Enforcer",
+  "source_url": "https://www.mql5.com/en/articles/21313",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor (Architecture)",
+  "verdict": "HIGH EXTRACT \u2014 3-state machine (ALLOWED/CAUTION/LIMIT), amber threshold for early warning, automatic position closure on limit breach, 1-second cache refresh. Completes the discipline system from Part 64.",
+  "three_state_machine": {
+    "ALLOWED": "trades < (limit - amber) \u2014 all clear",
+    "CAUTION": "trades >= (limit - amber) AND trades < limit \u2014 warning mode",
+    "LIMIT": "trades >= limit \u2014 halt all new trades",
+    "transition": "if trades >= limit: LIMIT; elif limit - trades <= amber: CAUTION; else: ALLOWED"
+  },
+  "enforcement_mechanisms": {
+    "pending_order_cancellation": "On LIMIT: iterate open orders, cancel all pending via TRADE_ACTION_REMOVE (market orders not touched)",
+    "position_closure": "OnTradeTransaction DEAL_ADD: if state==LIMIT and position just opened, immediately close with opposing market order",
+    "existing_positions": "Positions opened BEFORE limit was reached are NOT closed \u2014 only NEW positions after limit"
+  },
+  "get_day_start": {
+    "logic": "Parse configured start time (e.g. 09:00). If current time < today 09:00, use yesterday's date. Construct datetime anchor.",
+    "purpose": "Consistent daily reset across broker timezones"
+  },
+  "global_variable_communication": {
+    "DTL_LIMIT": "Max trades per day (stored as double, used as int)",
+    "DTL_START_TIME": "Trading day start as HHMM integer (900 = 09:00)",
+    "DTL_AMBER": "Remaining trade threshold for CAUTION state",
+    "pattern": "Dashboard writes; shared library + enforcer reads \u2014 single source of truth"
+  },
+  "caching": {
+    "refresh_interval": "1 second minimum between full updates",
+    "invalidation": "On SetParameters() call (config change triggers refresh)"
+  },
+  "config": {
+    "MaxTradesPerDay": {
+      "default": 5,
+      "description": "Hard limit before LIMIT state"
+    },
+    "AmberThreshold": {
+      "default": 2,
+      "description": "Remaining trades that trigger CAUTION"
+    },
+    "DayStartTime": {
+      "default": "00:00",
+      "description": "Session anchor for daily reset"
+    }
+  },
+  "keep_discard": {
+    "keep": [
+      "3-state machine ALLOWED/CAUTION/LIMIT with amber threshold",
+      "Pending order cancellation on LIMIT (clean slate)",
+      "Position closure on new open after LIMIT (immediate reversal)",
+      "1-second cache refresh (balance performance vs. responsiveness)",
+      "Global variable pattern for cross-component communication"
+    ],
+    "discard": [
+      "MQL5 global variables (use Python shared state / Redis)",
+      "Dashboard display"
+    ],
+    "improve": [
+      "Implement in Python as DisciplineEngine.check_state() returning DisciplineState enum",
+      "CAUTION state: tighten TP targets (take profit faster when near limit)",
+      "CAUTION state: skip corrective zone trades (only take impulsive setups)",
+      "Persist daily state to file/DB for recovery after restart"
+    ]
+  },
+  "creviaderiv_application": {
+    "state_machine_in_python": "Add DisciplineState to TradingOrchestrator; check before execute_signal()",
+    "caution_behavior": "In CAUTION: set enable_corrective_trades=False and MIN_RRR=2.0 (only take best setups)",
+    "limit_behavior": "In LIMIT: skip all new signals for the day; log reason"
+  }
+}

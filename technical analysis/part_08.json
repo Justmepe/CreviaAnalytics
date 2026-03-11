@@ -1,0 +1,185 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 8,
+  "total_parts": 65,
+  "title": "Metrics Board",
+  "subtitle": "Interactive On-Demand Market Analysis Panel — 6 Analysis Buttons, H1 Timeframe",
+  "source_url": "https://www.mql5.com/en/articles/16584",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-01-23",
+  "type": "Expert Advisor (UI Panel)",
+  "verdict": "REFERENCE — extract the 6 metrics as a structured data object. The UI architecture is MQL5-specific but the metric set is reusable.",
+
+  "tool_classification": {
+    "category": "interactive_dashboard",
+    "generates_signals": false,
+    "executes_trades": false,
+    "runs": "on_demand",
+    "update_trigger": "button_click",
+    "timeframe": "H1",
+    "symbol_agnostic": true
+  },
+
+  "depends_on": {
+    "other_parts": [1, 2, 3],
+    "shared_components": ["BrokerDataAdapter", "DataTableRenderer"],
+    "new_this_part": ["InteractivePanelUI", "ButtonEventRouter", "MetricsCalculator"]
+  },
+
+  "core_concept": {
+    "name": "On-Demand Metrics Retrieval",
+    "description": "Display only what the trader asks for, when they ask for it. Six dedicated analysis views, each fetched on button click. Reduces cognitive load compared to always-on dashboards.",
+    "six_analysis_modules": [
+      { "name": "High/Low Analysis",    "metrics": ["H1 high", "H1 low"] },
+      { "name": "Volume Analysis",      "metrics": ["last_hour_volume"] },
+      { "name": "Trend Analysis",       "metrics": ["14-period MA"] },
+      { "name": "Volatility Analysis",  "metrics": ["ATR(14)"] },
+      { "name": "Moving Average",       "metrics": ["50-period SMA"] },
+      { "name": "Support/Resistance",   "metrics": ["prev_hour_low as support", "prev_hour_high as resistance"] }
+    ]
+  },
+
+  "data_requirements": [
+    { "name": "h1_ohlcv",     "timeframe": "H1", "fields": ["high", "low", "volume", "close"], "range": "last 50 bars" },
+    { "name": "atr_14",       "indicator": "ATR", "period": 14, "timeframe": "H1" },
+    { "name": "sma_50",       "indicator": "SMA", "period": 50, "source": "close", "timeframe": "H1" },
+    { "name": "sma_14",       "indicator": "SMA", "period": 14, "source": "close", "timeframe": "H1" }
+  ],
+
+  "config": {
+    "dialog_x":           { "type": "integer", "default": 10,  "description": "Panel left edge (pixels from chart left)" },
+    "dialog_y":           { "type": "integer", "default": 10,  "description": "Panel top edge (pixels from chart top)" },
+    "dialog_width":       { "type": "integer", "default": 350, "description": "Total panel width in pixels" },
+    "dialog_height":      { "type": "integer", "default": 500, "description": "Total panel height in pixels" },
+    "button_width":       { "type": "integer", "default": 300, "description": "Button width in pixels" },
+    "button_height":      { "type": "integer", "default": 30,  "description": "Button height in pixels" },
+    "spacing":            { "type": "integer", "default": 15,  "description": "Vertical gap between buttons" },
+    "results_height":     { "type": "integer", "default": 50,  "description": "Results display area height" },
+    "font_size":          { "type": "integer", "default": 12,  "description": "Results text font size" }
+  },
+
+  "metrics_specification": {
+    "note": "This is the key reusable output of Part 8 — the 6 metrics as a structured data contract",
+    "contract": {
+      "h1_high":      "float — current H1 bar high",
+      "h1_low":       "float — current H1 bar low",
+      "h1_volume":    "float — last H1 bar volume",
+      "trend_ma14":   "float — 14-period SMA of close prices on H1",
+      "volatility_atr14": "float — 14-period ATR on H1",
+      "sma_50":       "float — 50-period SMA of close prices on H1",
+      "support":      "float — previous H1 bar low",
+      "resistance":   "float — previous H1 bar high"
+    },
+    "python_dataclass": "MetricsSnapshot(h1_high, h1_low, h1_volume, trend_ma14, volatility_atr14, sma_50, support, resistance, timestamp)"
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "init_ui",
+        "description": "Build CAppDialog with 6 analysis buttons + 1 close button",
+        "class": "CMetricsBoard(CAppDialog)",
+        "outputs": ["panel", "buttons[7]", "results_label"]
+      },
+      {
+        "step": 2,
+        "name": "wait_for_click",
+        "description": "OnChartEvent() listens for button click events",
+        "trigger": "user_click"
+      },
+      {
+        "step": 3,
+        "name": "route_event",
+        "description": "Match button name to analysis method: 'btnHighLow' → PerformHighLowAnalysis()",
+        "routing": {
+          "btnHighLow":   "PerformHighLowAnalysis()",
+          "btnVolume":    "PerformVolumeAnalysis()",
+          "btnTrend":     "PerformTrendAnalysis()",
+          "btnVolatility":"PerformVolatilityAnalysis()",
+          "btnMA":        "PerformMovingAverageAnalysis()",
+          "btnSR":        "PerformSRAnalysis()",
+          "btnClose":     "Destroy()"
+        }
+      },
+      {
+        "step": 4,
+        "name": "fetch_and_display",
+        "description": "Each analysis method fetches data and updates results label",
+        "output_format": "Key: value  (e.g. 'ATR (14): 0.00245')"
+      }
+    ]
+  },
+
+  "components_to_build": [
+    {
+      "name": "MetricsCalculator",
+      "type": "logic",
+      "priority": 1,
+      "shared_across_parts": true,
+      "contract": "get_metrics(symbol, timeframe, config) -> MetricsSnapshot",
+      "methods": [
+        "get_high_low(symbol, tf) -> (high, low)",
+        "get_volume(symbol, tf) -> volume",
+        "get_ma(symbol, tf, period, source) -> float",
+        "get_atr(symbol, tf, period) -> float",
+        "get_support_resistance(symbol, tf) -> (support, resistance)"
+      ]
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "The 6 metric categories — these are the fundamental on-chart data points every trader needs",
+      "MetricsSnapshot data contract — clean structured object, reusable across many tools",
+      "On-demand retrieval pattern — fetch when needed, not on every tick",
+      "Previous bar H/L as S/R — same as Parts 1-2, validates this as standard practice"
+    ],
+    "discard": [
+      "CAppDialog / CButton MQL5 GUI framework — replaced by Python dashboard (Streamlit/Tkinter/web)",
+      "H1 hardcoded timeframe — make configurable, support multiple TFs",
+      "Button-click event model — replaced by REST endpoint or Python function call",
+      "MQL5 iHigh(), iLow(), iVolume() calls — replaced by BrokerDataAdapter"
+    ],
+    "improve": [
+      "Add multi-symbol support — run MetricsCalculator across all symbols in one call",
+      "Add historical comparison — current ATR vs 5-day average ATR",
+      "Add timeframe selection — not just H1",
+      "Add export to JSON/CSV for downstream tools",
+      "Integrate with NotificationService — alert when ATR spikes or S/R breached"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "h1_as_macro_context": "Using H1 for High/Low, Volume, and S/R matches our approach of using higher-timeframe context. H1 S/R (prev bar H/L) is functionally similar to our Zone boundaries from M15.",
+    "atr_for_volatility": "ATR(14) on H1 is the standard volatility metric. We use ATR(14) on M15 for SL floor calculation. Same tool, appropriate timeframe for the purpose.",
+    "sma_50_trend_filter": "50-period SMA on H1 for trend direction — similar to how we use market_structure (BULLISH/BEARISH) from StructureEngine. The SMA gives a simpler directional read."
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "EA Logic Summary Diagram",
+      "url": "https://c.mql5.com/2/111/EA_Logic_.png",
+      "insight": "Architecture diagram showing 6 analysis modules feeding the results panel. Clean separation of concerns."
+    },
+    {
+      "fig": 2,
+      "title": "Library Inclusion GIF",
+      "url": "https://c.mql5.com/2/111/Adding_MQL5_Libraries.gif",
+      "insight": "Shows MQL5 StandardLibrary Dialog.mqh / Button.mqh includes needed for the UI. Irrelevant for Python but confirms MQL5 UI requires external libraries."
+    },
+    {
+      "fig": 3,
+      "title": "Functionality Demonstration (GIF)",
+      "url": "https://c.mql5.com/2/111/Outcomes.gif",
+      "insight": "Animated panel showing each button click → result display cycle. Confirms on-demand model and result string format."
+    },
+    {
+      "fig": 4,
+      "title": "Expert Log Output",
+      "url": "https://c.mql5.com/2/111/logging.PNG.png",
+      "insight": "Shows all button click events logged to MT5 Experts tab. Confirms logging pattern for debugging."
+    }
+  ]
+}

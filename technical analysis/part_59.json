@@ -1,0 +1,29 @@
+{
+  "part": 59,
+  "title": "Geometric Asymmetry Precision Breakouts",
+  "source_url": "https://www.mql5.com/en/articles/21197",
+  "verdict": "HIGH EXTRACT - 3-vote geometry: distance_ratio>1.35 + slope_ratio>1.15 + time_compression<0.95. Need 2/3 votes.",
+  "three_votes": {
+    "distance_ratio": "final_leg/prior_leg >= 1.35",
+    "slope_ratio": "final_slope/prior_slope >= 1.15",
+    "time_compression": "final_bars/prior_bars <= 0.95"
+  },
+  "config": {
+    "InpLenRatioMin": 1.35,
+    "InpSlopeRatioMin": 1.15,
+    "InpTimeCompressionMax": 0.95,
+    "InpMinGeometryVotes": 2,
+    "InpBreakBufferPts": 5.0
+  },
+  "keep_discard": {
+    "keep": [
+      "3-vote geometry system",
+      "2/3 supermajority confirmation",
+      "Acceleration metrics (faster, further, steeper)"
+    ],
+    "improve": [
+      "Apply to departure leg: departure accelerating away from zone (>1.35x approach length) = asymmetry bonus",
+      "Time compression = urgency = impulsive departure"
+    ]
+  }
+}

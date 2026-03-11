@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crevia Cockpit — Master Payment Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400;1,600&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:   #f7f3ec;
+    --paper2:  #ede9e0;
+    --paper3:  #e3dfd5;
+    --ink:     #1c1a16;
+    --ink2:    #38352d;
+    --muted:   #8a8679;
+    --rule:    #d0cac0;
+
+    /* pathway accent colours — press-ink quality */
+    --p1:  #1a4d8f;   /* deep navy   — MetaMask Direct */
+    --p2:  #7a3a1e;   /* deep rust   — Fiat Bridge */
+    --p3:  #1e5c3a;   /* deep forest — Gateway */
+    --red: #922020;   /* correction red */
+    --ok:  #1e5c3a;
+
+    --serif: 'Playfair Display', serif;
+    --body:  'Barlow', sans-serif;
+    --cond:  'Barlow Condensed', sans-serif;
+    --mono:  'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  /* ─── PAPER TEXTURE ─── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    position: relative; z-index: 1;
+    border-bottom: 3px double var(--ink);
+    padding: 0 72px;
+    text-align: center;
+  }
+  .masthead-top {
+    padding: 28px 0 16px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--cond);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .masthead-top span { color: var(--ink2); }
+  .masthead-center {
+    padding: 32px 0 20px;
+  }
+  .publication {
+    font-family: var(--cond);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 7vw, 84px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  h1 em { font-style: italic; font-weight: 400; }
+  .deck {
+    font-family: var(--body);
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink2);
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.55;
+  }
+  .masthead-bottom {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--cond);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    gap: 20px;
+  }
+  .pathway-badges {
+    display: flex; gap: 12px;
+  }
+  .pb {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--cond); font-size: 11px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 2px;
+    border: 1px solid;
+  }
+  .pb-1 { color: var(--p1); border-color: rgba(26,77,143,0.3); background: rgba(26,77,143,0.05); }
+  .pb-2 { color: var(--p2); border-color: rgba(122,58,30,0.3); background: rgba(122,58,30,0.05); }
+  .pb-3 { color: var(--p3); border-color: rgba(30,92,58,0.3);  background: rgba(30,92,58,0.05);  }
+
+  /* ─── LAYOUT ─── */
+  .page {
+    position: relative; z-index: 1;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 72px 100px;
+  }
+
+  /* ─── SECTION RULE ─── */
+  .section { margin-top: 60px; }
+  .section-rule {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 32px;
+  }
+  .section-rule::before, .section-rule::after {
+    content: ''; flex: 1; height: 1px; background: var(--ink);
+  }
+  .section-rule-inner {
+    display: flex; align-items: center; gap: 10px;
+    white-space: nowrap;
+  }
+  .sr-num {
+    font-family: var(--cond);
+    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* ─── THREE COLUMN PATHWAY OVERVIEW ─── */
+  .pathway-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border: 1.5px solid var(--ink);
+  }
+  .pw-card {
+    padding: 28px 26px;
+    border-right: 1.5px solid var(--ink);
+    position: relative;
+  }
+  .pw-card:last-child { border-right: none; }
+  .pw-number {
+    position: absolute;
+    top: -1px; right: 16px;
+    font-family: var(--serif);
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.05;
+    color: var(--ink);
+    pointer-events: none;
+  }
+  .pw-eyebrow {
+    font-family: var(--cond);
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pw-card:nth-child(1) .pw-eyebrow { color: var(--p1); }
+  .pw-card:nth-child(2) .pw-eyebrow { color: var(--p2); }
+  .pw-card:nth-child(3) .pw-eyebrow { color: var(--p3); }
+  .pw-card h3 {
+    font-family: var(--serif);
+    font-size: 20px; font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .pw-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+  .pw-facts { border-top: 1px solid var(--rule); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .pw-fact { display: flex; gap: 10px; font-size: 13px; }
+  .pf-k { font-family: var(--cond); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); min-width: 52px; flex-shrink: 0; margin-top: 2px; }
+  .pf-v { color: var(--ink2); }
+  .pf-v .ok   { color: var(--ok);  }
+  .pf-v .warn { color: var(--p2);  }
+  .pf-v .bad  { color: var(--red); font-style: italic; }
+  .verdict-row {
+    border-top: 1.5px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .verdict-cell {
+    padding: 12px 26px;
+    border-right: 1.5px solid var(--ink);
+    font-family: var(--cond);
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .verdict-cell:last-child { border-right: none; }
+  .verdict-cell:nth-child(1) { background: rgba(26,77,143,0.05); color: var(--p1); }
+  .verdict-cell:nth-child(2) { background: rgba(122,58,30,0.05); color: var(--p2); }
+  .verdict-cell:nth-child(3) { background: rgba(30,92,58,0.05);  color: var(--p3); }
+
+  /* ─── IMPORTANT CORRECTION BOX ─── */
+  .correction {
+    margin: 24px 0;
+    border: 1.5px solid var(--red);
+    padding: 18px 22px;
+    background: rgba(146,32,32,0.03);
+    position: relative;
+  }
+  .correction::before {
+    content: 'CORRECTION';
+    position: absolute;
+    top: -10px; left: 16px;
+    font-family: var(--cond);
+    font-size: 10px; letter-spacing: 0.15em;
+    background: var(--paper);
+    padding: 0 8px;
+    color: var(--red);
+  }
+  .correction p { font-size: 13.5px; color: var(--ink2); line-height: 1.65; }
+  .correction p strong { color: var(--ink); }
+  .correction p + p { margin-top: 8px; }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    padding: 15px 18px;
+    display: flex; gap: 13px;
+    font-size: 13.5px;
+    margin: 16px 0;
+    border-radius: 2px;
+  }
+  .c-note  { background: var(--paper2); border-left: 3px solid var(--muted); }
+  .c-key   { background: var(--paper2); border-left: 3px solid var(--ink); }
+  .c-warn  { background: rgba(122,58,30,0.05); border-left: 3px solid var(--p2); }
+  .c-ok    { background: rgba(30,92,58,0.05);  border-left: 3px solid var(--p3); }
+  .callout-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+  .callout-body { color: var(--ink2); line-height: 1.6; }
+  .callout-body strong { color: var(--ink); }
+  .callout-body code {
+    font-family: var(--mono); font-size: 12px;
+    background: var(--paper3); padding: 1px 5px;
+    border: 1px solid var(--rule); border-radius: 2px;
+  }
+
+  /* ─── CODE BLOCKS ─── */
+  .code-wrap {
+    border: 1.5px solid var(--ink);
+    background: var(--ink);
+    margin: 16px 0;
+    overflow: hidden;
+  }
+  .code-head {
+    background: var(--ink2);
+    padding: 8px 16px;
+    font-family: var(--cond);
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(247,243,236,0.45);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .code-head .fname { color: rgba(247,243,236,0.75); letter-spacing: 0.02em; text-transform: none; font-size: 12px; }
+  pre {
+    padding: 18px 20px;
+    font-family: var(--mono);
+    font-size: 12.5px; line-height: 1.75;
+    color: #b8b0a2;
+    overflow-x: auto; white-space: pre;
+  }
+  .kw  { color: #d4a27a; }
+  .fn  { color: #8fb8d4; }
+  .str { color: #98c49a; }
+  .cmt { color: #4a4540; font-style: italic; }
+  .tp  { color: #d4c47a; }
+  .hl  { background: rgba(26,77,143,0.15); display: inline-block; width: 100%;
+         margin: 0 -20px; padding: 0 20px; padding-left: 16px;
+         border-left: 3px solid #6090c4; }
+  .hl2 { background: rgba(122,58,30,0.15); display: inline-block; width: 100%;
+         margin: 0 -20px; padding: 0 20px; padding-left: 16px;
+         border-left: 3px solid #c47060; }
+
+  /* ─── DECISION TREE ─── */
+  .decision-tree {
+    border: 1.5px solid var(--ink);
+    padding: 32px;
+    background: var(--paper2);
+    font-family: var(--body);
+    font-size: 13.5px;
+    line-height: 1.5;
+    position: relative;
+  }
+  .dt-title {
+    font-family: var(--cond);
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 24px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--rule);
+  }
+  .dt-node {
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+  .dt-q {
+    display: flex; gap: 12px; align-items: flex-start;
+    font-weight: 600; color: var(--ink);
+  }
+  .dt-q::before { content: '?'; font-family: var(--serif); font-size: 16px; color: var(--muted); flex-shrink: 0; }
+  .dt-branches {
+    margin-left: 24px;
+    margin-top: 10px;
+    display: flex; flex-direction: column; gap: 6px;
+    border-left: 2px solid var(--rule);
+    padding-left: 16px;
+  }
+  .dt-branch {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 13px;
+  }
+  .dt-cond {
+    font-family: var(--cond); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    min-width: 24px; flex-shrink: 0; margin-top: 2px;
+  }
+  .yes { color: var(--ok); }
+  .no  { color: var(--red); }
+  .dt-branch .ans { color: var(--ink2); }
+  .dt-branch .pathway {
+    font-family: var(--cond); font-size: 11px;
+    padding: 2px 9px; border-radius: 2px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    font-weight: 600; white-space: nowrap; margin-left: 4px;
+  }
+  .path1 { background: rgba(26,77,143,0.1);  color: var(--p1); border: 1px solid rgba(26,77,143,0.25); }
+  .path2 { background: rgba(122,58,30,0.1);  color: var(--p2); border: 1px solid rgba(122,58,30,0.25); }
+  .path3 { background: rgba(30,92,58,0.1);   color: var(--p3); border: 1px solid rgba(30,92,58,0.25);  }
+  .dt-sub { margin-top: 12px; margin-left: 24px; border-left: 2px solid var(--rule); padding-left: 16px; }
+
+  /* ─── TWO COL ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .two-col-70 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+
+  /* ─── QUOTE PULL ─── */
+  .pull-quote {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    margin: 24px 0;
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .pull-quote cite {
+    display: block;
+    font-family: var(--cond);
+    font-size: 11px;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  /* ─── METADATA SECTION ─── */
+  .meta-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1.5px solid var(--ink);
+    font-size: 13.5px;
+  }
+  .meta-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 9px 16px;
+    font-family: var(--cond);
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    text-align: left; font-weight: 400;
+  }
+  .meta-table td {
+    padding: 13px 16px;
+    border-top: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .meta-table tr:nth-child(even) td { background: var(--paper2); }
+  .meta-table td:first-child { font-family: var(--cond); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .meta-table .recommended { background: rgba(30,92,58,0.04) !important; }
+  .meta-table .recommended td:first-child { color: var(--ok); }
+
+  /* ─── ENV CHECKLIST ─── */
+  .env-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+    border: 1.5px solid var(--ink);
+  }
+  .env-head {
+    background: var(--ink);
+    padding: 9px 16px;
+    font-family: var(--cond);
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--paper); font-weight: 400;
+  }
+  .env-cell {
+    background: var(--paper2);
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  .env-key { font-family: var(--mono); font-size: 11.5px; color: var(--ink); margin-bottom: 4px; }
+  .env-desc { font-size: 12px; color: var(--muted); }
+  .env-cell .tag {
+    display: inline-block;
+    font-family: var(--cond); font-size: 10px;
+    padding: 1px 7px; border-radius: 2px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-top: 5px;
+  }
+  .t-p1 { background: rgba(26,77,143,0.08); color: var(--p1); border: 1px solid rgba(26,77,143,0.2); }
+  .t-p2 { background: rgba(122,58,30,0.08); color: var(--p2); border: 1px solid rgba(122,58,30,0.2); }
+  .t-p3 { background: rgba(30,92,58,0.08);  color: var(--p3); border: 1px solid rgba(30,92,58,0.2);  }
+  .t-all { background: var(--paper3); color: var(--muted); border: 1px solid var(--rule); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .masthead, .page { padding-left: 24px; padding-right: 24px; }
+    .pathway-overview, .verdict-row { grid-template-columns: 1fr; }
+    .pw-card, .verdict-cell { border-right: none; border-bottom: 1.5px solid var(--ink); }
+    .pw-card:last-child, .verdict-cell:last-child { border-bottom: none; }
+    .two-col, .two-col-70 { grid-template-columns: 1fr; }
+    .env-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── MASTHEAD ─── -->
+<div class="masthead">
+  <div class="masthead-top">
+    <span>Crevia Cockpit · Payment Architecture</span>
+    <span>Version 1.0 Final</span>
+    <span>March 2026</span>
+  </div>
+  <div class="masthead-center">
+    <div class="publication">Master Reference Document</div>
+    <h1>Three Pathways to<br /><em>Getting Paid</em></h1>
+    <p class="deck">The complete, consolidated guide to Crevia Cockpit's payment architecture — covering MetaMask Direct, Fiat Bridge, and Non-Custodial Gateway, with every gotcha documented.</p>
+  </div>
+  <div class="masthead-bottom">
+    <div class="pathway-badges">
+      <span class="pb pb-1">P1 — MetaMask Direct</span>
+      <span class="pb pb-2">P2 — Fiat Bridge</span>
+      <span class="pb pb-3">P3 — Non-Custodial Gateway</span>
+    </div>
+    <span>Stack: Next.js 15 · Wagmi v2 · Base L2 · USDC</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ═══ SECTION 1: PATHWAY OVERVIEW ═══ -->
+  <div class="section">
+    <div class="section-rule">
+      <div class="section-rule-inner">
+        <span class="sr-num">I</span>
+        <h2>The Three Pathways</h2>
+      </div>
+    </div>
+
+    <div class="pathway-overview">
+      <div class="pw-card">
+        <div class="pw-number">1</div>
+        <div class="pw-eyebrow">Pathway One</div>
+        <h3>Pure MetaMask<br />Direct</h3>
+        <p>You build the payment logic yourself with Wagmi + Viem. User signs a USDC transfer directly from their wallet to yours. No middleware. No fees beyond gas.</p>
+        <div class="pw-facts">
+          <div class="pw-fact"><div class="pf-k">Users</div><div class="pf-v">Crypto-native — holds USDC, familiar with wallets</div></div>
+          <div class="pw-fact"><div class="pf-k">KYC</div><div class="pf-v"><span class="ok">None for merchant or user</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Fees</div><div class="pf-v"><span class="ok">~$0.001 gas on Base (absorbable)</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Revenue</div><div class="pf-v"><span class="ok">100% of $29 — no processor cut</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Privacy</div><div class="pf-v"><span class="ok">Maximum — wallet address only</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Build time</div><div class="pf-v">5–6 weeks (custom stack)</div></div>
+        </div>
+      </div>
+
+      <div class="pw-card">
+        <div class="pw-number">2</div>
+        <div class="pw-eyebrow">Pathway Two</div>
+        <h3>Fiat Bridge<br />(Redirection)</h3>
+        <p>Users without crypto click a link to a public on-ramp widget (MetaMask "Buy," MoonPay, Transak). They complete KYC <em>with the provider</em>, acquire USDC, then return to use Pathway 1.</p>
+        <div class="pw-facts">
+          <div class="pw-fact"><div class="pf-k">Users</div><div class="pf-v">Non-crypto — wants card payment, will do light KYC</div></div>
+          <div class="pw-fact"><div class="pf-k">Merch. KYC</div><div class="pf-v"><span class="ok">None — you are not the on-ramp provider</span></div></div>
+          <div class="pw-fact"><div class="pf-k">User KYC</div><div class="pf-v"><span class="warn">Required by Transak/MoonPay (user's ID, not yours)</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Fees</div><div class="pf-v"><span class="warn">1–3% spread charged by on-ramp to user</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Revenue</div><div class="pf-v"><span class="ok">$29 arrives to you — user absorbs on-ramp fee</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Build time</div><div class="pf-v"><span class="ok">Hours — it's a link and a deep-link URL</span></div></div>
+        </div>
+      </div>
+
+      <div class="pw-card">
+        <div class="pw-number">3</div>
+        <div class="pw-eyebrow">Pathway Three</div>
+        <h3>Non-Custodial<br />Gateway</h3>
+        <p>A third-party (NexaPay) handles the card UI, transaction monitoring, and webhooks. Card payment converts to USDC and settles directly into your wallet. No self-custody of fiat.</p>
+        <div class="pw-facts">
+          <div class="pw-fact"><div class="pf-k">Users</div><div class="pf-v">Anyone — card payment, no wallet required</div></div>
+          <div class="pw-fact"><div class="pf-k">KYC</div><div class="pf-v"><span class="ok">NexaPay: none for merchant, none for user</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Fees</div><div class="pf-v"><span class="warn">1–3% conversion fee (passed through to user)</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Revenue</div><div class="pf-v"><span class="ok">$29 USDC lands in your wallet directly</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Privacy</div><div class="pf-v"><span class="ok">High — email + wallet address only</span></div></div>
+          <div class="pw-fact"><div class="pf-k">Build time</div><div class="pf-v">1–2 days (API + webhook endpoint)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict-row">
+      <div class="verdict-cell">Build first — highest ROI per subscriber</div>
+      <div class="verdict-cell">Ship day one — 2 links + a paragraph of copy</div>
+      <div class="verdict-cell">Ship week 2 — biggest conversion unlock</div>
+    </div>
+
+    <div class="correction">
+      <p><strong>On Bcon:</strong> No active developer documentation, API reference, or community activity found as of March 2026. Building a payments integration on an unmaintained or defunct service is a critical dependency risk — if the service goes offline, your users cannot pay. <strong>Do not use Bcon as a production dependency.</strong> NexaPay occupies the same "no-KYC, non-custodial, email-only signup" niche and has verifiable current uptime, an active API, and Base USDC support.</p>
+      <p><strong>On Helio:</strong> Helio was acquired by MoonPay. Its embeddable checkout widget runs on Solana, not EVM chains. For a Base/USDC stack, Helio's React SDK will not work without significant modification. MoonPay Commerce (the rebrand) supports Base via API, but it is a heavier integration than a drop-in widget. This is a v2 consideration, not v1.</p>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 2: DECISION TREE ═══ -->
+  <div class="section">
+    <div class="section-rule">
+      <div class="section-rule-inner">
+        <span class="sr-num">II</span>
+        <h2>Routing Users to the Right Pathway</h2>
+      </div>
+    </div>
+
+    <div class="two-col-70">
+      <div class="decision-tree">
+        <div class="dt-title">Checkout router logic — rendered in the browser</div>
+
+        <div class="dt-node">
+          <div class="dt-q">Does <code>window.ethereum</code> exist (wallet injected)?</div>
+          <div class="dt-branches">
+            <div class="dt-branch">
+              <span class="dt-cond yes">Yes</span>
+              <span class="ans">Surface "Pay with Wallet" as primary CTA. Show "Pay with Card" secondary.</span>
+            </div>
+            <div class="dt-branch">
+              <span class="dt-cond no">No</span>
+              <span class="ans">Surface "Pay with Card" (P3 NexaPay) as primary. Show wallet option below fold.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dt-node" style="margin-top:20px;">
+          <div class="dt-q">Wallet connected — does user have ≥$29 USDC on Base?</div>
+          <div class="dt-branches">
+            <div class="dt-branch">
+              <span class="dt-cond yes">Yes</span>
+              <span class="ans">Enable "Pay 29 USDC" button immediately.</span>
+              <span class="pathway path1">→ P1</span>
+            </div>
+            <div class="dt-branch">
+              <span class="dt-cond no">No</span>
+              <span class="ans">Show helper: "You need USDC on Base." Offer two sub-options:</span>
+            </div>
+          </div>
+          <div class="dt-sub">
+            <div class="dt-branch">
+              <span class="dt-cond" style="color:var(--muted)">A</span>
+              <span class="ans">"Get USDC" → deep-link to MetaMask in-wallet buy / Transak widget.</span>
+              <span class="pathway path2">→ P2</span>
+            </div>
+            <div class="dt-branch">
+              <span class="dt-cond" style="color:var(--muted)">B</span>
+              <span class="ans">"Pay by card instead" → open NexaPay hosted checkout.</span>
+              <span class="pathway path3">→ P3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dt-node" style="margin-top:20px;">
+          <div class="dt-q">User completes Pathway 2 (got USDC via on-ramp) — then what?</div>
+          <div class="dt-branches">
+            <div class="dt-branch">
+              <span class="dt-cond yes">→</span>
+              <span class="ans">Return to checkout. Re-check balance. Now eligible for P1 standard flow.</span>
+              <span class="pathway path1">→ P1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="callout c-key">
+          <span class="callout-icon">◆</span>
+          <div class="callout-body">
+            <strong>Always show all options.</strong> Never hide Pathway 1 from non-crypto users — some will be curious and convert. Never hide Pathway 3 from crypto users — sometimes they prefer not to spend their stack.
+          </div>
+        </div>
+        <div class="callout c-ok" style="margin-top: 16px;">
+          <span class="callout-icon">✓</span>
+          <div class="callout-body">
+            <strong>Pathway 2 costs you nothing.</strong> You provide a link. The user visits Transak or clicks MetaMask's built-in Buy button. They handle their own KYC. You have zero new backend code to write for this pathway.
+          </div>
+        </div>
+        <div class="callout c-note" style="margin-top: 16px;">
+          <span class="callout-icon">○</span>
+          <div class="callout-body">
+            The <code>window.ethereum</code> check runs client-side only. Use <code>typeof window !== 'undefined'</code> guard in Next.js to avoid SSR errors. Run it inside a <code>useEffect</code> or on a client component boundary.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 3: THE METADATA TRICK (CORRECTED) ═══ -->
+  <div class="section">
+    <div class="section-rule">
+      <div class="section-rule-inner">
+        <span class="sr-num">III</span>
+        <h2>The "Metadata Trick" — What Actually Works</h2>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "Embed a unique ID in the transaction's data field." — This works for raw ETH sends. It does not work for USDC.
+      <cite>— The one thing to get right before writing any payment code</cite>
+    </div>
+
+    <div class="correction">
+      <p><strong>The pro-tip as described applies only to raw ETH transfers.</strong> When you send ETH directly, the transaction has a <code>data</code> field that can hold arbitrary bytes — you can encode a user ID there. Your backend then reads <code>tx.input</code> to extract it.</p>
+      <p><strong>USDC is an ERC-20 token.</strong> A USDC transfer is a function call: <code>transfer(address to, uint256 amount)</code>. The ABI is fixed — there is no extra slot for arbitrary data. If you call <code>writeContract</code> with the standard <code>erc20Abi</code>, you cannot append a user ID to it. Attempting to add extra bytes will cause the call to revert.</p>
+      <p><strong>Instead, use one of the three correct approaches below.</strong></p>
+    </div>
+
+    <table class="meta-table">
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>How it works</th>
+          <th>Complexity</th>
+          <th>For Crevia v1?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="recommended">
+          <td>Wallet address correlation</td>
+          <td>Create a server-side intent that stores <code>{ userId, planId, walletAddress }</code> before the payment. When USDC arrives FROM that wallet, look it up by sender address. No on-chain metadata needed at all.</td>
+          <td>Low — already in the plan</td>
+          <td>✓ Recommended. Already implemented in /api/payment/intent.</td>
+        </tr>
+        <tr>
+          <td>Unique deposit address per user</td>
+          <td>Derive a unique sub-address for each user (HD wallet path). Any USDC sent to <em>that</em> address = identified as that user's payment. Re-aggregate funds periodically.</td>
+          <td>Medium — HD wallet library</td>
+          <td>Overkill for v1. Consider for high volume.</td>
+        </tr>
+        <tr>
+          <td>Wrapper smart contract</td>
+          <td>Deploy a thin contract with a <code>pay(bytes32 intentId)</code> function. Emits a custom event with your metadata. Calls <code>USDC.transferFrom</code> internally.</td>
+          <td>High — contract + audit</td>
+          <td>V3+ feature. Not needed for SaaS subscriptions.</td>
+        </tr>
+        <tr>
+          <td>Raw ETH with encoded data</td>
+          <td>Send a tiny amount of ETH (e.g. $0.01 worth) with the user ID encoded in the <code>data</code> field. Treat it as a signal, not the actual payment. USDC sent separately.</td>
+          <td>Low-medium</td>
+          <td>Fragile — two-tx flow, race conditions. Avoid.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="code-wrap" style="margin-top: 24px;">
+      <div class="code-head">
+        <span class="fname">app/api/payment/intent/route.ts</span>
+        <span>The correct solution — wallet address correlation</span>
+      </div>
+      <pre><span class="cmt">// STEP 1 — Before the user opens their wallet, create a server-side intent.
+// Store the user's wallet address as the correlation key. No on-chain metadata needed.</span>
+
+<span class="kw">export async function</span> <span class="fn">POST</span>(req: <span class="tp">Request</span>) {
+  <span class="kw">const</span> { userId, planId, walletAddress } = <span class="kw">await</span> req.<span class="fn">json</span>()
+
+<span class="hl">  <span class="cmt">// The wallet address IS the metadata — no need for on-chain encoding</span></span>
+<span class="hl">  <span class="kw">const</span> intent = <span class="kw">await</span> db.paymentIntents.<span class="fn">create</span>({</span>
+<span class="hl">    data: { userId, planId, walletAddress: walletAddress.<span class="fn">toLowerCase</span>(),</span>
+<span class="hl">            status: <span class="str">'pending'</span>, expiresAt: <span class="kw">new</span> <span class="tp">Date</span>(<span class="tp">Date</span>.<span class="fn">now</span>() + <span class="tp">15</span> * <span class="tp">60_000</span>) }</span>
+<span class="hl">  })</span>
+
+  <span class="kw">return</span> <span class="tp">Response</span>.<span class="fn">json</span>({ intentId: intent.id })
+}
+
+<span class="cmt">// STEP 2 — After on-chain verification, match payment to user via sender address</span>
+<span class="kw">async function</span> <span class="fn">activateFromTransfer</span>(transfer: <span class="tp">TransferLog</span>, txHash: <span class="tp">string</span>) {
+  <span class="kw">const</span> senderAddress = transfer.args.from.<span class="fn">toLowerCase</span>()
+
+<span class="hl2">  <span class="cmt">// Lookup the pending intent by the sender's wallet address</span></span>
+<span class="hl2">  <span class="kw">const</span> intent = <span class="kw">await</span> db.paymentIntents.<span class="fn">findFirst</span>({</span>
+<span class="hl2">    where: { walletAddress: senderAddress, status: <span class="str">'pending'</span>,</span>
+<span class="hl2">             expiresAt: { gt: <span class="kw">new</span> <span class="tp">Date</span>() } }</span>
+<span class="hl2">  })</span>
+  <span class="kw">if</span> (!intent) <span class="kw">throw new</span> <span class="tp">Error</span>(<span class="str">'No matching intent for sender address'</span>)
+
+  <span class="cmt">// Activate subscription using the matched intent</span>
+  <span class="kw">await</span> <span class="fn">activateSubscription</span>(intent.userId, intent.planId, txHash)
+}</pre>
+    </div>
+
+    <div class="callout c-warn" style="margin-top: 4px;">
+      <span class="callout-icon">⚠</span>
+      <div class="callout-body">
+        <strong>Edge case — shared wallet:</strong> Two users cannot pay from the same wallet address within the same 15-minute intent window. This is an extremely rare edge case (shared wallets) but handle it by enforcing that a wallet address can only have one <em>pending</em> intent at a time. If a second intent is requested from the same address, invalidate the first.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 4: BACKEND ARCHITECTURE ═══ -->
+  <div class="section">
+    <div class="section-rule">
+      <div class="section-rule-inner">
+        <span class="sr-num">IV</span>
+        <h2>Shared Backend — One Verification Layer for All Three Pathways</h2>
+      </div>
+    </div>
+
+    <div class="callout c-ok">
+      <span class="callout-icon">✓</span>
+      <div class="callout-body">
+        <strong>The key insight of routing everything through on-chain USDC:</strong> All three pathways end with USDC arriving at your Base wallet and a txHash that can be verified with <code>parseEventLogs</code>. This means <code>verifyPayment()</code>, the Alchemy webhook, and the idempotency logic are written once and shared. The only pathway-specific code is how the txHash reaches your backend.
+      </div>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-head">
+        <span class="fname">lib/verifyPayment.ts</span>
+        <span>Shared across all three pathways — write once</span>
+      </div>
+      <pre><span class="kw">import</span> { <span class="fn">createPublicClient</span>, <span class="fn">http</span>, <span class="fn">parseEventLogs</span>, erc20Abi, <span class="fn">parseUnits</span> } <span class="kw">from</span> <span class="str">'viem'</span>
+<span class="kw">import</span> { base } <span class="kw">from</span> <span class="str">'viem/chains'</span>
+
+<span class="kw">const</span> client = <span class="fn">createPublicClient</span>({ chain: base, transport: <span class="fn">http</span>(process.env.<span class="tp">ALCHEMY_BASE_RPC_URL</span>) })
+
+<span class="kw">const</span> <span class="tp">USDC_BASE</span>   = <span class="str">'0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'</span>
+<span class="kw">const</span> <span class="tp">PLAN_PRICES</span> = { starter: <span class="fn">parseUnits</span>(<span class="str">'29'</span>, <span class="tp">6</span>), pro: <span class="fn">parseUnits</span>(<span class="str">'79'</span>, <span class="tp">6</span>) }
+
+<span class="cmt">// Used by: P1 (/api/payment/verify), P3 (/api/webhook/nexapay), Alchemy webhook</span>
+<span class="kw">export async function</span> <span class="fn">verifyUsdcPayment</span>(hash: <span class="str">`0x${string}`</span>, planId: <span class="tp">string</span>) {
+  <span class="kw">const</span> receipt = <span class="kw">await</span> client.<span class="fn">waitForTransactionReceipt</span>({
+    hash, timeout: <span class="tp">300_000</span>, confirmations: <span class="tp">2</span>  <span class="cmt">// wait for 2 blocks — reorg protection</span>
+  })
+  <span class="kw">if</span> (receipt.status !== <span class="str">'success'</span>) <span class="kw">throw new</span> <span class="tp">Error</span>(<span class="str">'Transaction reverted'</span>)
+
+  <span class="cmt">// ERC-20 transfers appear in logs, NOT in tx.value (which will be 0n for token transfers)</span>
+  <span class="kw">const</span> logs     = <span class="fn">parseEventLogs</span>({ abi: erc20Abi, logs: receipt.logs, eventName: <span class="str">'Transfer'</span> })
+  <span class="kw">const</span> transfer = logs.<span class="fn">find</span>(l => l.address.<span class="fn">toLowerCase</span>() === <span class="tp">USDC_BASE</span>.<span class="fn">toLowerCase</span>()
+                              && l.args.to?.<span class="fn">toLowerCase</span>() === process.env.<span class="tp">BUSINESS_WALLET</span>?.<span class="fn">toLowerCase</span>())
+  <span class="kw">if</span> (!transfer) <span class="kw">throw new</span> <span class="tp">Error</span>(<span class="str">'No USDC transfer to business wallet found in receipt'</span>)
+
+  <span class="kw">const</span> expected  = <span class="tp">PLAN_PRICES</span>[planId]
+  <span class="kw">const</span> actual    = transfer.args.value <span class="kw">as</span> <span class="tp">bigint</span>
+  <span class="kw">const</span> tolerance = expected / <span class="tp">100n</span>   <span class="cmt">// 1% — accounts for conversion spreads</span>
+  <span class="kw">if</span> (actual < expected - tolerance) <span class="kw">throw new</span> <span class="tp">Error</span>(<span class="str">`Underpayment: got ${actual}, expected ${expected}`</span>)
+
+  <span class="kw">return</span> { from: transfer.args.from, amount: actual }
+}</pre>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 5: ENV VARS ═══ -->
+  <div class="section">
+    <div class="section-rule">
+      <div class="section-rule-inner">
+        <span class="sr-num">V</span>
+        <h2>Complete Environment Variables</h2>
+      </div>
+    </div>
+
+    <div class="env-grid">
+      <div class="env-head">Variable</div>
+      <div class="env-head">Value / Source</div>
+      <div class="env-head">Pathway</div>
+
+      <div class="env-cell"><div class="env-key">ALCHEMY_BASE_RPC_URL</div><div class="env-desc">Authenticated RPC endpoint</div></div>
+      <div class="env-cell"><div class="env-key">https://base-mainnet.g.alchemy.com/v2/YOUR_KEY</div><div class="env-desc">From Alchemy dashboard</div></div>
+      <div class="env-cell"><span class="tag t-all">All</span></div>
+
+      <div class="env-cell"><div class="env-key">ALCHEMY_WEBHOOK_SECRET</div><div class="env-desc">HMAC signing key for Notify webhooks</div></div>
+      <div class="env-cell"><div class="env-key">From Alchemy Notify settings</div><div class="env-desc">Webhook → signing key</div></div>
+      <div class="env-cell"><span class="tag t-p1">P1</span></div>
+
+      <div class="env-cell"><div class="env-key">BUSINESS_WALLET_ADDRESS</div><div class="env-desc">Your wallet — receives all USDC</div></div>
+      <div class="env-cell"><div class="env-key">0x…</div><div class="env-desc">Your MetaMask address on Base</div></div>
+      <div class="env-cell"><span class="tag t-all">All</span></div>
+
+      <div class="env-cell"><div class="env-key">NEXT_PUBLIC_USDC_ADDRESS</div><div class="env-desc">USDC contract on Base</div></div>
+      <div class="env-cell"><div class="env-key">0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</div><div class="env-desc">Native USDC, Circle-issued on Base</div></div>
+      <div class="env-cell"><span class="tag t-p1">P1</span></div>
+
+      <div class="env-cell"><div class="env-key">NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID</div><div class="env-desc">Required for non-MetaMask wallets via ConnectKit</div></div>
+      <div class="env-cell"><div class="env-key">cloud.walletconnect.com</div><div class="env-desc">Free tier is sufficient</div></div>
+      <div class="env-cell"><span class="tag t-p1">P1</span></div>
+
+      <div class="env-cell"><div class="env-key">NEXAPAY_API_KEY</div><div class="env-desc">Secret key from NexaPay dashboard</div></div>
+      <div class="env-cell"><div class="env-key">nexapay.one dashboard → API keys</div><div class="env-desc">Keep server-side only</div></div>
+      <div class="env-cell"><span class="tag t-p3">P3</span></div>
+
+      <div class="env-cell"><div class="env-key">NEXAPAY_WEBHOOK_SECRET</div><div class="env-desc">HMAC key for signature validation</div></div>
+      <div class="env-cell"><div class="env-key">NexaPay dashboard → Webhooks</div><div class="env-desc">Validate every webhook POST</div></div>
+      <div class="env-cell"><span class="tag t-p3">P3</span></div>
+
+      <div class="env-cell"><div class="env-key">NEXT_PUBLIC_CHAIN</div><div class="env-desc">Active chain toggle</div></div>
+      <div class="env-cell"><div class="env-key">base | base-sepolia</div><div class="env-desc">Flip to testnet for development</div></div>
+      <div class="env-cell"><span class="tag t-all">All</span></div>
+
+      <div class="env-cell"><div class="env-key">NEXT_PUBLIC_CDP_PAYMASTER_URL</div><div class="env-desc">Coinbase Developer Platform paymaster RPC</div></div>
+      <div class="env-cell"><div class="env-key">CDP dashboard → Base Paymaster</div><div class="env-desc">Only needed if using ERC-4337 gasless</div></div>
+      <div class="env-cell"><span class="tag t-p1">P1 + AA</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 6: MASTER CHECKLIST ═══ -->
+  <div class="section">
+    <div class="section-rule">
+      <div class="section-rule-inner">
+        <span class="sr-num">VI</span>
+        <h2>Master Build Checklist</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-family:var(--cond);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Week 1–2 · Foundation (all pathways)</p>
+        <div style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Install wagmi v2, viem, connectkit, tanstack query</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Configure WagmiProvider, QueryClientProvider, ConnectKit</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> DB schema: users, paymentIntents, subscriptions (txHash UNIQUE)</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Build CheckoutRouter — detect wallet, surface correct CTAs</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Add Pathway 2 links: MetaMask buy deep-link + Transak public URL</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Sign up NexaPay, configure Base USDC settlement to your wallet</div>
+        </div>
+
+        <p style="font-family:var(--cond);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;margin-top:28px;">Week 3–4 · Core Payment Logic</p>
+        <div style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> P1: useUsdcPayment hook — writeContractAsync + parseUnits(amount, 6)</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> P1: POST /api/payment/intent — stores walletAddress + userId</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Shared: verifyUsdcPayment() — parseEventLogs, 2-block confirmation</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> P1: POST /api/payment/verify — calls verifyUsdcPayment()</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> P3: POST /api/fiat/checkout-session + POST /api/webhook/nexapay</div>
+        </div>
+      </div>
+
+      <div>
+        <p style="font-family:var(--cond);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Week 5–6 · Hardening</p>
+        <div style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> HMAC validation on all incoming webhooks (Alchemy + NexaPay)</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Idempotency: txHash UNIQUE constraint + upsert with no-op on conflict</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Intent expiry: 15-minute TTL, "Expired — start again" UI state</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Wrong chain guard — useSwitchChain to Base before payment enabled</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Test full E2E flow on Base Sepolia — all three pathways</div>
+        </div>
+
+        <p style="font-family:var(--cond);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;margin-top:28px;">Phase 4 (Optional) · ERC-4337 Gasless</p>
+        <div style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Create Coinbase CDP account, configure Paymaster sponsorship limits</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Add permissionless.js + createSponsoredClient() helper</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Batch approve + transfer into single UserOperation</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;"><span style="font-family:var(--mono);color:var(--muted);flex-shrink:0;">□</span> Backend unchanged — UserOp settles as normal txHash on Base</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

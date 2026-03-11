@@ -1,0 +1,46 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 32,
+  "total_parts": 65,
+  "title": "Python Candlestick Recognition Engine (II) — Detection Using Ta-Lib",
+  "subtitle": "60+ Pattern Detection via TA-Lib CDL Functions, Signed Return Codes, Priority Hierarchy",
+  "source_url": "https://www.mql5.com/en/articles/18824",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Python (TA-Lib)",
+  "verdict": "MEDIUM EXTRACT — ta-lib CDL function pattern (already available in our Python env), signed return codes for direction, priority hierarchy (Engulfing > Harami > Doji). Key: 60+ patterns for no manual coding.",
+
+  "core_concept": {
+    "ta_lib_pattern": "import talib; result = talib.CDLENGULFING(open, high, low, close); non-zero = pattern present; positive = bullish, negative = bearish",
+    "return_codes": { "positive": "bullish signal", "negative": "bearish signal", "zero": "no pattern", "magnitude": "100 or 200 for strength" },
+    "priority_hierarchy": "When multiple patterns detected at same bar: Engulfing > Harami > Doji",
+    "60_plus_patterns": "CDLHAMMER, CDLSHOOTINGSTAR, CDLDOJI, CDLENGULFING, CDLHARAMI, CDLMORNINGSTAR, CDLEVENINGSTAR, CDLPIERCING, CDLDARKCLOUDCOVER, CDLABANDONBABY, etc.",
+    "relevance_to_creviaderiv": "ta-lib is already available. One-line pattern detection replaces our manual classifier. But ta-lib default thresholds may need calibration for each instrument — our ATR-normalized checks are more robust for synthetics."
+  },
+
+  "ta_lib_usage": {
+    "install": "pip install ta-lib",
+    "usage": "result = talib.CDLENGULFING(open.astype(float), high.astype(float), low.astype(float), close.astype(float))",
+    "batch": "patterns = {name: getattr(talib, name)(o,h,l,c) for name in ['CDLHAMMER','CDLENGULFING','CDLMORNINGSTAR',...]}"
+  },
+
+  "config": {
+    "HARAMI_TOL":  "Tolerance for manual Harami refinement override",
+    "ENGULF_TOL":  "Tolerance for Engulfing refinement",
+    "PRIORITY":    "Pattern hierarchy: Engulfing > Harami > Doji",
+    "BARS":        { "default": 60, "description": "History bars to analyze" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "ta-lib CDL function batch detection pattern",
+      "Signed return codes (positive=bullish, negative=bearish) for clean direction output",
+      "Priority hierarchy: Engulfing > Harami > Doji",
+      "60+ patterns available — no manual coding needed"
+    ],
+    "discard": ["Flask bridge", "MQL5 component", "Visualization (use when needed)"],
+    "improve": [
+      "Use ta-lib as backend for classify_candle() but add ATR-normalized body filters on top (ta-lib ignores body size vs ATR)",
+      "Run ta-lib patterns as supplemental quality signal: if ta-lib detects Morning Star at zone → highest confidence departure"
+    ]
+  }
+}

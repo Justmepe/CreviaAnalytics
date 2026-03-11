@@ -1,0 +1,116 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 19,
+  "total_parts": 65,
+  "title": "ZigZag Analyzer",
+  "subtitle": "Automated Trendline Construction via ZigZag Swing Detection and Linear Regression",
+  "source_url": "https://www.mql5.com/en/articles/17625",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-05",
+  "type": "Indicator",
+  "verdict": "EXTRACT — ZigZag parameter reference, linear regression trendline formula through swing points, two-tier S/R from swings. Our StructureEngine already does trendline-first detection; ZigZag is an alternative swing-detection input we can compare against.",
+
+  "tool_classification": {
+    "category": "swing_trendline_analyzer",
+    "generates_signals": false,
+    "signal_type": "visual_trendlines_only",
+    "executes_trades": false,
+    "runs": "on_chart",
+    "timeframe_agnostic": true
+  },
+
+  "core_concept": {
+    "name": "ZigZag-Based Trendlines",
+    "description": "Use ZigZag indicator to identify confirmed swing highs and lows. Collect up to 10 of each. Fit separate linear regression lines through the swing highs (resistance trendline) and swing lows (support trendline). If both slopes have the same sign, use averaged slope for parallel channel. Draw trendlines and extend N bars into the future.",
+    "two_tier_sr": "From the swing collection: major S/R = most extreme high/low. Minor S/R = second-most extreme. Drawn as horizontal lines.",
+    "relevance_to_creviaderiv": "Our StructureEngine trendline-first approach already does this but better: we fit trendlines first, then classify swings by proximity. ZigZag-then-regress is the reverse order. However, the linear regression formula and the parallel channel detection (same-sign slopes → averaged slope) are useful additions."
+  },
+
+  "zigzag_parameters": {
+    "ZZ_Depth":     { "type": "integer", "default": 12, "description": "Window for identifying local extrema — minimum bars between reversals" },
+    "ZZ_Deviation": { "type": "integer", "default": 5,  "unit": "%", "description": "Minimum % price change required to qualify as a reversal" },
+    "ZZ_Backstep":  { "type": "integer", "default": 3,  "description": "Lookback bars for confirming a swing point" }
+  },
+
+  "config": {
+    "InpTimeFrame":       { "type": "timeframe", "default": "PERIOD_CURRENT", "description": "Analysis timeframe" },
+    "LookBackBars":       { "type": "integer",   "default": 200,              "description": "Historical bars to scan for ZigZag swings" },
+    "ExtendFutureBars":   { "type": "integer",   "default": 100,              "description": "Bars to project trendlines into the future" }
+  },
+
+  "linear_regression_formula": {
+    "slope": "m = (N * sum(t*p) - sum(t) * sum(p)) / (N * sum(t^2) - sum(t)^2)",
+    "intercept": "b = (sum(p) - m * sum(t)) / N",
+    "variables": "t = bar index (time), p = price at swing point, N = number of swing points",
+    "application": "Fit through up to 10 swing highs → resistance trendline. Fit through up to 10 swing lows → support trendline.",
+    "parallel_channel": "if sign(slope_highs) == sign(slope_lows): use averaged_slope = (slope_highs + slope_lows) / 2 for both → parallel channel"
+  },
+
+  "two_tier_sr": {
+    "major_resistance": "max(swing_highs)",
+    "minor_resistance": "second_max(swing_highs)",
+    "major_support":    "min(swing_lows)",
+    "minor_support":    "second_min(swing_lows)",
+    "colors": {
+      "major_resistance": "magenta",
+      "minor_resistance": "fuchsia",
+      "major_support":    "cyan",
+      "minor_support":    "blue"
+    }
+  },
+
+  "logic": {
+    "steps": [
+      { "step": 1, "name": "run_zigzag",           "description": "Apply ZigZag(depth, deviation, backstep) to last LookBackBars" },
+      { "step": 2, "name": "extract_swings",        "description": "Collect up to 10 confirmed highs and 10 lows from ZigZag buffer" },
+      { "step": 3, "name": "linear_regression",     "description": "Fit regression line through swing highs (resistance) and swing lows (support)" },
+      { "step": 4, "name": "parallel_check",        "description": "If both slopes same sign: use averaged slope for parallel channel lines" },
+      { "step": 5, "name": "compute_two_tier_sr",   "description": "Major = most extreme swing, Minor = second-most extreme" },
+      { "step": 6, "name": "draw",                  "description": "Draw trendlines extended ExtendFutureBars forward + horizontal S/R lines" }
+    ]
+  },
+
+  "components_to_build": [
+    {
+      "name": "ZigZagSwingDetector",
+      "type": "indicator",
+      "priority": 3,
+      "contract": "find_zigzag_swings(highs, lows, depth, deviation, backstep, max_swings) -> (swing_highs, swing_lows)",
+      "note": "Alternative to StructureEngine fractal detection. ZigZag is noisier but simpler. Compare both."
+    },
+    {
+      "name": "LinearRegressionTrendline",
+      "type": "calculator",
+      "priority": 2,
+      "contract": "fit_trendline(times, prices) -> (slope, intercept, r_squared)",
+      "note": "Pure function. Reusable for any set of swing points."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "Linear regression formula through swing points — exact formula for fitting trendlines",
+      "Parallel channel detection: same-sign slopes → averaged slope → parallel channel",
+      "Two-tier S/R from swing extremes (major = most extreme, minor = second)",
+      "ZigZag parameter reference: depth=12, deviation=5%, backstep=3 as baseline"
+    ],
+    "discard": [
+      "ZigZag as primary swing detector — our fractal detection with configurable lookback is more precise",
+      "10-swing limit — arbitrary; our approach uses all swings within the analysis window",
+      "No signal generation",
+      "MQL5 chart rendering"
+    ],
+    "improve": [
+      "Add R² to trendline quality filter — we already use r_squared >= 0.7 in Gate H",
+      "Compare ZigZag swings vs fractal swings: run both, use agreement as confirmation",
+      "Use regression line as dynamic S/R: current trendline price at bar i = support/resistance level"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "our_approach_is_superior": "Our StructureEngine fits trendlines through ALL fractal extremes (trendline-first), then classifies swings by proximity to the trendline. ZigZag-first-then-regress is the reverse — it misses swings that don't meet ZigZag thresholds but still touch the trendline.",
+    "linear_regression_formula": "We should verify our _fit_trendline() uses the same least-squares formula. The max-touch O(n²) algorithm we use is different from pure regression — it maximizes touches rather than minimizes error. Both are valid; max-touch is better for support/resistance.",
+    "parallel_channel_detection": "New insight: when support and resistance trendlines have same-sign slopes, they form a channel. Averaging their slopes gives a cleaner parallel channel. Our StructureEngine draws both trendlines independently — add parallel channel detection as a post-processing step.",
+    "zigzag_deviation_5pct": "ZigZag deviation=5% is a much larger filter than our min_swing_diff_pct=0.05%. ZigZag captures only major structural swings; our fractal captures micro-swings too. For M15 structural analysis, a larger threshold (1-2%) may be more appropriate."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 44,
+  "total_parts": 65,
+  "title": "Building a VWMA Crossover Signal EA in MQL5",
+  "subtitle": "Volume-Weighted MA(20/60) Crossover + SR Filter, Closed-Bar, ATR SL",
+  "source_url": "https://www.mql5.com/en/articles/19843",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor",
+  "verdict": "LOW-MEDIUM EXTRACT — VWMA formula validated (sum(close*vol)/sum(vol)). SR_LookBack=50 + SR_OffsetPips=3 adds structural filter on top of MA cross. VWMA is superior to SMA as momentum indicator because it weights price by volume activity.",
+
+  "vwma_formula": "VWMA = sum(close[i] * volume[i] for i in range(period)) / sum(volume[i] for i in range(period))",
+  "signal": {
+    "buy":  "fast_vwma[prev] < slow_vwma[prev] AND fast_vwma[curr] > slow_vwma[curr]",
+    "sell": "fast_vwma[prev] > slow_vwma[prev] AND fast_vwma[curr] < slow_vwma[curr]"
+  },
+  "config": {
+    "FastPeriod": {"default": 20}, "SlowPeriod": {"default": 60},
+    "SR_LookBack": {"default": 50, "description": "Bars for S/R level detection"},
+    "SR_OffsetPips": {"default": 3.0, "description": "Price clearance from S/R before signal fires"}
+  },
+  "keep_discard": {
+    "keep": ["VWMA formula (volume-weighted close)", "SR_OffsetPips clearance pattern — signal fires only after clearing S/R by offset"],
+    "discard": ["MA cross as primary signal (too slow for our M1 system)", "No SL/TP definition"],
+    "improve": ["VWMA as alternative to EMA3: more responsive to high-volume bars. Replace EMA3 with VWMA(3) for volume-weighted momentum", "SR clearance logic: add to zone exit detection — signal only fires when price has CLEARED zone boundary by ATR*0.3"]
+  }
+}

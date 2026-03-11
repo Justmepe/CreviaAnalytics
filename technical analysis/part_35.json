@@ -1,0 +1,51 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 35,
+  "total_parts": 65,
+  "title": "Training and Deploying Predictive Models",
+  "subtitle": "GBC Pipeline with StandardScaler, /analyze Endpoint, SL/TP from ATR, 72.88% Win Rate",
+  "source_url": "https://www.mql5.com/en/articles/18985",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Python ML + Flask",
+  "verdict": "MEDIUM EXTRACT — /analyze response format (signal+sl+tp+conf), ATR-based SL/TP from ML output, 72.88% win rate on Boom 1000, probability threshold pattern. Architecture is fully Python-native (no bridge needed for our system).",
+
+  "ml_pipeline": {
+    "model": "GradientBoostingClassifier(n_estimators=400, lr=0.05, max_depth=3)",
+    "scaler": "StandardScaler",
+    "pipeline": "Pipeline([('scaler', StandardScaler()), ('model', GBCl(...))])",
+    "training_split": "TimeSeriesSplit(5 folds)",
+    "hyperparameter_search": "RandomizedSearchCV",
+    "serialization": "joblib.dump(pipeline, f'{symbol}_model.pkl')"
+  },
+
+  "signal_output": {
+    "format": {"signal": "BUY|SELL|WAIT", "sl": "float", "tp": "float", "conf": "float 0-1"},
+    "sl_formula": "entry ± ATR * 1.0",
+    "tp_formula": "entry ± ATR * 2.0 (RRR=2.0)",
+    "conf_threshold": "signal fires if max(Pbuy, Psell) > threshold",
+    "example": {"signal": "BUY", "conf": 0.994, "instrument": "Boom 1000 Index"}
+  },
+
+  "performance": {
+    "win_rate": "72.88%",
+    "avg_pnl": 3.32,
+    "total_pnl": 195.69,
+    "sample_period": "30 days",
+    "instrument": "Boom 1000 Index"
+  },
+
+  "keep_discard": {
+    "keep": [
+      "ATR×1 SL, ATR×2 TP from ML output — RRR=2.0 baseline",
+      "Confidence score in signal output (0-1) — maps to our position size factor",
+      "TimeSeriesSplit for financial data (no data leakage across time)",
+      "Per-symbol + global fallback model architecture",
+      "Minimum 400 rows for training — calibrates data requirement"
+    ],
+    "discard": ["Flask bridge", "MQL5 EA component", "60-bar buffer size (too small for our 360-bar M1 window)"],
+    "improve": [
+      "Use conf score to scale position size: conf > 0.9 = full size, conf 0.7-0.9 = 75%, conf < 0.7 = skip",
+      "Add our gate chain as features: all 5 gates as binary features → ML learns which combinations matter most"
+    ]
+  }
+}

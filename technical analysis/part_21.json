@@ -1,0 +1,81 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 21,
+  "total_parts": 65,
+  "title": "Market Structure Flip Detector Tool",
+  "subtitle": "ATR-Adaptive Swing Depth Validation for LH/HL Structure Flips",
+  "source_url": "https://www.mql5.com/en/articles/17891",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-05",
+  "type": "Expert Advisor",
+  "verdict": "HIGH EXTRACT — ATR-to-depth conversion formula is a direct upgrade to our StructureEngine lookback. State machine for flip detection, swing validation window. Backtested 64-83% win rate on M5/M15.",
+
+  "core_concept": {
+    "name": "Market Structure Flip",
+    "description": "Track sequential swing pivots. When in a HH sequence and a new high forms BELOW the prior high = bearish flip (LH confirmed). When in a LL sequence and a new low forms ABOVE the prior low = bullish flip (HL confirmed). ATR converts price volatility into a bar-count window for swing validation.",
+    "flip_types": {
+      "bearish_flip": "In uptrend (state=HH): new swing high < prior swing high = LH = bearish flip = ChoCH signal",
+      "bullish_flip": "In downtrend (state=LL): new swing low > prior swing low = HL = bullish flip = ChoCH signal"
+    },
+    "relevance_to_creviaderiv": "This is our StructureEngine's CHOCH detection logic. Key addition: ATR-to-depth formula converts price-domain volatility into bar-count window for swing validation. Our fixed lookback (LOOKBACK_MAP) doesn't adapt to volatility — this does."
+  },
+
+  "atr_to_depth_formula": {
+    "formula": "rawDepth = (ATR / SYMBOL_POINT) * InpAtrMultiplier; depth = max(1, floor(rawDepth * InpAtrLoosenFactor))",
+    "default_result": "ATR(14) * 1.0 * 0.5 / point → adaptive window in bars",
+    "behavior": "High volatility → wider ATR → larger depth window → requires more bars for swing validation. Low volatility → smaller window → faster flip detection.",
+    "our_current": "LOOKBACK_MAP fixed values (M1=2, M15=3, H1=5). NOT volatility-adaptive.",
+    "upgrade": "Replace LOOKBACK_MAP[tf] with atr_depth(atr, symbol_point, multiplier=1.0, loosen=0.5)"
+  },
+
+  "swing_detection": {
+    "is_swing_high": "for i in range(shift-depth, shift+depth+1): if high[i] > candidate: return False; return True",
+    "is_swing_low":  "for i in range(shift-depth, shift+depth+1): if low[i] < candidate: return False; return True",
+    "note": "Identical to our fractal detection. The ATR-depth is the differentiator."
+  },
+
+  "state_machine": {
+    "state_1": "HH established (uptrend)",
+    "state_2": "LL established (downtrend)",
+    "bearish_flip": "state==1 AND new_high < prior_high → emit SELL signal, set state=2",
+    "bullish_flip": "state==2 AND new_low > prior_low → emit BUY signal, set state=1"
+  },
+
+  "config": {
+    "InpAtrPeriod":       { "default": 14,    "description": "ATR period" },
+    "InpAtrMultiplier":   { "default": 1.0,   "description": "Scales ATR into raw depth" },
+    "InpAtrLoosenFactor": { "default": 0.5,   "description": "Reduces depth (0=disabled, 1=full ATR depth)" },
+    "InpAutoShift":       { "default": true,  "description": "Reserve right margin" },
+    "InpShiftBars":       { "default": 5,     "description": "Empty bars on right edge" }
+  },
+
+  "backtesting": {
+    "M5":  { "sell": {"total": 56, "positive": 39, "win_rate": "70%"}, "buy": {"total": 53, "positive": 44, "win_rate": "83%"} },
+    "M15": { "sell": {"total": 7,  "positive": 5,  "win_rate": "71%"}, "buy": {"total": 14, "positive": 9, "win_rate": "64%"} },
+    "note": "Buy signals outperform sell signals. M5 has more signals; M15 buy rate drops (small sample)."
+  },
+
+  "keep_discard": {
+    "keep": [
+      "ATR-to-depth formula: rawDepth = (ATR/point)*multiplier; depth = max(1, floor(rawDepth*loosen))",
+      "State machine: HH/LL tracking with flip on first reversal",
+      "Swing validation: scan window of 'depth' bars around candidate"
+    ],
+    "discard": [
+      "Binary signal output (no zone, no SL/TP)",
+      "Fixed state machine (only 2 states) — our StructureEngine tracks full HH/HL/LH/LL sequence"
+    ],
+    "improve": [
+      "ATR-adaptive lookback in StructureEngine: replace LOOKBACK_MAP with atr_depth()",
+      "Combine flip detection with zone proximity: flip AT zone = ChoCH + zone confluence"
+    ]
+  },
+
+  "creviaderiv_upgrade": {
+    "atr_adaptive_lookback": {
+      "current_code": "lookback = LOOKBACK_MAP.get(timeframe, 3)",
+      "upgrade": "lookback = max(2, int((atr[-1] / symbol_point) * 1.0 * 0.5))",
+      "benefit": "During high volatility (e.g., news events): wider lookback catches only major swings. During calm markets: tight lookback catches micro-swings. Avoids missing HL on volatile bars."
+    }
+  }
+}

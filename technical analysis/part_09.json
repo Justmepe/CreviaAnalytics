@@ -1,0 +1,199 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 9,
+  "total_parts": 65,
+  "title": "External Flow",
+  "subtitle": "MQL5-to-Python Bridge — HTTP POST of D1 OHLCV to Flask, Signal Returned as JSON",
+  "source_url": "https://www.mql5.com/en/articles/16967",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-01-23",
+  "type": "Expert Advisor + Python Server",
+  "verdict": "ARCHITECTURE REFERENCE — validates our broker-agnostic Python design. The bridge they build to reach Python is what we ARE from day one.",
+
+  "series_evolution": {
+    "parts_1_8": "Pure MQL5 tools — all logic and display inside MetaTrader",
+    "part_9": "PIVOT: First hybrid tool. MQL5 EA collects data, Python does the analysis. The series author recognises MQL5 cannot do what Python can (Pandas, ML, complex analytics). This is the series acknowledging its own limitations and opening the door to the external world.",
+    "significance": "This is the conceptual ancestor of every broker-adapter pattern. The fact that they need to build this bridge validates our decision to build entirely in Python with broker adapters from the start."
+  },
+
+  "tool_classification": {
+    "category": "mql5_python_bridge",
+    "generates_signals": true,
+    "signal_type": "directional_bias",
+    "executes_trades": false,
+    "runs": "continuously",
+    "update_trigger": "time_interval",
+    "timeframe": "D1",
+    "architecture": "two_process",
+    "process_1": "MQL5 EA — data collector and display",
+    "process_2": "Python Flask server — signal calculator"
+  },
+
+  "depends_on": {
+    "other_parts": [1, 2, 3, 4],
+    "shared_components": ["BrokerDataAdapter", "NotificationService"],
+    "new_this_part": ["PythonBridgeClient", "FlaskSignalServer", "CSVSerializer"]
+  },
+
+  "core_concept": {
+    "name": "External Processing Bridge",
+    "description": "MQL5 can collect data but cannot run Pandas, sklearn, or complex analytics. Python can, but cannot connect to a live broker. Bridge the two: MQL5 fetches market data, serialises it to CSV, POSTs it to a Python Flask endpoint, Python analyses and returns a signal JSON, MQL5 displays the result.",
+    "signal_logic": {
+      "buy":  "last close > 10-day average of OHLC average price",
+      "sell": "last close < 10-day average of OHLC average price",
+      "note": "Extremely simple — the VALUE of this part is the bridge architecture, not the signal logic"
+    },
+    "relevance_to_creviaderiv": "We ARE the Python side. We don't need to build the bridge — our BrokerDataAdapter directly fetches from Deriv/FTMO APIs. Parts 9-10 show what complexity traders accept to reach Python. We start there."
+  },
+
+  "data_requirements": [
+    {
+      "name": "d1_ohlcv_10_days",
+      "timeframe": "D1",
+      "fields": ["date", "prev_high", "prev_low", "prev_open", "prev_close", "prev_volume"],
+      "range": "last 10 daily bars",
+      "source": "MQL5 iHigh/iLow/iOpen/iClose/iVolume → CSV string → HTTP POST"
+    }
+  ],
+
+  "config": {
+    "signal_interval_minutes": { "type": "integer", "default": 60,    "description": "How often to recalculate signal (throttle)" },
+    "python_server_url":       { "type": "string",  "default": "http://127.0.0.1:5000/analyze", "description": "Flask endpoint" },
+    "http_timeout_ms":         { "type": "integer", "default": 5000,  "description": "WebRequest timeout in milliseconds" }
+  },
+
+  "logic": {
+    "mql5_side": [
+      "OnTick: check if signal_interval elapsed",
+      "Loop 10 daily bars: collect OHLCV per bar",
+      "Format as CSV string with header row",
+      "WebRequest POST to python_server_url",
+      "Parse JSON response: signal, average_price, average_volume, explanation",
+      "If signal changed from last: update chart display"
+    ],
+    "python_side": [
+      "Flask route /analyze receives POST",
+      "Decode CSV body → Pandas DataFrame",
+      "Validate columns present (date, prev_high, prev_low, prev_open, prev_close, prev_volume)",
+      "average_price = mean((high + low + open + close) / 4) across all 10 rows",
+      "average_volume = mean(volume) across all 10 rows",
+      "last_close = DataFrame.iloc[-1]['prev_close']",
+      "signal = 'BUY' if last_close > average_price else 'SELL'",
+      "Return JSON: {signal, average_price, average_volume, explanation}"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "name": "collect_daily_ohlcv",
+        "description": "MQL5 collects 10 D1 bars of OHLCV and formats as CSV",
+        "inputs": ["symbol", "D1 timeframe", "10 bar lookback"],
+        "outputs": ["csv_string"]
+      },
+      {
+        "step": 2,
+        "name": "http_post_to_python",
+        "description": "MQL5 POSTs CSV string to Flask /analyze endpoint",
+        "inputs": ["csv_string", "python_server_url"],
+        "outputs": ["json_response"]
+      },
+      {
+        "step": 3,
+        "name": "python_analysis",
+        "description": "Python calculates 10-day average price and compares to last close",
+        "key_formulas": {
+          "avg_price": "mean((high+low+open+close)/4) for all rows",
+          "avg_volume": "mean(volume) for all rows",
+          "signal": "'BUY' if last_close > avg_price else 'SELL'"
+        },
+        "outputs": ["signal", "average_price", "average_volume", "explanation"]
+      },
+      {
+        "step": 4,
+        "name": "display_on_chart",
+        "description": "MQL5 receives JSON response, parses fields, updates chart Comment() overlay",
+        "inputs": ["json_response"],
+        "outputs": ["chart_comment_text"]
+      }
+    ]
+  },
+
+  "bridge_architecture": {
+    "data_flow": "MT5 → CSV string → HTTP POST → Flask → Pandas → JSON → MT5",
+    "weakness_of_this_approach": [
+      "Requires running two processes simultaneously (MT5 + Python)",
+      "HTTP roundtrip latency for every signal update",
+      "CSV is fragile — no schema enforcement, breaks on special chars",
+      "Flask server must be manually started and kept alive",
+      "IP:port hardcoded in EA settings",
+      "No reconnect logic if Python server goes down"
+    ],
+    "our_advantage": "We are ENTIRELY in Python. BrokerDataAdapter connects directly to Deriv/FTMO REST APIs. No bridge needed. Zero latency between data fetch and analysis."
+  },
+
+  "components_to_build": [
+    {
+      "name": "BrokerDataAdapter",
+      "type": "interface",
+      "priority": 1,
+      "note": "Already built. This entire Part 9 exists to reach what our BrokerDataAdapter IS. Their HTTP bridge = our adapter call."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "The concept of separating data collection from signal analysis — good architecture principle",
+      "CSV/JSON serialisation patterns for market data exchange",
+      "10-day lookback window for short-term directional bias",
+      "Signal throttling by time interval — prevents recalculating on every tick",
+      "Response structure: signal + average_price + average_volume + explanation"
+    ],
+    "discard": [
+      "The entire HTTP bridge — unnecessary when built in Python natively",
+      "Flask server dependency — we use direct function calls",
+      "CSV as data format — use structured Pandas DataFrames internally",
+      "MQL5 WebRequest, FileOpen, FileWriteString — replaced by BrokerDataAdapter",
+      "The signal logic (last_close vs 10-day average) — far too simple for production"
+    ],
+    "improve": [
+      "Replace avg_price signal with our full gate chain: zone + EMA + ADX + VWV + departure",
+      "Replace D1 with M15 + M1 timeframe pair for intraday precision",
+      "Add ATR-based SL/TP — this tool generates signals with no risk management",
+      "Add structure context — BULLISH/BEARISH from StructureEngine, not just avg_price comparison",
+      "Add zone identification — are we near supply/demand? That's the real signal, not avg_price",
+      "Eliminate the bridge entirely — pure Python with broker adapter"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "we_are_the_python_side": "Parts 9-12 are the series struggling to reach Python capabilities. Our entire system IS Python. We don't need the bridge. Our architecture is what they're trying to build toward.",
+    "broker_adapter_validation": "Their HTTP bridge (MQL5 → Flask) is functionally identical to our BrokerDataAdapter (Python → Deriv REST API). Same pattern, we just start from the Python side.",
+    "signal_logic_baseline": "last_close > 10-day average is the simplest possible directional signal. It's the FLOOR of what a signal engine should do. Our zone+EMA+ADX+VWV+departure chain is many orders of magnitude more sophisticated."
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "MQL5-Python Integration Flow",
+      "url": "https://c.mql5.com/2/112/MQL5_Python_Intergration.png",
+      "insight": "Shows the full data flow: MT5 EA → HTTP POST → Python Flask → JSON response → MT5 display. This IS our BrokerDataAdapter pattern, just implemented backwards (from MT5 side instead of Python side)."
+    },
+    {
+      "fig": 2,
+      "title": "WebRequest Flow Diagram",
+      "url": "https://c.mql5.com/2/112/WebRequest_Flow.png",
+      "insight": "HTTP POST detail. Request body = CSV string. Response = JSON. Shows why CSV is fragile — author had to manually handle special chars and encoding."
+    },
+    {
+      "fig": 3,
+      "title": "Chart Display Result",
+      "url": "https://c.mql5.com/2/112/result.PNG",
+      "insight": "MT5 chart with signal overlay. Shows BUY signal, average price, average volume displayed via Comment()."
+    },
+    {
+      "fig": 4,
+      "title": "Trade Example on M1",
+      "url": "https://c.mql5.com/2/112/External_Flow_Win_Trade.png",
+      "insight": "Winning trade aligned with the D1 signal. Confirms the D1 directional bias → M1 execution pattern — same as our M15 structure → M1 entry approach."
+    }
+  ]
+}

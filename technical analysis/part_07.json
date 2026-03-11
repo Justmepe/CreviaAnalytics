@@ -1,0 +1,256 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 7,
+  "total_parts": 65,
+  "title": "Signal Pulse EA",
+  "subtitle": "Multi-Timeframe Bollinger Bands + Stochastic Confluence — M15/M30/H1 Alignment",
+  "source_url": "https://www.mql5.com/en/articles/16861",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-01-16",
+  "type": "Expert Advisor",
+  "verdict": "EXTRACT — multi-timeframe confirmation architecture. Replace BB+Stochastic with zone+EMA+ADX.",
+
+  "series_evolution": {
+    "part_5": "RSI + BB + ATR confluence on single timeframe",
+    "part_7": "Bollinger Bands + Stochastic confluence across THREE timeframes (M15, M30, H1). The key advancement: multi-timeframe alignment. Parts 5 and 7 together establish that good signals require both indicator convergence AND timeframe convergence."
+  },
+
+  "tool_classification": {
+    "category": "multi_timeframe_signal_generator",
+    "generates_signals": true,
+    "signal_type": "directional_entry_arrows",
+    "executes_trades": false,
+    "runs": "continuously",
+    "update_trigger": "OnTick",
+    "timeframes": ["M15", "M30", "H1"],
+    "symbol_agnostic": true
+  },
+
+  "depends_on": {
+    "other_parts": [1, 2, 3, 4, 5],
+    "shared_components": ["BrokerDataAdapter", "ChartRenderer", "SignalEngine"],
+    "new_this_part": ["StochasticCalculator", "MultiTimeframeDataFetcher", "ArrowManager"]
+  },
+
+  "core_concept": {
+    "name": "Multi-Timeframe Confluence Gate",
+    "description": "Require the SAME condition to be true on ALL three timeframes simultaneously. A signal on M15 alone is noise. A signal on M15, M30, AND H1 simultaneously is a genuine structural moment.",
+    "buy_conditions": [
+      "M15 close < M15 BB_lower  AND  M15 Stochastic_K < 5",
+      "M30 close < M30 BB_lower  AND  M30 Stochastic_K < 5",
+      "H1  close < H1  BB_lower  AND  H1  Stochastic_K < 5"
+    ],
+    "sell_conditions": [
+      "M15 close > M15 BB_upper  AND  M15 Stochastic_K > 95",
+      "M30 close > M30 BB_upper  AND  M30 Stochastic_K > 95",
+      "H1  close > H1  BB_upper  AND  H1  Stochastic_K > 95"
+    ],
+    "extreme_thresholds": {
+      "buy_k": "< 5 (not just < 20 — author uses extreme oversold only)",
+      "sell_k": "> 95 (not just > 80 — extreme overbought only)",
+      "rationale": "Extreme thresholds reduce signal frequency but radically increase quality. Fewer, better signals."
+    },
+    "relevance_to_creviaderiv": "This is exactly our M15/M1 two-timeframe approach but extended to three. Our M15=structure, M1=timing maps to: H1=macro context, M15=structure, M1=entry. The concept is identical."
+  },
+
+  "data_requirements": [
+    {
+      "name": "bollinger_bands_m15",
+      "indicator": "Bollinger Bands",
+      "timeframe": "M15",
+      "period": 20,
+      "deviation": 2.0,
+      "fields": ["upper", "lower"]
+    },
+    {
+      "name": "bollinger_bands_m30",
+      "indicator": "Bollinger Bands",
+      "timeframe": "M30",
+      "period": 20,
+      "deviation": 2.0,
+      "fields": ["upper", "lower"]
+    },
+    {
+      "name": "bollinger_bands_h1",
+      "indicator": "Bollinger Bands",
+      "timeframe": "H1",
+      "period": 20,
+      "deviation": 2.0,
+      "fields": ["upper", "lower"]
+    },
+    {
+      "name": "stochastic_m15_m30_h1",
+      "indicator": "Stochastic Oscillator",
+      "timeframes": ["M15", "M30", "H1"],
+      "k_period": 14,
+      "d_period": 3,
+      "slowing": 3,
+      "fields": ["K"]
+    }
+  ],
+
+  "config": {
+    "timeframe_1":       { "type": "enum",    "default": "M15", "description": "Primary (fastest) timeframe" },
+    "timeframe_2":       { "type": "enum",    "default": "M30", "description": "Intermediate timeframe" },
+    "timeframe_3":       { "type": "enum",    "default": "H1",  "description": "Macro (slowest) timeframe" },
+    "bb_period":         { "type": "integer", "default": 20,    "description": "Bollinger Bands period (all TFs)" },
+    "bb_deviation":      { "type": "float",   "default": 2.0,   "description": "BB standard deviations (all TFs)" },
+    "k_period":          { "type": "integer", "default": 14,    "description": "Stochastic %K period" },
+    "d_period":          { "type": "integer", "default": 3,     "description": "Stochastic %D period" },
+    "slowing":           { "type": "integer", "default": 3,     "description": "Stochastic slowing parameter" },
+    "signal_offset":     { "type": "float",   "default": 10.0,  "unit": "points", "description": "Vertical offset for arrow placement above/below candle" },
+    "test_bars":         { "type": "integer", "default": 10,    "description": "How many historical bars to check on init" },
+    "min_arrow_distance":{ "type": "float",   "default": 5.0,   "unit": "points", "description": "Minimum distance between arrows to prevent duplicates" }
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "fetch_indicators_all_timeframes",
+        "description": "Get BB upper/lower and Stochastic K for each of the 3 timeframes",
+        "helper": "GetBollingerBands(timeframe) and GetStochastic(timeframe)",
+        "outputs": ["bb1_upper", "bb1_lower", "k1", "bb2_upper", "bb2_lower", "k2", "bb3_upper", "bb3_lower", "k3"]
+      },
+      {
+        "step": 2,
+        "name": "evaluate_buy",
+        "conditions": [
+          "close1 < bb1_lower AND k1 < 5",
+          "close2 < bb2_lower AND k2 < 5",
+          "close3 < bb3_lower AND k3 < 5"
+        ],
+        "output": "is_buy: bool"
+      },
+      {
+        "step": 3,
+        "name": "evaluate_sell",
+        "conditions": [
+          "close1 > bb1_upper AND k1 > 95",
+          "close2 > bb2_upper AND k2 > 95",
+          "close3 > bb3_upper AND k3 > 95"
+        ],
+        "output": "is_sell: bool"
+      },
+      {
+        "step": 4,
+        "name": "check_arrow_proximity",
+        "description": "Prevent drawing overlapping arrows. Check if a recent signal exists within min_arrow_distance.",
+        "contract": "arrow_exists(price, direction, min_distance, signals_log) -> bool"
+      },
+      {
+        "step": 5,
+        "name": "draw_signal_arrow",
+        "description": "If signal and no nearby arrow: draw green up-arrow (buy) or red down-arrow (sell) on M15 chart",
+        "buy_arrow_code": 241,
+        "sell_arrow_code": 242
+      },
+      {
+        "step": 6,
+        "name": "log_signal",
+        "description": "Append signal to signalTimes[], signalPrices[], signalBuySignals[] arrays for historical tracking"
+      }
+    ]
+  },
+
+  "no_sl_tp": {
+    "note": "Part 7 generates entry signals only — NO SL or TP calculation. Author defers trade management to later parts. This is a pure signal filter.",
+    "contrast_with_part_5": "Part 5 had ATR-based SL/TP. Part 7 reverts to signal-only. The series is building components independently before assembling them.",
+    "implication_for_creviaderiv": "Our EntrySignal object carries SL/TP from _calculate_precision_sl() — we don't have this split. We always compute SL/TP when we generate a signal."
+  },
+
+  "multi_timeframe_architecture": {
+    "key_insight": "Each timeframe needs its own indicator instances. You cannot share a single BB handle across timeframes — each timeframe produces different BB values.",
+    "our_implementation": {
+      "m15_data": "Used for structure (StructureEngine), zones (ZoneIdentifier), trendlines",
+      "m1_data": "Used for timing (EntryEngine): EMA3 cross, ADX, departure candle",
+      "separation": "M15=WHERE (structure), M1=WHEN (entry). Two timeframes instead of three, but same architecture."
+    },
+    "data_fetching_pattern": {
+      "mql5": "iCopy() with specific PERIOD_ constant to get HTF bars",
+      "python": "BrokerDataAdapter.get_ohlc(symbol, timeframe='M15', ...) — already implemented"
+    }
+  },
+
+  "components_to_build": [
+    {
+      "name": "StochasticCalculator",
+      "type": "indicator",
+      "contract": "stochastic(highs, lows, closes, k_period, d_period, slowing) -> {K: List[float], D: List[float]}",
+      "note": "%K = 100 × (close - lowest_low_N) / (highest_high_N - lowest_low_N)"
+    },
+    {
+      "name": "MultiTimeframeDataFetcher",
+      "type": "data",
+      "contract": "get_multi_tf_bars(symbol, timeframes: List[str]) -> Dict[str, List[OHLCV]]",
+      "note": "Wraps BrokerDataAdapter. Returns dict keyed by timeframe string."
+    },
+    {
+      "name": "ArrowManager",
+      "type": "renderer",
+      "contract": "add_arrow(time, price, direction, min_distance) -> bool",
+      "note": "Deduplication logic: check if prior arrow within min_distance. Returns False (don't draw) if too close."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "Multi-timeframe confirmation requirement — excellent false-signal filter",
+      "Extreme thresholds (K<5, K>95) — much tighter than standard 20/80, far fewer but higher quality signals",
+      "Signal deduplication (arrow proximity check) — prevents double-counting the same signal",
+      "Signal history log (times, prices, directions) — foundation for backtesting and analysis"
+    ],
+    "discard": [
+      "Bollinger Bands + Stochastic as primary triggers — replaced by zone touch in CreviaDeriv",
+      "Stochastic K<5/K>95 thresholds — replaced by ADX rising and EMA3 crossover gates",
+      "MQL5 chart arrows (ObjectCreate) — replaced by ChartRenderer.draw_arrow",
+      "Three fixed timeframes (M15/M30/H1) — our system uses M15+M1 pair, more focused"
+    ],
+    "improve": [
+      "Replace BB+Stochastic with supply/demand zone proximity as primary trigger",
+      "Replace multi-TF indicator alignment with M15 structure + M1 timing distinction",
+      "Add SL/TP to this signal — Part 7 generates arrows with no risk levels",
+      "Use configurable timeframe pairs, not hardcoded 3-TF stack",
+      "Add VWV (velocity) gate — no volume confirmation here"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "mtf_confirmation_validated": "Multi-timeframe confirmation is industry standard. Our M15+M1 architecture is correct. This part validates we should NOT use a single timeframe for both structure and entry.",
+    "extreme_thresholds_lesson": "K<5 and K>95 (not 20/80) produce fewer, higher quality signals. Our ADX > 20 threshold (not > 0) follows the same principle — require meaningful movement.",
+    "signal_deduplication": "The ArrowManager proximity check maps to our single-signal-per-zone logic in EntryEngine — once a signal fires for a zone, we don't re-fire on the same zone interaction."
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Buy Condition Diagram",
+      "url": "https://c.mql5.com/2/109/BUY_CONDITON_FINAL__1.png",
+      "insight": "Shows three-timeframe stack with all three BB lower-touch + Stoch<5 conditions highlighted simultaneously."
+    },
+    {
+      "fig": 2,
+      "title": "Sell Condition Diagram",
+      "url": "https://c.mql5.com/2/109/SELL_CONDITION_FINAL__1.png",
+      "insight": "Mirror of buy condition. Upper BB touch across all three TFs with Stoch>95."
+    },
+    {
+      "fig": 3,
+      "title": "Algorithm Flow Chart",
+      "url": "https://c.mql5.com/2/109/FLOW_CHART__1.png",
+      "insight": "Decision tree: Fetch TF1 → Check buy/sell → Fetch TF2 → Check → Fetch TF3 → Check → Signal if all pass."
+    },
+    {
+      "fig": 4,
+      "title": "Pulse Trader Signal Result",
+      "url": "https://c.mql5.com/2/109/Pulse_Trader_Result__1.png",
+      "insight": "Chart showing green and red arrows. Arrows appear sparsely — confirms that extreme thresholds filter most signals."
+    },
+    {
+      "fig": 5,
+      "title": "Test Result Animation (GIF)",
+      "url": "https://c.mql5.com/2/109/TEST_RESULT_GIF__1.gif",
+      "insight": "Animated test showing arrows appearing in real time. Visually confirms signals align with actual BB+Stoch extremes."
+    }
+  ]
+}

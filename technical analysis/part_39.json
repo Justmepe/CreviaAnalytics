@@ -1,0 +1,64 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 39,
+  "total_parts": 65,
+  "title": "Automating BOS and ChoCH Detection in MQL5",
+  "subtitle": "Fractal-Based BOS/ChoCH with CrossedOver/CrossedUnder Closed-Bar Logic, os_state Machine",
+  "source_url": "https://www.mql5.com/en/articles/19365",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Indicator",
+  "verdict": "HIGH EXTRACT — exact BOS/ChoCH classification algorithm. CrossedOver/CrossedUnder closed-bar pattern is exactly what our StructureEngine detects. os_state machine for alternating BOS/ChoCH is the cleaner implementation vs our current detect_structure_break().",
+
+  "definitions": {
+    "BOS": "Break of Structure — price closes beyond a prior fractal extreme in the SAME direction as the prevailing trend. Confirms trend continuation.",
+    "ChoCH": "Change of Character — price closes beyond a prior fractal extreme in the OPPOSITE direction to the prevailing trend. First warning of reversal.",
+    "distinction": "Same direction as trend = BOS. Opposite = ChoCH. The os_state variable tracks which was the most recent break."
+  },
+
+  "algorithm": {
+    "step_1_fractal_detection": {
+      "window": "g_length = 2 * LengthInput + 1 (center bar surrounded by LengthInput bars on each side)",
+      "high_fractal": "high[center] > high[all neighbors within window]",
+      "low_fractal":  "low[center] < low[all neighbors within window]",
+      "closed_bar_only": "Shift=1+ (completed bars only — no repainting)"
+    },
+    "step_2_cross_detection": {
+      "CrossedOver":  "prev_close <= level AND curr_close > level",
+      "CrossedUnder": "prev_close >= level AND curr_close < level"
+    },
+    "step_3_classification": {
+      "os_state": "Tracks current bias: +1=bullish, -1=bearish",
+      "ChoCH_rule": "Cross in direction OPPOSITE to os_state → ChoCH (first sign of reversal)",
+      "BOS_rule":   "Cross in direction SAME as os_state → BOS (trend confirmation)",
+      "state_update": "After each cross, flip os_state to match new break direction"
+    }
+  },
+
+  "config": {
+    "LengthInput":           { "default": 5,    "description": "Fractal window: ±5 bars around center" },
+    "AutoDetectLength":      { "default": false, "description": "Auto-select window per timeframe" },
+    "MaxFractalHistoryBars": { "default": 2000, "description": "Prune fractals older than this" }
+  },
+
+  "keep_discard": {
+    "keep": [
+      "CrossedOver/CrossedUnder closed-bar cross detection pattern",
+      "os_state machine: +1/-1 bias, ChoCH = opposite direction break, BOS = same direction break",
+      "Fractal window = 2*length+1 centered window",
+      "Closed bar only (shift=1) — no repainting"
+    ],
+    "discard": ["MQL5 chart rendering", "MaxFractalHistoryBars pruning (our trendline-first handles this differently)"],
+    "improve": [
+      "os_state machine is cleaner than our current ChoCH detection — consider refactoring detect_structure_break() to use explicit os_state",
+      "CrossedOver/CrossedUnder vs our closed-bar comparison: equivalent — no change needed",
+      "LengthInput=5 maps to our LOOKBACK_MAP M15=3; increase to 5 for more significant fractal confirmation"
+    ]
+  },
+
+  "comparison_with_our_system": {
+    "their_detect_structure_break": "Fractal → os_state → CrossedOver/Under → BOS or ChoCH",
+    "our_detect_structure_break":   "classify_market_structure → detect_structure_break → check_break_direction vs market_structure",
+    "alignment": "Same logic, different implementation. Their os_state is more explicit than our market_structure comparison.",
+    "improvement": "Replace our direction comparison with explicit os_state: if cross_direction == os_state: BOS else: ChoCH. More readable."
+  }
+}

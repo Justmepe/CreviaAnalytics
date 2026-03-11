@@ -1,0 +1,96 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 20,
+  "total_parts": 65,
+  "title": "External Flow (IV) — Correlation Pathfinder",
+  "subtitle": "Pearson Correlation Between Currency Pairs via MQL5-Python Bridge",
+  "source_url": "https://www.mql5.com/en/articles/17742",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-05",
+  "type": "EA + Python Flask",
+  "verdict": "PARTIAL EXTRACT — correlation coefficient thresholds, rolling correlation window pattern, and correlation as a risk filter. We already have Python-native architecture; the bridge pattern is irrelevant. Correlation is useful for position sizing (don't take correlated pairs simultaneously).",
+
+  "tool_classification": {
+    "category": "correlation_analyzer",
+    "generates_signals": false,
+    "signal_type": "relationship_metric",
+    "executes_trades": false,
+    "runs": "on_demand",
+    "timeframe_agnostic": false,
+    "timeframe": "M15"
+  },
+
+  "core_concept": {
+    "name": "Pearson Correlation Between Pairs",
+    "description": "Compute Pearson correlation coefficient between closing prices of two currency pairs over N bars. Also compute rolling 50-bar window correlation to track how the relationship changes over time.",
+    "formula": "r = (N*sum(x*y) - sum(x)*sum(y)) / sqrt((N*sum(x^2) - sum(x)^2) * (N*sum(y^2) - sum(y)^2))",
+    "pandas_equivalent": "df['corr'] = df['pair1_close'].rolling(50).corr(df['pair2_close'])",
+    "relevance_to_creviaderiv": "Correlation as risk management gate: if we already hold a position in EURUSD and correlation with GBPUSD >= 0.8, don't open a new GBPUSD position simultaneously (same directional exposure). Also useful for multi-symbol scanning: skip correlated pairs to avoid overexposure."
+  },
+
+  "correlation_thresholds": {
+    "very_strong_positive": { "range": ">= 0.8",        "action": "Hedge: trade one long, one short. Or avoid trading both in same direction." },
+    "moderate_positive":    { "range": "0.5 to 0.8",    "action": "Same directional tendency. Reduce size on second position." },
+    "weak_positive":        { "range": "0.0 to 0.5",    "action": "Diversification opportunity — mostly independent." },
+    "weak_negative":        { "range": "-0.5 to 0.0",   "action": "Mild divergence — partial hedge if trading both." },
+    "strong_negative":      { "range": "<= -0.5",       "action": "Natural hedge — moving opposite. Trading both = reduced net exposure." }
+  },
+
+  "config": {
+    "TimeFrame":     { "type": "timeframe", "default": "M15",      "description": "Candle timeframe for correlation analysis" },
+    "BarsToExport":  { "type": "integer",   "default": "user_set", "description": "Historical bars sent to Python" },
+    "RollingWindow": { "type": "integer",   "default": 50,         "description": "Window for rolling correlation recalculation" },
+    "pythonUrl":     { "type": "string",    "default": "user_set", "description": "Flask server endpoint URL" },
+    "timeout":       { "type": "integer",   "default": "user_set", "description": "HTTP request timeout ms" }
+  },
+
+  "architecture": {
+    "mql5": "CopyRates() for two pairs → JSON → WebRequest() to Flask server",
+    "python": "Pandas: overall Pearson r + rolling(50).corr() → Matplotlib PNG → JSON response",
+    "our_version": "All Python-native. Pandas corr() directly on broker data. No bridge needed."
+  },
+
+  "test_results": {
+    "pair1": "EUR/USD",
+    "pair2": "GBP/USD",
+    "period": "April 2-9, 2025",
+    "overall_corr": "0.33-0.37 (weakly positive)",
+    "rolling_corr_recent": "0.82-0.83 (highly positive)",
+    "insight": "Overall correlation was low but recent rolling was high — shows temporary correlation bursts. Always use rolling window, not overall, for trading decisions."
+  },
+
+  "components_to_build": [
+    {
+      "name": "CorrelationFilter",
+      "type": "risk_filter",
+      "priority": 3,
+      "contract": "compute_correlation(pair1_closes, pair2_closes, window) -> (overall_r, rolling_r_series)",
+      "note": "Use pandas rolling().corr() — single line. Use as position sizing gate: if rolling_r > 0.8 and already holding pair1, halve position size for pair2."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "Pearson correlation formula and thresholds (>0.8 = very strong, 0.5-0.8 = moderate)",
+      "Rolling window correlation (50 bars) to detect current correlation regime vs long-term",
+      "Correlation as risk/position-sizing gate: avoid simultaneous same-direction trades on r > 0.8 pairs",
+      "Observation: short-term rolling can differ sharply from overall — use rolling for live decisions"
+    ],
+    "discard": [
+      "MQL5-Python HTTP bridge — we have Python-native access",
+      "Matplotlib visualization (for our use case — can add if needed for reports)",
+      "Flask server architecture"
+    ],
+    "improve": [
+      "Expand to multi-symbol correlation matrix: all symbols vs all other symbols in our scan list",
+      "Add correlation regime detection: 'currently correlated' vs 'currently independent' as states",
+      "Position sizing rule: if portfolio_correlation_with_new_trade > 0.7: reduce position size by (1 - correlation) factor"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "position_sizing_gate": "Before opening a signal, check rolling correlation with any existing open positions. If r > 0.8: halve position size (double exposure risk). If r < -0.5: full size (acts as partial hedge).",
+    "multi_symbol_scan": "Our TradingOrchestrator scans multiple symbols. Running correlation between all active scan symbols avoids accidentally taking the same directional bet 5 times via correlated pairs.",
+    "rolling_vs_overall": "The EUR/USD vs GBP/USD test shows overall r=0.35 but recent rolling r=0.83. This is why overall correlation is useless — use only rolling window (50 bars on M15 = ~12 hours of current correlation)."
+  }
+}

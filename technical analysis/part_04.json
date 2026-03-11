@@ -1,0 +1,323 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 4,
+  "total_parts": 65,
+  "title": "Analytics Forecaster EA",
+  "subtitle": "Analytics Master EA + Telegram Bot Integration — Live Market Alerts to Mobile",
+  "source_url": "https://www.mql5.com/en/articles/16559",
+  "author": "Christian Benjamin (lynnchris)",
+  "type": "Expert Advisor",
+  "verdict": "BUILD — extract the NotificationService as a standalone broker-agnostic component",
+
+  "series_evolution": {
+    "part_1": "Script — ghost overlay, runs once",
+    "part_2": "Script — data panel, runs once",
+    "part_3": "EA — live dashboard, auto-refreshes every 2 hours",
+    "part_4": "EA — Part 3 + Telegram push notification on each refresh cycle",
+    "key_addition": "One new function (SendTelegramMessage), three new config params. Every other line of code is identical to Part 3. This part is entirely about the notification transport layer."
+  },
+
+  "tool_classification": {
+    "category": "live_analytics_dashboard_with_notifications",
+    "generates_signals": true,
+    "signal_type": "directional_bias_with_pressure",
+    "executes_trades": false,
+    "runs": "continuously",
+    "update_interval_hours": 2,
+    "pushes_to_telegram": true,
+    "symbol_agnostic": true,
+    "notable": "Version string bumped to 1.1. Author's tool changelog now refers to this as 'Third Edition' despite being Part 4 — the numbering in the changelog is off by one."
+  },
+
+  "depends_on": {
+    "other_parts": [1, 2, 3],
+    "shared_components": [
+      "BrokerDataAdapter",
+      "DailyContextProvider",
+      "SessionManager",
+      "ChartRenderer",
+      "DataTableRenderer",
+      "AnalyticsEngine",
+      "ATRCalculator",
+      "AccountDataProvider",
+      "MarketDataProvider",
+      "LotSizeCalculator",
+      "FibonacciSRCalculator",
+      "ScheduledRefreshManager",
+      "NotificationService"
+    ],
+    "new_vs_part_3": "Only NotificationService is new. All analysis logic is identical to Part 3."
+  },
+
+  "what_is_new_vs_part_3": {
+    "new_config_params": [
+      {
+        "name": "TelegramToken",
+        "type": "string",
+        "default": "YOUR BOT TOKEN",
+        "description": "The Telegram Bot API token obtained from BotFather. Required to authenticate HTTP requests to the Telegram API."
+      },
+      {
+        "name": "ChatID",
+        "type": "string",
+        "default": "YOUR CHART ID",
+        "description": "The Telegram chat ID where messages will be delivered. Can be a personal chat or group chat ID."
+      },
+      {
+        "name": "SendTelegramAlerts",
+        "type": "bool",
+        "default": true,
+        "description": "Master on/off switch for Telegram notifications. Allows disabling alerts without code changes."
+      }
+    ],
+    "new_function": {
+      "name": "SendTelegramMessage",
+      "signature": "void SendTelegramMessage(string message)",
+      "http_method": "POST",
+      "endpoint": "https://api.telegram.org/bot{TOKEN}/sendMessage",
+      "content_type": "application/json",
+      "timeout_ms": 1000,
+      "payload_format": "{\"chat_id\":\"{CHAT_ID}\",\"text\":\"{MESSAGE}\"}",
+      "success_code": 200,
+      "error_handling": "Prints HTTP response code and last error on failure"
+    },
+    "new_output_field": {
+      "name": "pair_name",
+      "source": "Symbol() function",
+      "description": "Current instrument name prepended to the message so Telegram recipient knows which pair the data is for",
+      "note": "Part 3 did not include the pair name in the dashboard. Part 4 adds it because the Telegram message has no chart context — the reader needs to know which symbol it relates to."
+    }
+  },
+
+  "telegram_setup_steps": {
+    "step_1": "Install Telegram app",
+    "step_2": "Search for @BotFather in Telegram",
+    "step_3": "Send /newbot command",
+    "step_4": "Choose bot name and username (must end in 'bot')",
+    "step_5": "Receive API token — save securely",
+    "step_6_get_chat_id_method_1": "Start @get_id_bot or @userinfobot — they reply with your chat ID",
+    "step_6_get_chat_id_method_2": "Send any message to your bot, then visit https://api.telegram.org/bot{TOKEN}/getUpdates — chat_id is in the result JSON",
+    "mt5_prerequisite": "In MT5: Tools > Options > Expert Advisors > Allow WebRequest for https://api.telegram.org"
+  },
+
+  "http_request_breakdown": {
+    "method": "POST",
+    "url": "https://api.telegram.org/bot{TelegramToken}/sendMessage",
+    "headers": { "Content-Type": "application/json" },
+    "body": { "chat_id": "{ChatID}", "text": "{infoStr}" },
+    "timeout_ms": 1000,
+    "response_check": "HTTP 200 = success. Anything else = log error code.",
+    "critical_security_note": "The bot token is stored as a plain-text input parameter in the EA settings. Anyone with access to the EA settings file or strategy tester log can see the token. Our build must offer secure token storage — environment variable or encrypted config file.",
+    "json_injection_risk": "The message string is inserted directly into JSON without escaping. If the infoStr contains special characters like quotes, backslashes, or newlines it will break the JSON payload. Our NotificationService must sanitise the message before embedding it.",
+    "rate_limit": "Telegram Bot API limits: 1 message per second to the same chat, 30 messages per second across all chats. The 2-hour refresh interval is well within limits."
+  },
+
+  "data_requirements": "Identical to Part 3 — see part_03.json for full data requirements spec",
+
+  "config": {
+    "risk_percentage":       { "type": "float",   "default": 1.0, "description": "Same as Part 3" },
+    "stop_loss_multiplier":  { "type": "float",   "default": 1.0, "description": "Same as Part 3" },
+    "atr_period":            { "type": "integer", "default": 14,  "description": "Same as Part 3" },
+    "telegram_token":        { "type": "string",  "default": "",  "description": "Bot API token from BotFather — MUST be kept secret" },
+    "chat_id":               { "type": "string",  "default": "",  "description": "Telegram chat or group ID — destination for alerts" },
+    "send_telegram_alerts":  { "type": "bool",    "default": true,"description": "Master switch — disable without code changes" }
+  },
+
+  "notification_logic": {
+    "trigger": "Every 2-hour refresh cycle — same gate as Part 3",
+    "content": "Full 18-field infoStr including pair name, all metrics, last update timestamp",
+    "guard": "if (SendTelegramAlerts) { SendTelegramMessage(infoStr) }",
+    "sequence": [
+      "1. Compute all metrics (identical to Part 3)",
+      "2. Format infoStr (add pair name at top vs Part 3)",
+      "3. Print to MT5 Expert log",
+      "4. Display on chart via Comment()",
+      "5. If SendTelegramAlerts: POST to Telegram API",
+      "6. Redraw S/R trend lines",
+      "7. Update lastUpdateTime"
+    ]
+  },
+
+  "components_to_build": [
+    {
+      "name": "NotificationService",
+      "type": "service",
+      "priority": 1,
+      "shared_across_parts": "many",
+      "contract": {
+        "send": "send(channel: str, message: str, metadata: dict) -> bool",
+        "channels": ["telegram", "email", "webhook", "push", "sound", "log"]
+      },
+      "implementations": {
+        "TelegramChannel": {
+          "auth": "bot_token from secure config (NOT plain-text input param)",
+          "endpoint": "https://api.telegram.org/bot{token}/sendMessage",
+          "method": "POST",
+          "payload": "{chat_id, text}",
+          "sanitise_message": true,
+          "retry_on_failure": true,
+          "max_retries": 3
+        },
+        "WebhookChannel": "POST JSON payload to any URL — for Slack, Discord, custom endpoints",
+        "EmailChannel": "SMTP or sendgrid — for end-of-day summary emails",
+        "SoundChannel": "Play local audio file — for alerts when away from screen"
+      },
+      "security": "Token stored in environment variable or encrypted config — never in plain text",
+      "message_formatting": {
+        "sanitise": "Escape JSON special chars: backslash, quote, newline, tab before embedding in payload",
+        "markdown_support": "Telegram supports Markdown in messages — use *bold* for direction signal, `code` for prices",
+        "max_length_chars": 4096
+      }
+    }
+  ],
+
+  "security_issues": [
+    {
+      "issue": "Plain-text token storage",
+      "severity": "HIGH",
+      "description": "TelegramToken stored as an MQL5 input string — visible in EA properties dialog, strategy tester logs, and exported .set files",
+      "fix": "Store token in a separate encrypted config file or environment variable. Never in source code or user-facing settings."
+    },
+    {
+      "issue": "JSON injection via unescaped message content",
+      "severity": "MEDIUM",
+      "description": "infoStr is embedded directly into the JSON payload string without escaping. Newlines (\\n) in the message will break the JSON unless the implementation handles this correctly.",
+      "fix": "Use a proper JSON serialiser. Escape all special characters in the message string before embedding."
+    },
+    {
+      "issue": "No retry logic",
+      "severity": "LOW",
+      "description": "If the HTTP request fails (timeout, network error), the message is lost with no retry. The EA continues silently.",
+      "fix": "Queue failed messages and retry up to 3 times with exponential backoff."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "The Telegram integration concept — mobile push alerts for trading tools is genuinely valuable",
+      "The SendTelegramAlerts toggle — clean on/off without code changes",
+      "Adding pair name to the message — essential context for mobile reading",
+      "The HTTP POST approach — simple, reliable, supported by all Telegram bot implementations",
+      "Treating notification as a separate function (SendTelegramMessage) — correct separation of concerns"
+    ],
+    "discard": [
+      "Plain-text token as input parameter — serious security risk",
+      "Direct string embedding in JSON payload — replace with proper JSON serialisation",
+      "No retry on HTTP failure — implement queued retry",
+      "MQL5 WebRequest API — replaced by our HTTP client in NotificationService",
+      "The MQL5-specific StringToCharArray / CharArrayToString pattern"
+    ],
+    "improve": [
+      "Secure token storage (env var or encrypted config file)",
+      "Telegram Markdown formatting: bold direction signal, monospace prices",
+      "Message deduplication: don't send if content is identical to last message",
+      "Multi-channel support: same message to Telegram AND webhook AND sound",
+      "Alert throttling: if Telegram fails 3 times, disable and log — don't spam error logs",
+      "Selective alerting: config option to only send Telegram if direction changes (not every 2 hours)",
+      "Message queue: if market is closed or network is down, queue and send on reconnect"
+    ]
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Part 3 Analytics Master Result (recap)",
+      "url": "https://c.mql5.com/2/135/P009.png",
+      "insight": "Shows the Part 3 dashboard used as the baseline. Confirms the data panel content that Part 4 forwards to Telegram."
+    },
+    {
+      "fig": 2,
+      "title": "Integration Pathway Diagram",
+      "url": "https://c.mql5.com/2/135/image1-2.png",
+      "insight": "Architecture diagram: MT5 EA → HTTP POST → Telegram Bot API → Telegram Chat. Simple three-hop integration."
+    },
+    {
+      "fig": 3,
+      "title": "BotFather in Telegram",
+      "url": "https://c.mql5.com/2/135/Step2.png",
+      "insight": "Screenshot of BotFather search result in Telegram app. Step 2 of bot creation."
+    },
+    {
+      "fig": 4,
+      "title": "Start Chat with BotFather",
+      "url": "https://c.mql5.com/2/135/Step_3_and_4.png",
+      "insight": "Steps 3 and 4 combined — start chat and create new bot via /newbot command."
+    },
+    {
+      "fig": 5,
+      "title": "Receive Bot Token",
+      "url": "https://c.mql5.com/2/135/Step4_and_5.png",
+      "insight": "BotFather response showing the bot token. The token is the string after 'Use this token to access the HTTP API:'. Format: {numbers}:{alphanumeric string}."
+    },
+    {
+      "fig": 6,
+      "title": "Get Chat ID via @userinfobot",
+      "url": "https://c.mql5.com/2/135/user_infor.png",
+      "insight": "Shows @userinfobot response — returns your numeric Telegram user ID which is also your personal chat ID."
+    },
+    {
+      "fig": 7,
+      "title": "Telegram Message with Pair Name",
+      "url": "https://c.mql5.com/2/135/PAIR_NAME.PNG",
+      "insight": "The actual Telegram message received. Shows all 18 fields including Pair: USDSEK at top. Confirms the plain-text format — no formatting, just newline-separated key:value pairs."
+    },
+    {
+      "fig": 10,
+      "title": "Telegram Result GIF",
+      "url": "https://c.mql5.com/2/135/Integration_Result.gif",
+      "insight": "Animated — shows messages arriving in the Telegram chat in real time as the EA sends them. Confirms the live integration is working end-to-end."
+    },
+    {
+      "fig": 11,
+      "title": "MT5 Chart vs Telegram Side-by-Side",
+      "url": "https://c.mql5.com/2/135/Telegram_Integration.png",
+      "insight": "Most important screenshot — shows the MT5 chart data panel on the left and the identical information in Telegram on the right. Proves the data integrity of the integration."
+    }
+  ],
+
+  "our_notification_service_pseudocode": {
+    "description": "Broker-agnostic, channel-agnostic notification service",
+    "code": [
+      "class NotificationService:",
+      "    def __init__(self, config: NotificationConfig):",
+      "        self.channels = self._init_channels(config)",
+      "        self.queue    = MessageQueue()",
+      "        self.last_sent = {}",
+      "",
+      "    def send(self, message: str, event_type: str = 'update') -> bool:",
+      "        msg = Message(",
+      "            content  = self._sanitise(message),",
+      "            event    = event_type,",
+      "            symbol   = self.context.symbol,",
+      "            timestamp= now()",
+      "        )",
+      "        if self._is_duplicate(msg): return True",
+      "        for channel in self.channels:",
+      "            if channel.is_enabled:",
+      "                success = channel.send(msg)",
+      "                if not success: self.queue.enqueue(msg, channel)",
+      "        return True",
+      "",
+      "    def _sanitise(self, text: str) -> str:",
+      "        # Escape JSON special chars for embedding in payloads",
+      "        return text.replace('\\\\','\\\\\\\\').replace('\"','\\\\'+'\"').replace('\\n','\\\\n')",
+      "",
+      "    def _is_duplicate(self, msg: Message) -> bool:",
+      "        key = msg.event + msg.symbol",
+      "        if self.last_sent.get(key) == msg.content: return True",
+      "        self.last_sent[key] = msg.content",
+      "        return False",
+      "",
+      "class TelegramChannel:",
+      "    BASE_URL = 'https://api.telegram.org/bot{token}/sendMessage'",
+      "",
+      "    def send(self, msg: Message) -> bool:",
+      "        payload = {'chat_id': self.chat_id, 'text': msg.content}",
+      "        for attempt in range(self.max_retries):",
+      "            resp = http.post(self.url, json=payload, timeout=5)",
+      "            if resp.status_code == 200: return True",
+      "            time.sleep(2 ** attempt)   # exponential backoff",
+      "        return False"
+    ]
+  }
+}

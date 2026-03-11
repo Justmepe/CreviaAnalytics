@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crevia Cockpit — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:     #0a0b0f;
+  --s1:     #0e1018;
+  --s2:     #13151f;
+  --s3:     #1a1d2a;
+  --s4:     #222637;
+  --border: #2a2e42;
+  --border2:#1e2233;
+
+  --amber:  #f0a30a;
+  --amber2: #fbbf24;
+  --teal:   #00cba8;
+  --teal2:  #34d8b8;
+  --blue:   #4d9de0;
+  --red:    #e05c4d;
+  --green:  #4dbe89;
+  --purple: #9d7dea;
+
+  --text:   #e2e4ef;
+  --muted:  #6b7194;
+  --dim:    #3a3f5c;
+
+  --font-display: 'Rajdhani', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --sidebar-w: 220px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── SCANLINES ── */
+body::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+}
+
+/* ════ SIDEBAR ════ */
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--s1);
+  border-right: 1px solid var(--border2);
+  display: flex; flex-direction: column;
+  flex-shrink: 0;
+  position: fixed; left: 0; top: 0; bottom: 0;
+  z-index: 100;
+}
+
+.logo-area {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border2);
+  display: flex; align-items: center; gap: 10px;
+}
+.logo-mark {
+  width: 34px; height: 34px;
+  background: var(--amber);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.logo-mark::after {
+  content: 'CC';
+  font-family: var(--font-mono);
+  font-size: 9px; font-weight: 600;
+  color: #000; letter-spacing: -0.5px;
+  position: absolute;
+}
+.logo-text { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; }
+.logo-text span { color: var(--amber); }
+.logo-sub {
+  font-family: var(--font-mono);
+  font-size: 9px; color: var(--muted);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.nav-section {
+  padding: 14px 12px 8px;
+}
+.nav-label {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--dim); padding: 0 8px; margin-bottom: 6px;
+}
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--muted);
+  font-weight: 500; font-size: 14px; letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  position: relative;
+}
+.nav-item:hover { color: var(--text); background: var(--s3); }
+.nav-item.active {
+  color: var(--amber); background: rgba(240,163,10,0.08);
+  border-color: rgba(240,163,10,0.2);
+}
+.nav-item.active::before {
+  content: '';
+  position: absolute; left: -12px; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 60%; background: var(--amber); border-radius: 0 2px 2px 0;
+}
+.nav-icon { font-size: 15px; width: 18px; text-align: center; flex-shrink: 0; }
+.nav-badge {
+  margin-left: auto;
+  font-family: var(--font-mono); font-size: 10px;
+  background: var(--s4); color: var(--muted);
+  padding: 1px 6px; border-radius: 10px;
+}
+.nav-item.active .nav-badge { background: rgba(240,163,10,0.15); color: var(--amber); }
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 12px;
+  border-top: 1px solid var(--border2);
+}
+.admin-card {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px; background: var(--s2); border-radius: 6px;
+  border: 1px solid var(--border2);
+}
+.admin-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber), var(--red));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: #000;
+  flex-shrink: 0;
+}
+.admin-info { flex: 1; min-width: 0; }
+.admin-name { font-size: 13px; font-weight: 600; }
+.admin-role { font-family: var(--font-mono); font-size: 10px; color: var(--amber); letter-spacing: 0.04em; }
+.admin-settings { color: var(--muted); cursor: pointer; font-size: 14px; transition: color 0.15s; }
+.admin-settings:hover { color: var(--text); }
+
+/* ════ MAIN ════ */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  display: flex; flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  height: 54px;
+  background: var(--s1);
+  border-bottom: 1px solid var(--border2);
+  display: flex; align-items: center;
+  padding: 0 28px; gap: 16px;
+  position: sticky; top: 0; z-index: 50;
+}
+.topbar-breadcrumb {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--muted); letter-spacing: 0.04em;
+  display: flex; align-items: center; gap: 6px;
+}
+.topbar-breadcrumb .sep { color: var(--dim); }
+.topbar-breadcrumb .cur { color: var(--text); font-weight: 500; }
+.topbar-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.topbar-status {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--green); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.pulse {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(77,190,137,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(77,190,137,0); } }
+.topbar-btn {
+  width: 32px; height: 32px;
+  background: var(--s3); border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--muted); font-size: 14px;
+  transition: all 0.15s;
+}
+.topbar-btn:hover { color: var(--text); border-color: var(--muted); }
+.time-display {
+  font-family: var(--font-mono); font-size: 11px; color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── CONTENT ── */
+.content { padding: 24px 28px; flex: 1; }
+
+/* PAGE TITLE */
+.page-title-row {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 24px; gap: 16px;
+}
+.page-title { font-size: 24px; font-weight: 700; letter-spacing: 0.01em; }
+.page-title-sub {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;
+  margin-top: 2px;
+}
+.page-actions { display: flex; gap: 8px; }
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 5px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.03em; cursor: pointer; transition: all 0.15s;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--amber); color: #000; border-color: var(--amber); }
+.btn-primary:hover { background: var(--amber2); border-color: var(--amber2); }
+.btn-ghost { background: transparent; color: var(--muted); border-color: var(--border); }
+.btn-ghost:hover { color: var(--text); border-color: var(--muted); }
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.btn-danger { background: rgba(224,92,77,0.1); color: var(--red); border-color: rgba(224,92,77,0.3); }
+.btn-danger:hover { background: rgba(224,92,77,0.2); }
+
+/* ── KPI CARDS ── */
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin-bottom: 22px;
+}
+.kpi-card {
+  background: var(--s2); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 18px 20px;
+  position: relative; overflow: hidden;
+  transition: border-color 0.2s;
+}
+.kpi-card:hover { border-color: var(--border); }
+.kpi-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+}
+.kpi-card:nth-child(1)::before { background: var(--amber); }
+.kpi-card:nth-child(2)::before { background: var(--teal); }
+.kpi-card:nth-child(3)::before { background: var(--blue); }
+.kpi-card:nth-child(4)::before { background: var(--red); }
+.kpi-label {
+  font-family: var(--font-mono); font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+  margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;
+}
+.kpi-value {
+  font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1;
+  margin-bottom: 8px;
+}
+.kpi-sub { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.kpi-trend { display: flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; }
+.trend-up { color: var(--green); }
+.trend-dn { color: var(--red); }
+.kpi-sparkline { margin-top: 12px; }
+
+/* ── PANEL ── */
+.panel {
+  background: var(--s2); border: 1px solid var(--border2);
+  border-radius: 8px; overflow: hidden;
+}
+.panel-head {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+}
+.panel-title { font-size: 14px; font-weight: 600; letter-spacing: 0.03em; }
+.panel-title-sub {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--muted); margin-top: 1px;
+}
+.panel-actions { display: flex; gap: 8px; align-items: center; }
+.panel-body { padding: 20px; }
+
+/* ── GRID LAYOUTS ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.grid-7030 { display: grid; grid-template-columns: 1.8fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+/* ── CHART AREA ── */
+.chart-area { width: 100%; }
+.chart-svg { width: 100%; overflow: visible; }
+
+/* ── TABLE ── */
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px;
+}
+thead th {
+  padding: 10px 14px;
+  text-align: left;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); font-weight: 400;
+  border-bottom: 1px solid var(--border2);
+  white-space: nowrap;
+}
+thead th:first-child { padding-left: 20px; }
+thead th:last-child { padding-right: 20px; }
+tbody tr {
+  border-bottom: 1px solid var(--border2);
+  transition: background 0.12s;
+  cursor: pointer;
+}
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: rgba(255,255,255,0.02); }
+tbody td {
+  padding: 12px 14px; vertical-align: middle;
+}
+tbody td:first-child { padding-left: 20px; }
+tbody td:last-child { padding-right: 20px; }
+
+/* ── AVATAR ── */
+.avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  flex-shrink: 0;
+}
+.user-row { display: flex; align-items: center; gap: 10px; }
+.user-info-name { font-weight: 600; font-size: 13px; }
+.user-info-sub { font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-top: 1px; }
+
+/* ── BADGES ── */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  padding: 3px 8px; border-radius: 3px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.badge-active  { background: rgba(77,190,137,0.1);  color: var(--green);  border: 1px solid rgba(77,190,137,0.2); }
+.badge-trial   { background: rgba(77,157,224,0.1);  color: var(--blue);   border: 1px solid rgba(77,157,224,0.2); }
+.badge-paused  { background: rgba(240,163,10,0.1);  color: var(--amber);  border: 1px solid rgba(240,163,10,0.2); }
+.badge-churned { background: rgba(224,92,77,0.1);   color: var(--red);    border: 1px solid rgba(224,92,77,0.2); }
+.badge-super   { background: rgba(157,125,234,0.1); color: var(--purple); border: 1px solid rgba(157,125,234,0.2); }
+.badge-manager { background: rgba(240,163,10,0.1);  color: var(--amber);  border: 1px solid rgba(240,163,10,0.2); }
+.badge-support { background: rgba(0,203,168,0.1);   color: var(--teal);   border: 1px solid rgba(0,203,168,0.2); }
+.badge-p1 { background: rgba(77,157,224,0.1);  color: var(--blue);  border: 1px solid rgba(77,157,224,0.2); }
+.badge-p2 { background: rgba(240,163,10,0.1);  color: var(--amber); border: 1px solid rgba(240,163,10,0.2); }
+.badge-p3 { background: rgba(0,203,168,0.1);   color: var(--teal);  border: 1px solid rgba(0,203,168,0.2); }
+.badge-dot::before { content: '●'; font-size: 7px; }
+
+/* ── SEARCH & FILTER ── */
+.filter-row { display: flex; gap: 8px; align-items: center; margin-bottom: 0; }
+.search-box {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--s1); border: 1px solid var(--border);
+  border-radius: 5px; padding: 7px 12px;
+}
+.search-box input {
+  background: none; border: none; outline: none;
+  color: var(--text); font-family: var(--font-display);
+  font-size: 13px; width: 180px;
+}
+.search-box input::placeholder { color: var(--muted); }
+.search-icon { color: var(--muted); font-size: 12px; }
+.filter-select {
+  background: var(--s1); border: 1px solid var(--border);
+  border-radius: 5px; padding: 7px 10px;
+  color: var(--muted); font-family: var(--font-display);
+  font-size: 13px; outline: none; cursor: pointer;
+}
+.filter-select:focus { border-color: var(--amber); color: var(--text); }
+
+/* ── ACTION MENU ── */
+.action-dots {
+  color: var(--muted); cursor: pointer; font-size: 16px;
+  padding: 2px 6px; border-radius: 3px; letter-spacing: 1px;
+  transition: all 0.15s;
+}
+.action-dots:hover { color: var(--text); background: var(--s4); }
+
+/* ── METRIC ROW ── */
+.metric-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0; border-bottom: 1px solid var(--border2);
+}
+.metric-row:last-child { border-bottom: none; }
+.metric-label { font-size: 13px; color: var(--muted); }
+.metric-value { font-family: var(--font-mono); font-size: 13px; font-weight: 500; }
+
+/* ── PROGRESS BAR ── */
+.progress-bar { height: 4px; background: var(--s4); border-radius: 2px; margin-top: 6px; }
+.progress-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
+
+/* ── DONUT CHART LEGEND ── */
+.legend-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.legend-val { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+/* ── ACTIVITY FEED ── */
+.activity-item {
+  display: flex; gap: 12px; padding: 10px 0;
+  border-bottom: 1px solid var(--border2);
+  align-items: flex-start;
+}
+.activity-item:last-child { border-bottom: none; }
+.activity-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+}
+.activity-text { font-size: 13px; color: var(--text); line-height: 1.4; }
+.activity-text span { color: var(--muted); }
+.activity-time { font-family: var(--font-mono); font-size: 10px; color: var(--dim); margin-top: 3px; }
+
+/* ── PAGES ── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7); z-index: 1000;
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--s2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 28px; width: 460px;
+  animation: modal-in 0.2s ease;
+}
+@keyframes modal-in { from { opacity: 0; transform: scale(0.95) translateY(-10px); } to { opacity: 1; transform: none; } }
+.modal-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.modal-sub { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 22px; }
+.form-group { margin-bottom: 16px; }
+.form-label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; display: block; }
+.form-input {
+  width: 100%; background: var(--s1); border: 1px solid var(--border);
+  border-radius: 5px; padding: 9px 12px;
+  color: var(--text); font-family: var(--font-display); font-size: 14px;
+  outline: none; transition: border-color 0.15s;
+}
+.form-input:focus { border-color: var(--amber); }
+.form-select {
+  width: 100%; background: var(--s1); border: 1px solid var(--border);
+  border-radius: 5px; padding: 9px 12px;
+  color: var(--text); font-family: var(--font-display); font-size: 14px;
+  outline: none; cursor: pointer;
+}
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 24px; }
+
+/* ── LOADING ANIMATION ── */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.kpi-card { animation: fadeIn 0.4s ease both; }
+.kpi-card:nth-child(1) { animation-delay: 0.05s; }
+.kpi-card:nth-child(2) { animation-delay: 0.10s; }
+.kpi-card:nth-child(3) { animation-delay: 0.15s; }
+.kpi-card:nth-child(4) { animation-delay: 0.20s; }
+
+/* ── PERF PAGE SPECIFIC ── */
+.chain-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,203,168,0.08); border: 1px solid rgba(0,203,168,0.2);
+  border-radius: 4px; padding: 3px 10px;
+  font-family: var(--font-mono); font-size: 10px; color: var(--teal);
+  letter-spacing: 0.06em;
+}
+.chain-pill::before { content: '⬡'; font-size: 11px; }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed; bottom: 24px; right: 24px;
+  background: var(--s3); border: 1px solid var(--green);
+  border-radius: 8px; padding: 12px 18px;
+  font-size: 13px; color: var(--green); font-weight: 600;
+  display: none; z-index: 2000; gap: 8px; align-items: center;
+  animation: toast-in 0.3s ease;
+}
+.toast.show { display: flex; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* Wallet address */
+.wallet-addr {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--muted); display: flex; align-items: center; gap: 4px;
+}
+.wallet-addr::before { content: '◈'; color: var(--teal); }
+</style>
+</head>
+<body>
+
+<!-- ════ SIDEBAR ════ -->
+<nav class="sidebar">
+  <div class="logo-area">
+    <div class="logo-mark"></div>
+    <div>
+      <div class="logo-text"><span>Crevia</span> Cockpit</div>
+      <div class="logo-sub">Admin Portal</div>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Main</div>
+    <div class="nav-item active" onclick="navigate('overview')">
+      <span class="nav-icon">⬡</span> Overview
+    </div>
+    <div class="nav-item" onclick="navigate('managers')">
+      <span class="nav-icon">◈</span> Managers <span class="nav-badge">8</span>
+    </div>
+    <div class="nav-item" onclick="navigate('users')">
+      <span class="nav-icon">◉</span> Users <span class="nav-badge">1,284</span>
+    </div>
+    <div class="nav-item" onclick="navigate('performance')">
+      <span class="nav-icon">◎</span> Performance
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Finance</div>
+    <div class="nav-item" onclick="navigate('payments')">
+      <span class="nav-icon">◈</span> Payments <span class="nav-badge">12</span>
+    </div>
+    <div class="nav-item" onclick="navigate('overview')">
+      <span class="nav-icon">○</span> Plans
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">System</div>
+    <div class="nav-item" onclick="navigate('overview')">
+      <span class="nav-icon">◇</span> Settings
+    </div>
+    <div class="nav-item" onclick="navigate('overview')">
+      <span class="nav-icon">△</span> Audit Log
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="admin-card">
+      <div class="admin-avatar">SA</div>
+      <div class="admin-info">
+        <div class="admin-name">Super Admin</div>
+        <div class="admin-role">Super Admin</div>
+      </div>
+      <div class="admin-settings">⚙</div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════ MAIN ════ -->
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-breadcrumb">
+      <span>Crevia Cockpit</span>
+      <span class="sep">/</span>
+      <span class="cur" id="breadcrumb">Overview</span>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-status"><div class="pulse"></div> Base · Live</div>
+      <div class="topbar-btn" title="Notifications">🔔</div>
+      <div class="topbar-btn" title="Search">⌕</div>
+      <div class="time-display" id="clock">--:--:--</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ════ OVERVIEW PAGE ════ -->
+    <div class="page active" id="page-overview">
+      <div class="page-title-row">
+        <div>
+          <div class="page-title">Mission Control</div>
+          <div class="page-title-sub">Platform Overview · Last updated just now</div>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-ghost btn-sm">↓ Export</button>
+          <button class="btn btn-primary btn-sm">+ New Report</button>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Monthly Recurring Rev.<span class="chain-pill">USDC</span></div>
+          <div class="kpi-value" style="color:var(--amber)">$37,236</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+            <span class="kpi-sub">↑ vs $31,890 last month</span>
+            <span class="kpi-trend trend-up">▲ 16.8%</span>
+          </div>
+          <div class="kpi-sparkline"><svg class="chart-svg" height="28" viewBox="0 0 120 28">
+            <polyline points="0,22 15,18 30,20 45,14 60,16 75,10 90,8 105,4 120,2" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+            <polyline points="0,22 15,18 30,20 45,14 60,16 75,10 90,8 105,4 120,2 120,28 0,28" fill="url(#g1)" stroke="none"/>
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--amber)" stop-opacity="0.15"/><stop offset="100%" stop-color="var(--amber)" stop-opacity="0"/></linearGradient></defs>
+          </svg></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-label">Active Subscribers</div>
+          <div class="kpi-value" style="color:var(--teal)">1,284</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+            <span class="kpi-sub">↑ 94 new this month</span>
+            <span class="kpi-trend trend-up">▲ 7.9%</span>
+          </div>
+          <div class="kpi-sparkline"><svg class="chart-svg" height="28" viewBox="0 0 120 28">
+            <polyline points="0,24 15,21 30,22 45,18 60,19 75,14 90,12 105,9 120,6" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+          </svg></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-label">Avg. Revenue / User</div>
+          <div class="kpi-value" style="color:var(--blue)">$29.00</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+            <span class="kpi-sub">Starter plan dominant</span>
+            <span class="kpi-trend" style="color:var(--muted)">— stable</span>
+          </div>
+          <div class="kpi-sparkline"><svg class="chart-svg" height="28" viewBox="0 0 120 28">
+            <line x1="0" y1="14" x2="120" y2="14" stroke="var(--blue)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+          </svg></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-label">Monthly Churn Rate</div>
+          <div class="kpi-value" style="color:var(--red)">2.4%</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+            <span class="kpi-sub">↓ from 3.1% last month</span>
+            <span class="kpi-trend trend-up">▼ 0.7pp</span>
+          </div>
+          <div class="kpi-sparkline"><svg class="chart-svg" height="28" viewBox="0 0 120 28">
+            <polyline points="0,8 15,10 30,9 45,12 60,11 75,14 90,16 105,20 120,22" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+          </svg></div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="grid-7030">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Revenue — Last 12 Months</div>
+              <div class="panel-title-sub">Monthly USDC received on Base</div>
+            </div>
+            <div class="panel-actions">
+              <span class="chain-pill">Base L2</span>
+            </div>
+          </div>
+          <div class="panel-body">
+            <svg class="chart-svg" height="160" viewBox="0 0 560 160">
+              <!-- Grid lines -->
+              <line x1="0" y1="40" x2="560" y2="40" stroke="var(--border2)" stroke-width="1"/>
+              <line x1="0" y1="80" x2="560" y2="80" stroke="var(--border2)" stroke-width="1"/>
+              <line x1="0" y1="120" x2="560" y2="120" stroke="var(--border2)" stroke-width="1"/>
+              <!-- Y labels -->
+              <text x="0" y="38" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace">$40k</text>
+              <text x="0" y="78" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace">$30k</text>
+              <text x="0" y="118" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace">$20k</text>
+              <!-- Bars: months Apr–Mar -->
+              <g transform="translate(36,0)">
+                <!-- bars data: heights scaled to 160 with $40k = 40px, $0 = 160px -->
+                <!-- Apr $21k h=77 --> <rect x="0" y="83" width="28" height="77" fill="var(--s4)" rx="2"/>
+                <!-- May $23k --> <rect x="42" y="75" width="28" height="85" fill="var(--s4)" rx="2"/>
+                <!-- Jun $25k --> <rect x="84" y="70" width="28" height="90" fill="var(--s4)" rx="2"/>
+                <!-- Jul $24k --> <rect x="126" y="72" width="28" height="88" fill="var(--s4)" rx="2"/>
+                <!-- Aug $28k --> <rect x="168" y="60" width="28" height="100" fill="var(--s4)" rx="2"/>
+                <!-- Sep $30k --> <rect x="210" y="54" width="28" height="106" fill="var(--s4)" rx="2"/>
+                <!-- Oct $29k --> <rect x="252" y="56" width="28" height="104" fill="var(--s4)" rx="2"/>
+                <!-- Nov $31k --> <rect x="294" y="50" width="28" height="110" fill="var(--s4)" rx="2"/>
+                <!-- Dec $33k --> <rect x="336" y="44" width="28" height="116" fill="var(--s4)" rx="2"/>
+                <!-- Jan $35k --> <rect x="378" y="38" width="28" height="122" fill="rgba(240,163,10,0.25)" rx="2"/>
+                <!-- Feb $31k --> <rect x="420" y="50" width="28" height="110" fill="rgba(240,163,10,0.25)" rx="2"/>
+                <!-- Mar $37k → current highlight --> <rect x="462" y="34" width="28" height="126" fill="var(--amber)" rx="2"/>
+                <!-- X labels -->
+                <text x="14"  y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Apr</text>
+                <text x="56"  y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">May</text>
+                <text x="98"  y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Jun</text>
+                <text x="140" y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Jul</text>
+                <text x="182" y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Aug</text>
+                <text x="224" y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Sep</text>
+                <text x="266" y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Oct</text>
+                <text x="308" y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Nov</text>
+                <text x="350" y="155" fill="var(--muted)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Dec</text>
+                <text x="392" y="155" fill="var(--amber)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Jan</text>
+                <text x="434" y="155" fill="var(--amber)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">Feb</text>
+                <text x="476" y="155" fill="var(--amber)" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle" font-weight="600">Mar</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Payment Pathways</div>
+              <div class="panel-title-sub">This month's split</div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <svg width="100%" height="120" viewBox="0 0 200 120" style="display:block;margin:0 auto 12px;">
+              <!-- Donut chart segments -->
+              <!-- P1 MetaMask: 58% → stroke-dasharray=182.1 -->
+              <circle cx="100" cy="60" r="50" fill="none" stroke="var(--s4)" stroke-width="22"/>
+              <circle cx="100" cy="60" r="50" fill="none" stroke="var(--blue)" stroke-width="22" stroke-dasharray="182.1 314.16" stroke-dashoffset="78.5" transform="rotate(-90 100 60)"/>
+              <!-- P3 NexaPay: 28% → 87.96 -->
+              <circle cx="100" cy="60" r="50" fill="none" stroke="var(--teal)" stroke-width="22" stroke-dasharray="87.96 314.16" stroke-dashoffset="-103.6" transform="rotate(-90 100 60)"/>
+              <!-- P2 Bridge: 14% → 43.98 -->
+              <circle cx="100" cy="60" r="50" fill="none" stroke="var(--amber)" stroke-width="22" stroke-dasharray="43.98 314.16" stroke-dashoffset="-191.56" transform="rotate(-90 100 60)"/>
+              <text x="100" y="55" text-anchor="middle" fill="var(--text)" font-size="16" font-weight="700" font-family="Rajdhani,sans-serif">1,284</text>
+              <text x="100" y="70" text-anchor="middle" fill="var(--muted)" font-size="9" font-family="JetBrains Mono,monospace">ACTIVE</text>
+            </svg>
+            <div class="legend-row"><span class="legend-dot" style="background:var(--blue)"></span>P1 MetaMask Direct<span class="legend-val">58% · 745</span></div>
+            <div class="legend-row"><span class="legend-dot" style="background:var(--teal)"></span>P3 NexaPay Card<span class="legend-val">28% · 360</span></div>
+            <div class="legend-row"><span class="legend-dot" style="background:var(--amber)"></span>P2 Fiat Bridge<span class="legend-val">14% · 179</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity + Status -->
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Recent Activity</div>
+            <button class="btn btn-ghost btn-sm">View All</button>
+          </div>
+          <div class="panel-body" style="padding-top:8px;">
+            <div class="activity-item">
+              <div class="activity-dot" style="background:var(--green)"></div>
+              <div>
+                <div class="activity-text">New subscription — <strong>alex.eth</strong> <span>upgraded to Pro</span></div>
+                <div class="activity-time">2 minutes ago · 0x4a2f…c891 · Base</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot" style="background:var(--amber)"></div>
+              <div>
+                <div class="activity-text"><strong>marcus@crevia.io</strong> <span>added as Manager</span></div>
+                <div class="activity-time">14 minutes ago</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot" style="background:var(--teal)"></div>
+              <div>
+                <div class="activity-text">NexaPay webhook — <strong>sarah@email.com</strong> <span>Starter plan activated</span></div>
+                <div class="activity-time">31 minutes ago · $29.00 USDC</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot" style="background:var(--red)"></div>
+              <div>
+                <div class="activity-text"><strong>user_4491</strong> <span>subscription expired — no renewal</span></div>
+                <div class="activity-time">1 hour ago</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot" style="background:var(--green)"></div>
+              <div>
+                <div class="activity-text">New subscription — <strong>0x7b3c…d210</strong> <span>Team plan via MetaMask</span></div>
+                <div class="activity-time">2 hours ago · $199.00 USDC</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Platform Status</div>
+            <span class="badge badge-active badge-dot">Operational</span>
+          </div>
+          <div class="panel-body">
+            <div class="metric-row">
+              <span class="metric-label">Base RPC (Alchemy)</span>
+              <span class="metric-value" style="color:var(--green)">● Live</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-label">NexaPay Webhooks</span>
+              <span class="metric-value" style="color:var(--green)">● Live</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-label">Alchemy Notify</span>
+              <span class="metric-value" style="color:var(--green)">● Live</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-label">Database (Postgres)</span>
+              <span class="metric-value" style="color:var(--green)">● Live</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-label">Avg. TX Confirm Time</span>
+              <span class="metric-value">1.9s</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-label">Paymaster Balance</span>
+              <span class="metric-value" style="color:var(--amber)">$48.20 ETH</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-label">Pending Intents</span>
+              <span class="metric-value">3</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-label">Failed TX (24h)</span>
+              <span class="metric-value" style="color:var(--red)">2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ MANAGERS PAGE ════ -->
+    <div class="page" id="page-managers">
+      <div class="page-title-row">
+        <div>
+          <div class="page-title">Managers</div>
+          <div class="page-title-sub">Admin &amp; staff access control</div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="openModal('modal-add-manager')">+ Add Manager</button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Team Members</div>
+            <div class="panel-title-sub">8 active · 1 pending invite</div>
+          </div>
+          <div class="panel-actions">
+            <div class="filter-row">
+              <div class="search-box"><span class="search-icon">⌕</span><input type="text" placeholder="Search managers…" oninput="filterTable(this,'mgr-table')"/></div>
+              <select class="filter-select"><option>All Roles</option><option>Super Admin</option><option>Manager</option><option>Support</option></select>
+            </div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="mgr-table">
+            <thead>
+              <tr>
+                <th>Name / Email</th>
+                <th>Role</th>
+                <th>Wallet Address</th>
+                <th>Last Active</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--amber),var(--red))">SA</div><div class="user-info"><div class="user-info-name">Super Admin</div><div class="user-info-sub">admin@creviacockpit.com</div></div></div></td>
+                <td><span class="badge badge-super">Super Admin</span></td>
+                <td><span class="wallet-addr">0x4a2f…c891</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">Just now</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots" onclick="showToast('Cannot edit Super Admin')">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--teal),var(--blue))">MC</div><div class="user-info"><div class="user-info-name">Marcus Chen</div><div class="user-info-sub">marcus@creviacockpit.com</div></div></div></td>
+                <td><span class="badge badge-manager">Manager</span></td>
+                <td><span class="wallet-addr">0x7b3c…d210</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">14 min ago</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots" onclick="showToast('Editing Marcus Chen…')">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--purple),var(--blue))">SR</div><div class="user-info"><div class="user-info-name">Sofia Rodriguez</div><div class="user-info-sub">sofia@creviacockpit.com</div></div></div></td>
+                <td><span class="badge badge-manager">Manager</span></td>
+                <td><span class="wallet-addr">0x1e8a…f332</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">2h ago</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--teal),var(--green))">JP</div><div class="user-info"><div class="user-info-name">James Park</div><div class="user-info-sub">james@creviacockpit.com</div></div></div></td>
+                <td><span class="badge badge-support">Support</span></td>
+                <td><span class="wallet-addr">Not set</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">Yesterday</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,#6b4c2a,#a07040))">AK</div><div class="user-info"><div class="user-info-name">Aisha Kofi</div><div class="user-info-sub">aisha@creviacockpit.com</div></div></div></td>
+                <td><span class="badge badge-support">Support</span></td>
+                <td><span class="wallet-addr">Not set</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">3 days ago</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--border),var(--s4))">NB</div><div class="user-info"><div class="user-info-name">Nina Braun</div><div class="user-info-sub">nina@creviacockpit.com</div></div></div></td>
+                <td><span class="badge badge-support">Support</span></td>
+                <td><span class="wallet-addr">Not set</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">1 week ago</span></td>
+                <td><span class="badge badge-paused">Inactive</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--amber),var(--green))">TW</div><div class="user-info"><div class="user-info-name">Tyler Wong</div><div class="user-info-sub">tyler@creviacockpit.com</div></div></div></td>
+                <td><span class="badge badge-manager">Manager</span></td>
+                <td><span class="wallet-addr">0x9d1b…7740</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">2 weeks ago</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--red),var(--purple))">PD</div><div class="user-info"><div class="user-info-name">Pending Invite</div><div class="user-info-sub">dev@external.com</div></div></div></td>
+                <td><span class="badge badge-support">Support</span></td>
+                <td><span class="wallet-addr">Pending</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">Never</span></td>
+                <td><span class="badge badge-trial">Invited</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ USERS PAGE ════ -->
+    <div class="page" id="page-users">
+      <div class="page-title-row">
+        <div>
+          <div class="page-title">Users</div>
+          <div class="page-title-sub">1,284 subscribers · 156 trials</div>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-ghost btn-sm">↓ Export CSV</button>
+          <button class="btn btn-primary btn-sm" onclick="openModal('modal-add-user')">+ Add User</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">All Users</div>
+          <div class="panel-actions filter-row">
+            <div class="search-box"><span class="search-icon">⌕</span><input type="text" placeholder="Search users…" oninput="filterTable(this,'user-table')"/></div>
+            <select class="filter-select" onchange="filterByStatus(this,'user-table')">
+              <option value="">All Status</option>
+              <option value="Active">Active</option>
+              <option value="Trial">Trial</option>
+              <option value="Paused">Paused</option>
+              <option value="Churned">Churned</option>
+            </select>
+            <select class="filter-select">
+              <option>All Plans</option>
+              <option>Starter $29</option>
+              <option>Pro $79</option>
+              <option>Team $199</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="user-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Plan</th>
+                <th>Payment</th>
+                <th>Wallet / Email</th>
+                <th>Joined</th>
+                <th>Next Renewal</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,#1a4d8f,#00cba8)">AE</div><div class="user-info"><div class="user-info-name">alex.eth</div><div class="user-info-sub">user_0041</div></div></div></td>
+                <td><span style="font-weight:600;color:var(--amber)">Pro $79</span></td>
+                <td><span class="badge badge-p1">P1 Wallet</span></td>
+                <td><span class="wallet-addr">0x4a2f…c891</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Jan 14</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">Apr 14</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,#5a2080,var(--teal))">SJ</div><div class="user-info"><div class="user-info-name">sarah@gmail.com</div><div class="user-info-sub">user_1190</div></div></div></td>
+                <td><span style="font-weight:600">Starter $29</span></td>
+                <td><span class="badge badge-p3">P3 Card</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">sarah@gmail.com</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Feb 2</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">Apr 2</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,#1e5c3a,var(--blue))">DK</div><div class="user-info"><div class="user-info-name">0x7b3c…d210</div><div class="user-info-sub">user_0882</div></div></div></td>
+                <td><span style="font-weight:600;color:var(--purple)">Team $199</span></td>
+                <td><span class="badge badge-p1">P1 Wallet</span></td>
+                <td><span class="wallet-addr">0x7b3c…d210</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Feb 18</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">Mar 18</span></td>
+                <td><span class="badge badge-paused">Paused</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--amber),#a04020)">MT</div><div class="user-info"><div class="user-info-name">mike@techco.io</div><div class="user-info-sub">user_0334</div></div></div></td>
+                <td><span style="font-weight:600">Starter $29</span></td>
+                <td><span class="badge badge-p2">P2 Bridge</span></td>
+                <td><span class="wallet-addr">0x2c9e…a441</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Mar 1</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--amber)">Mar 31</span></td>
+                <td><span class="badge badge-trial">Trial</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--red),#7a2070)">LP</div><div class="user-info"><div class="user-info-name">luna.web3</div><div class="user-info-sub">user_0491</div></div></div></td>
+                <td><span style="font-weight:600;color:var(--amber)">Pro $79</span></td>
+                <td><span class="badge badge-p1">P1 Wallet</span></td>
+                <td><span class="wallet-addr">0x8f1d…b220</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Nov 10</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--red)">Expired</span></td>
+                <td><span class="badge badge-churned">Churned</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="avatar" style="background:linear-gradient(135deg,var(--teal),#1a4d8f)">RN</div><div class="user-info"><div class="user-info-name">r.nakamura@co.jp</div><div class="user-info-sub">user_1044</div></div></div></td>
+                <td><span style="font-weight:600;color:var(--purple)">Team $199</span></td>
+                <td><span class="badge badge-p3">P3 Card</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">r.nakamura@co.jp</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Dec 5</span></td>
+                <td><span style="font-family:var(--font-mono);font-size:11px;">Apr 5</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="action-dots">···</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="padding:14px 20px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Showing 6 of 1,284 · Page 1 of 215</span>
+          <div style="display:flex;gap:6px;">
+            <button class="btn btn-ghost btn-sm">← Prev</button>
+            <button class="btn btn-ghost btn-sm" style="background:var(--s4);color:var(--text);">1</button>
+            <button class="btn btn-ghost btn-sm">2</button>
+            <button class="btn btn-ghost btn-sm">3</button>
+            <button class="btn btn-ghost btn-sm">Next →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ PERFORMANCE PAGE ════ -->
+    <div class="page" id="page-performance">
+      <div class="page-title-row">
+        <div>
+          <div class="page-title">Platform Performance</div>
+          <div class="page-title-sub">Live telemetry · Base L2 · March 2026</div>
+        </div>
+        <span class="chain-pill" style="font-size:11px;padding:6px 14px;">Base Mainnet · Block #18,294,441</span>
+      </div>
+
+      <!-- Performance KPIs -->
+      <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr)">
+        <div class="kpi-card">
+          <div class="kpi-label">Total USDC Volume</div>
+          <div class="kpi-value" style="color:var(--teal);font-size:26px">$341,890</div>
+          <div style="margin-top:8px;"><span class="kpi-trend trend-up">▲ All-time</span></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Transactions (30d)</div>
+          <div class="kpi-value" style="color:var(--blue);font-size:26px">1,847</div>
+          <div style="margin-top:8px;"><span class="kpi-trend trend-up">▲ 94 new</span></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Avg. Confirm Time</div>
+          <div class="kpi-value" style="color:var(--green);font-size:26px">1.9s</div>
+          <div style="margin-top:8px;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">2-block target</span></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Gas Sponsored (P1 AA)</div>
+          <div class="kpi-value" style="color:var(--amber);font-size:26px">$1.84</div>
+          <div style="margin-top:8px;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">0.003% of revenue</span></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Subscription breakdown -->
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Plan Distribution</div>
+          </div>
+          <div class="panel-body">
+            <div style="margin-bottom:18px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px;">
+                <span>Starter — $29/mo</span>
+                <span style="font-family:var(--font-mono);font-size:12px;">874 users · 68%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:68%;background:var(--blue)"></div></div>
+            </div>
+            <div style="margin-bottom:18px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px;">
+                <span>Pro — $79/mo</span>
+                <span style="font-family:var(--font-mono);font-size:12px;">297 users · 23%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:23%;background:var(--amber)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px;">
+                <span>Team — $199/mo</span>
+                <span style="font-family:var(--font-mono);font-size:12px;">113 users · 9%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:9%;background:var(--purple)"></div></div>
+            </div>
+            <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border2);">
+              <div class="metric-row"><span class="metric-label">Starter MRR</span><span class="metric-value">$25,346</span></div>
+              <div class="metric-row"><span class="metric-label">Pro MRR</span><span class="metric-value">$23,463</span></div>
+              <div class="metric-row"><span class="metric-label">Team MRR</span><span class="metric-value" style="color:var(--amber)">$22,487</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conversion funnel -->
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Conversion Funnel (30d)</div>
+          </div>
+          <div class="panel-body">
+            <svg class="chart-svg" height="200" viewBox="0 0 300 200">
+              <!-- Funnel bars centered -->
+              <!-- Visitors: 5,840 -->
+              <rect x="10" y="10" width="280" height="30" rx="3" fill="var(--s4)"/>
+              <text x="20" y="30" fill="var(--muted)" font-size="11" font-family="Rajdhani,sans-serif">Visitors</text>
+              <text x="270" y="30" fill="var(--text)" font-size="11" font-family="JetBrains Mono,monospace" text-anchor="end">5,840</text>
+              <!-- Checkout opened: 1,240 = 280*(1240/5840)=59.7px → centered 300-59.7=240.3/2=120.1 each side -->
+              <rect x="60" y="55" width="180" height="30" rx="3" fill="var(--s4)"/>
+              <text x="70" y="75" fill="var(--muted)" font-size="11" font-family="Rajdhani,sans-serif">Opened Checkout</text>
+              <text x="230" y="75" fill="var(--text)" font-size="11" font-family="JetBrains Mono,monospace" text-anchor="end">1,240  <tspan fill="var(--muted)">21.2%</tspan></text>
+              <!-- Wallet connected: 820 -->
+              <rect x="90" y="100" width="130" height="30" rx="3" fill="var(--s4)"/>
+              <text x="98" y="120" fill="var(--muted)" font-size="11" font-family="Rajdhani,sans-serif">Wallet Connected</text>
+              <!-- (hidden by overlap, show text below) -->
+              <rect x="100" y="145" width="100" height="30" rx="3" fill="rgba(240,163,10,0.2)"/>
+              <text x="108" y="165" fill="var(--amber)" font-size="11" font-family="Rajdhani,sans-serif" font-weight="600">Subscribed</text>
+              <!-- connector lines -->
+              <line x1="150" y1="40" x2="150" y2="55" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 2"/>
+              <line x1="150" y1="85" x2="150" y2="100" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 2"/>
+              <line x1="150" y1="130" x2="150" y2="145" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 2"/>
+              <!-- stats on right -->
+              <text x="240" y="120" fill="var(--text)" font-size="11" font-family="JetBrains Mono,monospace">820  <tspan fill="var(--muted)">66.1%</tspan></text>
+              <text x="218" y="165" fill="var(--amber)" font-size="11" font-family="JetBrains Mono,monospace" font-weight="600">94  <tspan fill="var(--muted)">11.5%</tspan></text>
+            </svg>
+            <div style="padding-top:12px;border-top:1px solid var(--border2);">
+              <div class="metric-row"><span class="metric-label">P1 Conversion Rate</span><span class="metric-value" style="color:var(--green)">11.5%</span></div>
+              <div class="metric-row"><span class="metric-label">P3 Card Conversion</span><span class="metric-value" style="color:var(--teal)">8.2%</span></div>
+              <div class="metric-row"><span class="metric-label">Avg. Time to Subscribe</span><span class="metric-value">3m 42s</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- On-chain metrics -->
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">On-Chain Transaction Health</div>
+            <div class="panel-title-sub">Base · USDC · Last 30 days</div>
+          </div>
+          <span class="chain-pill">0x833589…02913</span>
+        </div>
+        <div class="panel-body">
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
+            <div>
+              <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;">Confirmed</div>
+              <div style="font-size:24px;font-weight:700;color:var(--green)">1,843</div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px;">99.8%</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;">Reverted</div>
+              <div style="font-size:24px;font-weight:700;color:var(--red)">4</div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px;">0.2%</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;">Underpayments</div>
+              <div style="font-size:24px;font-weight:700;color:var(--amber)">2</div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px;">&lt;1% tolerance</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;">Replay Blocked</div>
+              <div style="font-size:24px;font-weight:700;color:var(--teal)">0</div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px;">Idempotent ✓</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;">Webhook Failures</div>
+              <div style="font-size:24px;font-weight:700;color:var(--red)">1</div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px;">Backup triggered</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ PAYMENTS PAGE ════ -->
+    <div class="page" id="page-payments">
+      <div class="page-title-row">
+        <div>
+          <div class="page-title">Payment Ledger</div>
+          <div class="page-title-sub">All USDC transactions · Base L2</div>
+        </div>
+        <button class="btn btn-ghost btn-sm">↓ Export CSV</button>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Transactions</div>
+          <div class="panel-actions">
+            <div class="search-box"><span class="search-icon">⌕</span><input type="text" placeholder="Search tx hash…"/></div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Tx Hash</th><th>User</th><th>Plan</th><th>Amount</th><th>Pathway</th><th>Confirmations</th><th>Time</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><span class="wallet-addr">0x4a2f…c891</span></td><td>alex.eth</td><td>Pro</td><td><span style="font-family:var(--font-mono);color:var(--green)">$79.00</span></td><td><span class="badge badge-p1">P1</span></td><td><span style="font-family:var(--font-mono);font-size:11px;">2 blocks</span></td><td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">2m ago</span></td><td><span class="badge badge-active">Confirmed</span></td></tr>
+              <tr><td><span class="wallet-addr">0x9b1c…e774</span></td><td>sarah@gmail.com</td><td>Starter</td><td><span style="font-family:var(--font-mono);color:var(--green)">$29.00</span></td><td><span class="badge badge-p3">P3</span></td><td><span style="font-family:var(--font-mono);font-size:11px;">2 blocks</span></td><td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">31m ago</span></td><td><span class="badge badge-active">Confirmed</span></td></tr>
+              <tr><td><span class="wallet-addr">0x7b3c…d210</span></td><td>0x7b3c…d210</td><td>Team</td><td><span style="font-family:var(--font-mono);color:var(--green)">$199.00</span></td><td><span class="badge badge-p1">P1</span></td><td><span style="font-family:var(--font-mono);font-size:11px;">2 blocks</span></td><td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">2h ago</span></td><td><span class="badge badge-active">Confirmed</span></td></tr>
+              <tr><td><span class="wallet-addr">0x3d7a…f119</span></td><td>mike@techco.io</td><td>Starter</td><td><span style="font-family:var(--font-mono);color:var(--amber)">$28.71</span></td><td><span class="badge badge-p2">P2</span></td><td><span style="font-family:var(--font-mono);font-size:11px;">2 blocks</span></td><td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">5h ago</span></td><td><span class="badge badge-paused">Tolerance</span></td></tr>
+              <tr><td><span class="wallet-addr">0x1e8a…aa32</span></td><td>r.nakamura@co.jp</td><td>Team</td><td><span style="font-family:var(--font-mono);color:var(--green)">$199.00</span></td><td><span class="badge badge-p3">P3</span></td><td><span style="font-family:var(--font-mono);font-size:11px;">2 blocks</span></td><td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Yesterday</span></td><td><span class="badge badge-active">Confirmed</span></td></tr>
+              <tr><td><span class="wallet-addr">0x6c2b…0041</span></td><td>luna.web3</td><td>Pro</td><td><span style="font-family:var(--font-mono);color:var(--red)">$79.00</span></td><td><span class="badge badge-p1">P1</span></td><td><span style="font-family:var(--font-mono);font-size:11px;">—</span></td><td><span style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">2d ago</span></td><td><span class="badge badge-churned">Reverted</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<!-- ════ MODALS ════ -->
+<div class="modal-overlay" id="modal-add-manager" onclick="closeModalOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-title">Add Manager</div>
+    <div class="modal-sub">New admin team member</div>
+    <div class="form-group">
+      <label class="form-label">Full Name</label>
+      <input class="form-input" type="text" placeholder="e.g. Jordan Lee"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email Address</label>
+      <input class="form-input" type="email" placeholder="jordan@creviacockpit.com"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Role</label>
+      <select class="form-select">
+        <option>Manager</option>
+        <option>Support</option>
+        <option>Super Admin</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Wallet Address (optional)</label>
+      <input class="form-input" type="text" placeholder="0x…"/>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-add-manager')">Cancel</button>
+      <button class="btn btn-primary" onclick="closeModal('modal-add-manager');showToast('Invite sent successfully')">Send Invite</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-add-user" onclick="closeModalOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-title">Add User</div>
+    <div class="modal-sub">Manually provision a subscription</div>
+    <div class="form-group">
+      <label class="form-label">Email or Wallet Address</label>
+      <input class="form-input" type="text" placeholder="user@email.com or 0x…"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Plan</label>
+      <select class="form-select">
+        <option>Starter — $29/mo</option>
+        <option>Pro — $79/mo</option>
+        <option>Team — $199/mo</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Payment Method</label>
+      <select class="form-select">
+        <option>P1 — MetaMask Direct</option>
+        <option>P3 — NexaPay Card</option>
+        <option>Manual / Complimentary</option>
+      </select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-add-user')">Cancel</button>
+      <button class="btn btn-primary" onclick="closeModal('modal-add-user');showToast('User provisioned successfully')">Create Subscription</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ <span id="toast-msg"></span></div>
+
+<script>
+// ── CLOCK ──
+function updateClock() {
+  const d = new Date();
+  document.getElementById('clock').textContent =
+    d.toUTCString().split(' ')[4] + ' UTC';
+}
+updateClock(); setInterval(updateClock, 1000);
+
+// ── NAVIGATION ──
+const pages = { overview:'Overview', managers:'Managers', users:'Users', performance:'Performance', payments:'Payments' };
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.getAttribute('onclick') && n.getAttribute('onclick').includes("'"+page+"'")) n.classList.add('active');
+  });
+  document.getElementById('breadcrumb').textContent = pages[page] || page;
+  window.scrollTo(0,0);
+}
+
+// ── FILTER TABLE ──
+function filterTable(input, tableId) {
+  const q = input.value.toLowerCase();
+  document.querySelectorAll('#' + tableId + ' tbody tr').forEach(tr => {
+    tr.style.display = tr.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+function filterByStatus(sel, tableId) {
+  const q = sel.value.toLowerCase();
+  document.querySelectorAll('#' + tableId + ' tbody tr').forEach(tr => {
+    tr.style.display = (!q || tr.textContent.toLowerCase().includes(q)) ? '' : 'none';
+  });
+}
+
+// ── MODALS ──
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function closeModalOnOverlay(e) { if (e.target === e.currentTarget) e.currentTarget.classList.remove('open'); }
+
+// ── TOAST ──
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>

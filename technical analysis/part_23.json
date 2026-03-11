@@ -1,0 +1,62 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 23,
+  "total_parts": 65,
+  "title": "Currency Strength Meter",
+  "subtitle": "Multi-Pair Signed % Change Aggregation for 8 Major Currencies Across 3 Timeframes",
+  "source_url": "https://www.mql5.com/en/articles/18108",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-06",
+  "type": "Expert Advisor (Dashboard)",
+  "verdict": "EXTRACT — currency strength formula, sign-inversion for quote currency, 3-TF lookback calibration, strong/weak thresholds. Useful as pre-filter: only trade signals where base currency is strong AND quote is weak.",
+
+  "core_concept": {
+    "name": "Currency Strength via Signed % Change",
+    "description": "For each of 8 major currencies, find all pairs where that currency appears. Compute % close change over lookback bars for each pair. If the currency is the BASE (first in pair), use the sign as-is. If it's the QUOTE (second), invert the sign. Average all signed values = currency strength score.",
+    "formula": "pct_change = (close[-1] - close[-lookback]) / close[-lookback] * 100; if currency == quote: pct_change *= -1; strength[currency] = mean(pct_changes_across_relevant_pairs)",
+    "thresholds": { "strong": "> +0.3%", "weak": "< -0.3%", "neutral": "-0.3% to +0.3%" },
+    "relevance_to_creviaderiv": "Pre-filter gate: BUY signal on EURUSD only valid when EUR is strong AND USD is weak. Adds directional confluence beyond our zone+structure gates. 3-TF lookback (M15/H1/H4) gives short/medium/long-term strength context."
+  },
+
+  "tracked_currencies": ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"],
+  "pairs_per_currency": 4,
+
+  "config": {
+    "Lookback_M15": { "default": 96,  "description": "M15 bars — 96×15min = 24h of strength" },
+    "Lookback_H1":  { "default": 48,  "description": "H1 bars — 48h = 2 days" },
+    "Lookback_H4":  { "default": 30,  "description": "H4 bars — 120h = 5 days" },
+    "Update_Seconds": { "default": 30, "description": "Refresh interval" }
+  },
+
+  "strength_formula": {
+    "step_1": "For each currency C in [USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD]:",
+    "step_2": "  Find pairs = [p for p in all_pairs if C in p] (4 pairs per currency)",
+    "step_3": "  For each pair p in pairs: pct = (close[-1] - close[-lookback]) / close[-lookback] * 100",
+    "step_4": "  If C is quote currency in p: pct *= -1",
+    "step_5": "  strength[C] = mean(pct for p in pairs)"
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Signed % change formula with quote-currency sign inversion",
+      "3-TF lookback: M15(96 bars)=24h, H1(48)=48h, H4(30)=120h — short/medium/long context",
+      "Thresholds: > +0.3% = strong, < -0.3% = weak — simple but calibratable",
+      "Pre-filter logic: base strong + quote weak = valid signal direction"
+    ],
+    "discard": [
+      "MQL5 visual dashboard",
+      "Fixed 8-currency set (expand to include synthetic pair components if needed)"
+    ],
+    "improve": [
+      "Use returns-based calculation (consistent with Part 22): pct_change → percentage return normalized",
+      "Add momentum: is currency getting stronger (strength increasing) vs already strong (peaked)?",
+      "Map strength to position size bonus: very strong base + very weak quote → full size; borderline → reduced"
+    ]
+  },
+
+  "creviaderiv_gate": {
+    "description": "Currency strength pre-filter for forex pairs",
+    "logic": "if signal.direction == 'BUY': require strength[base] > +0.1% AND strength[quote] < -0.1%; if signal.direction == 'SELL': require strength[base] < -0.1% AND strength[quote] > +0.1%",
+    "note": "Thresholds reduced from ±0.3% to ±0.1% for entry gate (more permissive than strong/weak classification)"
+  }
+}

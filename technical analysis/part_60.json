@@ -1,0 +1,29 @@
+{
+  "part": 60,
+  "title": "Objective Swing-Based Trendlines",
+  "source_url": "https://www.mql5.com/en/articles/21226",
+  "verdict": "MEDIUM - Validates our StructureEngine trendline approach. ATR*0.8 swing filter. MinTouchPoints>=2.",
+  "swing_size_filter": "ATR * 0.8 (vs our ATR*0.5 tolerance)",
+  "directional_rules": {
+    "resistance": "descending swing highs required",
+    "support": "ascending swing lows required"
+  },
+  "config": {
+    "SwingLookback": 5,
+    "UseATRFiltering": true,
+    "MinTouchPointsRequired": 2
+  },
+  "keep_discard": {
+    "keep": [
+      "ATR*0.8 swing size filter",
+      "Descending/ascending directional requirements",
+      "MinTouchPoints>=2 quality gate"
+    ],
+    "discard": [
+      "MQL5 rendering"
+    ],
+    "improve": [
+      "Test ATR*0.8 vs our ATR*0.5 tolerance - more permissive may capture more valid swings"
+    ]
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 11,
+  "total_parts": 65,
+  "title": "Heikin Ashi Signal EA",
+  "subtitle": "Heikin Ashi Smoothed Candles + RSI Confluence — Reversal Detection with 77%+ Buy Accuracy",
+  "source_url": "https://www.mql5.com/en/articles/17021",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-02-07",
+  "type": "Expert Advisor",
+  "verdict": "EXTRACT — Heikin Ashi formulas, shadow-to-body ratio reversal detection, and dual confirmation pattern. RSI thresholds show the value of tuned (not standard 30/70) levels.",
+
+  "series_evolution": {
+    "part_7": "Multi-TF BB + Stochastic confluence, K<5/K>95 extreme thresholds",
+    "part_11": "Adds Heikin Ashi smoothing BEFORE applying indicator analysis. The key advance: smooth the candles first, THEN look for reversal patterns in the smoothed data. This reduces false reversals from raw price noise."
+  },
+
+  "tool_classification": {
+    "category": "reversal_signal_generator",
+    "generates_signals": true,
+    "signal_type": "reversal_entry",
+    "executes_trades": false,
+    "runs": "continuously",
+    "update_trigger": "OnTick",
+    "timeframe_agnostic": true,
+    "tested_on": ["EURUSD", "Crash 900 Index", "Step Index"]
+  },
+
+  "core_concept": {
+    "name": "Noise-Smoothed Reversal Detection",
+    "description": "Heikin Ashi smooths raw OHLC data by averaging it, removing tick noise and making trend direction visually clearer. A reversal pattern on HA candles is more reliable than on raw candles because false spikes are absorbed by the averaging. Confirm the HA reversal with RSI for a two-layer filter.",
+    "ha_vs_raw": "Traditional candles: every spike visible, many false reversals. Heikin Ashi: averaged, fewer but higher-quality reversal signals.",
+    "buy_conditions": [
+      "ConsecutiveCandles of bearish HA candles detected (trend to reverse FROM)",
+      "Reversal candle has long lower shadow: shadow/body >= ShadowToBodyRatio (1.5)",
+      "Current candle closes bullish (HA_close > HA_open)",
+      "RSI < 34.0 (not standard 30 — tuned threshold)"
+    ],
+    "sell_conditions": [
+      "ConsecutiveCandles of bullish HA candles detected (trend to reverse FROM)",
+      "Reversal candle has long upper shadow: shadow/body >= ShadowToBodyRatio (1.5)",
+      "Current candle closes bearish (HA_close < HA_open)",
+      "RSI > 65.0 (not standard 70 — tuned threshold)"
+    ],
+    "relevance_to_creviaderiv": "The HA averaging is conceptually similar to our EMA3 smoothing on M1. Both reduce noise to see clean momentum direction. The shadow-to-body ratio maps to our departure candle check — we require a candle that clearly moves AWAY from a zone, not just touches it."
+  },
+
+  "heikin_ashi_formulas": {
+    "ha_close": "(open + high + low + close) / 4",
+    "ha_open":  "previous(ha_open + ha_close) / 2  [first bar: (open + close) / 2]",
+    "ha_high":  "max(high, ha_open, ha_close)",
+    "ha_low":   "min(low, ha_open, ha_close)",
+    "note": "HA candles do NOT reflect actual tradable prices. They are smoothed visual representations. SL/TP must be calculated from raw prices, not HA prices."
+  },
+
+  "data_requirements": [
+    {
+      "name": "raw_ohlc_series",
+      "timeframe": "any (tested on H1)",
+      "fields": ["open", "high", "low", "close"],
+      "range": "TrendCandles + 2 bars minimum",
+      "purpose": "HA transformation input"
+    },
+    {
+      "name": "rsi_series",
+      "indicator": "RSI",
+      "period": 14,
+      "source": "close prices",
+      "field": "current value"
+    }
+  ],
+
+  "config": {
+    "trend_candles":         { "type": "integer", "default": 3,   "description": "How many historical HA candles to analyse for trend direction" },
+    "consecutive_candles":   { "type": "integer", "default": 2,   "description": "Minimum consecutive same-direction candles before looking for reversal" },
+    "shadow_to_body_ratio":  { "type": "float",   "default": 1.5, "description": "Minimum shadow/body ratio on reversal candle (strength filter)" },
+    "rsi_period":            { "type": "integer", "default": 14,  "description": "RSI calculation period" },
+    "rsi_buy_threshold":     { "type": "float",   "default": 34.0, "description": "RSI must be BELOW this for buy signal (NOT standard 30)" },
+    "rsi_sell_threshold":    { "type": "float",   "default": 65.0, "description": "RSI must be ABOVE this for sell signal (NOT standard 70)" },
+    "buy_arrow_color":       { "type": "color",   "default": "green", "description": "Buy signal arrow color" },
+    "sell_arrow_color":      { "type": "color",   "default": "red",   "description": "Sell signal arrow color" }
+  },
+
+  "logic": {
+    "steps": [
+      {
+        "step": 1,
+        "name": "compute_ha_candles",
+        "description": "Transform raw OHLC to Heikin Ashi series",
+        "formulas": {
+          "ha_close[i]": "(O[i]+H[i]+L[i]+C[i])/4",
+          "ha_open[i]":  "(ha_open[i-1]+ha_close[i-1])/2",
+          "ha_high[i]":  "max(H[i], ha_open[i], ha_close[i])",
+          "ha_low[i]":   "min(L[i], ha_open[i], ha_close[i])"
+        }
+      },
+      {
+        "step": 2,
+        "name": "detect_prior_trend",
+        "description": "Check TrendCandles bars to verify a clear prior trend (all bullish or all bearish HA candles)",
+        "bullish_trend": "all ha_close[i] > ha_close[i+1] for i in last TrendCandles",
+        "bearish_trend": "all ha_close[i] < ha_close[i+1] for i in last TrendCandles"
+      },
+      {
+        "step": 3,
+        "name": "detect_reversal_candle",
+        "description": "On the PREVIOUS bar, check shadow-to-body ratio in the reversal direction",
+        "buy_reversal":  "lower_shadow = ha_open[1] - ha_low[1];  body = abs(ha_close[1]-ha_open[1]);  ratio = lower_shadow/body >= 1.5",
+        "sell_reversal": "upper_shadow = ha_high[1] - ha_open[1]; body = abs(ha_close[1]-ha_open[1]); ratio = upper_shadow/body >= 1.5"
+      },
+      {
+        "step": 4,
+        "name": "confirm_direction_change",
+        "description": "Current bar (index 0) must close in the NEW direction",
+        "buy_confirm":  "ha_close[0] > ha_open[0]  (bullish current bar after bearish trend)",
+        "sell_confirm": "ha_close[0] < ha_open[0]  (bearish current bar after bullish trend)"
+      },
+      {
+        "step": 5,
+        "name": "rsi_confirmation",
+        "description": "Final RSI gate — momentum must confirm the reversal direction",
+        "buy_gate":  "rsi < 34.0",
+        "sell_gate": "rsi > 65.0"
+      },
+      {
+        "step": 6,
+        "name": "draw_signal_arrow",
+        "description": "If all gates pass: draw coloured arrow on chart",
+        "buy":  "arrow code 233 (green up-arrow)",
+        "sell": "arrow code 234 (red down-arrow)"
+      }
+    ]
+  },
+
+  "backtested_accuracy": {
+    "EURUSD_buy":    { "total": 20, "accurate": 17, "pct": "85%" },
+    "EURUSD_sell":   { "total": 10, "accurate": 8,  "pct": "80%" },
+    "Crash900_buy":  { "total": 18, "accurate": 14, "pct": "77.8%" },
+    "Crash900_sell": { "total": 25, "accurate": 15, "pct": "60%" },
+    "StepIndex_buy": { "total": 18, "accurate": 15, "pct": "83.3%" },
+    "StepIndex_sell":{ "total": 22, "accurate": 14, "pct": "63.6%" },
+    "period": "27 days",
+    "note": "Buy accuracy is consistently higher than sell. Asymmetry suggests the instrument bias (synthetic indices tend to trend bullish). Also: small sample size — 27 days is not statistically significant."
+  },
+
+  "components_to_build": [
+    {
+      "name": "HeikinAshiTransformer",
+      "type": "indicator",
+      "priority": 1,
+      "contract": "heikin_ashi(opens, highs, lows, closes) -> {ha_open, ha_high, ha_low, ha_close}",
+      "note": "Pure function. Returns all 4 HA series. First bar special case: ha_open = (open+close)/2."
+    },
+    {
+      "name": "ReversalDetector",
+      "type": "logic",
+      "priority": 2,
+      "contract": "detect_reversal(ha_series, trend_candles, consecutive, shadow_ratio) -> (is_buy, is_sell)",
+      "note": "Three-phase check: prior trend → shadow ratio → current bar direction."
+    }
+  ],
+
+  "keep_discard": {
+    "keep": [
+      "Heikin Ashi formulas — correctly defined, industry-standard implementation",
+      "Shadow-to-body ratio reversal check — structural strength filter, maps to our departure candle",
+      "Three-phase signal: prior trend → reversal candle → direction change confirmation",
+      "Tuned RSI thresholds (34/65 not 30/70) — reduces false signals vs standard levels",
+      "Asymmetric RSI (34 for buy, 65 for sell) — allows for instrument-specific tuning"
+    ],
+    "discard": [
+      "HA prices for SL/TP — must use raw prices for actual risk calculations",
+      "Signal-only output — needs SL/TP for production use",
+      "27-day backtest — too short for statistical significance",
+      "MQL5 chart arrows — replace with our LevelDrawer/ChartRenderer"
+    ],
+    "improve": [
+      "Apply HA smoothing to OUR M1 entry candles as a pre-filter — run HA on M1 before checking EMA/ADX",
+      "Add ATR-based SL from raw prices (not HA prices) once reversal detected",
+      "Add zone alignment: reversal signal at a demand zone = high-quality setup",
+      "Extend backtest to 3+ months minimum for statistical validity",
+      "Add separation by session (London vs NY) — reversal accuracy varies by session",
+      "Test shadow_ratio parameter: 1.5 is default — may be over/underfit to tested instruments"
+    ]
+  },
+
+  "creviaderiv_insights": {
+    "ha_as_pre_filter": "We could apply HA smoothing to M1 bars before running our EMA3 crossover check. HA-EMA3 would be cleaner than raw-EMA3 — absorbs tick noise before the crossover signal fires.",
+    "shadow_to_body_maps_to_departure": "The shadow/body >= 1.5 check is conceptually our departure candle gate: we require close AWAY from zone, body > X% of candle. Both ensure the reversal has structural commitment, not just a touch.",
+    "rsi_tuning_lesson": "Standard RSI 30/70 generates too many false signals. The author used 34/65 after testing — showing that indicator thresholds should be FITTED to the instruments, not used at textbook defaults. Our ADX > 20 threshold follows the same principle.",
+    "buy_sell_asymmetry": "77% buy vs 60% sell accuracy is expected on synthetic indices (Boom/Crash are directionally biased). Our system should maintain separate statistics for buy vs sell signals to detect this asymmetry."
+  },
+
+  "article_figures": [
+    {
+      "fig": 1,
+      "title": "Smoothened Chart Comparison",
+      "url": "https://c.mql5.com/2/116/Smoothened_Chart.png",
+      "insight": "Side-by-side of raw candles vs Heikin Ashi. HA clearly shows trend direction without noise spikes."
+    },
+    {
+      "fig": 2,
+      "title": "OHLC to HA Transformation Flowchart",
+      "url": "https://c.mql5.com/2/116/Flowchart.drawio.png",
+      "insight": "Shows the 4-formula transformation. Confirms ha_close = avg(O+H+L+C) and sequential ha_open dependency."
+    },
+    {
+      "fig": 3,
+      "title": "Backtesting Results V100",
+      "url": "https://c.mql5.com/2/116/V100.gif",
+      "insight": "Animated backtest on Volatility 100 Index. Shows signal arrows and tracking of accuracy. 27-day window."
+    },
+    {
+      "fig": 4,
+      "title": "Live Market Test V25",
+      "url": "https://c.mql5.com/2/116/HEIKIN_ASHI.gif",
+      "insight": "Live signal on Volatility 25 Index. Shows buy signal near reversal zone with RSI confirmation."
+    }
+  ]
+}

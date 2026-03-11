@@ -1,0 +1,66 @@
+{
+  "series": "Price Action Analysis Toolkit Development",
+  "part": 22,
+  "total_parts": 65,
+  "title": "Correlation Dashboard",
+  "subtitle": "Multi-Pair Pearson Correlation Matrix (21 Pairs, Heatmap, Returns-Based)",
+  "source_url": "https://www.mql5.com/en/articles/18052",
+  "author": "Christian Benjamin (lynnchris)",
+  "published": "2025-06",
+  "type": "Expert Advisor (Dashboard)",
+  "verdict": "EXTRACT — multi-pair correlation matrix architecture, returns-based correlation (better than price-based), AlertThreshold config, color-coded heatmap. Extends Part 20 from 1-pair to N-pair matrix.",
+
+  "core_concept": {
+    "name": "Correlation Matrix Dashboard",
+    "description": "Compute Pearson correlation between ALL unique pairs of a configurable instrument list. Default 7 symbols → 21 unique pairs. Uses simple returns (% change bar-to-bar) rather than raw closing prices for stationarity. Displays as color-coded heatmap table (green=positive, red=negative, intensity=strength).",
+    "key_upgrade_vs_part_20": "Part 20: 1 pair at a time. Part 22: full N×N matrix. Also switches from raw prices to returns — this is methodologically correct (prices are non-stationary; returns are).",
+    "returns_formula": "return[i] = (close[i] - close[i-1]) / close[i-1]",
+    "pearson_on_returns": "r = corr(returns_pair1, returns_pair2) over LookbackBars",
+    "relevance_to_creviaderiv": "Portfolio-level risk management. Before taking any new signal, compute correlation with all open positions using the returns-based method. Heatmap for monitoring dashboard."
+  },
+
+  "config": {
+    "InstrumentsList": { "default": "EURUSD,GBPUSD,USDJPY,USDCHF,AUDUSD,NZDUSD,XAUUSD", "description": "Comma-separated symbols for matrix" },
+    "TimeFrame":        { "default": "H1",   "description": "Candle timeframe" },
+    "LookbackBars":     { "default": 100,    "description": "Historical bars for correlation" },
+    "AlertThreshold":   { "default": 0.8,    "description": "Threshold for high-correlation alert" },
+    "UpdateSeconds":    { "default": 5,      "description": "Dashboard refresh interval" }
+  },
+
+  "correlation_categories": {
+    "strong_positive":   ">= 0.8  (green, bright)",
+    "moderate_positive": "0.5–0.8 (green, dim)",
+    "weak":              "-0.5–0.5 (neutral)",
+    "moderate_negative": "-0.8– -0.5 (red, dim)",
+    "strong_negative":   "<= -0.8 (red, bright)"
+  },
+
+  "key_insight": {
+    "returns_vs_prices": "Using returns (% change) rather than closing prices is statistically correct. Raw prices are non-stationary — correlation of prices can be spurious. Returns are stationary and correlation is meaningful.",
+    "21_pairs_from_7": "C(7,2) = 21 unique pairs. Scale: N symbols → N*(N-1)/2 pairs.",
+    "alert_threshold": "AlertThreshold=0.8 — when any pair hits this, alert the user. Maps to our position sizing gate."
+  },
+
+  "keep_discard": {
+    "keep": [
+      "Returns-based correlation (not price-based) — methodologically correct",
+      "Full N×N matrix architecture — portfolio-wide view",
+      "AlertThreshold=0.8 for high-correlation warning",
+      "LookbackBars=100 on H1 = ~4 trading days of correlation context"
+    ],
+    "discard": [
+      "MQL5 chart heatmap rendering",
+      "UpdateSeconds interval (Python runs on demand)"
+    ],
+    "improve": [
+      "Rolling window (50-bar) inside the 100-bar lookback to detect regime changes",
+      "Matrix output to dict for programmatic access (not just visual)",
+      "Correlation-adjusted position sizing: max_correlated_exposure = sum(positions weighted by |corr|)"
+    ]
+  },
+
+  "creviaderiv_upgrade": {
+    "returns_based_corr": "df['ret'] = df['close'].pct_change(); rolling_r = df['ret1'].rolling(50).corr(df['ret2'])",
+    "matrix_function": "compute_correlation_matrix(symbols, closes_dict, window=50) -> pd.DataFrame"
+  }
+}

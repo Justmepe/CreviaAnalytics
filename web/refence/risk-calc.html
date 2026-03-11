@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreviaCockpit — Risk Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #070809;
+  --bg-2:      #0c0e12;
+  --surface:   #10141c;
+  --surface-2: #151a26;
+  --border:    #1a2030;
+  --border-2:  #222c42;
+  --text-1:    #e2e6f0;
+  --text-2:    #788098;
+  --text-3:    #38405a;
+  --green:     #00e5a0;
+  --green-2:   #00b87e;
+  --green-dim: rgba(0,229,160,0.08);
+  --red:       #ff3d5a;
+  --red-dim:   rgba(255,61,90,0.08);
+  --amber:     #f0a030;
+  --amber-dim: rgba(240,160,48,0.08);
+  --blue:      #3d7fff;
+}
+
+html { font-size: 14px; }
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 1000; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; height: 52px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7,8,9,0.92); backdrop-filter: blur(20px);
+}
+.nav-logo { display:flex; align-items:center; gap:8px; text-decoration:none; }
+.logo-mark {
+  width:28px; height:28px; border-radius:6px;
+  background:linear-gradient(135deg,var(--green),#0090ff);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Bebas Neue',sans-serif; font-size:12px; color:#070809; letter-spacing:1px;
+}
+.logo-text { font-family:'DM Sans',sans-serif; font-weight:500; font-size:14px; color:var(--text-1); }
+.logo-text em { color:var(--green); font-style:normal; }
+.nav-links { display:flex; gap:2px; list-style:none; }
+.nav-links a {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase;
+  color:var(--text-3); text-decoration:none; padding:6px 12px; border-radius:4px;
+  transition:color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color:var(--text-2); background:var(--surface); }
+.nav-links a.active { color:var(--text-1); background:var(--surface-2); }
+.nav-right { display:flex; gap:8px; }
+.btn-ghost {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase;
+  color:var(--text-2); background:none; border:1px solid var(--border-2);
+  padding:6px 14px; border-radius:4px; cursor:pointer; transition:all 0.2s;
+}
+.btn-ghost:hover { color:var(--text-1); border-color:var(--text-3); }
+.btn-cta {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase;
+  color:#070809; background:var(--green); border:none; padding:7px 16px; border-radius:4px;
+  cursor:pointer; font-weight:500; box-shadow:0 0 18px rgba(0,229,160,0.2); transition:all 0.2s;
+}
+.btn-cta:hover { background:var(--green-2); }
+
+/* ── TICKER ── */
+.ticker {
+  position: fixed; top: 52px; left: 0; right: 0; z-index: 199;
+  display: flex; align-items: center; height: 30px;
+  background: rgba(12,14,18,0.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border); padding: 0 28px;
+}
+.t-live { display:flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.2px; color:var(--green); text-transform:uppercase; margin-right:16px; flex-shrink:0; }
+.pulse { width:5px; height:5px; border-radius:50%; background:var(--green); animation:pulseAnim 2s ease-in-out infinite; }
+@keyframes pulseAnim { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,229,160,0.5);}50%{opacity:0.5;box-shadow:0 0 0 5px rgba(0,229,160,0);} }
+.t-item { display:flex; align-items:center; gap:5px; padding:0 12px; border-right:1px solid var(--border); height:30px; }
+.tl { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); text-transform:uppercase; }
+.tv { font-family:'DM Mono',monospace; font-size:10px; font-weight:500; color:var(--text-1); }
+.tu { color:var(--green); font-family:'DM Mono',monospace; font-size:9px; }
+.td { color:var(--red); font-family:'DM Mono',monospace; font-size:9px; }
+.regime-chip { margin-left:12px; display:flex; align-items:center; gap:6px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.8px; text-transform:uppercase; }
+.rl { color:var(--text-3); }
+.chip-acc { color:var(--green); background:var(--green-dim); border:1px solid rgba(0,229,160,0.2); padding:1px 7px; border-radius:3px; }
+
+/* ══ PAGE ══ */
+.page { padding-top: 82px; }
+
+/* ══ REGIME BANNER ══ */
+.regime-banner {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  animation: fadeDown 0.4s ease forwards;
+}
+@keyframes fadeDown { from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);} }
+
+.rb-left { display:flex; align-items:center; gap:16px; }
+.rb-regime-pill {
+  display:flex; align-items:center; gap:8px;
+  background:var(--green-dim); border:1px solid rgba(0,229,160,0.25);
+  padding:6px 14px; border-radius:4px;
+}
+.rb-regime-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-3); }
+.rb-regime-value { font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1px; color:var(--green); }
+.rb-regime-conf  { font-family:'DM Mono',monospace; font-size:10px; color:var(--green-2); }
+
+.rb-signal {
+  display:flex; align-items:center; gap:7px;
+  font-family:'DM Mono',monospace; font-size:10px; color:var(--green);
+  background:rgba(0,229,160,0.05); border:1px solid rgba(0,229,160,0.15);
+  padding:6px 12px; border-radius:4px;
+}
+.rb-signal.warn { color:var(--amber); background:var(--amber-dim); border-color:rgba(240,160,48,0.2); }
+.rb-signal.danger { color:var(--red); background:var(--red-dim); border-color:rgba(255,61,90,0.2); }
+.rb-sig-icon { font-size:12px; }
+
+.rb-right {
+  font-family:'DM Mono',monospace; font-size:10px; color:var(--text-3);
+  display:flex; align-items:center; gap:6px;
+}
+.rb-update-dot { width:5px; height:5px; border-radius:50%; background:var(--green); animation:pulseAnim 2s ease-in-out infinite; }
+
+/* ══ MAIN LAYOUT ══ */
+.calc-shell {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: calc(100vh - 82px - 53px);
+  gap: 0;
+}
+
+/* ══ LEFT: INPUTS ══ */
+.inputs-col {
+  border-right: 1px solid var(--border);
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 0;
+  background: var(--bg-2);
+}
+
+/* Page header */
+.page-header { margin-bottom: 24px; animation: fadeUp 0.4s ease 0.05s both; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);} }
+
+.page-title {
+  font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:3px; color:var(--text-1);
+  line-height:1; margin-bottom:4px;
+}
+.page-sub { font-size:12px; color:var(--text-3); line-height:1.5; }
+
+/* Asset selector */
+.asset-selector {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 6px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.4s ease 0.1s both;
+}
+.asset-btn {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 5px; padding: 8px 6px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  transition: all 0.15s;
+}
+.asset-btn:hover { border-color:var(--border-2); background:var(--surface-2); }
+.asset-btn.selected { border-color:var(--green); background:var(--green-dim); }
+.ab-icon {
+  width: 24px; height: 24px; border-radius: 6px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'DM Mono',monospace; font-size:8px; font-weight:500; color:#070809;
+}
+.ab-ticker { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-2); }
+.asset-btn.selected .ab-ticker { color:var(--green); }
+
+.av-btc { background:linear-gradient(135deg,#f7931a,#e07c10); }
+.av-eth { background:linear-gradient(135deg,#627eea,#4f67c8); color:#fff!important; }
+.av-sol { background:linear-gradient(135deg,#9945ff,#14f195); color:#fff!important; }
+.av-bnb { background:linear-gradient(135deg,#f3ba2f,#d4a228); }
+.av-xmr { background:linear-gradient(135deg,#f06020,#c84010); }
+.av-aave{ background:linear-gradient(135deg,#2ebac6,#1a9aaa); }
+.av-doge{ background:linear-gradient(135deg,#c2a633,#a88b28); }
+.av-uni { background:linear-gradient(135deg,#ff007a,#cc005c); color:#fff!important; }
+
+/* Direction toggle */
+.direction-toggle {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 5px;
+  overflow: hidden; margin-bottom: 20px;
+  animation: fadeUp 0.4s ease 0.15s both;
+}
+.dir-btn {
+  padding: 10px; text-align: center; cursor: pointer;
+  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--text-3); background:none; border:none; transition:all 0.2s;
+}
+.dir-btn.long.active  { background:var(--green); color:#070809; font-weight:500; }
+.dir-btn.short.active { background:var(--red); color:#fff; font-weight:500; }
+.dir-btn:not(.active):hover { color:var(--text-2); background:var(--surface-2); }
+
+/* Form fields */
+.form-section { margin-bottom: 20px; animation: fadeUp 0.4s ease 0.2s both; }
+.form-section-title {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--text-3); margin-bottom:10px;
+}
+.field-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.field-grid.single { grid-template-columns:1fr; }
+
+.field { display:flex; flex-direction:column; gap:4px; }
+.field-label {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.8px; text-transform:uppercase;
+  color:var(--text-3);
+}
+.field-input-wrap {
+  display:flex; align-items:center;
+  background:var(--surface); border:1px solid var(--border); border-radius:4px;
+  transition:border-color 0.2s;
+}
+.field-input-wrap:focus-within { border-color:var(--green); }
+.field-prefix {
+  font-family:'DM Mono',monospace; font-size:11px; color:var(--text-3);
+  padding:0 8px 0 10px; flex-shrink:0;
+}
+.field-input {
+  background:none; border:none; outline:none;
+  font-family:'DM Mono',monospace; font-size:12px; font-weight:500; color:var(--text-1);
+  padding:9px 10px 9px 0; width:100%;
+}
+.field-input::placeholder { color:var(--text-3); font-weight:300; }
+.field-suffix {
+  font-family:'DM Mono',monospace; font-size:10px; color:var(--text-3);
+  padding:0 10px 0 0; flex-shrink:0;
+}
+
+/* Leverage slider */
+.leverage-wrap { margin-bottom: 20px; animation: fadeUp 0.4s ease 0.25s both; }
+.leverage-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.leverage-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-3); }
+.leverage-value {
+  font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--text-1); line-height:1;
+  transition:color 0.3s;
+}
+.leverage-value.lev-danger { color:var(--red); }
+.leverage-value.lev-warn   { color:var(--amber); }
+.leverage-value.lev-safe   { color:var(--green); }
+
+.slider-track {
+  position:relative; height:4px; background:var(--border); border-radius:2px; margin-bottom:8px;
+}
+.slider-fill { height:100%; border-radius:2px; background:var(--green); transition:width 0.1s, background 0.3s; }
+.slider-fill.danger { background:var(--red); }
+.slider-fill.warn   { background:var(--amber); }
+
+input[type=range] {
+  position:absolute; top:-7px; left:0; width:100%; opacity:0; cursor:pointer; height:18px;
+}
+
+.leverage-presets { display:flex; gap:5px; }
+.lev-preset {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.5px;
+  color:var(--text-3); background:var(--surface); border:1px solid var(--border);
+  padding:3px 9px; border-radius:3px; cursor:pointer; transition:all 0.15s;
+}
+.lev-preset:hover { color:var(--text-2); border-color:var(--border-2); }
+.lev-preset.active { color:var(--text-1); background:var(--surface-2); border-color:var(--border-2); }
+
+/* Account size + risk % */
+.risk-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:20px; animation: fadeUp 0.4s ease 0.28s both; }
+
+/* Calculate button */
+.calc-btn {
+  width:100%; padding:13px;
+  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase;
+  color:#070809; background:var(--green); border:none; border-radius:5px;
+  cursor:pointer; font-weight:500;
+  box-shadow:0 0 24px rgba(0,229,160,0.2);
+  transition:all 0.2s;
+  animation: fadeUp 0.4s ease 0.3s both;
+}
+.calc-btn:hover { background:var(--green-2); box-shadow:0 4px 30px rgba(0,229,160,0.35); transform:translateY(-1px); }
+.calc-btn:active { transform:translateY(0); }
+
+/* ══ RIGHT: RESULTS ══ */
+.results-col {
+  padding: 24px 28px;
+  display: flex; flex-direction: column; gap: 20px;
+  background: var(--bg);
+}
+
+/* Regime context card */
+.regime-context-card {
+  background: var(--surface); border: 1px solid var(--border-2); border-radius: 6px;
+  padding: 16px 20px; display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+  position:relative; overflow:hidden;
+  animation: fadeUp 0.4s ease 0.1s both;
+}
+.regime-context-card::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at top right, rgba(0,229,160,0.05) 0%, transparent 60%);
+  pointer-events:none;
+}
+.regime-context-card.warn-card::before { background:radial-gradient(ellipse at top right, rgba(240,160,48,0.06) 0%, transparent 60%); }
+.regime-context-card.danger-card::before { background:radial-gradient(ellipse at top right, rgba(255,61,90,0.06) 0%, transparent 60%); }
+
+.rcc-left {}
+.rcc-eyebrow { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-3); margin-bottom:6px; }
+.rcc-verdict {
+  font-family:'Instrument Serif',serif; font-size:20px; line-height:1.2; color:var(--text-1); margin-bottom:6px;
+}
+.rcc-verdict em { font-style:italic; }
+.rcc-verdict .good { color:var(--green); }
+.rcc-verdict .warn { color:var(--amber); }
+.rcc-verdict .bad  { color:var(--red); }
+.rcc-desc { font-size:12px; color:var(--text-2); line-height:1.6; max-width:380px; }
+
+.rcc-right { flex-shrink:0; text-align:right; }
+.rcc-regime-big {
+  font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:2px; line-height:1;
+}
+.rcc-regime-big.acc   { color:var(--green); }
+.rcc-regime-big.warn  { color:var(--amber); }
+.rcc-regime-big.danger{ color:var(--red); }
+.rcc-conf { font-family:'DM Mono',monospace; font-size:10px; color:var(--text-3); margin-top:2px; }
+.rcc-action {
+  margin-top:8px; font-family:'DM Mono',monospace; font-size:9.5px; letter-spacing:0.5px;
+  padding:4px 10px; border-radius:3px; display:inline-block;
+}
+.rcc-action.good { color:var(--green); background:var(--green-dim); border:1px solid rgba(0,229,160,0.2); }
+.rcc-action.warn { color:var(--amber); background:var(--amber-dim); border:1px solid rgba(240,160,48,0.2); }
+.rcc-action.bad  { color:var(--red);   background:var(--red-dim);   border:1px solid rgba(255,61,90,0.2); }
+
+/* ── HERO METRICS ── */
+.hero-metrics {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  animation: fadeUp 0.4s ease 0.15s both;
+}
+
+.metric-hero {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+  padding: 18px 20px; position:relative; overflow:hidden;
+  transition: border-color 0.2s;
+}
+.metric-hero:hover { border-color:var(--border-2); }
+
+.mh-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-3); margin-bottom:8px; }
+.mh-value {
+  font-family:'Bebas Neue',sans-serif; font-size:42px; line-height:1; margin-bottom:4px;
+  transition:color 0.3s;
+}
+.mh-sub { font-family:'DM Mono',monospace; font-size:10px; color:var(--text-3); }
+
+.mh-rr-bar {
+  margin-top:10px; height:3px; background:var(--border); border-radius:2px; overflow:hidden;
+}
+.mh-rr-fill { height:100%; border-radius:2px; background:var(--green); transition:width 1s ease; }
+
+.col-green { color:var(--green); }
+.col-red   { color:var(--red); }
+.col-amber { color:var(--amber); }
+.col-text  { color:var(--text-1); }
+
+/* ── SECONDARY METRICS ── */
+.secondary-metrics {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
+  animation: fadeUp 0.4s ease 0.2s both;
+}
+
+.metric-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+  padding: 14px 16px;
+  transition: border-color 0.2s;
+}
+.metric-card:hover { border-color:var(--border-2); }
+
+.mc-label { font-family:'DM Mono',monospace; font-size:8.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--text-3); margin-bottom:6px; }
+.mc-value { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--text-1); line-height:1; margin-bottom:2px; }
+.mc-sub   { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); }
+
+/* ── TRADE VISUALISER ── */
+.trade-vis {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+  padding: 18px 20px;
+  animation: fadeUp 0.4s ease 0.25s both;
+}
+.tv-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.tv-title { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-3); }
+.tv-asset { font-family:'DM Mono',monospace; font-size:10px; color:var(--text-2); }
+
+/* Price ladder visualiser */
+.price-ladder {
+  display: flex; flex-direction: column; gap: 0; position:relative;
+}
+.price-ladder::before {
+  content:''; position:absolute; left:90px; top:0; bottom:0; width:2px;
+  background:var(--border); z-index:0;
+}
+
+.pl-row {
+  display:grid; grid-template-columns:90px 2px 1fr;
+  align-items:center; gap:0; position:relative; z-index:1;
+  padding:6px 0;
+}
+
+.pl-label {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.8px; text-transform:uppercase;
+  text-align:right; padding-right:14px;
+}
+.pl-dot {
+  width:10px; height:10px; border-radius:50%; margin-left:-4px; flex-shrink:0;
+  border:2px solid var(--bg); z-index:2;
+}
+.pl-content { padding-left:14px; display:flex; align-items:center; justify-content:space-between; }
+.pl-price { font-family:'DM Mono',monospace; font-size:13px; font-weight:500; }
+.pl-annotation { font-family:'DM Mono',monospace; font-size:9px; color:var(--text-3); }
+.pl-gain { font-family:'DM Mono',monospace; font-size:10px; font-weight:500; }
+
+.pl-row.tp .pl-label { color:var(--green); }
+.pl-row.tp .pl-dot   { background:var(--green); }
+.pl-row.tp .pl-price { color:var(--green); }
+.pl-row.tp .pl-gain  { color:var(--green); }
+
+.pl-row.entry .pl-label { color:var(--text-2); }
+.pl-row.entry .pl-dot   { background:var(--text-2); }
+.pl-row.entry .pl-price { color:var(--text-1); }
+
+.pl-row.sl .pl-label { color:var(--red); }
+.pl-row.sl .pl-dot   { background:var(--red); }
+.pl-row.sl .pl-price { color:var(--red); }
+.pl-row.sl .pl-gain  { color:var(--red); }
+
+/* distance bars */
+.pl-bar-wrap {
+  position:absolute; left:92px; top:50%; transform:translateY(-50%);
+  height:2px; pointer-events:none;
+}
+.pl-bar { height:2px; opacity:0.3; border-radius:1px; }
+
+/* ── WARNING CARDS ── */
+.warnings-row {
+  display: flex; flex-direction:column; gap:8px;
+  animation: fadeUp 0.4s ease 0.3s both;
+}
+
+.warning-card {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:12px 14px; border-radius:5px; border:1px solid;
+}
+.wc-icon { font-size:14px; flex-shrink:0; margin-top:1px; }
+.wc-title { font-size:12px; font-weight:600; margin-bottom:2px; }
+.wc-desc  { font-size:11.5px; line-height:1.55; }
+
+.wc-green  { background:var(--green-dim); border-color:rgba(0,229,160,0.2); color:var(--green); }
+.wc-green .wc-title { color:var(--green); }
+.wc-green .wc-desc  { color:rgba(0,229,160,0.7); }
+
+.wc-amber  { background:var(--amber-dim); border-color:rgba(240,160,48,0.2); }
+.wc-amber .wc-title { color:var(--amber); }
+.wc-amber .wc-desc  { color:rgba(240,160,48,0.7); }
+
+.wc-red    { background:var(--red-dim);   border-color:rgba(255,61,90,0.2); }
+.wc-red .wc-title  { color:var(--red); }
+.wc-red .wc-desc   { color:rgba(255,61,90,0.7); }
+
+.wc-neutral{ background:var(--surface-2); border-color:var(--border); }
+.wc-neutral .wc-title { color:var(--text-2); }
+.wc-neutral .wc-desc  { color:var(--text-3); }
+
+/* ── PREMIUM UPSELL ── */
+.premium-upsell {
+  background:var(--surface); border:1px solid var(--border-2); border-radius:6px;
+  padding:18px 20px;
+  position:relative; overflow:hidden;
+  animation: fadeUp 0.4s ease 0.35s both;
+}
+.premium-upsell::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, var(--amber), transparent);
+}
+.pu-eyebrow { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--amber); margin-bottom:8px; }
+.pu-title { font-family:'Instrument Serif',serif; font-size:16px; color:var(--text-1); line-height:1.3; margin-bottom:10px; }
+.pu-title em { font-style:italic; color:var(--amber); }
+.pu-features { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+.pu-feat {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.5px;
+  color:var(--text-2); background:var(--surface-2); border:1px solid var(--border);
+  padding:3px 9px; border-radius:3px;
+}
+.pu-cta {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.8px; text-transform:uppercase;
+  color:#070809; background:var(--amber); border:none; padding:8px 20px; border-radius:4px;
+  cursor:pointer; font-weight:500; transition:all 0.2s;
+}
+.pu-cta:hover { opacity:0.85; }
+
+/* ── PLACEHOLDER STATE ── */
+.results-placeholder {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  flex:1; text-align:center; padding:60px 40px;
+  animation: fadeUp 0.4s ease 0.2s both;
+}
+.rp-icon { font-size:40px; margin-bottom:16px; opacity:0.3; }
+.rp-title { font-family:'Instrument Serif',serif; font-size:22px; color:var(--text-2); margin-bottom:8px; }
+.rp-desc  { font-size:13px; color:var(--text-3); line-height:1.6; max-width:300px; }
+
+/* Responsive */
+@media (max-width:1100px) {
+  .calc-shell { grid-template-columns:340px 1fr; }
+  .secondary-metrics { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:860px) {
+  .calc-shell { grid-template-columns:1fr; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">CC</div>
+    <span class="logo-text">Crevia<em>Cockpit</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Market</a></li>
+    <li><a href="#">Intelligence</a></li>
+    <li><a href="#" class="active">Risk Calc</a></li>
+    <li><a href="#">Analysis</a></li>
+    <li><a href="#">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-ghost">Sign In</button>
+    <button class="btn-cta">Join Waitlist</button>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="t-live"><span class="pulse"></span>Live</div>
+  <div class="t-item"><span class="tl">BTC</span><span class="tv">$67,468</span><span class="tu">+5.07%</span></div>
+  <div class="t-item"><span class="tl">ETH</span><span class="tv">$2,033</span><span class="tu">+9.16%</span></div>
+  <div class="t-item"><span class="tl">MCAP</span><span class="tv">$2.43T</span></div>
+  <div class="t-item"><span class="tl">BTC.D</span><span class="tv">56.0%</span></div>
+  <div class="t-item"><span class="tl">F&amp;G</span><span class="tv" style="color:var(--red)">11</span><span class="td">Extreme Fear</span></div>
+  <div class="regime-chip"><span class="rl">Regime</span><span class="chip-acc">Accumulation · 80%</span></div>
+</div>
+
+<div class="page">
+
+  <!-- REGIME BANNER -->
+  <div class="regime-banner" id="regimeBanner">
+    <div class="rb-left">
+      <div class="rb-regime-pill">
+        <div>
+          <div class="rb-regime-label">Active Regime</div>
+          <div class="rb-regime-value">Accumulation</div>
+        </div>
+        <div class="rb-regime-conf">80% confidence</div>
+      </div>
+      <div class="rb-signal" id="regimeSignal">
+        <span class="rb-sig-icon">✓</span>
+        <span id="regimeSignalText">Regime supports long positions — accumulation phase active</span>
+      </div>
+    </div>
+    <div class="rb-right">
+      <span class="rb-update-dot"></span>
+      Updated 2m ago · <a href="#" style="color:var(--green);text-decoration:none;margin-left:4px;">View Intelligence →</a>
+    </div>
+  </div>
+
+  <!-- CALC SHELL -->
+  <div class="calc-shell">
+
+    <!-- ══ LEFT: INPUTS ══ -->
+    <div class="inputs-col">
+      <div class="page-header">
+        <div class="page-title">Risk Calculator</div>
+        <div class="page-sub">Real-time position sizing with live regime context and market warnings</div>
+      </div>
+
+      <!-- ASSET SELECTOR -->
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;animation:fadeUp 0.4s ease 0.08s both;">Select Asset</div>
+      <div class="asset-selector">
+        <button class="asset-btn selected" onclick="selectAsset(this,'BTC',67468)">
+          <div class="ab-icon av-btc">BTC</div>
+          <div class="ab-ticker">BTC</div>
+        </button>
+        <button class="asset-btn" onclick="selectAsset(this,'ETH',2033)">
+          <div class="ab-icon av-eth">ETH</div>
+          <div class="ab-ticker">ETH</div>
+        </button>
+        <button class="asset-btn" onclick="selectAsset(this,'SOL',87)">
+          <div class="ab-icon av-sol">SOL</div>
+          <div class="ab-ticker">SOL</div>
+        </button>
+        <button class="asset-btn" onclick="selectAsset(this,'BNB',627)">
+          <div class="ab-icon av-bnb">BNB</div>
+          <div class="ab-ticker">BNB</div>
+        </button>
+        <button class="asset-btn" onclick="selectAsset(this,'XMR',348)">
+          <div class="ab-icon av-xmr">XMR</div>
+          <div class="ab-ticker">XMR</div>
+        </button>
+        <button class="asset-btn" onclick="selectAsset(this,'AAVE',116)">
+          <div class="ab-icon av-aave">AAVE</div>
+          <div class="ab-ticker">AAVE</div>
+        </button>
+        <button class="asset-btn" onclick="selectAsset(this,'DOGE',0.10)">
+          <div class="ab-icon av-doge">DOGE</div>
+          <div class="ab-ticker">DOGE</div>
+        </button>
+        <button class="asset-btn" onclick="selectAsset(this,'UNI',3.99)">
+          <div class="ab-icon av-uni">UNI</div>
+          <div class="ab-ticker">UNI</div>
+        </button>
+      </div>
+
+      <!-- DIRECTION -->
+      <div class="direction-toggle">
+        <button class="dir-btn long active" id="btnLong" onclick="setDirection('long')">↑ Long</button>
+        <button class="dir-btn short" id="btnShort" onclick="setDirection('short')">↓ Short</button>
+      </div>
+
+      <!-- PRICE INPUTS -->
+      <div class="form-section">
+        <div class="form-section-title">Price Levels</div>
+        <div class="field-grid">
+          <div class="field">
+            <div class="field-label">Entry Price</div>
+            <div class="field-input-wrap">
+              <span class="field-prefix">$</span>
+              <input class="field-input" id="entryPrice" type="number" value="67468" oninput="calculate()">
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-label">Stop Loss</div>
+            <div class="field-input-wrap">
+              <span class="field-prefix">$</span>
+              <input class="field-input" id="stopLoss" type="number" value="65000" oninput="calculate()">
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-label">Take Profit</div>
+            <div class="field-input-wrap">
+              <span class="field-prefix">$</span>
+              <input class="field-input" id="takeProfit" type="number" value="74000" oninput="calculate()">
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-label">Funding Rate</div>
+            <div class="field-input-wrap">
+              <input class="field-input" id="fundingRate" type="number" value="-0.0009" step="0.0001" oninput="calculate()" style="padding-left:10px;">
+              <span class="field-suffix">%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVERAGE -->
+      <div class="leverage-wrap">
+        <div class="leverage-header">
+          <span class="leverage-label">Leverage</span>
+          <span class="leverage-value lev-safe" id="leverageDisplay">10x</span>
+        </div>
+        <div class="slider-track">
+          <div class="slider-fill" id="sliderFill" style="width:18%"></div>
+          <input type="range" id="leverageSlider" min="1" max="50" value="10" oninput="updateLeverage(this.value)">
+        </div>
+        <div class="leverage-presets">
+          <button class="lev-preset" onclick="setLeverage(1)">1x</button>
+          <button class="lev-preset" onclick="setLeverage(3)">3x</button>
+          <button class="lev-preset" onclick="setLeverage(5)">5x</button>
+          <button class="lev-preset active" onclick="setLeverage(10)">10x</button>
+          <button class="lev-preset" onclick="setLeverage(20)">20x</button>
+          <button class="lev-preset" onclick="setLeverage(50)">50x</button>
+        </div>
+      </div>
+
+      <!-- ACCOUNT + RISK -->
+      <div class="risk-row">
+        <div class="field">
+          <div class="field-label">Account Size</div>
+          <div class="field-input-wrap">
+            <span class="field-prefix">$</span>
+            <input class="field-input" id="accountSize" type="number" value="10000" oninput="calculate()">
+          </div>
+        </div>
+        <div class="field">
+          <div class="field-label">Risk Per Trade</div>
+          <div class="field-input-wrap">
+            <input class="field-input" id="riskPct" type="number" value="1" step="0.1" oninput="calculate()" style="padding-left:10px;">
+            <span class="field-suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate Position →</button>
+    </div>
+
+    <!-- ══ RIGHT: RESULTS ══ -->
+    <div class="results-col" id="resultsCol">
+
+      <!-- REGIME CONTEXT -->
+      <div class="regime-context-card" id="regimeContextCard">
+        <div class="rcc-left">
+          <div class="rcc-eyebrow">Regime Assessment</div>
+          <div class="rcc-verdict" id="rccVerdict">
+            This long is <em class="good">aligned</em> with the current market regime
+          </div>
+          <div class="rcc-desc" id="rccDesc">
+            Accumulation regime at 80% confidence supports long entries on major assets. 
+            Capital flowing back into spot BTC and ETH. Risk/reward improves in this environment.
+          </div>
+        </div>
+        <div class="rcc-right">
+          <div class="rcc-regime-big acc" id="rccRegimeBig">Acc</div>
+          <div class="rcc-conf">80% conf · 78% acc</div>
+          <div class="rcc-action good" id="rccAction">✓ Regime Aligned</div>
+        </div>
+      </div>
+
+      <!-- HERO METRICS -->
+      <div class="hero-metrics">
+        <div class="metric-hero">
+          <div class="mh-label">Risk / Reward</div>
+          <div class="mh-value col-amber" id="rrDisplay">2.68</div>
+          <div class="mh-sub" id="rrSub">$657 risk → $1,760 gain</div>
+          <div class="mh-rr-bar"><div class="mh-rr-fill" id="rrBarFill" style="width:54%"></div></div>
+        </div>
+        <div class="metric-hero">
+          <div class="mh-label">Position Size</div>
+          <div class="mh-value col-text" id="posSizeDisplay">0.27</div>
+          <div class="mh-sub" id="posSizeSub">BTC · $18,177 notional</div>
+        </div>
+      </div>
+
+      <!-- SECONDARY METRICS -->
+      <div class="secondary-metrics">
+        <div class="metric-card">
+          <div class="mc-label">Max Loss at Stop</div>
+          <div class="mc-value col-red" id="maxLossDisplay">$100</div>
+          <div class="mc-sub" id="maxLossSub">1.0% of account</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-label">Gain at Target</div>
+          <div class="mc-value col-green" id="maxGainDisplay">$268</div>
+          <div class="mc-sub">If TP hit in full</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-label">Required Margin</div>
+          <div class="mc-value col-text" id="marginDisplay">$1,818</div>
+          <div class="mc-sub" id="marginSub">at 10x leverage</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-label">Liquidation Price</div>
+          <div class="mc-value col-red" id="liqDisplay">$61,570</div>
+          <div class="mc-sub" id="liqSub">$5,898 from entry</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-label">Daily Funding Cost</div>
+          <div class="mc-value col-text" id="fundingDisplay">–$0.49</div>
+          <div class="mc-sub">at -0.0009% rate</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-label">Break-even Price</div>
+          <div class="mc-value col-text" id="breakEvenDisplay">$67,534</div>
+          <div class="mc-sub">incl. fees est.</div>
+        </div>
+      </div>
+
+      <!-- PRICE VISUALISER -->
+      <div class="trade-vis">
+        <div class="tv-header">
+          <span class="tv-title">Trade Visualiser</span>
+          <span class="tv-asset" id="tvAsset">BTC / USDT · Long · 10x</span>
+        </div>
+        <div class="price-ladder" id="priceLadder">
+          <div class="pl-row tp">
+            <div class="pl-label">Take Profit</div>
+            <div class="pl-dot"></div>
+            <div class="pl-content">
+              <span class="pl-price" id="plTP">$74,000</span>
+              <span class="pl-gain" id="plTPGain">+$1,760 (+9.68%)</span>
+            </div>
+          </div>
+          <div class="pl-row entry">
+            <div class="pl-label">Entry</div>
+            <div class="pl-dot"></div>
+            <div class="pl-content">
+              <span class="pl-price" id="plEntry">$67,468</span>
+              <span class="pl-annotation">Current price</span>
+            </div>
+          </div>
+          <div class="pl-row sl">
+            <div class="pl-label">Stop Loss</div>
+            <div class="pl-dot"></div>
+            <div class="pl-content">
+              <span class="pl-price" id="plSL">$65,000</span>
+              <span class="pl-gain" id="plSLGain">–$657 (–3.66%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WARNINGS -->
+      <div class="warnings-row" id="warningsRow">
+        <div class="warning-card wc-green">
+          <div class="wc-icon">✓</div>
+          <div>
+            <div class="wc-title">Risk within safe parameters</div>
+            <div class="wc-desc">1% account risk per trade is within the recommended 1–2% range. Consistent application of this rule protects your account from catastrophic drawdowns.</div>
+          </div>
+        </div>
+        <div class="warning-card wc-neutral">
+          <div class="wc-icon">ℹ</div>
+          <div>
+            <div class="wc-title">Funding rate slightly negative</div>
+            <div class="wc-desc">-0.0009% funding rate means shorts are currently paying longs. This costs you nothing on a long position — it's actually a mild tailwind. Typical daily cost at this position size: ~$0.49.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREMIUM UPSELL -->
+      <div class="premium-upsell">
+        <div class="pu-eyebrow">⚡ Premium Feature</div>
+        <div class="pu-title">Add a second position and see your <em>true portfolio exposure</em></div>
+        <div class="pu-features">
+          <span class="pu-feat">Correlation-aware sizing</span>
+          <span class="pu-feat">Multi-position builder</span>
+          <span class="pu-feat">Scenario stress-tester</span>
+          <span class="pu-feat">Portfolio heat map</span>
+        </div>
+        <button class="pu-cta">Unlock Premium Calculator →</button>
+      </div>
+
+    </div><!-- /results-col -->
+  </div><!-- /calc-shell -->
+
+</div><!-- /page -->
+
+<script>
+let direction = 'long';
+let selectedAsset = 'BTC';
+let selectedPrice = 67468;
+
+function selectAsset(btn, asset, price) {
+  document.querySelectorAll('.asset-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedAsset = asset;
+  selectedPrice = price;
+  document.getElementById('entryPrice').value = price;
+  // Auto-set SL and TP based on asset
+  const entry = price;
+  document.getElementById('stopLoss').value   = formatNum(entry * (direction === 'long' ? 0.963 : 1.037));
+  document.getElementById('takeProfit').value = formatNum(entry * (direction === 'long' ? 1.097 : 0.903));
+  calculate();
+}
+
+function formatNum(n) {
+  if (n >= 1000) return Math.round(n);
+  if (n >= 1)    return parseFloat(n.toFixed(2));
+  return parseFloat(n.toFixed(5));
+}
+
+function setDirection(dir) {
+  direction = dir;
+  document.getElementById('btnLong').classList.toggle('active', dir === 'long');
+  document.getElementById('btnShort').classList.toggle('active', dir === 'short');
+  updateRegimeContext();
+  calculate();
+}
+
+function updateLeverage(val) {
+  val = parseInt(val);
+  document.getElementById('leverageDisplay').textContent = val + 'x';
+  const pct = ((val - 1) / 49) * 100;
+  document.getElementById('sliderFill').style.width = pct + '%';
+
+  const display = document.getElementById('leverageDisplay');
+  const fill    = document.getElementById('sliderFill');
+  if (val >= 20) {
+    display.className = 'leverage-value lev-danger';
+    fill.className    = 'slider-fill danger';
+  } else if (val >= 10) {
+    display.className = 'leverage-value lev-warn';
+    fill.className    = 'slider-fill warn';
+  } else {
+    display.className = 'leverage-value lev-safe';
+    fill.className    = 'slider-fill';
+  }
+  document.querySelectorAll('.lev-preset').forEach(p => p.classList.remove('active'));
+  calculate();
+}
+
+function setLeverage(val) {
+  document.getElementById('leverageSlider').value = val;
+  document.querySelectorAll('.lev-preset').forEach(p => {
+    p.classList.toggle('active', parseInt(p.textContent) === val);
+  });
+  updateLeverage(val);
+}
+
+function calculate() {
+  const entry    = parseFloat(document.getElementById('entryPrice').value) || 0;
+  const sl       = parseFloat(document.getElementById('stopLoss').value) || 0;
+  const tp       = parseFloat(document.getElementById('takeProfit').value) || 0;
+  const lev      = parseInt(document.getElementById('leverageSlider').value) || 1;
+  const account  = parseFloat(document.getElementById('accountSize').value) || 10000;
+  const riskPct  = parseFloat(document.getElementById('riskPct').value) || 1;
+  const funding  = parseFloat(document.getElementById('fundingRate').value) || 0;
+
+  if (!entry || !sl || !tp) return;
+
+  const isLong = direction === 'long';
+
+  // Core calcs
+  const slDist   = Math.abs(entry - sl);
+  const tpDist   = Math.abs(tp - entry);
+  const slPct    = slDist / entry;
+  const tpPct    = tpDist / entry;
+  const riskDollar = account * (riskPct / 100);
+
+  // Position size in units
+  const posUnits = riskDollar / (slDist);
+  const notional = posUnits * entry;
+
+  // R:R
+  const rr = tpDist / slDist;
+
+  // P&L
+  const maxLoss = riskDollar;
+  const maxGain = riskDollar * rr;
+
+  // Margin
+  const margin = notional / lev;
+
+  // Liquidation (~91.5% of entry for long at given lev, simplified)
+  const liqPct = isLong ? (1 - 0.9 / lev) : (1 + 0.9 / lev);
+  const liqPrice = entry * liqPct;
+
+  // Funding cost per day (3x per day)
+  const fundingCost = Math.abs(funding / 100) * notional * 3;
+
+  // Breakeven (assume 0.04% fee each way)
+  const feePct = 0.0004;
+  const breakEven = isLong
+    ? entry * (1 + feePct * 2)
+    : entry * (1 - feePct * 2);
+
+  // Update hero metrics
+  const rrColor = rr >= 3 ? 'col-green' : rr >= 2 ? 'col-amber' : 'col-red';
+  document.getElementById('rrDisplay').className = 'mh-value ' + rrColor;
+  document.getElementById('rrDisplay').textContent = rr.toFixed(2);
+  document.getElementById('rrSub').textContent = '$' + fmt(maxLoss) + ' risk → $' + fmt(maxGain) + ' gain';
+  const rrBarWidth = Math.min(100, (rr / 5) * 100);
+  document.getElementById('rrBarFill').style.width = rrBarWidth + '%';
+  document.getElementById('rrBarFill').style.background = rr >= 3 ? 'var(--green)' : rr >= 2 ? 'var(--amber)' : 'var(--red)';
+
+  const unitDisplay = posUnits >= 1 ? posUnits.toFixed(4) : posUnits.toFixed(6);
+  document.getElementById('posSizeDisplay').textContent = unitDisplay;
+  document.getElementById('posSizeSub').textContent = selectedAsset + ' · $' + fmt(notional) + ' notional';
+
+  // Secondary metrics
+  document.getElementById('maxLossDisplay').textContent = '$' + fmt(maxLoss);
+  document.getElementById('maxLossSub').textContent = riskPct + '% of account';
+  document.getElementById('maxGainDisplay').textContent = '$' + fmt(maxGain);
+  document.getElementById('marginDisplay').textContent = '$' + fmt(margin);
+  document.getElementById('marginSub').textContent = 'at ' + lev + 'x leverage';
+  document.getElementById('liqDisplay').textContent  = '$' + fmt(liqPrice);
+  document.getElementById('liqSub').textContent = '$' + fmt(Math.abs(entry - liqPrice)) + ' from entry';
+  document.getElementById('fundingDisplay').textContent = (funding >= 0 ? '+' : '–') + '$' + fundingCost.toFixed(2);
+  document.getElementById('breakEvenDisplay').textContent = '$' + fmt(breakEven);
+
+  // Visualiser
+  document.getElementById('tvAsset').textContent = selectedAsset + ' / USDT · ' + (isLong ? 'Long' : 'Short') + ' · ' + lev + 'x';
+  document.getElementById('plTP').textContent    = '$' + fmt(tp);
+  document.getElementById('plEntry').textContent = '$' + fmt(entry);
+  document.getElementById('plSL').textContent    = '$' + fmt(sl);
+
+  const tpGainSign = isLong ? '+' : '–';
+  const slGainSign = isLong ? '–' : '+';
+  document.getElementById('plTPGain').textContent = tpGainSign + '$' + fmt(maxGain) + ' (' + tpGainSign + (tpPct * 100 * lev).toFixed(2) + '%)';
+  document.getElementById('plSLGain').textContent = slGainSign + '$' + fmt(maxLoss) + ' (' + slGainSign + (slPct * 100 * lev).toFixed(2) + '%)';
+
+  // Warnings
+  buildWarnings(rr, riskPct, lev, slPct, funding, isLong);
+
+  updateRegimeContext();
+}
+
+function fmt(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(2) + 'M';
+  if (n >= 1000)    return n.toLocaleString('en-US', {maximumFractionDigits:0});
+  if (n >= 1)       return n.toFixed(2);
+  return n.toFixed(4);
+}
+
+function buildWarnings(rr, riskPct, lev, slPct, funding, isLong) {
+  const container = document.getElementById('warningsRow');
+  container.innerHTML = '';
+
+  const warnings = [];
+
+  // RR warning
+  if (rr < 1.5) {
+    warnings.push({ type:'wc-red', icon:'⚠', title:'Risk/Reward below minimum threshold',
+      desc:'R/R of ' + rr.toFixed(2) + ' means you need to be right more than 60% of the time just to break even. Most successful traders require at least 2:1 before entering.' });
+  } else if (rr >= 3) {
+    warnings.push({ type:'wc-green', icon:'✓', title:'Excellent risk/reward ratio',
+      desc:'R/R of ' + rr.toFixed(2) + ' gives you significant margin for error. You can be right less than 25% of the time and still be profitable with consistent sizing.' });
+  } else {
+    warnings.push({ type:'wc-neutral', icon:'ℹ', title:'Acceptable risk/reward ratio',
+      desc:'R/R of ' + rr.toFixed(2) + ' is workable but not exceptional. Consider adjusting take-profit upward or stop-loss tighter to improve the ratio before entering.' });
+  }
+
+  // Risk % warning
+  if (riskPct > 3) {
+    warnings.push({ type:'wc-red', icon:'⚠', title:'Risk percentage too high',
+      desc: riskPct + '% account risk per trade significantly raises ruin risk. A 10-trade losing streak at this size would drop your account by ' + (100*(1-Math.pow(1-riskPct/100,10))).toFixed(1) + '%. Recommended maximum is 2%.' });
+  } else if (riskPct <= 1) {
+    warnings.push({ type:'wc-green', icon:'✓', title:'Risk within safe parameters',
+      desc:'1% or below is within the recommended range. Consistent application protects your account from catastrophic drawdowns during losing streaks.' });
+  }
+
+  // Leverage warning
+  if (lev >= 20) {
+    warnings.push({ type:'wc-red', icon:'🔴', title:'Leverage is dangerously high',
+      desc: lev + 'x leverage means a ' + (90/lev).toFixed(1) + '% move against you triggers liquidation. At current volatility, this is a real risk within a single session. Extreme caution required.' });
+  } else if (lev >= 10) {
+    warnings.push({ type:'wc-amber', icon:'⚡', title:'High leverage — tighten your stop',
+      desc: lev + 'x leverage amplifies both gains and losses. Liquidation is approximately ' + (90/lev).toFixed(1) + '% from entry. Ensure your stop loss is well within this range.' });
+  }
+
+  // Regime vs direction
+  const regime = 'accumulation'; // hardcoded for demo
+  if (!isLong && regime === 'accumulation') {
+    warnings.push({ type:'wc-amber', icon:'⚠', title:'Direction conflicts with current regime',
+      desc:'The Accumulation regime (80% confidence) suggests capital is re-entering the market. Short positions in this environment carry higher risk of being squeezed. Consider reducing size or waiting for a confirmed reversal.' });
+  } else if (isLong && regime === 'accumulation') {
+    warnings.push({ type:'wc-green', icon:'✓', title:'Direction aligned with regime',
+      desc:'Long positions are supported by the current Accumulation regime. Capital flows and whale data confirm re-entry into the market. This improves your statistical edge.' });
+  }
+
+  // Funding
+  if (Math.abs(funding) > 0.01) {
+    warnings.push({ type:'wc-amber', icon:'ℹ', title:'High funding rate — monitor carefully',
+      desc:'Funding rate of ' + funding + '% per 8h is elevated. This compounds daily. On a $10k position held 30 days, the funding cost alone could exceed $' + (Math.abs(funding/100) * 10000 * 3 * 30).toFixed(0) + '.' });
+  } else {
+    warnings.push({ type:'wc-neutral', icon:'ℹ', title:'Funding rate within normal range',
+      desc:'Current funding of ' + funding + '% per 8h has minimal impact on this trade. At current position size, daily cost is approximately $' + (Math.abs(funding/100) * parseFloat(document.getElementById('accountSize').value || 10000) * 3).toFixed(2) + '.' });
+  }
+
+  warnings.forEach(w => {
+    const div = document.createElement('div');
+    div.className = 'warning-card ' + w.type;
+    div.innerHTML = `<div class="wc-icon">${w.icon}</div><div><div class="wc-title">${w.title}</div><div class="wc-desc">${w.desc}</div></div>`;
+    container.appendChild(div);
+  });
+}
+
+function updateRegimeContext() {
+  const isLong = direction === 'long';
+  const regime = 'accumulation';
+
+  const card    = document.getElementById('regimeContextCard');
+  const verdict = document.getElementById('rccVerdict');
+  const desc    = document.getElementById('rccDesc');
+  const big     = document.getElementById('rccRegimeBig');
+  const action  = document.getElementById('rccAction');
+  const banner  = document.getElementById('regimeSignal');
+  const bannerTxt = document.getElementById('regimeSignalText');
+
+  if (isLong && regime === 'accumulation') {
+    card.className    = 'regime-context-card';
+    verdict.innerHTML = 'This long is <em class="good">aligned</em> with the current market regime';
+    desc.textContent  = 'Accumulation regime at 80% confidence supports long entries on major assets. Capital flowing back into spot BTC and ETH. Risk/reward improves in this environment.';
+    big.className     = 'rcc-regime-big acc';
+    big.textContent   = 'Acc';
+    action.className  = 'rcc-action good';
+    action.textContent = '✓ Regime Aligned';
+    banner.className  = 'rb-signal';
+    bannerTxt.textContent = 'Regime supports long positions — accumulation phase active';
+  } else if (!isLong && regime === 'accumulation') {
+    card.className    = 'regime-context-card warn-card';
+    verdict.innerHTML = 'This short <em class="warn">conflicts</em> with the current market regime';
+    desc.textContent  = 'The Accumulation regime suggests capital is re-entering the market. Short positions face higher squeeze risk when sentiment is shifting bullish. Reduce size or wait for regime confirmation.';
+    big.className     = 'rcc-regime-big warn';
+    big.textContent   = 'Acc';
+    action.className  = 'rcc-action warn';
+    action.textContent = '⚠ Regime Conflict';
+    banner.className  = 'rb-signal warn';
+    bannerTxt.textContent = 'Caution: Accumulation regime conflicts with short direction';
+  }
+}
+
+// Init
+calculate();
+</script>
+
+</body>
+</html>

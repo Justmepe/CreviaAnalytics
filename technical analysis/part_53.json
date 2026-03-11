@@ -1,0 +1,6 @@
+{
+  "part": 53,
+  "title": "Pattern Density Heatmap for S/R",
+  "source_url": "https://www.mql5.com/en/articles/20390",
+  "verdict": "HIGH - Bin-based density, recency decay exp(-age/half_life), HTF 1.4x multiplier, normalized zone score."
+}
