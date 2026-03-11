@@ -6,8 +6,6 @@ Run on VPS: python scripts/migrate_add_wallet_address.py
 
 import sys
 import os
-import psycopg2
-from psycopg2 import sql
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -15,29 +13,25 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 load_dotenv()
 
-from api.config import DATABASE_URL
+from api.config import DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME
+import psycopg2
 
 def migrate():
     """Add wallet_address column to users table if it doesn't exist."""
     
-    # Parse database URL
-    # Format: postgresql://user:password@host:port/dbname
-    from urllib.parse import urlparse
-    parsed = urlparse(DATABASE_URL)
-    
     db_config = {
-        'host': parsed.hostname,
-        'port': parsed.port or 5432,
-        'database': parsed.path.lstrip('/'),
-        'user': parsed.username,
-        'password': parsed.password,
+        'host': DB_HOST,
+        'port': int(DB_PORT),
+        'database': DB_NAME,
+        'user': DB_USER,
+        'password': DB_PASSWORD,
     }
     
     try:
         conn = psycopg2.connect(**db_config)
         cursor = conn.cursor()
         
-        print("Connected to database:", db_config['database'])
+        print("Connected to database:", DB_NAME)
         
         # Check if column already exists
         cursor.execute("""
