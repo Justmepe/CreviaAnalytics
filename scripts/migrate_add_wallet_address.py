@@ -25,13 +25,18 @@ def migrate():
         'database': DB_NAME,
         'user': DB_USER,
         'password': DB_PASSWORD,
+        'connect_timeout': 10,
     }
     
+    conn = None
+    cursor = None
+    
     try:
+        print(f"Connecting to {DB_USER}@{DB_HOST}:{DB_PORT}/{DB_NAME}...")
         conn = psycopg2.connect(**db_config)
         cursor = conn.cursor()
         
-        print("Connected to database:", DB_NAME)
+        print("✓ Connected to database:", DB_NAME)
         
         # Check if column already exists
         cursor.execute("""
@@ -42,9 +47,7 @@ def migrate():
         
         if cursor.fetchone():
             print("✓ wallet_address column already exists")
-            cursor.close()
-            conn.close()
-            return
+            return 0
         
         # Add the column
         print("Adding wallet_address column to users table...")
@@ -54,13 +57,19 @@ def migrate():
         """)
         
         conn.commit()
-        print("✓ Migration complete: wallet_address column added")
+        print("✓ Migration complete: wallet_address column added successfully")
+        return 0
         
+    except psycopg2.Error as e:
+        print(f"✗ Database error: {e}")
+        if conn:
+            conn.rollback()
+        return 1
     except Exception as e:
         print(f"✗ Migration failed: {e}")
         if conn:
             conn.rollback()
-        sys.exit(1)
+        return 1
     finally:
         if cursor:
             cursor.close()
@@ -69,4 +78,5 @@ def migrate():
 
 
 if __name__ == '__main__':
-    migrate()
+    exit_code = migrate()
+    sys.exit(exit_code)
